@@ -1,0 +1,179 @@
+/*
+ * ═══════════════════════════════════════════════════════
+ *  AYESMAJ STUDIOS — Global Stylesheet
+ *  Luxury Cinematic Dark Green & Gold Theme
+ * ═══════════════════════════════════════════════════════
+ *
+ *  FONT SYSTEM
+ *  ─────────────────────────────────────────────────────
+ *  Satoshi     All typography — premium, modern, cinematic
+ *
+ *  COLOR SYSTEM
+ *  ─────────────────────────────────────────────────────
+ *  Primary bg      #07100A  near-black deep green
+ *  Secondary bg    #0C1A0E  deep forest green
+ *  Surface/card    #111E11  muted dark green
+ *  Gold accent     #C8A44E  metallic gold (primary)
+ *  Gold light      #D4B56A  champagne gold
+ *  Gold dark       #9A7B3A  antique gold
+ *  Text primary    #F2EDE4  soft warm white
+ *  Text muted      #8A8478  warm muted gray
+ */
+
+/* ── Satoshi via Fontshare — must precede @tailwind directives ── */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ════════════════════════════════════════════════════════
+   BASE LAYER
+   ════════════════════════════════════════════════════════ */
+@layer base {
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    touch-action: pan-y;
+  }
+
+  body {
+    overflow-x: clip;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+    background: #07100A;
+    font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
+    color: #F2EDE4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Satoshi', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  #root, #app {
+    overflow: visible;
+    min-height: 100%;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  .overlay-backdrop {
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .overlay-backdrop.is-open {
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .scroll-container {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* ── Shadcn / Radix UI design tokens — dark green & gold ── */
+  :root {
+    --background: 130 30% 5%;
+    --foreground: 35 30% 93%;
+    --card: 130 22% 9%;
+    --card-foreground: 35 30% 93%;
+    --popover: 130 22% 9%;
+    --popover-foreground: 35 30% 93%;
+    --primary: 38 52% 55%;
+    --primary-foreground: 130 30% 5%;
+    --secondary: 130 18% 12%;
+    --secondary-foreground: 35 30% 93%;
+    --muted: 130 18% 12%;
+    --muted-foreground: 35 10% 54%;
+    --accent: 38 52% 55%;
+    --accent-foreground: 130 30% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 130 15% 16%;
+    --input: 130 15% 16%;
+    --ring: 38 52% 55%;
+    --chart-1: 38 52% 55%;
+    --chart-2: 130 30% 35%;
+    --chart-3: 43 74% 60%;
+    --chart-4: 160 40% 30%;
+    --chart-5: 38 60% 65%;
+    --radius: 0.5rem;
+    --sidebar-background: 130 30% 5%;
+    --sidebar-foreground: 35 30% 93%;
+    --sidebar-primary: 38 52% 55%;
+    --sidebar-primary-foreground: 130 30% 5%;
+    --sidebar-accent: 130 18% 12%;
+    --sidebar-accent-foreground: 35 30% 93%;
+    --sidebar-border: 130 15% 16%;
+    --sidebar-ring: 38 52% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ════════════════════════════════════════════════════════
+   UTILITY LAYER
+   ════════════════════════════════════════════════════════ */
+@layer utilities {
+
+  /* ── Font family helpers ── */
+  .font-display {
+    font-family: 'Syne', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+  .font-body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  .font-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+  }
+
+  /* ── Gradient text ── */
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C8A44E 0%, #E6C36A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Section eyebrow labels ── */
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: #8B5CF6;
+  }
+  .section-label-cyan {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: #22D3EE;
+  }
+}

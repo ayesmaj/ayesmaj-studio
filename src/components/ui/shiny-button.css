@@ -1,0 +1,86 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --gradient-angle-offset {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --gradient-percent {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+@property --gradient-shine {
+  syntax: "<color>";
+  initial-value: transparent;
+  inherits: false;
+}
+
+.shiny-cta {
+  --shiny-cta-bg:               #07100A;
+  --shiny-cta-bg-subtle:        #1a2e1a;
+  --shiny-cta-fg:               #F2EDE4;
+  --shiny-cta-highlight:        #C8A44E;
+  --shiny-cta-highlight-subtle: #E8C96D;
+
+  --animation:  gradient-angle linear infinite;
+  --duration:   3s;
+  --transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+
+  isolation: isolate;
+  position: relative;
+  cursor: pointer;
+  outline-offset: 4px;
+  padding: 1.1rem 2.4rem;
+  font-family: "Satoshi", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(200,164,78,0.4);
+  border-radius: 360px;
+  color: var(--shiny-cta-fg);
+  background: var(--shiny-cta-bg);
+  box-shadow: 0 0 18px rgba(200,164,78,0.12);
+  transition:
+    box-shadow var(--transition),
+    border-color var(--transition),
+    background var(--transition);
+  text-decoration: none;
+}
+
+.shiny-cta span {
+  position: relative;
+  z-index: 1;
+}
+
+.shiny-cta:active {
+  translate: 0 1px;
+}
+
+/* ── Hover: animated conic-gradient border sweep ── */
+.shiny-cta:is(:hover, :focus-visible) {
+  --gradient-percent:      20%;
+  --gradient-angle-offset: 95deg;
+  --gradient-shine:        var(--shiny-cta-highlight-subtle);
+  border-color: transparent;
+  background:
+    linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg)) padding-box,
+    conic-gradient(
+      from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+      transparent,
+      var(--shiny-cta-highlight)        var(--gradient-percent),
+      var(--gradient-shine)             calc(var(--gradient-percent) * 2),
+      var(--shiny-cta-highlight)        calc(var(--gradient-percent) * 3),
+      transparent                       calc(var(--gradient-percent) * 4)
+    ) border-box;
+  box-shadow: 0 0 44px rgba(200,164,78,0.28);
+  animation: gradient-angle var(--duration) linear infinite;
+}
+
+@keyframes gradient-angle {
+  to { --gradient-angle: 360deg; }
+}
