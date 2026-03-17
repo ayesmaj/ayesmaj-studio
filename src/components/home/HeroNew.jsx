@@ -38,13 +38,17 @@ const FRAME_EXT     = '.png';       //   keep .png for transparency
 const SCROLL_TUNNEL = '600vh';      // ← UPDATE to taste
 
 
+/* ── Mobile detection: skip heavy frame sequence on small screens ── */
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
 export default function HeroNew() {
   const containerRef  = useRef(null);
   const canvasRef     = useRef(null);
   const framesRef     = useRef([]);
   const drawnIdxRef   = useRef(-1);
   const rafRef        = useRef(null);
-  const [framesReady, setFramesReady] = useState(false);
+  // On mobile we skip frames entirely — mark ready immediately
+  const [framesReady, setFramesReady] = useState(isMobile);
 
   /* ── 1. Track scroll 0→1 through this section ──────────────── */
   const { scrollYProgress } = useScroll({
@@ -93,9 +97,11 @@ export default function HeroNew() {
 
 
   /* ════════════════════════════════════════════════════════════
-     FRAME LOADER — preloads all PNGs so drawing is always instant
+     FRAME LOADER — desktop only, skipped entirely on mobile
      ════════════════════════════════════════════════════════════ */
   useEffect(() => {
+    if (isMobile) return; // ← skip on mobile — saves 632 MB of network + RAM
+
     const images = new Array(TOTAL_FRAMES);
     let done = 0;
 
@@ -263,18 +269,31 @@ export default function HeroNew() {
           background: 'radial-gradient(ellipse 42% 36% at 88% 82%, rgba(74,120,74,0.1) 0%, transparent 55%)',
         }} />
 
-        {/* ▓▓ LAYER 3: PNG frame canvas — alpha fully preserved
-            Frames: /public/sequence/10000.png … 10680.png          */}
-        <canvas
-          ref={canvasRef}
-          style={{
-            position: 'absolute', inset: 0,
-            width: '100%', height: '100%',
-            opacity: framesReady ? 1 : 0,
-            transition: 'opacity 1.2s ease',
-          }}
-          aria-hidden="true"
-        />
+        {/* ▓▓ LAYER 3: PNG frame canvas — desktop only */}
+        {!isMobile && (
+          <canvas
+            ref={canvasRef}
+            style={{
+              position: 'absolute', inset: 0,
+              width: '100%', height: '100%',
+              opacity: framesReady ? 1 : 0,
+              transition: 'opacity 1.2s ease',
+            }}
+            aria-hidden="true"
+          />
+        )}
+
+        {/* ▓▓ LAYER 3 (mobile): cinematic gradient stand-in */}
+        {isMobile && (
+          <div style={{
+            position: 'absolute', inset: 0, pointerEvents: 'none',
+            background: [
+              'radial-gradient(ellipse 80% 60% at 50% 30%, rgba(200,164,78,0.07) 0%, transparent 65%)',
+              'radial-gradient(ellipse 60% 80% at 20% 70%, rgba(74,120,74,0.12) 0%, transparent 55%)',
+              'radial-gradient(ellipse 50% 50% at 80% 60%, rgba(200,164,78,0.05) 0%, transparent 50%)',
+            ].join(','),
+          }} aria-hidden="true" />
+        )}
 
         {/* ▓▓ LAYER 4: Radial vignette */}
         <div style={{
