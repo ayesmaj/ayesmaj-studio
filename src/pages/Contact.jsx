@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Loader2, CheckCircle, Mail, MapPin, Clock, Phone } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
 import HomeNav from '@/components/home/HomeNav';
 import HomeFooter from '@/components/home/HomeFooter';
 import CircuitBackground from '@/components/home/CircuitBackground';
@@ -41,26 +40,33 @@ export default function Contact() {
     setErrors({});
     setStatus('loading');
     try {
-      const response = await base44.functions.invoke('submitContact', {
-        name: form.name, email: form.email, phone: form.phone,
-        subject: form.subject, message: form.message,
-        pageUrl: window.location.href, honeypot: form.honeypot,
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_KEY', // ← replace after setup
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          subject: form.subject || 'New project inquiry – AYESMAJ Studios',
+          message: form.message,
+          // also notify via SMS gateway email
+          cc: '5093197999@tmomail.net', // ← change to your carrier gateway if needed
+          from_name: 'AYESMAJ Studios Contact Form',
+          botcheck: form.honeypot,
+        }),
       });
-      if (response.data.ok) {
+      const data = await res.json();
+      if (data.success) {
         setStatus('success');
         setForm({ name: '', email: '', phone: '', subject: '', message: '', honeypot: '' });
-        await base44.entities.ContactSubmission.create({
-          name: form.name, email: form.email, phone: form.phone,
-          subject: form.subject, message: form.message,
-        });
-        base44.analytics.track({ eventName: 'quote_request_completed', properties: { subject: form.subject || 'Not specified', has_phone: !!form.phone } });
       } else {
         setStatus('error');
-        setErrors({ submit: response.data.error || 'Failed to send message' });
+        setErrors({ submit: data.message || 'Failed to send. Please try again.' });
       }
     } catch (error) {
       setStatus('error');
-      setErrors({ submit: error.message || 'Failed to send message' });
+      setErrors({ submit: 'Network error. Please try again.' });
     }
   };
 
