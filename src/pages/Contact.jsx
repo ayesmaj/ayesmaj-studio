@@ -10,7 +10,7 @@ import { ContactCard } from '@/components/ui/contact-card';
 const CONTACT_INFO = [
   { icon: Mail,   label: 'Email',    value: 'ayesmajstudios@gmail.com' },
   { icon: Phone,  label: 'Phone',    value: '+1 (509) 319-7999' },
-  { icon: MapPin, label: 'Studios',  value: 'Los Angeles · London · Dubai' },
+  { icon: MapPin, label: 'Location', value: 'Phoenix, Arizona' },
   { icon: Clock,  label: 'Response', value: 'Within 24 hours' },
 ];
 
