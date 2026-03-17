@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Loader2, CheckCircle, Mail, MapPin, Clock } from 'lucide-react';
+import { ArrowRight, Loader2, CheckCircle, Mail, MapPin, Clock, Phone } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import HomeNav from '@/components/home/HomeNav';
 import HomeFooter from '@/components/home/HomeFooter';
@@ -9,6 +9,7 @@ import { ContactCard } from '@/components/ui/contact-card';
 
 const CONTACT_INFO = [
   { icon: Mail,   label: 'Email',    value: 'ayesmajstudios@gmail.com' },
+  { icon: Phone,  label: 'Phone',    value: '+1 (509) 319-7999' },
   { icon: MapPin, label: 'Studios',  value: 'Los Angeles · London · Dubai' },
   { icon: Clock,  label: 'Response', value: 'Within 24 hours' },
 ];
