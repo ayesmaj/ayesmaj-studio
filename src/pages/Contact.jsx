@@ -51,7 +51,7 @@ export default function Contact() {
           subject: form.subject || 'New project inquiry – AYESMAJ Studios',
           message: form.message,
           // also notify via SMS gateway email
-          cc: '5093197999@tmomail.net', // ← change to your carrier gateway if needed
+          cc: '5093197999@vtext.com', // ← change to your carrier gateway if needed
           from_name: 'AYESMAJ Studios Contact Form',
           botcheck: form.honeypot,
         }),
