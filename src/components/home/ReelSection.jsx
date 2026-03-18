@@ -37,7 +37,7 @@ export default function ReelSection() {
             style={{ aspectRatio: '16/9', border: '1px solid rgba(200,164,78,0.15)', boxShadow: '0 0 60px rgba(200,164,78,0.1), 0 30px 80px rgba(0,0,0,0.6)' }}>
             <video
               ref={videoRef}
-              src="https://res.cloudinary.com/dea3l8rmw/video/upload/q_auto,f_auto/0318_1_1_offmsw.mp4"
+              src="https://res.cloudinary.com/dea3l8rmw/video/upload/q_auto,f_auto/showreel_ayesmaj_paucsk.mp4"
               autoPlay
               loop
               muted
