@@ -24,14 +24,33 @@ const VIDEOS = [
   {
     id: 2,
     title: 'Boom Chicka Pop — Product Reveal',
-    desc: 'Cinematic CGI packaging reveal for Angie\'s Boom Chicka Pop.',
-    thumb: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80"relative overflow-hidden rounded-2xl cursor-pointer"
+    desc: "Cinematic CGI packaging reveal for Angie's Boom Chicka Pop.",
+    thumb: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=800&q=80',
+    youtube: null,
+  },
+  {
+    id: 3,
+    title: 'ASHÉ Ritual Roast — Brand Film',
+    desc: 'Premium coffee brand identity and packaging reveal.',
+    thumb: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80',
+    youtube: null,
+  },
+];
+
+function VideoCard({ video, onPlay }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <motion.div
+      className="relative overflow-hidden rounded-2xl cursor-pointer"
       style={{
         aspectRatio: '16/9',
         border: `1px solid ${hovered ? 'rgba(0,196,106,0.4)' : 'rgba(200,163,78,0.12)'}`,
         boxShadow: hovered ? '0 0 40px rgba(0,196,106,0.18), 0 20px 60px rgba(0,0,0,0.5)' : '0 10px 40px rgba(0,0,0,0.4)',
         transition: 'border-color 0.3s, box-shadow 0.3s',
       }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={() => onPlay(video)}
     >
       <img src={video.thumb} alt={video.title} className="w-full h-full object-cover"
         style={{ transform: hovered ? 'scale(1.06)' : 'scale(1)', transition: 'transform 0.6s ease' }} />

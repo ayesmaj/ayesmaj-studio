@@ -4,8 +4,36 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
-const LOGO_URL =
-  'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80"fixed top-0 inset-x-0 z-50 transition-all duration-500"
+const LOGO_URL = null; // text logo used instead
+
+const LINKS = [
+  { label: 'Work',     page: 'Work' },
+  { label: 'Branding', page: 'Branding' },
+  { label: 'Reel',     page: 'Reel' },
+  { label: 'About',    page: 'About' },
+  { label: 'Pricing',  page: 'Pricing' },
+];
+
+export default function HomeNav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const isActive = (page) => location.pathname === createPageUrl(page);
+
+  return (
+    <>
+      <motion.nav
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed top-0 inset-x-0 z-50 transition-all duration-500"
         style={{
           background: scrolled ? 'rgba(7,16,10,0.88)' : 'transparent',
           backdropFilter: scrolled ? 'blur(22px)' : 'none',
@@ -17,7 +45,12 @@ const LOGO_URL =
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[70px]">
 
           <Link to={createPageUrl('Home')} className="flex items-center">
-            <img src={LOGO_URL} alt="AYESMAJ" className="h-16 w-auto" />
+            <span style={{
+              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontSize: '16px', fontWeight: 800, letterSpacing: '0.18em',
+              background: 'linear-gradient(135deg, #C8A44E, #E8C96D)',
+              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+            }}>AYESMAJ</span>
           </Link>
 
           {/* Desktop links */}
