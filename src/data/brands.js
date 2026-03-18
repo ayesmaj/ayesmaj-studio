@@ -52,6 +52,11 @@ export const BRANDS = [
     images: ['1.png','2.png','3.png'],
     videos: [],
     featured: '1.png',
+    sections: [
+      { title: 'Strawberry Edition', images: ['1.png'] },
+      { title: 'Chocolate Almond Edition', images: ['2.png'] },
+      { title: 'Campaign Art Direction', images: ['3.png'] },
+    ],
   },
   {
     id: 'lacroix',
@@ -65,6 +70,10 @@ export const BRANDS = [
     images: ['1.jpg','2.jpg','3.png'],
     videos: ['4.mp4'],
     featured: '1.jpg',
+    sections: [
+      { title: 'Campaign Visuals', images: ['1.jpg', '2.jpg'] },
+      { title: 'CGI Renders', images: ['3.png'] },
+    ],
   },
   {
     id: 'honey',
@@ -228,6 +237,11 @@ export const BRANDS = [
     images: ['1.jpg','2.png','3.png','4.jpeg','5.png','6.jpeg'],
     videos: [],
     featured: '1.jpg',
+    sections: [
+      { title: 'Product CGI', images: ['1.jpg', '2.png'] },
+      { title: 'Campaign Visuals', images: ['3.png', '4.jpeg'] },
+      { title: 'Digital Art', images: ['5.png', '6.jpeg'] },
+    ],
   },
 ];
 
