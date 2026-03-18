@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, ChevronDown, Film, Layers, Wand2, Globe, Palette, LayoutGrid, Clapperboard, Image } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, ArrowRight, Film, Wand2, Globe, Palette, LayoutGrid, Clapperboard, Image, Sparkles, Coffee, Leaf, Wine, Sandwich, Bug, Ghost, Home, Tag, Star, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import MagneticButton from '@/components/ui/MagneticButton';
 import { MenuItem, Menu as NavMenu, HoveredLink, MenuDivider } from '@/components/ui/navbar-menu';
+import { BRAND_NAV_GROUPS, BRANDS } from '@/data/brands';
 
 const LOGO_URL = "/logo.png";
 
 const mobileLinks = [
-  { label: 'System',   href: '#system' },
+  { label: 'Home',     href: '#hero' },
   { label: 'Services', href: '#services' },
-  { label: 'Work',     href: '#work' },
-  { label: 'Branding', href: '/branding', isPage: true },
+  { label: 'Showreel', href: '#work' },
+  { label: 'All Brands', href: '/Brands', isPage: true },
+  { label: 'Portfolio', href: '/Branding', isPage: true },
   { label: 'Pricing',  href: '#pricing' },
   { label: 'Contact',  href: '#contact' },
 ];
@@ -49,26 +51,75 @@ function ServicesDropdown({ go }) {
   );
 }
 
-// ── Work dropdown items ──────────────────────────────────────────────────────
+// ── Brand icon map ────────────────────────────────────────────────────────────
+const BRAND_ICONS = {
+  'ashe':            <Coffee size={11} />,
+  'blenday':         <Sparkles size={11} />,
+  'boom-chica':      <Star size={11} />,
+  'lacroix':         <Leaf size={11} />,
+  'honey':           <Star size={11} />,
+  'butterfly':       <Bug size={11} />,
+  'paranormal':      <Ghost size={11} />,
+  'pita-basta':      <Sandwich size={11} />,
+  'baron-herzog':    <Wine size={11} />,
+  'characters':      <User size={11} />,
+  'noam':            <User size={11} />,
+  'interior-design': <Home size={11} />,
+  'logos':           <Tag size={11} />,
+  'general':         <Image size={11} />,
+};
+
+// ── Work dropdown — full brand tree ──────────────────────────────────────────
 function WorkDropdown({ go }) {
   return (
-    <div className="flex flex-col gap-3 min-w-[220px] p-1">
-      <p className="text-[10px] font-bold tracking-[0.3em] uppercase mb-1" style={{ color: '#00C46A' }}>Portfolio</p>
-      <HoveredLink href="/branding">
-        <span className="flex items-center gap-2"><Palette size={13} className="text-[#00C46A]" /> Branding &amp; Our Work</span>
-      </HoveredLink>
-      <HoveredLink onClick={() => go('#work')}>
-        <span className="flex items-center gap-2"><Film size={13} className="text-[#00C46A]" /> Showreel</span>
-      </HoveredLink>
-      <HoveredLink onClick={() => go('#work')}>
-        <span className="flex items-center gap-2"><LayoutGrid size={13} className="text-[#00C46A]" /> All Projects</span>
-      </HoveredLink>
-      <MenuDivider />
-      <HoveredLink onClick={() => go('#contact')}>
-        <span className="flex items-center gap-2 text-white/60 hover:text-[#00C46A]">
-          <ArrowRight size={13} /> Start a Project
-        </span>
-      </HoveredLink>
+    <div className="p-1" style={{ minWidth: 520 }}>
+      {/* Top row: Showreel + All Brands */}
+      <div className="flex gap-3 mb-4 pb-4 border-b" style={{ borderColor:'rgba(255,255,255,0.06)' }}>
+        <HoveredLink onClick={() => go('#work')}>
+          <span className="flex items-center gap-2"><Film size={13} className="text-[#00C46A]" /> Showreel</span>
+        </HoveredLink>
+        <HoveredLink href="/Brands">
+          <span className="flex items-center gap-2"><LayoutGrid size={13} className="text-[#00C46A]" /> All Brands</span>
+        </HoveredLink>
+        <HoveredLink href="/Branding">
+          <span className="flex items-center gap-2"><Palette size={13} className="text-[#00C46A]" /> Portfolio Gallery</span>
+        </HoveredLink>
+      </div>
+
+      {/* Brand groups */}
+      <div className="grid grid-cols-3 gap-x-6 gap-y-1">
+        {BRAND_NAV_GROUPS.map(group => (
+          <div key={group.label}>
+            <p className="text-[9px] font-bold tracking-[0.3em] uppercase mb-2"
+              style={{ color:'rgba(0,196,106,0.6)' }}>
+              {group.label}
+            </p>
+            {group.brands.map(id => {
+              const brand = BRANDS.find(b => b.id === id);
+              if (!brand) return null;
+              return (
+                <HoveredLink key={id} href={`/BrandDetail?slug=${id}`}>
+                  <span className="flex items-center gap-1.5 py-0.5"
+                    style={{ color: 'inherit' }}>
+                    <span style={{ color: brand.accent, opacity: 0.8 }}>
+                      {BRAND_ICONS[id]}
+                    </span>
+                    <span className="text-xs">{brand.name}</span>
+                  </span>
+                </HoveredLink>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 pt-4 border-t" style={{ borderColor:'rgba(255,255,255,0.06)' }}>
+        <HoveredLink onClick={() => go('#contact')}>
+          <span className="flex items-center gap-2 text-white/40 hover:text-[#00C46A] text-xs">
+            <ArrowRight size={12} /> Start a Project
+          </span>
+        </HoveredLink>
+      </div>
     </div>
   );
 }
