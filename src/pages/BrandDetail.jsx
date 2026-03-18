@@ -62,10 +62,10 @@ function VideoCard({ src, accent }) {
         </div>
       </div>
 
-      {/* Mute */}
+      {/* Mute — 44px touch target */}
       <button onClick={e => { e.stopPropagation(); toggleMute(); }}
-        className="absolute bottom-4 right-4 w-9 h-9 rounded-full flex items-center justify-center"
-        style={{ background:'rgba(0,0,0,0.6)', border:'1px solid rgba(255,255,255,0.15)' }}>
+        className="absolute bottom-3 right-3 w-11 h-11 md:w-9 md:h-9 rounded-full flex items-center justify-center"
+        style={{ background:'rgba(0,0,0,0.65)', border:'1px solid rgba(255,255,255,0.2)' }}>
         {muted ? <VolumeX size={14} className="text-white" /> : <Volume2 size={14} className="text-white" />}
       </button>
     </motion.div>
@@ -113,7 +113,7 @@ export default function BrandDetail() {
       <Navigation reducedMotion={reducedMotion} onToggleReducedMotion={() => setReducedMotion(v => !v)} />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[85vh] flex items-end overflow-hidden">
+      <section className="relative min-h-[85vh] min-h-[85svh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img src={`${assetBase}/${brand.featured}`} alt={brand.name}
             className="w-full h-full object-cover" />
@@ -125,24 +125,24 @@ export default function BrandDetail() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"
           style={{ background:`radial-gradient(ellipse at 50% 100%, ${accent}22 0%, transparent 70%)` }} />
 
-        {/* Back */}
+        {/* Back — safe below notch on mobile */}
         <Link to="/Brands"
-          className="absolute top-24 left-6 lg:left-12 z-10 flex items-center gap-2 text-xs font-bold tracking-widest uppercase transition-colors"
-          style={{ color:`${accent}bb` }}>
+          className="absolute z-10 flex items-center gap-2 text-xs font-bold tracking-widest uppercase transition-colors"
+          style={{ color:`${accent}bb`, top:'calc(env(safe-area-inset-top, 0px) + 88px)', left:'1.5rem' }}>
           <ArrowLeft size={14} /> All Brands
         </Link>
 
         {/* Text */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-12 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-5 md:px-6 lg:px-12 pb-16 md:pb-20">
           <motion.div initial={{ opacity:0, y:40 }} animate={{ opacity:1, y:0 }}
             transition={{ duration:1, ease:[0.16,1,0.3,1] }}>
             <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4" style={{ color: accent }}>
               {brand.category}
             </p>
-            <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white leading-none mb-3">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black text-white leading-none mb-3 break-words">
               {brand.name}
             </h1>
-            <p className="text-xl md:text-2xl font-light text-white/40 mb-8">{brand.subtitle}</p>
+            <p className="text-lg md:text-2xl font-light text-white/40 mb-6 md:mb-8">{brand.subtitle}</p>
             <div className="flex flex-wrap gap-2">
               {brand.tags.map(t => (
                 <span key={t} className="text-[10px] font-bold tracking-[0.3em] uppercase px-3 py-1.5 rounded-full"
