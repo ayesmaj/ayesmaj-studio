@@ -283,16 +283,23 @@ export default function HeroNew() {
           />
         )}
 
-        {/* ▓▓ LAYER 3 (mobile): cinematic gradient stand-in */}
+        {/* ▓▓ LAYER 3 (mobile): hero video */}
         {isMobile && (
-          <div style={{
-            position: 'absolute', inset: 0, pointerEvents: 'none',
-            background: [
-              'radial-gradient(ellipse 80% 60% at 50% 30%, rgba(200,164,78,0.07) 0%, transparent 65%)',
-              'radial-gradient(ellipse 60% 80% at 20% 70%, rgba(74,120,74,0.12) 0%, transparent 55%)',
-              'radial-gradient(ellipse 50% 50% at 80% 60%, rgba(200,164,78,0.05) 0%, transparent 50%)',
-            ].join(','),
-          }} aria-hidden="true" />
+          <video
+            src="/hero-mobile.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            style={{
+              position: 'absolute', inset: 0,
+              width: '100%', height: '100%',
+              objectFit: 'cover',
+              opacity: 0.55,
+            }}
+          />
         )}
 
         {/* ▓▓ LAYER 4: Radial vignette */}
