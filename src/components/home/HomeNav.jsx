@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, Film, Palette, LayoutGrid,
-  Coffee, Sparkles, Star, Leaf, Wine, Sandwich, Bug, Ghost, Home, Tag, Image, User, ChevronDown } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+  Coffee, Sparkles, Star, Leaf, Wine, Sandwich, Bug, Ghost,
+  Home, Tag, Image, User, ChevronDown } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { BRANDS, BRAND_NAV_GROUPS } from '@/data/brands';
 
@@ -27,38 +28,35 @@ const BRAND_ICONS = {
   'general':         <Image size={11} />,
 };
 
-const springTransition = {
-  type: 'spring', mass: 0.5, damping: 12,
-  stiffness: 120, restDelta: 0.001,
-};
-
 // ── Mega-dropdown ─────────────────────────────────────────────────────────────
-function WorkMenu({ closeMenu }) {
+// NOTE: Links do NOT call closeMenu() — doing so unmounts the element via
+// AnimatePresence exit BEFORE Router finishes navigation. Instead, the parent's
+// useEffect on location changes closes the menu after navigation completes.
+function WorkMenu() {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.94, y: 8 }}
+      initial={{ opacity: 0, scale: 0.95, y: 8 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.94, y: 4 }}
-      transition={springTransition}
-      className="absolute left-1/2 -translate-x-1/2 mt-3 z-50 p-5 rounded-2xl"
+      exit={{ opacity: 0, scale: 0.95, y: 4 }}
+      transition={{ type: 'spring', mass: 0.5, damping: 14, stiffness: 130 }}
+      className="absolute left-0 mt-3 p-5 rounded-2xl"
       style={{
         background: 'rgba(7,16,10,0.97)',
         backdropFilter: 'blur(28px)',
         border: '1px solid rgba(200,164,78,0.15)',
         minWidth: 560,
-        boxShadow: '0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(200,164,78,0.06)',
+        zIndex: 9999,
+        boxShadow: '0 32px 80px rgba(0,0,0,0.75), 0 0 0 1px rgba(200,164,78,0.06)',
       }}
-      // Prevent clicks inside from closing
-      onClick={e => e.stopPropagation()}
     >
       {/* Quick links */}
-      <div className="flex gap-6 mb-4 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <div className="flex gap-6 mb-4 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
         {[
-          { label: 'Showreel',         icon: <Film size={12} />,       href: createPageUrl('Reel') },
-          { label: 'All Brands',       icon: <LayoutGrid size={12} />, href: createPageUrl('Brands') },
-          { label: 'Portfolio Gallery', icon: <Palette size={12} />,   href: createPageUrl('Branding') },
+          { label: 'Showreel',          icon: <Film size={12} />,       to: createPageUrl('Reel') },
+          { label: 'All Brands',        icon: <LayoutGrid size={12} />, to: createPageUrl('Brands') },
+          { label: 'Portfolio Gallery', icon: <Palette size={12} />,    to: createPageUrl('Branding') },
         ].map(item => (
-          <Link key={item.label} to={item.href} onClick={closeMenu}
+          <Link key={item.label} to={item.to}
             className="flex items-center gap-1.5 text-xs font-bold tracking-wide transition-colors"
             style={{ color: GOLD_DIM }}
             onMouseEnter={e => e.currentTarget.style.color = GOLD}
@@ -82,15 +80,21 @@ function WorkMenu({ closeMenu }) {
               const brand = BRANDS.find(b => b.id === id);
               if (!brand) return null;
               return (
-                <Link key={id} to={`/BrandDetail?slug=${id}`} onClick={closeMenu}
+                <Link key={id} to={`/BrandDetail?slug=${id}`}
                   className="flex items-center gap-1.5 py-[5px] text-xs font-medium transition-colors"
-                  style={{ color: 'rgba(248,250,252,0.4)',
+                  style={{
+                    color: 'rgba(248,250,252,0.4)',
                     fontFamily: "'Satoshi', system-ui, sans-serif",
-                    letterSpacing: '0.02em' }}
+                    letterSpacing: '0.02em',
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}
                   onMouseEnter={e => e.currentTarget.style.color = '#F8FAFC'}
                   onMouseLeave={e => e.currentTarget.style.color = 'rgba(248,250,252,0.4)'}
                 >
-                  <span style={{ color: brand.accent, opacity: 0.8 }}>{BRAND_ICONS[id]}</span>
+                  <span style={{ color: brand.accent, opacity: 0.85, marginRight: 6, flexShrink: 0 }}>
+                    {BRAND_ICONS[id]}
+                  </span>
                   {brand.name}
                 </Link>
               );
@@ -101,7 +105,7 @@ function WorkMenu({ closeMenu }) {
 
       {/* CTA */}
       <div className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <Link to={createPageUrl('Contact')} onClick={closeMenu}
+        <Link to={createPageUrl('Contact')}
           className="flex items-center gap-1.5 text-xs font-medium transition-colors"
           style={{ color: 'rgba(200,164,78,0.4)' }}
           onMouseEnter={e => e.currentTarget.style.color = GOLD}
@@ -117,8 +121,8 @@ function WorkMenu({ closeMenu }) {
 // ── Main nav ──────────────────────────────────────────────────────────────────
 export default function HomeNav() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen]         = useState(false);   // mobile drawer
-  const [workOpen, setWorkOpen] = useState(false);   // Work dropdown
+  const [open, setOpen]         = useState(false);
+  const [workOpen, setWorkOpen] = useState(false);
   const workRef                 = useRef(null);
   const location                = useLocation();
 
@@ -128,35 +132,41 @@ export default function HomeNav() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close dropdown when clicking anywhere outside the Work button+panel
+  // ── Close dropdown when clicking OUTSIDE the workRef container ──
   useEffect(() => {
+    if (!workOpen) return;
     const handler = (e) => {
       if (workRef.current && !workRef.current.contains(e.target)) {
         setWorkOpen(false);
       }
     };
-    if (workOpen) document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
+    // Use 'click' not 'mousedown' so Link navigation fires first
+    document.addEventListener('click', handler, true);
+    return () => document.removeEventListener('click', handler, true);
   }, [workOpen]);
 
-  // Close dropdown on route change
-  useEffect(() => { setWorkOpen(false); setOpen(false); }, [location.pathname, location.search]);
+  // ── Close after route change (navigation completed) ──
+  useEffect(() => {
+    setWorkOpen(false);
+    setOpen(false);
+  }, [location.pathname, location.search]);
 
   const isActive = (page) => location.pathname === createPageUrl(page);
 
   const plainLinks = [
     { label: 'Branding', page: 'Branding' },
-    { label: 'Reel',     page: 'Reel' },
-    { label: 'About',    page: 'About' },
-    { label: 'Pricing',  page: 'Pricing' },
+    { label: 'Reel',     page: 'Reel'     },
+    { label: 'About',    page: 'About'    },
+    { label: 'Pricing',  page: 'Pricing'  },
   ];
 
-  const linkBase = {
+  const linkStyle = (active) => ({
     fontFamily: "'Satoshi', system-ui, sans-serif",
     fontSize: '11px', letterSpacing: '0.18em',
     textTransform: 'uppercase', fontWeight: 600,
+    color: active ? GOLD : 'rgba(248,250,252,0.42)',
     transition: 'color 0.3s',
-  };
+  });
 
   return (
     <>
@@ -182,32 +192,23 @@ export default function HomeNav() {
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-8">
 
-            {/* Work — click to open/close */}
+            {/* Work — click to open, stays open */}
             <div ref={workRef} className="relative">
               <button
                 onClick={() => setWorkOpen(v => !v)}
-                className="relative pb-0.5 flex items-center gap-1 group"
-                style={{
-                  ...linkBase,
-                  color: workOpen ? GOLD : 'rgba(248,250,252,0.42)',
-                }}
+                className="relative pb-0.5 flex items-center gap-1"
+                style={linkStyle(workOpen)}
               >
                 Work
-                <motion.span
-                  animate={{ rotate: workOpen ? 180 : 0 }}
-                  transition={{ duration: 0.25 }}
-                >
-                  <ChevronDown size={11} style={{ opacity: 0.6 }} />
+                <motion.span animate={{ rotate: workOpen ? 180 : 0 }} transition={{ duration: 0.22 }}>
+                  <ChevronDown size={11} style={{ opacity: 0.7 }} />
                 </motion.span>
-                {/* Underline */}
                 <span className="absolute bottom-0 left-0 h-px transition-all duration-300"
                   style={{ background: GOLD, width: workOpen ? '100%' : '0' }} />
               </button>
 
               <AnimatePresence>
-                {workOpen && (
-                  <WorkMenu closeMenu={() => setWorkOpen(false)} />
-                )}
+                {workOpen && <WorkMenu />}
               </AnimatePresence>
             </div>
 
@@ -217,7 +218,7 @@ export default function HomeNav() {
               return (
                 <Link key={l.label} to={createPageUrl(l.page)}
                   className="relative pb-0.5 group"
-                  style={{ ...linkBase, color: active ? GOLD : 'rgba(248,250,252,0.42)' }}
+                  style={linkStyle(active)}
                   onMouseEnter={e => { if (!active) e.currentTarget.style.color = '#F8FAFC'; }}
                   onMouseLeave={e => { if (!active) e.currentTarget.style.color = 'rgba(248,250,252,0.42)'; }}
                 >
@@ -237,7 +238,9 @@ export default function HomeNav() {
           <Link to={createPageUrl('Contact')}
             className="hidden lg:flex items-center gap-2 transition-all duration-300"
             style={{
-              ...linkBase, fontWeight: 700,
+              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontSize: '11px', letterSpacing: '0.18em',
+              textTransform: 'uppercase', fontWeight: 700,
               padding: '10px 22px', borderRadius: '100px', minHeight: '44px',
               border: '1px solid rgba(200,164,78,0.4)',
               color: GOLD, background: 'rgba(200,164,78,0.05)',
@@ -255,7 +258,7 @@ export default function HomeNav() {
           </Link>
 
           {/* Hamburger — mobile only */}
-          <button onClick={() => setOpen(!open)} className="lg:hidden text-white p-2" aria-label="Toggle menu">
+          <button onClick={() => setOpen(v => !v)} className="lg:hidden text-white p-2" aria-label="Toggle menu">
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -265,8 +268,7 @@ export default function HomeNav() {
       <div className="fixed inset-0 z-30 bg-black/50 transition-opacity duration-300"
         onClick={() => setOpen(false)}
         style={{ opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none',
-          visibility: open ? 'visible' : 'hidden' }}
-      />
+          visibility: open ? 'visible' : 'hidden' }} />
 
       {/* Mobile drawer */}
       <AnimatePresence>
@@ -287,20 +289,18 @@ export default function HomeNav() {
               style={{ background: 'linear-gradient(90deg,transparent,rgba(200,164,78,0.35),transparent)' }} />
 
             <nav className="flex flex-col gap-2 mb-6">
-              {/* Work expanded */}
+              {/* Work — expanded inline */}
               <div className="py-4 border-b" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
                 <p className="text-2xl font-black text-white mb-4"
-                  style={{ fontFamily: "'Satoshi', system-ui, sans-serif" }}>
-                  Work
-                </p>
-                <div className="flex flex-col gap-2 mb-4 pl-2">
+                  style={{ fontFamily: "'Satoshi', system-ui, sans-serif" }}>Work</p>
+                <div className="flex flex-col gap-2 mb-4 pl-1">
                   {[
-                    { label: 'Showreel',         href: createPageUrl('Reel') },
-                    { label: 'All Brands',        href: createPageUrl('Brands') },
-                    { label: 'Portfolio Gallery', href: createPageUrl('Branding') },
+                    { label: 'Showreel',          to: createPageUrl('Reel')     },
+                    { label: 'All Brands',         to: createPageUrl('Brands')   },
+                    { label: 'Portfolio Gallery',  to: createPageUrl('Branding') },
                   ].map(item => (
-                    <Link key={item.label} to={item.href} onClick={() => setOpen(false)}
-                      className="text-sm font-semibold transition-colors"
+                    <Link key={item.label} to={item.to}
+                      className="text-sm font-semibold py-1 transition-colors"
                       style={{ color: GOLD_DIM }}
                       onMouseEnter={e => e.currentTarget.style.color = GOLD}
                       onMouseLeave={e => e.currentTarget.style.color = GOLD_DIM}
@@ -309,12 +309,10 @@ export default function HomeNav() {
                     </Link>
                   ))}
                 </div>
-                {/* All brands */}
-                <div className="pl-2 flex flex-col gap-1.5">
+                <div className="pl-1 flex flex-col gap-1">
                   {BRANDS.map(brand => (
                     <Link key={brand.id} to={`/BrandDetail?slug=${brand.id}`}
-                      onClick={() => setOpen(false)}
-                      className="flex items-center gap-2 text-xs py-0.5 transition-colors"
+                      className="flex items-center gap-2 text-xs py-1 transition-colors"
                       style={{ color: 'rgba(248,250,252,0.38)',
                         fontFamily: "'Satoshi', system-ui, sans-serif" }}
                       onMouseEnter={e => e.currentTarget.style.color = '#F8FAFC'}
@@ -329,12 +327,12 @@ export default function HomeNav() {
 
               {/* Other links */}
               {plainLinks.map((l, i) => (
-                <Link key={l.label} to={createPageUrl(l.page)} onClick={() => setOpen(false)}>
+                <Link key={l.label} to={createPageUrl(l.page)}>
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.06 }}
-                    className="py-4 text-2xl font-black transition-colors border-b"
+                    className="py-4 text-2xl font-black border-b transition-colors"
                     style={{
                       fontFamily: "'Satoshi', system-ui, sans-serif",
                       borderColor: 'rgba(255,255,255,0.04)',
@@ -347,11 +345,11 @@ export default function HomeNav() {
               ))}
             </nav>
 
-            <Link to={createPageUrl('Contact')} onClick={() => setOpen(false)}
-              className="py-4 rounded-2xl font-black text-lg tracking-widest uppercase text-white transition-all text-center mt-auto"
+            <Link to={createPageUrl('Contact')}
+              className="py-4 rounded-2xl font-black text-lg tracking-widest uppercase text-white text-center mt-auto"
               style={{
                 fontFamily: "'Satoshi', system-ui, sans-serif",
-                background: 'linear-gradient(135deg, #C8A44E, #9A7B3A)',
+                background: 'linear-gradient(135deg,#C8A44E,#9A7B3A)',
                 minHeight: '56px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 boxShadow: '0 0 40px rgba(200,164,78,0.35)',
