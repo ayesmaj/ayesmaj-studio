@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -11,6 +11,15 @@ const fade = (delay = 0) => ({
 });
 
 export default function ReelSection() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
+  }, []);
+
   return (
     <section id="reel" className="relative z-10 py-32 px-6" style={{ background: 'transparent', scrollMarginTop: '90px' }}>
       <div className="max-w-7xl mx-auto">
@@ -27,7 +36,8 @@ export default function ReelSection() {
           <div className="relative rounded-2xl overflow-hidden"
             style={{ aspectRatio: '16/9', border: '1px solid rgba(200,164,78,0.15)', boxShadow: '0 0 60px rgba(200,164,78,0.1), 0 30px 80px rgba(0,0,0,0.6)' }}>
             <video
-              src="https://www.dropbox.com/scl/fi/23hm5zbcy6t98l8zbi9o3/copy_89711155-2AED-4E99-A739-0231869A3F67.mp4?rlkey=rul17962zmo9azn7pudl2onqn&raw=1"
+              ref={videoRef}
+              src="https://res.cloudinary.com/dea3l8rmw/video/upload/q_auto,f_auto/0318_1_1_offmsw.mp4"
               autoPlay
               loop
               muted
