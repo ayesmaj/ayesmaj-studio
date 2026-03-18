@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Play, Pause, Volume2, VolumeX } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import HomeNav from '@/components/home/HomeNav';
 import Footer from '@/components/sections/Footer';
 import { getBrand, BRANDS } from '@/data/brands';
@@ -76,17 +76,20 @@ function VideoCard({ src, accent }) {
 export default function BrandDetail() {
   const [reducedMotion, setReducedMotion] = useState(false);
   const [brand, setBrand] = useState(null);
+  const location = useLocation();
 
+  // Re-run every time the ?slug= query param changes so navigating
+  // between brands on the same route actually updates the page.
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReducedMotion(mq.matches);
-    const slug = new URLSearchParams(window.location.search).get('slug');
+    const slug = new URLSearchParams(location.search).get('slug');
     const b = slug ? getBrand(slug) : null;
     setBrand(b);
     if (b) document.title = `${b.name} — AYESMAJ Studios`;
     else   document.title = 'Brand Not Found — AYESMAJ Studios';
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location.search]); // ← re-runs on every slug change
 
   const allIds = BRANDS.map(b => b.id);
   const idx    = brand ? allIds.indexOf(brand.id) : -1;
