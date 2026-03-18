@@ -13,19 +13,16 @@ const VIDEOS = [
   {
     title: 'Factory — CGI Commercial',
     subtitle: 'CGI Commercial · Animation',
-    thumb: '/brands/ashe/2.png',
     src: '/videos/factory.mp4',
   },
   {
     title: 'BLENDAY Brand Film',
     subtitle: 'Cinematic · Brand Campaign',
-    thumb: '/brands/blenday/3.png',
     src: '/brands/blenday/6.mp4',
   },
   {
     title: 'Optimus — 3D Animation',
     subtitle: '3D Animation · Character CGI',
-    thumb: '/brands/ashe/4.png',
     src: '/videos/optimus.mp4',
   },
 ];
@@ -74,15 +71,10 @@ function VideoCard({ video, delay }) {
         onMouseLeave={() => setHovered(false)}
         onClick={!playing ? handlePlay : undefined}
       >
-        {/* Poster shown before play */}
+        {/* Dark background before play */}
         {!playing && (
           <>
-            <img
-              src={video.thumb}
-              alt={video.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,12,10,0.85) 0%, rgba(8,12,10,0.35) 50%, transparent 100%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0B0F0C 0%, #111815 100%)' }} />
 
             {/* Play button */}
             <div className="absolute inset-0 flex items-center justify-center">
@@ -113,7 +105,6 @@ function VideoCard({ video, delay }) {
         <video
           ref={videoRef}
           src={video.src}
-          poster={video.thumb}
           loop
           playsInline
           muted={muted}
