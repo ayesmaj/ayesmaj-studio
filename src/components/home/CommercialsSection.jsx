@@ -33,19 +33,28 @@ function VideoCard({ video, delay }) {
   const [muted, setMuted] = useState(true);
   const videoRef = useRef(null);
 
+  // Seek to 1.5s on load so the thumbnail shows a real frame
+  const handleMetadata = () => {
+    if (videoRef.current && !playing) {
+      videoRef.current.currentTime = 1.5;
+    }
+  };
+
   const handlePlay = () => {
     setPlaying(true);
-    setTimeout(() => {
-      if (videoRef.current) {
-        videoRef.current.muted = muted;
-        videoRef.current.play();
-      }
-    }, 50);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.muted = muted;
+      videoRef.current.play();
+    }
   };
 
   const handleClose = (e) => {
     e.stopPropagation();
-    if (videoRef.current) videoRef.current.pause();
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 1.5;
+    }
     setPlaying(false);
   };
 
@@ -71,13 +80,27 @@ function VideoCard({ video, delay }) {
         onMouseLeave={() => setHovered(false)}
         onClick={!playing ? handlePlay : undefined}
       >
-        {/* Dark background before play */}
-        {!playing && (
-          <>
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0B0F0C 0%, #111815 100%)' }} />
+        {/* Video always rendered — paused at frame 1.5s as thumbnail */}
+        <video
+          ref={videoRef}
+          src={video.src}
+          loop
+          playsInline
+          muted={muted}
+          controls={false}
+          preload="metadata"
+          onLoadedMetadata={handleMetadata}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ transition: 'transform 0.7s ease', transform: (!playing && hovered) ? 'scale(1.05)' : 'scale(1)' }}
+        />
 
-            {/* Play button */}
-            <div className="absolute inset-0 flex items-center justify-center">
+        {/* Pre-play overlay — dark gradient + play button + title */}
+        {!playing && (
+          <div className="absolute inset-0 flex flex-col justify-between"
+            style={{ background: 'linear-gradient(to top, rgba(8,12,10,0.88) 0%, rgba(8,12,10,0.25) 50%, transparent 100%)' }}
+          >
+            {/* Play button centered */}
+            <div className="flex-1 flex items-center justify-center">
               <motion.div
                 animate={{ scale: hovered ? 1.12 : 1 }}
                 transition={{ duration: 0.3 }}
@@ -93,45 +116,30 @@ function VideoCard({ video, delay }) {
               </motion.div>
             </div>
 
-            {/* Bottom info */}
-            <div className="absolute bottom-0 inset-x-0 p-5">
+            {/* Title at bottom */}
+            <div className="p-5">
               <p className="text-white font-bold text-base leading-tight">{video.title}</p>
               <p className="text-xs mt-1" style={{ color: '#00C46A' }}>{video.subtitle}</p>
             </div>
-          </>
+          </div>
         )}
-
-        {/* Actual video element */}
-        <video
-          ref={videoRef}
-          src={video.src}
-          loop
-          playsInline
-          muted={muted}
-          controls={false}
-          className="w-full h-full object-cover"
-          style={{ display: playing ? 'block' : 'none' }}
-        />
 
         {/* Controls overlay when playing */}
         {playing && (
           <div className="absolute inset-0 flex flex-col justify-between p-4 opacity-0 hover:opacity-100 transition-opacity duration-300"
             style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 40%, rgba(0,0,0,0.3) 100%)' }}
           >
-            {/* Top row */}
             <div className="flex justify-between items-start">
               <div className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full"
                 style={{ background: 'rgba(0,196,106,0.15)', border: '1px solid rgba(0,196,106,0.4)', color: '#00C46A' }}>
                 {video.subtitle}
               </div>
               <button onClick={handleClose}
-                className="w-8 h-8 rounded-full flex items-center justify-center transition-all"
+                className="w-8 h-8 rounded-full flex items-center justify-center"
                 style={{ background: 'rgba(0,0,0,0.7)', border: '1px solid rgba(255,255,255,0.2)', color: 'white' }}>
                 <X size={14} />
               </button>
             </div>
-
-            {/* Bottom row */}
             <div className="flex items-center justify-between">
               <p className="text-white font-bold text-sm">{video.title}</p>
               <button onClick={toggleMute}
