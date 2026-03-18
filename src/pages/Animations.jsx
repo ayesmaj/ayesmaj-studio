@@ -77,7 +77,7 @@ function AnimCard({ id, index }) {
       {inView && !hasErr && (
         <video
           ref={videoRef}
-          src={`/videos/animations/${id}.mp4`}
+          src={`https://res.cloudinary.com/dea3l8rmw/video/upload/q_auto,f_auto/${id}.mp4`}
           loop
           muted
           playsInline
