@@ -143,9 +143,9 @@ export const BRANDS = [
     description: "A high-fashion personal brand campaign — studio portraiture, cinematic lighting and editorial retouching composited into a striking lookbook.",
     tags: ["Photography", "Editorial", "Personal Brand"],
     year: "2024",
-    images: ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.jpg','13.png','14.jpg','15.png'],
+    images: ['logo.png','1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.jpg','13.png','14.jpg','15.png'],
     videos: ['16.mp4','17.mp4','18.mp4','19.mp4','20.mp4'],
-    featured: '1.png',
+    featured: 'logo.png',
   },
   {
     id: 'interior-design',
