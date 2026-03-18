@@ -38,11 +38,11 @@ export default function CinematicLoader({ onComplete }) {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex flex-col items-center gap-4"
           >
-            {/* logo removed – text identity below */}
-            <div className="text-center">
-              <div className="text-3xl font-bold tracking-widest bg-gradient-to-r from-[#D4A853] to-[#2d8a4e] bg-clip-text text-transparent">AYESMAJ</div>
-              <div className="text-[10px] tracking-[0.55em] text-gray-500 mt-0.5">STUDIOS</div>
-            </div>
+            <img
+              src="/logo-full.png"
+              alt="AYESMAJ Studios"
+              style={{ height: '70px', width: 'auto', objectFit: 'contain' }}
+            />
             {/* thin progress line */}
             <div className="w-32 h-[1px] bg-white/5 overflow-hidden rounded mt-2">
               <motion.div

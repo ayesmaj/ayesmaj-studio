@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
-const LOGO_URL = "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80";
+const LOGO_URL = '/logo-full.png';
 
 export default function HomeFooter() {
   const go = (id) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -27,7 +27,7 @@ export default function HomeFooter() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={LOGO_URL} alt="AYESMAJ" className="h-16 w-auto" />
+              <img src={LOGO_URL} alt="AYESMAJ Studios" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
               <div>
                 
                 

@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
-const LOGO_URL = null; // text logo used instead
+const LOGO_URL = '/logo.png';
 
 const LINKS = [
   { label: 'Work',     page: 'Work' },
@@ -45,12 +45,11 @@ export default function HomeNav() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[70px]">
 
           <Link to={createPageUrl('Home')} className="flex items-center">
-            <span style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
-              fontSize: '16px', fontWeight: 800, letterSpacing: '0.18em',
-              background: 'linear-gradient(135deg, #C8A44E, #E8C96D)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>AYESMAJ</span>
+            <img
+              src={LOGO_URL}
+              alt="AYESMAJ Studios"
+              style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
+            />
           </Link>
 
           {/* Desktop links */}
