@@ -5,61 +5,34 @@ import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 function VideoCard({ src, delay = 0 }) {
-  const wrapRef  = useRef(null);
   const videoRef = useRef(null);
-  const [inView, setInView] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-
-  // Enter viewport → inject & play; leave → pause
-  useEffect(() => {
-    const el = wrapRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => setInView(e.isIntersecting),
-      { threshold: 0.1, rootMargin: '80px' }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const v = videoRef.current;
-    if (!v || !loaded) return;
-    if (inView) v.play().catch(() => {});
-    else        v.pause();
-  }, [inView, loaded]);
-
-  const onCanPlay = useCallback(() => {
-    setLoaded(true);
-    videoRef.current?.play().catch(() => {});
+    if (!v) return;
+    // Setting muted in JS is required for iOS Safari autoplay
+    v.muted = true;
+    v.play().catch(() => {});
   }, []);
 
   return (
     <motion.div
-      ref={wrapRef}
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
       className="rounded-2xl overflow-hidden relative"
       style={{ aspectRatio: '16/9', border: '1px solid rgba(200,164,78,0.15)', background: '#07100A' }}>
-      {inView && (
-        <video
-          ref={videoRef}
-          src={src}
-          loop
-          muted
-          playsInline
-          preload="auto"
-          onCanPlay={onCanPlay}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
-      )}
-      {/* Shimmer while loading */}
-      {(!loaded || !inView) && (
-        <div className="absolute inset-0 animate-pulse"
-          style={{ background: 'linear-gradient(135deg,#07100A 0%,#0d1a0f 50%,#07100A 100%)' }} />
-      )}
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+      />
     </motion.div>
   );
 }

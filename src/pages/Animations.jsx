@@ -44,11 +44,10 @@ function AnimCard({ publicId, index }) {
   const wrapRef  = useRef(null);
   const videoRef = useRef(null);
   const [inView,  setInView]  = useState(false);
-  const [loaded,  setLoaded]  = useState(false);
   const [muted,   setMuted]   = useState(true);
   const [hasErr,  setHasErr]  = useState(false);
 
-  // ── 1. Watch wrapper enter / leave viewport ──────────────────────────────
+  // Watch viewport — only mount video when visible (saves bandwidth for 29 videos)
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
@@ -60,22 +59,12 @@ function AnimCard({ publicId, index }) {
     return () => obs.disconnect();
   }, []);
 
-  // ── 2. Play / pause based on visibility ─────────────────────────────────
+  // iOS Safari requires setting muted in JS, not just as HTML attribute
   useEffect(() => {
     const v = videoRef.current;
-    if (!v || !loaded) return;
-    if (inView) {
-      v.play().catch(() => {});
-    } else {
-      v.pause();
-    }
-  }, [inView, loaded]);
-
-  const onCanPlay = useCallback(() => {
-    setLoaded(true);
-    if (inView && videoRef.current) {
-      videoRef.current.play().catch(() => {});
-    }
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
   }, [inView]);
 
   const toggleMute = (e) => {
@@ -111,11 +100,11 @@ function AnimCard({ publicId, index }) {
         <video
           ref={videoRef}
           src={`https://res.cloudinary.com/dea3l8rmw/video/upload/q_auto,f_auto/${publicId}.mp4`}
+          autoPlay
           loop
           muted
           playsInline
           preload="auto"
-          onCanPlay={onCanPlay}
           onError={() => setHasErr(true)}
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -167,16 +156,8 @@ function AnimCard({ publicId, index }) {
         </div>
       </div>
 
-      {/* Loading shimmer */}
-      {!loaded && !hasErr && inView && (
-        <div
-          className="absolute inset-0 animate-pulse"
-          style={{ background: 'linear-gradient(135deg, #0d1610 0%, #111d14 50%, #0d1610 100%)' }}
-        />
-      )}
-
       {/* Dark placeholder before entering viewport */}
-      {!inView && !loaded && (
+      {!inView && (
         <div className="absolute inset-0" style={{ background: '#0d1610' }} />
       )}
 
