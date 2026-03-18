@@ -14,6 +14,7 @@ import HomeFooter from '@/components/home/HomeFooter';
 import SectionReveal from '@/components/home/SectionReveal';
 import ReelSection from '@/components/home/ReelSection';
 import WhoWeCreateFor from '@/components/home/WhoWeCreateFor';
+import ZoomParallaxSection from '@/components/home/ZoomParallaxSection';
 
 export default function Home() {
   useEffect(() => {
@@ -36,6 +37,7 @@ export default function Home() {
       <WhoWeCreateFor />
       <SectionReveal variant="up" delay={0}><BeforeAfterSection /></SectionReveal>
       <SectionReveal variant="up" delay={0}><WorksGrid /></SectionReveal>
+      <ZoomParallaxSection />
       <SectionReveal variant="up" delay={0}><ReelSection /></SectionReveal>
       <SectionReveal variant="up" delay={0}><CommercialsSection /></SectionReveal>
       <SectionReveal variant="up" delay={0}><BrandingSection /></SectionReveal>
