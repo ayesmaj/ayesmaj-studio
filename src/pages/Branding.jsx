@@ -7,6 +7,7 @@ import BrandingGrid from '@/components/branding/BrandingGrid.jsx';
 import BrandingProcess from '@/components/branding/BrandingProcess.jsx';
 import BrandingClients from '@/components/branding/BrandingClients.jsx';
 import BrandingCTA from '@/components/branding/BrandingCTA.jsx';
+import BrandingPortfolio from '@/components/branding/BrandingPortfolio.jsx';
 
 export default function Branding() {
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function Branding() {
       <CircuitBackground />
       <HomeNav />
       <BrandingHero />
+      <BrandingPortfolio />
       <BrandingGrid />
       <BrandingProcess />
       <BrandingClients />
