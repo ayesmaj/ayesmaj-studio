@@ -16,6 +16,12 @@ export const BRANDS = [
     images: ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png'],
     videos: [],
     featured: '1.png',
+    sections: [
+      { title: 'Brand Identity', images: ['3.png'] },
+      { title: 'Digital Experience', images: ['1.png', '2.png'] },
+      { title: 'Campaign', images: ['4.png', '5.png', '6.png', '7.png'] },
+      { title: 'Packaging', images: ['8.png', '9.png', '10.png'] },
+    ],
   },
   {
     id: 'blenday',
@@ -29,6 +35,10 @@ export const BRANDS = [
     images: ['1.png','2.png','3.png','4.png','5.png'],
     videos: ['6.mp4','7.mp4'],
     featured: '1.png',
+    sections: [
+      { title: 'Brand Visuals', images: ['1.png', '2.png', '3.png'] },
+      { title: 'Campaign', images: ['4.png', '5.png'] },
+    ],
   },
   {
     id: 'boom-chica',
@@ -81,6 +91,11 @@ export const BRANDS = [
     images: ['1.png','2.png','3.png','4.jpg','5.jpg','6.png','7.png','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.png','15.png'],
     videos: [],
     featured: '1.png',
+    sections: [
+      { title: 'Headwear', images: ['1.png', '4.jpg', '7.png'] },
+      { title: 'Apparel', images: ['9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg'] },
+      { title: 'Design & Patterns', images: ['2.png', '3.png', '5.jpg', '6.png', '8.jpg', '14.png', '15.png'] },
+    ],
   },
   {
     id: 'paranormal',
@@ -94,6 +109,10 @@ export const BRANDS = [
     images: ['1.jpeg','2.jpeg','3.jpg','4.jpg','5.jpg','6.jpg'],
     videos: [],
     featured: '1.jpeg',
+    sections: [
+      { title: 'Product Design', images: ['1.jpeg', '2.jpeg'] },
+      { title: 'Campaign Visuals', images: ['3.jpg', '4.jpg', '5.jpg', '6.jpg'] },
+    ],
   },
   {
     id: 'pita-basta',
@@ -107,6 +126,11 @@ export const BRANDS = [
     images: ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png'],
     videos: [],
     featured: '1.png',
+    sections: [
+      { title: 'Logo & Mark', images: ['1.png'] },
+      { title: 'Packaging', images: ['2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png'] },
+      { title: 'Production Files', images: ['11.png'] },
+    ],
   },
   {
     id: 'baron-herzog',
@@ -133,6 +157,11 @@ export const BRANDS = [
     images: ['1.jpeg','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.png','13.png','14.png','15.png','16.png','17.png','18.png','19.png','20.png','21.png','22.png','23.png','24.png','25.png','26.png','27.png','28.png','29.png','30.png','31.png','32.jpeg'],
     videos: [],
     featured: '1.jpeg',
+    sections: [
+      { title: 'Stylised Characters', images: ['1.jpeg','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png'] },
+      { title: 'Realistic Renders', images: ['12.png','13.png','14.png','15.png','16.png','17.png','18.png','19.png','20.png','21.png'] },
+      { title: 'Cinematic Figures', images: ['22.png','23.png','24.png','25.png','26.png','27.png','28.png','29.png','30.png','31.png','32.jpeg'] },
+    ],
   },
   {
     id: 'noam',
@@ -146,6 +175,10 @@ export const BRANDS = [
     images: ['logo.png','1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.jpg','13.png','14.jpg','15.png'],
     videos: ['16.mp4','17.mp4','18.mp4','19.mp4','20.mp4'],
     featured: 'logo.png',
+    sections: [
+      { title: 'Brand Identity', images: ['logo.png'] },
+      { title: 'Product Range', images: ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.jpg','13.png','14.jpg','15.png'] },
+    ],
   },
   {
     id: 'interior-design',
@@ -159,6 +192,11 @@ export const BRANDS = [
     images: ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg','9.jpeg','10.jpeg','11.jpeg','12.jpeg','13.jpeg','14.jpeg','15.jpeg','16.jpeg','17.jpeg','18.jpeg'],
     videos: [],
     featured: '1.jpeg',
+    sections: [
+      { title: 'Showroom & Retail', images: ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg'] },
+      { title: 'Living Spaces', images: ['7.jpeg','8.jpeg','9.jpeg','10.jpeg','11.jpeg','12.jpeg'] },
+      { title: 'Detail Shots', images: ['13.jpeg','14.jpeg','15.jpeg','16.jpeg','17.jpeg','18.jpeg'] },
+    ],
   },
   {
     id: 'logos',
@@ -172,6 +210,11 @@ export const BRANDS = [
     images: ['1.png','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg','9.jpeg','10.jpeg','11.jpeg','12.jpeg','13.jpeg','14.jpeg','15.jpeg','16.jpeg','17.jpeg','18.jpeg','19.jpeg','20.jpeg'],
     videos: [],
     featured: '1.png',
+    sections: [
+      { title: 'Logo Marks', images: ['1.png','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg'] },
+      { title: 'Brand Systems', images: ['8.jpeg','9.jpeg','10.jpeg','11.jpeg','12.jpeg','13.jpeg','14.jpeg'] },
+      { title: 'Full Identities', images: ['15.jpeg','16.jpeg','17.jpeg','18.jpeg','19.jpeg','20.jpeg'] },
+    ],
   },
   {
     id: 'general',

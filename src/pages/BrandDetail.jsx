@@ -172,23 +172,50 @@ export default function BrandDetail() {
       {/* ── GALLERY ───────────────────────────────────────────────────── */}
       {brand.images.length > 0 && (
         <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-16">
-          <motion.p {...fade()} className="text-[10px] font-bold tracking-[0.4em] uppercase mb-10"
-            style={{ color: accent }}>
-            Gallery
-          </motion.p>
-          {/* Masonry */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-gap:1rem]">
-            {brand.images.map((img, i) => (
-              <motion.div key={img} {...fade(i * 0.04)}
-                className="break-inside-avoid mb-4 overflow-hidden rounded-2xl group"
-                style={{ border:`1px solid ${accent}12` }}>
-                <img src={`${assetBase}/${img}`} alt={`${brand.name} ${i + 1}`}
-                  loading="lazy"
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                />
-              </motion.div>
-            ))}
-          </div>
+          {brand.sections ? (
+            /* ── Sectioned layout ── */
+            brand.sections.map((sec, si) => (
+              <div key={sec.title} className={si > 0 ? 'mt-20' : ''}>
+                {/* Section header */}
+                <motion.div {...fade()} className="flex items-center gap-4 mb-8">
+                  <p className="shrink-0 text-[10px] font-bold tracking-[0.4em] uppercase"
+                    style={{ color: accent }}>{sec.title}</p>
+                  <div className="flex-1 h-px" style={{ background:`${accent}25` }} />
+                </motion.div>
+                {/* Masonry per section */}
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-gap:1rem]">
+                  {sec.images.map((img, i) => (
+                    <motion.div key={img} {...fade(i * 0.05)}
+                      className="break-inside-avoid mb-4 overflow-hidden rounded-2xl group"
+                      style={{ border:`1px solid ${accent}12` }}>
+                      <img src={`${assetBase}/${img}`} alt={`${brand.name} — ${sec.title}`}
+                        loading="lazy"
+                        className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            ))
+          ) : (
+            /* ── Flat masonry fallback ── */
+            <>
+              <motion.p {...fade()} className="text-[10px] font-bold tracking-[0.4em] uppercase mb-10"
+                style={{ color: accent }}>Gallery</motion.p>
+              <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-gap:1rem]">
+                {brand.images.map((img, i) => (
+                  <motion.div key={img} {...fade(i * 0.04)}
+                    className="break-inside-avoid mb-4 overflow-hidden rounded-2xl group"
+                    style={{ border:`1px solid ${accent}12` }}>
+                    <img src={`${assetBase}/${img}`} alt={`${brand.name} ${i + 1}`}
+                      loading="lazy"
+                      className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </>
+          )}
         </section>
       )}
 
