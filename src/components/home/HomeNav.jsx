@@ -157,9 +157,10 @@ export default function HomeNav() {
   const isActive = (page) => location.pathname === createPageUrl(page);
 
   const plainLinks = [
+    { label: 'Home',       page: 'Home'       },
     { label: 'All Brands', page: 'Brands'     },
     { label: 'Animations', page: 'Animations' },
-    { label: 'Reel',       page: 'Reel'       },
+    { label: 'Contact',    page: 'Contact'    },
     { label: 'About',      page: 'About'      },
   ];
 
