@@ -111,19 +111,19 @@ export default function BeforeAfterSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <motion.div {...fade(0.1)}>
-            <p className="text-center text-xs text-gray-600 tracking-widest uppercase mb-4">Slider 01 — Wireframe to Render</p>
+            <p className="text-center text-xs text-gray-600 tracking-widest uppercase mb-4">Slider 01 — Clay to Final Render</p>
             <Slider
-              beforeImg="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80"
-              afterImg="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80"
-              beforeLabel="Wireframe"
+              beforeImg="/images/can-raw.png"
+              afterImg="/images/can-final.png"
+              beforeLabel="Clay Model"
               afterLabel="Final Render"
             />
           </motion.div>
           <motion.div {...fade(0.2)}>
             <p className="text-center text-xs text-gray-600 tracking-widest uppercase mb-4">Slider 02 — Raw Model to Final Render</p>
             <Slider
-              beforeImg="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&q=80"
-              afterImg="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900&q=80"
+              beforeImg="/images/car-raw.png"
+              afterImg="/images/car-final.png"
               beforeLabel="Raw Model"
               afterLabel="Final Render"
             />
