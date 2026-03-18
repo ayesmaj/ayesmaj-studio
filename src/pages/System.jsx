@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { createPageUrl } from '@/utils';
 import HomeFooter from '@/components/home/HomeFooter';
 import CircuitBackground from '@/components/home/CircuitBackground';
 
-const LOGO_URL = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/036cab6ae_AYESMAJ4.png";
+const LOGO_URL = "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80";
 
 const LINKS = [
   { label: 'Home', page: 'Home' },

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 import CircuitBackground from '@/components/home/CircuitBackground';
@@ -25,40 +25,7 @@ const VIDEOS = [
     id: 2,
     title: 'Boom Chicka Pop — Product Reveal',
     desc: 'Cinematic CGI packaging reveal for Angie\'s Boom Chicka Pop.',
-    thumb: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/653171468_ChatGPTImageFeb25202608_40_04PM.png',
-    youtube: null,
-  },
-  {
-    id: 3,
-    title: 'NOAM Audio — Product Film',
-    desc: 'Premium product visualization for the powersport audio brand.',
-    thumb: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/a803b8b9c_in_studio.png',
-    youtube: null,
-  },
-  {
-    id: 4,
-    title: 'ASHÉ Full Campaign — Sizzle Reel',
-    desc: 'Multi-channel campaign spanning print, digital, and motion.',
-    thumb: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/eed53e348_ChatGPTImageFeb25202608_40_33PM.png',
-    youtube: null,
-  },
-  {
-    id: 5,
-    title: 'Blenday — Brand Reveal',
-    desc: 'Vibrant frozen fruit mix brand film with CGI splash sequences.',
-    thumb: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/cb541ac7e_ChatGPTImageJan26202609_38_37PM.png',
-    youtube: null,
-  },
-];
-
-function VideoCard({ video, onPlay }) {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <motion.div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onClick={() => onPlay(video)}
-      className="relative overflow-hidden rounded-2xl cursor-pointer"
+    thumb: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80"relative overflow-hidden rounded-2xl cursor-pointer"
       style={{
         aspectRatio: '16/9',
         border: `1px solid ${hovered ? 'rgba(0,196,106,0.4)' : 'rgba(200,163,78,0.12)'}`,

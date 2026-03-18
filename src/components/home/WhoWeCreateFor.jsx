@@ -5,37 +5,37 @@ const CATEGORIES = [
   {
     id: 1,
     title: 'PRODUCT BRANDS',
-    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/9bcae527f_ChatGPTImageFeb28202610_16_46PM.png',
+    image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=700&q=80',
     desc: 'Elevating everyday products into visual icons',
   },
   {
     id: 2,
     title: 'LUXURY GOODS',
-    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/4ba52bab4_ChatGPTImageFeb28202610_09_44PM.png',
+    image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=700&q=80',
     desc: 'Crafting desire through cinematic detail',
   },
   {
     id: 3,
     title: 'TECH & STARTUPS',
-    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/8d2bc2afa_ChatGPTImageFeb28202610_26_52PM.png',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80',
     desc: 'Translating innovation into compelling visuals',
   },
   {
     id: 4,
     title: 'FASHION & BEAUTY',
-    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/4f19d6387_ChatGPTImageFeb28202610_34_40PM.png',
+    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&q=80',
     desc: 'Where aesthetics meet storytelling',
   },
   {
     id: 5,
     title: 'ARCHITECTURE',
-    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/720b5df21_ChatGPTImageFeb28202610_35_57PM.png',
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80',
     desc: 'Bringing structures to life before they exist',
   },
   {
     id: 6,
     title: 'GLOBAL CAMPAIGNS',
-    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/8eca79876_ChatGPTImageFeb28202610_49_36PM.png',
+    image: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=700&q=80',
     desc: 'World-class visuals for international reach',
   },
 ];

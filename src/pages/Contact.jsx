@@ -58,6 +58,14 @@ export default function Contact() {
       });
       const data = await res.json();
       if (data.success) {
+        // WhatsApp notification via Callmebot (no-cors to bypass browser CORS block)
+        try {
+          const waText = encodeURIComponent(
+            `🔔 New inquiry!\nFrom: ${form.name}\nEmail: ${form.email}${form.phone ? `\nPhone: ${form.phone}` : ''}\nSubject: ${form.subject || 'No subject'}\nMessage: ${form.message.slice(0, 300)}${form.message.length > 300 ? '…' : ''}`
+          );
+          await fetch(`https://api.callmebot.com/whatsapp.php?phone=15093197999&text=${waText}&apikey=8010280`, { mode: 'no-cors' });
+        } catch (_) { /* silent — email already delivered */ }
+
         setStatus('success');
         setForm({ name: '', email: '', phone: '', subject: '', message: '', honeypot: '' });
       } else {

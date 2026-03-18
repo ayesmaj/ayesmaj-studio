@@ -1,8 +1,52 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Play } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+function VideoCard({ src, delay = 0 }) {
+  const [playing, setPlaying] = useState(!isMobile);
+  const videoRef = useRef(null);
+
+  const handlePlay = () => {
+    setPlaying(true);
+    setTimeout(() => videoRef.current?.play(), 100);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
+      className="rounded-2xl overflow-hidden relative"
+      style={{ aspectRatio: '16/9', border: '1px solid rgba(200,164,78,0.15)', background: '#07100A' }}>
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay={!isMobile}
+        loop
+        muted
+        playsInline
+        preload="none"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: playing ? 'block' : 'none' }}
+      />
+      {!playing && (
+        <div
+          onClick={handlePlay}
+          className="absolute inset-0 flex items-center justify-center cursor-pointer"
+          style={{ background: 'rgba(7,16,10,0.85)' }}>
+          <div className="w-16 h-16 rounded-full flex items-center justify-center"
+            style={{ background: 'rgba(200,164,78,0.15)', border: '2px solid rgba(200,164,78,0.6)' }}>
+            <Play size={24} className="ml-1" style={{ color: '#C8A44E' }} />
+          </div>
+        </div>
+      )}
+    </motion.div>
+  );
+}
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -156,43 +200,13 @@ export default function WorksGrid() {
 
         {/* Featured Videos */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <motion.div {...fade(0.12)} className="rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9', border: '1px solid rgba(0,196,106,0.15)' }}>
-            <video
-              src="https://www.dropbox.com/scl/fi/23hm5zbcy6t98l8zbi9o3/copy_89711155-2AED-4E99-A739-0231869A3F67.mp4?rlkey=rul17962zmo9azn7pudl2onqn&raw=1"
-              autoPlay loop muted playsInline
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-
-          </motion.div>
-          <motion.div {...fade(0.14)} className="rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9', border: '1px solid rgba(0,196,106,0.15)' }}>
-            <video
-              src="https://www.dropbox.com/scl/fi/bmnqlhspxxhood45j0ieq/IMG_0125.MP4?rlkey=fcdcrdvtnt4syixzyc1ws44bn&raw=1"
-              autoPlay loop muted playsInline
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-
-          </motion.div>
+          <VideoCard delay={0.12} src="https://www.dropbox.com/scl/fi/23hm5zbcy6t98l8zbi9o3/copy_89711155-2AED-4E99-A739-0231869A3F67.mp4?rlkey=rul17962zmo9azn7pudl2onqn&raw=1" />
+          <VideoCard delay={0.14} src="https://www.dropbox.com/scl/fi/bmnqlhspxxhood45j0ieq/IMG_0125.MP4?rlkey=fcdcrdvtnt4syixzyc1ws44bn&raw=1" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <motion.div {...fade(0.16)} className="rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9', border: '1px solid rgba(0,196,106,0.15)' }}>
-            <video
-              src="https://www.dropbox.com/scl/fi/qfzzhqcc28anyo5jwqlu3/DraftResource_1750827632.436346.mp4?rlkey=hukvr1s17hlszkzjrt3vpwu5e&raw=1"
-              autoPlay loop muted playsInline
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-
-          </motion.div>
-          <motion.div {...fade(0.18)} className="rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9', border: '1px solid rgba(0,196,106,0.15)' }}>
-            <video
-              src="https://www.dropbox.com/scl/fi/uvfrd2ektfaxbhmcfvi94/copy_E10FB4E6-A2AF-44EF-9133-A393D85192B7.mp4?rlkey=sfmjc2gum80q84sax67mmv7l0&raw=1"
-              autoPlay loop muted playsInline
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-
-          </motion.div>
-          <motion.div {...fade(0.20)} className="rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9', border: '1px solid rgba(0,196,106,0.15)' }}>
-            <video
-              src="https://www.dropbox.com/scl/fi/enpdcq49qu7b91fn2ng62/copy_BB4D4171-0B3E-4DAD-8C64-6ED06B8732F1.mp4?rlkey=sh2y6pk862ewo2hqrkn2ok0go&raw=1"
-              autoPlay loop muted playsInline
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-
-          </motion.div>
+          <VideoCard delay={0.16} src="https://www.dropbox.com/scl/fi/qfzzhqcc28anyo5jwqlu3/DraftResource_1750827632.436346.mp4?rlkey=hukvr1s17hlszkzjrt3vpwu5e&raw=1" />
+          <VideoCard delay={0.18} src="https://www.dropbox.com/scl/fi/uvfrd2ektfaxbhmcfvi94/copy_E10FB4E6-A2AF-44EF-9133-A393D85192B7.mp4?rlkey=sfmjc2gum80q84sax67mmv7l0&raw=1" />
+          <VideoCard delay={0.20} src="https://www.dropbox.com/scl/fi/enpdcq49qu7b91fn2ng62/copy_BB4D4171-0B3E-4DAD-8C64-6ED06B8732F1.mp4?rlkey=sh2y6pk862ewo2hqrkn2ok0go&raw=1" />
         </div>
 
         <motion.div {...fade(0.15)}

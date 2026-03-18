@@ -1,8 +1,8 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
-const LOGO_URL = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/a8c2ec503_AYESMAJ_transparent.png";
+const LOGO_URL = "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80";
 
 export default function HomeFooter() {
   const go = (id) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });

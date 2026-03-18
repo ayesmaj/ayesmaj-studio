@@ -113,8 +113,8 @@ export default function BeforeAfterSection() {
           <motion.div {...fade(0.1)}>
             <p className="text-center text-xs text-gray-600 tracking-widest uppercase mb-4">Slider 01 — Wireframe to Render</p>
             <Slider
-              beforeImg="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/d39193e13_Heinekens.png"
-              afterImg="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/93c9aef4f_ChatGPTImageFeb28202609_33_49PM.png"
+              beforeImg="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80"
+              afterImg="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80"
               beforeLabel="Wireframe"
               afterLabel="Final Render"
             />
@@ -122,8 +122,8 @@ export default function BeforeAfterSection() {
           <motion.div {...fade(0.2)}>
             <p className="text-center text-xs text-gray-600 tracking-widest uppercase mb-4">Slider 02 — Raw Model to Final Render</p>
             <Slider
-              beforeImg="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/5aeef83a7_car2s.png"
-              afterImg="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/8ae06e129_ChatGPTImageFeb28202609_48_45PM.png"
+              beforeImg="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&q=80"
+              afterImg="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900&q=80"
               beforeLabel="Raw Model"
               afterLabel="Final Render"
             />

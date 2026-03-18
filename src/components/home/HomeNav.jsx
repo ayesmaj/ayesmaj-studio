@@ -1,49 +1,11 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 const LOGO_URL =
-  'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/a8c2ec503_AYESMAJ_transparent.png';
-
-const LINKS = [
-  { label: 'Home',     page: 'Home'     },
-  { label: 'Branding', page: 'Branding' },
-  { label: 'Reel',     page: 'Reel'     },
-  { label: 'Clients',  page: 'Clients'  },
-  { label: 'About',    page: 'About'    },
-  { label: 'Contact',  page: 'Contact'  },
-];
-
-export default function HomeNav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen]         = useState(false);
-  const location = useLocation();
-
-  const isActive = (page) => {
-    const url = createPageUrl(page);
-    return location.pathname === url || location.pathname.startsWith(url + '/');
-  };
-
-  useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', h, { passive: true });
-    return () => window.removeEventListener('scroll', h);
-  }, []);
-
-  useEffect(() => {
-    document.body.classList.toggle('menu-open', open);
-    return () => document.body.classList.remove('menu-open');
-  }, [open]);
-
-  return (
-    <>
-      <motion.nav
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0,   opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 inset-x-0 z-50 transition-all duration-500"
+  'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80"fixed top-0 inset-x-0 z-50 transition-all duration-500"
         style={{
           background: scrolled ? 'rgba(7,16,10,0.88)' : 'transparent',
           backdropFilter: scrolled ? 'blur(22px)' : 'none',

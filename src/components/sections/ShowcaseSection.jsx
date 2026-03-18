@@ -9,56 +9,56 @@ const projects = [
     title: 'Dark Mech',
     category: '3D Animation',
     result: 'Cinematic CGI Breakdown',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/65481927f_10246.png',
+    img: 'https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=900&q=80',
     span: 'lg:col-span-2'
   },
   {
     title: 'Luxury Pool Shoot',
     category: 'AI Photography',
     result: 'Real Estate Visual Campaign',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/ff0f19d23_ChatGPTImageFeb17202605_35_22PM.png',
+    img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80',
     span: ''
   },
   {
     title: 'AssistLine',
     category: 'Brand Identity',
     result: 'Full Logo System Delivery',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/2caeff95c_ChatGPTImageFeb1202610_33_25PM.png',
+    img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80',
     span: ''
   },
   {
     title: 'Tower Speaker',
     category: 'Product Visualization',
     result: 'E-commerce Launch Asset',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/f426dfcb6_WhatsAppImage2026-02-17at60938PM.jpeg',
+    img: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=700&q=80',
     span: ''
   },
   {
     title: 'Blenday',
     category: 'CGI Commercial',
     result: 'Product Ad Campaign',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/7601d87e4_ChatGPTImageJan26202609_21_01PM.png',
+    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80',
     span: ''
   },
   {
     title: 'Clean Sweep',
     category: 'Brand Campaign',
     result: 'AI Character + Visual Identity',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/e46b385c8_ChatGPTImageJan26202608_57_00PM.png',
+    img: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=700&q=80',
     span: ''
   },
   {
     title: 'Provence Beauty',
     category: 'AI Video + 3D',
     result: 'Luxury Product Visual',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/72b0aba30_IMG_5831.png',
+    img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&q=80',
     span: ''
   },
   {
     title: 'LaCroix',
     category: 'CGI Commercial',
     result: 'Product Hero Shot',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/400f1d3c7_IMG_5789.png',
+    img: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=900&q=80',
     span: 'lg:col-span-2'
   },
 ];

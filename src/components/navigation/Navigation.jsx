@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import MagneticButton from '@/components/ui/MagneticButton';
 
-const LOGO_URL = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_69641e2dd09be2709f1b5087/714ec527a_ChatGPTImageFeb18202604_d37_42PM.png";
+const LOGO_URL = "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80";
 
 const links = [
   { label: 'System', href: '#system' },

@@ -13,19 +13,19 @@ const VIDEOS = [
   {
     title: 'ASHÉ Ember Reserve',
     subtitle: 'CGI Commercial · 60s',
-    thumb: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/e5d787329_ChatGPTImageFeb25202608_40_30PM.png',
+    thumb: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
     videoId: 'dQw4w9WgXcQ',
   },
   {
     title: 'ASHÉ Brand Film',
     subtitle: 'Cinematic · 90s Campaign',
-    thumb: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/c74fb56a0_ChatGPTImageFeb25202608_40_29PM.png',
+    thumb: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80',
     videoId: 'dQw4w9WgXcQ',
   },
   {
     title: 'ASHÉ Product Reveal',
     subtitle: '3D Animation · 45s',
-    thumb: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/7134d90cb_ChatGPTImageFeb25202608_40_52PM.png',
+    thumb: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80',
     videoId: 'dQw4w9WgXcQ',
   },
 ];

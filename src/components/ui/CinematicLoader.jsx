@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const LOGO_URL = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_69641e2dd09be2709f1b5087/714ec527a_ChatGPTImageFeb18202604_d37_42PM.png";
+const LOGO_URL = null; // Logo managed via text below
 
 export default function CinematicLoader({ onComplete }) {
   const [phase, setPhase] = useState(0);
@@ -38,7 +38,7 @@ export default function CinematicLoader({ onComplete }) {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex flex-col items-center gap-4"
           >
-            <img src={LOGO_URL} alt="AJ" className="w-20 h-auto" />
+            {/* logo removed – text identity below */}
             <div className="text-center">
               <div className="text-3xl font-bold tracking-widest bg-gradient-to-r from-[#D4A853] to-[#2d8a4e] bg-clip-text text-transparent">AYESMAJ</div>
               <div className="text-[10px] tracking-[0.55em] text-gray-500 mt-0.5">STUDIOS</div>

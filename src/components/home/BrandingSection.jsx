@@ -15,27 +15,27 @@ const BLOCKS = [
   {
     title: 'ASHÉ Ritual Roast',
     sub: 'Brand Identity · Packaging Design',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/0a0bd0596_ChatGPTImageFeb25202608_40_29PM-Copy.png',
+    img: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80',
   },
   {
     title: 'Boom Chicka Pop Bars',
     sub: 'Product Packaging · CGI Visualization',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/653171468_ChatGPTImageFeb25202608_40_04PM.png',
+    img: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=600&q=80',
   },
   {
     title: 'ASHÉ Full Campaign',
     sub: 'Print · Digital · Motion',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/eed53e348_ChatGPTImageFeb25202608_40_33PM.png',
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
   },
   {
     title: 'NOAM Audio',
     sub: 'Product Visualization · CGI · Ad Creative',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/a803b8b9c_in_studio.png',
+    img: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&q=80',
   },
   {
     title: 'Blenday',
     sub: 'Brand Identity · Packaging · CGI',
-    img: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6996504f9438187ae1bf2677/cb541ac7e_ChatGPTImageJan26202609_38_37PM.png',
+    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80',
   },
 ];
 
