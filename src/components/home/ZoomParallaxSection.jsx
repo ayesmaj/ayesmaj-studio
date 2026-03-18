@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import Lenis from '@studio-freight/lenis';
 import { ZoomParallax } from '@/components/ui/zoom-parallax';
 
 // 7 hero shots from across the brand portfolio
@@ -15,19 +14,9 @@ const PARALLAX_IMAGES = [
 ];
 
 export default function ZoomParallaxSection() {
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-    return () => lenis.destroy();
-  }, []);
-
   return (
     <section className="relative" style={{ background: '#07100A' }}>
-      {/* Label */}
+      {/* Header */}
       <div className="relative z-10 text-center pt-24 pb-8 pointer-events-none">
         <motion.p
           initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
