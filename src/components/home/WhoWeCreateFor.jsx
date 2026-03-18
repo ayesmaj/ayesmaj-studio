@@ -5,37 +5,37 @@ const CATEGORIES = [
   {
     id: 1,
     title: 'PRODUCT BRANDS',
-    image: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=700&q=80',
+    image: '/images/cat-product-brands.png',
     desc: 'Elevating everyday products into visual icons',
   },
   {
     id: 2,
     title: 'LUXURY GOODS',
-    image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=700&q=80',
+    image: '/images/cat-luxury.png',
     desc: 'Crafting desire through cinematic detail',
   },
   {
     id: 3,
     title: 'TECH & STARTUPS',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80',
+    image: '/images/cat-tech.png',
     desc: 'Translating innovation into compelling visuals',
   },
   {
     id: 4,
     title: 'FASHION & BEAUTY',
-    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&q=80',
+    image: '/images/cat-fashion.png',
     desc: 'Where aesthetics meet storytelling',
   },
   {
     id: 5,
     title: 'ARCHITECTURE',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80',
+    image: '/images/cat-architecture.png',
     desc: 'Bringing structures to life before they exist',
   },
   {
     id: 6,
     title: 'GLOBAL CAMPAIGNS',
-    image: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=700&q=80',
+    image: '/images/cat-luxury-2.png',
     desc: 'World-class visuals for international reach',
   },
 ];
