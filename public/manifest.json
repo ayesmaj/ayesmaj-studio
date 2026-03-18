@@ -1,0 +1,21 @@
+{
+  "name": "AYESMAJ Studios",
+  "short_name": "AYESMAJ",
+  "description": "Premium 3D animation, CGI, and visual storytelling studio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F0C",
+  "theme_color": "#0B0F0C",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
