@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, Film, Palette, LayoutGrid,
+import { Menu, X, ArrowRight, Film, Palette, LayoutGrid, Clapperboard,
   Coffee, Sparkles, Star, Leaf, Wine, Sandwich, Bug, Ghost,
   Home, Tag, Image, User, ChevronDown } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -52,9 +52,10 @@ function WorkMenu() {
       {/* Quick links */}
       <div className="flex gap-6 mb-4 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
         {[
-          { label: 'Showreel',          icon: <Film size={12} />,       to: createPageUrl('Reel') },
-          { label: 'All Brands',        icon: <LayoutGrid size={12} />, to: createPageUrl('Brands') },
-          { label: 'Portfolio Gallery', icon: <Palette size={12} />,    to: createPageUrl('Branding') },
+          { label: 'Showreel',          icon: <Film size={12} />,          to: createPageUrl('Reel') },
+          { label: 'All Brands',        icon: <LayoutGrid size={12} />,   to: createPageUrl('Brands') },
+          { label: 'Animations',        icon: <Clapperboard size={12} />, to: createPageUrl('Animations') },
+          { label: 'Portfolio Gallery', icon: <Palette size={12} />,      to: createPageUrl('Branding') },
         ].map(item => (
           <Link key={item.label} to={item.to}
             className="flex items-center gap-1.5 text-xs font-bold tracking-wide transition-colors"
@@ -120,11 +121,12 @@ function WorkMenu() {
 
 // ── Main nav ──────────────────────────────────────────────────────────────────
 export default function HomeNav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen]         = useState(false);
-  const [workOpen, setWorkOpen] = useState(false);
-  const workRef                 = useRef(null);
-  const location                = useLocation();
+  const [scrolled,      setScrolled]      = useState(false);
+  const [open,          setOpen]          = useState(false);
+  const [workOpen,      setWorkOpen]      = useState(false);
+  const [mobileWorkOpen, setMobileWorkOpen] = useState(false);
+  const workRef                           = useRef(null);
+  const location                          = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -149,15 +151,16 @@ export default function HomeNav() {
   useEffect(() => {
     setWorkOpen(false);
     setOpen(false);
+    setMobileWorkOpen(false);
   }, [location.pathname, location.search]);
 
   const isActive = (page) => location.pathname === createPageUrl(page);
 
   const plainLinks = [
-    { label: 'Branding', page: 'Branding' },
-    { label: 'Reel',     page: 'Reel'     },
-    { label: 'About',    page: 'About'    },
-    { label: 'Pricing',  page: 'Pricing'  },
+    { label: 'All Brands', page: 'Brands'     },
+    { label: 'Animations', page: 'Animations' },
+    { label: 'Reel',       page: 'Reel'       },
+    { label: 'About',      page: 'About'      },
   ];
 
   const linkStyle = (active) => ({
@@ -289,40 +292,76 @@ export default function HomeNav() {
               style={{ background: 'linear-gradient(90deg,transparent,rgba(200,164,78,0.35),transparent)' }} />
 
             <nav className="flex flex-col gap-2 mb-6">
-              {/* Work — expanded inline */}
-              <div className="py-4 border-b" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
-                <p className="text-2xl font-black text-white mb-4"
-                  style={{ fontFamily: "'Satoshi', system-ui, sans-serif" }}>Work</p>
-                <div className="flex flex-col gap-2 mb-4 pl-1">
-                  {[
-                    { label: 'Showreel',          to: createPageUrl('Reel')     },
-                    { label: 'All Brands',         to: createPageUrl('Brands')   },
-                    { label: 'Portfolio Gallery',  to: createPageUrl('Branding') },
-                  ].map(item => (
-                    <Link key={item.label} to={item.to}
-                      className="text-sm font-semibold py-1 transition-colors"
-                      style={{ color: GOLD_DIM }}
-                      onMouseEnter={e => e.currentTarget.style.color = GOLD}
-                      onMouseLeave={e => e.currentTarget.style.color = GOLD_DIM}
+              {/* Work — collapsible on mobile */}
+              <div className="border-b" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+                {/* Tap to toggle */}
+                <button
+                  onClick={() => setMobileWorkOpen(v => !v)}
+                  className="w-full flex items-center justify-between py-4"
+                >
+                  <span className="text-2xl font-black text-white"
+                    style={{ fontFamily: "'Satoshi', system-ui, sans-serif" }}>
+                    Work
+                  </span>
+                  <motion.span
+                    animate={{ rotate: mobileWorkOpen ? 180 : 0 }}
+                    transition={{ duration: 0.22 }}
+                    style={{ color: GOLD_DIM }}
+                  >
+                    <ChevronDown size={20} />
+                  </motion.span>
+                </button>
+
+                {/* Collapsible content */}
+                <AnimatePresence initial={false}>
+                  {mobileWorkOpen && (
+                    <motion.div
+                      key="mobile-work-menu"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ overflow: 'hidden' }}
                     >
-                      → {item.label}
-                    </Link>
-                  ))}
-                </div>
-                <div className="pl-1 flex flex-col gap-1">
-                  {BRANDS.map(brand => (
-                    <Link key={brand.id} to={`/BrandDetail?slug=${brand.id}`}
-                      className="flex items-center gap-2 text-xs py-1 transition-colors"
-                      style={{ color: 'rgba(248,250,252,0.38)',
-                        fontFamily: "'Satoshi', system-ui, sans-serif" }}
-                      onMouseEnter={e => e.currentTarget.style.color = '#F8FAFC'}
-                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(248,250,252,0.38)'}
-                    >
-                      <span style={{ color: brand.accent }}>{BRAND_ICONS[brand.id]}</span>
-                      {brand.name}
-                    </Link>
-                  ))}
-                </div>
+                      <div className="pb-4">
+                        {/* Quick links */}
+                        <div className="flex flex-col gap-1 mb-4 pl-1">
+                          {[
+                            { label: 'Showreel',         to: createPageUrl('Reel')        },
+                            { label: 'All Brands',        to: createPageUrl('Brands')      },
+                            { label: 'Animations',        to: createPageUrl('Animations')  },
+                            { label: 'Portfolio Gallery', to: createPageUrl('Branding')    },
+                          ].map(item => (
+                            <Link key={item.label} to={item.to}
+                              className="text-sm font-semibold py-2 transition-colors"
+                              style={{ color: GOLD_DIM }}
+                            >
+                              → {item.label}
+                            </Link>
+                          ))}
+                        </div>
+
+                        {/* Divider */}
+                        <div className="h-px mx-1 mb-3"
+                          style={{ background: 'rgba(255,255,255,0.06)' }} />
+
+                        {/* Brand list */}
+                        <div className="pl-1 flex flex-col gap-0.5">
+                          {BRANDS.map(brand => (
+                            <Link key={brand.id} to={`/BrandDetail?slug=${brand.id}`}
+                              className="flex items-center gap-2 text-xs py-1.5 transition-colors"
+                              style={{ color: 'rgba(248,250,252,0.38)',
+                                fontFamily: "'Satoshi', system-ui, sans-serif" }}
+                            >
+                              <span style={{ color: brand.accent }}>{BRAND_ICONS[brand.id]}</span>
+                              {brand.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Other links */}
