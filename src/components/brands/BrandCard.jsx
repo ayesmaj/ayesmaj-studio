@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
-const PLACEHOLDER = 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=80';
+const PLACEHOLDER = '/brands/ashe/1.png';
 
 export default function BrandCard({ brand }) {
   const [hovered, setHovered] = useState(false);

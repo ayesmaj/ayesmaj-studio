@@ -25,14 +25,14 @@ const VIDEOS = [
     id: 2,
     title: 'Boom Chicka Pop — Product Reveal',
     desc: "Cinematic CGI packaging reveal for Angie's Boom Chicka Pop.",
-    thumb: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=800&q=80',
+    thumb: '/brands/boom-chica/1.png',
     youtube: null,
   },
   {
     id: 3,
     title: 'ASHÉ Ritual Roast — Brand Film',
     desc: 'Premium coffee brand identity and packaging reveal.',
-    thumb: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80',
+    thumb: '/brands/ashe/1.png',
     youtube: null,
   },
 ];

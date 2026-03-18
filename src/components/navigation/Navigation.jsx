@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import MagneticButton from '@/components/ui/MagneticButton';
 
-const LOGO_URL = "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80";
+const LOGO_URL = "/logo.png";
 
 const links = [
   { label: 'System', href: '#system' },

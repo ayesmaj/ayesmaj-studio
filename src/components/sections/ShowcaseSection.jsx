@@ -6,59 +6,59 @@ import { createPageUrl } from '@/utils';
 
 const projects = [
   {
-    title: 'Dark Mech',
+    title: 'Character Design',
     category: '3D Animation',
     result: 'Cinematic CGI Breakdown',
-    img: 'https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=900&q=80',
+    img: '/brands/characters/1.png',
     span: 'lg:col-span-2'
   },
   {
-    title: 'Luxury Pool Shoot',
+    title: 'Interior Design',
     category: 'AI Photography',
     result: 'Real Estate Visual Campaign',
-    img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80',
+    img: '/brands/interior-design/1.jpeg',
     span: ''
   },
   {
-    title: 'AssistLine',
+    title: 'Brand Identities',
     category: 'Brand Identity',
     result: 'Full Logo System Delivery',
-    img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80',
+    img: '/brands/logos/1.png',
     span: ''
   },
   {
-    title: 'Tower Speaker',
+    title: 'NOAM Audio',
     category: 'Product Visualization',
     result: 'E-commerce Launch Asset',
-    img: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=700&q=80',
+    img: '/brands/noam/1.png',
     span: ''
   },
   {
     title: 'Blenday',
     category: 'CGI Commercial',
     result: 'Product Ad Campaign',
-    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80',
+    img: '/brands/blenday/1.png',
     span: ''
   },
   {
-    title: 'Clean Sweep',
+    title: 'ASHÉ Campaign',
     category: 'Brand Campaign',
-    result: 'AI Character + Visual Identity',
-    img: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=700&q=80',
+    result: 'Full Brand World Delivery',
+    img: '/brands/ashe/5.png',
     span: ''
   },
   {
-    title: 'Provence Beauty',
-    category: 'AI Video + 3D',
-    result: 'Luxury Product Visual',
-    img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&q=80',
+    title: 'Boom Chicka Pop',
+    category: 'Packaging Design',
+    result: 'CGI Product Reveal',
+    img: '/brands/boom-chica/2.png',
     span: ''
   },
   {
     title: 'LaCroix',
     category: 'CGI Commercial',
     result: 'Product Hero Shot',
-    img: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=900&q=80',
+    img: '/brands/lacroix/1.png',
     span: 'lg:col-span-2'
   },
 ];

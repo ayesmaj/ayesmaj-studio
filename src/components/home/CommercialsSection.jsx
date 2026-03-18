@@ -13,19 +13,19 @@ const VIDEOS = [
   {
     title: 'ASHÉ Ember Reserve',
     subtitle: 'CGI Commercial · 60s',
-    thumb: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    thumb: '/brands/ashe/2.png',
     videoId: 'dQw4w9WgXcQ',
   },
   {
-    title: 'ASHÉ Brand Film',
+    title: 'BLENDAY Brand Film',
     subtitle: 'Cinematic · 90s Campaign',
-    thumb: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80',
+    thumb: '/brands/blenday/3.png',
     videoId: 'dQw4w9WgXcQ',
   },
   {
     title: 'ASHÉ Product Reveal',
     subtitle: '3D Animation · 45s',
-    thumb: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80',
+    thumb: '/brands/ashe/4.png',
     videoId: 'dQw4w9WgXcQ',
   },
 ];

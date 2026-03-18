@@ -15,27 +15,27 @@ const BLOCKS = [
   {
     title: 'ASHÉ Ritual Roast',
     sub: 'Brand Identity · Packaging Design',
-    img: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80',
+    img: '/brands/ashe/1.png',
   },
   {
     title: 'Boom Chicka Pop Bars',
     sub: 'Product Packaging · CGI Visualization',
-    img: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=600&q=80',
+    img: '/brands/boom-chica/1.png',
   },
   {
     title: 'ASHÉ Full Campaign',
     sub: 'Print · Digital · Motion',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+    img: '/brands/ashe/5.png',
   },
   {
     title: 'NOAM Audio',
     sub: 'Product Visualization · CGI · Ad Creative',
-    img: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&q=80',
+    img: '/brands/noam/1.png',
   },
   {
     title: 'Blenday',
     sub: 'Brand Identity · Packaging · CGI',
-    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80',
+    img: '/brands/blenday/1.png',
   },
 ];
 

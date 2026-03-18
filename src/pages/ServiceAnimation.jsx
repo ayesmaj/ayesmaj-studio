@@ -19,21 +19,21 @@ const PORTFOLIO = [
     id: 1,
     title: 'Product Animation Series',
     category: 'Product Animation',
-    image: 'https://images.unsplash.com/photo-1579546218723-ba999810e52c?w=800&q=80',
+    image: '/brands/noam/1.png',
     description: 'High-end 3D product animations showcasing detailed mechanical movements and material interactions.'
   },
   {
     id: 2,
     title: 'Character Animation Showcase',
     category: 'Character Design',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+    image: '/brands/characters/2.png',
     description: 'Dynamic character animations for commercials and brand campaigns with expressive movement.'
   },
   {
     id: 3,
     title: 'Motion Design Compilation',
     category: 'Motion Design',
-    image: 'https://images.unsplash.com/photo-1551532286-da46afb37ea1?w=800&q=80',
+    image: '/brands/blenday/2.png',
     description: 'Kinetic typography and motion graphics for digital marketing and brand storytelling.'
   }
 ];

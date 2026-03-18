@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { ArrowLeft } from 'lucide-react';
 
-const PLACEHOLDER = 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1600&q=80';
+const PLACEHOLDER = '/brands/ashe/1.png';
 
 export default function CaseStudyHero({ brand }) {
   return (

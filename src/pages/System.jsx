@@ -6,7 +6,7 @@ import { createPageUrl } from '@/utils';
 import HomeFooter from '@/components/home/HomeFooter';
 import CircuitBackground from '@/components/home/CircuitBackground';
 
-const LOGO_URL = "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80";
+const LOGO_URL = "/logo.png";
 
 const LINKS = [
   { label: 'Home', page: 'Home' },

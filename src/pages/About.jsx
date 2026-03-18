@@ -80,7 +80,7 @@ export default function About() {
             </motion.div>
             <motion.div {...fade(0.2)}>
               <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '4/3', border: '1px solid rgba(200,163,78,0.15)' }}>
-                <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80"
+                <img src="/brands/ashe/3.png"
                   alt="AYESMAJ Studio" className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(11,15,12,0.6) 0%, transparent 60%)' }} />
               </div>

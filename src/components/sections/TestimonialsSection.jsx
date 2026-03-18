@@ -6,17 +6,17 @@ const items = [
   {
     quote: "AYESMAJ made our product launch film look like it cost 10x what we paid. The CGI quality is genuinely unmatched.",
     author: "Sarah Chen", role: "CMO, Velocity Tech",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80"
+    initials: "SC", color: "#C8A44E"
   },
   {
     quote: "Fast, collaborative, and incredibly talented. They understood our brand language from day one and delivered beyond expectations.",
     author: "Marcus Webb", role: "Creative Director, Apex Motors",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80"
+    initials: "MW", color: "#00C46A"
   },
   {
     quote: "We've worked with studios in London and LA. AYESMAJ sits right at the top in terms of craft and communication.",
     author: "Elena Rodriguez", role: "Founder, Luxe Cosmetics",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80"
+    initials: "ER", color: "#9B59B6"
   }
 ];
 
@@ -44,7 +44,10 @@ export default function TestimonialsSection() {
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-8 italic">"{t.quote}"</p>
               <div className="flex items-center gap-3">
-                <img src={t.img} alt={t.author} className="w-10 h-10 rounded-full object-cover ring-1 ring-white/10" />
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-black ring-1 ring-white/10 shrink-0"
+                  style={{ background: `${t.color}18`, color: t.color, border: `1px solid ${t.color}40` }}>
+                  {t.initials}
+                </div>
                 <div>
                   <p className="text-white font-semibold text-sm">{t.author}</p>
                   <p className="text-gray-500 text-xs">{t.role}</p>

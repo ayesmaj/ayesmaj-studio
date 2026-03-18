@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 const items = [
-  { title: 'Nebula Watch',     cat: 'Product Visualization',   img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900&q=80', span: 'md:col-span-1' },
-  { title: 'Aurora Motors',   cat: 'CGI Commercial',           img: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&q=80', span: 'md:col-span-1' },
-  { title: 'Prism Cosmetics', cat: 'Brand Animation',          img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1200&q=80', span: 'md:col-span-2' },
-  { title: 'Vertex Gaming',   cat: 'Motion Graphics',          img: 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=900&q=80', span: 'md:col-span-1' },
-  { title: 'Elevate Spirits', cat: '3D Animation',             img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80', span: 'md:col-span-1' },
+  { title: 'NOAM Audio',      cat: 'Product Visualization',   img: '/brands/noam/2.png',       span: 'md:col-span-1' },
+  { title: 'Character CGI',   cat: 'CGI Commercial',          img: '/brands/characters/3.png', span: 'md:col-span-1' },
+  { title: 'Boom Chicka Pop', cat: 'Brand Animation',         img: '/brands/boom-chica/2.png', span: 'md:col-span-2' },
+  { title: 'Blenday Motion',  cat: 'Motion Graphics',         img: '/brands/blenday/4.png',    span: 'md:col-span-1' },
+  { title: 'ASHÉ Ritual',     cat: '3D Animation',            img: '/brands/ashe/4.png',       span: 'md:col-span-1' },
 ];
 
 export default function PortfolioSection() {

@@ -3,7 +3,6 @@ import CircuitBackground from '@/components/home/CircuitBackground';
 import HomeNav from '@/components/home/HomeNav';
 import HomeFooter from '@/components/home/HomeFooter';
 import BrandingHero from '@/components/branding/BrandingHero.jsx';
-import BrandingGrid from '@/components/branding/BrandingGrid.jsx';
 import BrandingProcess from '@/components/branding/BrandingProcess.jsx';
 import BrandingClients from '@/components/branding/BrandingClients.jsx';
 import BrandingCTA from '@/components/branding/BrandingCTA.jsx';
@@ -21,7 +20,6 @@ export default function Branding() {
       <HomeNav />
       <BrandingHero />
       <BrandingPortfolio />
-      <BrandingGrid />
       <BrandingProcess />
       <BrandingClients />
       <BrandingCTA />

@@ -22,7 +22,7 @@ export default function ShowreelSection() {
 
           <div className="relative aspect-video rounded-3xl overflow-hidden bg-[#0d0d0d] border border-white/[0.04]">
             <img
-              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1600&q=80"
+              src="/brands/blenday/5.png"
               alt="Showreel"
               className="w-full h-full object-cover opacity-40 scale-105 group-hover:scale-100 transition-transform duration-1000"
             />
