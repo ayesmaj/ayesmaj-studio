@@ -269,7 +269,24 @@ export default function HeroNew() {
           background: 'radial-gradient(ellipse 42% 36% at 88% 82%, rgba(74,120,74,0.1) 0%, transparent 55%)',
         }} />
 
-        {/* ▓▓ LAYER 3: PNG frame canvas — desktop only */}
+        {/* ▓▓ LAYER 3: Hero video — all devices */}
+        <video
+          src="/hero-mobile.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          style={{
+            position: 'absolute', inset: 0,
+            width: '100%', height: '100%',
+            objectFit: 'cover',
+            opacity: 0.55,
+          }}
+        />
+
+        {/* ▓▓ LAYER 3b: PNG frame canvas — overlaid on desktop when frames are ready */}
         {!isMobile && (
           <canvas
             ref={canvasRef}
@@ -280,25 +297,6 @@ export default function HeroNew() {
               transition: 'opacity 1.2s ease',
             }}
             aria-hidden="true"
-          />
-        )}
-
-        {/* ▓▓ LAYER 3 (mobile): hero video */}
-        {isMobile && (
-          <video
-            src="/hero-mobile.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-            style={{
-              position: 'absolute', inset: 0,
-              width: '100%', height: '100%',
-              objectFit: 'cover',
-              opacity: 0.55,
-            }}
           />
         )}
 
