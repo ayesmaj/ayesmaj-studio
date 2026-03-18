@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, Film, Palette, LayoutGrid,
-  Coffee, Sparkles, Star, Leaf, Wine, Sandwich, Bug, Ghost, Home, Tag, Image, User } from 'lucide-react';
+  Coffee, Sparkles, Star, Leaf, Wine, Sandwich, Bug, Ghost, Home, Tag, Image, User, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { BRANDS, BRAND_NAV_GROUPS } from '@/data/brands';
 
-const LOGO_URL   = '/logo.png';
-const GOLD       = '#C8A44E';
-const GOLD_DIM   = 'rgba(200,164,78,0.42)';
+const LOGO_URL = '/logo.png';
+const GOLD     = '#C8A44E';
+const GOLD_DIM = 'rgba(200,164,78,0.42)';
 
 const BRAND_ICONS = {
   'ashe':            <Coffee size={11} />,
@@ -28,37 +28,38 @@ const BRAND_ICONS = {
 };
 
 const springTransition = {
-  type: 'spring', mass: 0.5, damping: 11.5,
-  stiffness: 100, restDelta: 0.001, restSpeed: 0.001,
+  type: 'spring', mass: 0.5, damping: 12,
+  stiffness: 120, restDelta: 0.001,
 };
 
-// ── Mega-dropdown with brand tree ────────────────────────────────────────────
+// ── Mega-dropdown ─────────────────────────────────────────────────────────────
 function WorkMenu({ closeMenu }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.93, y: 10 }}
+      initial={{ opacity: 0, scale: 0.94, y: 8 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.93, y: 6 }}
+      exit={{ opacity: 0, scale: 0.94, y: 4 }}
       transition={springTransition}
-      className="absolute left-1/2 -translate-x-1/2 mt-4 z-50 p-5 rounded-2xl shadow-2xl"
+      className="absolute left-1/2 -translate-x-1/2 mt-3 z-50 p-5 rounded-2xl"
       style={{
         background: 'rgba(7,16,10,0.97)',
-        backdropFilter: 'blur(24px)',
-        border: `1px solid rgba(200,164,78,0.15)`,
+        backdropFilter: 'blur(28px)',
+        border: '1px solid rgba(200,164,78,0.15)',
         minWidth: 560,
-        boxShadow: `0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(200,164,78,0.08)`,
+        boxShadow: '0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(200,164,78,0.06)',
       }}
+      // Prevent clicks inside from closing
+      onClick={e => e.stopPropagation()}
     >
-      {/* Top quick-links */}
-      <div className="flex gap-4 mb-4 pb-4"
-        style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      {/* Quick links */}
+      <div className="flex gap-6 mb-4 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         {[
-          { label: 'Showreel',        icon: <Film size={12} />,      href: createPageUrl('Reel') },
-          { label: 'All Brands',      icon: <LayoutGrid size={12} />, href: createPageUrl('Brands') },
-          { label: 'Portfolio Gallery',icon: <Palette size={12} />,  href: createPageUrl('Branding') },
+          { label: 'Showreel',         icon: <Film size={12} />,       href: createPageUrl('Reel') },
+          { label: 'All Brands',       icon: <LayoutGrid size={12} />, href: createPageUrl('Brands') },
+          { label: 'Portfolio Gallery', icon: <Palette size={12} />,   href: createPageUrl('Branding') },
         ].map(item => (
           <Link key={item.label} to={item.href} onClick={closeMenu}
-            className="flex items-center gap-1.5 text-xs font-semibold tracking-wide transition-colors"
+            className="flex items-center gap-1.5 text-xs font-bold tracking-wide transition-colors"
             style={{ color: GOLD_DIM }}
             onMouseEnter={e => e.currentTarget.style.color = GOLD}
             onMouseLeave={e => e.currentTarget.style.color = GOLD_DIM}
@@ -69,11 +70,11 @@ function WorkMenu({ closeMenu }) {
         ))}
       </div>
 
-      {/* Brand groups — 3 columns */}
-      <div className="grid grid-cols-3 gap-x-6 gap-y-0.5">
+      {/* 3-column brand tree */}
+      <div className="grid grid-cols-3 gap-x-6">
         {BRAND_NAV_GROUPS.map(group => (
           <div key={group.label}>
-            <p className="text-[9px] font-bold tracking-[0.32em] uppercase mb-2.5"
+            <p className="text-[9px] font-bold tracking-[0.32em] uppercase mb-3"
               style={{ color: 'rgba(200,164,78,0.5)' }}>
               {group.label}
             </p>
@@ -81,19 +82,15 @@ function WorkMenu({ closeMenu }) {
               const brand = BRANDS.find(b => b.id === id);
               if (!brand) return null;
               return (
-                <Link key={id}
-                  to={`/BrandDetail?slug=${id}`}
-                  onClick={closeMenu}
-                  className="flex items-center gap-1.5 py-[5px] text-xs font-medium transition-colors group"
-                  style={{ color: 'rgba(248,250,252,0.42)',
+                <Link key={id} to={`/BrandDetail?slug=${id}`} onClick={closeMenu}
+                  className="flex items-center gap-1.5 py-[5px] text-xs font-medium transition-colors"
+                  style={{ color: 'rgba(248,250,252,0.4)',
                     fontFamily: "'Satoshi', system-ui, sans-serif",
                     letterSpacing: '0.02em' }}
                   onMouseEnter={e => e.currentTarget.style.color = '#F8FAFC'}
-                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(248,250,252,0.42)'}
+                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(248,250,252,0.4)'}
                 >
-                  <span className="transition-colors" style={{ color: brand.accent, opacity: 0.75 }}>
-                    {BRAND_ICONS[id]}
-                  </span>
+                  <span style={{ color: brand.accent, opacity: 0.8 }}>{BRAND_ICONS[id]}</span>
                   {brand.name}
                 </Link>
               );
@@ -102,13 +99,13 @@ function WorkMenu({ closeMenu }) {
         ))}
       </div>
 
-      {/* Bottom CTA */}
+      {/* CTA */}
       <div className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <Link to={createPageUrl('Contact')} onClick={closeMenu}
-          className="flex items-center gap-1.5 text-xs transition-colors"
-          style={{ color: 'rgba(200,164,78,0.45)' }}
+          className="flex items-center gap-1.5 text-xs font-medium transition-colors"
+          style={{ color: 'rgba(200,164,78,0.4)' }}
           onMouseEnter={e => e.currentTarget.style.color = GOLD}
-          onMouseLeave={e => e.currentTarget.style.color = 'rgba(200,164,78,0.45)'}
+          onMouseLeave={e => e.currentTarget.style.color = 'rgba(200,164,78,0.4)'}
         >
           <ArrowRight size={11} /> Start a Project
         </Link>
@@ -117,13 +114,13 @@ function WorkMenu({ closeMenu }) {
   );
 }
 
-// ── Main nav ─────────────────────────────────────────────────────────────────
+// ── Main nav ──────────────────────────────────────────────────────────────────
 export default function HomeNav() {
-  const [scrolled, setScrolled]   = useState(false);
-  const [open, setOpen]           = useState(false);
-  const [workOpen, setWorkOpen]   = useState(false);
-  const workRef                   = useRef(null);
-  const location                  = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen]         = useState(false);   // mobile drawer
+  const [workOpen, setWorkOpen] = useState(false);   // Work dropdown
+  const workRef                 = useRef(null);
+  const location                = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -131,14 +128,19 @@ export default function HomeNav() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Close Work dropdown when clicking outside
+  // Close dropdown when clicking anywhere outside the Work button+panel
   useEffect(() => {
     const handler = (e) => {
-      if (workRef.current && !workRef.current.contains(e.target)) setWorkOpen(false);
+      if (workRef.current && !workRef.current.contains(e.target)) {
+        setWorkOpen(false);
+      }
     };
-    document.addEventListener('mousedown', handler);
+    if (workOpen) document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, []);
+  }, [workOpen]);
+
+  // Close dropdown on route change
+  useEffect(() => { setWorkOpen(false); setOpen(false); }, [location.pathname, location.search]);
 
   const isActive = (page) => location.pathname === createPageUrl(page);
 
@@ -149,13 +151,12 @@ export default function HomeNav() {
     { label: 'Pricing',  page: 'Pricing' },
   ];
 
-  const linkStyle = (active) => ({
+  const linkBase = {
     fontFamily: "'Satoshi', system-ui, sans-serif",
     fontSize: '11px', letterSpacing: '0.18em',
     textTransform: 'uppercase', fontWeight: 600,
-    color: active ? GOLD : 'rgba(248,250,252,0.42)',
     transition: 'color 0.3s',
-  });
+  };
 
   return (
     <>
@@ -165,11 +166,9 @@ export default function HomeNav() {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 inset-x-0 z-50 transition-all duration-500"
         style={{
-          background: scrolled ? 'rgba(7,16,10,0.90)' : 'transparent',
+          background: scrolled ? 'rgba(7,16,10,0.92)' : 'transparent',
           backdropFilter: scrolled ? 'blur(22px)' : 'none',
-          borderBottom: scrolled
-            ? '1px solid rgba(200,164,78,0.1)'
-            : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid rgba(200,164,78,0.1)' : '1px solid transparent',
         }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[70px]">
@@ -183,24 +182,31 @@ export default function HomeNav() {
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-8">
 
-            {/* Work — with dropdown */}
-            <div ref={workRef} className="relative"
-              onMouseEnter={() => setWorkOpen(true)}
-              onMouseLeave={() => setWorkOpen(false)}>
+            {/* Work — click to open/close */}
+            <div ref={workRef} className="relative">
               <button
-                className="relative pb-0.5 group"
-                style={linkStyle(false)}
-                onMouseEnter={e => e.currentTarget.style.color = '#F8FAFC'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(248,250,252,0.42)'}
+                onClick={() => setWorkOpen(v => !v)}
+                className="relative pb-0.5 flex items-center gap-1 group"
+                style={{
+                  ...linkBase,
+                  color: workOpen ? GOLD : 'rgba(248,250,252,0.42)',
+                }}
               >
                 Work
-                <span className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full transition-all duration-300"
-                  style={{ background: 'rgba(200,164,78,0.5)' }} />
+                <motion.span
+                  animate={{ rotate: workOpen ? 180 : 0 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <ChevronDown size={11} style={{ opacity: 0.6 }} />
+                </motion.span>
+                {/* Underline */}
+                <span className="absolute bottom-0 left-0 h-px transition-all duration-300"
+                  style={{ background: GOLD, width: workOpen ? '100%' : '0' }} />
               </button>
 
               <AnimatePresence>
                 {workOpen && (
-                  <WorkMenu closeMenu={() => { setWorkOpen(false); setOpen(false); }} />
+                  <WorkMenu closeMenu={() => setWorkOpen(false)} />
                 )}
               </AnimatePresence>
             </div>
@@ -211,7 +217,7 @@ export default function HomeNav() {
               return (
                 <Link key={l.label} to={createPageUrl(l.page)}
                   className="relative pb-0.5 group"
-                  style={linkStyle(active)}
+                  style={{ ...linkBase, color: active ? GOLD : 'rgba(248,250,252,0.42)' }}
                   onMouseEnter={e => { if (!active) e.currentTarget.style.color = '#F8FAFC'; }}
                   onMouseLeave={e => { if (!active) e.currentTarget.style.color = 'rgba(248,250,252,0.42)'; }}
                 >
@@ -231,11 +237,9 @@ export default function HomeNav() {
           <Link to={createPageUrl('Contact')}
             className="hidden lg:flex items-center gap-2 transition-all duration-300"
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
-              fontSize: '11px', letterSpacing: '0.18em',
-              textTransform: 'uppercase', fontWeight: 700,
+              ...linkBase, fontWeight: 700,
               padding: '10px 22px', borderRadius: '100px', minHeight: '44px',
-              border: `1px solid rgba(200,164,78,0.4)`,
+              border: '1px solid rgba(200,164,78,0.4)',
               color: GOLD, background: 'rgba(200,164,78,0.05)',
             }}
             onMouseEnter={e => {
@@ -250,8 +254,8 @@ export default function HomeNav() {
             Start a Project
           </Link>
 
-          {/* Hamburger */}
-          <button onClick={() => setOpen(!open)} className="lg:hidden text-white p-1" aria-label="Toggle menu">
+          {/* Hamburger — mobile only */}
+          <button onClick={() => setOpen(!open)} className="lg:hidden text-white p-2" aria-label="Toggle menu">
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -280,21 +284,20 @@ export default function HomeNav() {
             }}
           >
             <div className="absolute inset-x-0 top-0 h-px"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(200,164,78,0.35), transparent)' }} />
+              style={{ background: 'linear-gradient(90deg,transparent,rgba(200,164,78,0.35),transparent)' }} />
 
             <nav className="flex flex-col gap-2 mb-6">
-              {/* Work expanded in mobile */}
+              {/* Work expanded */}
               <div className="py-4 border-b" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
                 <p className="text-2xl font-black text-white mb-4"
                   style={{ fontFamily: "'Satoshi', system-ui, sans-serif" }}>
                   Work
                 </p>
-                {/* Quick links */}
                 <div className="flex flex-col gap-2 mb-4 pl-2">
                   {[
-                    { label: 'Showreel', href: createPageUrl('Reel') },
-                    { label: 'All Brands', href: createPageUrl('Brands') },
-                    { label: 'Portfolio', href: createPageUrl('Branding') },
+                    { label: 'Showreel',         href: createPageUrl('Reel') },
+                    { label: 'All Brands',        href: createPageUrl('Brands') },
+                    { label: 'Portfolio Gallery', href: createPageUrl('Branding') },
                   ].map(item => (
                     <Link key={item.label} to={item.href} onClick={() => setOpen(false)}
                       className="text-sm font-semibold transition-colors"
@@ -306,11 +309,10 @@ export default function HomeNav() {
                     </Link>
                   ))}
                 </div>
-                {/* Brand list */}
+                {/* All brands */}
                 <div className="pl-2 flex flex-col gap-1.5">
                   {BRANDS.map(brand => (
-                    <Link key={brand.id}
-                      to={`/BrandDetail?slug=${brand.id}`}
+                    <Link key={brand.id} to={`/BrandDetail?slug=${brand.id}`}
                       onClick={() => setOpen(false)}
                       className="flex items-center gap-2 text-xs py-0.5 transition-colors"
                       style={{ color: 'rgba(248,250,252,0.38)',
@@ -346,11 +348,11 @@ export default function HomeNav() {
             </nav>
 
             <Link to={createPageUrl('Contact')} onClick={() => setOpen(false)}
-              className="py-4 rounded-2xl font-black text-lg tracking-widest uppercase text-white transition-all text-center"
+              className="py-4 rounded-2xl font-black text-lg tracking-widest uppercase text-white transition-all text-center mt-auto"
               style={{
                 fontFamily: "'Satoshi', system-ui, sans-serif",
                 background: 'linear-gradient(135deg, #C8A44E, #9A7B3A)',
-                minHeight: '44px',
+                minHeight: '56px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 boxShadow: '0 0 40px rgba(200,164,78,0.35)',
               }}

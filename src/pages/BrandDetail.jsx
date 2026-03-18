@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Navigation from '@/components/navigation/Navigation';
+import HomeNav from '@/components/home/HomeNav';
 import Footer from '@/components/sections/Footer';
 import { getBrand, BRANDS } from '@/data/brands';
 
@@ -110,7 +110,7 @@ export default function BrandDetail() {
 
   return (
     <div className="min-h-screen text-white overflow-x-hidden" style={{ background:'#080C09' }}>
-      <Navigation reducedMotion={reducedMotion} onToggleReducedMotion={() => setReducedMotion(v => !v)} />
+      <HomeNav />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] min-h-[85svh] flex items-end overflow-hidden">

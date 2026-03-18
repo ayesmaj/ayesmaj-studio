@@ -4,7 +4,7 @@ import { base44 } from '@/api/base44Client';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import ThreeBackground from '@/components/three/ThreeBackground';
-import Navigation from '@/components/navigation/Navigation';
+import HomeNav from '@/components/home/HomeNav';
 import Footer from '@/components/sections/Footer';
 import { ArrowLeft, Star, Play, ExternalLink, Loader2 } from 'lucide-react';
 
@@ -63,7 +63,7 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-[#090909] text-white overflow-x-hidden">
       <ThreeBackground reducedMotion={reducedMotion} />
-      <Navigation reducedMotion={reducedMotion} onToggleReducedMotion={() => setReducedMotion(v => !v)} />
+      <HomeNav />
 
       <main className="relative z-10">
         {/* HERO */}

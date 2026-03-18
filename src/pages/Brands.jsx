@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { base44 } from '@/api/base44Client';
-import Navigation from '@/components/navigation/Navigation';
+import HomeNav from '@/components/home/HomeNav';
 import Footer from '@/components/sections/Footer';
 import BrandCard from '@/components/brands/BrandCard';
 import BrandsHero from '@/components/brands/BrandsHero';
@@ -43,7 +43,7 @@ export default function Brands() {
 
   return (
     <div className="min-h-screen text-white overflow-x-hidden" style={{ background: '#0B0B0B' }}>
-      <Navigation reducedMotion={reducedMotion} onToggleReducedMotion={() => setReducedMotion(v => !v)} />
+      <HomeNav />
 
       <BrandsHero />
 
