@@ -1,48 +1,64 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { ArrowUpRight, Play } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
-const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-
 function VideoCard({ src, delay = 0 }) {
-  const [playing, setPlaying] = useState(!isMobile);
+  const wrapRef  = useRef(null);
   const videoRef = useRef(null);
+  const [inView, setInView] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
-  const handlePlay = () => {
-    setPlaying(true);
-    setTimeout(() => videoRef.current?.play(), 100);
-  };
+  // Enter viewport → inject & play; leave → pause
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => setInView(e.isIntersecting),
+      { threshold: 0.1, rootMargin: '80px' }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v || !loaded) return;
+    if (inView) v.play().catch(() => {});
+    else        v.pause();
+  }, [inView, loaded]);
+
+  const onCanPlay = useCallback(() => {
+    setLoaded(true);
+    videoRef.current?.play().catch(() => {});
+  }, []);
 
   return (
     <motion.div
+      ref={wrapRef}
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
       className="rounded-2xl overflow-hidden relative"
       style={{ aspectRatio: '16/9', border: '1px solid rgba(200,164,78,0.15)', background: '#07100A' }}>
-      <video
-        ref={videoRef}
-        src={src}
-        autoPlay={!isMobile}
-        loop
-        muted
-        playsInline
-        preload="none"
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: playing ? 'block' : 'none' }}
-      />
-      {!playing && (
-        <div
-          onClick={handlePlay}
-          className="absolute inset-0 flex items-center justify-center cursor-pointer"
-          style={{ background: 'rgba(7,16,10,0.85)' }}>
-          <div className="w-16 h-16 rounded-full flex items-center justify-center"
-            style={{ background: 'rgba(200,164,78,0.15)', border: '2px solid rgba(200,164,78,0.6)' }}>
-            <Play size={24} className="ml-1" style={{ color: '#C8A44E' }} />
-          </div>
-        </div>
+      {inView && (
+        <video
+          ref={videoRef}
+          src={src}
+          loop
+          muted
+          playsInline
+          preload="auto"
+          onCanPlay={onCanPlay}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      )}
+      {/* Shimmer while loading */}
+      {(!loaded || !inView) && (
+        <div className="absolute inset-0 animate-pulse"
+          style={{ background: 'linear-gradient(135deg,#07100A 0%,#0d1a0f 50%,#07100A 100%)' }} />
       )}
     </motion.div>
   );
