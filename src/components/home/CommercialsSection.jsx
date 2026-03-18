@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Play, X } from 'lucide-react';
+import { Play, X, Volume2, VolumeX } from 'lucide-react';
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -11,28 +11,152 @@ const fade = (delay = 0) => ({
 
 const VIDEOS = [
   {
-    title: 'ASHÉ Ember Reserve',
-    subtitle: 'CGI Commercial · 60s',
+    title: 'Factory — CGI Commercial',
+    subtitle: 'CGI Commercial · Animation',
     thumb: '/brands/ashe/2.png',
-    videoId: 'dQw4w9WgXcQ',
+    src: '/videos/factory.mp4',
   },
   {
     title: 'BLENDAY Brand Film',
-    subtitle: 'Cinematic · 90s Campaign',
+    subtitle: 'Cinematic · Brand Campaign',
     thumb: '/brands/blenday/3.png',
-    videoId: 'dQw4w9WgXcQ',
+    src: '/brands/blenday/6.mp4',
   },
   {
-    title: 'ASHÉ Product Reveal',
-    subtitle: '3D Animation · 45s',
+    title: 'Optimus — 3D Animation',
+    subtitle: '3D Animation · Character CGI',
     thumb: '/brands/ashe/4.png',
-    videoId: 'dQw4w9WgXcQ',
+    src: '/videos/optimus.mp4',
   },
 ];
 
-export default function CommercialsSection() {
-  const [playing, setPlaying] = useState(null);
+function VideoCard({ video, delay }) {
+  const [playing, setPlaying] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef(null);
 
+  const handlePlay = () => {
+    setPlaying(true);
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.muted = muted;
+        videoRef.current.play();
+      }
+    }, 50);
+  };
+
+  const handleClose = (e) => {
+    e.stopPropagation();
+    if (videoRef.current) videoRef.current.pause();
+    setPlaying(false);
+  };
+
+  const toggleMute = (e) => {
+    e.stopPropagation();
+    const next = !muted;
+    setMuted(next);
+    if (videoRef.current) videoRef.current.muted = next;
+  };
+
+  return (
+    <motion.div {...fade(delay)}>
+      <div
+        className="relative overflow-hidden rounded-2xl group"
+        style={{
+          aspectRatio: '16/9',
+          border: `1px solid ${hovered ? 'rgba(0,196,106,0.4)' : 'rgba(0,196,106,0.08)'}`,
+          boxShadow: hovered ? '0 0 40px rgba(0,196,106,0.18)' : 'none',
+          transition: 'border-color 0.3s, box-shadow 0.3s',
+          cursor: playing ? 'default' : 'pointer',
+        }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onClick={!playing ? handlePlay : undefined}
+      >
+        {/* Poster shown before play */}
+        {!playing && (
+          <>
+            <img
+              src={video.thumb}
+              alt={video.title}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,12,10,0.85) 0%, rgba(8,12,10,0.35) 50%, transparent 100%)' }} />
+
+            {/* Play button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <motion.div
+                animate={{ scale: hovered ? 1.12 : 1 }}
+                transition={{ duration: 0.3 }}
+                className="w-16 h-16 rounded-full flex items-center justify-center"
+                style={{
+                  background: 'rgba(8,12,10,0.85)',
+                  border: '2px solid rgba(0,196,106,0.8)',
+                  backdropFilter: 'blur(8px)',
+                  boxShadow: '0 0 32px rgba(0,196,106,0.3)',
+                }}
+              >
+                <Play size={22} className="ml-1" style={{ color: '#00C46A' }} fill="#00C46A" />
+              </motion.div>
+            </div>
+
+            {/* Bottom info */}
+            <div className="absolute bottom-0 inset-x-0 p-5">
+              <p className="text-white font-bold text-base leading-tight">{video.title}</p>
+              <p className="text-xs mt-1" style={{ color: '#00C46A' }}>{video.subtitle}</p>
+            </div>
+          </>
+        )}
+
+        {/* Actual video element */}
+        <video
+          ref={videoRef}
+          src={video.src}
+          poster={video.thumb}
+          loop
+          playsInline
+          muted={muted}
+          controls={false}
+          className="w-full h-full object-cover"
+          style={{ display: playing ? 'block' : 'none' }}
+        />
+
+        {/* Controls overlay when playing */}
+        {playing && (
+          <div className="absolute inset-0 flex flex-col justify-between p-4 opacity-0 hover:opacity-100 transition-opacity duration-300"
+            style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 40%, rgba(0,0,0,0.3) 100%)' }}
+          >
+            {/* Top row */}
+            <div className="flex justify-between items-start">
+              <div className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full"
+                style={{ background: 'rgba(0,196,106,0.15)', border: '1px solid rgba(0,196,106,0.4)', color: '#00C46A' }}>
+                {video.subtitle}
+              </div>
+              <button onClick={handleClose}
+                className="w-8 h-8 rounded-full flex items-center justify-center transition-all"
+                style={{ background: 'rgba(0,0,0,0.7)', border: '1px solid rgba(255,255,255,0.2)', color: 'white' }}>
+                <X size={14} />
+              </button>
+            </div>
+
+            {/* Bottom row */}
+            <div className="flex items-center justify-between">
+              <p className="text-white font-bold text-sm">{video.title}</p>
+              <button onClick={toggleMute}
+                className="w-8 h-8 rounded-full flex items-center justify-center"
+                style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', color: 'white' }}>
+                {muted ? <VolumeX size={13} /> : <Volume2 size={13} />}
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
+export default function CommercialsSection() {
   return (
     <section id="commercials" className="relative py-32 px-6 overflow-hidden" style={{ background: 'transparent', scrollMarginTop: '90px' }}>
       <div className="absolute top-0 inset-x-0 h-px"
@@ -42,70 +166,15 @@ export default function CommercialsSection() {
         <motion.div {...fade(0)} className="text-center mb-16">
           <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#00C46A' }}>Showreel</p>
           <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">Cinematic Commercials</h2>
+          <p className="text-sm mt-4" style={{ color: 'rgba(255,255,255,0.35)' }}>Click any card to play · Hover to control</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {VIDEOS.map((v, i) => (
-            <motion.div key={v.title} {...fade(i * 0.1)}>
-              <div
-                className="relative overflow-hidden rounded-2xl cursor-pointer group"
-                style={{ aspectRatio: '16/9', border: '1px solid rgba(0,196,106,0.08)' }}
-                onClick={() => setPlaying(v)}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 40px rgba(0,196,106,0.2)'; e.currentTarget.style.borderColor = 'rgba(0,196,106,0.35)'; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; e.currentTarget.style.borderColor = 'rgba(0,196,106,0.08)'; }}
-              >
-                <img src={v.thumb} alt={v.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0" style={{ background: 'rgba(11,15,12,0.5)' }} />
-
-                {/* Play button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-16 h-16 rounded-full flex items-center justify-center"
-                    style={{
-                       background: 'rgba(11,15,12,0.8)',
-                       border: '2px solid rgba(0,196,106,0.7)',
-                       backdropFilter: 'blur(4px)',
-                     }}
-                    >
-                     <Play size={22} className="ml-1" style={{ color: '#00C46A' }} />
-                  </motion.div>
-                </div>
-
-                {/* Bottom info */}
-                <div className="absolute bottom-0 inset-x-0 p-5">
-                  <p className="text-white font-bold text-base">{v.title}</p>
-                  <p className="text-xs mt-0.5" style={{ color: '#00C46A' }}>{v.subtitle}</p>
-                </div>
-              </div>
-            </motion.div>
+            <VideoCard key={v.title} video={v} delay={i * 0.1} />
           ))}
         </div>
       </div>
-
-      {/* Video modal */}
-      {playing && (
-        <motion.div
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-6"
-          style={{ background: 'rgba(0,0,0,0.92)' }}
-          onClick={() => setPlaying(null)}
-        >
-          <button className="absolute top-6 right-6 text-white opacity-60 hover:opacity-100 transition-opacity"
-            onClick={() => setPlaying(null)}>
-            <X size={28} />
-          </button>
-          <div className="w-full max-w-4xl aspect-video rounded-xl overflow-hidden" onClick={e => e.stopPropagation()}>
-            <iframe
-              src={`https://www.youtube.com/embed/${playing.videoId}?autoplay=1`}
-              className="w-full h-full"
-              allowFullScreen
-              allow="autoplay"
-            />
-          </div>
-        </motion.div>
-      )}
     </section>
   );
 }
