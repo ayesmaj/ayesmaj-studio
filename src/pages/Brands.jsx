@@ -6,12 +6,12 @@ import HomeNav from '@/components/home/HomeNav';
 import Footer from '@/components/sections/Footer';
 import { BRANDS, BRAND_NAV_GROUPS } from '@/data/brands';
 
-// ── Animation helper ─────────────────────────────────────────────────────────
+// ── Animation helpers ─────────────────────────────────────────────────────────
 const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
-  whileInView: { opacity: 1, y: 0 },
+  initial: { opacity: 0, y: 32, filter: 'blur(10px)' },
+  whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
   viewport: { once: true },
-  transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] },
+  transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] },
 });
 
 // ── Single brand card ─────────────────────────────────────────────────────────
@@ -22,10 +22,10 @@ function BrandCard({ brand, index }) {
   return (
     <motion.div
       key={brand.id}
-      initial={{ opacity: 0, y: 32 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.96 }}
-      transition={{ duration: 0.5, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}
+      animate={{ opacity: 1, y: 0,  filter: 'blur(0px)' }}
+      exit={{ opacity: 0, scale: 0.96, filter: 'blur(6px)' }}
+      transition={{ duration: 0.7, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
     >
       <Link
         to={`/BrandDetail?slug=${brand.id}`}
