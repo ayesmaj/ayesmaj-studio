@@ -78,13 +78,13 @@ export default function AboutSection() {
 
         <motion.div {...fade(0.3)} className="max-w-3xl mx-auto">
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-5">
-            AYESMAJ Studios is a premium 3D animation and visual storytelling studio.
+            AYESMAJ Studios is an AI-powered creative studio specializing in content marketing, 3D animation, and brand building.
           </p>
           <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-5">
-            We craft cinematic product visuals, character worlds, and high-end brand experiences that command attention in every market.
+            We produce AI-generated marketing content, cinematic 3D animation and CGI, full brand identity systems, and custom websites &amp; landing pages — all tailored to your brand.
           </p>
           <p className="text-gray-600 text-base leading-relaxed">
-            Working with businesses locally and internationally — from concept to final frame.
+            Working with brands locally and internationally — from concept to launch.
           </p>
         </motion.div>
 

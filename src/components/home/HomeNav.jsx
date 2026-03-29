@@ -158,10 +158,10 @@ export default function HomeNav() {
 
   const plainLinks = [
     { label: 'Home',       page: 'Home'       },
-    { label: 'All Brands', page: 'Brands'     },
-    { label: 'Animations', page: 'Animations' },
-    { label: 'Contact',    page: 'Contact'    },
+    { label: 'Services',   page: 'Services'   },
+    { label: 'Pricing',    page: 'Pricing'    },
     { label: 'About',      page: 'About'      },
+    { label: 'Contact',    page: 'Contact'    },
   ];
 
   const linkStyle = (active) => ({

@@ -366,14 +366,14 @@ export default function HeroNew() {
               maxWidth: 'min(1020px,92vw)',
             }}
           >
-            Cinematic 3D Visuals<br />
-            That Make Brands<br />
+            AI Content Creation<br />
+            3D Animation &amp; Branding<br />
             <span style={{
               fontStyle: 'italic',
               backgroundImage: 'linear-gradient(125deg, #E8C96D 0%, #C8A44E 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
             }}>
-              Impossible to Ignore.
+              Built Around Your Brand.
             </span>
           </motion.h1>
 
@@ -382,13 +382,13 @@ export default function HeroNew() {
             fontFamily: "'Satoshi', system-ui, sans-serif",
             fontSize: 'clamp(13px,1.5vw,18px)', lineHeight: 1.7, fontWeight: 400,
             color: 'rgba(248,250,252,0.52)',
-            maxWidth: 'min(560px,88vw)',
+            maxWidth: 'min(580px,88vw)',
             marginBottom: 'clamp(28px,4vw,48px)',
             opacity: p1SubOp, filter: p1SubFilt,
           }}>
-            Premium 3D animation, logo motion, CGI, and cinematic brand
-            visuals — designed to make products and brands feel bigger,
-            sharper, and unforgettable.
+            We combine AI-powered marketing content, cinematic 3D animation,
+            and custom website &amp; landing page builds — all crafted
+            specifically for your brand.
           </motion.p>
 
           {/* CTAs */}
@@ -430,21 +430,21 @@ export default function HeroNew() {
             letterSpacing: '0.5em', textTransform: 'uppercase',
             color: 'rgba(200,164,78,0.7)',
             marginBottom: 'clamp(18px,2.8vw,36px)',
-          }}>WE CREATE</p>
+          }}>WE BUILD</p>
 
           <div style={{
             display: 'flex', flexWrap: 'wrap',
             justifyContent: 'center', alignItems: 'baseline',
             gap: 'clamp(8px,1.5vw,20px) clamp(14px,3vw,44px)',
-            maxWidth: 'min(920px,92vw)',
+            maxWidth: 'min(960px,92vw)',
           }}>
             {[
-              ['3D Animation',    true ],
-              ['CGI Commercials', false],
-              ['VFX',             true ],
-              ['Logo Motion',     false],
-              ['Brand Visuals',   true ],
-              ['Motion Design',   false],
+              ['AI Content',       true ],
+              ['3D Animation',     false],
+              ['Brand Identity',   true ],
+              ['CGI Commercials',  false],
+              ['Custom Websites',  true ],
+              ['Landing Pages',    false],
             ].map(([s, bright]) => (
               <span key={s} style={{
                 fontFamily: "'Satoshi', system-ui, sans-serif",
@@ -475,7 +475,7 @@ export default function HeroNew() {
             letterSpacing: '0.52em', textTransform: 'uppercase',
             color: '#C8A44E',
             marginBottom: 'clamp(14px,2vw,22px)',
-          }}>YOUR NEXT PROJECT</p>
+          }}>START TODAY</p>
 
           <h2 style={{
             fontFamily: "'Satoshi', system-ui, sans-serif",
@@ -485,25 +485,25 @@ export default function HeroNew() {
             marginBottom: 'clamp(26px,3.5vw,48px)',
             maxWidth: 'min(840px,90vw)',
           }}>
-            Ready to make your brand<br />
+            AI-powered content &amp; visuals<br />
             <span style={{
               fontStyle: 'italic',
               backgroundImage: 'linear-gradient(125deg, #E8C96D 0%, #C8A44E 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-            }}>impossible to ignore?</span>
+            }}>custom-built for your brand.</span>
           </h2>
 
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <ShinyButton as="a" href={createPageUrl('Contact')}>
-              Book a Project →
+            <ShinyButton as="a" href={createPageUrl('Pricing')}>
+              See Packages &amp; Pricing →
             </ShinyButton>
             <Link
-              to={createPageUrl('About')}
+              to={createPageUrl('Contact')}
               style={btnGhost}
               onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.09)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)'; }}
               onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}
             >
-              Our Story
+              Book a Free Call
             </Link>
           </div>
         </motion.div>

@@ -13,12 +13,12 @@ const LayoutWrapper = ({ children, currentPageName }) => Layout
   ? <Layout currentPageName={currentPageName}>{children}</Layout>
   : <>{children}</>;
 
-// Cinematic page transition
+// Cinematic page transition — no filter/blur so position:fixed nav is never affected
 const pageVariants = {
-  initial: { opacity: 0, filter: 'blur(12px)', y: 12 },
-  enter:   { opacity: 1, filter: 'blur(0px)',  y: 0,
+  initial: { opacity: 0, y: 12 },
+  enter:   { opacity: 1, y: 0,
     transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
-  exit:    { opacity: 0, filter: 'blur(8px)',  y: -8,
+  exit:    { opacity: 0, y: -8,
     transition: { duration: 0.35, ease: [0.4, 0, 1, 1] } },
 };
 

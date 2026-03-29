@@ -8,6 +8,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    host: true,   // bind to 0.0.0.0 so localhost (IPv4) works
+    port: 5173,
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
