@@ -1,6 +1,7 @@
 ﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { Phone } from 'lucide-react';
 
 const LOGO_URL = '/logo-full.png';
 
@@ -58,7 +59,14 @@ export default function HomeFooter() {
           {/* Contact */}
           <div>
             <h4 className="text-[10px] tracking-[0.4em] uppercase font-bold mb-5" style={{ color: '#C8A44E' }}>Contact</h4>
-            <ul className="space-y-2 text-sm" style={{ color: '#3a4a3e' }}>
+            <ul className="space-y-3 text-sm" style={{ color: '#3a4a3e' }}>
+              <li>
+                <a href="tel:5093197999"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-white font-bold"
+                  style={{ color: '#C8A44E' }}>
+                  <Phone size={13} /> (509) 319-7999
+                </a>
+              </li>
               <li><a href="mailto:ayesmajstudios@gmail.com" className="transition-colors hover:text-white" style={{ color: '#3a4a3e' }}>ayesmajstudios@gmail.com</a></li>
               <li>Los Angeles · London · Dubai</li>
             </ul>

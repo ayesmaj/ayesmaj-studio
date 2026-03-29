@@ -238,7 +238,7 @@ export default function HomeNav() {
             })}
           </div>
 
-          {/* CTA */}
+          {/* Start a Project CTA */}
           <Link to={createPageUrl('Contact')}
             className="hidden lg:flex items-center gap-2 transition-all duration-300"
             style={{

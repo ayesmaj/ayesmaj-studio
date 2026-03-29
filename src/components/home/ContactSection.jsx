@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Loader2, CheckCircle } from 'lucide-react';
+import { Loader2, CheckCircle, Phone } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 const fade = (delay = 0) => ({
@@ -79,6 +79,36 @@ export default function ContactSection() {
             Let's Build Something<br />
             <span style={{ color: '#C8A44E' }}>Cinematic.</span>
           </h2>
+
+          {/* Call Now button */}
+          <div className="mt-8 flex justify-center">
+            <a
+              href="tel:5093197999"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-black transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, #E8C96D 0%, #C8A44E 100%)',
+                color: '#07100A',
+                boxShadow: '0 0 32px rgba(200,164,78,0.4), 0 4px 20px rgba(0,0,0,0.4)',
+                fontSize: '16px', letterSpacing: '0.04em',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.boxShadow = '0 0 52px rgba(200,164,78,0.6), 0 4px 28px rgba(0,0,0,0.5)';
+                e.currentTarget.style.transform = 'scale(1.04)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.boxShadow = '0 0 32px rgba(200,164,78,0.4), 0 4px 20px rgba(0,0,0,0.4)';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              <Phone size={20} />
+              Call Now — (509) 319-7999
+            </a>
+          </div>
+
+          <p className="mt-4 text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>
+            — or fill out the form below —
+          </p>
         </motion.div>
 
         {status === 'success' ? (
