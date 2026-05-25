@@ -170,9 +170,9 @@ function WEHero() {
         }}
       >
         {[
-          { src: '/videos/websites/website-1.mp4', url: 'luxury-brand.com', accent: GOLD },
-          { src: '/videos/websites/website-2.mp4', url: 'aistartup.io', accent: GREEN },
-          { src: '/videos/websites/website-3.mp4', url: 'realestate.co', accent: GOLD },
+          { src: 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev/websites/website-1.mp4', url: 'luxury-brand.com', accent: GOLD },
+          { src: 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev/websites/website-2.mp4', url: 'aistartup.io', accent: GREEN },
+          { src: 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev/websites/website-3.mp4', url: 'realestate.co', accent: GOLD },
         ].map((m, i) => (
           <motion.div
             key={m.url}
@@ -273,45 +273,47 @@ function WhatWeBuild() {
 
 /* ── SHOWCASE ───────────────────────────────────────────────── */
 // Update titles, categories, and descriptions below to match your actual website videos
+const R2 = 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev';
+
 const WEB_PROJECTS = [
   {
-    id: 1, src: '/videos/websites/website-1.mp4', accent: GOLD,
+    id: 1, src: `${R2}/websites/website-1.mp4`, accent: GOLD,
     category: 'Business Website',
     title: 'AI Startup Platform',
     desc: 'Modern SaaS website with animated feature sections, glassmorphism UI, and a conversion-optimized pricing flow designed to close on the first visit.',
   },
   {
-    id: 2, src: '/videos/websites/website-2.mp4', accent: GREEN,
+    id: 2, src: `${R2}/websites/website-2.mp4`, accent: GREEN,
     category: 'Real Estate',
     title: 'Premium Property Platform',
     desc: 'High-end real estate website with interactive map, video hero, and a filtered listings experience that positions the agency above every competitor in the market.',
   },
   {
-    id: 3, src: '/videos/websites/website-3.mp4', accent: GOLD,
+    id: 3, src: `${R2}/websites/website-3.mp4`, accent: GOLD,
     category: 'CPG / Brand',
     title: 'Energy Drink Brand',
     desc: 'Full-energy brand website with kinetic typography, vibrant color transitions, and scroll-driven storytelling that sells the lifestyle — not just the product.',
   },
   {
-    id: 4, src: '/videos/websites/website-4.mp4', accent: GREEN,
+    id: 4, src: `${R2}/websites/website-4.mp4`, accent: GREEN,
     category: 'Service Business',
     title: 'Home Services Funnel',
     desc: 'High-conversion lead-gen site for a home service company — built to build trust on the first scroll and route qualified leads to the right CTA every time.',
   },
   {
-    id: 5, src: '/videos/websites/website-5.mp4', accent: GOLD,
+    id: 5, src: `${R2}/websites/website-5.mp4`, accent: GOLD,
     category: 'Portfolio',
     title: 'Creative Studio Portfolio',
     desc: 'World-class portfolio experience for a design agency — case study deep-dives, animated transitions, and a brand presence that commands premium project rates.',
   },
   {
-    id: 6, src: '/videos/websites/website-6.mp4', accent: GREEN,
+    id: 6, src: `${R2}/websites/website-6.mp4`, accent: GREEN,
     category: 'Tech Product',
     title: 'Mobile App Landing',
     desc: 'Product launch page with scroll-driven 3D phone mockup, animated feature demos, and a waitlist flow engineered to capture leads from the first impression.',
   },
   {
-    id: 7, src: '/videos/websites/website-7.mp4', accent: GOLD,
+    id: 7, src: `${R2}/websites/website-7.mp4`, accent: GOLD,
     category: 'Professional Services',
     title: 'Executive Services Firm',
     desc: 'Authority-first website for a consultancy — layered social proof, intelligent lead capture, and a brand voice designed to attract high-ticket clients from day one.',

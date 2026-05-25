@@ -4,43 +4,13 @@ import { Volume2, VolumeX, Maximize2 } from 'lucide-react';
 import HomeNav from '@/components/home/HomeNav';
 import Footer from '@/components/sections/Footer';
 
-const CLOUD = 'dea3l8rmw';
+const R2 = 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev';
 
-// All 29 animation videos uploaded to Cloudinary
-const VIDEOS = [
-  'f293552a0cd843f998883aa35edc1a60_gflf2b',
-  '0318_1_1_offmsw',
-  '0318_1_2_dp3lfv',
-  '0318_1_u21xl2',
-  'add_3_hslnca',
-  '0901_1_2_shmejk',
-  '1111_1_gynx1j',
-  '0902_osyccn',
-  'final_1.0_slxghm',
-  'yafora_dlfdir',
-  'DraftResource_1750827632.436346_m0wo9i',
-  'video-output-F4583FA8-ABE1-42CD-BDE4-FCC3E3E651F7_guw4g1',
-  '0318_6_lwnh4l',
-  '0318_4_mjrygm',
-  'optimus_animation_5_u1saen',
-  '0318_1_kqzjfc',
-  '0318_2_bgs762',
-  '0318_8_uixvc5',
-  'factory_vwapww',
-  '0318_3_edx4cf',
-  'shoes_3_xww0z2',
-  'export_1676743375026_zv81bn',
-  '0318_7_pbffmf',
-  'aldo_animation_shoes_2_a3qeoo',
-  'new_music_hx9yce',
-  '0318_5_jihymh',
-  'e5136a40-6c93-4607-93fa-a714b838e834_fnynbb',
-  'acc060e9-a242-4f0c-977c-34a43e341d4d_qzatmh',
-  '10001-0324_t00x6g',
-];
+// All 30 animation videos hosted on Cloudflare R2 (zero egress cost)
+const VIDEOS = Array.from({ length: 30 }, (_, i) => `${R2}/animations/${i + 1}.mp4`);
 
 // ── Single lazy-loading video card ────────────────────────────────────────────
-function AnimCard({ publicId, index }) {
+function AnimCard({ src, index }) {
   const wrapRef  = useRef(null);
   const videoRef = useRef(null);
   const [inView,  setInView]  = useState(false);
@@ -99,7 +69,7 @@ function AnimCard({ publicId, index }) {
       {inView && !hasErr && (
         <video
           ref={videoRef}
-          src={`https://res.cloudinary.com/dea3l8rmw/video/upload/q_auto,f_auto/${publicId}.mp4`}
+          src={src}
           autoPlay
           loop
           muted
@@ -220,8 +190,8 @@ export default function Animations() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
         {/* 1 col mobile → 2 col tablet → 3 col desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {VIDEOS.map((publicId, i) => (
-            <AnimCard key={publicId} publicId={publicId} index={i} />
+          {VIDEOS.map((src, i) => (
+            <AnimCard key={src} src={src} index={i} />
           ))}
         </div>
       </section>

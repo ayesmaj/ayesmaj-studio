@@ -255,17 +255,17 @@ export default function WebExperiencesPreview() {
             <BrowserMockup
               url="aistartup.io" title="AI Startup Platform"
               delay={0.08}
-              videoSrc="/videos/websites/website-1.mp4"
+              videoSrc="https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev/websites/website-1.mp4"
             />
             <BrowserMockup
               url="realestate.co" title="Premium Property Platform"
               delay={0.16} offsetLeft={28} accentColor="#B3E65A"
-              videoSrc="/videos/websites/website-2.mp4"
+              videoSrc="https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev/websites/website-2.mp4"
             />
             <BrowserMockup
               url="blenday.com" title="Energy Drink Brand"
               delay={0.24}
-              videoSrc="/videos/websites/website-3.mp4"
+              videoSrc="https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev/websites/website-3.mp4"
             />
 
             {/* Ambient glow behind mockups */}
