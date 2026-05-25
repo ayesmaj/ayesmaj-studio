@@ -336,27 +336,42 @@ export default function HeroNew() {
           willChange: 'transform, opacity, filter',
         }}>
 
-          {/* Studio eyebrow */}
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: '0.18em' }}
-            animate={{ opacity: 1, letterSpacing: '0.52em' }}
-            transition={{ duration: 1.5, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+          {/* Premium badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
-              fontSize: 'clamp(8px,0.82vw,11px)',
-              letterSpacing: '0.52em', textTransform: 'uppercase',
-              color: '#C8A44E',
-              marginBottom: 'clamp(20px,2.5vw,32px)',
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              background: 'rgba(200,164,78,0.08)',
+              border: '1px solid rgba(200,164,78,0.28)',
+              borderRadius: 100,
+              padding: '6px 18px',
+              marginBottom: 'clamp(16px,2vw,24px)',
             }}
           >
-            AYESMAJ STUDIOS
-          </motion.p>
+            <span style={{
+              width: 6, height: 6, borderRadius: '50%',
+              background: '#C8A44E',
+              boxShadow: '0 0 8px rgba(200,164,78,0.8)',
+              flexShrink: 0,
+            }} />
+            <span style={{
+              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontSize: 'clamp(8px,0.7vw,10px)',
+              letterSpacing: '0.3em', textTransform: 'uppercase',
+              color: 'rgba(200,164,78,0.85)',
+              fontWeight: 600,
+            }}>
+              Premium Creative Studio · Arizona / Worldwide
+            </span>
+          </motion.div>
 
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.1, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontFamily: "'Satoshi', system-ui, sans-serif",
               fontSize: 'clamp(34px,7.2vw,100px)',
@@ -366,14 +381,14 @@ export default function HeroNew() {
               maxWidth: 'min(1020px,92vw)',
             }}
           >
-            AI Content Creation<br />
-            3D Animation &amp; Branding<br />
+            Cinematic Websites,<br />
+            Brands &amp; 3D Worlds<br />
             <span style={{
               fontStyle: 'italic',
               backgroundImage: 'linear-gradient(125deg, #E8C96D 0%, #C8A44E 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
             }}>
-              Built Around Your Brand.
+              Built to Be Unforgettable.
             </span>
           </motion.h1>
 
@@ -386,9 +401,8 @@ export default function HeroNew() {
             marginBottom: 'clamp(28px,4vw,48px)',
             opacity: p1SubOp, filter: p1SubFilt,
           }}>
-            We combine AI-powered marketing content, cinematic 3D animation,
-            and custom website &amp; landing page builds — all crafted
-            specifically for your brand.
+            AYESMAJ Studios creates premium digital experiences for brands
+            that want to look bigger, sharper, and unforgettable.
           </motion.p>
 
           {/* CTAs */}
@@ -397,15 +411,15 @@ export default function HeroNew() {
             opacity: p1CtaOp,
           }}>
             <ShinyButton as="a" href={createPageUrl('Contact')}>
-              Start Your Project →
+              Start a Project →
             </ShinyButton>
             <Link
-              to={createPageUrl('Reel')}
+              to={createPageUrl('Branding')}
               style={btnGhost}
               onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.09)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)'; }}
               onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}
             >
-              See Our Work
+              Explore Work
             </Link>
           </motion.div>
         </motion.div>

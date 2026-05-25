@@ -62,6 +62,7 @@ import Reel from './pages/Reel';
 import ServiceAnimation from './pages/ServiceAnimation';
 import Services from './pages/Services';
 import System from './pages/System';
+import WebExperiences from './pages/WebExperiences';
 import __Layout from './Layout.jsx';
 
 
@@ -81,6 +82,7 @@ export const PAGES = {
     "ServiceAnimation": ServiceAnimation,
     "Services": Services,
     "System": System,
+    "WebExperiences": WebExperiences,
 }
 
 export const pagesConfig = {

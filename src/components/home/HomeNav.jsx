@@ -157,19 +157,20 @@ export default function HomeNav() {
   const isActive = (page) => location.pathname === createPageUrl(page);
 
   const plainLinks = [
-    { label: 'Home',       page: 'Home'       },
-    { label: 'Services',   page: 'Services'   },
-    { label: 'Pricing',    page: 'Pricing'    },
-    { label: 'About',      page: 'About'      },
-    { label: 'Contact',    page: 'Contact'    },
+    { label: 'Web Experiences', page: 'WebExperiences' },
+    { label: '3D Animation',    page: 'Animations'     },
+    { label: 'Branding',        page: 'Branding'       },
+    { label: 'AI Systems',      page: 'System'         },
+    { label: 'About',           page: 'About'          },
   ];
 
   const linkStyle = (active) => ({
     fontFamily: "'Satoshi', system-ui, sans-serif",
-    fontSize: '11px', letterSpacing: '0.18em',
+    fontSize: '10px', letterSpacing: '0.14em',
     textTransform: 'uppercase', fontWeight: 600,
     color: active ? GOLD : 'rgba(248,250,252,0.42)',
     transition: 'color 0.3s',
+    whiteSpace: 'nowrap',
   });
 
   return (
@@ -194,7 +195,7 @@ export default function HomeNav() {
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
 
             {/* Work — click to open, stays open */}
             <div ref={workRef} className="relative">
@@ -366,7 +367,15 @@ export default function HomeNav() {
               </div>
 
               {/* Other links */}
-              {plainLinks.map((l, i) => (
+              {[
+                { label: 'Home',            page: 'Home'           },
+                { label: 'Web Experiences', page: 'WebExperiences' },
+                { label: '3D Animation',    page: 'Animations'     },
+                { label: 'Branding',        page: 'Branding'       },
+                { label: 'AI Systems',      page: 'System'         },
+                { label: 'About',           page: 'About'          },
+                { label: 'Contact',         page: 'Contact'        },
+              ].map((l, i) => (
                 <Link key={l.label} to={createPageUrl(l.page)}>
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
