@@ -7,12 +7,12 @@ export default function BrandingHero() {
       {/* Ambient green glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10"
-          style={{ background: 'radial-gradient(circle, rgba(0,196,106,0.5) 0%, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(179,255,63,0.5) 0%, transparent 70%)' }} />
       </div>
 
       {/* Top separator */}
       <div className="absolute top-0 inset-x-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(0,196,106,0.3), transparent)' }} />
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(179,255,63,0.3), transparent)' }} />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.p
@@ -20,7 +20,7 @@ export default function BrandingHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-xs tracking-[0.6em] uppercase mb-6"
-           style={{ color: '#00C46A' }}
+           style={{ color: '#B3FF3F' }}
         >
           AYESMAJ Studios · Creative Services
         </motion.p>
@@ -29,7 +29,8 @@ export default function BrandingHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl md:text-7xl font-black text-white tracking-tight leading-[1.05] mb-6"
+          className="text-5xl md:text-7xl text-white leading-[1.05] mb-6"
+          style={{ fontFamily: "'Anton', sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em' }}
         >
           Branding &<br />Visual Campaigns
         </motion.h1>
@@ -40,7 +41,7 @@ export default function BrandingHero() {
            animate={{ width: '120px' }}
            transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
            className="mx-auto mb-8 h-px"
-           style={{ background: 'linear-gradient(90deg, transparent, #00C46A, transparent)' }}
+           style={{ background: 'linear-gradient(90deg, transparent, #B3FF3F, transparent)' }}
         />
 
         <motion.p

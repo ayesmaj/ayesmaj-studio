@@ -2,8 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import HomeNav from '@/components/home/HomeNav';
-import Footer from '@/components/sections/Footer';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import { BRANDS, BRAND_NAV_GROUPS } from '@/data/brands';
 
 // ── Animation helpers ─────────────────────────────────────────────────────────
@@ -70,7 +70,8 @@ function BrandCard({ brand, index }) {
 
           {/* Name + subtitle */}
           <div>
-            <h3 className="text-white font-extrabold text-xl tracking-tight leading-tight">
+            <h3 className="text-white text-xl leading-tight"
+              style={{ fontFamily: "'Anton', sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em' }}>
               {brand.name}
             </h3>
             <p className="text-sm mt-0.5" style={{ color: 'rgba(255,255,255,0.3)' }}>
@@ -127,21 +128,22 @@ export default function Brands() {
   }), [activeGroup, activeYear]);
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden" style={{ background: '#080C09' }}>
-      <HomeNav />
+    <div className="min-h-screen text-white overflow-x-hidden" style={{ background: '#030303' }}>
+      <AyesmajNav />
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative pt-40 pb-24 px-6 text-center overflow-hidden">
         {/* ambient glow */}
         <div className="pointer-events-none absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(200,164,78,0.07) 0%, transparent 65%)' }} />
+          style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,176,0,0.07) 0%, transparent 65%)' }} />
 
         <motion.div {...fade(0)}>
           <p className="text-xs font-bold tracking-[0.45em] uppercase mb-5"
-            style={{ color: 'rgba(200,164,78,0.7)' }}>
+            style={{ color: 'rgba(255,176,0,0.7)' }}>
             Portfolio
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-none tracking-tight mb-5">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl text-white leading-none mb-5"
+            style={{ fontFamily: "'Anton', sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em' }}>
             Brands &amp; Collaborations
           </h1>
           <p className="max-w-xl mx-auto text-base md:text-lg text-white/35 leading-relaxed">
@@ -158,9 +160,9 @@ export default function Brands() {
             <button key={g} onClick={() => setActiveGroup(g)}
               className="text-[10px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full transition-all duration-200"
               style={{
-                background: activeGroup === g ? 'rgba(200,164,78,0.18)' : 'rgba(255,255,255,0.04)',
-                border: activeGroup === g ? '1px solid rgba(200,164,78,0.5)' : '1px solid rgba(255,255,255,0.08)',
-                color: activeGroup === g ? '#C8A44E' : 'rgba(255,255,255,0.35)',
+                background: activeGroup === g ? 'rgba(255,176,0,0.18)' : 'rgba(255,255,255,0.04)',
+                border: activeGroup === g ? '1px solid rgba(255,176,0,0.5)' : '1px solid rgba(255,255,255,0.08)',
+                color: activeGroup === g ? '#FFB000' : 'rgba(255,255,255,0.35)',
               }}>
               {g === 'All' ? 'All Work' : g}
             </button>
@@ -173,9 +175,9 @@ export default function Brands() {
             <button key={y} onClick={() => setActiveYear(y)}
               className="text-[10px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full transition-all duration-200"
               style={{
-                background: activeYear === y ? 'rgba(200,164,78,0.18)' : 'rgba(255,255,255,0.04)',
-                border: activeYear === y ? '1px solid rgba(200,164,78,0.5)' : '1px solid rgba(255,255,255,0.08)',
-                color: activeYear === y ? '#C8A44E' : 'rgba(255,255,255,0.35)',
+                background: activeYear === y ? 'rgba(255,176,0,0.18)' : 'rgba(255,255,255,0.04)',
+                border: activeYear === y ? '1px solid rgba(255,176,0,0.5)' : '1px solid rgba(255,255,255,0.08)',
+                color: activeYear === y ? '#FFB000' : 'rgba(255,255,255,0.35)',
               }}>
               {y}
             </button>
@@ -205,25 +207,26 @@ export default function Brands() {
       <section className="relative border-t py-32 px-6 text-center overflow-hidden"
         style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
         <div className="pointer-events-none absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(200,164,78,0.06) 0%, transparent 65%)' }} />
+          style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(255,176,0,0.06) 0%, transparent 65%)' }} />
         <motion.div {...fade()}>
           <p className="text-[11px] tracking-[0.35em] uppercase mb-5"
-            style={{ color: 'rgba(200,164,78,0.6)' }}>
+            style={{ color: 'rgba(255,176,0,0.6)' }}>
             Work with us
           </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 leading-tight">
+          <h2 className="text-3xl md:text-5xl text-white mb-8 leading-tight"
+            style={{ fontFamily: "'Anton', sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em' }}>
             Ready to Build Your<br />Brand System?
           </h2>
           <a href="/#contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-black text-sm font-bold hover:scale-105 transition-all duration-300 group"
-            style={{ background: '#C8A44E' }}>
+            style={{ background: '#FFB000' }}>
             Start Your Project
             <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
       </section>
 
-      <Footer />
+      <AyesmajFooter />
     </div>
   );
 }

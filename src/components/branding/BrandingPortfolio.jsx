@@ -93,7 +93,7 @@ const BRANDS = [
     name: "BRAND IDENTITIES",
     subtitle: "Logo Design Portfolio",
     category: "Branding",
-    accent: "#00C46A",
+    accent: "#B3FF3F",
     description:
       "Logo design and complete brand identity systems — from concept to full visual language, built to command attention and communicate power.",
     images: ['1.png','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg'],
@@ -141,14 +141,14 @@ function VideoCard({ src, brandId }) {
         <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm">
           <div
             className="w-16 h-16 rounded-full flex items-center justify-center"
-            style={{ background: 'rgba(0,196,106,0.2)', border: '1.5px solid rgba(0,196,106,0.5)' }}
+            style={{ background: 'rgba(179,255,63,0.2)', border: '1.5px solid rgba(179,255,63,0.5)' }}
           >
-            <Play size={24} fill="#00C46A" className="text-[#00C46A] ml-1" />
+            <Play size={24} fill="#B3FF3F" className="text-[#B3FF3F] ml-1" />
           </div>
         </div>
       )}
       <div className="absolute bottom-3 left-3 text-[9px] tracking-widest uppercase font-bold px-2 py-1 rounded"
-        style={{ background: 'rgba(0,0,0,0.6)', color: '#00C46A' }}>
+        style={{ background: 'rgba(0,0,0,0.6)', color: '#B3FF3F' }}>
         Motion
       </div>
     </motion.div>
@@ -352,7 +352,7 @@ function PortfolioHero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="text-xs tracking-[0.6em] uppercase mb-6" style={{ color: '#00C46A' }}>
+        <p className="text-xs tracking-[0.6em] uppercase mb-6" style={{ color: '#B3FF3F' }}>
           Our Work
         </p>
         <h1
@@ -390,7 +390,7 @@ function PortfolioHero() {
       {/* Decorative gradient line */}
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-24"
-        style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,196,106,0.3))' }}
+        style={{ background: 'linear-gradient(to bottom, transparent, rgba(179,255,63,0.3))' }}
       />
     </section>
   );
@@ -412,7 +412,7 @@ export default function BrandingPortfolio() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#00C46A' }}>Start a Project</p>
+          <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#B3FF3F' }}>Start a Project</p>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6" style={{ letterSpacing: '-0.03em' }}>
             Ready to Build<br />Your Brand World?
           </h2>

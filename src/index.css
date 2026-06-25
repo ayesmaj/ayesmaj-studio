@@ -43,7 +43,7 @@
     touch-action: pan-y;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: none;
-    background: #07100A;
+    background: #030303;
     font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
     color: #F2EDE4;
     -webkit-font-smoothing: antialiased;
@@ -82,9 +82,9 @@
 
   /* ── Shadcn / Radix UI design tokens — dark green & gold ── */
   :root {
-    --background: 130 30% 5%;
+    --background: 0 0% 1%;
     --foreground: 35 30% 93%;
-    --card: 130 22% 9%;
+    --card: 0 0% 4%;
     --card-foreground: 35 30% 93%;
     --popover: 130 22% 9%;
     --popover-foreground: 35 30% 93%;

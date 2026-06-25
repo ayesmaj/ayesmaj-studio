@@ -1,89 +1,63 @@
 import React, { useEffect } from 'react';
-import CircuitBackground from '@/components/home/CircuitBackground';
-import HomeNav from '@/components/home/HomeNav';
-import HeroNew from '@/components/home/HeroNew';
-import FeaturedServicesSection from '@/components/home/FeaturedServicesSection';
-import AboutSection from '@/components/home/AboutSection';
-import WebExperiencesPreview from '@/components/home/WebExperiencesPreview';
-import WorksGrid from '@/components/home/WorksGrid';
-import PortfolioShowcase from '@/components/home/PortfolioShowcase';
-import ZoomParallaxSection from '@/components/home/ZoomParallaxSection';
-import ReelSection from '@/components/home/ReelSection';
-import CommercialsSection from '@/components/home/CommercialsSection';
-import BrandingSection from '@/components/home/BrandingSection';
-import ProcessTimeline from '@/components/home/ProcessTimeline';
-import BeforeAfterSection from '@/components/home/BeforeAfterSlider';
-import WhyAyesmaj from '@/components/home/WhyAyesmaj';
-import ClientsSection from '@/components/home/ClientsSection';
-import HomeFinalCTA from '@/components/home/HomeFinalCTA';
-import ContactSection from '@/components/home/ContactSection';
-import HomeFooter from '@/components/home/HomeFooter';
-import SectionReveal from '@/components/home/SectionReveal';
-import WhoWeCreateFor from '@/components/home/WhoWeCreateFor';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import HeroWorlds from '@/components/ayesmaj/HeroWorlds';
+import FutureOfBranding from '@/components/ayesmaj/sections/FutureOfBranding';
+import SelectedWorlds from '@/components/ayesmaj/sections/SelectedWorlds';
+import PerceptionPrice from '@/components/ayesmaj/sections/PerceptionPrice';
+import CreativeSystem from '@/components/ayesmaj/sections/CreativeSystem';
+import FinalCTA from '@/components/ayesmaj/sections/FinalCTA';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 
 export default function Home() {
   useEffect(() => {
-    document.title = 'AYESMAJ Studios — Cinematic Websites, 3D Animation & Branding';
+    document.title = 'AYESMAJ Studios | Cinematic Branding, AI Content, Websites & 3D Worlds';
   }, []);
 
   return (
-    <div style={{ background: '#07100A', minHeight: '100vh', overflowX: 'clip', position: 'relative' }}>
-      {/* Fixed background layer */}
-      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0, pointerEvents: 'none' }}>
-        <CircuitBackground />
-      </div>
+    <div style={{ background: '#020302', minHeight: '100vh', overflowX: 'clip', position: 'relative' }}>
+      {/* ── Cinematic background atmosphere (shows behind all sections) ── */}
+      <div aria-hidden style={{
+        position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none',
+        background:
+          'radial-gradient(circle at 16% 30%, rgba(179,255,63,0.10), transparent 42%),' +
+          'radial-gradient(circle at 84% 22%, rgba(155,92,255,0.10), transparent 42%),' +
+          'radial-gradient(circle at 50% 78%, rgba(255,176,0,0.08), transparent 45%),' +
+          'linear-gradient(180deg, #020302, #050805)',
+      }} />
+      {/* Subtle grid, faded at the edges */}
+      <div aria-hidden style={{
+        position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', opacity: 0.12,
+        backgroundImage:
+          'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),' +
+          'linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+        backgroundSize: '64px 64px',
+        WebkitMaskImage: 'radial-gradient(ellipse 75% 75% at 50% 45%, black, transparent 82%)',
+        maskImage: 'radial-gradient(ellipse 75% 75% at 50% 45%, black, transparent 82%)',
+      }} />
 
-      {/* Content layer */}
-      <div style={{ position: 'relative', zIndex: 10 }}>
-        <HomeNav />
-        <HeroNew />
+      {/* ── Content (above the atmosphere) ── */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        {/* Cinematic hero — three worlds */}
+        <AyesmajNav />
+        <HeroWorlds />
 
-        {/* Services overview */}
-        <SectionReveal variant="up" delay={0}><FeaturedServicesSection /></SectionReveal>
+        {/* Section 1 — three business categories */}
+        <FutureOfBranding />
 
-        {/* Studio about */}
-        <SectionReveal variant="up" delay={0}><AboutSection /></SectionReveal>
+        {/* Section 2 — portfolio showcase with filters */}
+        <SelectedWorlds />
 
-        {/* Web experiences preview */}
-        <SectionReveal variant="up" delay={0}><WebExperiencesPreview /></SectionReveal>
+        {/* Section 3 — perception / value argument */}
+        <PerceptionPrice />
 
-        {/* Animation portfolio */}
-        <SectionReveal variant="up" delay={0}><WorksGrid /></SectionReveal>
+        {/* Section 4 — creative process timeline */}
+        <CreativeSystem />
 
-        {/* Portfolio showcase with filters */}
-        <SectionReveal variant="up" delay={0}><PortfolioShowcase /></SectionReveal>
+        {/* Section 5 — final CTA */}
+        <FinalCTA />
 
-        {/* Cinematic scroll parallax */}
-        <ZoomParallaxSection />
-
-        {/* Showreel */}
-        <SectionReveal variant="up" delay={0}><ReelSection /></SectionReveal>
-
-        {/* Commercials */}
-        <SectionReveal variant="up" delay={0}><CommercialsSection /></SectionReveal>
-
-        {/* Branding */}
-        <SectionReveal variant="up" delay={0}><BrandingSection /></SectionReveal>
-
-        {/* Process */}
-        <SectionReveal variant="up" delay={0}><ProcessTimeline /></SectionReveal>
-
-        {/* Before / After */}
-        <SectionReveal variant="up" delay={0}><BeforeAfterSection /></SectionReveal>
-
-        {/* Why AYESMAJ */}
-        <SectionReveal variant="up" delay={0}><WhyAyesmaj /></SectionReveal>
-
-        {/* Clients */}
-        <SectionReveal variant="up" delay={0}><ClientsSection /></SectionReveal>
-
-        {/* Final CTA */}
-        <SectionReveal variant="up" delay={0}><HomeFinalCTA /></SectionReveal>
-
-        {/* Contact form */}
-        <SectionReveal variant="up" delay={0}><ContactSection /></SectionReveal>
-
-        <SectionReveal variant="up" delay={0}><HomeFooter /></SectionReveal>
+        {/* Footer */}
+        <AyesmajFooter />
       </div>
     </div>
   );

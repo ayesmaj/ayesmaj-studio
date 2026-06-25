@@ -31,9 +31,9 @@ function CinematicVideo({ poster, videoUrl }) {
         maxWidth: '1200px',
         aspectRatio: '16/9',
         background: 'rgba(8,12,10,0.95)',
-        border: `1px solid ${hovered ? 'rgba(0,196,106,0.35)' : 'rgba(200,163,78,0.18)'}`,
+        border: `1px solid ${hovered ? 'rgba(179,255,63,0.35)' : 'rgba(200,163,78,0.18)'}`,
         boxShadow: hovered
-          ? '0 0 60px rgba(0,196,106,0.18), 0 40px 80px rgba(0,0,0,0.7)'
+          ? '0 0 60px rgba(179,255,63,0.18), 0 40px 80px rgba(0,0,0,0.7)'
           : '0 20px 60px rgba(0,0,0,0.6)',
         transition: 'border-color 0.4s, box-shadow 0.4s',
       }}
@@ -65,13 +65,13 @@ function CinematicVideo({ poster, videoUrl }) {
               style={{
                 width: 80,
                 height: 80,
-                background: 'rgba(0,196,106,0.15)',
-                border: '2px solid rgba(0,196,106,0.7)',
+                background: 'rgba(179,255,63,0.15)',
+                border: '2px solid rgba(179,255,63,0.7)',
                 backdropFilter: 'blur(12px)',
-                boxShadow: '0 0 40px rgba(0,196,106,0.3)',
+                boxShadow: '0 0 40px rgba(179,255,63,0.3)',
               }}
             >
-              <Play size={28} fill="#00C46A" color="#00C46A" style={{ marginLeft: 4 }} />
+              <Play size={28} fill="#B3FF3F" color="#B3FF3F" style={{ marginLeft: 4 }} />
             </motion.button>
           </div>
 
@@ -148,7 +148,7 @@ export default function BrandingProjectBlock({ project }) {
               {project.gallery.slice(0, 6).map((imgUrl, i) => (
                 <motion.div
                   key={i}
-                  whileHover={{ scale: 1.03, borderColor: 'rgba(0,196,106,0.4)' }}
+                  whileHover={{ scale: 1.03, borderColor: 'rgba(179,255,63,0.4)' }}
                   className="relative overflow-hidden rounded-xl"
                   style={{
                     aspectRatio: '4/3',
@@ -182,14 +182,14 @@ export default function BrandingProjectBlock({ project }) {
         {/* 7. Buttons */}
         <motion.div {...fade(0.25)} className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <motion.button
-            whileHover={{ scale: 1.05, boxShadow: '0 0 28px rgba(0,196,106,0.3)' }}
+            whileHover={{ scale: 1.05, boxShadow: '0 0 28px rgba(179,255,63,0.3)' }}
             whileTap={{ scale: 0.97 }}
             onClick={() => navigate(createPageUrl('BrandingCaseStudy') + `?slug=${project.slug}`)}
             className="flex items-center gap-2 px-8 py-3 rounded-full text-sm font-black tracking-widest uppercase"
             style={{
-              background: 'rgba(0,196,106,0.1)',
-              border: '1px solid rgba(0,196,106,0.5)',
-              color: '#00C46A',
+              background: 'rgba(179,255,63,0.1)',
+              border: '1px solid rgba(179,255,63,0.5)',
+              color: '#B3FF3F',
               minHeight: '48px',
             }}
           >

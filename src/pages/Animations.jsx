@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Volume2, VolumeX, Maximize2 } from 'lucide-react';
-import HomeNav from '@/components/home/HomeNav';
-import Footer from '@/components/sections/Footer';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 
 const R2 = 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev';
 
@@ -61,8 +61,8 @@ function AnimCard({ src, index }) {
       className="relative rounded-2xl overflow-hidden"
       style={{
         aspectRatio: '16/9',
-        background: '#0d1610',
-        border: '1px solid rgba(200,164,78,0.12)',
+        background: '#0B0B0B',
+        border: '1px solid rgba(255,176,0,0.12)',
       }}
     >
       {/* Lazy: only inject <video> once in viewport */}
@@ -90,7 +90,7 @@ function AnimCard({ src, index }) {
       <div className="absolute bottom-0 inset-x-0 flex items-center justify-between px-3 pb-3">
         <span
           className="text-[10px] font-bold tracking-[0.2em] uppercase"
-          style={{ color: 'rgba(200,164,78,0.7)' }}
+          style={{ color: 'rgba(255,176,0,0.7)' }}
         >
           #{String(index + 1).padStart(2, '0')}
         </span>
@@ -128,7 +128,7 @@ function AnimCard({ src, index }) {
 
       {/* Dark placeholder before entering viewport */}
       {!inView && (
-        <div className="absolute inset-0" style={{ background: '#0d1610' }} />
+        <div className="absolute inset-0" style={{ background: '#0B0B0B' }} />
       )}
 
       {/* Error state */}
@@ -136,7 +136,7 @@ function AnimCard({ src, index }) {
         <div className="absolute inset-0 flex items-center justify-center">
           <span
             className="text-xs tracking-widest uppercase"
-            style={{ color: 'rgba(200,164,78,0.25)' }}
+            style={{ color: 'rgba(255,176,0,0.25)' }}
           >
             #{String(index + 1).padStart(2, '0')}
           </span>
@@ -154,14 +154,14 @@ export default function Animations() {
   }, []);
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden" style={{ background: '#080C09' }}>
-      <HomeNav />
+    <div className="min-h-screen text-white overflow-x-hidden" style={{ background: '#030303' }}>
+      <AyesmajNav />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-16 px-6 text-center overflow-hidden">
         <div
           className="pointer-events-none absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(200,164,78,0.08) 0%, transparent 60%)' }}
+          style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,176,0,0.08) 0%, transparent 60%)' }}
         />
         <motion.div
           initial={{ opacity: 0, y: 32 }}
@@ -170,11 +170,12 @@ export default function Animations() {
         >
           <p
             className="text-xs font-bold tracking-[0.45em] uppercase mb-4"
-            style={{ color: 'rgba(200,164,78,0.7)' }}
+            style={{ color: 'rgba(255,176,0,0.7)' }}
           >
             Motion Work
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-none tracking-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl text-white leading-none mb-4"
+            style={{ fontFamily: "'Anton', sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em' }}>
             Animations
           </h1>
           <p className="max-w-lg mx-auto text-base md:text-lg text-white/35 leading-relaxed">
@@ -203,7 +204,7 @@ export default function Animations() {
       >
         <div
           className="pointer-events-none absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(200,164,78,0.06) 0%, transparent 65%)' }}
+          style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(255,176,0,0.06) 0%, transparent 65%)' }}
         />
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -213,24 +214,25 @@ export default function Animations() {
         >
           <p
             className="text-[11px] tracking-[0.35em] uppercase mb-4"
-            style={{ color: 'rgba(200,164,78,0.6)' }}
+            style={{ color: 'rgba(255,176,0,0.6)' }}
           >
             Start Something
           </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 leading-tight">
+          <h2 className="text-3xl md:text-5xl text-white mb-8 leading-tight"
+            style={{ fontFamily: "'Anton', sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em' }}>
             Let's Create Your<br />Next Animation
           </h2>
           <a
             href="/#contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-black text-sm font-bold hover:scale-105 active:scale-95 transition-all duration-300"
-            style={{ background: '#C8A44E', minHeight: '52px' }}
+            style={{ background: '#FFB000', minHeight: '52px' }}
           >
             Start Your Project →
           </a>
         </motion.div>
       </section>
 
-      <Footer />
+      <AyesmajFooter />
     </div>
   );
 }

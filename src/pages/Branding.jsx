@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import CircuitBackground from '@/components/home/CircuitBackground';
-import HomeNav from '@/components/home/HomeNav';
-import HomeFooter from '@/components/home/HomeFooter';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import BrandingHero from '@/components/branding/BrandingHero.jsx';
 import BrandingProcess from '@/components/branding/BrandingProcess.jsx';
 import BrandingClients from '@/components/branding/BrandingClients.jsx';
@@ -15,15 +15,15 @@ export default function Branding() {
   }, []);
 
   return (
-    <div style={{ background: '#0B0F0C', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div style={{ background: '#030303', minHeight: '100vh', overflowX: 'hidden' }}>
       <CircuitBackground />
-      <HomeNav />
+      <AyesmajNav />
       <BrandingHero />
       <BrandingPortfolio />
       <BrandingProcess />
       <BrandingClients />
       <BrandingCTA />
-      <HomeFooter />
+      <AyesmajFooter />
     </div>
   );
 }

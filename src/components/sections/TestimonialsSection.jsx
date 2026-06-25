@@ -11,7 +11,7 @@ const items = [
   {
     quote: "Fast, collaborative, and incredibly talented. They understood our brand language from day one and delivered beyond expectations.",
     author: "Marcus Webb", role: "Creative Director, Apex Motors",
-    initials: "MW", color: "#00C46A"
+    initials: "MW", color: "#B3FF3F"
   },
   {
     quote: "We've worked with studios in London and LA. AYESMAJ sits right at the top in terms of craft and communication.",

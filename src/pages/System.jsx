@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Sparkles, Loader2, Copy, Check, ChevronDown, ChevronUp, Lock, Zap, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import HomeFooter from '@/components/home/HomeFooter';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import CircuitBackground from '@/components/home/CircuitBackground';
 import { base44 } from '@/api/base44Client';
 
 const LOGO_URL = '/logo.png';
-const GOLD = '#C8A44E';
-const GOLD_LIGHT = '#E8C96D';
+const GOLD = '#FFB000';
+const GOLD_LIGHT = '#FFD36A';
 const GREEN = '#B3E65A';
 
 const LINKS = [
@@ -46,10 +46,10 @@ function OutputBlock({ label, content }) {
   return (
     <div style={{
       marginTop: 12,
-      border: `1px solid rgba(200,164,78,0.12)`,
+      border: `1px solid rgba(255,176,0,0.12)`,
       borderRadius: 12,
       padding: '14px 16px',
-      background: 'rgba(200,164,78,0.03)',
+      background: 'rgba(255,176,0,0.03)',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
         <span style={{
@@ -71,7 +71,7 @@ function SysField({ label, placeholder, value, onChange }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
       <label style={{
         fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase',
-        color: 'rgba(200,164,78,0.5)', fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+        color: 'rgba(255,176,0,0.5)', fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
       }}>{label}</label>
       <input
         value={value}
@@ -86,7 +86,7 @@ function SysField({ label, placeholder, value, onChange }) {
           outline: 'none', transition: 'border-color 0.2s',
           width: '100%', boxSizing: 'border-box',
         }}
-        onFocus={e => e.target.style.borderColor = 'rgba(200,164,78,0.3)'}
+        onFocus={e => e.target.style.borderColor = 'rgba(255,176,0,0.3)'}
         onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.07)'}
       />
     </div>
@@ -98,7 +98,7 @@ function SysTextarea({ label, placeholder, value, onChange, rows = 3 }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
       <label style={{
         fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase',
-        color: 'rgba(200,164,78,0.5)', fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+        color: 'rgba(255,176,0,0.5)', fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
       }}>{label}</label>
       <textarea
         value={value}
@@ -114,7 +114,7 @@ function SysTextarea({ label, placeholder, value, onChange, rows = 3 }) {
           outline: 'none', resize: 'none', transition: 'border-color 0.2s',
           width: '100%', boxSizing: 'border-box',
         }}
-        onFocus={e => e.target.style.borderColor = 'rgba(200,164,78,0.3)'}
+        onFocus={e => e.target.style.borderColor = 'rgba(255,176,0,0.3)'}
         onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.07)'}
       />
     </div>
@@ -129,9 +129,9 @@ function RunButton({ loading, onClick, disabled, label = 'EXECUTE' }) {
       style={{
         display: 'inline-flex', alignItems: 'center', gap: 8,
         padding: '10px 22px', borderRadius: 100,
-        background: loading || disabled ? 'rgba(200,164,78,0.04)' : 'rgba(200,164,78,0.1)',
-        border: `1px solid ${loading || disabled ? 'rgba(200,164,78,0.12)' : 'rgba(200,164,78,0.35)'}`,
-        color: loading || disabled ? 'rgba(200,164,78,0.35)' : GOLD,
+        background: loading || disabled ? 'rgba(255,176,0,0.04)' : 'rgba(255,176,0,0.1)',
+        border: `1px solid ${loading || disabled ? 'rgba(255,176,0,0.12)' : 'rgba(255,176,0,0.35)'}`,
+        color: loading || disabled ? 'rgba(255,176,0,0.35)' : GOLD,
         fontSize: 10, fontWeight: 700, letterSpacing: '0.2em',
         fontFamily: "'Satoshi', system-ui, sans-serif",
         cursor: loading || disabled ? 'not-allowed' : 'pointer',
@@ -148,7 +148,7 @@ function Module({ title, tag, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
     <div style={{
-      border: '1px solid rgba(200,164,78,0.1)',
+      border: '1px solid rgba(255,176,0,0.1)',
       borderRadius: 16,
       overflow: 'hidden',
       background: 'rgba(11,15,12,0.6)',
@@ -166,7 +166,7 @@ function Module({ title, tag, children, defaultOpen = false }) {
           <span style={{
             fontSize: 8, letterSpacing: '0.22em', textTransform: 'uppercase',
             color: GOLD, fontWeight: 700, fontFamily: "'Satoshi', system-ui, sans-serif",
-            background: 'rgba(200,164,78,0.1)', border: '1px solid rgba(200,164,78,0.2)',
+            background: 'rgba(255,176,0,0.1)', border: '1px solid rgba(255,176,0,0.2)',
             borderRadius: 100, padding: '3px 10px',
           }}>{tag}</span>
           <span style={{
@@ -191,7 +191,7 @@ function Module({ title, tag, children, defaultOpen = false }) {
           >
             <div style={{
               padding: '0 22px 22px',
-              borderTop: '1px solid rgba(200,164,78,0.07)',
+              borderTop: '1px solid rgba(255,176,0,0.07)',
             }}>
               {children}
             </div>
@@ -246,7 +246,7 @@ Generate:
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
           <label style={{
             fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase',
-            color: 'rgba(200,164,78,0.5)', fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+            color: 'rgba(255,176,0,0.5)', fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
           }}>Industry</label>
           <select
             value={form.industry}
@@ -273,8 +273,8 @@ Generate:
           <OutputBlock label="Positioning" content={result.positioning} />
           {result.brand_voice?.length > 0 && (
             <div style={{
-              marginTop: 4, border: '1px solid rgba(200,164,78,0.12)',
-              borderRadius: 12, padding: '14px 16px', background: 'rgba(200,164,78,0.03)',
+              marginTop: 4, border: '1px solid rgba(255,176,0,0.12)',
+              borderRadius: 12, padding: '14px 16px', background: 'rgba(255,176,0,0.03)',
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
@@ -285,8 +285,8 @@ Generate:
                 {result.brand_voice.map(v => (
                   <span key={v} style={{
                     padding: '5px 14px', borderRadius: 100,
-                    border: '1px solid rgba(200,164,78,0.25)',
-                    background: 'rgba(200,164,78,0.08)',
+                    border: '1px solid rgba(255,176,0,0.25)',
+                    background: 'rgba(255,176,0,0.08)',
                     color: GOLD_LIGHT, fontSize: 11, fontWeight: 600,
                     fontFamily: "'Satoshi', system-ui, sans-serif",
                     letterSpacing: '0.05em',
@@ -354,8 +354,8 @@ Generate:
       {result && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{
-            border: '1px solid rgba(200,164,78,0.12)', borderRadius: 12,
-            padding: '14px 16px', background: 'rgba(200,164,78,0.03)',
+            border: '1px solid rgba(255,176,0,0.12)', borderRadius: 12,
+            padding: '14px 16px', background: 'rgba(255,176,0,0.03)',
           }}>
             <span style={{
               fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
@@ -377,8 +377,8 @@ Generate:
           <OutputBlock label="Visual Direction" content={result.visual_direction} />
           {result.channels?.length > 0 && (
             <div style={{
-              border: '1px solid rgba(200,164,78,0.12)', borderRadius: 12,
-              padding: '14px 16px', background: 'rgba(200,164,78,0.03)',
+              border: '1px solid rgba(255,176,0,0.12)', borderRadius: 12,
+              padding: '14px 16px', background: 'rgba(255,176,0,0.03)',
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
@@ -419,7 +419,7 @@ function VisualBriefModule() {
 Brand Description: "${desc}"
 
 Generate:
-1. color_palette: An array of 4 color descriptions (e.g. "Deep Obsidian #0A0A0A", "Burnished Gold #C8A44E"). Include hex codes.
+1. color_palette: An array of 4 color descriptions (e.g. "Deep Obsidian #0A0A0A", "Burnished Gold #FFB000"). Include hex codes.
 2. typography_direction: 1–2 sentences on font personality, type pairing approach, and weight usage.
 3. mood: 3 evocative mood words that define the visual feeling.
 4. references: An array of 2–3 creative references (e.g. directors, photographers, design movements, brands).
@@ -453,8 +453,8 @@ Generate:
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {result.color_palette?.length > 0 && (
             <div style={{
-              border: '1px solid rgba(200,164,78,0.12)', borderRadius: 12,
-              padding: '14px 16px', background: 'rgba(200,164,78,0.03)',
+              border: '1px solid rgba(255,176,0,0.12)', borderRadius: 12,
+              padding: '14px 16px', background: 'rgba(255,176,0,0.03)',
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
@@ -487,8 +487,8 @@ Generate:
           <OutputBlock label="Photography Style" content={result.photography_style} />
           {result.mood?.length > 0 && (
             <div style={{
-              border: '1px solid rgba(200,164,78,0.12)', borderRadius: 12,
-              padding: '14px 16px', background: 'rgba(200,164,78,0.03)',
+              border: '1px solid rgba(255,176,0,0.12)', borderRadius: 12,
+              padding: '14px 16px', background: 'rgba(255,176,0,0.03)',
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
@@ -499,8 +499,8 @@ Generate:
                 {result.mood.map(m => (
                   <span key={m} style={{
                     padding: '5px 14px', borderRadius: 100,
-                    border: '1px solid rgba(200,164,78,0.2)',
-                    background: 'rgba(200,164,78,0.06)',
+                    border: '1px solid rgba(255,176,0,0.2)',
+                    background: 'rgba(255,176,0,0.06)',
                     color: GOLD_LIGHT, fontSize: 11, fontWeight: 600,
                     fontFamily: "'Satoshi', system-ui, sans-serif", fontStyle: 'italic',
                   }}>{m}</span>
@@ -510,8 +510,8 @@ Generate:
           )}
           {result.references?.length > 0 && (
             <div style={{
-              border: '1px solid rgba(200,164,78,0.12)', borderRadius: 12,
-              padding: '14px 16px', background: 'rgba(200,164,78,0.03)',
+              border: '1px solid rgba(255,176,0,0.12)', borderRadius: 12,
+              padding: '14px 16px', background: 'rgba(255,176,0,0.03)',
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
@@ -543,7 +543,7 @@ export default function System() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden" style={{ background: '#0B0F0C' }}>
+    <div className="min-h-screen text-white overflow-x-hidden" style={{ background: '#030303' }}>
       <CircuitBackground />
 
       {/* Navigation */}
@@ -555,7 +555,7 @@ export default function System() {
         style={{
           background: 'rgba(11,15,12,0.85)',
           backdropFilter: 'blur(20px)',
-          borderBottom: '1px solid rgba(200,163,78,0.08)',
+          borderBottom: '1px solid rgba(255,176,0,0.08)',
         }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[70px]">
           <Link to={createPageUrl('Home')} className="flex items-center group">
@@ -563,7 +563,7 @@ export default function System() {
           </Link>
           <div className="hidden lg:flex items-center gap-4">
             <Link to={createPageUrl('Home')} className="p-2 rounded-lg hover:bg-white/5 transition-colors" title="Go to Home">
-              <Home size={18} className="text-[#C8A44E]" />
+              <Home size={18} className="text-[#FFB000]" />
             </Link>
             <div className="flex items-center gap-4 pl-4 border-l border-white/10">
               {LINKS.slice(1).map(l => (
@@ -587,9 +587,9 @@ export default function System() {
             initial={{ opacity: 0, x: '100%' }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-y-0 right-0 z-40 w-full sm:w-80 flex flex-col px-8 pt-28 pb-10"
-            style={{ background: 'rgba(11,15,12,0.97)', backdropFilter: 'blur(20px)', borderLeft: '1px solid rgba(200,163,78,0.08)' }}>
+            style={{ background: 'rgba(11,15,12,0.97)', backdropFilter: 'blur(20px)', borderLeft: '1px solid rgba(255,176,0,0.08)' }}>
             <div className="absolute inset-x-0 top-0 h-px"
-              style={{ background: 'linear-gradient(to right, transparent, rgba(200,163,78,0.3), transparent)' }} />
+              style={{ background: 'linear-gradient(to right, transparent, rgba(255,176,0,0.3), transparent)' }} />
             <nav className="flex flex-col gap-2">
               {LINKS.map((l, i) => (
                 <Link key={l.label} to={createPageUrl(l.page)} onClick={() => setMenuOpen(false)}>
@@ -597,7 +597,7 @@ export default function System() {
                     initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.06 }}
                     className="text-left py-4 text-2xl font-black transition-colors border-b"
-                    style={{ borderColor: 'rgba(255,255,255,0.04)', color: l.page === 'System' ? '#C8A44E' : 'white' }}>
+                    style={{ borderColor: 'rgba(255,255,255,0.04)', color: l.page === 'System' ? '#FFB000' : 'white' }}>
                     {l.label}
                   </motion.div>
                 </Link>
@@ -614,7 +614,7 @@ export default function System() {
         <div style={{
           position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%,-50%)',
           width: 600, height: 300, borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(200,164,78,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(255,176,0,0.08) 0%, transparent 70%)',
           pointerEvents: 'none',
         }} />
 
@@ -627,9 +627,9 @@ export default function System() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              border: `1px solid rgba(200,164,78,0.25)`,
+              border: `1px solid rgba(255,176,0,0.25)`,
               borderRadius: 100, padding: '6px 16px',
-              background: 'rgba(200,164,78,0.06)',
+              background: 'rgba(255,176,0,0.06)',
               marginBottom: 28,
             }}
           >
@@ -717,7 +717,7 @@ export default function System() {
       }}>
         <div style={{
           height: 1,
-          background: 'linear-gradient(to right, transparent, rgba(200,164,78,0.2), transparent)',
+          background: 'linear-gradient(to right, transparent, rgba(255,176,0,0.2), transparent)',
         }} />
       </div>
 
@@ -738,13 +738,13 @@ export default function System() {
           display: 'flex', alignItems: 'center', gap: 14,
           marginBottom: 28,
         }}>
-          <div style={{ flex: 1, height: 1, background: 'rgba(200,164,78,0.12)' }} />
+          <div style={{ flex: 1, height: 1, background: 'rgba(255,176,0,0.12)' }} />
           <span style={{
             fontSize: 9, letterSpacing: '0.32em', textTransform: 'uppercase',
             color: GOLD, fontWeight: 700, fontFamily: "'Satoshi', system-ui, sans-serif",
             whiteSpace: 'nowrap',
           }}>GENERATION MODULES</span>
-          <div style={{ flex: 1, height: 1, background: 'rgba(200,164,78,0.12)' }} />
+          <div style={{ flex: 1, height: 1, background: 'rgba(255,176,0,0.12)' }} />
         </div>
 
         {/* Notice */}
@@ -780,17 +780,17 @@ export default function System() {
 
       {/* ── Bottom accent ─────────────────────────────────────────────────── */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 clamp(24px,5vw,60px) clamp(48px,6vw,80px)', position: 'relative', zIndex: 10 }}>
-        <div style={{ height: 1, background: 'linear-gradient(to right, transparent, rgba(200,164,78,0.15), transparent)', marginBottom: 32 }} />
+        <div style={{ height: 1, background: 'linear-gradient(to right, transparent, rgba(255,176,0,0.15), transparent)', marginBottom: 32 }} />
         <p style={{
           textAlign: 'center', fontFamily: "'Satoshi', system-ui, sans-serif",
-          fontSize: 10, letterSpacing: '0.22em', color: 'rgba(200,164,78,0.3)',
+          fontSize: 10, letterSpacing: '0.22em', color: 'rgba(255,176,0,0.3)',
           textTransform: 'uppercase',
         }}>
           AYESMAJ STUDIOS · PRIVATE GENERATION SYSTEM · AUTHORIZED ACCESS ONLY
         </p>
       </div>
 
-      <HomeFooter />
+      <AyesmajFooter />
     </div>
   );
 }

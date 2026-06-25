@@ -4,8 +4,8 @@ import { base44 } from '@/api/base44Client';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import ThreeBackground from '@/components/three/ThreeBackground';
-import HomeNav from '@/components/home/HomeNav';
-import Footer from '@/components/sections/Footer';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import { ArrowLeft, Star, Play, ExternalLink, Loader2 } from 'lucide-react';
 
 const CATEGORY_COLORS = {
@@ -63,7 +63,7 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-[#090909] text-white overflow-x-hidden">
       <ThreeBackground reducedMotion={reducedMotion} />
-      <HomeNav />
+      <AyesmajNav />
 
       <main className="relative z-10">
         {/* HERO */}
@@ -205,7 +205,7 @@ export default function ProjectDetail() {
         </div>
       </main>
 
-      <Footer />
+      <AyesmajFooter />
 
       {/* Lightbox */}
       {lightboxIndex !== null && (

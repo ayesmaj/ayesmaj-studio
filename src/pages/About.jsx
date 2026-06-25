@@ -1,16 +1,20 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import CircuitBackground from '@/components/home/CircuitBackground';
-import HomeNav from '@/components/home/HomeNav';
-import HomeFooter from '@/components/home/HomeFooter';
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
-import { ArrowUpRight, Zap, Eye, Globe, Award } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Zap, Eye, Globe, Award } from 'lucide-react';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
+import CinematicButton from '@/components/ayesmaj/CinematicButton';
+import SectionHeader from '@/components/ayesmaj/SectionHeader';
+import { WORLDS, COLORS, FONTS } from '@/components/ayesmaj/theme';
+
+const GOLD = '#FFB000';
+const GOLD_RGB = '255,176,0';
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
+  viewport: { once: true, margin: '-60px' },
   transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
 });
 
@@ -21,125 +25,107 @@ const STATS = [
   { value: '3', label: 'Studio Locations' },
 ];
 
+// Each value carries one of the three world accent colors
 const VALUES = [
-  { icon: Eye, title: 'Cinematic Vision', desc: 'Every frame is designed like a film — intentional, atmospheric, and emotionally resonant.' },
-  { icon: Zap, title: 'Craft Over Speed', desc: 'We move fast but never compromise quality. Every pixel earns its place.' },
-  { icon: Globe, title: 'Global Perspective', desc: 'Studios in LA, London, and Dubai — giving us a truly international creative lens.' },
-  { icon: Award, title: 'Brand Elevation', desc: 'We don\'t just make visuals. We build worlds around brands that demand attention.' },
+  { icon: Eye,   title: 'Cinematic Vision',   desc: 'Every frame is designed like a film — intentional, atmospheric, and emotionally resonant.', accent: WORLDS[1].accent, rgb: WORLDS[1].accentRGB },
+  { icon: Zap,   title: 'Craft Over Speed',   desc: 'We move fast but never compromise quality. Every pixel earns its place.', accent: WORLDS[0].accent, rgb: WORLDS[0].accentRGB },
+  { icon: Globe, title: 'Global Perspective', desc: 'A truly international creative lens, partnering with brands across the world.', accent: WORLDS[2].accent, rgb: WORLDS[2].accentRGB },
+  { icon: Award, title: 'Brand Elevation',    desc: "We don't just make visuals. We build worlds around brands that demand attention.", accent: GOLD, rgb: GOLD_RGB },
 ];
 
 export default function About() {
+  const navigate = useNavigate();
   useEffect(() => {
     document.title = 'About — AYESMAJ Studios';
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div style={{ background: '#0B0F0C', minHeight: '100vh', overflowX: 'hidden' }}>
-      <CircuitBackground />
-      <HomeNav />
+    <div style={{ background: COLORS.black, minHeight: '100vh', overflowX: 'hidden', color: COLORS.white }}>
+      <AyesmajNav />
 
-      <main className="relative z-10 pt-32 pb-24 px-6">
-        <div className="max-w-6xl mx-auto">
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', background: `radial-gradient(circle at 50% 0%, rgba(${GOLD_RGB},0.08), transparent 55%)` }} />
+
+      <main style={{ position: 'relative', zIndex: 10, padding: '160px clamp(24px,5vw,80px) 120px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
 
           {/* Hero */}
-          <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="text-center mb-24">
-            <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#C8A44E' }}>About the Studio</p>
-            <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-none mb-8">
+          <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16,1,0.3,1] }} style={{ textAlign: 'center', marginBottom: 'clamp(56px,7vw,96px)' }}>
+            <p style={{ fontFamily: FONTS.ui, fontSize: 12, fontWeight: 600, letterSpacing: '0.4em', textTransform: 'uppercase', color: GOLD, marginBottom: 18 }}>About the Studio</p>
+            <h1 style={{ fontFamily: FONTS.display, fontSize: 'clamp(40px,7vw,108px)', fontWeight: 800, lineHeight: 0.9, letterSpacing: '-0.01em', textTransform: 'uppercase', color: COLORS.white, margin: 0 }}>
               We Make Brands<br />
-              <span style={{ WebkitTextStroke: '1px rgba(200,163,78,0.5)', color: 'transparent' }}>Unforgettable.</span>
+              <span style={{ WebkitTextStroke: `1px rgba(${GOLD_RGB},0.6)`, color: 'transparent' }}>Unforgettable.</span>
             </h1>
-            <p className="text-base md:text-xl max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              AYESMAJ Studios is a premium 3D animation and visual storytelling studio. We partner with brands globally to create cinematic experiences that command attention and drive results.
+            <p style={{ fontFamily: FONTS.ui, fontSize: 'clamp(15px,1.4vw,19px)', color: COLORS.gray, maxWidth: 640, margin: '26px auto 0', lineHeight: 1.65 }}>
+              AYESMAJ Studios builds premium cinematic websites, AI-powered marketing content, and immersive 3D worlds. We partner with brands globally to create experiences that command attention and drive results.
             </p>
           </motion.div>
 
           {/* Stats */}
-          <motion.div {...fade(0.1)} className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,200px),1fr))', gap: 16, marginBottom: 'clamp(56px,7vw,96px)' }}>
             {STATS.map((s, i) => (
-              <motion.div key={s.label} {...fade(0.1 + i * 0.08)}
-                className="text-center rounded-2xl py-10 px-6"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(200,163,78,0.1)' }}
-              >
-                <div className="text-4xl md:text-5xl font-black mb-2" style={{ color: '#C8A44E' }}>{s.value}</div>
-                <div className="text-xs tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>{s.label}</div>
+              <motion.div key={s.label} {...fade(i * 0.08)}
+                style={{ textAlign: 'center', borderRadius: 18, padding: '38px 24px', background: COLORS.glass, border: `1px solid rgba(${GOLD_RGB},0.14)` }}>
+                <div style={{ fontFamily: FONTS.display, fontSize: 'clamp(36px,4vw,56px)', fontWeight: 800, color: GOLD, lineHeight: 1, marginBottom: 8 }}>{s.value}</div>
+                <div style={{ fontFamily: FONTS.ui, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.muted }}>{s.label}</div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Story */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
-            <motion.div {...fade(0.1)}>
-              <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#C8A44E' }}>Our Story</p>
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Built on Craft, Driven by Obsession</h2>
-              <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                <p>Founded by a team of 3D artists, filmmakers, and brand strategists, AYESMAJ Studios was built from a single conviction: visual quality is a competitive advantage.</p>
-                <p>We combine cutting-edge CGI technology with cinematic storytelling to create work that doesn't just look good — it performs.</p>
-                <p>From premium product reveals to full brand world builds, every project we take on receives the same obsessive level of craft.</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,360px),1fr))', gap: 'clamp(32px,5vw,64px)', alignItems: 'center', marginBottom: 'clamp(56px,7vw,96px)' }}>
+            <motion.div {...fade(0.05)}>
+              <p style={{ fontFamily: FONTS.ui, fontSize: 12, fontWeight: 600, letterSpacing: '0.4em', textTransform: 'uppercase', color: GOLD, marginBottom: 16 }}>Our Story</p>
+              <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(28px,3.4vw,46px)', fontWeight: 800, textTransform: 'uppercase', color: COLORS.white, margin: '0 0 20px', lineHeight: 1.02 }}>Built on Craft, Driven by Obsession</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, fontFamily: FONTS.ui, fontSize: 15.5, lineHeight: 1.7, color: COLORS.gray }}>
+                <p style={{ margin: 0 }}>Founded by a team of 3D artists, filmmakers, and brand strategists, AYESMAJ Studios was built from a single conviction: visual quality is a competitive advantage.</p>
+                <p style={{ margin: 0 }}>We combine cutting-edge CGI and AI with cinematic storytelling to create work that doesn't just look good — it performs.</p>
+                <p style={{ margin: 0 }}>From premium product reveals to full brand world builds, every project receives the same obsessive level of craft.</p>
               </div>
             </motion.div>
-            <motion.div {...fade(0.2)}>
-              <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '4/3', border: '1px solid rgba(200,163,78,0.15)' }}>
-                <img src="/about-hero.png"
-                  alt="AYESMAJ Studio" className="w-full h-full object-cover" />
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(11,15,12,0.6) 0%, transparent 60%)' }} />
+            <motion.div {...fade(0.15)}>
+              <div style={{ position: 'relative', borderRadius: 18, overflow: 'hidden', aspectRatio: '4/3', border: `1px solid rgba(${GOLD_RGB},0.18)` }}>
+                <img src="/about-hero.png" alt="AYESMAJ Studio" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e)=>{e.currentTarget.style.display='none';}} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(3,3,3,0.6) 0%, transparent 60%)' }} />
               </div>
             </motion.div>
           </div>
 
           {/* Values */}
-          <motion.div {...fade(0.1)} className="mb-24">
-            <p className="text-xs tracking-[0.5em] uppercase mb-4 text-center" style={{ color: '#C8A44E' }}>Our Values</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white text-center mb-12">What Drives Us</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div style={{ marginBottom: 'clamp(56px,7vw,96px)' }}>
+            <SectionHeader eyebrow="Our Values" title="What Drives Us" />
+            <div style={{ marginTop: 'clamp(36px,5vw,56px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,320px),1fr))', gap: 18 }}>
               {VALUES.map((v, i) => {
                 const Icon = v.icon;
                 return (
-                  <motion.div key={v.title} {...fade(0.1 + i * 0.1)}
-                    className="rounded-2xl p-8 flex gap-6"
-                    style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(200,163,78,0.1)' }}
-                  >
-                    <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ background: 'rgba(0,196,106,0.1)', border: '1px solid rgba(0,196,106,0.25)' }}>
-                      <Icon size={18} color="#00C46A" />
+                  <motion.div key={v.title} {...fade(i * 0.08)}
+                    style={{ borderRadius: 18, padding: 30, display: 'flex', gap: 20, background: COLORS.glass, border: `1px solid rgba(${v.rgb},0.18)` }}>
+                    <div style={{ flexShrink: 0, width: 44, height: 44, borderRadius: 11, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `rgba(${v.rgb},0.10)`, border: `1px solid rgba(${v.rgb},0.3)` }}>
+                      <Icon size={19} color={v.accent} />
                     </div>
                     <div>
-                      <h3 className="text-white font-black text-base mb-2">{v.title}</h3>
-                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>{v.desc}</p>
+                      <h3 style={{ fontFamily: FONTS.display, fontSize: 21, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', color: COLORS.white, margin: '2px 0 8px' }}>{v.title}</h3>
+                      <p style={{ fontFamily: FONTS.ui, fontSize: 14.5, lineHeight: 1.6, color: COLORS.gray, margin: 0 }}>{v.desc}</p>
                     </div>
                   </motion.div>
                 );
               })}
             </div>
-          </motion.div>
+          </div>
 
           {/* CTA */}
-          <motion.div {...fade(0.2)} className="text-center">
-            <h2 className="text-3xl font-black text-white mb-4">Ready to Work Together?</h2>
-            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.4)' }}>Tell us about your project and let's create something extraordinary.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to={createPageUrl('Contact')}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-300"
-                style={{ background: 'rgba(0,196,106,0.1)', border: '1px solid rgba(0,196,106,0.5)', color: '#00C46A', minHeight: '52px' }}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 30px rgba(0,196,106,0.25)'; e.currentTarget.style.background = 'rgba(0,196,106,0.15)'; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; e.currentTarget.style.background = 'rgba(0,196,106,0.1)'; }}
-              >
-                Start a Project <ArrowUpRight size={16} />
-              </Link>
-              <Link to={createPageUrl('Work')}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-300"
-                style={{ border: '1px solid rgba(200,163,78,0.3)', color: '#C8A44E', minHeight: '52px' }}
-                onMouseEnter={e => e.currentTarget.style.background = 'rgba(200,163,78,0.06)'}
-                onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-              >
-                View Our Work
-              </Link>
+          <motion.div {...fade(0.1)} style={{ textAlign: 'center' }}>
+            <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(30px,4vw,56px)', fontWeight: 800, textTransform: 'uppercase', color: COLORS.white, margin: '0 0 16px' }}>Ready to Work Together?</h2>
+            <p style={{ fontFamily: FONTS.ui, fontSize: 16, color: COLORS.gray, margin: '0 0 32px' }}>Tell us about your project and let's create something extraordinary.</p>
+            <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+              <CinematicButton label="Start a Project" accent={GOLD} size="lg" onClick={() => navigate('/Contact')} />
+              <CinematicButton label="View Our Work" accent="#F5F5F0" size="lg" onClick={() => navigate('/Brands')} />
             </div>
           </motion.div>
         </div>
       </main>
 
-      <HomeFooter />
+      <AyesmajFooter />
     </div>
   );
 }

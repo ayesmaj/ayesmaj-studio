@@ -4,8 +4,8 @@ import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import CircuitBackground from '@/components/home/CircuitBackground';
-import HomeNav from '@/components/home/HomeNav';
-import HomeFooter from '@/components/home/HomeFooter';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -47,9 +47,9 @@ export default function ServiceAnimation() {
   }, []);
 
   return (
-    <div style={{ background: '#0B0F0C', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div style={{ background: '#030303', minHeight: '100vh', overflowX: 'hidden' }}>
       <CircuitBackground />
-      <HomeNav />
+      <AyesmajNav />
 
       <main className="relative z-10 pt-28 pb-0">
         {/* Hero */}
@@ -60,8 +60,8 @@ export default function ServiceAnimation() {
               onClick={() => navigate(createPageUrl('Home'))}
               className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-8 transition-all duration-300"
               style={{
-                border: '1px solid rgba(200,163,78,0.3)',
-                color: '#C8A44E',
+                border: '1px solid rgba(255,176,0,0.3)',
+                color: '#FFB000',
                 background: 'rgba(11,15,12,0.5)',
                 backdropFilter: 'blur(10px)'
               }}
@@ -83,7 +83,7 @@ export default function ServiceAnimation() {
                 {...fade(0.3)}
                 onClick={() => navigate(createPageUrl('Contact'))}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold tracking-widest uppercase text-sm transition-all duration-300"
-                style={{ background: 'linear-gradient(135deg, rgba(200,163,78,0.9), rgba(200,163,78,0.7))', color: '#0B0F0C' }}
+                style={{ background: 'linear-gradient(135deg, rgba(255,176,0,0.9), rgba(255,176,0,0.7))', color: '#030303' }}
                 whileHover={{ scale: 1.03 }}
               >
                 Start Your Project <ArrowRight size={15} />
@@ -92,7 +92,7 @@ export default function ServiceAnimation() {
                 {...fade(0.4)}
                 onClick={() => navigate(createPageUrl('Reel'))}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold tracking-widest uppercase text-sm transition-all duration-300"
-                style={{ border: '1px solid rgba(200,163,78,0.3)', color: '#C8A44E' }}
+                style={{ border: '1px solid rgba(255,176,0,0.3)', color: '#FFB000' }}
                 whileHover={{ scale: 1.03 }}
               >
                 View Showreel
@@ -102,7 +102,7 @@ export default function ServiceAnimation() {
         </section>
 
         {/* Capabilities */}
-        <section className="py-20 px-6 border-t" style={{ borderColor: 'rgba(200,163,78,0.1)' }}>
+        <section className="py-20 px-6 border-t" style={{ borderColor: 'rgba(255,176,0,0.1)' }}>
           <div className="max-w-6xl mx-auto">
             <motion.h2 {...fade(0)} className="text-3xl md:text-4xl font-black text-white mb-16 text-center">
               What We Create
@@ -128,12 +128,12 @@ export default function ServiceAnimation() {
                   {...fade(0.1 + i * 0.1)}
                   className="p-8 rounded-2xl transition-all duration-300"
                   style={{
-                    border: '1px solid rgba(200,163,78,0.15)',
-                    background: 'rgba(200,163,78,0.02)'
+                    border: '1px solid rgba(255,176,0,0.15)',
+                    background: 'rgba(255,176,0,0.02)'
                   }}
                   whileHover={{
-                    borderColor: 'rgba(200,163,78,0.35)',
-                    background: 'rgba(200,163,78,0.08)'
+                    borderColor: 'rgba(255,176,0,0.35)',
+                    background: 'rgba(255,176,0,0.08)'
                   }}
                 >
                   <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
@@ -145,7 +145,7 @@ export default function ServiceAnimation() {
         </section>
 
         {/* Portfolio */}
-        <section className="py-20 px-6 border-t" style={{ borderColor: 'rgba(200,163,78,0.1)' }}>
+        <section className="py-20 px-6 border-t" style={{ borderColor: 'rgba(255,176,0,0.1)' }}>
           <div className="max-w-6xl mx-auto">
             <motion.h2 {...fade(0)} className="text-3xl md:text-4xl font-black text-white mb-16 text-center">
               Recent Work
@@ -157,7 +157,7 @@ export default function ServiceAnimation() {
                   key={item.id}
                   {...fade(0.1 + i * 0.08)}
                   className="group relative overflow-hidden rounded-2xl cursor-pointer"
-                  style={{ border: '1px solid rgba(200,163,78,0.15)', aspectRatio: '16/10' }}
+                  style={{ border: '1px solid rgba(255,176,0,0.15)', aspectRatio: '16/10' }}
                   whileHover={{ scale: 1.01 }}
                 >
                   <img
@@ -173,7 +173,7 @@ export default function ServiceAnimation() {
                   />
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-xs tracking-[0.4em] uppercase mb-2" style={{ color: '#C8A44E' }}>
+                    <p className="text-xs tracking-[0.4em] uppercase mb-2" style={{ color: '#FFB000' }}>
                       {item.category}
                     </p>
                     <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
@@ -186,7 +186,7 @@ export default function ServiceAnimation() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 px-6 border-t" style={{ borderColor: 'rgba(200,163,78,0.1)' }}>
+        <section className="py-24 px-6 border-t" style={{ borderColor: 'rgba(255,176,0,0.1)' }}>
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2 {...fade(0)} className="text-4xl md:text-5xl font-black text-white mb-6">
               Ready to Animate Your Vision?
@@ -198,7 +198,7 @@ export default function ServiceAnimation() {
               {...fade(0.2)}
               onClick={() => navigate(createPageUrl('Contact'))}
               className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold tracking-widest uppercase text-base transition-all duration-300"
-              style={{ background: 'linear-gradient(135deg, rgba(200,163,78,0.9), rgba(200,163,78,0.7))', color: '#0B0F0C' }}
+              style={{ background: 'linear-gradient(135deg, rgba(255,176,0,0.9), rgba(255,176,0,0.7))', color: '#030303' }}
               whileHover={{ scale: 1.05 }}
             >
               Start a Conversation <ArrowRight size={18} />
@@ -207,7 +207,7 @@ export default function ServiceAnimation() {
         </section>
       </main>
 
-      <HomeFooter />
+      <AyesmajFooter />
     </div>
   );
 }

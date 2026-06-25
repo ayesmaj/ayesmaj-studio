@@ -34,7 +34,7 @@ export default function Layout({ children, currentPageName }) {
   }, []);
 
   return (
-    <div style={{ background: '#0B0B0C', minHeight: '100vh', overflow: 'visible', position: 'relative', WebkitOverflowScrolling: 'touch' }}>
+    <div style={{ background: '#030303', minHeight: '100vh', overflow: 'visible', position: 'relative', WebkitOverflowScrolling: 'touch' }}>
       <style>{`
         .custom-cursor {
           position: fixed;

@@ -1,537 +1,249 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { useNavigate } from 'react-router-dom';
 import {
-  Monitor, Zap, Box, Cpu, LayoutGrid, TrendingUp,
-  Check, ArrowRight, Film, Layers, Smartphone, Star,
+  ArrowRight, ArrowUpRight, Check, Target, Clapperboard, Cpu, Gauge,
+  Monitor, MousePointerClick, Box,
 } from 'lucide-react';
-import CircuitBackground from '@/components/home/CircuitBackground';
-import HomeNav from '@/components/home/HomeNav';
-import HomeFooter from '@/components/home/HomeFooter';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 
-const GOLD = '#C8A44E';
-const GOLD_LIGHT = '#E8C96D';
-const GREEN = '#B3E65A';
-const BG = '#07100A';
+// ── Palette (green Website-Design world) ─────────────────────────────────────
+const BG = '#030603';
+const GREEN = '#B3FF3F';
+const GREEN_RGB = '179,255,63';
+const GOLD = '#F5C84B';
+const GOLD_RGB = '245,200,75';
+const WHITE = '#F5F5F0';
+const GRAY = '#A9A9A9';
+const MUTED = '#6F6F6F';
+const BORDER = 'rgba(255,255,255,0.10)';
+const GLASS = 'rgba(255,255,255,0.045)';
+const DISPLAY = "'Anton', sans-serif";
+const UI = "'Space Grotesk', system-ui, sans-serif";
+const A = '/assets/ayesmaj/web-experiences';
 
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 32 },
+const fade = (d = 0) => ({
+  initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] },
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.8, delay: d, ease: [0.22, 1, 0.36, 1] },
 });
 
-/* ── HERO ───────────────────────────────────────────────────── */
-function WEHero() {
+// ── Reusable gold CTA ────────────────────────────────────────────────────────
+function GoldButton({ label, onClick, solid = true }) {
   return (
-    <section style={{
-      minHeight: '100dvh',
-      display: 'flex', flexDirection: 'column',
-      alignItems: 'center', justifyContent: 'center',
-      textAlign: 'center',
-      padding: '120px clamp(24px,6vw,100px) 80px',
-      position: 'relative', overflow: 'hidden',
-    }}>
-      {/* Background layers */}
-      <div style={{
-        position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(40,80,40,0.18) 0%, transparent 65%)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse 50% 40% at 80% 80%, rgba(200,164,78,0.06) 0%, transparent 55%)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute', inset: 0,
-        background: 'linear-gradient(to bottom, rgba(5,13,7,0.6) 0%, transparent 30%, transparent 70%, rgba(5,13,7,1) 100%)',
-        pointerEvents: 'none',
-      }} />
-
-      {/* Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        style={{
-          display: 'inline-flex', alignItems: 'center', gap: 8,
-          background: 'rgba(200,164,78,0.08)',
-          border: '1px solid rgba(200,164,78,0.28)',
-          borderRadius: 100, padding: '6px 18px',
-          marginBottom: 28,
-        }}
-      >
-        <span style={{ width: 6, height: 6, borderRadius: '50%', background: GOLD, boxShadow: `0 0 8px rgba(200,164,78,0.8)` }} />
-        <span style={{
-          fontFamily: "'Satoshi', system-ui, sans-serif",
-          fontSize: 'clamp(8px,0.7vw,10px)', letterSpacing: '0.3em',
-          textTransform: 'uppercase', color: 'rgba(200,164,78,0.85)', fontWeight: 600,
-        }}>
-          Cinematic Web Experiences
-        </span>
-      </motion.div>
-
-      {/* Headline */}
-      <motion.h1
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        style={{
-          fontFamily: "'Satoshi', system-ui, sans-serif",
-          fontSize: 'clamp(32px,6.5vw,90px)',
-          fontWeight: 800, lineHeight: 0.94,
-          letterSpacing: '-0.035em', color: '#F8FAFC',
-          marginBottom: 'clamp(16px,2vw,24px)',
-          maxWidth: 'min(1000px,92vw)',
-        }}
-      >
-        Websites That Feel Like<br />
-        <span style={{
-          fontStyle: 'italic',
-          background: `linear-gradient(125deg, ${GOLD_LIGHT} 0%, ${GOLD} 100%)`,
-          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-        }}>
-          Cinematic Digital Showrooms
-        </span>
-      </motion.h1>
-
-      {/* Sub */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
-        style={{
-          fontFamily: "'Satoshi', system-ui, sans-serif",
-          fontSize: 'clamp(14px,1.4vw,18px)', lineHeight: 1.7,
-          color: 'rgba(248,250,252,0.5)', maxWidth: 'min(580px,88vw)',
-          marginBottom: 'clamp(32px,4vw,52px)',
-        }}
-      >
-        We create premium websites, interactive landing pages, and AI-powered digital experiences for brands that want to stand out instantly.
-      </motion.p>
-
-      {/* CTAs */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}
-      >
-        <Link
-          to={createPageUrl('Contact')}
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8,
-            fontFamily: "'Satoshi', system-ui, sans-serif",
-            fontSize: 'clamp(11px,0.9vw,13px)', fontWeight: 700, letterSpacing: '0.06em',
-            padding: 'clamp(13px,1.3vw,16px) clamp(28px,2.8vw,40px)',
-            borderRadius: 100,
-            background: `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD} 50%, #9A7B3A 100%)`,
-            color: BG, border: '1px solid rgba(200,164,78,0.4)',
-            boxShadow: '0 0 44px rgba(200,164,78,0.3), 0 8px 32px rgba(0,0,0,0.5)',
-            textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 0.3s',
-          }}
-          onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 60px rgba(200,164,78,0.5), 0 12px 40px rgba(0,0,0,0.6)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-          onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 0 44px rgba(200,164,78,0.3), 0 8px 32px rgba(0,0,0,0.5)'; e.currentTarget.style.transform = ''; }}
-        >
-          Build My Website <ArrowRight size={14} />
-        </Link>
-        <Link
-          to={createPageUrl('Branding')}
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8,
-            fontFamily: "'Satoshi', system-ui, sans-serif",
-            fontSize: 'clamp(11px,0.9vw,13px)', fontWeight: 700, letterSpacing: '0.06em',
-            padding: 'clamp(13px,1.3vw,16px) clamp(28px,2.8vw,40px)',
-            borderRadius: 100,
-            background: 'rgba(255,255,255,0.04)',
-            color: 'rgba(248,250,252,0.82)',
-            border: '1px solid rgba(255,255,255,0.12)',
-            backdropFilter: 'blur(14px)', textDecoration: 'none',
-            whiteSpace: 'nowrap', transition: 'all 0.3s',
-          }}
-          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.09)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}
-        >
-          See Website Work
-        </Link>
-      </motion.div>
-
-      {/* Live website preview videos in browser frames */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        style={{
-          display: 'flex', gap: 16, marginTop: 60,
-          maxWidth: 'min(900px,90vw)', width: '100%',
-          justifyContent: 'center', flexWrap: 'wrap',
-        }}
-      >
-        {[
-          { src: 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev/websites/website-1.mp4', url: 'luxury-brand.com', accent: GOLD },
-          { src: 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev/websites/website-2.mp4', url: 'aistartup.io', accent: GREEN },
-          { src: 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev/websites/website-3.mp4', url: 'realestate.co', accent: GOLD },
-        ].map((m, i) => (
-          <motion.div
-            key={m.url}
-            animate={{ y: [0, -8 + i * 3, 0] }}
-            transition={{ duration: 4 + i, repeat: Infinity, ease: 'easeInOut', delay: i * 0.8 }}
-            style={{
-              flex: '1 1 220px', maxWidth: 280,
-              background: 'rgba(255,255,255,0.02)',
-              border: `1px solid rgba(${m.accent === GOLD ? '200,164,78' : '179,230,90'},0.2)`,
-              borderRadius: 12, overflow: 'hidden',
-              boxShadow: '0 20px 60px rgba(0,0,0,0.6)',
-            }}
-          >
-            {/* Browser chrome */}
-            <div style={{ background: 'rgba(5,10,6,0.95)', padding: '8px 12px', display: 'flex', alignItems: 'center', gap: 6, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-              {['#FF5F57','#FEBC2E','#28C840'].map((c,j) => (
-                <div key={j} style={{ width: 7, height: 7, borderRadius: '50%', background: c, opacity: 0.65 }} />
-              ))}
-              <div style={{ flex: 1, height: 16, background: 'rgba(255,255,255,0.04)', borderRadius: 4, marginLeft: 6, display: 'flex', alignItems: 'center', paddingLeft: 8 }}>
-                <span style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 8, color: 'rgba(255,255,255,0.22)' }}>{m.url}</span>
-              </div>
-            </div>
-            {/* Actual website video */}
-            <div style={{ height: 120, overflow: 'hidden' }}>
-              <video
-                src={m.src}
-                autoPlay muted loop playsInline
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-    </section>
-  );
-}
-
-/* ── WHAT WE BUILD ──────────────────────────────────────────── */
-const BUILDS = [
-  { icon: Monitor, title: 'Premium Business Websites', desc: 'Full multi-page websites that represent your brand at the highest level — every page crafted with intention.', accent: GOLD },
-  { icon: Zap, title: 'Interactive Landing Pages', desc: 'Conversion-focused pages with cinematic scroll animations, 3D elements, and magnetic CTAs.', accent: GREEN },
-  { icon: Box, title: '3D Product Websites', desc: 'Interactive 3D product showcases and configurators that let visitors experience your product before buying.', accent: GOLD },
-  { icon: Cpu, title: 'AI-Powered Websites', desc: 'Smart websites with embedded AI assistants, lead capture systems, and personalization engines.', accent: GREEN },
-  { icon: Star, title: 'Brand Portfolio Websites', desc: 'Premium creative portfolios that position agencies, studios, and creatives as world-class.', accent: GOLD },
-  { icon: TrendingUp, title: 'Sales Funnel Pages', desc: 'High-conversion funnel systems designed to turn visitors into paying clients on the first visit.', accent: GREEN },
-];
-
-function WhatWeBuild() {
-  return (
-    <section style={{ background: 'transparent', padding: 'clamp(80px,10vw,140px) 0' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' }}>
-        <motion.div {...fade(0)} style={{ textAlign: 'center', marginBottom: 'clamp(48px,6vw,72px)' }}>
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: '0.15em' }}
-            whileInView={{ opacity: 1, letterSpacing: '0.52em' }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.52em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}
-          >
-            WHAT WE BUILD
-          </motion.p>
-          <h2 style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(26px,4vw,56px)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.032em', color: '#F8FAFC' }}>
-            Not Templates.{' '}
-            <span style={{ fontStyle: 'italic', background: `linear-gradient(125deg, ${GOLD_LIGHT} 0%, ${GOLD} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              Digital Experiences.
-            </span>
-          </h2>
-        </motion.div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(12px,1.5vw,18px)' }}>
-          {BUILDS.map((b, i) => {
-            const accentRGB = b.accent === GOLD ? '200,164,78' : '179,230,90';
-            return (
-              <motion.div
-                key={b.title}
-                {...fade(0.06 + i * 0.07)}
-                whileHover={{ borderColor: `rgba(${accentRGB},0.3)`, boxShadow: `0 0 40px rgba(${accentRGB},0.1), 0 20px 60px rgba(0,0,0,0.5)` }}
-                transition={{ duration: 0.35 }}
-                style={{
-                  background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(200,164,78,0.1)',
-                  borderRadius: 18, padding: 'clamp(24px,2.2vw,32px)',
-                  backdropFilter: 'blur(16px)',
-                }}
-              >
-                <div style={{ width: 46, height: 46, borderRadius: 12, border: `1px solid rgba(${accentRGB},0.25)`, background: `rgba(${accentRGB},0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18 }}>
-                  <b.icon size={20} color={b.accent} />
-                </div>
-                <h3 style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(15px,1.2vw,17px)', fontWeight: 700, color: '#F8FAFC', marginBottom: 8, letterSpacing: '-0.01em' }}>{b.title}</h3>
-                <p style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(12px,0.95vw,14px)', color: 'rgba(248,250,252,0.44)', lineHeight: 1.68 }}>{b.desc}</p>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── SHOWCASE ───────────────────────────────────────────────── */
-// Update titles, categories, and descriptions below to match your actual website videos
-const R2 = 'https://pub-b58b6ae218d440519d982e88e2e185e9.r2.dev';
-
-const WEB_PROJECTS = [
-  {
-    id: 1, src: `${R2}/websites/website-1.mp4`, accent: GOLD,
-    category: 'Business Website',
-    title: 'AI Startup Platform',
-    desc: 'Modern SaaS website with animated feature sections, glassmorphism UI, and a conversion-optimized pricing flow designed to close on the first visit.',
-  },
-  {
-    id: 2, src: `${R2}/websites/website-2.mp4`, accent: GREEN,
-    category: 'Real Estate',
-    title: 'Premium Property Platform',
-    desc: 'High-end real estate website with interactive map, video hero, and a filtered listings experience that positions the agency above every competitor in the market.',
-  },
-  {
-    id: 3, src: `${R2}/websites/website-3.mp4`, accent: GOLD,
-    category: 'CPG / Brand',
-    title: 'Energy Drink Brand',
-    desc: 'Full-energy brand website with kinetic typography, vibrant color transitions, and scroll-driven storytelling that sells the lifestyle — not just the product.',
-  },
-  {
-    id: 4, src: `${R2}/websites/website-4.mp4`, accent: GREEN,
-    category: 'Service Business',
-    title: 'Home Services Funnel',
-    desc: 'High-conversion lead-gen site for a home service company — built to build trust on the first scroll and route qualified leads to the right CTA every time.',
-  },
-  {
-    id: 5, src: `${R2}/websites/website-5.mp4`, accent: GOLD,
-    category: 'Portfolio',
-    title: 'Creative Studio Portfolio',
-    desc: 'World-class portfolio experience for a design agency — case study deep-dives, animated transitions, and a brand presence that commands premium project rates.',
-  },
-  {
-    id: 6, src: `${R2}/websites/website-6.mp4`, accent: GREEN,
-    category: 'Tech Product',
-    title: 'Mobile App Landing',
-    desc: 'Product launch page with scroll-driven 3D phone mockup, animated feature demos, and a waitlist flow engineered to capture leads from the first impression.',
-  },
-  {
-    id: 7, src: `${R2}/websites/website-7.mp4`, accent: GOLD,
-    category: 'Professional Services',
-    title: 'Executive Services Firm',
-    desc: 'Authority-first website for a consultancy — layered social proof, intelligent lead capture, and a brand voice designed to attract high-ticket clients from day one.',
-  },
-];
-
-function WebVideoCard({ project, index }) {
-  const isEven = index % 2 === 0;
-  const accentRGB = project.accent === GOLD ? '200,164,78' : '179,230,90';
-
-  return (
-    <motion.div
-      {...fade(0.05)}
+    <button
+      onClick={onClick}
       style={{
-        display: 'flex',
-        flexDirection: isEven ? 'row' : 'row-reverse',
-        flexWrap: 'wrap',
-        gap: 'clamp(28px,4vw,72px)',
-        alignItems: 'center',
-        marginBottom: 'clamp(56px,8vw,104px)',
+        display: 'inline-flex', alignItems: 'center', gap: 10, height: 58, padding: '0 34px',
+        borderRadius: 999, cursor: 'pointer', fontFamily: UI, fontSize: 13, fontWeight: 700,
+        letterSpacing: '0.08em', textTransform: 'uppercase', whiteSpace: 'nowrap',
+        border: solid ? '1px solid transparent' : `1px solid ${BORDER}`,
+        background: solid ? `linear-gradient(135deg, #F5D76E, #D8B75A)` : 'rgba(255,255,255,0.035)',
+        color: solid ? '#050505' : WHITE,
+        boxShadow: solid ? `0 18px 60px rgba(${GOLD_RGB},0.22)` : 'none',
+        transition: 'transform 0.3s, box-shadow 0.3s',
       }}
+      onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = solid ? `0 22px 70px rgba(${GOLD_RGB},0.34)` : `0 0 28px rgba(255,255,255,0.08)`; }}
+      onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = solid ? `0 18px 60px rgba(${GOLD_RGB},0.22)` : 'none'; }}
     >
-      {/* Video in browser frame */}
-      <motion.div
-        whileHover={{ boxShadow: `0 0 70px rgba(${accentRGB},0.14), 0 32px 80px rgba(0,0,0,0.7)` }}
-        transition={{ duration: 0.4 }}
-        style={{
-          flex: '1 1 340px', minWidth: 0,
-          borderRadius: 18, overflow: 'hidden',
-          border: `1px solid rgba(${accentRGB},0.2)`,
-          boxShadow: `0 0 24px rgba(${accentRGB},0.05), 0 16px 56px rgba(0,0,0,0.55)`,
-          background: 'rgba(5,10,6,0.9)',
-        }}
-      >
-        {/* Browser chrome */}
-        <div style={{
-          background: 'rgba(4,8,5,0.98)',
-          borderBottom: '1px solid rgba(255,255,255,0.05)',
-          padding: '9px 14px',
-          display: 'flex', alignItems: 'center', gap: 7,
-        }}>
-          {['#FF5F57', '#FEBC2E', '#28C840'].map((c, j) => (
-            <div key={j} style={{ width: 8, height: 8, borderRadius: '50%', background: c, opacity: 0.7 }} />
-          ))}
-          <div style={{
-            flex: 1, height: 18, background: 'rgba(255,255,255,0.04)',
-            borderRadius: 5, marginLeft: 8,
-            display: 'flex', alignItems: 'center', paddingLeft: 10,
-          }}>
-            <span style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 9, color: 'rgba(255,255,255,0.2)' }}>
-              ayesmajstudios.com/work
-            </span>
-          </div>
-        </div>
-        {/* Actual website video */}
-        <div style={{ aspectRatio: '16/9', overflow: 'hidden' }}>
-          <video
-            src={project.src}
-            autoPlay muted loop playsInline
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-          />
-        </div>
-      </motion.div>
-
-      {/* Text panel */}
-      <div style={{ flex: '1 1 240px', minWidth: 0 }}>
-        {/* Category badge */}
-        <div style={{
-          display: 'inline-flex', alignItems: 'center', gap: 7,
-          background: `rgba(${accentRGB},0.08)`,
-          border: `1px solid rgba(${accentRGB},0.28)`,
-          borderRadius: 100, padding: '5px 14px',
-          marginBottom: 20,
-        }}>
-          <span style={{ width: 5, height: 5, borderRadius: '50%', background: project.accent, boxShadow: `0 0 6px ${project.accent}` }} />
-          <span style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
-            fontSize: 9, fontWeight: 700, letterSpacing: '0.2em',
-            textTransform: 'uppercase', color: project.accent,
-          }}>
-            {project.category}
-          </span>
-        </div>
-
-        {/* Project number + title */}
-        <p style={{
-          fontFamily: "'Satoshi', system-ui, sans-serif",
-          fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase',
-          color: `rgba(${accentRGB},0.38)`, marginBottom: 8,
-        }}>
-          {String(project.id).padStart(2, '0')} / 07
-        </p>
-        <h3 style={{
-          fontFamily: "'Satoshi', system-ui, sans-serif",
-          fontSize: 'clamp(22px,2.6vw,36px)',
-          fontWeight: 800, lineHeight: 1.06,
-          letterSpacing: '-0.03em', color: '#F8FAFC',
-          marginBottom: 16,
-        }}>
-          {project.title}
-        </h3>
-
-        {/* Description */}
-        <p style={{
-          fontFamily: "'Satoshi', system-ui, sans-serif",
-          fontSize: 'clamp(13px,1.05vw,15px)',
-          lineHeight: 1.75, color: 'rgba(248,250,252,0.48)',
-          maxWidth: 440,
-        }}>
-          {project.desc}
-        </p>
-
-        {/* Accent line */}
-        <div style={{
-          height: 1, width: 48,
-          background: `linear-gradient(90deg, ${project.accent}, transparent)`,
-          marginTop: 28, opacity: 0.45,
-        }} />
-      </div>
-    </motion.div>
+      {label} <ArrowRight size={15} />
+    </button>
   );
 }
 
-function ShowcaseGrid() {
-  return (
-    <section style={{ background: 'transparent', padding: 'clamp(80px,10vw,140px) 0' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' }}>
-        <div style={{ height: 1, background: 'linear-gradient(90deg,transparent,rgba(200,164,78,0.2),transparent)', marginBottom: 'clamp(60px,8vw,100px)' }} />
-        <motion.div {...fade(0)} style={{ textAlign: 'center', marginBottom: 'clamp(56px,7vw,88px)' }}>
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: '0.15em' }}
-            whileInView={{ opacity: 1, letterSpacing: '0.52em' }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.52em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}
-          >
-            WEBSITE SHOWCASE
-          </motion.p>
-          <h2 style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(26px,4vw,56px)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.032em', color: '#F8FAFC' }}>
-            Websites Built to{' '}
-            <span style={{ fontStyle: 'italic', background: `linear-gradient(125deg,${GOLD_LIGHT} 0%,${GOLD} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              Make People Stop
-            </span>
-          </h2>
-        </motion.div>
+// ── Diagonal panel showcase — reveals more on hover ──────────────────────────
+const PANELS = [
+  { id: 'desktop', label: 'Desktop', sub: 'Premium Business Sites', img: `${A}/web-hero-desktop-showcase.jpg`, stat: '+212%', statLabel: 'Conversion Lift' },
+  { id: 'dashboard', label: 'Dashboard', sub: 'AI & SaaS Platforms', img: `${A}/web-hero-laptop-dashboard.jpg`, stat: '< 1.2s', statLabel: 'First Paint' },
+  { id: 'mobile', label: 'Mobile', sub: 'Pixel-Perfect on Every Screen', img: `${A}/web-hero-mobile-showcase.jpg`, stat: '100/100', statLabel: 'Lighthouse Score' },
+];
 
-        {WEB_PROJECTS.map((project, i) => (
-          <WebVideoCard key={project.id} project={project} index={i} />
-        ))}
+function HoverShowcase() {
+  const [active, setActive] = useState(null);
+
+  // Diagonal clip-path per position
+  const clipFor = (i) =>
+    i === 0
+      ? 'polygon(0 0, 100% 0, calc(100% - 56px) 100%, 0 100%)'
+      : i === 2
+      ? 'polygon(56px 0, 100% 0, 100% 100%, 0 100%)'
+      : 'polygon(56px 0, 100% 0, calc(100% - 56px) 100%, 0 100%)';
+
+  return (
+    <div className="we-showcase" style={{ position: 'relative', minHeight: 600, width: '100%' }}>
+      {/* radial green glow behind everything */}
+      <div style={{ position: 'absolute', inset: '-10% -5%', background: `radial-gradient(ellipse 60% 55% at 50% 50%, rgba(${GREEN_RGB},0.18), transparent 70%)`, pointerEvents: 'none' }} />
+
+      {/* 3 diagonal hover panels */}
+      <div style={{ position: 'relative', height: 560, display: 'flex', borderRadius: 22, overflow: 'visible' }}>
+        {PANELS.map((p, i) => {
+          const isActive = active === i;
+          const isDimmed = active !== null && !isActive;
+          return (
+            <motion.div
+              key={p.id}
+              onMouseEnter={() => setActive(i)}
+              onMouseLeave={() => setActive(null)}
+              animate={{ flexGrow: isActive ? 1.9 : isDimmed ? 0.75 : 1 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              style={{
+                position: 'relative', flexBasis: 0, flexGrow: 1, height: '100%',
+                marginLeft: i === 0 ? 0 : -28, cursor: 'pointer', overflow: 'hidden',
+                clipPath: clipFor(i), WebkitClipPath: clipFor(i),
+              }}
+            >
+              {/* Background image with subtle zoom on hover */}
+              <motion.img
+                src={p.img}
+                alt={`${p.label} — ${p.sub}`}
+                loading="lazy"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                animate={{ scale: isActive ? 1.08 : 1 }}
+                transition={{ duration: 1.1, ease: 'easeOut' }}
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+              {/* Dimming + green scrim */}
+              <motion.div
+                animate={{ opacity: isDimmed ? 0.55 : 0 }}
+                transition={{ duration: 0.4 }}
+                style={{ position: 'absolute', inset: 0, background: 'rgba(3,6,3,0.85)', pointerEvents: 'none' }}
+              />
+              <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to top, rgba(3,6,3,0.92) 0%, rgba(3,6,3,0.15) 50%, rgba(3,6,3,0.55) 100%)` }} />
+              {/* Accent glow per panel — intensifies when active */}
+              <motion.div
+                animate={{ opacity: isActive ? 1 : 0.5 }}
+                transition={{ duration: 0.5 }}
+                style={{ position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 75%, rgba(${GREEN_RGB},0.32), transparent 60%)`, pointerEvents: 'none' }}
+              />
+
+              {/* Bottom content */}
+              <motion.div
+                animate={{ y: isActive ? -10 : 0 }}
+                transition={{ duration: 0.45, ease: 'easeOut' }}
+                style={{ position: 'absolute', left: 0, right: 0, bottom: 26, padding: '0 22px', textAlign: 'center', zIndex: 2 }}
+              >
+                <div style={{ fontFamily: UI, fontSize: 10, fontWeight: 700, letterSpacing: '0.28em', textTransform: 'uppercase', color: GREEN, marginBottom: 8 }}>
+                  {`0${i + 1}`}
+                </div>
+                <h3 style={{ fontFamily: DISPLAY, fontSize: isActive ? 28 : 22, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.03em', color: WHITE, margin: '0 0 6px', transition: 'font-size 0.4s' }}>
+                  {p.label}
+                </h3>
+                <p style={{ fontFamily: UI, fontSize: 11.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: GRAY, margin: 0 }}>
+                  {p.sub}
+                </p>
+
+                {/* Stat row — revealed when active */}
+                <motion.div
+                  initial={false}
+                  animate={{ opacity: isActive ? 1 : 0, height: isActive ? 'auto' : 0, marginTop: isActive ? 14 : 0 }}
+                  transition={{ duration: 0.4 }}
+                  style={{ overflow: 'hidden' }}
+                >
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 16px', borderRadius: 999, background: `rgba(${GREEN_RGB},0.10)`, border: `1px solid rgba(${GREEN_RGB},0.4)` }}>
+                    <span style={{ fontFamily: DISPLAY, fontSize: 18, fontWeight: 800, color: GREEN }}>{p.stat}</span>
+                    <span style={{ fontFamily: UI, fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: WHITE }}>{p.statLabel}</span>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Hint when nothing hovered */}
+      <motion.div
+        animate={{ opacity: active === null ? [0.3, 0.8, 0.3] : 0 }}
+        transition={{ duration: 2.4, repeat: active === null ? Infinity : 0 }}
+        style={{ position: 'absolute', bottom: -28, left: 0, right: 0, textAlign: 'center', fontFamily: UI, fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: GRAY, pointerEvents: 'none' }}
+      >
+        ← Hover to reveal →
+      </motion.div>
+    </div>
+  );
+}
+
+// ── Capability data ──────────────────────────────────────────────────────────
+const CAPS = [
+  { icon: Target, title: 'Strategy First', sub: 'Purpose-led websites' },
+  { icon: Clapperboard, title: 'Cinematic Design', sub: 'Emotion through visuals' },
+  { icon: Cpu, title: 'AI-Powered', sub: 'Smarter digital experiences' },
+  { icon: Gauge, title: 'Performance Focused', sub: 'Built for speed & growth' },
+];
+
+// ── HERO ─────────────────────────────────────────────────────────────────────
+function Hero() {
+  const navigate = useNavigate();
+  return (
+    <section style={{ position: 'relative', minHeight: '100vh', padding: '140px clamp(24px,5vw,80px) 60px', display: 'flex', alignItems: 'center' }}>
+      <div className="we-hero-grid" style={{ maxWidth: 1500, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '0.95fr 1.05fr', gap: 64, alignItems: 'center' }}>
+        <div>
+          <motion.div {...fade(0)} style={{ display: 'inline-flex', alignItems: 'center', gap: 9, border: `1px solid rgba(${GREEN_RGB},0.25)`, background: `rgba(${GREEN_RGB},0.06)`, borderRadius: 999, padding: '10px 18px', marginBottom: 28 }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: GREEN, boxShadow: `0 0 8px ${GREEN}` }} />
+            <span style={{ fontFamily: UI, fontSize: 11.5, fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: GREEN }}>Cinematic Web Experiences</span>
+          </motion.div>
+
+          <motion.h1 {...fade(0.08)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(46px,6.5vw,116px)', fontWeight: 800, lineHeight: 0.92, letterSpacing: '0.005em', textTransform: 'uppercase', color: WHITE, margin: 0 }}>
+            Websites That<br />Feel Like<br />
+            <span style={{ background: 'linear-gradient(90deg, #F5D76E, #D8B75A, #B88A2A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              Cinematic Digital Showrooms
+            </span>
+          </motion.h1>
+
+          <motion.p {...fade(0.16)} style={{ fontFamily: UI, fontSize: 'clamp(15px,1.3vw,18px)', lineHeight: 1.7, color: 'rgba(245,245,240,0.68)', maxWidth: 620, margin: '26px 0 0' }}>
+            We craft premium websites, interactive landing pages, and AI-powered digital experiences for brands that want to stand out — and stay remembered.
+          </motion.p>
+
+          <motion.div {...fade(0.24)} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 34 }}>
+            <GoldButton label="Build My Website" onClick={() => navigate('/Contact')} />
+            <GoldButton label="See Website Work" solid={false} onClick={() => { const el = document.getElementById('selected-work'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} />
+          </motion.div>
+
+          <motion.div {...fade(0.32)} style={{ display: 'flex', flexWrap: 'wrap', gap: 26, marginTop: 40, paddingTop: 28, borderTop: `1px solid ${BORDER}` }}>
+            {CAPS.map(({ icon: Icon, title, sub }) => (
+              <div key={title} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <Icon size={17} color={GREEN} />
+                <div>
+                  <div style={{ fontFamily: UI, fontSize: 10.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: WHITE }}>{title}</div>
+                  <div style={{ fontFamily: UI, fontSize: 10.5, color: MUTED }}>{sub}</div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="we-hero-visual">
+          <HoverShowcase />
+        </motion.div>
       </div>
     </section>
   );
 }
 
-/* ── FEATURES ───────────────────────────────────────────────── */
-const FEATURES = [
-  { icon: Film, title: 'Cinematic Hero Sections', desc: 'Full-screen video backgrounds, scroll-driven animations, and parallax depth that makes every first impression count.' },
-  { icon: Layers, title: 'Scroll-Based Storytelling', desc: 'Narrative-driven scrolling experiences that guide visitors through your brand story with precision and flow.' },
-  { icon: Box, title: '3D Visual Integration', desc: 'Embedded Three.js scenes, product viewers, and interactive 3D elements that no template can replicate.' },
-  { icon: LayoutGrid, title: 'Premium UI Systems', desc: 'Glassmorphism cards, magnetic buttons, smooth transitions, and micro-interactions that feel handcrafted.' },
-  { icon: TrendingUp, title: 'Conversion Structure', desc: 'Every section answers: what is this, why should I trust it, and what do I do next — always moving toward the CTA.' },
-  { icon: Smartphone, title: 'Mobile-First Polish', desc: 'Pixel-perfect on every screen. Not just "responsive" — actually designed to feel premium on mobile.' },
+// ── SERVICE CARDS ────────────────────────────────────────────────────────────
+const SERVICES = [
+  { icon: Monitor, title: 'Premium Business Websites', desc: 'Strategic, brand-driven websites that build trust and drive results.' },
+  { icon: MousePointerClick, title: 'Interactive Landing Pages', desc: 'High-converting, story-led pages built for maximum impact.' },
+  { icon: Box, title: '3D / AI-Enhanced Web Experiences', desc: 'Immersive 3D visuals and AI-powered interfaces that amaze and engage.' },
 ];
 
-function FeaturesSection() {
+function ServiceCards() {
   return (
-    <section style={{ background: 'transparent', padding: 'clamp(80px,10vw,140px) 0' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' }}>
-        <div style={{ height: 1, background: 'linear-gradient(90deg,transparent,rgba(200,164,78,0.2),transparent)', marginBottom: 'clamp(60px,8vw,100px)' }} />
-        <motion.div {...fade(0)} style={{ textAlign: 'center', marginBottom: 'clamp(48px,6vw,72px)' }}>
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: '0.15em' }}
-            whileInView={{ opacity: 1, letterSpacing: '0.52em' }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.52em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}
-          >
-            THE DIFFERENCE
-          </motion.p>
-          <h2 style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(26px,4vw,56px)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.032em', color: '#F8FAFC' }}>
-            What Makes an AYESMAJ Website{' '}
-            <span style={{ fontStyle: 'italic', background: `linear-gradient(125deg,${GOLD_LIGHT} 0%,${GOLD} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              Different
-            </span>
-          </h2>
-        </motion.div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(2px,0.5vw,4px)' }}>
-          {FEATURES.map((f, i) => (
-            <motion.div
-              key={f.title}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -24 : 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <motion.div
-                whileHover={{ borderColor: 'rgba(200,164,78,0.25)', background: 'rgba(255,255,255,0.035)' }}
-                transition={{ duration: 0.3 }}
-                style={{
-                  display: 'flex', gap: 'clamp(16px,2vw,28px)', alignItems: 'center',
-                  background: 'rgba(255,255,255,0.02)',
-                  border: '1px solid rgba(200,164,78,0.08)',
-                  borderRadius: 16, padding: 'clamp(18px,2vw,24px) clamp(20px,2.2vw,32px)',
-                  backdropFilter: 'blur(10px)',
-                }}
-              >
-                <div style={{ width: 48, height: 48, borderRadius: 12, border: '1px solid rgba(200,164,78,0.2)', background: 'rgba(200,164,78,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <f.icon size={20} color={GOLD} />
-                </div>
-                <div style={{ flex: 1 }}>
-                  <h3 style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(14px,1.15vw,17px)', fontWeight: 700, color: '#F8FAFC', marginBottom: 5, letterSpacing: '-0.01em' }}>{f.title}</h3>
-                  <p style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(12px,0.95vw,14px)', color: 'rgba(248,250,252,0.44)', lineHeight: 1.65 }}>{f.desc}</p>
-                </div>
-                <div style={{ flexShrink: 0, width: 32, height: 32, borderRadius: '50%', border: '1px solid rgba(200,164,78,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Check size={13} color={GOLD} strokeWidth={2.5} />
-                </div>
-              </motion.div>
+    <section style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)' }}>
+      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
+        <motion.h2 {...fade(0)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(28px,4vw,56px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 clamp(40px,5vw,64px)', letterSpacing: '0.01em' }}>
+          Websites Built to Make Brands Feel Premium
+        </motion.h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,300px),1fr))', gap: 18 }}>
+          {SERVICES.map((s, i) => (
+            <motion.div key={s.title} {...fade(i * 0.08)} className="we-glass"
+              style={{ borderRadius: 22, padding: 30, background: GLASS, border: `1px solid ${BORDER}`, backdropFilter: 'blur(18px)', transition: 'border-color 0.3s, box-shadow 0.3s' }}>
+              <div style={{ width: 46, height: 46, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `rgba(${GREEN_RGB},0.08)`, border: `1px solid rgba(${GREEN_RGB},0.25)`, marginBottom: 20 }}>
+                <s.icon size={20} color={GREEN} />
+              </div>
+              <h3 style={{ fontFamily: DISPLAY, fontSize: 22, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', color: WHITE, margin: '0 0 10px' }}>{s.title}</h3>
+              <p style={{ fontFamily: UI, fontSize: 14.5, lineHeight: 1.6, color: GRAY, margin: 0 }}>{s.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -540,262 +252,206 @@ function FeaturesSection() {
   );
 }
 
-/* ── PACKAGES ───────────────────────────────────────────────── */
-const PACKAGES = [
-  {
-    name: 'Landing Page',
-    tag: 'Starter',
-    desc: 'A single high-converting page built to impress, explain, and generate leads from day one.',
-    includes: ['Cinematic hero section', 'Services or offer section', 'Social proof / testimonials', 'Strong CTA structure', 'Mobile optimized', '1 revision round'],
-    accent: 'rgba(248,250,252,0.5)',
-    featured: false,
-  },
-  {
-    name: 'Premium Website',
-    tag: 'Most Popular',
-    desc: 'A full multi-page website that positions your brand as a premium player in your market.',
-    includes: ['Up to 8 premium pages', 'Cinematic animations', 'Contact/booking system', 'Brand-aligned design system', 'SEO optimized structure', '3 revision rounds'],
-    accent: GOLD,
-    featured: true,
-  },
-  {
-    name: 'Signature Experience',
-    tag: 'Premium',
-    desc: 'The full AYESMAJ treatment — an interactive cinematic website that makes your brand feel like a world-class production.',
-    includes: ['Unlimited pages', '3D visual integration', 'Scroll-driven storytelling', 'AI-powered features', 'Brand design system', 'Priority support'],
-    accent: GREEN,
-    featured: false,
-  },
+// ── SELECTED WORK ────────────────────────────────────────────────────────────
+const FILTERS = ['All', 'Business', 'E-Commerce', 'AI', 'Landing Pages'];
+const PROJECTS = [
+  { id: 'luxeline', title: 'LUXELINE INTERIORS', type: 'Luxury Interior Design Studio', cat: 'Business', img: `${A}/project-luxeline.jpg` },
+  { id: 'nexora', title: 'NEXORA AI', type: 'AI Analytics Platform', cat: 'AI', img: `${A}/project-nexora.jpg` },
+  { id: 'natura', title: 'NATURA SKINCARE', type: 'Clean Beauty E-commerce', cat: 'E-Commerce', img: `${A}/project-natura.jpg` },
 ];
 
-function PackagesSection() {
+function SelectedWork() {
+  const navigate = useNavigate();
+  const [filter, setFilter] = useState('All');
+  const items = filter === 'All' ? PROJECTS : PROJECTS.filter((p) => p.cat === filter);
   return (
-    <section style={{ background: 'transparent', padding: 'clamp(80px,10vw,140px) 0' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' }}>
-        <div style={{ height: 1, background: 'linear-gradient(90deg,transparent,rgba(200,164,78,0.2),transparent)', marginBottom: 'clamp(60px,8vw,100px)' }} />
-        <motion.div {...fade(0)} style={{ textAlign: 'center', marginBottom: 'clamp(48px,6vw,72px)' }}>
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: '0.15em' }}
-            whileInView={{ opacity: 1, letterSpacing: '0.52em' }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.52em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}
-          >
-            PACKAGES
-          </motion.p>
-          <h2 style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(26px,4vw,56px)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.032em', color: '#F8FAFC' }}>
-            Choose Your{' '}
-            <span style={{ fontStyle: 'italic', background: `linear-gradient(125deg,${GOLD_LIGHT} 0%,${GOLD} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              Experience Level
-            </span>
-          </h2>
-        </motion.div>
+    <section id="selected-work" style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)', borderTop: `1px solid ${BORDER}` }}>
+      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
+        <motion.p {...fade(0)} style={{ fontFamily: UI, fontSize: 12, fontWeight: 600, letterSpacing: '0.4em', textTransform: 'uppercase', color: GREEN, textAlign: 'center', marginBottom: 16 }}>Selected Website Work</motion.p>
+        <motion.h2 {...fade(0.05)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(28px,4vw,56px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 36px', letterSpacing: '0.01em' }}>
+          Websites Built to Make People Stop
+        </motion.h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(14px,1.8vw,22px)', alignItems: 'stretch' }}>
-          {PACKAGES.map((pkg, i) => {
-            const accentRGB = pkg.accent === GOLD ? '200,164,78' : pkg.accent === GREEN ? '179,230,90' : '248,250,252';
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, marginBottom: 44 }}>
+          {FILTERS.map((f) => {
+            const active = filter === f;
             return (
-              <motion.div key={pkg.name} {...fade(0.08 + i * 0.1)}>
-                <motion.div
-                  whileHover={{ borderColor: `rgba(${accentRGB},0.3)`, boxShadow: `0 0 50px rgba(${accentRGB},0.1), 0 24px 70px rgba(0,0,0,0.6)` }}
-                  transition={{ duration: 0.35 }}
-                  style={{
-                    background: pkg.featured ? 'rgba(200,164,78,0.04)' : 'rgba(255,255,255,0.02)',
-                    border: pkg.featured ? `1px solid rgba(200,164,78,0.35)` : '1px solid rgba(200,164,78,0.1)',
-                    borderRadius: 20, padding: 'clamp(28px,2.5vw,38px)',
-                    height: '100%', display: 'flex', flexDirection: 'column',
-                    backdropFilter: 'blur(16px)',
-                    boxShadow: pkg.featured ? '0 0 40px rgba(200,164,78,0.08)' : 'none',
-                    position: 'relative', overflow: 'hidden',
-                  }}
-                >
-                  {pkg.featured && (
-                    <div style={{ position: 'absolute', top: 0, left: '15%', right: '15%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(200,164,78,0.6),transparent)' }} />
-                  )}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-                    <h3 style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(17px,1.4vw,20px)', fontWeight: 800, color: '#F8FAFC', letterSpacing: '-0.015em' }}>{pkg.name}</h3>
-                    <span style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 9, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: pkg.accent === 'rgba(248,250,252,0.5)' ? 'rgba(248,250,252,0.5)' : pkg.accent, background: `rgba(${accentRGB},0.1)`, border: `1px solid rgba(${accentRGB},0.25)`, borderRadius: 100, padding: '4px 12px', whiteSpace: 'nowrap' }}>
-                      {pkg.tag}
-                    </span>
-                  </div>
-                  <p style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(13px,1vw,15px)', color: 'rgba(248,250,252,0.48)', lineHeight: 1.68, marginBottom: 24 }}>{pkg.desc}</p>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px', flex: 1 }}>
-                    {pkg.includes.map(item => (
-                      <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '7px 0', borderBottom: '1px solid rgba(255,255,255,0.04)', fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(12px,0.95vw,14px)', color: 'rgba(248,250,252,0.65)' }}>
-                        <Check size={12} color={pkg.accent === 'rgba(248,250,252,0.5)' ? GOLD : pkg.accent} strokeWidth={2.5} style={{ flexShrink: 0 }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to={createPageUrl('Contact')}
-                    style={{
-                      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-                      fontFamily: "'Satoshi', system-ui, sans-serif",
-                      fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
-                      padding: '14px 24px', borderRadius: 100, textDecoration: 'none',
-                      background: pkg.featured ? `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD} 50%, #9A7B3A 100%)` : 'rgba(255,255,255,0.04)',
-                      color: pkg.featured ? BG : 'rgba(248,250,252,0.75)',
-                      border: pkg.featured ? '1px solid rgba(200,164,78,0.4)' : '1px solid rgba(255,255,255,0.1)',
-                      boxShadow: pkg.featured ? '0 0 30px rgba(200,164,78,0.25)' : 'none',
-                      transition: 'all 0.3s',
-                    }}
-                    onMouseEnter={e => { e.currentTarget.style.opacity = '0.85'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-                    onMouseLeave={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = ''; }}
-                  >
-                    Get a Custom Quote <ArrowRight size={13} />
-                  </Link>
-                </motion.div>
-              </motion.div>
+              <button key={f} onClick={() => setFilter(f)}
+                style={{ fontFamily: UI, fontSize: 10.5, fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', padding: '9px 18px', borderRadius: 999, cursor: 'pointer',
+                  background: active ? `rgba(${GREEN_RGB},0.16)` : 'transparent', border: `1px solid ${active ? `rgba(${GREEN_RGB},0.5)` : BORDER}`, color: active ? GREEN : GRAY, transition: 'all 0.3s' }}>
+                {f}
+              </button>
             );
           })}
         </div>
-      </div>
-    </section>
-  );
-}
 
-/* ── BEFORE / AFTER ─────────────────────────────────────────── */
-function BeforeAfterSection() {
-  return (
-    <section style={{ background: 'transparent', padding: 'clamp(80px,10vw,140px) 0' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' }}>
-        <div style={{ height: 1, background: 'linear-gradient(90deg,transparent,rgba(200,164,78,0.2),transparent)', marginBottom: 'clamp(60px,8vw,100px)' }} />
-        <motion.div {...fade(0)} style={{ textAlign: 'center', marginBottom: 'clamp(48px,6vw,72px)' }}>
-          <h2 style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(26px,4vw,56px)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.032em', color: '#F8FAFC' }}>
-            Your Website Is Either{' '}
-            <span style={{ fontStyle: 'italic', background: `linear-gradient(125deg,${GOLD_LIGHT} 0%,${GOLD} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              Building Trust or Killing It
-            </span>
-          </h2>
-        </motion.div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,340px),1fr))', gap: 'clamp(16px,2vw,24px)' }}>
-          {/* BEFORE */}
-          <motion.div {...fade(0.08)}>
-            <div style={{ background: 'rgba(255,80,80,0.04)', border: '1px solid rgba(255,80,80,0.12)', borderRadius: 20, padding: 'clamp(28px,2.5vw,40px)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
-                <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#FF5F57' }} />
-                <span style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,95,87,0.7)' }}>BEFORE</span>
-              </div>
-              {['Generic template design', 'Weak, stock-photo visuals', 'No clear value proposition', 'Low trust, high bounce rate', 'Looks like everyone else'].map((item, i) => (
-                <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '9px 0', borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(13px,1.05vw,15px)', color: 'rgba(248,250,252,0.5)' }}>
-                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'rgba(255,95,87,0.4)', flexShrink: 0 }} />
-                  {item}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,330px),1fr))', gap: 18 }}>
+          {items.map((p, i) => (
+            <motion.div key={p.id} {...fade(i * 0.08)} onClick={() => navigate('/Contact')} className="we-work"
+              style={{ position: 'relative', borderRadius: 20, overflow: 'hidden', cursor: 'pointer', border: `1px solid ${BORDER}`, background: GLASS, height: 280, transition: 'border-color 0.3s, box-shadow 0.3s' }}>
+              <img src={p.img} alt={`${p.title} website`} loading="lazy" className="we-work-img"
+                onError={(e) => { e.currentTarget.style.opacity = 0; }}
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(3,6,3,0.95) 0%, rgba(3,6,3,0.1) 60%, transparent 100%)' }} />
+              <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 22, display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 12, zIndex: 2 }}>
+                <div>
+                  <h3 style={{ fontFamily: DISPLAY, fontSize: 23, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', color: WHITE, margin: '0 0 4px' }}>{p.title}</h3>
+                  <p style={{ fontFamily: UI, fontSize: 12.5, color: GREEN, margin: 0, letterSpacing: '0.04em' }}>{p.type}</p>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* AFTER */}
-          <motion.div {...fade(0.16)}>
-            <div style={{ background: 'rgba(200,164,78,0.04)', border: '1px solid rgba(200,164,78,0.25)', borderRadius: 20, padding: 'clamp(28px,2.5vw,40px)', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(200,164,78,0.5),transparent)' }} />
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
-                <div style={{ width: 10, height: 10, borderRadius: '50%', background: GOLD, boxShadow: '0 0 10px rgba(200,164,78,0.8)' }} />
-                <span style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(200,164,78,0.8)' }}>AFTER AYESMAJ</span>
+                <span style={{ flexShrink: 0, width: 38, height: 38, borderRadius: '50%', border: `1px solid rgba(${GREEN_RGB},0.4)`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: GREEN }}>
+                  <ArrowUpRight size={16} />
+                </span>
               </div>
-              {['Cinematic brand world', 'Premium layout and visuals', 'Crystal-clear offer & CTA', 'Strong first impression & trust', 'Looks like a $10M company'].map((item, i) => (
-                <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '9px 0', borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.04)' : 'none', fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(13px,1.05vw,15px)', color: 'rgba(248,250,252,0.75)' }}>
-                  <Check size={13} color={GOLD} strokeWidth={2.5} style={{ flexShrink: 0 }} />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-/* ── FINAL CTA ──────────────────────────────────────────────── */
-function WEFinalCTA() {
+// ── PROCESS ──────────────────────────────────────────────────────────────────
+const STEPS = [
+  { n: '01', title: 'Brand Direction', desc: 'We define the message, offer, audience, and visual position.' },
+  { n: '02', title: 'Visual World', desc: 'We create the cinematic style, color language, typography, and page mood.' },
+  { n: '03', title: 'Website Structure', desc: 'We build the flow: hero, services, proof, conversion, and story.' },
+  { n: '04', title: 'AI / 3D Assets', desc: 'We generate premium visuals, interface graphics, videos, or 3D elements.' },
+  { n: '05', title: 'Launch Polish', desc: 'We refine speed, mobile, SEO basics, animation, and final experience.' },
+];
+
+function Process() {
   return (
-    <section style={{ background: 'transparent', padding: 'clamp(80px,10vw,140px) 0' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' }}>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(200,164,78,0.18)',
-            borderRadius: 24, padding: 'clamp(48px,6vw,80px) clamp(32px,5vw,80px)',
-            textAlign: 'center', position: 'relative', overflow: 'hidden',
-            backdropFilter: 'blur(20px)',
-          }}
-        >
-          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,164,78,0.06) 0%, transparent 60%)', pointerEvents: 'none' }} />
-          <div style={{ position: 'absolute', top: 0, left: '20%', right: '20%', height: 1, background: `linear-gradient(90deg,transparent,${GOLD}55,transparent)` }} />
-
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: '0.15em' }}
-            whileInView={{ opacity: 1, letterSpacing: '0.52em' }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 10, letterSpacing: '0.52em', textTransform: 'uppercase', color: GOLD, marginBottom: 20 }}
-          >
-            LET'S BUILD
-          </motion.p>
-
-          <h2 style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(26px,4.2vw,58px)', fontWeight: 800, lineHeight: 1.0, letterSpacing: '-0.032em', color: '#F8FAFC', marginBottom: 20, maxWidth: 700, margin: '0 auto 20px' }}>
-            Let's Build the Website{' '}
-            <span style={{ fontStyle: 'italic', background: `linear-gradient(125deg,${GOLD_LIGHT} 0%,${GOLD} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              People Remember
-            </span>
-          </h2>
-
-          <p style={{ fontFamily: "'Satoshi', system-ui, sans-serif", fontSize: 'clamp(14px,1.2vw,17px)', color: 'rgba(248,250,252,0.48)', lineHeight: 1.7, maxWidth: 500, margin: '0 auto 40px' }}>
-            Send us your current site or idea. We'll turn it into a premium digital experience.
-          </p>
-
-          <Link
-            to={createPageUrl('Contact')}
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              fontFamily: "'Satoshi', system-ui, sans-serif",
-              fontSize: 'clamp(11px,0.9vw,13px)', fontWeight: 700, letterSpacing: '0.06em',
-              padding: 'clamp(14px,1.4vw,18px) clamp(32px,3vw,48px)', borderRadius: 100,
-              background: `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD} 50%, #9A7B3A 100%)`,
-              color: BG, border: '1px solid rgba(200,164,78,0.4)',
-              boxShadow: '0 0 44px rgba(200,164,78,0.3), 0 8px 32px rgba(0,0,0,0.5)',
-              textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 0.3s',
-            }}
-            onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 60px rgba(200,164,78,0.5), 0 12px 40px rgba(0,0,0,0.6)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 0 44px rgba(200,164,78,0.3), 0 8px 32px rgba(0,0,0,0.5)'; e.currentTarget.style.transform = ''; }}
-          >
-            Start a Website Project <ArrowRight size={14} />
-          </Link>
-        </motion.div>
+    <section style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)', borderTop: `1px solid ${BORDER}` }}>
+      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
+        <motion.h2 {...fade(0)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(28px,4vw,56px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 14px', letterSpacing: '0.01em' }}>
+          From Website to Brand World
+        </motion.h2>
+        <motion.p {...fade(0.05)} style={{ fontFamily: UI, fontSize: 16, lineHeight: 1.65, color: GRAY, textAlign: 'center', maxWidth: 640, margin: '0 auto clamp(48px,6vw,72px)' }}>
+          A premium website is not just pages. It is strategy, perception, visuals, trust, and conversion working together.
+        </motion.p>
+        <div className="we-process" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16, position: 'relative' }}>
+          <div className="we-process-line" style={{ position: 'absolute', top: 27, left: '10%', right: '10%', height: 1, background: `linear-gradient(90deg, transparent, rgba(${GREEN_RGB},0.5), transparent)` }} />
+          {STEPS.map((s, i) => (
+            <motion.div key={s.n} {...fade(i * 0.08)} style={{ position: 'relative', textAlign: 'center' }}>
+              <div style={{ width: 54, height: 54, margin: '0 auto 18px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: DISPLAY, fontSize: 19, fontWeight: 800, color: GREEN, background: BG, border: `1px solid rgba(${GREEN_RGB},0.4)`, boxShadow: `0 0 24px rgba(${GREEN_RGB},0.14)`, position: 'relative', zIndex: 2 }}>{s.n}</div>
+              <h3 style={{ fontFamily: DISPLAY, fontSize: 18, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', color: WHITE, margin: '0 0 8px' }}>{s.title}</h3>
+              <p style={{ fontFamily: UI, fontSize: 13.5, lineHeight: 1.55, color: GRAY, margin: 0 }}>{s.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-/* ── PAGE ───────────────────────────────────────────────────── */
+// ── BEFORE / AFTER ───────────────────────────────────────────────────────────
+function BeforeAfter() {
+  const before = ['Generic template', 'Weak visual identity', 'No clear offer', 'Low trust', 'Looks small'];
+  const after = ['Cinematic brand world', 'Premium layout', 'Clear conversion flow', 'Strong trust', 'Higher perceived value'];
+  return (
+    <section style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)', borderTop: `1px solid ${BORDER}` }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <motion.h2 {...fade(0)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(26px,3.6vw,52px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 clamp(40px,5vw,60px)', letterSpacing: '0.01em' }}>
+          Your Website Is Either Building Trust or Killing It
+        </motion.h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,320px),1fr))', gap: 18 }}>
+          <motion.div {...fade(0.05)} style={{ borderRadius: 20, padding: 'clamp(28px,3vw,40px)', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 22 }}>
+              <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#FF5F57' }} />
+              <span style={{ fontFamily: UI, fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,95,87,0.75)' }}>Before</span>
+            </div>
+            {before.map((b, i) => (
+              <div key={b} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.05)' : 'none', fontFamily: UI, fontSize: 15, color: 'rgba(245,245,240,0.5)' }}>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'rgba(255,95,87,0.45)', flexShrink: 0 }} />{b}
+              </div>
+            ))}
+          </motion.div>
+          <motion.div {...fade(0.13)} style={{ position: 'relative', borderRadius: 20, padding: 'clamp(28px,3vw,40px)', background: `rgba(${GREEN_RGB},0.04)`, border: `1px solid rgba(${GREEN_RGB},0.28)`, overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: 1, background: `linear-gradient(90deg, transparent, rgba(${GREEN_RGB},0.6), transparent)` }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 22 }}>
+              <span style={{ width: 10, height: 10, borderRadius: '50%', background: GREEN, boxShadow: `0 0 10px ${GREEN}` }} />
+              <span style={{ fontFamily: UI, fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GREEN }}>After AYESMAJ</span>
+            </div>
+            {after.map((a, i) => (
+              <div key={a} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: i < 4 ? '1px solid rgba(255,255,255,0.05)' : 'none', fontFamily: UI, fontSize: 15, color: 'rgba(245,245,240,0.78)' }}>
+                <Check size={14} color={GREEN} strokeWidth={2.5} style={{ flexShrink: 0 }} />{a}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        <motion.p {...fade(0.1)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(22px,2.8vw,40px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: 'clamp(48px,6vw,72px) auto 0', maxWidth: 800, lineHeight: 1.1, letterSpacing: '0.01em' }}>
+          "If your brand looks basic,<br />people expect <span style={{ color: GOLD }}>basic prices.</span>"
+        </motion.p>
+      </div>
+    </section>
+  );
+}
+
+// ── FINAL CTA ────────────────────────────────────────────────────────────────
+function FinalCTA() {
+  const navigate = useNavigate();
+  return (
+    <section style={{ position: 'relative', padding: 'clamp(80px,11vw,160px) 24px', textAlign: 'center', overflow: 'hidden', borderTop: `1px solid ${BORDER}` }}>
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: `radial-gradient(ellipse 60% 60% at 50% 50%, rgba(${GREEN_RGB},0.10), transparent 65%)` }} />
+      <motion.div {...fade(0)} style={{ position: 'relative', zIndex: 2 }}>
+        <h2 style={{ fontFamily: DISPLAY, fontSize: 'clamp(34px,5.5vw,80px)', fontWeight: 800, textTransform: 'uppercase', lineHeight: 0.98, color: WHITE, margin: '0 0 22px', letterSpacing: '0.005em' }}>
+          Let's Build the Website<br />People Remember
+        </h2>
+        <p style={{ fontFamily: UI, fontSize: 17, color: GRAY, maxWidth: 540, margin: '0 auto 36px', lineHeight: 1.6 }}>
+          Send us your current website, product, or idea. We'll turn it into a premium digital experience.
+        </p>
+        <GoldButton label="Start a Website Project" onClick={() => navigate('/Contact')} />
+      </motion.div>
+    </section>
+  );
+}
+
+// ── PAGE ─────────────────────────────────────────────────────────────────────
 export default function WebExperiences() {
   useEffect(() => {
-    document.title = 'Web Experiences — AYESMAJ Studios';
+    document.title = 'Web Experiences | AYESMAJ Studios';
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div style={{ background: BG, minHeight: '100vh', overflowX: 'clip', position: 'relative' }}>
-      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0, pointerEvents: 'none' }}>
-        <CircuitBackground />
-      </div>
+      <div aria-hidden style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none',
+        background: `radial-gradient(circle at 18% 18%, rgba(${GREEN_RGB},0.10), transparent 45%), radial-gradient(circle at 82% 12%, rgba(${GOLD_RGB},0.07), transparent 45%), linear-gradient(180deg, #020302, #050805)` }} />
+      <div aria-hidden style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', opacity: 0.14,
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+        backgroundSize: '64px 64px',
+        WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at 50% 40%, black, transparent 80%)',
+        maskImage: 'radial-gradient(ellipse 70% 70% at 50% 40%, black, transparent 80%)' }} />
+
       <div style={{ position: 'relative', zIndex: 10 }}>
-        <HomeNav />
-        <WEHero />
-        <WhatWeBuild />
-        <ShowcaseGrid />
-        <FeaturesSection />
-        <PackagesSection />
-        <BeforeAfterSection />
-        <WEFinalCTA />
-        <HomeFooter />
+        <AyesmajNav />
+        <main>
+          <Hero />
+          <ServiceCards />
+          <SelectedWork />
+          <Process />
+          <BeforeAfter />
+          <FinalCTA />
+        </main>
+        <AyesmajFooter />
       </div>
+
+      <style>{`
+        .we-glass:hover { border-color: rgba(${GREEN_RGB},0.45) !important; box-shadow: 0 0 40px rgba(${GREEN_RGB},0.15) !important; }
+        .we-work:hover { border-color: rgba(${GREEN_RGB},0.45) !important; box-shadow: 0 0 40px rgba(${GREEN_RGB},0.15) !important; }
+        .we-work:hover .we-work-img { transform: scale(1.05); }
+        @media (max-width: 1000px) {
+          .we-hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .we-hero-visual { order: 2; }
+          .we-showcase { min-height: 460px !important; }
+          .we-process { grid-template-columns: 1fr !important; gap: 28px !important; text-align: left !important; }
+          .we-process-line { display: none !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .we-showcase * { animation: none !important; }
+        }
+      `}</style>
     </div>
   );
 }

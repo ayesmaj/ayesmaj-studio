@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import HomeNav from '@/components/home/HomeNav';
-import Footer from '@/components/sections/Footer';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import { getBrand, BRANDS } from '@/data/brands';
 
 const fade = (delay = 0) => ({
@@ -99,9 +99,9 @@ export default function BrandDetail() {
   if (!brand) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-6 text-white"
-        style={{ background:'#080C09' }}>
+        style={{ background:'#030303' }}>
         <p className="text-gray-500 text-xs tracking-[0.3em] uppercase">Brand not found</p>
-        <Link to="/Brands" className="text-[#00C46A] text-sm hover:underline flex items-center gap-2">
+        <Link to="/Brands" className="text-[#B3FF3F] text-sm hover:underline flex items-center gap-2">
           <ArrowLeft size={14} /> Back to all brands
         </Link>
       </div>
@@ -112,8 +112,8 @@ export default function BrandDetail() {
   const { accent } = brand;
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden" style={{ background:'#080C09' }}>
-      <HomeNav />
+    <div className="min-h-screen text-white overflow-x-hidden" style={{ background:'#030303' }}>
+      <AyesmajNav />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] min-h-[85svh] flex items-end overflow-hidden">
@@ -121,7 +121,7 @@ export default function BrandDetail() {
           <img src={`${assetBase}/${brand.featured}`} alt={brand.name}
             className="w-full h-full object-cover" />
           <div className="absolute inset-0"
-            style={{ background:'linear-gradient(to top, #080C09 0%, rgba(8,12,9,0.6) 50%, rgba(8,12,9,0.15) 100%)' }} />
+            style={{ background:'linear-gradient(to top, #030303 0%, rgba(8,12,9,0.6) 50%, rgba(8,12,9,0.15) 100%)' }} />
         </div>
 
         {/* Glow */}
@@ -286,7 +286,7 @@ export default function BrandDetail() {
         </motion.div>
       </section>
 
-      <Footer />
+      <AyesmajFooter />
     </div>
   );
 }

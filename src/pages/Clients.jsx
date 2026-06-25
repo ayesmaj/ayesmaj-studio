@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import CircuitBackground from '@/components/home/CircuitBackground';
-import HomeNav from '@/components/home/HomeNav';
-import HomeFooter from '@/components/home/HomeFooter';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { ArrowUpRight } from 'lucide-react';
@@ -55,17 +55,18 @@ export default function Clients() {
   }, []);
 
   return (
-    <div style={{ background: '#0B0F0C', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div style={{ background: '#030303', minHeight: '100vh', overflowX: 'hidden' }}>
       <CircuitBackground />
-      <HomeNav />
+      <AyesmajNav />
 
       <main className="relative z-10 pt-32 pb-24 px-6">
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center mb-20">
-            <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#C8A44E' }}>Trusted By</p>
-            <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight mb-4">Our Clients</h1>
+            <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#FFB000' }}>Trusted By</p>
+            <h1 className="text-5xl md:text-7xl text-white mb-4"
+              style={{ fontFamily: "'Anton', sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em' }}>Our Clients</h1>
             <p className="text-base md:text-lg max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.4)' }}>
               Brands who chose to elevate their visual presence with cinematic craft.
             </p>
@@ -76,16 +77,16 @@ export default function Clients() {
             {CLIENTS.map((client, i) => (
               <motion.div key={client.name} {...fade(i * 0.04)}
                 className="rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(200,163,78,0.1)' }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(0,196,106,0.3)'; e.currentTarget.style.background = 'rgba(0,196,106,0.03)'; e.currentTarget.style.boxShadow = '0 0 24px rgba(0,196,106,0.08)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(200,163,78,0.1)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.boxShadow = ''; }}
+                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,176,0,0.1)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(179,255,63,0.3)'; e.currentTarget.style.background = 'rgba(179,255,63,0.03)'; e.currentTarget.style.boxShadow = '0 0 24px rgba(179,255,63,0.08)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,176,0,0.1)'; e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.boxShadow = ''; }}
               >
-                <div className="text-xs tracking-widest uppercase font-bold" style={{ color: '#C8A44E' }}>{client.industry}</div>
+                <div className="text-xs tracking-widest uppercase font-bold" style={{ color: '#FFB000' }}>{client.industry}</div>
                 <div className="text-white font-black text-base">{client.name}</div>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
                   {client.services.map(s => (
                     <span key={s} className="text-[9px] px-2 py-0.5 rounded-full font-bold tracking-widest uppercase"
-                      style={{ background: 'rgba(200,163,78,0.07)', border: '1px solid rgba(200,163,78,0.15)', color: 'rgba(200,163,78,0.6)' }}>
+                      style={{ background: 'rgba(255,176,0,0.07)', border: '1px solid rgba(255,176,0,0.15)', color: 'rgba(255,176,0,0.6)' }}>
                       {s}
                     </span>
                   ))}
@@ -96,19 +97,20 @@ export default function Clients() {
 
           {/* Testimonials */}
           <motion.div {...fade(0.1)} className="mb-20">
-            <p className="text-xs tracking-[0.5em] uppercase mb-4 text-center" style={{ color: '#C8A44E' }}>What They Say</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white text-center mb-12">Client Testimonials</h2>
+            <p className="text-xs tracking-[0.5em] uppercase mb-4 text-center" style={{ color: '#FFB000' }}>What They Say</p>
+            <h2 className="text-3xl md:text-4xl text-white text-center mb-12"
+              style={{ fontFamily: "'Anton', sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em' }}>Client Testimonials</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {TESTIMONIALS.map((t, i) => (
                 <motion.div key={i} {...fade(0.1 + i * 0.1)}
                   className="rounded-2xl p-8"
-                  style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(200,163,78,0.1)' }}
+                  style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,176,0,0.1)' }}
                 >
-                  <div className="text-3xl mb-4" style={{ color: '#C8A44E' }}>"</div>
+                  <div className="text-3xl mb-4" style={{ color: '#FFB000' }}>"</div>
                   <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>{t.quote}</p>
                   <div>
                     <div className="text-white font-bold text-sm">{t.name}</div>
-                    <div className="text-xs tracking-wider" style={{ color: 'rgba(200,163,78,0.6)' }}>{t.role}</div>
+                    <div className="text-xs tracking-wider" style={{ color: 'rgba(255,176,0,0.6)' }}>{t.role}</div>
                   </div>
                 </motion.div>
               ))}
@@ -120,9 +122,9 @@ export default function Clients() {
             <p className="text-lg mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>Ready to join them?</p>
             <Link to={createPageUrl('Contact')}
               className="inline-flex items-center gap-2 px-10 py-4 rounded-full font-black text-sm tracking-widest uppercase transition-all duration-300"
-              style={{ background: 'rgba(0,196,106,0.1)', border: '1px solid rgba(0,196,106,0.5)', color: '#00C46A', minHeight: '52px' }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 30px rgba(0,196,106,0.25)'; e.currentTarget.style.background = 'rgba(0,196,106,0.15)'; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; e.currentTarget.style.background = 'rgba(0,196,106,0.1)'; }}
+              style={{ background: 'rgba(179,255,63,0.1)', border: '1px solid rgba(179,255,63,0.5)', color: '#B3FF3F', minHeight: '52px' }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 30px rgba(179,255,63,0.25)'; e.currentTarget.style.background = 'rgba(179,255,63,0.15)'; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = ''; e.currentTarget.style.background = 'rgba(179,255,63,0.1)'; }}
             >
               Start a Project <ArrowUpRight size={16} />
             </Link>
@@ -135,7 +137,7 @@ export default function Clients() {
           </div>
           </main>
 
-      <HomeFooter />
+      <AyesmajFooter />
     </div>
   );
 }

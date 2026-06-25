@@ -2,8 +2,8 @@
 import { motion } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 import CircuitBackground from '@/components/home/CircuitBackground';
-import HomeNav from '@/components/home/HomeNav';
-import HomeFooter from '@/components/home/HomeFooter';
+import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
+import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -44,8 +44,8 @@ function VideoCard({ video, onPlay }) {
       className="relative overflow-hidden rounded-2xl cursor-pointer"
       style={{
         aspectRatio: '16/9',
-        border: `1px solid ${hovered ? 'rgba(0,196,106,0.4)' : 'rgba(200,163,78,0.12)'}`,
-        boxShadow: hovered ? '0 0 40px rgba(0,196,106,0.18), 0 20px 60px rgba(0,0,0,0.5)' : '0 10px 40px rgba(0,0,0,0.4)',
+        border: `1px solid ${hovered ? 'rgba(179,255,63,0.4)' : 'rgba(255,176,0,0.12)'}`,
+        boxShadow: hovered ? '0 0 40px rgba(179,255,63,0.18), 0 20px 60px rgba(0,0,0,0.5)' : '0 10px 40px rgba(0,0,0,0.4)',
         transition: 'border-color 0.3s, box-shadow 0.3s',
       }}
       onMouseEnter={() => setHovered(true)}
@@ -62,9 +62,9 @@ function VideoCard({ video, onPlay }) {
           animate={{ scale: hovered ? 1.1 : 1, opacity: hovered ? 1 : 0.7 }}
           transition={{ duration: 0.3 }}
           className="flex items-center justify-center rounded-full"
-          style={{ width: 64, height: 64, background: 'rgba(0,196,106,0.15)', border: '2px solid rgba(0,196,106,0.7)', backdropFilter: 'blur(8px)', boxShadow: '0 0 30px rgba(0,196,106,0.3)' }}
+          style={{ width: 64, height: 64, background: 'rgba(179,255,63,0.15)', border: '2px solid rgba(179,255,63,0.7)', backdropFilter: 'blur(8px)', boxShadow: '0 0 30px rgba(179,255,63,0.3)' }}
         >
-          <Play size={22} fill="#00C46A" color="#00C46A" style={{ marginLeft: 3 }} />
+          <Play size={22} fill="#B3FF3F" color="#B3FF3F" style={{ marginLeft: 3 }} />
         </motion.div>
       </div>
 
@@ -86,16 +86,17 @@ export default function Reel() {
   }, []);
 
   return (
-    <div style={{ background: '#0B0F0C', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div style={{ background: '#030303', minHeight: '100vh', overflowX: 'hidden' }}>
       <CircuitBackground />
-      <HomeNav />
+      <AyesmajNav />
 
       <main className="relative z-10 pt-32 pb-24 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Hero */}
           <motion.div {...fade(0)} className="text-center mb-16">
-            <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#00C46A' }}>Showreel</p>
-            <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight mb-4">
+            <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#B3FF3F' }}>Showreel</p>
+            <h1 className="text-5xl md:text-7xl text-white mb-4"
+              style={{ fontFamily: "'Anton', sans-serif", fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em' }}>
               Watch Our Work
             </h1>
             <p className="text-base md:text-lg max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.4)' }}>
@@ -105,7 +106,7 @@ export default function Reel() {
 
           {/* Featured showreel — full width embed */}
           <motion.div {...fade(0.15)} className="mb-12">
-            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9', border: '1px solid rgba(0,196,106,0.15)', boxShadow: '0 0 60px rgba(0,196,106,0.1), 0 30px 80px rgba(0,0,0,0.6)' }}>
+            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: '16/9', border: '1px solid rgba(179,255,63,0.15)', boxShadow: '0 0 60px rgba(179,255,63,0.1), 0 30px 80px rgba(0,0,0,0.6)' }}>
               <iframe
                 src={`https://www.youtube.com/embed/${SHOWREEL_ID}?rel=0&modestbranding=1`}
                 className="w-full h-full"
@@ -115,7 +116,7 @@ export default function Reel() {
                 title="AYESMAJ Studios Showreel"
               />
             </div>
-            <p className="text-center mt-4 text-xs tracking-[0.4em] uppercase" style={{ color: 'rgba(0,196,106,0.5)' }}>Official Showreel 2025</p>
+            <p className="text-center mt-4 text-xs tracking-[0.4em] uppercase" style={{ color: 'rgba(179,255,63,0.5)' }}>Official Showreel 2025</p>
           </motion.div>
 
           {/* Grid */}
@@ -145,7 +146,7 @@ export default function Reel() {
               <iframe src={`https://www.youtube.com/embed/${modal.youtube}?autoplay=1`}
                 className="w-full rounded-2xl" style={{ aspectRatio: '16/9', border: 'none' }} allowFullScreen allow="autoplay" />
             ) : (
-              <div className="w-full rounded-2xl overflow-hidden flex items-center justify-center" style={{ aspectRatio: '16/9', background: '#0B0F0C', border: '1px solid rgba(200,163,78,0.2)' }}>
+              <div className="w-full rounded-2xl overflow-hidden flex items-center justify-center" style={{ aspectRatio: '16/9', background: '#030303', border: '1px solid rgba(255,176,0,0.2)' }}>
                 <div className="text-center">
                   <img src={modal.thumb} alt={modal.title} className="w-full h-full object-cover absolute inset-0" style={{ opacity: 0.4 }} />
                   <div className="relative z-10 p-8">
@@ -159,7 +160,7 @@ export default function Reel() {
         </motion.div>
       )}
 
-      <HomeFooter />
+      <AyesmajFooter />
     </div>
   );
 }
