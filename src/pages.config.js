@@ -65,6 +65,7 @@ import System from './pages/System';
 import WebExperiences from './pages/WebExperiences';
 import AiMarketing from './pages/AiMarketing';
 import Worlds3D from './pages/Worlds3D';
+import Work from './pages/Work';
 import __Layout from './Layout.jsx';
 
 
@@ -87,6 +88,7 @@ export const PAGES = {
     "WebExperiences": WebExperiences,
     "AiMarketing": AiMarketing,
     "Worlds3D": Worlds3D,
+    "Work": Work,
 }
 
 export const pagesConfig = {

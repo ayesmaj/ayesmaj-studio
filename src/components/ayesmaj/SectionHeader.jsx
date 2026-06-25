@@ -12,6 +12,7 @@ import { COLORS, FONTS } from "./theme";
  *   accent    : eyebrow color (default gold)
  *   align     : "center" (default) | "left"
  *   max       : max width of the block
+ *   as        : heading tag for the title — "h2" (default) | "h1"
  */
 export default function SectionHeader({
   eyebrow,
@@ -20,7 +21,9 @@ export default function SectionHeader({
   accent = "#FFB000",
   align = "center",
   max = 760,
+  as = "h2",
 }) {
+  const Heading = motion[as] || motion.h2;
   return (
     <div style={{ textAlign: align, maxWidth: max, margin: align === "center" ? "0 auto" : 0 }}>
       {eyebrow && (
@@ -43,7 +46,7 @@ export default function SectionHeader({
         </motion.p>
       )}
 
-      <motion.h2
+      <Heading
         initial={{ opacity: 0, y: 22 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -60,7 +63,7 @@ export default function SectionHeader({
         }}
       >
         {title}
-      </motion.h2>
+      </Heading>
 
       {subtitle && (
         <motion.p
