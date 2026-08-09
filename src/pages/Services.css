@@ -13,8 +13,7 @@
   background: var(--services-paper);
 }
 
-.services-page + .service-nav-backdrop,
-.services-page .service-nav-backdrop {
+.services-shell > .service-nav-backdrop {
   position: fixed;
   inset: 0 0 auto;
   z-index: 999;
@@ -24,7 +23,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
-.services-page main { padding-top: 80px; }
+.services-page { padding-top: 80px; }
 .services-page h1,
 .services-page h2,
 .services-page h3,
@@ -314,7 +313,7 @@
 }
 
 @media (max-width: 760px) {
-  .services-page main { padding-top: 72px; }
+  .services-page { padding-top: 72px; }
   .services-hero { min-height: auto; grid-template-columns: 1fr; gap: 50px; padding-top: 72px; }
   .services-hero h1 { font-size: clamp(62px, 18vw, 92px); }
   .services-hero__lead { font-size: 17px; }

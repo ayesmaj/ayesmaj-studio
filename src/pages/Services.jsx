@@ -131,11 +131,11 @@ export default function Services() {
   }, []);
 
   return (
-    <div className="services-page">
+    <div className="services-shell">
       <div className="service-nav-backdrop" aria-hidden="true" />
       <AyesmajNav />
 
-      <main>
+      <main className="services-page">
         <section className="services-hero">
           <motion.div className="services-hero__copy" {...reveal()}>
             <p className="services-kicker"><Sparkles size={15} aria-hidden="true" /> One studio. Every creative skill.</p>
