@@ -41,6 +41,28 @@ function AnimatedRoutes() {
               <MainPage />
             </LayoutWrapper>
           } />
+          {[
+            ["/services", "Services"],
+            ["/services/branding", "ServiceBranding"],
+            ["/services/web-design", "WebExperiences"],
+            ["/services/ai-content", "AiMarketing"],
+            ["/services/3d-cgi", "Worlds3D"],
+            ["/services/motion-vfx", "AiVideos"],
+            ["/services/storyboards", "Storyboards"],
+          ].map(([path, pageName]) => {
+            const ServicePage = Pages[pageName];
+            return ServicePage ? (
+              <Route
+                key={path}
+                path={path}
+                element={
+                  <LayoutWrapper currentPageName={pageName}>
+                    <ServicePage />
+                  </LayoutWrapper>
+                }
+              />
+            ) : null;
+          })}
           {Object.entries(Pages).map(([pageName, Page]) => (
             <Route
               key={pageName}
