@@ -13,7 +13,6 @@ import {
   PenTool,
   Sparkles,
 } from "lucide-react";
-import Seo from "@/components/ayesmaj/Seo";
 import AyesmajNav from "@/components/ayesmaj/AyesmajNav";
 import AyesmajFooter from "@/components/ayesmaj/AyesmajFooter";
 import "./Services.css";
@@ -133,11 +132,6 @@ export default function Services() {
 
   return (
     <div className="services-page">
-      <Seo
-        title="Creative Studio Services | AYESMAJ Studios"
-        description="Brand strategy, premium websites, AI content, 3D and CGI, motion, film, and art direction by AYESMAJ Studios."
-        path="/Services"
-      />
       <div className="service-nav-backdrop" aria-hidden="true" />
       <AyesmajNav />
 
