@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import Seo from '@/components/ayesmaj/Seo';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import {
   ArrowRight, ArrowUpRight, Check, Target, Clapperboard, Cpu, Gauge,
@@ -7,6 +8,8 @@ import {
 } from 'lucide-react';
 import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
 import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
+import { R2 } from '@/data/media';
+import './WebExperiencesLive.css';
 
 // ── Palette (green Website-Design world) ─────────────────────────────────────
 const BG = '#030603';
@@ -20,7 +23,7 @@ const MUTED = '#6F6F6F';
 const BORDER = 'rgba(255,255,255,0.10)';
 const GLASS = 'rgba(255,255,255,0.045)';
 const DISPLAY = "'Anton', sans-serif";
-const UI = "'Space Grotesk', system-ui, sans-serif";
+const UI = "'DM Sans', system-ui, sans-serif";
 const A = '/assets/ayesmaj/web-experiences';
 
 const fade = (d = 0) => ({
@@ -34,6 +37,8 @@ const fade = (d = 0) => ({
 function GoldButton({ label, onClick, solid = true }) {
   return (
     <button
+      type="button"
+      className={`we-gold-button ${solid ? 'is-solid' : 'is-outline'}`}
       onClick={onClick}
       style={{
         display: 'inline-flex', alignItems: 'center', gap: 10, height: 58, padding: '0 34px',
@@ -55,9 +60,9 @@ function GoldButton({ label, onClick, solid = true }) {
 
 // ── Diagonal panel showcase — reveals more on hover ──────────────────────────
 const PANELS = [
-  { id: 'desktop', label: 'Desktop', sub: 'Premium Business Sites', img: `${A}/web-hero-desktop-showcase.jpg`, stat: '+212%', statLabel: 'Conversion Lift' },
-  { id: 'dashboard', label: 'Dashboard', sub: 'AI & SaaS Platforms', img: `${A}/web-hero-laptop-dashboard.jpg`, stat: '< 1.2s', statLabel: 'First Paint' },
-  { id: 'mobile', label: 'Mobile', sub: 'Pixel-Perfect on Every Screen', img: `${A}/web-hero-mobile-showcase.jpg`, stat: '100/100', statLabel: 'Lighthouse Score' },
+  { id: 'desktop', label: 'Desktop', sub: 'Premium Business Sites', img: `${A}/web-hero-desktop-v2.webp`, stat: '+212%', statLabel: 'Conversion Lift' },
+  { id: 'dashboard', label: 'Dashboard', sub: 'AI & SaaS Platforms', img: `${A}/web-hero-dashboard-v2.webp`, stat: '< 1.2s', statLabel: 'First Paint' },
+  { id: 'mobile', label: 'Mobile', sub: 'Pixel-Perfect on Every Screen', img: `${A}/web-hero-mobile-v2.webp`, stat: '100/100', statLabel: 'Lighthouse Score' },
 ];
 
 function HoverShowcase() {
@@ -165,6 +170,40 @@ function HoverShowcase() {
 }
 
 // ── Capability data ──────────────────────────────────────────────────────────
+const HERO_WEBSITES = [
+  { id: 'casa-ora', label: 'Casa Ora', sub: 'Premium Business Website', img: '/videos/websites/posters/casa-ora.jpg', number: '01' },
+  { id: 'podos-ai', label: 'Podos AI', sub: 'Interactive Product Platform', img: '/videos/websites/posters/podos-ai.jpg', number: '02' },
+  { id: 'rebound', label: 'Rebound', sub: 'Responsive Beauty Commerce', img: '/videos/websites/posters/rebound-skincare.jpg', number: '03' },
+];
+
+function AyesmajWebShowcase() {
+  return (
+    <div className="we-showcase" aria-label="Selected AYESMAJ website experiences">
+      <div className="we-showcase__halo" aria-hidden="true" />
+
+      <article className="we-showcase__main">
+        <div className="we-showcase__chrome" aria-hidden="true"><span /><span /><span /><b>ayesmaj / website world 01</b></div>
+        <img src={HERO_WEBSITES[0].img} alt={`${HERO_WEBSITES[0].label} — ${HERO_WEBSITES[0].sub}`} fetchPriority="high" />
+        <div className="we-showcase__caption"><span>{HERO_WEBSITES[0].number}</span><div><strong>{HERO_WEBSITES[0].label}</strong><small>{HERO_WEBSITES[0].sub}</small></div></div>
+      </article>
+
+      <article className="we-showcase__float we-showcase__float--ai">
+        <img src={HERO_WEBSITES[1].img} alt={`${HERO_WEBSITES[1].label} — ${HERO_WEBSITES[1].sub}`} loading="eager" />
+        <div><span>{HERO_WEBSITES[1].number}</span><strong>{HERO_WEBSITES[1].label}</strong><small>{HERO_WEBSITES[1].sub}</small></div>
+      </article>
+
+      <article className="we-showcase__float we-showcase__float--commerce">
+        <img src={HERO_WEBSITES[2].img} alt={`${HERO_WEBSITES[2].label} — ${HERO_WEBSITES[2].sub}`} loading="eager" />
+        <div><span>{HERO_WEBSITES[2].number}</span><strong>{HERO_WEBSITES[2].label}</strong><small>{HERO_WEBSITES[2].sub}</small></div>
+      </article>
+
+      <div className="we-showcase__device-note" aria-hidden="true">
+        <Monitor size={17} /><span>Desktop</span><i /><span>Tablet</span><i /><span>Mobile</span>
+      </div>
+    </div>
+  );
+}
+
 const CAPS = [
   { icon: Target, title: 'Strategy First', sub: 'Purpose-led websites' },
   { icon: Clapperboard, title: 'Cinematic Design', sub: 'Emotion through visuals' },
@@ -176,31 +215,31 @@ const CAPS = [
 function Hero() {
   const navigate = useNavigate();
   return (
-    <section style={{ position: 'relative', minHeight: '100vh', padding: '140px clamp(24px,5vw,80px) 60px', display: 'flex', alignItems: 'center' }}>
-      <div className="we-hero-grid" style={{ maxWidth: 1500, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '0.95fr 1.05fr', gap: 64, alignItems: 'center' }}>
-        <div>
-          <motion.div {...fade(0)} style={{ display: 'inline-flex', alignItems: 'center', gap: 9, border: `1px solid rgba(${GREEN_RGB},0.25)`, background: `rgba(${GREEN_RGB},0.06)`, borderRadius: 999, padding: '10px 18px', marginBottom: 28 }}>
+    <section className="we-ayes-hero" style={{ position: 'relative', minHeight: '100vh', padding: '140px clamp(24px,5vw,80px) 60px', display: 'flex', alignItems: 'center' }}>
+      <div className="we-hero-grid we-ayes-hero__grid" style={{ maxWidth: 1500, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '0.95fr 1.05fr', gap: 64, alignItems: 'center' }}>
+        <div className="we-ayes-hero__copy">
+          <motion.div className="we-ayes-hero__kicker" {...fade(0)} style={{ display: 'inline-flex', alignItems: 'center', gap: 9, border: `1px solid rgba(${GREEN_RGB},0.25)`, background: `rgba(${GREEN_RGB},0.06)`, borderRadius: 999, padding: '10px 18px', marginBottom: 28 }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: GREEN, boxShadow: `0 0 8px ${GREEN}` }} />
             <span style={{ fontFamily: UI, fontSize: 11.5, fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: GREEN }}>Cinematic Web Experiences</span>
           </motion.div>
 
-          <motion.h1 {...fade(0.08)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(46px,6.5vw,116px)', fontWeight: 800, lineHeight: 0.92, letterSpacing: '0.005em', textTransform: 'uppercase', color: WHITE, margin: 0 }}>
+          <motion.h1 className="we-ayes-hero__title" {...fade(0.08)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(46px,6.5vw,116px)', fontWeight: 800, lineHeight: 0.92, letterSpacing: '0.005em', textTransform: 'uppercase', color: WHITE, margin: 0 }}>
             Websites That<br />Feel Like<br />
             <span style={{ background: 'linear-gradient(90deg, #F5D76E, #D8B75A, #B88A2A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               Cinematic Digital Showrooms
             </span>
           </motion.h1>
 
-          <motion.p {...fade(0.16)} style={{ fontFamily: UI, fontSize: 'clamp(15px,1.3vw,18px)', lineHeight: 1.7, color: 'rgba(245,245,240,0.68)', maxWidth: 620, margin: '26px 0 0' }}>
+          <motion.p className="we-ayes-hero__lede" {...fade(0.16)} style={{ fontFamily: UI, fontSize: 'clamp(15px,1.3vw,18px)', lineHeight: 1.7, color: 'rgba(245,245,240,0.68)', maxWidth: 620, margin: '26px 0 0' }}>
             We craft premium websites, interactive landing pages, and AI-powered digital experiences for brands that want to stand out — and stay remembered.
           </motion.p>
 
-          <motion.div {...fade(0.24)} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 34 }}>
+          <motion.div className="we-ayes-hero__actions" {...fade(0.24)} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 34 }}>
             <GoldButton label="Build My Website" onClick={() => navigate('/Contact')} />
             <GoldButton label="See Website Work" solid={false} onClick={() => { const el = document.getElementById('selected-work'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} />
           </motion.div>
 
-          <motion.div {...fade(0.32)} style={{ display: 'flex', flexWrap: 'wrap', gap: 26, marginTop: 40, paddingTop: 28, borderTop: `1px solid ${BORDER}` }}>
+          <motion.div className="we-ayes-hero__caps" {...fade(0.32)} style={{ display: 'flex', flexWrap: 'wrap', gap: 26, marginTop: 40, paddingTop: 28, borderTop: `1px solid ${BORDER}` }}>
             {CAPS.map(({ icon: Icon, title, sub }) => (
               <div key={title} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <Icon size={17} color={GREEN} />
@@ -214,7 +253,7 @@ function Hero() {
         </div>
 
         <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="we-hero-visual">
-          <HoverShowcase />
+          <AyesmajWebShowcase />
         </motion.div>
       </div>
     </section>
@@ -223,28 +262,93 @@ function Hero() {
 
 // ── SERVICE CARDS ────────────────────────────────────────────────────────────
 const SERVICES = [
-  { icon: Monitor, title: 'Premium Business Websites', desc: 'Strategic, brand-driven websites that build trust and drive results.' },
-  { icon: MousePointerClick, title: 'Interactive Landing Pages', desc: 'High-converting, story-led pages built for maximum impact.' },
-  { icon: Box, title: '3D / AI-Enhanced Web Experiences', desc: 'Immersive 3D visuals and AI-powered interfaces that amaze and engage.' },
+  {
+    icon: Monitor,
+    title: 'Premium Business Websites',
+    desc: 'Strategic, brand-driven websites that build trust and turn a local service into a premium experience.',
+    site: 'Rebound Aesthetics',
+    url: 'https://rebound-aesthetics.vercel.app/',
+    number: '01',
+  },
+  {
+    icon: MousePointerClick,
+    title: 'Interactive Landing Pages',
+    desc: 'Story-led product pages with cinematic pacing, motion, and a clear journey from attention to action.',
+    site: 'Podos AI',
+    url: 'https://www.podosai.com/',
+    number: '02',
+  },
+  {
+    icon: Box,
+    title: '3D / AI-Enhanced Web Experiences',
+    desc: 'Immersive digital environments that let people explore complex products, spaces, and ideas visually.',
+    site: 'EFA Facility Tour',
+    url: 'https://efa-facility-tour.vercel.app/',
+    number: '03',
+  },
 ];
+
+function LiveSiteCard({ service, index }) {
+  const Icon = service.icon;
+
+  return (
+    <motion.article
+      {...fade(index * 0.08)}
+      className="we-live-card"
+    >
+      <div className="we-live-browser" aria-label={`Live scrolling preview of ${service.site}`}>
+        <div className="we-live-browser__chrome" aria-hidden="true">
+          <div className="we-live-browser__dots"><i /><i /><i /></div>
+          <span>{service.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
+          <b>Live</b>
+        </div>
+
+        <div className="we-live-browser__viewport">
+          <div className="we-live-browser__track">
+            <iframe
+              src={service.url}
+              title={`${service.site} live website preview`}
+              loading="lazy"
+              scrolling="yes"
+              tabIndex={-1}
+              sandbox="allow-scripts allow-same-origin"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+          <div className="we-live-browser__glass" aria-hidden="true" />
+          <div className="we-live-browser__status" aria-hidden="true">
+            <span><i /> Live website</span>
+            <span>View only · scroll preview</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="we-live-card__copy">
+        <div className="we-live-card__eyebrow">
+          <span>{service.number}</span>
+          <Icon size={16} strokeWidth={1.8} aria-hidden="true" />
+          <b>{service.site}</b>
+        </div>
+        <h3>{service.title}</h3>
+        <p>{service.desc}</p>
+      </div>
+    </motion.article>
+  );
+}
 
 function ServiceCards() {
   return (
-    <section style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)' }}>
+    <section id="live-websites" style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <motion.h2 {...fade(0)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(28px,4vw,56px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 clamp(40px,5vw,64px)', letterSpacing: '0.01em' }}>
           Websites Built to Make Brands Feel Premium
         </motion.h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,300px),1fr))', gap: 18 }}>
-          {SERVICES.map((s, i) => (
-            <motion.div key={s.title} {...fade(i * 0.08)} className="we-glass"
-              style={{ borderRadius: 22, padding: 30, background: GLASS, border: `1px solid ${BORDER}`, backdropFilter: 'blur(18px)', transition: 'border-color 0.3s, box-shadow 0.3s' }}>
-              <div style={{ width: 46, height: 46, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `rgba(${GREEN_RGB},0.08)`, border: `1px solid rgba(${GREEN_RGB},0.25)`, marginBottom: 20 }}>
-                <s.icon size={20} color={GREEN} />
-              </div>
-              <h3 style={{ fontFamily: DISPLAY, fontSize: 22, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', color: WHITE, margin: '0 0 10px' }}>{s.title}</h3>
-              <p style={{ fontFamily: UI, fontSize: 14.5, lineHeight: 1.6, color: GRAY, margin: 0 }}>{s.desc}</p>
-            </motion.div>
+        <motion.p {...fade(0.04)} className="we-live-intro">
+          Three real websites running inside the page. Place your cursor over any preview and scroll inside that website.
+        </motion.p>
+        <div className="we-live-grid">
+          {SERVICES.map((service, index) => (
+            <LiveSiteCard key={service.url} service={service} index={index} />
           ))}
         </div>
       </div>
@@ -255,54 +359,111 @@ function ServiceCards() {
 // ── SELECTED WORK ────────────────────────────────────────────────────────────
 const FILTERS = ['All', 'Business', 'E-Commerce', 'AI', 'Landing Pages'];
 const PROJECTS = [
-  { id: 'luxeline', title: 'LUXELINE INTERIORS', type: 'Luxury Interior Design Studio', cat: 'Business', img: `${A}/project-luxeline.jpg` },
-  { id: 'nexora', title: 'NEXORA AI', type: 'AI Analytics Platform', cat: 'AI', img: `${A}/project-nexora.jpg` },
-  { id: 'natura', title: 'NATURA SKINCARE', type: 'Clean Beauty E-commerce', cat: 'E-Commerce', img: `${A}/project-natura.jpg` },
+  { id: 'casa-ora', title: 'CASA ORA', type: 'Luxury Home Experience', cat: 'Business', poster: '/videos/websites/posters/casa-ora.jpg', video: `${R2}/sites/casa-ora.mp4` },
+  { id: 'podos-ai', title: 'PODOS AI', type: 'AI Product Platform', cat: 'AI', poster: '/videos/websites/posters/podos-ai.jpg', video: `${R2}/sites/podos-ai.mp4` },
+  { id: 'rebound', title: 'REBOUND SKINCARE', type: 'Beauty & Medspa Website', cat: 'E-Commerce', poster: '/videos/websites/posters/rebound-skincare.jpg', video: `${R2}/sites/rebound-skincare.mp4` },
+  { id: 'electric-fuel', title: 'ELECTRIC FUEL AMERICA', type: 'Cinematic Product Story', cat: 'Landing Pages', poster: '/videos/websites/posters/electric-fuel-america.jpg', video: `${R2}/sites/electric-fuel-america.mp4` },
+  { id: 'syntropic', title: 'SYNTROPIC', type: 'Deep-Tech Digital Experience', cat: 'AI', poster: '/videos/websites/posters/syntropic.jpg', video: `${R2}/sites/syntropic.mp4` },
+  { id: 'arizona-chimney', title: 'ARIZONA CHIMNEY PROS', type: 'Local Service Website', cat: 'Business', poster: '/videos/websites/posters/arizona-chimney-pros.jpg', video: `${R2}/sites/arizona-chimney-pros.mp4` },
 ];
 
 function SelectedWork() {
-  const navigate = useNavigate();
   const [filter, setFilter] = useState('All');
   const items = filter === 'All' ? PROJECTS : PROJECTS.filter((p) => p.cat === filter);
   return (
-    <section id="selected-work" style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)', borderTop: `1px solid ${BORDER}` }}>
+    <section id="selected-work" className="we-selected-section">
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
-        <motion.p {...fade(0)} style={{ fontFamily: UI, fontSize: 12, fontWeight: 600, letterSpacing: '0.4em', textTransform: 'uppercase', color: GREEN, textAlign: 'center', marginBottom: 16 }}>Selected Website Work</motion.p>
-        <motion.h2 {...fade(0.05)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(28px,4vw,56px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 36px', letterSpacing: '0.01em' }}>
+        <motion.p {...fade(0)} className="we-selected-kicker">Selected Website Work</motion.p>
+        <motion.h2 {...fade(0.05)} className="we-selected-title">
           Websites Built to Make People Stop
         </motion.h2>
+        <motion.p {...fade(0.08)} className="we-selected-intro">
+          Real client websites, shown in motion. Hover or tap a project to watch the experience come alive.
+        </motion.p>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 10, marginBottom: 44 }}>
+        <div className="we-work-filters" role="group" aria-label="Filter website projects">
           {FILTERS.map((f) => {
             const active = filter === f;
             return (
               <button key={f} onClick={() => setFilter(f)}
-                style={{ fontFamily: UI, fontSize: 10.5, fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', padding: '9px 18px', borderRadius: 999, cursor: 'pointer',
-                  background: active ? `rgba(${GREEN_RGB},0.16)` : 'transparent', border: `1px solid ${active ? `rgba(${GREEN_RGB},0.5)` : BORDER}`, color: active ? GREEN : GRAY, transition: 'all 0.3s' }}>
+                aria-pressed={active}
+                className={`we-work-filter${active ? ' is-active' : ''}`}>
                 {f}
               </button>
             );
           })}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,330px),1fr))', gap: 18 }}>
-          {items.map((p, i) => (
-            <motion.div key={p.id} {...fade(i * 0.08)} onClick={() => navigate('/Contact')} className="we-work"
-              style={{ position: 'relative', borderRadius: 20, overflow: 'hidden', cursor: 'pointer', border: `1px solid ${BORDER}`, background: GLASS, height: 280, transition: 'border-color 0.3s, box-shadow 0.3s' }}>
-              <img src={p.img} alt={`${p.title} website`} loading="lazy" className="we-work-img"
-                onError={(e) => { e.currentTarget.style.opacity = 0; }}
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(3,6,3,0.95) 0%, rgba(3,6,3,0.1) 60%, transparent 100%)' }} />
-              <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 22, display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 12, zIndex: 2 }}>
+        <div className="we-work-grid">
+          {/* Plain <button>, not motion.button: the 3D tilt + scroll-driven rise
+              live in CSS (.we-work), and framer's inline transform would override them. */}
+          {items.map((p) => (
+            <button key={p.id} type="button" className="we-work"
+              aria-label={`Play ${p.title} website walkthrough`}
+              onMouseEnter={(e) => e.currentTarget.querySelector('video')?.play().catch(() => {})}
+              onMouseLeave={(e) => { const video = e.currentTarget.querySelector('video'); if (video) { video.pause(); video.currentTime = 0; } }}
+              onClick={(e) => { const video = e.currentTarget.querySelector('video'); if (video?.paused) video.play().catch(() => {}); }}>
+              <video className="we-work-img" muted loop playsInline preload="metadata" poster={p.poster} aria-hidden="true">
+                <source src={p.video} type="video/mp4" />
+              </video>
+              <div className="we-work-scrim" />
+              <div className="we-work-meta">
+                <span>Real Project</span>
+                <span>Hover / tap to play</span>
+              </div>
+              <div className="we-work-copy">
                 <div>
-                  <h3 style={{ fontFamily: DISPLAY, fontSize: 23, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', color: WHITE, margin: '0 0 4px' }}>{p.title}</h3>
-                  <p style={{ fontFamily: UI, fontSize: 12.5, color: GREEN, margin: 0, letterSpacing: '0.04em' }}>{p.type}</p>
+                  <h3>{p.title}</h3>
+                  <p>{p.type}</p>
                 </div>
-                <span style={{ flexShrink: 0, width: 38, height: 38, borderRadius: '50%', border: `1px solid rgba(${GREEN_RGB},0.4)`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: GREEN }}>
+                <span className="we-work-play" aria-hidden="true">
                   <ArrowUpRight size={16} />
                 </span>
               </div>
-            </motion.div>
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const WEBSITE_REELS = [
+  { title: 'Casa Ora', type: 'Luxury Real Estate', video: `${R2}/sites/casa-ora.mp4`, poster: '/videos/websites/posters/casa-ora.jpg' },
+  { title: 'Podos AI', type: 'AI Product Platform', video: `${R2}/sites/podos-ai.mp4`, poster: '/videos/websites/posters/podos-ai.jpg' },
+  { title: 'Vudu Energy', type: 'Energy Brand', video: `${R2}/sites/vudu-energy.mp4`, poster: '/videos/websites/posters/vudu-energy.jpg' },
+  { title: 'Arizona Chimney Pros', type: 'Local Service Website', video: `${R2}/sites/arizona-chimney-pros.mp4`, poster: '/videos/websites/posters/arizona-chimney-pros.jpg' },
+  { title: 'Syntropic', type: 'Technology Experience', video: `${R2}/sites/syntropic.mp4`, poster: '/videos/websites/posters/syntropic.jpg' },
+  { title: 'Electric Fuel America', type: 'Automotive Product Story', video: `${R2}/sites/electric-fuel-america.mp4`, poster: '/videos/websites/posters/electric-fuel-america.jpg' },
+  { title: 'AYESMAJ Studios', type: 'Studio Website', video: `${R2}/sites/ayesmaj-studios.mp4`, poster: '/videos/websites/posters/ayesmaj-studios.jpg' },
+  { title: 'Kolie', type: 'Editorial Website', video: `${R2}/sites/kolie.mp4`, poster: '/videos/websites/posters/kolie.png' },
+  { title: 'Rebound Skincare', type: 'Beauty E-commerce', video: `${R2}/sites/rebound-skincare.mp4`, poster: '/videos/websites/posters/rebound-skincare.jpg' },
+];
+
+function WebsiteReels() {
+  return (
+    <section style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)', borderTop: `1px solid ${BORDER}` }}>
+      <div style={{ maxWidth: 1320, margin: '0 auto' }}>
+        <motion.p {...fade(0)} style={{ fontFamily: UI, fontSize: 12, fontWeight: 600, letterSpacing: '0.4em', textTransform: 'uppercase', color: GREEN, textAlign: 'center', marginBottom: 16 }}>Website Films</motion.p>
+        <motion.h2 {...fade(0.05)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(30px,4vw,58px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 16px' }}>
+          Watch the Websites in Motion
+        </motion.h2>
+        <motion.p {...fade(0.08)} style={{ fontFamily: UI, fontSize: 16, lineHeight: 1.65, color: GRAY, textAlign: 'center', maxWidth: 680, margin: '0 auto 44px' }}>
+          Real walkthroughs from the website projects in the studio archive. Press play to explore the full experience.
+        </motion.p>
+
+        <div className="we-reels-grid">
+          {WEBSITE_REELS.map((item, index) => (
+            <motion.article key={item.video} {...fade(index * 0.04)} className="we-reel-card">
+              <video controls playsInline preload="metadata" poster={item.poster} aria-label={`${item.title} website walkthrough`}>
+                <source src={item.video} type="video/mp4" />
+                Your browser does not support embedded video.
+              </video>
+              <div>
+                <span>{item.type}</span>
+                <h3>{item.title}</h3>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>
@@ -415,7 +576,12 @@ export default function WebExperiences() {
   }, []);
 
   return (
-    <div style={{ background: BG, minHeight: '100vh', overflowX: 'clip', position: 'relative' }}>
+    <div className="we-page" style={{ background: BG, minHeight: '100vh', overflowX: 'clip', position: 'relative' }}>
+      <Seo
+        title="Web Experiences | AYESMAJ Studios"
+        description="Premium cinematic websites engineered to convert — landing pages, full business sites, and interactive 3D web experiences by AYESMAJ Studios."
+        path="/WebExperiences"
+      />
       <div aria-hidden style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none',
         background: `radial-gradient(circle at 18% 18%, rgba(${GREEN_RGB},0.10), transparent 45%), radial-gradient(circle at 82% 12%, rgba(${GOLD_RGB},0.07), transparent 45%), linear-gradient(180deg, #020302, #050805)` }} />
       <div aria-hidden style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none', opacity: 0.14,
@@ -430,6 +596,7 @@ export default function WebExperiences() {
           <Hero />
           <ServiceCards />
           <SelectedWork />
+          <WebsiteReels />
           <Process />
           <BeforeAfter />
           <FinalCTA />
@@ -441,12 +608,22 @@ export default function WebExperiences() {
         .we-glass:hover { border-color: rgba(${GREEN_RGB},0.45) !important; box-shadow: 0 0 40px rgba(${GREEN_RGB},0.15) !important; }
         .we-work:hover { border-color: rgba(${GREEN_RGB},0.45) !important; box-shadow: 0 0 40px rgba(${GREEN_RGB},0.15) !important; }
         .we-work:hover .we-work-img { transform: scale(1.05); }
+        .we-reels-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px; }
+        .we-reel-card { overflow:hidden;border-radius:20px;background:${GLASS};border:1px solid ${BORDER}; }
+        .we-reel-card video { display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#050805; }
+        .we-reel-card > div { padding:18px 20px 20px; }
+        .we-reel-card span { display:block;margin-bottom:7px;font-family:${UI};font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:${GREEN}; }
+        .we-reel-card h3 { margin:0;font-family:${DISPLAY};font-size:22px;line-height:1;text-transform:uppercase;color:${WHITE}; }
         @media (max-width: 1000px) {
           .we-hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
           .we-hero-visual { order: 2; }
           .we-showcase { min-height: 460px !important; }
           .we-process { grid-template-columns: 1fr !important; gap: 28px !important; text-align: left !important; }
           .we-process-line { display: none !important; }
+          .we-reels-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+        }
+        @media (max-width: 640px) {
+          .we-reels-grid { grid-template-columns:1fr; }
         }
         @media (prefers-reduced-motion: reduce) {
           .we-showcase * { animation: none !important; }
