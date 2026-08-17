@@ -1,5 +1,48 @@
 {
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/Home", "destination": "/", "permanent": true },
+    { "source": "/work", "destination": "/Work", "permanent": true },
+    { "source": "/services", "destination": "/Services", "permanent": true },
+    { "source": "/studio", "destination": "/Studio", "permanent": true },
+    { "source": "/about", "destination": "/About", "permanent": true },
+    { "source": "/contact", "destination": "/Contact", "permanent": true },
+    { "source": "/pricing", "destination": "/Pricing", "permanent": true },
+    { "source": "/faq", "destination": "/Faq", "permanent": true },
+    { "source": "/insights", "destination": "/Insights", "permanent": true },
+    { "source": "/privacy", "destination": "/Privacy", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/Privacy", "permanent": true },
+    { "source": "/terms", "destination": "/Terms", "permanent": true },
+    { "source": "/terms-of-use", "destination": "/Terms", "permanent": true },
+    { "source": "/cookies", "destination": "/Cookies", "permanent": true },
+    { "source": "/cookie-policy", "destination": "/Cookies", "permanent": true },
+    { "source": "/accessibility", "destination": "/Accessibility", "permanent": true },
+    { "source": "/brands", "destination": "/Brands", "permanent": true },
+    { "source": "/animations", "destination": "/Animations", "permanent": true },
+    { "source": "/ai-videos", "destination": "/AiVideos", "permanent": true },
+    { "source": "/ai-posts", "destination": "/AiPosts", "permanent": true },
+    { "source": "/storyboards", "destination": "/Storyboards", "permanent": true },
+    { "source": "/web-experiences", "destination": "/WebExperiences", "permanent": true },
+    { "source": "/services/web-design", "destination": "/WebExperiences", "permanent": true },
+    { "source": "/services/ai-content", "destination": "/AiMarketing", "permanent": true },
+    { "source": "/services/3d-cgi", "destination": "/Worlds3D", "permanent": true },
+    { "source": "/services/branding", "destination": "/ServiceBranding", "permanent": true },
+    { "source": "/services/motion-vfx", "destination": "/AiVideos", "permanent": true },
+    { "source": "/services/storyboards", "destination": "/Storyboards", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains" }
+      ]
+    }
   ]
 }
