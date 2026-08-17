@@ -38,6 +38,21 @@ public/videos/
 *.mov
 *.MOV
 
+# Keep lightweight website preview posters in source control.
+!public/videos/
+public/videos/*
+!public/videos/websites/
+public/videos/websites/*
+!public/videos/websites/posters/
+public/videos/websites/posters/*
+!public/videos/websites/posters/*.jpg
+!public/videos/websites/posters/*.webp
+
+# Brand clips are shipped as .webm: 5-9 MB each, against 144-175 MB for the
+# .mp4 masters beside them. The masters stay out (see *.mp4 above); these are
+# the versions the site actually serves.
+!public/brands/**/*.webm
+
 # Local utility scripts
 copy_brands.ps1
 copy_anims.ps1
