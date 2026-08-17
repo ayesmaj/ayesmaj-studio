@@ -18,7 +18,7 @@ const VIDEOS = [
   {
     title: 'BLENDAY Brand Film',
     subtitle: 'Cinematic · Brand Campaign',
-    src: '/brands/blenday/6.mp4',
+    src: '/brands/blenday/6-web.mp4',
   },
   {
     title: 'Optimus — 3D Animation',

@@ -18,7 +18,7 @@ const CARDS = [
     accent: "#E861FF",
     accentRGB: "232,97,255",
     poster: "/assets/ayesmaj/showreel/blenday.webp",
-    videoSrc: "/brands/blenday/6.mp4",
+    videoSrc: "/brands/blenday/6-web.mp4",
   },
   {
     title: "LaCroix",
@@ -26,7 +26,7 @@ const CARDS = [
     accent: "#B3FF3F",
     accentRGB: "179,255,63",
     poster: "/brands/lacroix/3.webp",
-    videoSrc: "/brands/lacroix/4.mp4",
+    videoSrc: "/brands/lacroix/4-web.mp4",
   },
   {
     title: "HONEY",
@@ -34,7 +34,7 @@ const CARDS = [
     accent: "#F7B733",
     accentRGB: "247,183,51",
     poster: "/assets/ayesmaj/showreel/honey.webp",
-    videoSrc: "/brands/honey/2.mp4",
+    videoSrc: "/brands/honey/2-web.mp4",
   },
 ];
 

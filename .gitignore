@@ -53,6 +53,11 @@ public/videos/websites/posters/*
 # the versions the site actually serves.
 !public/brands/**/*.webm
 
+# Web-encoded H.264 derivatives (720p/CRF26, "-web.mp4"). Needed because Safari
+# support for WebM is patchy, so the homepage commercials ship as mp4. Small
+# enough to track; the multi-hundred-MB masters they came from are not.
+!public/brands/**/*-web.mp4
+
 # Local utility scripts
 copy_brands.ps1
 copy_anims.ps1
