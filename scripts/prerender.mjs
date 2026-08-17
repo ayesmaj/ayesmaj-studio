@@ -19,8 +19,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { SEO_ROUTES } from '../src/data/seoMeta.js';
+import { SEO_ROUTES, SERVICE_ROUTES } from '../src/data/seoMeta.js';
 import { SITE, NAV, FOOTER_WORK, LEGAL_LINKS } from '../src/data/siteConfig.js';
+
+/** Open Graph and Twitter truncate around here; search titles may run longer. */
+const OG_TITLE_MAX = 60;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -43,16 +46,60 @@ function upsertHead(html, pattern, tag) {
 function headFor(route, meta) {
   const url = SITE.url + (route === '/' ? '/' : route);
   const img = SITE.url + (meta.image || SITE.defaultOgImage);
+  const social = meta.ogTitle || meta.title;
   return [
     `<link rel="canonical" href="${esc(url)}" />`,
     `<meta property="og:url" content="${esc(url)}" />`,
-    `<meta property="og:title" content="${esc(meta.title)}" />`,
+    `<meta property="og:title" content="${esc(social)}" />`,
     `<meta property="og:description" content="${esc(meta.description)}" />`,
     `<meta property="og:image" content="${esc(img)}" />`,
-    `<meta name="twitter:title" content="${esc(meta.title)}" />`,
+    `<meta name="twitter:title" content="${esc(social)}" />`,
     `<meta name="twitter:description" content="${esc(meta.description)}" />`,
     `<meta name="twitter:image" content="${esc(img)}" />`,
   ];
+}
+
+/**
+ * Page-level JSON-LD. The shell already carries Organization and WebSite, so
+ * these reference the Organization by @id rather than restating it.
+ */
+function jsonLdFor(route, meta) {
+  if (route === '/') return null;
+
+  const url = SITE.url + route;
+  const crumbs = [{ name: 'Home', item: SITE.url + '/' }];
+  if (SERVICE_ROUTES[route]) {
+    crumbs.push({ name: 'Services', item: SITE.url + '/Services' });
+  }
+  crumbs.push({ name: meta.h1, item: url });
+
+  const graph = [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: crumbs.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.name,
+        item: c.item,
+      })),
+    },
+  ];
+
+  if (SERVICE_ROUTES[route]) {
+    graph.push({
+      '@type': 'Service',
+      '@id': `${url}#service`,
+      name: meta.h1,
+      description: meta.description,
+      serviceType: SERVICE_ROUTES[route],
+      url,
+      provider: { '@id': `${SITE.url}/#organization` },
+      areaServed: 'Worldwide',
+    });
+  }
+
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 }
 
 /** One crawlable paragraph plus the internal links the shell never had. */
@@ -90,6 +137,16 @@ function render(shell, route, meta) {
     html = upsertHead(html, key, tag);
   }
 
+  // Page-level JSON-LD, appended so the shell's Organization/WebSite block
+  // stays intact and can be referenced by @id.
+  const jsonLd = jsonLdFor(route, meta);
+  if (jsonLd) {
+    html = html.replace(
+      '</head>',
+      `    <script type="application/ld+json">${jsonLd}</script>\n  </head>`,
+    );
+  }
+
   // Inject crawlable content into the empty mount node.
   html = html.replace(
     /<div id="root">\s*<\/div>/,
@@ -121,8 +178,18 @@ function main() {
     );
   }
 
+  const unknownService = Object.keys(SERVICE_ROUTES).filter(
+    (r) => !SEO_ROUTES[r],
+  );
+  if (unknownService.length) {
+    throw new Error(
+      `prerender: SERVICE_ROUTES entries not in SEO_ROUTES: ${unknownService.join(', ')}`,
+    );
+  }
+
   const titles = new Set();
   let count = 0;
+  let services = 0;
   for (const [route, meta] of Object.entries(SEO_ROUTES)) {
     const html = render(shell, route, meta);
 
@@ -131,6 +198,19 @@ function main() {
     }
     if (!html.includes('id="prerendered-seo"')) {
       throw new Error(`prerender: content not injected for ${route}`);
+    }
+
+    const social = meta.ogTitle || meta.title;
+    if (social.length > OG_TITLE_MAX) {
+      throw new Error(
+        `prerender: og:title for ${route} is ${social.length} chars (max ${OG_TITLE_MAX}) — add an ogTitle to seoMeta.js`,
+      );
+    }
+    if (SERVICE_ROUTES[route]) {
+      if (!html.includes('"@type":"Service"')) {
+        throw new Error(`prerender: Service schema missing for ${route}`);
+      }
+      services += 1;
     }
     titles.add(meta.title);
 
@@ -146,7 +226,10 @@ function main() {
       `prerender: ${count} routes but only ${titles.size} unique titles`,
     );
   }
-  console.log(`prerender: ${count} routes, ${titles.size} unique titles`);
+  console.log(
+    `prerender: ${count} routes, ${titles.size} unique titles, ` +
+      `${count - 1} breadcrumbs, ${services} service schemas`,
+  );
 }
 
 main();

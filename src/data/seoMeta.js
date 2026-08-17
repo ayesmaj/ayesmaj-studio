@@ -13,10 +13,18 @@
  *
  * `blurb` is the one crawlable paragraph rendered into #root as a fallback.
  * React replaces it on hydration, so users never see it.
+ *
+ * `ogTitle` overrides `title` for Open Graph and Twitter only, where the limit
+ * is ~60 characters — search titles can run longer. Set it only when `title`
+ * exceeds 60; prerender.mjs fails the build if any og:title is longer.
+ *
+ * `service` emits schema.org Service for the six service pages, and `parent`
+ * adds an intermediate BreadcrumbList crumb.
  */
 export const SEO_ROUTES = {
   "/": {
     title: "AYESMAJ Studios | Cinematic Branding, AI Content, Websites & 3D Worlds",
+    ogTitle: "AYESMAJ Studios — Branding, Film, Web & 3D",
     description:
       "AYESMAJ Studios builds complete visual worlds — brand identity, cinematic websites, AI content production, and immersive 3D — as one connected creative system.",
     h1: "We build brands. We create worlds.",
@@ -34,6 +42,7 @@ export const SEO_ROUTES = {
   "/Services": {
     title:
       "Creative Services | Branding, Web Design, AI Content & 3D | AYESMAJ Studios",
+    ogTitle: "Creative Services — AYESMAJ Studios",
     description:
       "Explore AYESMAJ Studios services including brand identity, premium web design, AI content and video, 3D CGI, motion, storyboards, packaging, and campaign art direction.",
     image: "/assets/ayesmaj/generated/capabilities/capability-01-brand-strategy.webp",
@@ -193,4 +202,20 @@ export const SEO_ROUTES = {
     blurb:
       "Our commitment to accessible design, the standards we work toward, and how to report an issue.",
   },
+};
+
+/**
+ * Routes that describe a service offering, mapped to their schema.org
+ * serviceType. These also get /Services as their breadcrumb parent.
+ *
+ * Deliberately not schema'd: FAQPage (rich results restricted to government
+ * and healthcare sites since Aug 2023) and HowTo (deprecated Sep 2023).
+ */
+export const SERVICE_ROUTES = {
+  "/ServiceBranding": "Brand identity design",
+  "/WebExperiences": "Web design and development",
+  "/AiMarketing": "AI content production",
+  "/Worlds3D": "3D modeling and CGI",
+  "/AiVideos": "Video production and visual effects",
+  "/Storyboards": "Storyboard and art direction",
 };
