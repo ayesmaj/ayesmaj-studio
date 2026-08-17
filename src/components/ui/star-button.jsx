@@ -79,7 +79,7 @@ export function StarButton({
         '--light-color': lightColor,
         '--border-width': `${borderWidth}px`,
         isolation: 'isolate',
-        fontFamily: "'Satoshi', system-ui, sans-serif",
+        fontFamily: "'DM Sans', system-ui, sans-serif",
       }}
       ref={pathRef}
       className={cn(

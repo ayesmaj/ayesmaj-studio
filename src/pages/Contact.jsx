@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Seo from '@/components/ayesmaj/Seo';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Loader2, CheckCircle, Mail, MapPin, Clock, Phone } from 'lucide-react';
 import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
@@ -8,12 +9,28 @@ import { COLORS, FONTS } from '@/components/ayesmaj/theme';
 const GOLD = '#FFB000';
 const GOLD_RGB = '255,176,0';
 
+const getContactEndpoint = () => (
+  ['localhost', '127.0.0.1'].includes(window.location.hostname)
+    ? 'https://ayesmajstudios.com/api/project-intake'
+    : '/api/project-intake'
+);
+
 const CONTACT_INFO = [
   { icon: Mail,   label: 'Email',    value: 'ayesmajstudios@gmail.com' },
   { icon: Phone,  label: 'Phone',    value: '+1 (509) 319-7999' },
   { icon: MapPin, label: 'Location', value: 'Phoenix, Arizona' },
   { icon: Clock,  label: 'Response', value: 'Within 24 hours' },
 ];
+
+const SERVICES = ['Brand strategy', 'Website', 'AI content', '3D & CGI', 'Full brand world'];
+const BUDGETS = ['Under $2k', '$2k - $5k', '$5k - $15k', '$15k+'];
+const TIMELINES = ['ASAP', '1-2 months', '3-6 months', 'Exploring'];
+const PROJECT_TYPES = ['New launch', 'Rebrand', 'Campaign', 'Ongoing partner'];
+
+const emptyContactForm = (subject = '', message = '') => ({
+  name: '', email: '', company: '', website: '', phone: '', subject,
+  service: '', budget: '', timeline: '', projectType: '', message, honeypot: '',
+});
 
 export default function Contact() {
   useEffect(() => { document.title = 'Contact — AYESMAJ Studios'; }, []);
@@ -22,7 +39,7 @@ export default function Contact() {
   const prefillMessage = urlParams.get('message') || '';
   const prefillSubject = urlParams.get('subject') || '';
 
-  const [form, setForm]   = useState({ name: '', email: '', phone: '', subject: prefillSubject, message: prefillMessage, honeypot: '' });
+  const [form, setForm] = useState(() => emptyContactForm(prefillSubject, prefillMessage));
   const [status, setStatus] = useState('idle');
   const [errors, setErrors] = useState({});
 
@@ -33,6 +50,8 @@ export default function Contact() {
     if (!form.name.trim())    e.name    = 'Name is required';
     if (!form.email.trim())   e.email   = 'Email is required';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Invalid email';
+    if (form.website.trim() && !/^(https?:\/\/)?[\w.-]+\.[a-z]{2,}/i.test(form.website)) e.website = 'Enter a valid website';
+    if (!form.service.trim()) e.service = 'Primary service is required';
     if (!form.message.trim()) e.message = 'Message is required';
     return e;
   };
@@ -44,33 +63,38 @@ export default function Contact() {
     setErrors({});
     setStatus('loading');
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(getContactEndpoint(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: 'a968ab33-a419-42db-9206-f3bddf198e7e',
           name: form.name,
           email: form.email,
+          company: form.company,
+          website: form.website,
           phone: form.phone,
+          service: form.service,
+          budget: form.budget,
+          timeline: form.timeline,
+          projectType: form.projectType,
           subject: form.subject || 'New project inquiry – AYESMAJ Studios',
           message: form.message,
-          cc: '5093197999@vtext.com',
-          from_name: 'AYESMAJ Studios Contact Form',
-          botcheck: form.honeypot,
+          honeypot: form.honeypot,
         }),
       });
       const data = await res.json();
-      if (data.success) {
+      if (res.ok && data.success) {
         // WhatsApp notification via Callmebot (no-cors to bypass browser CORS block)
         try {
+          const waExtra = `\nCompany: ${form.company || 'Not provided'}\nWebsite: ${form.website || 'Not provided'}\nService: ${form.service}\nBudget: ${form.budget || 'Not provided'}\nTimeline: ${form.timeline || 'Not provided'}\nProject type: ${form.projectType || 'Not provided'}`;
           const waText = encodeURIComponent(
             `🔔 New inquiry!\nFrom: ${form.name}\nEmail: ${form.email}${form.phone ? `\nPhone: ${form.phone}` : ''}\nSubject: ${form.subject || 'No subject'}\nMessage: ${form.message.slice(0, 300)}${form.message.length > 300 ? '…' : ''}`
+            + waExtra
           );
           await fetch(`https://api.callmebot.com/whatsapp.php?phone=15093197999&text=${waText}&apikey=8010280`, { mode: 'no-cors' });
         } catch (_) { /* silent — email already delivered */ }
 
         setStatus('success');
-        setForm({ name: '', email: '', phone: '', subject: '', message: '', honeypot: '' });
+        setForm(emptyContactForm());
       } else {
         setStatus('error');
         setErrors({ submit: data.message || 'Failed to send. Please try again.' });
@@ -83,6 +107,11 @@ export default function Contact() {
 
   return (
     <div style={{ background: COLORS.black, minHeight: '100vh', overflowX: 'clip', color: COLORS.white }}>
+      <Seo
+        title="Contact — AYESMAJ Studios"
+        description="Start a project with AYESMAJ Studios. Based in Phoenix, Arizona and working worldwide — we respond within 24 hours."
+        path="/Contact"
+      />
       <AyesmajNav />
 
       {/* Ambient glow */}
@@ -172,7 +201,7 @@ export default function Contact() {
                     <h3 style={{ fontFamily: FONTS.display, fontSize: 30, fontWeight: 800, textTransform: 'uppercase', color: COLORS.white, margin: 0 }}>Message Sent.</h3>
                     <p style={{ fontFamily: FONTS.ui, color: COLORS.gray, fontSize: 15, margin: 0 }}>We'll reply within 24 hours.</p>
                     <button
-                      onClick={() => { setStatus('idle'); setForm({ name:'',email:'',phone:'',subject:'',message:'',honeypot:'' }); setErrors({}); }}
+                      onClick={() => { setStatus('idle'); setForm(emptyContactForm()); setErrors({}); }}
                       style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONTS.ui, fontSize: 13, color: GOLD, textDecoration: 'underline', textUnderlineOffset: 3 }}
                     >
                       Send another message
@@ -189,44 +218,58 @@ export default function Contact() {
                       </div>
                     )}
 
-                    <Field label="Your Name *"     type="text"  placeholder="Alex Johnson"      value={form.name}    onChange={v => set('name', v)}    error={errors.name} />
-                    <Field label="Email Address *" type="email" placeholder="alex@brand.com"    value={form.email}   onChange={v => set('email', v)}   error={errors.email} />
-                    <Field label="Phone"           type="tel"   placeholder="+1 (555) 123-4567" value={form.phone}   onChange={v => set('phone', v)} />
+                    <div className="ayes-contact-fields">
+                    <Field id="contact-name" label="Your Name *" type="text" placeholder="Alex Johnson" value={form.name} onChange={v => set('name', v)} error={errors.name} autoComplete="name" />
+                    <Field id="contact-email" label="Email Address *" type="email" placeholder="alex@brand.com" value={form.email} onChange={v => set('email', v)} error={errors.email} autoComplete="email" />
+                    <Field id="contact-company" label="Company" type="text" placeholder="Brand or company" value={form.company} onChange={v => set('company', v)} autoComplete="organization" />
+                    <Field id="contact-website" label="Website (optional)" type="url" placeholder="company.com" value={form.website} onChange={v => set('website', v)} error={errors.website} autoComplete="url" />
+                    <Field id="contact-phone" label="Phone" type="tel" placeholder="+1 (555) 123-4567" value={form.phone} onChange={v => set('phone', v)} autoComplete="tel" />
                     <Field label="Subject"         type="text"  placeholder="Project inquiry…"  value={form.subject} onChange={v => set('subject', v)} />
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-                      <label style={labelStyle}>Message *</label>
+                    <SelectField id="contact-service" label="Primary Service *" value={form.service} onChange={v => set('service', v)} options={SERVICES} error={errors.service} />
+                    <SelectField id="contact-budget" label="Budget" value={form.budget} onChange={v => set('budget', v)} options={BUDGETS} />
+                    <SelectField id="contact-timeline" label="Timeline" value={form.timeline} onChange={v => set('timeline', v)} options={TIMELINES} />
+                    <SelectField id="contact-project-type" label="Project Type" value={form.projectType} onChange={v => set('projectType', v)} options={PROJECT_TYPES} />
+
+                    <div className="ayes-contact-full" style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+                      <label htmlFor="contact-message" style={labelStyle}>The Brief *</label>
                       <textarea
+                        id="contact-message"
+                        name="message"
                         value={form.message}
                         onChange={e => set('message', e.target.value)}
+                        aria-invalid={Boolean(errors.message)}
+                        aria-describedby={errors.message ? 'contact-message-error' : undefined}
                         placeholder="Tell us about your project, timeline, and goals…"
                         rows={4}
                         style={{ ...inputStyle, resize: 'none', borderColor: errors.message ? 'rgba(224,90,90,0.5)' : COLORS.border }}
                         onFocus={e => e.target.style.borderColor = `rgba(${GOLD_RGB},0.5)`}
                         onBlur={e => e.target.style.borderColor = errors.message ? 'rgba(224,90,90,0.5)' : COLORS.border}
                       />
-                      {errors.message && <span style={{ fontSize: 12, color: '#f87171', fontFamily: FONTS.ui }}>{errors.message}</span>}
+                      {errors.message && <span id="contact-message-error" role="alert" style={{ fontSize: 12, color: '#f87171', fontFamily: FONTS.ui }}>{errors.message}</span>}
+                    </div>
                     </div>
 
                     {/* Honeypot */}
-                    <input type="text" name="website" value={form.honeypot} onChange={e => set('honeypot', e.target.value)} style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+                    <input type="text" name="contact_company_url" value={form.honeypot} onChange={e => set('honeypot', e.target.value)} style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
                     <button
                       type="submit"
-                      disabled={status === 'loading' || !form.name.trim() || !form.email.trim() || !form.message.trim()}
+                      disabled={status === 'loading' || !form.name.trim() || !form.email.trim() || !form.service.trim() || !form.message.trim()}
                       style={{
                         marginTop: 4, height: 56, borderRadius: 999, border: 'none',
                         display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10,
                         fontFamily: FONTS.ui, fontSize: 13, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase',
                         cursor: status === 'loading' ? 'wait' : 'pointer',
                         background: GOLD, color: '#030303',
-                        opacity: (!form.name.trim() || !form.email.trim() || !form.message.trim()) ? 0.5 : 1,
+                        opacity: (!form.name.trim() || !form.email.trim() || !form.service.trim() || !form.message.trim()) ? 0.5 : 1,
                         boxShadow: `0 0 32px rgba(${GOLD_RGB},0.3)`,
                         transition: 'opacity 0.2s, box-shadow 0.3s',
                       }}
                     >
                       {status === 'loading' ? (<><Loader2 size={16} className="animate-spin" /> Sending…</>) : (<>Send Message <ArrowRight size={15} /></>)}
                     </button>
+                    <p className="ayes-contact-required">Required fields: name, email, primary service, and brief. Website is optional.</p>
                   </motion.form>
                 )}
               </AnimatePresence>
@@ -238,8 +281,27 @@ export default function Contact() {
       <AyesmajFooter />
 
       <style>{`
+        .ayes-contact-fields {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
+        }
+        .ayes-contact-full { grid-column: 1 / -1; }
+        .ayes-contact-required {
+          margin: -2px 0 0;
+          color: rgba(245,245,240,0.48);
+          font-family: ${FONTS.ui};
+          font-size: 11px;
+          line-height: 1.5;
+          text-align: center;
+        }
+        .ayes-contact-select option { background: #111411; color: #f5f5f0; }
         @media (max-width: 820px) {
           .ayes-contact-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 640px) {
+          .ayes-contact-fields { grid-template-columns: 1fr; }
+          .ayes-contact-full { grid-column: auto; }
         }
       `}</style>
     </div>
@@ -253,23 +315,56 @@ const labelStyle = {
 const inputStyle = {
   background: 'rgba(255,255,255,0.03)', border: `1px solid ${COLORS.border}`,
   borderRadius: 12, padding: '13px 16px', color: COLORS.white, fontSize: 14,
-  fontFamily: FONTS.ui, outline: 'none', width: '100%', transition: 'border-color 0.2s',
+  fontFamily: FONTS.ui, outline: 'none', width: '100%', minHeight: 48,
+  boxSizing: 'border-box', transition: 'border-color 0.2s',
 };
 
-function Field({ label, type, placeholder, value, onChange, error }) {
+function Field({ id, label, type, placeholder, value, onChange, error, autoComplete }) {
+  const fieldId = id || `contact-${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+  const errorId = `${fieldId}-error`;
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-      <label style={labelStyle}>{label}</label>
+      <label htmlFor={fieldId} style={labelStyle}>{label}</label>
       <input
+        id={fieldId}
+        name={fieldId}
         type={type}
         value={value}
         onChange={e => onChange(e.target.value)}
         placeholder={placeholder}
+        autoComplete={autoComplete}
+        aria-invalid={Boolean(error)}
+        aria-describedby={error ? errorId : undefined}
         style={{ ...inputStyle, borderColor: error ? 'rgba(224,90,90,0.5)' : COLORS.border }}
         onFocus={e => e.target.style.borderColor = 'rgba(255,176,0,0.5)'}
         onBlur={e => e.target.style.borderColor = error ? 'rgba(224,90,90,0.5)' : COLORS.border}
       />
-      {error && <span style={{ fontSize: 12, color: '#f87171', fontFamily: FONTS.ui }}>{error}</span>}
+      {error && <span id={errorId} role="alert" style={{ fontSize: 12, color: '#f87171', fontFamily: FONTS.ui }}>{error}</span>}
+    </div>
+  );
+}
+
+function SelectField({ id, label, value, onChange, options, error }) {
+  const errorId = `${id}-error`;
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+      <label htmlFor={id} style={labelStyle}>{label}</label>
+      <select
+        id={id}
+        name={id}
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        aria-invalid={Boolean(error)}
+        aria-describedby={error ? errorId : undefined}
+        className="ayes-contact-select"
+        style={{ ...inputStyle, cursor: 'pointer', color: value ? COLORS.white : COLORS.gray, borderColor: error ? 'rgba(224,90,90,0.5)' : COLORS.border }}
+        onFocus={e => e.target.style.borderColor = 'rgba(255,176,0,0.5)'}
+        onBlur={e => e.target.style.borderColor = error ? 'rgba(224,90,90,0.5)' : COLORS.border}
+      >
+        <option value="">Select an option</option>
+        {options.map(option => <option key={option} value={option}>{option}</option>)}
+      </select>
+      {error && <span id={errorId} role="alert" style={{ fontSize: 12, color: '#f87171', fontFamily: FONTS.ui }}>{error}</span>}
     </div>
   );
 }

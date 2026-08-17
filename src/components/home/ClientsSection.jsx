@@ -10,18 +10,18 @@ const fade = (delay = 0) => ({
 });
 
 // SVG Logo components — monochrome, styled in gold
-const LogoAurelia  = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">AURELIA</text></svg>;
-const LogoSolaris  = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">SOLARIS</text></svg>;
-const LogoEmber    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">EMBER</text></svg>;
-const LogoVanta    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">VANTA</text></svg>;
-const LogoMeridian = () => <svg viewBox="0 0 120 40" className="w-full h-full"><text x="60" y="28" textAnchor="middle" fontSize="16" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">MERIDIAN</text></svg>;
-const LogoApex     = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">APEX</text></svg>;
-const LogoNova     = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">NOVA</text></svg>;
-const LogoCrest    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">CREST</text></svg>;
-const LogoLumis    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">LUMIS</text></svg>;
-const LogoDrift    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">DRIFT</text></svg>;
-const LogoOrbit    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">ORBIT</text></svg>;
-const LogoZenith   = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="Satoshi,sans-serif" letterSpacing="3">ZENITH</text></svg>;
+const LogoAurelia  = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">AURELIA</text></svg>;
+const LogoSolaris  = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">SOLARIS</text></svg>;
+const LogoEmber    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">EMBER</text></svg>;
+const LogoVanta    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">VANTA</text></svg>;
+const LogoMeridian = () => <svg viewBox="0 0 120 40" className="w-full h-full"><text x="60" y="28" textAnchor="middle" fontSize="16" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">MERIDIAN</text></svg>;
+const LogoApex     = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">APEX</text></svg>;
+const LogoNova     = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">NOVA</text></svg>;
+const LogoCrest    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">CREST</text></svg>;
+const LogoLumis    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">LUMIS</text></svg>;
+const LogoDrift    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">DRIFT</text></svg>;
+const LogoOrbit    = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">ORBIT</text></svg>;
+const LogoZenith   = () => <svg viewBox="0 0 100 40" className="w-full h-full"><text x="50" y="28" textAnchor="middle" fontSize="18" fontWeight="800" fill="currentColor" fontFamily="DM Sans,sans-serif" letterSpacing="3">ZENITH</text></svg>;
 
 const CLIENTS = [
   { name: 'Aurelia Beauty',   logo: LogoAurelia  },
@@ -57,16 +57,16 @@ export default function ClientsSection() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* heading */}
         <motion.div {...fade(0)} className="text-center mb-14">
-          <p className="text-xs tracking-[0.5em] uppercase mb-3" style={{ color: '#C8A44E', fontFamily: 'Satoshi, sans-serif' }}>
+          <p className="text-xs tracking-[0.5em] uppercase mb-3" style={{ color: '#C8A44E', fontFamily: 'DM Sans, sans-serif' }}>
             Trusted By
           </p>
           <h2
             className="text-4xl md:text-5xl font-black tracking-tight"
-            style={{ color: '#F2EDE4', fontFamily: 'Satoshi, sans-serif' }}
+            style={{ color: '#F2EDE4', fontFamily: 'DM Sans, sans-serif' }}
           >
             Our Clients
           </h2>
-          <p className="mt-3 text-sm tracking-wide" style={{ color: 'rgba(242,237,228,0.45)', fontFamily: 'Satoshi, sans-serif' }}>
+          <p className="mt-3 text-sm tracking-wide" style={{ color: 'rgba(242,237,228,0.45)', fontFamily: 'DM Sans, sans-serif' }}>
             Brands that trust AYESMAJ to tell their story.
           </p>
         </motion.div>

@@ -31,10 +31,10 @@ export default function AyesmajBackground({ accent = "179,255,63" }) {
           position: "absolute",
           inset: 0,
           background: [
-            "radial-gradient(60% 60% at 0% 0%, rgba(179,255,63,0.08), transparent 70%)",
-            "radial-gradient(60% 60% at 100% 0%, rgba(155,92,255,0.08), transparent 70%)",
-            `radial-gradient(70% 60% at 50% 95%, rgba(${accent},0.10), transparent 72%)`,
-            "linear-gradient(180deg, #020302, #050805)",
+            "radial-gradient(65% 60% at 0% 0%, rgba(179,255,63,0.15), transparent 72%)",
+            "radial-gradient(65% 60% at 100% 0%, rgba(155,92,255,0.15), transparent 72%)",
+            `radial-gradient(75% 65% at 50% 95%, rgba(${accent},0.16), transparent 72%)`,
+            "linear-gradient(180deg, #0C2015, #183323)",
           ].join(","),
         }}
       />
@@ -44,7 +44,7 @@ export default function AyesmajBackground({ accent = "179,255,63" }) {
         style={{
           position: "absolute",
           inset: 0,
-          opacity: 0.1,
+          opacity: 0.13,
           backgroundImage: [
             "repeating-linear-gradient(0deg, rgba(255,255,255,0.5) 0 1px, transparent 1px 64px)",
             "repeating-linear-gradient(90deg, rgba(255,255,255,0.5) 0 1px, transparent 1px 64px)",
@@ -63,12 +63,12 @@ export default function AyesmajBackground({ accent = "179,255,63" }) {
             position: "absolute",
             top: d.top,
             left: d.left,
-            width: 3,
-            height: 3,
+            width: 4,
+            height: 4,
             borderRadius: "50%",
             background: `rgba(${d.c},0.9)`,
             boxShadow: `0 0 8px 2px rgba(${d.c},0.5)`,
-            opacity: 0.35,
+            opacity: 0.55,
           }}
         />
       ))}

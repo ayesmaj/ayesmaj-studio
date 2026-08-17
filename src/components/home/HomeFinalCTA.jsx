@@ -60,7 +60,7 @@ export default function HomeFinalCTA() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(8px,0.75vw,10px)',
               letterSpacing: '0.52em', textTransform: 'uppercase',
               color: GOLD, marginBottom: 20,
@@ -75,7 +75,7 @@ export default function HomeFinalCTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(26px,4.2vw,60px)',
               fontWeight: 800, lineHeight: 1.0,
               letterSpacing: '-0.035em', color: '#F8FAFC',
@@ -99,7 +99,7 @@ export default function HomeFinalCTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(14px,1.2vw,17px)',
               color: 'rgba(248,250,252,0.48)',
               lineHeight: 1.7,
@@ -121,7 +121,7 @@ export default function HomeFinalCTA() {
               to={createPageUrl('Contact')}
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(11px,0.9vw,13px)',
                 fontWeight: 700, letterSpacing: '0.06em',
                 padding: 'clamp(13px,1.3vw,16px) clamp(28px,2.8vw,40px)',
@@ -149,7 +149,7 @@ export default function HomeFinalCTA() {
               to={createPageUrl('Contact')}
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(11px,0.9vw,13px)',
                 fontWeight: 700, letterSpacing: '0.06em',
                 padding: 'clamp(13px,1.3vw,16px) clamp(28px,2.8vw,40px)',

@@ -205,7 +205,7 @@ export default function HeroNew() {
     display: 'inline-flex', alignItems: 'center', gap: '8px',
     padding: 'clamp(12px,1.4vw,15px) clamp(24px,2.8vw,34px)',
     borderRadius: '100px',
-    fontFamily: "'Satoshi', system-ui, sans-serif",
+    fontFamily: "'DM Sans', system-ui, sans-serif",
     fontSize: 'clamp(12px,1.05vw,14px)', fontWeight: 600,
     letterSpacing: '0.03em',
     background: 'linear-gradient(135deg, #C8A44E 0%, #9A7B3A 100%)',
@@ -220,7 +220,7 @@ export default function HeroNew() {
     display: 'inline-flex', alignItems: 'center', gap: '8px',
     padding: 'clamp(12px,1.4vw,15px) clamp(24px,2.8vw,34px)',
     borderRadius: '100px',
-    fontFamily: "'Satoshi', system-ui, sans-serif",
+    fontFamily: "'DM Sans', system-ui, sans-serif",
     fontSize: 'clamp(12px,1.05vw,14px)', fontWeight: 600,
     letterSpacing: '0.03em',
     background: 'rgba(255,255,255,0.04)',
@@ -357,7 +357,7 @@ export default function HeroNew() {
               flexShrink: 0,
             }} />
             <span style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(8px,0.7vw,10px)',
               letterSpacing: '0.3em', textTransform: 'uppercase',
               color: 'rgba(200,164,78,0.85)',
@@ -373,7 +373,7 @@ export default function HeroNew() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(34px,7.2vw,100px)',
               fontWeight: 800, lineHeight: 0.93,
               letterSpacing: '-0.035em', color: '#F8FAFC',
@@ -394,7 +394,7 @@ export default function HeroNew() {
 
           {/* Subtitle — has its own independent motion */}
           <motion.p style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 'clamp(13px,1.5vw,18px)', lineHeight: 1.7, fontWeight: 400,
             color: 'rgba(248,250,252,0.52)',
             maxWidth: 'min(580px,88vw)',
@@ -439,7 +439,7 @@ export default function HeroNew() {
           willChange: 'transform, opacity, filter',
         }}>
           <p style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 'clamp(7px,0.75vw,10px)',
             letterSpacing: '0.5em', textTransform: 'uppercase',
             color: 'rgba(200,164,78,0.7)',
@@ -461,7 +461,7 @@ export default function HeroNew() {
               ['Landing Pages',    false],
             ].map(([s, bright]) => (
               <span key={s} style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: bright ? 'clamp(20px,4.2vw,56px)' : 'clamp(15px,2.8vw,38px)',
                 fontWeight: 800, letterSpacing: '-0.025em', lineHeight: 1.05,
                 color: bright ? 'rgba(248,250,252,0.9)' : 'rgba(248,250,252,0.2)',
@@ -484,7 +484,7 @@ export default function HeroNew() {
           willChange: 'transform, opacity, filter',
         }}>
           <p style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 'clamp(7px,0.75vw,10px)',
             letterSpacing: '0.52em', textTransform: 'uppercase',
             color: '#C8A44E',
@@ -492,7 +492,7 @@ export default function HeroNew() {
           }}>START TODAY</p>
 
           <h2 style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 'clamp(28px,5.4vw,76px)',
             fontWeight: 800, lineHeight: 0.95, letterSpacing: '-0.03em',
             color: '#F8FAFC',
@@ -533,7 +533,7 @@ export default function HeroNew() {
           opacity: scrollIndOp, pointerEvents: 'none',
         }}>
           <span style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: '8px', letterSpacing: '0.42em', textTransform: 'uppercase',
             color: 'rgba(248,250,252,0.2)',
           }}>SCROLL</span>

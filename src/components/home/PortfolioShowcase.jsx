@@ -168,7 +168,7 @@ function ProjectCard({ project }) {
         border: `1px solid rgba(${accentRGB},0.35)`,
         borderRadius: 100,
         padding: '4px 12px',
-        fontFamily: "'Satoshi', system-ui, sans-serif",
+        fontFamily: "'DM Sans', system-ui, sans-serif",
         fontSize: 9, fontWeight: 700,
         letterSpacing: '0.18em', textTransform: 'uppercase',
         color: project.accent,
@@ -185,7 +185,7 @@ function ProjectCard({ project }) {
           animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 6 }}
           transition={{ duration: 0.3 }}
           style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 12, color: 'rgba(248,250,252,0.52)',
             marginBottom: 4, lineHeight: 1.5,
           }}
@@ -193,7 +193,7 @@ function ProjectCard({ project }) {
           {project.desc}
         </motion.p>
         <p style={{
-          fontFamily: "'Satoshi', system-ui, sans-serif",
+          fontFamily: "'DM Sans', system-ui, sans-serif",
           fontSize: 'clamp(14px,1.2vw,17px)',
           fontWeight: 700, color: '#F8FAFC',
           marginBottom: hovered ? 12 : 0,
@@ -207,7 +207,7 @@ function ProjectCard({ project }) {
           transition={{ duration: 0.3 }}
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 10, fontWeight: 700,
             letterSpacing: '0.16em', textTransform: 'uppercase',
             color: project.accent,
@@ -239,7 +239,7 @@ export default function PortfolioShowcase() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(8px,0.75vw,10px)',
               letterSpacing: '0.52em', textTransform: 'uppercase',
               color: GOLD, marginBottom: 16,
@@ -250,7 +250,7 @@ export default function PortfolioShowcase() {
           <motion.h2
             {...fade(0.1)}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(28px,4.5vw,62px)',
               fontWeight: 800, lineHeight: 1.0,
               letterSpacing: '-0.035em', color: '#F8FAFC',
@@ -279,7 +279,7 @@ export default function PortfolioShowcase() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 10, fontWeight: 700,
                 letterSpacing: '0.18em', textTransform: 'uppercase',
                 padding: '8px 20px', borderRadius: 100,

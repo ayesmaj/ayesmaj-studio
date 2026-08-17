@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-const FONTS = { ui: "'Space Grotesk', 'Inter', system-ui, sans-serif" };
+const FONTS = { ui: "'DM Sans', 'Inter', system-ui, sans-serif" };
 
 const hideOnError = (e) => { e.currentTarget.style.display = 'none'; };
 

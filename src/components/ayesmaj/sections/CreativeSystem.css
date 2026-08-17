@@ -1,0 +1,180 @@
+/* CreativeSystem — simple film-board storyboard. Dark section, five frames, gold line. */
+
+.sb-section {
+  background: #0d0f0e;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  padding: clamp(90px, 10vw, 150px) 24px;
+  overflow: hidden;
+}
+
+.sb-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Row of frames — auto-wraps: 5 desktop, 3+2 tablet, 1 column mobile */
+.sb-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 28px;
+  margin-top: clamp(48px, 6vw, 80px);
+}
+
+/* Gold connecting line + arrowheads — desktop only (wrapping breaks the metaphor) */
+.sb-line {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .sb-line {
+    display: block;
+    position: absolute;
+    /* ponytail: 34% eyeballed to cross mid-image on desktop card heights; tune if copy length changes */
+    top: 34%;
+    left: 2%;
+    right: 2%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d8b75a 12%, #d8b75a 88%, transparent);
+    opacity: 0.55;
+    z-index: 0;
+  }
+
+  .sb-frame:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 34%;
+    right: -21px;
+    transform: translateY(-50%);
+    border-left: 7px solid #d8b75a;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    opacity: 0.9;
+    z-index: 2;
+  }
+}
+
+/* One storyboard frame */
+.sb-frame {
+  position: relative;
+  z-index: 1;
+  background: #141715;
+  border: 1px solid rgba(246, 243, 237, 0.16);
+  border-radius: 20px;
+  padding: 14px 14px 22px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.sb-frame:hover {
+  transform: translateY(-6px);
+  border-color: rgba(216, 183, 90, 0.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Image area with dark numbered placeholder underneath */
+.sb-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1b1d1b 0%, #0d0f0e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sb-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sb-bignum {
+  font-family: "Outfit", "DM Sans", system-ui, sans-serif;
+  font-size: clamp(56px, 5vw, 80px);
+  color: rgba(246, 243, 237, 0.08);
+  line-height: 1;
+  user-select: none;
+}
+
+/* Film-frame corner marks */
+.sb-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: rgba(246, 243, 237, 0.75);
+  border-style: solid;
+  border-width: 0;
+  z-index: 2;
+}
+.sb-tl { top: 8px; left: 8px; border-top-width: 1.5px; border-left-width: 1.5px; }
+.sb-tr { top: 8px; right: 8px; border-top-width: 1.5px; border-right-width: 1.5px; }
+.sb-bl { bottom: 8px; left: 8px; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+.sb-br { bottom: 8px; right: 8px; border-bottom-width: 1.5px; border-right-width: 1.5px; }
+
+/* Text */
+.sb-scene {
+  display: block;
+  margin-top: 18px;
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #d8b75a;
+}
+
+.sb-title {
+  margin: 10px 0 0;
+  font-family: "Outfit", "DM Sans", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(19px, 1.6vw, 24px);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #f6f3ed;
+}
+
+.sb-sub {
+  margin: 10px 0 0;
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #aaa39a;
+}
+
+/* Bottom actions */
+.sb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: clamp(48px, 6vw, 72px);
+}
+
+.sb-link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #d7d1c8;
+  transition: color 0.3s ease;
+}
+
+.sb-link:hover {
+  color: #f0cf72;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-frame,
+  .sb-frame:hover {
+    transition: none;
+    transform: none;
+  }
+}

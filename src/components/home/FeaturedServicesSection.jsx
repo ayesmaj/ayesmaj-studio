@@ -101,7 +101,7 @@ function ServiceCard({ icon: Icon, title, description, accent, delay, to }) {
         </motion.div>
 
         <h3 style={{
-          fontFamily: "'Satoshi', system-ui, sans-serif",
+          fontFamily: "'DM Sans', system-ui, sans-serif",
           fontSize: 'clamp(16px,1.4vw,19px)',
           fontWeight: 700,
           color: '#F8FAFC',
@@ -113,7 +113,7 @@ function ServiceCard({ icon: Icon, title, description, accent, delay, to }) {
         </h3>
 
         <p style={{
-          fontFamily: "'Satoshi', system-ui, sans-serif",
+          fontFamily: "'DM Sans', system-ui, sans-serif",
           fontSize: 'clamp(13px,1vw,14.5px)',
           color: 'rgba(248,250,252,0.46)',
           lineHeight: 1.72,
@@ -140,7 +140,7 @@ function ServiceCard({ icon: Icon, title, description, accent, delay, to }) {
             transition={{ duration: 0.3 }}
             style={{
               display: 'flex', alignItems: 'center', gap: 6,
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 11, fontWeight: 700,
               letterSpacing: '0.12em', textTransform: 'uppercase',
               color: accent,
@@ -203,7 +203,7 @@ export default function FeaturedServicesSection() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(8px,0.75vw,10px)',
               letterSpacing: '0.52em',
               textTransform: 'uppercase',
@@ -216,7 +216,7 @@ export default function FeaturedServicesSection() {
           <motion.h2
             {...fade(0.1)}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(28px,4.5vw,62px)',
               fontWeight: 800,
               lineHeight: 1.0,

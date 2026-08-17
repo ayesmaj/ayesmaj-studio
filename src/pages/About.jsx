@@ -1,16 +1,24 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import { Film, Box, Sparkles, Globe, Hexagon, Rocket } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
 import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
-import AyesmajBackground from '@/components/ayesmaj/AyesmajBackground';
 import CinematicButton from '@/components/ayesmaj/CinematicButton';
-import SectionHeader from '@/components/ayesmaj/SectionHeader';
-import { COLORS, FONTS } from '@/components/ayesmaj/theme';
+import { FONTS } from '@/components/ayesmaj/theme';
+import { SITE, PROOF_BADGES } from '@/data/siteConfig';
+import { AI_POSTS } from '@/data/media';
+import { getBrand, getBrandAssetPath } from '@/data/brands';
 
-const GOLD = '#FFB000';
-const GOLD_RGB = '255,176,0';
+const GOLD = '#D8B75A';
+const GRAD = 'linear-gradient(90deg,#D8B75A 0%,#C88B58 30%,#A45FDB 70%,#7A48FF 100%)';
+
+const gradText = {
+  backgroundImage: GRAD,
+  WebkitBackgroundClip: 'text',
+  backgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  color: 'transparent',
+};
 
 const fade = (d = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -19,197 +27,424 @@ const fade = (d = 0) => ({
   transition: { duration: 0.8, delay: d, ease: [0.22, 1, 0.36, 1] },
 });
 
-const CAPABILITIES = [
-  { icon: Film, title: 'Cinematic Design', desc: 'Film-grade art direction across every brand touchpoint.' },
-  { icon: Box, title: '3D Animation & CGI', desc: 'Photoreal product visuals and immersive 3D worlds.' },
-  { icon: Sparkles, title: 'AI Content', desc: 'AI video, imagery, and campaigns produced at scale.' },
-  { icon: Globe, title: 'Websites & Landing Pages', desc: 'Conversion-driven sites built to look cinematic.' },
-  { icon: Hexagon, title: 'Brand Identity', desc: 'Cohesive visual systems that scale across channels.' },
-  { icon: Rocket, title: 'Future Marketing Tools', desc: 'Next-gen creative pipelines that keep brands ahead.' },
+const reduceMotion =
+  typeof window !== 'undefined' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const section = { maxWidth: 1320, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' };
+
+const eyebrowStyle = (color = GOLD) => ({
+  fontFamily: FONTS.ui,
+  fontSize: 12,
+  fontWeight: 600,
+  letterSpacing: '0.4em',
+  textTransform: 'uppercase',
+  color,
+  margin: 0,
+});
+
+/* Premium cover with fallback to the original brand asset. */
+function BrandCover({ id, alt, radius = 0 }) {
+  const brand = getBrand(id);
+  if (!brand) return null;
+  return (
+    <img
+      src={`/generated/projects/${id}/cover.png`}
+      alt={alt || `${brand.name} — ${brand.category}`}
+      loading="lazy"
+      onError={(e) => {
+        if (e.currentTarget.dataset.fb) { e.currentTarget.style.display = 'none'; return; }
+        e.currentTarget.dataset.fb = '1';
+        e.currentTarget.src = getBrandAssetPath(brand, brand.featured);
+      }}
+      style={{
+        width: '100%', height: '100%', objectFit: 'cover',
+        display: 'block', borderRadius: radius,
+      }}
+    />
+  );
+}
+
+/* ---------------------------------- data ---------------------------------- */
+
+// Hero collage — 4 small real fragments (brands + generated), drifting slowly.
+const COLLAGE = [
+  { type: 'cover', id: 'ashe', drift: 12, dur: 7 },
+  { type: 'img', src: '/brands/butterfly/1.png', fb: '/brands/butterfly/2.png', drift: -14, dur: 9 },
+  { type: 'img', src: AI_POSTS[0].src, fb: AI_POSTS[1].src, drift: 10, dur: 8 },
+  { type: 'img', src: '/brands/noam/1.png', fb: '/brands/noam/logo.png', drift: -10, dur: 10 },
 ];
 
-const STATS = [
-  { value: '120+', label: 'Projects Delivered' },
-  { value: '6+', label: 'Years Experience' },
-  { value: '40+', label: 'Global Clients' },
-  { value: '4K', label: 'Render Quality' },
+const APPROACH = [
+  { n: '01', label: 'Strategy', line: 'Positioning before pixels.', thumb: '/logos/1.png' },
+  { n: '02', label: 'Visual Language', line: 'One system for every surface.', thumb: '/brands/ashe/3.png' },
+  { n: '03', label: 'Content', line: 'Campaigns, not one-offs.', thumb: AI_POSTS[1].src },
+  { n: '04', label: 'Digital Experience', line: 'Sites built to convert.', thumb: '/videos/websites/posters/vudu-energy.jpg' },
+  { n: '05', label: 'Motion', line: 'Film-grade movement.', thumb: '/brands/blenday/1.png' },
+  { n: '06', label: 'Launch', line: 'Everything ships together.', thumb: '/brands/pita-basta/1.png' },
 ];
+
+const WORK_WALL = ['ashe', 'blenday', 'butterfly', 'pita-basta', 'noam', 'lacroix'];
+
+/* ---------------------------------- page ---------------------------------- */
 
 export default function About() {
   const navigate = useNavigate();
+
   useEffect(() => {
-    document.title = 'The Studio | AYESMAJ Studios';
+    document.title = 'About | AYESMAJ Studios';
     window.scrollTo(0, 0);
   }, []);
 
-  const section = { maxWidth: 1320, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' };
-
   return (
-    <div style={{ background: '#020302', minHeight: '100vh', overflowX: 'clip', position: 'relative', color: COLORS.white }}>
-      <AyesmajBackground accent="255,176,0" />
+    <div style={{ background: '#050505', minHeight: '100vh', overflowX: 'clip', color: '#F6F3ED' }}>
+      <style>{`
+        .about-focus:focus-visible { outline: 2px solid ${GOLD}; outline-offset: 3px; border-radius: 4px; }
+        .about-wall-link:focus-visible { outline: 2px solid ${GOLD}; outline-offset: 3px; }
+        .about-wall-link:hover img, .about-wall-link:focus-visible img { transform: scale(1.04); }
+      `}</style>
 
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        <AyesmajNav />
+      <AyesmajNav />
 
-        <main>
-          {/* 1. HERO */}
-          <section style={{ ...section, paddingTop: 'clamp(140px,16vw,200px)', paddingBottom: 'clamp(64px,8vw,120px)' }}>
+      {/* 1 ── EDITORIAL HERO (dark) */}
+      <header style={{ ...section, paddingTop: 'clamp(140px,18vh,220px)', paddingBottom: 'clamp(60px,8vw,110px)' }}>
+        <motion.p {...fade(0)} style={eyebrowStyle()}>About Ayesmaj</motion.p>
+        <motion.h1
+          {...fade(0.08)}
+          style={{
+            fontFamily: FONTS.display,
+            fontSize: 'clamp(40px,7vw,108px)',
+            lineHeight: 0.98,
+            textTransform: 'uppercase',
+            letterSpacing: '0.005em',
+            margin: '26px 0 0',
+            maxWidth: 1100,
+            color: '#F6F3ED',
+          }}
+        >
+          A creative studio built for the <span style={gradText}>next era</span> of branding.
+        </motion.h1>
+
+        {/* motion collage strip */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,150px), 1fr))',
+            gap: 'clamp(12px,2vw,24px)',
+            marginTop: 'clamp(48px,6vw,90px)',
+            maxWidth: 900,
+          }}
+        >
+          {COLLAGE.map((f, i) => (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              style={{ maxWidth: 980 }}
+              key={i}
+              {...fade(0.15 + i * 0.08)}
+              style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '4 / 5', background: '#121512' }}
             >
-              <p style={{ fontFamily: FONTS.ui, fontSize: 12, fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD, marginBottom: 22 }}>
-                The Studio
-              </p>
-              <h1 style={{ fontFamily: FONTS.display, fontSize: 'clamp(40px,7vw,104px)', fontWeight: 800, lineHeight: 0.95, letterSpacing: '0.01em', textTransform: 'uppercase', color: COLORS.white, margin: 0 }}>
-                A Future Creative Studio for Brands That Want More
-              </h1>
-              <p style={{ fontFamily: FONTS.ui, fontSize: 'clamp(15px,1.4vw,19px)', color: COLORS.gray, maxWidth: 660, margin: '28px 0 0', lineHeight: 1.7 }}>
-                AYESMAJ Studios is an AI-powered creative studio combining cinematic design, 3D animation, AI content, websites, and branding into one visual system.
-              </p>
+              <motion.div
+                animate={reduceMotion ? undefined : { y: [0, f.drift, 0] }}
+                transition={reduceMotion ? undefined : { duration: f.dur, repeat: Infinity, ease: 'easeInOut' }}
+                style={{ width: '100%', height: '100%' }}
+              >
+                {f.type === 'cover' ? (
+                  <BrandCover id={f.id} />
+                ) : (
+                  <img
+                    src={f.src}
+                    alt=""
+                    loading="lazy"
+                    onError={(e) => {
+                      if (e.currentTarget.dataset.fb) { e.currentTarget.style.display = 'none'; return; }
+                      e.currentTarget.dataset.fb = '1';
+                      e.currentTarget.src = f.fb;
+                    }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                )}
+              </motion.div>
             </motion.div>
-          </section>
+          ))}
+        </div>
+      </header>
 
-          {/* 2. MISSION + WHAT WE BELIEVE */}
-          <section style={{ ...section, paddingBottom: 'clamp(64px,8vw,120px)' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,360px),1fr))', gap: 'clamp(20px,3vw,32px)' }}>
-              {[
-                {
-                  label: 'Our Mission',
-                  title: 'One System, From Concept to Launch',
-                  body: "We exist to make ambitious brands look bigger than they are — and then help them grow into it. By uniting cinematic design, CGI, and AI under one roof, we take a brand from first concept to full launch without ever breaking the visual language. One studio, one system, one obsession with craft.",
-                },
-                {
-                  label: 'What We Believe',
-                  title: 'Cinematic Quality Is a Competitive Edge',
-                  body: 'We believe visual quality is no longer a luxury — it is the fastest way to earn trust. AI lets us move at the speed of ideas, but every frame is still directed like a film. Rooted locally and built for international brands, we treat each project as a world worth designing with intention.',
-                },
-              ].map((b, i) => (
-                <motion.div
-                  key={b.label}
-                  {...fade(i * 0.1)}
-                  style={{
-                    background: 'rgba(255,255,255,0.045)',
-                    border: '1px solid rgba(255,255,255,0.09)',
-                    backdropFilter: 'blur(18px)',
-                    WebkitBackdropFilter: 'blur(18px)',
-                    borderRadius: 24,
-                    padding: 'clamp(28px,3.5vw,44px)',
-                  }}
-                >
-                  <p style={{ fontFamily: FONTS.ui, fontSize: 12, fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD, margin: '0 0 18px' }}>
-                    {b.label}
-                  </p>
-                  <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(26px,3vw,40px)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.02, color: COLORS.white, margin: '0 0 18px' }}>
-                    {b.title}
-                  </h2>
-                  <p style={{ fontFamily: FONTS.ui, fontSize: 'clamp(15px,1.2vw,16.5px)', lineHeight: 1.75, color: COLORS.gray, margin: 0 }}>
-                    {b.body}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </section>
-
-          {/* 3. CAPABILITIES */}
-          <section style={{ ...section, paddingBottom: 'clamp(64px,8vw,120px)' }}>
-            <SectionHeader eyebrow="Capabilities" title="One Studio. Every Discipline." subtitle="A full creative stack under one cinematic visual system." accent={GOLD} />
-            <div style={{ marginTop: 'clamp(40px,5vw,64px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,300px),1fr))', gap: 18 }}>
-              {CAPABILITIES.map((c, i) => {
-                const Icon = c.icon;
-                return (
-                  <motion.div
-                    key={c.title}
-                    {...fade(i * 0.06)}
-                    className="ayes-card"
-                    style={{
-                      background: 'rgba(255,255,255,0.045)',
-                      border: '1px solid rgba(255,255,255,0.09)',
-                      backdropFilter: 'blur(18px)',
-                      WebkitBackdropFilter: 'blur(18px)',
-                      borderRadius: 24,
-                      padding: 30,
-                      transition: 'transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-6px)';
-                      e.currentTarget.style.borderColor = 'rgba(216,183,90,0.35)';
-                      e.currentTarget.style.boxShadow = '0 0 45px rgba(216,183,90,0.10)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.09)';
-                      e.currentTarget.style.boxShadow = 'none';
-                    }}
-                  >
-                    <div style={{ width: 46, height: 46, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `rgba(${GOLD_RGB},0.10)`, border: `1px solid rgba(${GOLD_RGB},0.3)`, marginBottom: 20 }}>
-                      <Icon size={20} color={GOLD} />
-                    </div>
-                    <h3 style={{ fontFamily: FONTS.display, fontSize: 22, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.02em', color: COLORS.white, margin: '0 0 10px' }}>
-                      {c.title}
-                    </h3>
-                    <p style={{ fontFamily: FONTS.ui, fontSize: 14.5, lineHeight: 1.6, color: COLORS.gray, margin: 0 }}>
-                      {c.desc}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </section>
-
-          {/* 4. STUDIO STATS */}
-          <section style={{ ...section, paddingBottom: 'clamp(64px,8vw,120px)' }}>
-            <motion.div
-              {...fade(0.05)}
+      {/* 2 ── THE BELIEF (bright ivory) */}
+      <section style={{ background: '#F7F3ED', color: '#111', padding: 'clamp(80px,10vw,150px) 0' }}>
+        <div style={{ ...section, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,420px), 1fr))', gap: 'clamp(36px,5vw,80px)', alignItems: 'start' }}>
+          <div>
+            <motion.p {...fade(0)} style={eyebrowStyle('#A45FDB')}>The Belief</motion.p>
+            <motion.h2
+              {...fade(0.08)}
               style={{
-                background: 'rgba(255,255,255,0.045)',
-                border: '1px solid rgba(255,255,255,0.09)',
-                backdropFilter: 'blur(18px)',
-                WebkitBackdropFilter: 'blur(18px)',
-                borderRadius: 24,
-                padding: 'clamp(32px,4vw,56px) clamp(20px,3vw,40px)',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,200px),1fr))',
-                gap: 0,
+                fontFamily: FONTS.display,
+                fontSize: 'clamp(32px,4.6vw,68px)',
+                lineHeight: 1.02,
+                textTransform: 'uppercase',
+                color: '#111',
+                margin: '22px 0 0',
               }}
             >
-              {STATS.map((s, i) => (
-                <div
-                  key={s.label}
-                  style={{
-                    textAlign: 'center',
-                    padding: '12px clamp(16px,2vw,32px)',
-                    borderLeft: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.08)',
-                  }}
-                >
-                  <div style={{ fontFamily: FONTS.display, fontSize: 'clamp(44px,5vw,72px)', fontWeight: 800, color: GOLD, lineHeight: 1, marginBottom: 12, textShadow: `0 0 30px rgba(${GOLD_RGB},0.25)` }}>
-                    {s.value}
+              A brand should feel bigger than a logo.
+            </motion.h2>
+          </div>
+          <div style={{ fontFamily: FONTS.ui, color: '#2C2B29', fontSize: 'clamp(16px,1.35vw,19px)', lineHeight: 1.75 }}>
+            <motion.p {...fade(0.1)} style={{ margin: 0 }}>
+              People decide whether to trust a brand in the first few seconds of seeing it.
+              Visual quality is not decoration — it is the fastest signal of how seriously
+              you take your own work. We treat every frame, page, and post as part of that signal.
+            </motion.p>
+            <motion.p {...fade(0.18)} style={{ margin: '24px 0 0' }}>
+              Most brands are assembled from scattered deliverables — a logo from one place,
+              a website from another, content from a third. We believe one connected system,
+              directed by a single visual language, will always beat a pile of disconnected assets.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3 ── CREATIVE DIRECTION (dark, restrained) */}
+      <section style={{ background: '#0B0D0C', padding: 'clamp(80px,10vw,140px) 0' }}>
+        <div style={{ ...section, maxWidth: 860, textAlign: 'center' }}>
+          <motion.p {...fade(0)} style={eyebrowStyle()}>Creative Direction</motion.p>
+          <motion.h2
+            {...fade(0.08)}
+            style={{
+              fontFamily: FONTS.display,
+              fontSize: 'clamp(26px,3.4vw,48px)',
+              lineHeight: 1.05,
+              textTransform: 'uppercase',
+              margin: '22px 0 0',
+              color: '#F6F3ED',
+            }}
+          >
+            Founded and creatively directed by{' '}
+            <span style={gradText}>{SITE.founder}</span>
+          </motion.h2>
+          <motion.p
+            {...fade(0.16)}
+            style={{
+              fontFamily: FONTS.ui,
+              color: '#AAA39A',
+              fontSize: 'clamp(15px,1.3vw,18px)',
+              lineHeight: 1.75,
+              margin: '26px auto 0',
+              maxWidth: 640,
+            }}
+          >
+            AYESMAJ is a direction-led studio: every project starts with a creative point of
+            view, and every deliverable is measured against it. We use AI tools throughout
+            production to move at the speed of ideas — but human direction decides what ships.
+            The result is work that feels authored, not generated.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* 4 ── THE APPROACH (warm editorial) */}
+      <section style={{ background: '#F0E8DC', color: '#111', padding: 'clamp(80px,10vw,150px) 0' }}>
+        <div style={section}>
+          <motion.p {...fade(0)} style={eyebrowStyle('#C88B58')}>The Approach</motion.p>
+          <motion.h2
+            {...fade(0.08)}
+            style={{
+              fontFamily: FONTS.display,
+              fontSize: 'clamp(30px,4vw,58px)',
+              lineHeight: 1.02,
+              textTransform: 'uppercase',
+              color: '#111',
+              margin: '22px 0 clamp(40px,5vw,70px)',
+              maxWidth: 760,
+            }}
+          >
+            One system, six moves.
+          </motion.h2>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(14px,2vw,22px)' }}>
+            {APPROACH.map((s, i) => (
+              <motion.div
+                key={s.n}
+                {...fade(0.06 * i)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 16,
+                  padding: '14px 22px 14px 14px',
+                  borderRadius: 999,
+                  background: 'rgba(255,255,255,0.55)',
+                  border: '1px solid rgba(17,17,17,0.1)',
+                  flex: '1 1 clamp(260px, 30%, 420px)',
+                  minWidth: 'min(100%, 260px)',
+                }}
+              >
+                <img
+                  src={s.thumb}
+                  alt=""
+                  loading="lazy"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  style={{ width: 56, height: 56, borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
+                />
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontFamily: FONTS.ui, fontSize: 11, fontWeight: 700, letterSpacing: '0.25em', ...gradText }}>
+                    {s.n}
                   </div>
-                  <div style={{ fontFamily: FONTS.ui, fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: COLORS.muted }}>
+                  <div style={{ fontFamily: FONTS.ui, fontWeight: 700, fontSize: 16, color: '#111', marginTop: 2 }}>
                     {s.label}
                   </div>
+                  <div style={{ fontFamily: FONTS.ui, fontSize: 13.5, color: '#70665A', marginTop: 2 }}>
+                    {s.line}
+                  </div>
                 </div>
-              ))}
-            </motion.div>
-          </section>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          {/* 5. FINAL CTA */}
-          <section style={{ ...section, paddingTop: 'clamp(40px,5vw,64px)', paddingBottom: 'clamp(80px,10vw,140px)', textAlign: 'center' }}>
-            <motion.div {...fade(0.1)}>
-              <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(32px,5vw,72px)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 0.98, color: COLORS.white, margin: '0 0 28px' }}>
-                Let's Build Something Cinematic
-              </h2>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <CinematicButton label="Let's Build Something Cinematic" accent={GOLD} size="lg" onClick={() => navigate('/Contact')} />
-              </div>
+      {/* 5 ── SELECTED WORK WALL (dark) */}
+      <section style={{ background: '#050505', padding: 'clamp(80px,10vw,150px) 0' }}>
+        <div style={section}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'end', justifyContent: 'space-between', gap: 20, marginBottom: 'clamp(36px,4vw,60px)' }}>
+            <div>
+              <motion.p {...fade(0)} style={eyebrowStyle()}>Selected Work</motion.p>
+              <motion.h2
+                {...fade(0.08)}
+                style={{
+                  fontFamily: FONTS.display,
+                  fontSize: 'clamp(30px,4.4vw,64px)',
+                  lineHeight: 1,
+                  textTransform: 'uppercase',
+                  color: '#F6F3ED',
+                  margin: '20px 0 0',
+                }}
+              >
+                Proof, not promises.
+              </motion.h2>
+            </div>
+            <motion.div {...fade(0.14)}>
+              <Link
+                to="/Work"
+                className="about-focus"
+                style={{
+                  fontFamily: FONTS.ui,
+                  fontSize: 13,
+                  fontWeight: 700,
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  color: '#D7D1C8',
+                  textDecoration: 'none',
+                  borderBottom: `1px solid ${GOLD}`,
+                  paddingBottom: 4,
+                }}
+              >
+                All work →
+              </Link>
             </motion.div>
-          </section>
-        </main>
+          </div>
 
-        <AyesmajFooter />
-      </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,300px), 1fr))',
+              gap: 'clamp(14px,2vw,24px)',
+            }}
+          >
+            {WORK_WALL.map((id, i) => {
+              const brand = getBrand(id);
+              if (!brand) return null;
+              return (
+                <motion.div key={id} {...fade(0.05 * i)}>
+                  <Link
+                    to={`/BrandDetail?slug=${id}`}
+                    className="about-wall-link"
+                    aria-label={`${brand.name} — view case study`}
+                    style={{ display: 'block', position: 'relative', borderRadius: 20, overflow: 'hidden', aspectRatio: '4 / 5', background: '#121512' }}
+                  >
+                    <div style={{ width: '100%', height: '100%', transition: 'transform 0.7s cubic-bezier(0.22,1,0.36,1)' }}>
+                      <BrandCover id={id} />
+                    </div>
+                    <div
+                      style={{
+                        position: 'absolute', inset: 'auto 0 0 0',
+                        padding: '48px 20px 18px',
+                        background: 'linear-gradient(180deg, rgba(5,5,5,0) 0%, rgba(5,5,5,0.85) 100%)',
+                      }}
+                    >
+                      <div style={{ fontFamily: FONTS.ui, fontWeight: 700, fontSize: 16, color: '#F6F3ED' }}>{brand.name}</div>
+                      <div style={{ fontFamily: FONTS.ui, fontSize: 12.5, color: '#AAA39A', marginTop: 3 }}>{brand.category}</div>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 6 ── GLOBAL COLLABORATION (bright) */}
+      <section style={{ background: '#F7F3ED', color: '#111', padding: 'clamp(70px,8vw,120px) 0' }}>
+        <div style={{ ...section, textAlign: 'center' }}>
+          <motion.p {...fade(0)} style={eyebrowStyle('#A45FDB')}>Global Collaboration</motion.p>
+          <motion.h2
+            {...fade(0.08)}
+            style={{
+              fontFamily: FONTS.display,
+              fontSize: 'clamp(26px,3.6vw,52px)',
+              lineHeight: 1.04,
+              textTransform: 'uppercase',
+              color: '#111',
+              margin: '22px auto 0',
+              maxWidth: 820,
+            }}
+          >
+            Based in {SITE.location.split('—')[0].trim()}. Delivering worldwide.
+          </motion.h2>
+          <motion.div
+            {...fade(0.16)}
+            style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 'clamp(10px,1.5vw,16px)', marginTop: 'clamp(32px,4vw,52px)' }}
+          >
+            {PROOF_BADGES.map((b) => (
+              <span
+                key={b}
+                style={{
+                  fontFamily: FONTS.ui,
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: '0.18em',
+                  padding: '12px 22px',
+                  borderRadius: 999,
+                  border: '1px solid rgba(17,17,17,0.18)',
+                  color: '#2C2B29',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {b}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 7 ── FINAL CTA (dark) */}
+      <section style={{ background: '#050505', padding: 'clamp(90px,12vw,170px) 0' }}>
+        <div style={{ ...section, textAlign: 'center' }}>
+          <motion.h2
+            {...fade(0)}
+            style={{
+              fontFamily: FONTS.display,
+              fontSize: 'clamp(36px,6vw,92px)',
+              lineHeight: 0.98,
+              textTransform: 'uppercase',
+              color: '#F6F3ED',
+              margin: 0,
+            }}
+          >
+            Let’s build <span style={gradText}>your world.</span>
+          </motion.h2>
+          <motion.div {...fade(0.12)} style={{ marginTop: 'clamp(32px,4vw,52px)' }}>
+            <CinematicButton label="Start a Project" accent={GOLD} size="lg" onClick={() => navigate('/Contact')} />
+          </motion.div>
+        </div>
+      </section>
+
+      <AyesmajFooter />
     </div>
   );
 }

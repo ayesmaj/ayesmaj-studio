@@ -54,7 +54,7 @@ function BrowserMockup({ url, title, delay, offsetLeft = 0, accentColor = GOLD, 
             display: 'flex', alignItems: 'center', paddingLeft: 10,
           }}>
             <span style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 9, color: 'rgba(255,255,255,0.28)',
               letterSpacing: '0.02em',
             }}>
@@ -98,7 +98,7 @@ function BrowserMockup({ url, title, delay, offsetLeft = 0, accentColor = GOLD, 
             background: '#28C840', opacity: 0.8,
           }} />
           <span style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 9, color: 'rgba(255,255,255,0.32)',
             letterSpacing: '0.05em',
           }}>
@@ -146,7 +146,7 @@ export default function WebExperiencesPreview() {
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(8px,0.75vw,10px)',
                 letterSpacing: '0.52em',
                 textTransform: 'uppercase',
@@ -160,7 +160,7 @@ export default function WebExperiencesPreview() {
             <motion.h2
               {...fade(0.08)}
               style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(26px,3.8vw,52px)',
                 fontWeight: 800,
                 lineHeight: 1.02,
@@ -184,7 +184,7 @@ export default function WebExperiencesPreview() {
             <motion.p
               {...fade(0.16)}
               style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(14px,1.2vw,16.5px)',
                 color: 'rgba(248,250,252,0.5)',
                 lineHeight: 1.72,
@@ -210,7 +210,7 @@ export default function WebExperiencesPreview() {
                     gap: 12,
                     padding: '9px 0',
                     borderBottom: i < BULLETS.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
-                    fontFamily: "'Satoshi', system-ui, sans-serif",
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
                     fontSize: 'clamp(13px,1.05vw,15px)',
                     color: 'rgba(248,250,252,0.7)',
                   }}
@@ -227,7 +227,7 @@ export default function WebExperiencesPreview() {
                 to={createPageUrl('WebExperiences')}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
-                  fontFamily: "'Satoshi', system-ui, sans-serif",
+                  fontFamily: "'DM Sans', system-ui, sans-serif",
                   fontSize: 'clamp(10px,0.85vw,12px)',
                   fontWeight: 700, letterSpacing: '0.14em',
                   textTransform: 'uppercase', color: GOLD,

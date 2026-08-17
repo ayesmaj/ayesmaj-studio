@@ -1,0 +1,183 @@
+.worlds-page {
+  --world-ink: #141321;
+  --world-paper: #f3f1f8;
+  --world-violet: #7850ed;
+  --world-cyan: #44cbe3;
+  --world-lime: #b2e933;
+  color: var(--world-ink);
+  background: var(--world-paper);
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.worlds-page main { padding-top: 80px; }
+.worlds-page h1, .worlds-page h2, .worlds-page h3, .worlds-page p { margin-top: 0; }
+.worlds-page em { color: var(--world-violet); font-style: normal; }
+
+.worlds-hero {
+  position: relative;
+  min-height: min(930px, calc(100svh - 80px));
+  display: grid;
+  grid-template-columns: minmax(340px, .72fr) minmax(540px, 1.28fr);
+  align-items: center;
+  gap: clamp(40px, 5vw, 90px);
+  padding: clamp(74px, 9vw, 132px) max(5vw, 24px) clamp(72px, 8vw, 112px);
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 5% 75%, rgba(120,80,237,.18), transparent 28%),
+    radial-gradient(circle at 70% 5%, rgba(68,203,227,.2), transparent 24%),
+    linear-gradient(135deg, #fbfaff 0%, #eeedf6 48%, #e6eff4 100%);
+}
+
+.worlds-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .2;
+  background-image: linear-gradient(rgba(47,43,80,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(47,43,80,.12) 1px, transparent 1px);
+  background-size: 82px 82px;
+  mask-image: linear-gradient(90deg, #000, transparent 62%);
+}
+
+.worlds-kicker { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 22px; color: #5b39bd; font: 750 12px/1.2 "DM Sans", sans-serif; letter-spacing: .25em; text-transform: uppercase; }
+.worlds-kicker--light { color: #bda6ff; }
+.worlds-hero h1, .worlds-heading h2, .worlds-motion-heading h2, .worlds-gallery-heading h2, .worlds-final h2 { font-family: "Outfit", "DM Sans", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: -.02em; }
+.worlds-hero h1 { margin-bottom: 26px; font-size: clamp(68px, 8vw, 132px); line-height: .82; }
+.worlds-hero-copy > p:not(.worlds-kicker) { max-width: 610px; margin-bottom: 34px; color: #5c5969; font: 500 clamp(17px, 1.5vw, 21px)/1.68 "DM Sans", sans-serif; }
+.worlds-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.worlds-button { min-height: 56px; display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 0 27px; border-radius: 999px; text-decoration: none; font: 750 12px/1 "DM Sans", sans-serif; letter-spacing: .15em; text-transform: uppercase; transition: transform .24s ease, box-shadow .24s ease, background .24s ease; }
+.worlds-button svg { width: 18px; }
+.worlds-button:hover { transform: translateY(-3px); }
+.worlds-button:focus-visible, .worlds-reel > a:focus-visible, .worlds-gallery-side a:focus-visible { outline: 3px solid var(--world-lime); outline-offset: 4px; }
+.worlds-button--primary { color: #fff; background: linear-gradient(120deg, #6d42df, #936df4); box-shadow: 0 18px 45px rgba(101,64,205,.28); }
+.worlds-button--ghost { color: var(--world-ink); border: 1px solid rgba(20,19,33,.24); background: rgba(255,255,255,.4); }
+.worlds-button--light { color: #171326; background: #f7f3ff; }
+
+.worlds-hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 38px; }
+.worlds-hero-tags span { padding: 10px 13px; border-radius: 999px; color: #5a536b; background: rgba(255,255,255,.62); border: 1px solid rgba(52,46,76,.14); font: 650 10px/1 "DM Sans", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+
+.worlds-hero-art { position: relative; min-width: 0; }
+.worlds-hero-art > img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: 44px 16px 44px 16px; box-shadow: 0 45px 100px rgba(63,52,105,.22); }
+.worlds-hero-art::before { content: ""; position: absolute; inset: -20px -20px 18% 26%; z-index: -1; border: 1px solid rgba(108,71,211,.26); border-radius: 58px; }
+.worlds-hero-orbit { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.82); box-shadow: inset 0 0 30px rgba(255,255,255,.5), 0 20px 55px rgba(83,63,155,.2); backdrop-filter: blur(3px); }
+.worlds-hero-orbit--one { width: 92px; height: 92px; left: -38px; top: 16%; }
+.worlds-hero-orbit--two { width: 42px; height: 42px; right: 9%; bottom: -17px; background: rgba(154,121,255,.18); }
+.worlds-hero-note { position: absolute; left: 24px; bottom: 24px; width: min(330px, 76%); padding: 19px 21px; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; color: #f8f5ff; border-radius: 18px; background: rgba(22,18,42,.78); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.18); }
+.worlds-hero-note svg { grid-row: span 2; align-self: center; color: #b79bff; }
+.worlds-hero-note span { color: #bda6ff; font: 700 9px/1 "DM Sans", sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+.worlds-hero-note strong { font: 650 14px/1.35 "DM Sans", sans-serif; }
+
+.worlds-signal { min-height: 90px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 18px clamp(18px, 3vw, 44px); padding: 22px max(5vw, 24px); color: #f0ebff; background: #18152b; border-block: 1px solid rgba(255,255,255,.08); }
+.worlds-signal span { font: 700 11px/1 "DM Sans", sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+.worlds-signal i { width: 40px; height: 1px; background: linear-gradient(90deg, rgba(120,80,237,.2), #7c55eb, rgba(68,203,227,.2)); }
+
+.worlds-section { max-width: 1480px; margin: 0 auto; padding: clamp(90px, 10vw, 160px) max(5vw, 24px); }
+.worlds-heading { display: grid; grid-template-columns: 1.2fr .62fr; align-items: end; gap: 58px; margin-bottom: 60px; }
+.worlds-heading h2, .worlds-motion-heading h2, .worlds-gallery-heading h2 { margin: 0; font-size: clamp(58px, 7vw, 108px); line-height: .88; }
+.worlds-heading > p, .worlds-motion-heading > p, .worlds-gallery-side p { margin-bottom: 6px; color: #625d70; font: 500 17px/1.72 "DM Sans", sans-serif; }
+.worlds-heading--single { grid-template-columns: 1fr; }
+
+.worlds-cap-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.worlds-cap-card { overflow: hidden; border-radius: 28px; background: rgba(255,255,255,.68); border: 1px solid rgba(57,49,88,.14); box-shadow: 0 24px 70px rgba(57,49,88,.08); transition: transform .3s ease, box-shadow .3s ease; }
+.worlds-cap-card:hover { transform: translateY(-8px); box-shadow: 0 34px 85px rgba(57,49,88,.15); }
+.worlds-cap-media { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+.worlds-cap-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+.worlds-cap-card:hover img { transform: scale(1.045); }
+.worlds-cap-media span { position: absolute; top: 18px; left: 18px; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: rgba(26,22,48,.8); backdrop-filter: blur(10px); font: 800 12px/1 "DM Sans", sans-serif; }
+.worlds-cap-copy { padding: 28px 28px 32px; }
+.worlds-cap-copy > svg { width: 23px; margin-bottom: 22px; color: var(--world-violet); }
+.worlds-cap-copy h3 { margin-bottom: 12px; font: 800 clamp(23px, 2.1vw, 32px)/1.05 "DM Sans", sans-serif; }
+.worlds-cap-copy p { margin-bottom: 0; color: #625d70; font: 500 15px/1.68 "DM Sans", sans-serif; }
+
+.worlds-motion { padding: clamp(90px, 10vw, 160px) max(5vw, 24px); color: #f5f1ff; background: radial-gradient(circle at 76% 5%, rgba(120,80,237,.32), transparent 27%), radial-gradient(circle at 10% 90%, rgba(68,203,227,.16), transparent 30%), #151326; }
+.worlds-motion-heading, .worlds-gallery-heading { max-width: 1480px; margin: 0 auto 62px; display: grid; grid-template-columns: 1fr .58fr; align-items: end; gap: 58px; }
+.worlds-motion-heading > p { color: #b9b1ca; }
+.worlds-reel-grid { max-width: 1480px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 360px; gap: 16px; }
+.worlds-reel { position: relative; overflow: hidden; border-radius: 26px; background: #24203a; border: 1px solid rgba(255,255,255,.12); }
+.worlds-reel--wide { grid-row: span 2; }
+.worlds-reel video { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+.worlds-reel:hover video { transform: scale(1.035); }
+.worlds-reel-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,10,24,.9), transparent 62%); pointer-events: none; }
+.worlds-reel > div { position: absolute; z-index: 2; left: 24px; right: 76px; bottom: 23px; }
+.worlds-reel > div span { display: block; margin-bottom: 7px; color: #bba1ff; font: 700 10px/1 "DM Sans", sans-serif; letter-spacing: .18em; text-transform: uppercase; }
+.worlds-reel h3 { margin: 0; font: 750 clamp(20px, 2.2vw, 31px)/1.1 "DM Sans", sans-serif; }
+.worlds-reel > a { position: absolute; z-index: 3; right: 18px; bottom: 18px; width: 50px; height: 50px; display: grid; place-items: center; border-radius: 50%; color: #19142b; background: #b69afd; transition: transform .25s ease, background .25s ease; }
+.worlds-reel > a:hover { transform: rotate(10deg) scale(1.06); background: #e9e0ff; }
+
+.worlds-before-after { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 14px; border-radius: 34px; background: #dcd8e8; border: 1px solid rgba(48,41,79,.12); }
+.worlds-before-after figure { position: relative; min-width: 0; margin: 0; overflow: hidden; border-radius: 23px; background: #cac6d4; }
+.worlds-before-after img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.worlds-before-after figcaption { position: absolute; left: 18px; bottom: 18px; padding: 13px 15px; border-radius: 14px; color: #fff; background: rgba(19,17,31,.76); backdrop-filter: blur(12px); }
+.worlds-before-after figcaption span, .worlds-before-after figcaption strong { display: block; }
+.worlds-before-after figcaption span { margin-bottom: 5px; color: #bfa8ff; font: 700 9px/1 "DM Sans", sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+.worlds-before-after figcaption strong { font: 650 14px/1.2 "DM Sans", sans-serif; }
+.worlds-transform-arrow { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--world-violet); border: 5px solid #dcd8e8; box-shadow: 0 12px 30px rgba(74,45,151,.3); }
+
+.worlds-gallery-section { padding: clamp(90px, 10vw, 160px) max(5vw, 24px); color: #f5f1ff; background: linear-gradient(135deg, #1c1930 0%, #121321 48%, #19262e 100%); }
+.worlds-gallery-side p { color: #b9b1ca; }
+.worlds-gallery-side a { min-height: 48px; display: inline-flex; align-items: center; gap: 12px; color: #c3aaff; text-decoration: none; font: 750 11px/1 "DM Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.worlds-gallery-side a svg { width: 17px; }
+.worlds-character-grid { max-width: 1480px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 270px; gap: 14px; }
+.worlds-character-card { position: relative; overflow: hidden; min-height: 260px; border-radius: 22px; background: #242139; border: 1px solid rgba(255,255,255,.1); }
+.worlds-character-card--1, .worlds-character-card--4 { grid-row: span 2; }
+.worlds-character-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+.worlds-character-card:hover img { transform: scale(1.045); }
+.worlds-character-card__veil { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,10,20,.83), transparent 55%); pointer-events: none; }
+.worlds-character-card__index, .worlds-character-card__label { position: absolute; z-index: 2; bottom: 17px; font: 700 10px/1 "DM Sans", sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.worlds-character-card__index { left: 17px; color: #bca2ff; }
+.worlds-character-card__label { right: 17px; color: #fff; }
+
+.worlds-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid rgba(55,47,82,.18); }
+.worlds-steps article { padding: 34px 28px 40px; border-right: 1px solid rgba(55,47,82,.18); }
+.worlds-steps article:last-child { border-right: 0; }
+.worlds-steps article > span { color: #6744c4; font: 750 11px/1 "DM Sans", sans-serif; letter-spacing: .18em; }
+.worlds-step-icon { width: 52px; height: 52px; display: grid; place-items: center; margin: 34px 0 28px; border-radius: 16px; color: var(--world-violet); background: rgba(255,255,255,.66); border: 1px solid rgba(55,47,82,.14); }
+.worlds-step-icon svg { width: 21px; }
+.worlds-steps h3 { margin-bottom: 12px; font: 750 22px/1.1 "DM Sans", sans-serif; }
+.worlds-steps p { margin-bottom: 0; color: #625d70; font: 500 14px/1.65 "DM Sans", sans-serif; }
+
+.worlds-final { position: relative; min-height: 760px; display: grid; align-items: center; overflow: hidden; padding: 100px max(5vw, 24px); color: #fff; background: #171323; isolation: isolate; }
+.worlds-final > img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.worlds-final-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(21,15,35,.94), rgba(21,15,35,.68) 48%, rgba(21,15,35,.08)); }
+.worlds-final > div { width: min(900px, 72vw); }
+.worlds-final h2 { margin-bottom: 38px; font-size: clamp(60px, 8vw, 126px); line-height: .88; }
+
+@media (max-width: 1080px) {
+  .worlds-hero { grid-template-columns: 1fr; }
+  .worlds-hero-copy { max-width: 860px; }
+  .worlds-hero-art { width: 92%; margin-left: auto; }
+  .worlds-cap-grid { grid-template-columns: 1fr 1fr; }
+  .worlds-cap-card:last-child { grid-column: 1/-1; }
+  .worlds-character-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .worlds-steps { grid-template-columns: 1fr 1fr; }
+  .worlds-steps article:nth-child(2) { border-right: 0; }
+  .worlds-steps article:nth-child(-n+2) { border-bottom: 1px solid rgba(55,47,82,.18); }
+}
+
+@media (max-width: 720px) {
+  .worlds-hero { min-height: auto; padding-top: 76px; }
+  .worlds-hero h1 { font-size: clamp(66px, 21vw, 96px); }
+  .worlds-hero-art { width: 100%; }
+  .worlds-hero-art > img { border-radius: 26px 8px 26px 8px; }
+  .worlds-hero-orbit--one { display: none; }
+  .worlds-signal i { width: 14px; }
+  .worlds-heading, .worlds-motion-heading, .worlds-gallery-heading { grid-template-columns: 1fr; gap: 18px; }
+  .worlds-cap-grid { grid-template-columns: 1fr; }
+  .worlds-cap-card:last-child { grid-column: auto; }
+  .worlds-reel-grid { grid-template-columns: 1fr; grid-auto-rows: 330px; }
+  .worlds-reel--wide { grid-row: auto; }
+  .worlds-before-after { grid-template-columns: 1fr; }
+  .worlds-transform-arrow { transform: translate(-50%, -50%) rotate(90deg); }
+  .worlds-character-grid { grid-template-columns: 1fr; grid-auto-rows: 420px; }
+  .worlds-character-card--1, .worlds-character-card--4 { grid-row: auto; }
+  .worlds-steps { grid-template-columns: 1fr; }
+  .worlds-steps article { border-right: 0; border-bottom: 1px solid rgba(55,47,82,.18); }
+  .worlds-steps article:last-child { border-bottom: 0; }
+  .worlds-final { min-height: 650px; }
+  .worlds-final > div { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .worlds-page *, .worlds-page *::before, .worlds-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

@@ -6,7 +6,7 @@
  *
  *  FONT SYSTEM
  *  ─────────────────────────────────────────────────────
- *  Satoshi     All typography — premium, modern, cinematic
+ *  DM Sans     All typography — premium, modern, cinematic
  *
  *  COLOR SYSTEM
  *  ─────────────────────────────────────────────────────
@@ -20,9 +20,7 @@
  *  Text muted      #8A8478  warm muted gray
  */
 
-/* ── Satoshi via Fontshare — must precede @tailwind directives ── */
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
-
+/* ── DM Sans via Fontshare — must precede @tailwind directives ── */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,15 +42,15 @@
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: none;
     background: #030303;
-    font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     color: #F2EDE4;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Satoshi', system-ui, sans-serif;
-    letter-spacing: -0.025em;
+    font-family: 'Anton', 'Bebas Neue', 'Oswald', system-ui, sans-serif;
+    letter-spacing: 0.005em;
   }
 
   #root, #app {
@@ -134,14 +132,15 @@
 
   /* ── Font family helpers ── */
   .font-display {
-    font-family: 'Syne', system-ui, sans-serif;
-    letter-spacing: -0.025em;
+    font-family: 'Anton', 'Bebas Neue', 'Oswald', system-ui, sans-serif;
+    letter-spacing: 0.005em;
   }
   .font-body {
     font-family: 'DM Sans', system-ui, sans-serif;
   }
   .font-label {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 700;
     font-size: 0.6rem;
     letter-spacing: 0.45em;
     text-transform: uppercase;
@@ -163,14 +162,16 @@
 
   /* ── Section eyebrow labels ── */
   .section-label {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 700;
     font-size: 0.6rem;
     letter-spacing: 0.5em;
     text-transform: uppercase;
     color: #8B5CF6;
   }
   .section-label-cyan {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 700;
     font-size: 0.6rem;
     letter-spacing: 0.5em;
     text-transform: uppercase;

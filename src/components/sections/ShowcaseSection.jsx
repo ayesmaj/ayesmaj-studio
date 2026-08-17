@@ -9,7 +9,7 @@ const projects = [
     title: 'Character Design',
     category: '3D Animation',
     result: 'Cinematic CGI Breakdown',
-    img: '/brands/characters/1.png',
+    img: '/characters/1.jpeg',
     span: 'lg:col-span-2'
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     title: 'Brand Identities',
     category: 'Brand Identity',
     result: 'Full Logo System Delivery',
-    img: '/brands/logos/1.png',
+    img: '/logos/1.png',
     span: ''
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     title: 'LaCroix',
     category: 'CGI Commercial',
     result: 'Product Hero Shot',
-    img: '/brands/lacroix/1.png',
+    img: '/brands/lacroix/1.jpg',
     span: 'lg:col-span-2'
   },
 ];

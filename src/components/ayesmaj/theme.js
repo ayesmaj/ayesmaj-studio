@@ -55,8 +55,11 @@ export const WORLDS = [
   },
 ];
 
-// Shared font stacks (cinematic display + clean UI)
+// Shared typography: Anton is the unmistakable AYESMAJ cinematic voice.
+// Outfit is reserved for compact card titles where Anton would feel too loud.
 export const FONTS = {
   display: "'Anton', 'Bebas Neue', 'Oswald', system-ui, sans-serif",
-  ui:      "'Space Grotesk', 'Inter', system-ui, sans-serif",
+  card:    "'Outfit', 'DM Sans', system-ui, sans-serif",
+  ui:      "'DM Sans', 'Inter', system-ui, sans-serif",
+  myriad:  "'Myriad Pro', 'Myriad', 'Source Sans 3', 'Segoe UI', sans-serif",
 };

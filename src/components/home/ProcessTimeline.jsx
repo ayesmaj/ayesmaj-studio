@@ -58,7 +58,7 @@ export default function ProcessTimeline() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(8px,0.75vw,10px)',
               letterSpacing: '0.52em', textTransform: 'uppercase',
               color: GOLD, marginBottom: 16,
@@ -67,7 +67,7 @@ export default function ProcessTimeline() {
             HOW WE WORK
           </motion.p>
           <h2 style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 'clamp(28px,4.5vw,62px)',
             fontWeight: 800, lineHeight: 1.0,
             letterSpacing: '-0.035em', color: '#F8FAFC',
@@ -121,7 +121,7 @@ export default function ProcessTimeline() {
                 }}
               >
                 <span style={{
-                  fontFamily: "'Satoshi', system-ui, sans-serif",
+                  fontFamily: "'DM Sans', system-ui, sans-serif",
                   fontSize: 11, fontWeight: 800,
                   color: GOLD, letterSpacing: '0.08em',
                 }}>
@@ -130,7 +130,7 @@ export default function ProcessTimeline() {
               </motion.div>
 
               <h3 style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(14px,1.2vw,17px)',
                 fontWeight: 700, color: '#F8FAFC',
                 marginBottom: 10, letterSpacing: '-0.01em',
@@ -138,7 +138,7 @@ export default function ProcessTimeline() {
                 {step.title}
               </h3>
               <p style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(12px,0.9vw,13.5px)',
                 color: 'rgba(248,250,252,0.42)',
                 lineHeight: 1.65,
@@ -190,7 +190,7 @@ export default function ProcessTimeline() {
                 boxShadow: '0 0 20px rgba(200,164,78,0.12)',
               }}>
                 <span style={{
-                  fontFamily: "'Satoshi', system-ui, sans-serif",
+                  fontFamily: "'DM Sans', system-ui, sans-serif",
                   fontSize: 11, fontWeight: 800,
                   color: GOLD, letterSpacing: '0.08em',
                 }}>
@@ -199,7 +199,7 @@ export default function ProcessTimeline() {
               </div>
               <div style={{ paddingTop: 14 }}>
                 <h3 style={{
-                  fontFamily: "'Satoshi', system-ui, sans-serif",
+                  fontFamily: "'DM Sans', system-ui, sans-serif",
                   fontSize: 17, fontWeight: 700,
                   color: '#F8FAFC', marginBottom: 8,
                   letterSpacing: '-0.01em',
@@ -207,7 +207,7 @@ export default function ProcessTimeline() {
                   {step.title}
                 </h3>
                 <p style={{
-                  fontFamily: "'Satoshi', system-ui, sans-serif",
+                  fontFamily: "'DM Sans', system-ui, sans-serif",
                   fontSize: 14, color: 'rgba(248,250,252,0.42)',
                   lineHeight: 1.65,
                 }}>

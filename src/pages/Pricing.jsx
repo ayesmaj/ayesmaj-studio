@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Seo from '@/components/ayesmaj/Seo';
 import { motion } from 'framer-motion';
 import { Check, ArrowRight, Zap, Star, Crown, Building2, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -203,6 +204,11 @@ export default function Pricing() {
 
   return (
     <div style={{ background: COLORS.black, minHeight: '100vh', overflowX: 'hidden', color: COLORS.white }}>
+      <Seo
+        title="Pricing — AYESMAJ Studios"
+        description="Transparent packages for branding, premium websites, AI content, and 3D production from AYESMAJ Studios — from concept to launch."
+        path="/Pricing"
+      />
       <AyesmajNav />
 
       {/* HERO */}

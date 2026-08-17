@@ -13,25 +13,28 @@ const fade = (d = 0) => ({
 
 const CARDS = [
   {
-    title: "Factory",
-    category: "CGI Commercial",
-    accent: "#FFB000",
-    accentRGB: "255,176,0",
-    poster: "/assets/ayesmaj/hero/hero-world-ai-marketing.png",
+    title: "BLENDAY",
+    category: "CGI Product Film",
+    accent: "#E861FF",
+    accentRGB: "232,97,255",
+    poster: "/assets/ayesmaj/showreel/blenday.webp",
+    videoSrc: "/brands/blenday/6.mp4",
   },
   {
-    title: "BLENDAY",
-    category: "Brand Film",
+    title: "LaCroix",
+    category: "Beverage Commercial",
     accent: "#B3FF3F",
     accentRGB: "179,255,63",
-    poster: "/assets/ayesmaj/hero/hero-world-website.png",
+    poster: "/brands/lacroix/3.png",
+    videoSrc: "/brands/lacroix/4.mp4",
   },
   {
-    title: "Optimus",
-    category: "3D Animation",
-    accent: "#9B5CFF",
-    accentRGB: "155,92,255",
-    poster: "/assets/ayesmaj/hero/hero-world-3d.png",
+    title: "HONEY",
+    category: "Cinematic Brand Film",
+    accent: "#F7B733",
+    accentRGB: "247,183,51",
+    poster: "/assets/ayesmaj/showreel/honey.webp",
+    videoSrc: "/brands/honey/2.mp4",
   },
 ];
 
@@ -67,6 +70,7 @@ export default function Commercials() {
                 accent={c.accent}
                 accentRGB={c.accentRGB}
                 poster={c.poster}
+                videoSrc={c.videoSrc}
               />
             </motion.div>
           ))}

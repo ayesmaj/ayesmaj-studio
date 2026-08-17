@@ -1,6 +1,14 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import { Play, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { motion, MotionConfig, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Play, ExternalLink, ArrowDown } from 'lucide-react';
+import { FONTS } from '@/components/ayesmaj/theme';
+import {
+  BRANDS as CENTRAL_BRANDS,
+  BRAND_NAV_GROUPS,
+  getBrandAssetPath,
+  getBrandVideo,
+} from '@/data/brands';
 
 /* ─── Brand Data ──────────────────────────────────────────────── */
 const BRANDS = [
@@ -102,8 +110,15 @@ const BRANDS = [
   },
 ];
 
+const brandingIds = new Set(
+  BRAND_NAV_GROUPS.find((group) => group.label === 'Branding & Identity')?.brands || []
+);
+const PORTFOLIO_BRANDS = CENTRAL_BRANDS.length
+  ? CENTRAL_BRANDS.filter((brand) => brandingIds.has(brand.id))
+  : BRANDS;
+
 /* ─── Video Card ──────────────────────────────────────────────── */
-function VideoCard({ src, brandId }) {
+function VideoCard({ video, brand }) {
   const ref = useRef(null);
   const videoRef = useRef(null);
   const inView = useInView(ref, { margin: '-10%' });
@@ -120,17 +135,19 @@ function VideoCard({ src, brandId }) {
     }
   }, [inView]);
 
+  const item = getBrandVideo(brand, video);
+
   return (
     <motion.div
       ref={ref}
       className="relative overflow-hidden rounded-2xl"
-      style={{ aspectRatio: '16/9', background: '#0a0a0a' }}
+      style={{ aspectRatio: '16/9', background: '#141715' }}
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.4 }}
     >
       <video
         ref={videoRef}
-        src={`/brands/${brandId}/${src}`}
+        src={item.src}
         muted
         loop
         playsInline
@@ -149,14 +166,14 @@ function VideoCard({ src, brandId }) {
       )}
       <div className="absolute bottom-3 left-3 text-[9px] tracking-widest uppercase font-bold px-2 py-1 rounded"
         style={{ background: 'rgba(0,0,0,0.6)', color: '#B3FF3F' }}>
-        Motion
+        {item.title || 'Motion'}
       </div>
     </motion.div>
   );
 }
 
 /* ─── Image Card ─────────────────────────────────────────────── */
-function ImageCard({ src, brandId, accent, delay = 0, large = false }) {
+function ImageCard({ src, brand, accent, delay = 0, large = false }) {
   const [loaded, setLoaded] = useState(false);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-5%' });
@@ -170,8 +187,8 @@ function ImageCard({ src, brandId, accent, delay = 0, large = false }) {
       className="relative overflow-hidden rounded-2xl group"
       style={{
         aspectRatio: large ? '4/3' : '1/1',
-        background: '#0a100b',
-        border: '1px solid rgba(255,255,255,0.04)',
+        background: '#141715',
+        border: '1px solid rgba(255,255,255,0.08)',
       }}
       whileHover={{ scale: 1.03 }}
     >
@@ -179,7 +196,7 @@ function ImageCard({ src, brandId, accent, delay = 0, large = false }) {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black animate-pulse" />
       )}
       <img
-        src={`/brands/${brandId}/${src}`}
+        src={getBrandAssetPath(brand, src)}
         alt=""
         loading="lazy"
         onLoad={() => setLoaded(true)}
@@ -202,13 +219,22 @@ function BrandSection({ brand, index }) {
   const num = String(index + 1).padStart(2, '0');
   const isEven = index % 2 === 0;
 
-  const galleryImages = brand.images.filter(img => img !== brand.featured);
+  const showcaseImage = brand.websiteHero || brand.featured;
+  const galleryImages = [brand.featured, ...brand.images]
+    .filter((img, imageIndex, images) => img !== showcaseImage && images.indexOf(img) === imageIndex)
+    .slice(0, 4);
 
   return (
     <section
+      id={`brand-${brand.id}`}
       ref={ref}
       className="relative py-24 md:py-36 px-6 overflow-hidden"
-      style={{ borderTop: `1px solid rgba(255,255,255,0.04)` }}
+      style={{
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+        background: index % 2 === 0
+          ? 'linear-gradient(135deg, rgba(255,255,255,0.025), transparent 48%)'
+          : 'linear-gradient(225deg, rgba(122,72,255,0.035), transparent 50%)',
+      }}
     >
       {/* Accent glow blob */}
       <div
@@ -255,6 +281,13 @@ function BrandSection({ brand, index }) {
             style={{ color: 'rgba(255,255,255,0.45)' }}
           >
             {brand.description}
+            <Link
+              to={`/BrandDetail?slug=${brand.id}`}
+              className="mt-5 inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase"
+              style={{ color: brand.accent }}
+            >
+              View complete case study <ExternalLink size={13} />
+            </Link>
           </motion.p>
         </div>
 
@@ -276,10 +309,11 @@ function BrandSection({ brand, index }) {
               whileHover={{ scale: 1.01 }}
             >
               <img
-                src={`/brands/${brand.id}/${brand.featured}`}
-                alt={brand.name}
+                src={getBrandAssetPath(brand, showcaseImage)}
+                alt={`${brand.name} website homepage hero`}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                style={{ background: '#F5F0E8' }}
               />
               {/* Corner accent */}
               <div
@@ -291,7 +325,7 @@ function BrandSection({ brand, index }) {
                   className="text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full"
                   style={{ background: `${brand.accent}20`, color: brand.accent, border: `1px solid ${brand.accent}30` }}
                 >
-                  Featured
+                  Website Homepage
                 </span>
               </div>
             </motion.div>
@@ -300,7 +334,7 @@ function BrandSection({ brand, index }) {
             {galleryImages.length > 0 && (
               <div className="lg:col-span-2 grid grid-cols-2 gap-3">
                 {galleryImages.slice(0, 4).map((img, i) => (
-                  <ImageCard key={img} src={img} brandId={brand.id} accent={brand.accent} delay={0.2 + i * 0.08} />
+                  <ImageCard key={img} src={img} brand={brand} accent={brand.accent} delay={0.2 + i * 0.08} />
                 ))}
               </div>
             )}
@@ -310,7 +344,7 @@ function BrandSection({ brand, index }) {
           {galleryImages.length > 4 && (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-1">
               {galleryImages.slice(4).map((img, i) => (
-                <ImageCard key={img} src={img} brandId={brand.id} accent={brand.accent} delay={0.4 + i * 0.06} large />
+                <ImageCard key={img} src={img} brand={brand} accent={brand.accent} delay={0.4 + i * 0.06} large />
               ))}
             </div>
           )}
@@ -324,8 +358,8 @@ function BrandSection({ brand, index }) {
             transition={{ duration: 0.7, delay: 0.5 }}
             className={`grid gap-4 ${brand.videos.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'}`}
           >
-            {brand.videos.map(v => (
-              <VideoCard key={v} src={v} brandId={brand.id} />
+            {brand.videos.map((video, videoIndex) => (
+              <VideoCard key={`${brand.id}-${videoIndex}`} video={video} brand={brand} />
             ))}
           </motion.div>
         )}
@@ -346,20 +380,26 @@ function BrandSection({ brand, index }) {
 /* ─── Portfolio Hero ─────────────────────────────────────────── */
 function PortfolioHero() {
   return (
-    <section className="relative pt-40 pb-24 px-6 text-center overflow-hidden">
+    <section className="relative pt-40 pb-24 px-6 overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(70% 75% at 78% 12%, rgba(122,72,255,0.11), transparent 65%), radial-gradient(55% 60% at 20% 45%, rgba(216,183,90,0.08), transparent 70%)' }}
+      />
       <motion.div
+        className="relative max-w-[1380px] mx-auto"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="text-xs tracking-[0.6em] uppercase mb-6" style={{ color: '#B3FF3F' }}>
-          Our Work
+        <p className="text-xs tracking-[0.5em] uppercase mb-6" style={{ color: '#D8B75A' }}>
+          Branding &amp; Identity
         </p>
         <h1
           className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none mb-6"
           style={{ letterSpacing: '-0.04em' }}
         >
-          Brand
+          Brand Worlds Built{' '}
           <span
             className="block"
             style={{
@@ -369,17 +409,17 @@ function PortfolioHero() {
               backgroundClip: 'text',
             }}
           >
-            Worlds.
+            to Be Remembered.
           </span>
         </h1>
-        <p className="max-w-2xl mx-auto text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>
+        <p className="max-w-2xl text-base leading-relaxed" style={{ color: '#AAA39A' }}>
           Cinematic 3D · AI Video · Full Brand Identity — We don't create content, we build visual power.
         </p>
 
         {/* Stats row */}
-        <div className="flex items-center justify-center gap-12 mt-16 flex-wrap">
-          {[['8+','Brand Worlds'],['100+','Assets Delivered'],['3D + AI','Production Stack']].map(([val, lbl]) => (
-            <div key={lbl} className="text-center">
+        <div className="flex items-center gap-12 mt-16 flex-wrap">
+          {[[`${PORTFOLIO_BRANDS.length}`,'Brand Worlds'],['Identity + Digital','Connected Systems'],['3D + AI','Production Stack']].map(([val, lbl]) => (
+            <div key={lbl}>
               <p className="text-3xl font-black text-white" style={{ letterSpacing: '-0.03em' }}>{val}</p>
               <p className="text-xs tracking-widest uppercase mt-1" style={{ color: 'rgba(255,255,255,0.3)' }}>{lbl}</p>
             </div>
@@ -387,10 +427,38 @@ function PortfolioHero() {
         </div>
       </motion.div>
 
+      <motion.nav
+        initial={{ opacity: 0, y: 22 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.25 }}
+        aria-label="Jump to a brand"
+        className="relative max-w-[1380px] mx-auto mt-12 flex flex-wrap gap-2"
+      >
+        {PORTFOLIO_BRANDS.map((brand) => (
+          <a
+            key={brand.id}
+            href={`#brand-${brand.id}`}
+            className="inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2 transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D8B75A]"
+            style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.025)', color: '#CFC9C0', fontFamily: FONTS.ui, fontSize: 11, fontWeight: 650, letterSpacing: '0.12em', textTransform: 'uppercase' }}
+          >
+            <span aria-hidden="true" style={{ width: 6, height: 6, borderRadius: 99, background: brand.accent }} />
+            {brand.name}
+          </a>
+        ))}
+      </motion.nav>
+
+      <a
+        href={`#brand-${PORTFOLIO_BRANDS[0]?.id}`}
+        className="relative max-w-[1380px] mx-auto mt-10 min-h-11 flex items-center gap-2 text-xs uppercase tracking-[0.2em]"
+        style={{ color: '#AAA39A', fontFamily: FONTS.ui }}
+      >
+        Explore the brand worlds <ArrowDown size={15} aria-hidden="true" />
+      </a>
+
       {/* Decorative gradient line */}
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-24"
-        style={{ background: 'linear-gradient(to bottom, transparent, rgba(179,255,63,0.3))' }}
+        style={{ background: 'linear-gradient(to bottom, transparent, rgba(216,183,90,0.34))' }}
       />
     </section>
   );
@@ -399,35 +467,13 @@ function PortfolioHero() {
 /* ─── Main Export ────────────────────────────────────────────── */
 export default function BrandingPortfolio() {
   return (
-    <div style={{ background: '#080C09' }}>
-      <PortfolioHero />
-      {BRANDS.map((brand, i) => (
-        <BrandSection key={brand.id} brand={brand} index={i} />
-      ))}
-      {/* Footer CTA */}
-      <section className="py-32 px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="text-xs tracking-[0.5em] uppercase mb-4" style={{ color: '#B3FF3F' }}>Start a Project</p>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6" style={{ letterSpacing: '-0.03em' }}>
-            Ready to Build<br />Your Brand World?
-          </h2>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase transition-all duration-300"
-            style={{
-              background: 'linear-gradient(135deg, #C8922A, #FFD700)',
-              color: '#000',
-            }}
-          >
-            Let's Talk <ArrowUpRight size={16} />
-          </a>
-        </motion.div>
-      </section>
-    </div>
+    <MotionConfig reducedMotion="user">
+      <div style={{ background: '#0D0F0E', color: '#F6F3ED' }}>
+        <PortfolioHero />
+        {PORTFOLIO_BRANDS.map((brand, i) => (
+          <BrandSection key={brand.id} brand={brand} index={i} />
+        ))}
+      </div>
+    </MotionConfig>
   );
 }

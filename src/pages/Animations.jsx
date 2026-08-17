@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import Seo from '@/components/ayesmaj/Seo';
 import { motion } from 'framer-motion';
 import { Volume2, VolumeX, Maximize2 } from 'lucide-react';
 import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
@@ -155,6 +156,11 @@ export default function Animations() {
 
   return (
     <div className="min-h-screen text-white overflow-x-hidden" style={{ background: '#030303' }}>
+      <Seo
+        title="Animations — AYESMAJ Studios"
+        description="3D animations and motion work by AYESMAJ Studios — cinematic loops, product animations, and brand films."
+        path="/Animations"
+      />
       <AyesmajNav />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}

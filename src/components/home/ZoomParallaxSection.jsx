@@ -10,7 +10,7 @@ const PARALLAX_IMAGES = [
   { src: '/brands/boom-chica/1.png',  alt: 'BOOM CHICKA POP' },
   { src: '/brands/pita-basta/2.png',  alt: 'PITA BASTA' },
   { src: '/brands/lacroix/1.jpg',     alt: 'LaCROIX' },
-  { src: '/brands/characters/1.jpeg', alt: 'Character Design' },
+  { src: '/characters/1.jpeg', alt: 'Character Design' },
 ];
 
 export default function ZoomParallaxSection() {

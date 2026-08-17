@@ -12,7 +12,7 @@ import { FONTS } from "./theme";
  *   accent    : hex color (default GOLD)
  *   accentRGB : "r,g,b" for translucent fills
  *   poster    : poster image src
- *   videoSrc  : optional muted-loop video, plays on hover
+ *   videoSrc  : optional muted-loop video, plays on hover or tap
  */
 export default function VideoCard({
   title = "SHOWREEL",
@@ -24,18 +24,40 @@ export default function VideoCard({
 }) {
   const videoRef = useRef(null);
   const [hover, setHover] = useState(false);
+  const [playing, setPlaying] = useState(false);
+
+  const playVideo = () => {
+    const v = videoRef.current;
+    if (v) v.play().catch(() => {});
+  };
+
+  const pauseVideo = (reset = false) => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.pause();
+    if (reset) v.currentTime = 0;
+  };
 
   const enter = () => {
     setHover(true);
-    const v = videoRef.current;
-    if (v) v.play().catch(() => {}); // ponytail: ignore autoplay-rejection; poster stays. No upgrade needed.
+    playVideo();
   };
   const leave = () => {
     setHover(false);
-    const v = videoRef.current;
-    if (v) {
-      v.pause();
-      v.currentTime = 0;
+    if (!playing) pauseVideo(true);
+  };
+
+  const togglePlayback = () => {
+    const next = !playing;
+    setPlaying(next);
+    if (next) playVideo();
+    else pauseVideo();
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      togglePlayback();
     }
   };
 
@@ -43,6 +65,11 @@ export default function VideoCard({
     <motion.div
       onMouseEnter={enter}
       onMouseLeave={leave}
+      onClick={videoSrc ? togglePlayback : undefined}
+      onKeyDown={videoSrc ? handleKeyDown : undefined}
+      role={videoSrc ? "button" : undefined}
+      tabIndex={videoSrc ? 0 : undefined}
+      aria-label={videoSrc ? `${playing ? "Pause" : "Play"} ${title} ${category}` : undefined}
       animate={{ y: hover ? -6 : 0 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       style={{
@@ -87,7 +114,7 @@ export default function VideoCard({
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            opacity: hover ? 1 : 0,
+            opacity: hover || playing ? 1 : 0,
             transition: "opacity 0.5s ease",
           }}
         />

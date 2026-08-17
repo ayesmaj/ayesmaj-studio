@@ -85,7 +85,7 @@ function WorkMenu() {
                   className="flex items-center gap-1.5 py-[5px] text-xs font-medium transition-colors"
                   style={{
                     color: 'rgba(248,250,252,0.4)',
-                    fontFamily: "'Satoshi', system-ui, sans-serif",
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
                     letterSpacing: '0.02em',
                     display: 'flex',
                     alignItems: 'center',
@@ -165,7 +165,7 @@ export default function HomeNav() {
   ];
 
   const linkStyle = (active) => ({
-    fontFamily: "'Satoshi', system-ui, sans-serif",
+    fontFamily: "'DM Sans', system-ui, sans-serif",
     fontSize: '10px', letterSpacing: '0.14em',
     textTransform: 'uppercase', fontWeight: 600,
     color: active ? GOLD : 'rgba(248,250,252,0.42)',
@@ -243,7 +243,7 @@ export default function HomeNav() {
           <Link to={createPageUrl('Contact')}
             className="hidden lg:flex items-center gap-2 transition-all duration-300"
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: '11px', letterSpacing: '0.18em',
               textTransform: 'uppercase', fontWeight: 700,
               padding: '10px 22px', borderRadius: '100px', minHeight: '44px',
@@ -302,7 +302,7 @@ export default function HomeNav() {
                   className="w-full flex items-center justify-between py-4"
                 >
                   <span className="text-2xl font-black text-white"
-                    style={{ fontFamily: "'Satoshi', system-ui, sans-serif" }}>
+                    style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}>
                     Work
                   </span>
                   <motion.span
@@ -353,7 +353,7 @@ export default function HomeNav() {
                             <Link key={brand.id} to={`/BrandDetail?slug=${brand.id}`}
                               className="flex items-center gap-2 text-xs py-1.5 transition-colors"
                               style={{ color: 'rgba(248,250,252,0.38)',
-                                fontFamily: "'Satoshi', system-ui, sans-serif" }}
+                                fontFamily: "'DM Sans', system-ui, sans-serif" }}
                             >
                               <span style={{ color: brand.accent }}>{BRAND_ICONS[brand.id]}</span>
                               {brand.name}
@@ -383,7 +383,7 @@ export default function HomeNav() {
                     transition={{ delay: i * 0.06 }}
                     className="py-4 text-2xl font-black border-b transition-colors"
                     style={{
-                      fontFamily: "'Satoshi', system-ui, sans-serif",
+                      fontFamily: "'DM Sans', system-ui, sans-serif",
                       borderColor: 'rgba(255,255,255,0.04)',
                       color: isActive(l.page) ? GOLD : 'white',
                     }}
@@ -397,7 +397,7 @@ export default function HomeNav() {
             <Link to={createPageUrl('Contact')}
               className="py-4 rounded-2xl font-black text-lg tracking-widest uppercase text-white text-center mt-auto"
               style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 background: 'linear-gradient(135deg,#C8A44E,#9A7B3A)',
                 minHeight: '56px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',

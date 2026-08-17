@@ -1,521 +1,260 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import { Film, ImageIcon, Share2, Clapperboard, PackageOpen, Rocket } from "lucide-react";
-import { COLORS, FONTS } from "@/components/ayesmaj/theme";
-import AyesmajBackground from "@/components/ayesmaj/AyesmajBackground";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Film,
+  ImageIcon,
+  Layers,
+  Play,
+  Rocket,
+  Share2,
+  Sparkles,
+} from "lucide-react";
+import Seo from "@/components/ayesmaj/Seo";
 import AyesmajNav from "@/components/ayesmaj/AyesmajNav";
 import AyesmajFooter from "@/components/ayesmaj/AyesmajFooter";
-import SectionHeader from "@/components/ayesmaj/SectionHeader";
-import CinematicButton from "@/components/ayesmaj/CinematicButton";
+import "./AiMarketing.css";
 
-const ACCENT = "#FFB000";
-const ACCENT_SOFT = "#FFD36A";
-const ACCENT_RGB = "255,176,0";
+const GENERATED = "/assets/ayesmaj/service-worlds";
 
-const fade = (d = 0) => ({
-  initial: { opacity: 0, y: 30 },
+const reveal = (delay = 0) => ({
+  initial: { opacity: 0, y: 26 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.8, delay: d, ease: [0.22, 1, 0.36, 1] },
+  viewport: { once: true, margin: "-70px" },
+  transition: { duration: 0.65, delay, ease: [0.16, 1, 0.3, 1] },
 });
 
-const SECTION = {
-  maxWidth: 1400,
-  margin: "0 auto",
-  padding: "clamp(64px,8vw,120px) clamp(20px,5vw,48px)",
-};
+const services = [
+  {
+    icon: Film,
+    number: "01",
+    title: "AI Films & Commercials",
+    body: "Campaign films with a real director's eye—concept, performance, edit, sound, and every cutdown your launch needs.",
+    image: `${GENERATED}/ai-fashion-campaign.webp`,
+  },
+  {
+    icon: ImageIcon,
+    number: "02",
+    title: "Image Campaign Systems",
+    body: "One strong visual language expanded across key art, product visuals, paid media, launch assets, and social.",
+    image: `${GENERATED}/ai-product-launch.webp`,
+  },
+  {
+    icon: Share2,
+    number: "03",
+    title: "Always-On Social",
+    body: "A repeatable content engine that keeps every format recognizable, premium, and ready for the next channel.",
+    image: "/brands/blenday/4.png",
+  },
+];
 
-const LABEL = {
-  fontFamily: FONTS.ui,
-  textTransform: "uppercase",
-  letterSpacing: "0.28em",
-  fontSize: 12,
-  fontWeight: 600,
-  color: ACCENT,
-};
+const reels = [
+  {
+    title: "Blenday — Launch World",
+    type: "Brand film",
+    video: "/brands/blenday/6.webm",
+    href: "/BrandDetail?slug=blenday",
+    className: "ai-reel-card ai-reel-card--wide",
+  },
+  {
+    title: "Noam — Product Motion",
+    type: "CGI commercial",
+    video: "/brands/noam/17.webm",
+    href: "/BrandDetail?slug=noam",
+    className: "ai-reel-card ai-reel-card--tall",
+  },
+  {
+    title: "Honey — Liquid Energy",
+    type: "Product spot",
+    video: "/brands/honey/2.webm",
+    href: "/BrandDetail?slug=honey",
+    className: "ai-reel-card",
+  },
+];
 
-const cardBase = {
-  background: COLORS.glass,
-  border: "1px solid rgba(255,255,255,0.09)",
-  backdropFilter: "blur(18px)",
-  WebkitBackdropFilter: "blur(18px)",
-  borderRadius: 24,
-  padding: 32,
-  transition: "transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease",
-};
+const stages = [
+  ["01", "Find the signal", "A sharp campaign idea, audience truth, and visual position."],
+  ["02", "Build the world", "A controlled palette, lighting language, characters, and product rules."],
+  ["03", "Make it move", "Hero film, cutdowns, social motion, sound, and finishing."],
+  ["04", "Scale the system", "Every channel gets the right format without losing the original idea."],
+];
 
-const hideBroken = (e) => {
-  e.currentTarget.style.display = "none";
-};
-
-function GlassCard({ children }) {
+function VideoTile({ item, delay = 0 }) {
   return (
-    <div
-      style={cardBase}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "translateY(-6px)";
-        e.currentTarget.style.borderColor = "rgba(216,183,90,0.35)";
-        e.currentTarget.style.boxShadow = "0 0 45px rgba(216,183,90,0.10)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)";
-        e.currentTarget.style.boxShadow = "none";
-      }}
-    >
-      {children}
-    </div>
+    <motion.article {...reveal(delay)} className={item.className}>
+      <video
+        src={item.video}
+        muted
+        loop
+        autoPlay
+        playsInline
+        preload="metadata"
+        aria-label={`${item.title} video preview`}
+      />
+      <span className="ai-reel-scrim" aria-hidden="true" />
+      <div className="ai-reel-copy">
+        <span>{item.type}</span>
+        <h3>{item.title}</h3>
+      </div>
+      <Link to={item.href} className="ai-reel-link" aria-label={`View ${item.title} case study`}>
+        <ArrowUpRight aria-hidden="true" />
+      </Link>
+    </motion.article>
   );
 }
-
-function IconCard({ Icon, title, body, delay }) {
-  return (
-    <motion.div {...fade(delay)}>
-      <GlassCard>
-        <div
-          style={{
-            width: 56,
-            height: 56,
-            borderRadius: 16,
-            display: "grid",
-            placeItems: "center",
-            background: `rgba(${ACCENT_RGB},0.12)`,
-            border: `1px solid rgba(${ACCENT_RGB},0.30)`,
-            marginBottom: 22,
-          }}
-        >
-          <Icon size={26} color={ACCENT} strokeWidth={1.6} />
-        </div>
-        <h3
-          style={{
-            fontFamily: FONTS.display,
-            textTransform: "uppercase",
-            fontSize: "clamp(20px,2vw,26px)",
-            fontWeight: 800,
-            letterSpacing: "0.01em",
-            lineHeight: 0.98,
-            color: COLORS.white,
-            margin: "0 0 14px",
-          }}
-        >
-          {title}
-        </h3>
-        <p
-          style={{
-            fontFamily: FONTS.ui,
-            fontSize: 15,
-            lineHeight: 1.7,
-            color: COLORS.gray,
-            margin: 0,
-          }}
-        >
-          {body}
-        </p>
-      </GlassCard>
-    </motion.div>
-  );
-}
-
-const GRID = {
-  display: "grid",
-  gap: 24,
-  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%,300px),1fr))",
-};
-
-const SERVICES = [
-  { Icon: Film, title: "AI Video Campaigns", body: "Cinematic brand films, product reveals, and scroll-stopping social ads — generated, directed, and edited with the latest AI video models. Premium output in days, not months." },
-  { Icon: ImageIcon, title: "AI Image Systems", body: "Campaign visuals, product renders, and consistent brand worlds at infinite scale. One visual language, endless on-brand variations, zero photoshoot logistics." },
-  { Icon: Share2, title: "Brand Social Content", body: "Platform-native cuts for Instagram, TikTok, YouTube, and LinkedIn — formatted, captioned, and optimized so your message lands the moment it's seen." },
-];
-
-const CONCEPTS = [
-  { Icon: Clapperboard, title: "Concept Films", body: "Bold visual concepts that define how a brand feels before a single product is shown — mood, motion, and message engineered to be remembered." },
-  { Icon: PackageOpen, title: "Product Spots", body: "Tight, high-impact product features built for paid placement — every frame designed to drive clicks, demos, and sales." },
-  { Icon: Rocket, title: "Launch Campaigns", body: "End-to-end launch content systems: teasers, hero films, cutdowns, and social — a coordinated rollout that makes a launch feel like an event." },
-];
-
-const STEPS = [
-  { n: "01", title: "Brief", body: "We align on goals, audience, and the visual feel before anything is generated." },
-  { n: "02", title: "Generate", body: "We produce a wide field of AI-driven concepts, frames, and motion at speed." },
-  { n: "03", title: "Curate", body: "We direct and refine — selecting, editing, and grading only the strongest." },
-  { n: "04", title: "Deliver", body: "Final assets shipped in every format your channels need, ready to publish." },
-];
-
-const WORK = [
-  { img: "/assets/ayesmaj/web-experiences/project-nexora.jpg", cat: "AI Video Campaign", title: "Nexora Launch Film" },
-  { img: "/assets/ayesmaj/web-experiences/web-hero-laptop-dashboard.jpg", cat: "AI Image System", title: "SaaS Brand Visuals" },
-  { img: "/assets/ayesmaj/web-experiences/web-hero-desktop-showcase.jpg", cat: "Social Content Engine", title: "Always-On Social" },
-];
 
 export default function AiMarketing() {
-  const navigate = useNavigate();
-
   useEffect(() => {
-    document.title = "AI Marketing | AYESMAJ Studios";
-    window.scrollTo(0, 0);
+    document.title = "AI Marketing & Content | AYESMAJ Studios";
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
-  const scrollToWork = () => {
-    document.getElementById("ai-work")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <div style={{ background: "#020302", minHeight: "100vh", overflowX: "clip", position: "relative" }}>
-      <AyesmajBackground accent={ACCENT_RGB} />
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <AyesmajNav />
+    <div className="ai-page">
+      <Seo
+        title="AI Marketing & Content | AYESMAJ Studios"
+        description="AI-directed campaign films, product imagery, and scalable content systems built by AYESMAJ Studios."
+        path="/AiMarketing"
+      />
+      <div className="service-nav-backdrop" aria-hidden="true" />
+      <AyesmajNav />
 
-        <main>
-          {/* 1. HERO */}
-          <section style={{ ...SECTION, paddingTop: "clamp(120px,16vw,180px)" }}>
-            <div
-              style={{
-                display: "grid",
-                gap: "clamp(32px,5vw,64px)",
-                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%,360px),1fr))",
-                alignItems: "center",
-              }}
-            >
-              <motion.div {...fade(0)}>
-                <p style={{ ...LABEL, marginBottom: 22 }}>AI Marketing Content</p>
-                <h1
-                  style={{
-                    fontFamily: FONTS.display,
-                    textTransform: "uppercase",
-                    fontSize: "clamp(44px,6.4vw,92px)",
-                    fontWeight: 800,
-                    lineHeight: 0.95,
-                    letterSpacing: "0.01em",
-                    color: COLORS.white,
-                    margin: "0 0 26px",
-                  }}
-                >
-                  Cinematic Content
-                  <br />
-                  Built at{" "}
-                  <span
-                    style={{
-                      background: `linear-gradient(90deg, ${ACCENT}, ${ACCENT_SOFT})`,
-                      WebkitBackgroundClip: "text",
-                      backgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      color: ACCENT,
-                    }}
-                  >
-                    AI Speed
-                  </span>
-                </h1>
-                <p
-                  style={{
-                    fontFamily: FONTS.ui,
-                    fontSize: "clamp(16px,1.4vw,19px)",
-                    lineHeight: 1.7,
-                    color: COLORS.gray,
-                    maxWidth: 540,
-                    margin: "0 0 34px",
-                  }}
-                >
-                  We create AI-powered videos, images, campaigns, and brand visuals that help
-                  companies look premium, move fast, and stay visible.
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
-                  <CinematicButton label="Start a Project" accent={ACCENT} variant="solid" size="lg" onClick={() => navigate("/Contact")} />
-                  <CinematicButton label="See AI Work" accent={ACCENT} size="lg" onClick={scrollToWork} />
-                </div>
-              </motion.div>
-
-              {/* glass collage */}
-              <motion.div
-                {...fade(0.15)}
-                style={{ position: "relative", minHeight: 420 }}
-              >
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position: "absolute",
-                    inset: "-8%",
-                    background: `radial-gradient(60% 60% at 60% 40%, rgba(${ACCENT_RGB},0.22), transparent 70%)`,
-                    filter: "blur(8px)",
-                  }}
-                />
-                <div
-                  style={{
-                    position: "relative",
-                    borderRadius: 24,
-                    overflow: "hidden",
-                    border: "1px solid rgba(255,255,255,0.09)",
-                    boxShadow: `0 0 60px rgba(${ACCENT_RGB},0.18)`,
-                    transform: "rotate(-2deg)",
-                  }}
-                >
-                  <img
-                    src="/assets/ayesmaj/web-experiences/web-hero-laptop-dashboard.jpg"
-                    alt="AI-generated brand dashboard visual"
-                    onError={hideBroken}
-                    style={{ display: "block", width: "100%", height: "auto" }}
-                  />
-                </div>
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "-6%",
-                    right: "-4%",
-                    width: "52%",
-                    borderRadius: 20,
-                    overflow: "hidden",
-                    border: `1px solid rgba(${ACCENT_RGB},0.35)`,
-                    boxShadow: `0 0 45px rgba(${ACCENT_RGB},0.25)`,
-                    transform: "rotate(4deg)",
-                    background: "#070707",
-                  }}
-                >
-                  <img
-                    src="/assets/ayesmaj/web-experiences/project-nexora.jpg"
-                    alt="AI-generated campaign film still"
-                    onError={hideBroken}
-                    style={{ display: "block", width: "100%", height: "auto" }}
-                  />
-                </div>
-              </motion.div>
+      <main>
+        <section className="ai-hero">
+          <div className="ai-hero-orb ai-hero-orb--one" aria-hidden="true" />
+          <div className="ai-hero-orb ai-hero-orb--two" aria-hidden="true" />
+          <motion.div {...reveal()} className="ai-hero-copy">
+            <p className="ai-kicker"><Sparkles size={15} aria-hidden="true" /> AI campaign studio</p>
+            <h1>Campaigns that look <em>shot.</em><br />Not generated.</h1>
+            <p className="ai-hero-lede">
+              We combine creative direction, AI production, motion, and finishing to build
+              complete campaign worlds—not random content.
+            </p>
+            <div className="ai-actions">
+              <Link to="/Contact" className="ai-button ai-button--primary">
+                Start a campaign <ArrowRight aria-hidden="true" />
+              </Link>
+              <a href="#ai-work" className="ai-button ai-button--ghost">
+                Watch the work <Play aria-hidden="true" />
+              </a>
             </div>
-          </section>
-
-          {/* 2. SERVICE CARDS */}
-          <section style={SECTION}>
-            <motion.div {...fade(0)} style={{ marginBottom: 56 }}>
-              <SectionHeader
-                eyebrow="What We Build"
-                title="AI Content Services"
-                subtitle="Three core engines that keep your brand looking premium and producing constantly."
-                accent={ACCENT}
-              />
-            </motion.div>
-            <div style={GRID}>
-              {SERVICES.map((s, i) => (
-                <IconCard key={s.title} {...s} delay={i * 0.1} />
-              ))}
+            <div className="ai-proofline" aria-label="AI production capabilities">
+              <span><b>01</b> Direction</span>
+              <span><b>02</b> Generation</span>
+              <span><b>03</b> Film & finish</span>
             </div>
-          </section>
+          </motion.div>
 
-          {/* 3. COMMERCIAL CONCEPTS */}
-          <section style={SECTION}>
-            <motion.div {...fade(0)} style={{ marginBottom: 56 }}>
-              <SectionHeader
-                eyebrow="Commercial Concepts"
-                title="Ideas Built to Sell"
-                subtitle="From first concept to full launch — cinematic commercial work engineered around results."
-                accent={ACCENT}
-              />
-            </motion.div>
-            <div style={GRID}>
-              {CONCEPTS.map((c, i) => (
-                <IconCard key={c.title} {...c} delay={i * 0.1} />
-              ))}
-            </div>
-          </section>
-
-          {/* 4. CONTENT ENGINE PROCESS */}
-          <section style={SECTION}>
-            <motion.div {...fade(0)} style={{ marginBottom: 64 }}>
-              <SectionHeader
-                eyebrow="How It Works"
-                title="The Content Engine"
-                subtitle="A repeatable four-step pipeline that turns a brief into finished, on-brand content."
-                accent={ACCENT}
-              />
-            </motion.div>
-
-            <div style={{ position: "relative" }}>
-              {/* connecting line */}
-              <div
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  top: 28,
-                  left: 28,
-                  right: 28,
-                  height: 1,
-                  background: `linear-gradient(90deg, transparent, rgba(${ACCENT_RGB},0.5), transparent)`,
-                }}
-                className="ai-process-line"
-              />
-              <div
-                style={{
-                  display: "grid",
-                  gap: 32,
-                  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%,220px),1fr))",
-                }}
-              >
-                {STEPS.map((step, i) => (
-                  <motion.div key={step.n} {...fade(i * 0.1)} style={{ textAlign: "center" }}>
-                    <div
-                      style={{
-                        width: 56,
-                        height: 56,
-                        borderRadius: "50%",
-                        margin: "0 auto 22px",
-                        display: "grid",
-                        placeItems: "center",
-                        background: "#071207",
-                        border: `1px solid rgba(${ACCENT_RGB},0.45)`,
-                        boxShadow: `0 0 28px rgba(${ACCENT_RGB},0.20)`,
-                        fontFamily: FONTS.display,
-                        fontSize: 20,
-                        fontWeight: 800,
-                        color: ACCENT,
-                      }}
-                    >
-                      {step.n}
-                    </div>
-                    <h3
-                      style={{
-                        fontFamily: FONTS.display,
-                        textTransform: "uppercase",
-                        fontSize: 22,
-                        fontWeight: 800,
-                        letterSpacing: "0.01em",
-                        color: COLORS.white,
-                        margin: "0 0 12px",
-                      }}
-                    >
-                      {step.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontFamily: FONTS.ui,
-                        fontSize: 14,
-                        lineHeight: 1.65,
-                        color: COLORS.gray,
-                        margin: "0 auto",
-                        maxWidth: 240,
-                      }}
-                    >
-                      {step.body}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* 5. SELECTED AI WORK */}
-          <section id="ai-work" style={SECTION}>
-            <motion.div {...fade(0)} style={{ marginBottom: 56 }}>
-              <SectionHeader
-                eyebrow="Selected Work"
-                title="AI Content in Action"
-                subtitle="A snapshot of recent campaigns, visuals, and content systems we've produced."
-                accent={ACCENT}
-              />
-            </motion.div>
-            <div style={GRID}>
-              {WORK.map((w, i) => (
-                <motion.div key={w.title} {...fade(i * 0.1)}>
-                  <GlassCard>
-                    <div
-                      style={{
-                        borderRadius: 16,
-                        overflow: "hidden",
-                        marginBottom: 20,
-                        border: "1px solid rgba(255,255,255,0.08)",
-                        aspectRatio: "16 / 10",
-                        background: "#070707",
-                      }}
-                    >
-                      <img
-                        src={w.img}
-                        alt={w.title}
-                        onError={hideBroken}
-                        style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
-                      />
-                    </div>
-                    <p style={{ ...LABEL, fontSize: 11, marginBottom: 10 }}>{w.cat}</p>
-                    <h3
-                      style={{
-                        fontFamily: FONTS.display,
-                        textTransform: "uppercase",
-                        fontSize: 22,
-                        fontWeight: 800,
-                        letterSpacing: "0.01em",
-                        color: COLORS.white,
-                        margin: 0,
-                      }}
-                    >
-                      {w.title}
-                    </h3>
-                  </GlassCard>
-                </motion.div>
-              ))}
-            </div>
-          </section>
-
-          {/* 6. FINAL CTA */}
-          <section style={{ ...SECTION, textAlign: "center", position: "relative" }}>
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: `radial-gradient(50% 70% at 50% 50%, rgba(${ACCENT_RGB},0.16), transparent 70%)`,
-                pointerEvents: "none",
-              }}
+          <motion.div {...reveal(0.12)} className="ai-hero-art">
+            <img
+              src={`${GENERATED}/ai-hero-campaign.webp`}
+              alt="A luminous campaign world connecting beauty, product, travel, and fragrance visuals"
             />
-            <motion.div {...fade(0)} style={{ position: "relative" }}>
-              <h2
-                style={{
-                  fontFamily: FONTS.display,
-                  textTransform: "uppercase",
-                  fontSize: "clamp(40px,6vw,86px)",
-                  fontWeight: 800,
-                  lineHeight: 0.95,
-                  letterSpacing: "0.01em",
-                  color: COLORS.white,
-                  margin: "0 auto 30px",
-                  maxWidth: 900,
-                }}
-              >
-                Let's Build Your{" "}
-                <span
-                  style={{
-                    background: `linear-gradient(90deg, ${ACCENT}, ${ACCENT_SOFT})`,
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    color: ACCENT,
-                  }}
-                >
-                  Content Engine
-                </span>
-              </h2>
-              <p
-                style={{
-                  fontFamily: FONTS.ui,
-                  fontSize: "clamp(16px,1.4vw,19px)",
-                  lineHeight: 1.7,
-                  color: COLORS.gray,
-                  maxWidth: 560,
-                  margin: "0 auto 36px",
-                }}
-              >
-                Premium AI content, produced at scale. Tell us what you're launching and we'll
-                build the visuals that move it.
-              </p>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <CinematicButton label="Start a Project" accent={ACCENT} variant="solid" size="lg" onClick={() => navigate("/Contact")} />
-              </div>
+            <div className="ai-hero-art-label">
+              <span>One visual system</span>
+              <strong>Film · Image · Social · Launch</strong>
+            </div>
+            <div className="ai-hero-frame ai-hero-frame--a" aria-hidden="true" />
+            <div className="ai-hero-frame ai-hero-frame--b" aria-hidden="true" />
+          </motion.div>
+        </section>
+
+        <section className="ai-statement" aria-label="Studio positioning">
+          <span>Ideas with a pulse</span>
+          <p>AI is the production engine. Taste is the difference.</p>
+          <span>Built to scale</span>
+        </section>
+
+        <section className="ai-section ai-services">
+          <motion.div {...reveal()} className="ai-section-heading">
+            <p className="ai-kicker">What we make</p>
+            <h2>One idea.<br /><em>Every format.</em></h2>
+            <p>Every deliverable belongs to the same campaign world, from the first hero frame to the final social cut.</p>
+          </motion.div>
+          <div className="ai-service-grid">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.article {...reveal(index * 0.08)} className="ai-service-card" key={service.title}>
+                  <div className="ai-service-image">
+                    <img src={service.image} alt="" loading="lazy" />
+                    <span>{service.number}</span>
+                  </div>
+                  <div className="ai-service-body">
+                    <Icon aria-hidden="true" />
+                    <h3>{service.title}</h3>
+                    <p>{service.body}</p>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+        </section>
+
+        <section id="ai-work" className="ai-work-section">
+          <div className="ai-work-intro">
+            <motion.div {...reveal()}>
+              <p className="ai-kicker ai-kicker--light">Selected motion</p>
+              <h2>Real work.<br /><em>Real movement.</em></h2>
             </motion.div>
-          </section>
-        </main>
+            <motion.p {...reveal(0.1)}>
+              Brand films, CGI product stories, and campaign assets produced from concept through final frame.
+            </motion.p>
+          </div>
+          <div className="ai-reel-grid">
+            {reels.map((item, index) => <VideoTile key={item.title} item={item} delay={index * 0.08} />)}
+            <motion.article {...reveal(0.22)} className="ai-reel-card ai-reel-card--image">
+              <img src={`${GENERATED}/ai-fashion-campaign.webp`} alt="Golden editorial fashion campaign" loading="lazy" />
+              <span className="ai-reel-scrim" aria-hidden="true" />
+              <div className="ai-reel-copy"><span>Campaign key art</span><h3>L'Or — The Eternal</h3></div>
+            </motion.article>
+            <motion.article {...reveal(0.28)} className="ai-reel-card ai-reel-card--image ai-reel-card--wide">
+              <img src={`${GENERATED}/ai-product-launch.webp`} alt="Blue fragrance bottle surrounded by crystal water" loading="lazy" />
+              <span className="ai-reel-scrim" aria-hidden="true" />
+              <div className="ai-reel-copy"><span>Product launch</span><h3>Blue Current</h3></div>
+            </motion.article>
+          </div>
+        </section>
 
-        <AyesmajFooter />
-      </div>
+        <section className="ai-section ai-process">
+          <motion.div {...reveal()} className="ai-section-heading ai-section-heading--wide">
+            <p className="ai-kicker">The content engine</p>
+            <h2>From one signal<br />to a <em>whole world.</em></h2>
+          </motion.div>
+          <div className="ai-stage-grid">
+            {stages.map(([number, title, body], index) => (
+              <motion.article {...reveal(index * 0.07)} key={number}>
+                <span>{number}</span>
+                <div className="ai-stage-icon" aria-hidden="true">
+                  {index === 0 && <Sparkles />}
+                  {index === 1 && <Layers />}
+                  {index === 2 && <Film />}
+                  {index === 3 && <Rocket />}
+                </div>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </motion.article>
+            ))}
+          </div>
+        </section>
 
-      <style>{`
-        @media (max-width: 760px) {
-          .ai-process-line { display: none; }
-        }
-      `}</style>
+        <section className="ai-final">
+          <div className="ai-final-art" aria-hidden="true">
+            <img src={`${GENERATED}/ai-hero-campaign.webp`} alt="" loading="lazy" />
+          </div>
+          <motion.div {...reveal()} className="ai-final-copy">
+            <p className="ai-kicker ai-kicker--light">Your next launch</p>
+            <h2>Make the campaign feel bigger than the budget.</h2>
+            <Link to="/Contact" className="ai-button ai-button--light">
+              Build the visual world <ArrowRight aria-hidden="true" />
+            </Link>
+          </motion.div>
+        </section>
+      </main>
+
+      <AyesmajFooter />
     </div>
   );
 }

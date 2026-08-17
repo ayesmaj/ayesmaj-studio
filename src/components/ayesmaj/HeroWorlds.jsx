@@ -53,10 +53,10 @@ export default function HeroWorlds() {
   const finishTransition = () => { if (transition) navigate(transition.route); };
 
   return (
-    <section style={{ position: "relative", minHeight: "100vh", background: "#020302", overflow: "hidden" }}>
+    <section style={{ position: "relative", minHeight: "100vh", background: "#07100C", overflow: "hidden" }}>
       {/* ── Top + bottom scrims for legibility over panels ── */}
       {!isMobile && (
-        <div style={{ position: "absolute", inset: 0, zIndex: 18, background: "linear-gradient(to bottom, rgba(3,3,3,0.78) 0%, rgba(3,3,3,0.35) 22%, transparent 42%, rgba(3,3,3,0.18) 64%, rgba(3,3,3,0.95) 100%)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", inset: 0, zIndex: 18, background: "linear-gradient(to bottom, rgba(7,16,12,0.68) 0%, rgba(7,16,12,0.24) 22%, transparent 42%, rgba(7,16,12,0.10) 64%, rgba(7,16,12,0.88) 100%)", pointerEvents: "none" }} />
       )}
 
       {/* ── Headline overlay ── */}
@@ -222,7 +222,7 @@ export default function HeroWorlds() {
             position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 20,
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "18px clamp(24px,4vw,64px)",
-            background: "rgba(3,3,3,0.55)", backdropFilter: "blur(12px)",
+            background: "rgba(10,20,15,0.58)", backdropFilter: "blur(12px)",
             borderTop: `1px solid ${COLORS.border}`,
           }}
         >
@@ -235,13 +235,13 @@ export default function HeroWorlds() {
           </div>
 
           <div style={{ textAlign: "center" }}>
-            <div style={{ fontFamily: FONTS.ui, fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(245,245,240,0.8)" }}>Award-Winning Digital Studio</div>
-            <div style={{ fontFamily: FONTS.ui, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: COLORS.muted }}>Trusted by global brands</div>
+            <div style={{ fontFamily: FONTS.ui, fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(245,245,240,0.8)" }}>Multi-Discipline Creative Studio</div>
+            <div style={{ fontFamily: FONTS.ui, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: COLORS.muted }}>Branding · Websites · AI · 3D</div>
           </div>
 
           <div style={{ textAlign: "right" }}>
-            <div style={{ fontFamily: FONTS.display, fontSize: 22, fontWeight: 800, color: "#FFB000", lineHeight: 1 }}>500+</div>
-            <div style={{ fontFamily: FONTS.ui, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: COLORS.muted }}>Projects delivered worldwide</div>
+            <div style={{ fontFamily: FONTS.display, fontSize: 22, fontWeight: 800, color: "#FFB000", lineHeight: 1 }}>4K</div>
+            <div style={{ fontFamily: FONTS.ui, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: COLORS.muted }}>From concept to launch</div>
           </div>
         </motion.div>
       )}

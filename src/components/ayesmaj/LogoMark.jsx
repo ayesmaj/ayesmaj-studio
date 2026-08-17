@@ -1,17 +1,19 @@
 import React from "react";
+import { FONTS } from "./theme";
 
 /**
- * LogoMark — horizontal AYESMAJ lockup: the A monogram + "AYESMAJ" wordmark.
- * A symbol: /assets/ayesmaj/logo-a.png (transparent, gold/purple glow).
+ * LogoMark / BrandLockup — the A mark + a clean premium HTML wordmark.
+ * Wordmark is real text (SEO/crisp at any size), NOT baked into an image.
  *
  * Props:
  *   size      : height of the A symbol in px (default 38)
- *   showText  : show the "AYESMAJ" wordmark beside the A (default true)
- *   color     : wordmark color (default white)
+ *   showText  : show the wordmark (default true)
+ *   color     : wordmark color (default soft ivory)
+ *   studios   : show the small "STUDIOS" line under the wordmark (default true)
  */
-export default function LogoMark({ size = 38, showText = true, color = "#F5F5F0" }) {
+export default function LogoMark({ size = 38, showText = true, color = "#F6F3ED", studios = true }) {
   return (
-    <div style={{ display: "inline-flex", alignItems: "center", gap: size * 0.34 }}>
+    <span style={{ display: "inline-flex", alignItems: "center", gap: size * 0.32 }}>
       <img
         src="/assets/ayesmaj/logo-a.png"
         alt="AYESMAJ Studios"
@@ -20,21 +22,39 @@ export default function LogoMark({ size = 38, showText = true, color = "#F5F5F0"
         draggable={false}
       />
       {showText && (
-        <span
-          style={{
-            fontFamily: "'Space Grotesk', system-ui, sans-serif",
-            fontSize: size * 0.52,
-            fontWeight: 700,
-            letterSpacing: "0.3em",
-            color,
-            paddingLeft: "0.16em",
-            lineHeight: 1,
-            whiteSpace: "nowrap",
-          }}
-        >
-          AYESMAJ
+        <span style={{ display: "inline-flex", flexDirection: "column", lineHeight: 1 }}>
+          <span
+            style={{
+              fontFamily: FONTS.myriad,
+              fontSize: Math.max(15, Math.round(size * 0.46)),
+              fontWeight: 700,
+              letterSpacing: "0.16em",
+              color,
+              whiteSpace: "nowrap",
+            }}
+          >
+            AYESMAJ
+          </span>
+          {studios && (
+            <span
+              style={{
+                fontFamily: FONTS.myriad,
+                fontSize: Math.max(8, Math.round(size * 0.2)),
+                fontWeight: 700,
+                letterSpacing: "0.34em",
+                marginTop: 3,
+                background: "linear-gradient(90deg,#D8B75A 0%,#C88B58 30%,#A45FDB 70%,#7A48FF 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                whiteSpace: "nowrap",
+              }}
+            >
+              STUDIOS
+            </span>
+          )}
         </span>
       )}
-    </div>
+    </span>
   );
 }

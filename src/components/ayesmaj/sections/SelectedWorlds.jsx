@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import SectionHeader from "../SectionHeader";
 import { COLORS, FONTS } from "../theme";
-import { BRANDS } from "@/data/brands";
+import { BRANDS, getBrandAssetPath } from "@/data/brands";
 
 // Filter buttons → keyword matcher against each brand's tags + category
 const FILTERS = [
@@ -44,6 +44,10 @@ export default function SelectedWorlds() {
         >
           {FILTERS.map((f) => {
             const active = filter === f.key;
+            const count = BRANDS.filter((b) => {
+              const hay = `${b.category} ${(b.tags || []).join(" ")}`;
+              return f.match(hay);
+            }).length;
             return (
               <button
                 key={f.key}
@@ -63,7 +67,7 @@ export default function SelectedWorlds() {
                   transition: "all 0.3s ease",
                 }}
               >
-                {f.label}
+                {f.label} <span style={{ opacity: active ? 0.65 : 0.5 }}>({count})</span>
               </button>
             );
           })}
@@ -103,10 +107,13 @@ export default function SelectedWorlds() {
                 }}
               >
                 <img
-                  src={`/brands/${b.id}/${b.featured}`}
+                  src={`/generated/projects/${b.id}/cover.png`}
                   alt={b.name}
                   loading="lazy"
-                  onError={(e) => { e.currentTarget.style.opacity = 0; }}
+                  onError={(e) => {
+                    if (!e.currentTarget.dataset.fb) { e.currentTarget.dataset.fb = 1; e.currentTarget.src = getBrandAssetPath(b, b.featured); }
+                    else e.currentTarget.style.opacity = 0;
+                  }}
                   style={{
                     position: "absolute",
                     inset: 0,

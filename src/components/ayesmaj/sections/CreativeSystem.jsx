@@ -1,102 +1,94 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import SectionHeader from "../SectionHeader";
-import { COLORS, FONTS } from "../theme";
+import CinematicButton from "../CinematicButton";
+import "./CreativeSystem.css";
 
-const STEPS = [
-  { n: "01", title: "Brand Direction", body: "We define the positioning, tone, and visual language your brand will own." },
-  { n: "02", title: "Visual World", body: "We design the cinematic look — color, type, motion, and the worlds your brand lives in." },
-  { n: "03", title: "AI Content Engine", body: "We build a repeatable system that produces on-brand videos and images at scale." },
-  { n: "04", title: "Website / 3D Build", body: "We engineer the website, product visuals, and immersive 3D experiences." },
-  { n: "05", title: "Launch & Scale", body: "We ship, measure, and keep the content engine running as you grow." },
+const fade = (d = 0) => ({
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" },
+  transition: { duration: 0.8, delay: d, ease: [0.22, 1, 0.36, 1] },
+});
+
+const FRAMES = [
+  {
+    n: "01",
+    title: "IDEA",
+    sub: "One conversation becomes one clear creative direction.",
+    img: "/generated/storyboards/sb-01-idea.png",
+  },
+  {
+    n: "02",
+    title: "VISUAL DIRECTION",
+    sub: "Colors, type and mood locked before we build.",
+    img: "/generated/storyboards/sb-02-direction.png",
+  },
+  {
+    n: "03",
+    title: "HERO BUILD",
+    sub: "We craft the centerpiece your brand leads with.",
+    img: "/generated/storyboards/sb-03-hero.png",
+  },
+  {
+    n: "04",
+    title: "EXPAND THE SYSTEM",
+    sub: "One hero becomes a full library of assets.",
+    img: "/generated/storyboards/sb-04-expand.png",
+  },
+  {
+    n: "05",
+    title: "LAUNCH IN MOTION",
+    sub: "Everything ships animated, ready for every channel.",
+    img: "/generated/storyboards/sb-05-launch.png",
+  },
 ];
 
-const ACCENT = "#FFB000";
-const ACCENT_RGB = "255,176,0";
-
 export default function CreativeSystem() {
+  const navigate = useNavigate();
+
   return (
-    <section
-      style={{
-        padding: "clamp(80px,10vw,140px) clamp(24px,5vw,80px)",
-        borderTop: `1px solid ${COLORS.border}`,
-      }}
-    >
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <SectionHeader eyebrow="How We Work" title="Our Creative System" align="left" />
+    <section id="creative-system" className="sb-section">
+      <div className="sb-inner">
+        <SectionHeader
+          eyebrow="The Storyboard"
+          title="FROM IDEA TO LAUNCH"
+          subtitle="Five scenes. That is the whole process."
+          accent="#D8B75A"
+        />
 
-        <div style={{ marginTop: "clamp(48px,6vw,72px)", position: "relative" }}>
-          {/* Vertical line */}
-          <div
-            style={{
-              position: "absolute",
-              left: 27,
-              top: 10,
-              bottom: 10,
-              width: 1,
-              background: `linear-gradient(to bottom, transparent, rgba(${ACCENT_RGB},0.4), transparent)`,
-            }}
-          />
-
-          {STEPS.map((s, i) => (
-            <motion.div
-              key={s.n}
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                position: "relative",
-                display: "flex",
-                gap: 28,
-                paddingBottom: i < STEPS.length - 1 ? 38 : 0,
-                alignItems: "flex-start",
-              }}
-            >
-              {/* Node */}
-              <div
-                style={{
-                  flexShrink: 0,
-                  width: 56,
-                  height: 56,
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: FONTS.display,
-                  fontSize: 20,
-                  fontWeight: 800,
-                  color: ACCENT,
-                  background: COLORS.black2,
-                  border: `1px solid rgba(${ACCENT_RGB},0.35)`,
-                  boxShadow: `0 0 24px rgba(${ACCENT_RGB},0.15)`,
-                  zIndex: 2,
-                }}
-              >
-                {s.n}
+        <div className="sb-row">
+          <div className="sb-line" aria-hidden="true" />
+          {FRAMES.map((f, i) => (
+            <motion.article className="sb-frame" key={f.n} {...fade(i * 0.08)}>
+              <div className="sb-media">
+                <span className="sb-bignum" aria-hidden="true">{f.n}</span>
+                <img
+                  src={f.img}
+                  alt={`Storyboard scene ${f.n}: ${f.title}`}
+                  loading="lazy"
+                  decoding="async"
+                  onError={(e) => { e.currentTarget.style.display = "none"; }}
+                />
+                <i className="sb-corner sb-tl" aria-hidden="true" />
+                <i className="sb-corner sb-tr" aria-hidden="true" />
+                <i className="sb-corner sb-bl" aria-hidden="true" />
+                <i className="sb-corner sb-br" aria-hidden="true" />
               </div>
-
-              <div style={{ paddingTop: 6 }}>
-                <h3
-                  style={{
-                    fontFamily: FONTS.display,
-                    fontSize: "clamp(22px, 2.4vw, 32px)",
-                    fontWeight: 800,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.02em",
-                    color: COLORS.white,
-                    margin: "0 0 8px",
-                  }}
-                >
-                  {s.title}
-                </h3>
-                <p style={{ fontFamily: FONTS.ui, fontSize: 15.5, lineHeight: 1.6, color: COLORS.gray, margin: 0, maxWidth: 620 }}>
-                  {s.body}
-                </p>
-              </div>
-            </motion.div>
+              <span className="sb-scene">SCENE {f.n}</span>
+              <h3 className="sb-title">{f.title}</h3>
+              <p className="sb-sub">{f.sub}</p>
+            </motion.article>
           ))}
         </div>
+
+        <motion.div className="sb-actions" {...fade(0.15)}>
+          <button type="button" className="sb-link" onClick={() => navigate("/Storyboards")}>
+            Full storyboards <span aria-hidden="true">&rarr;</span>
+          </button>
+          <CinematicButton label="Talk to Us" accent="#D8B75A" onClick={() => navigate("/Contact")} />
+        </motion.div>
       </div>
     </section>
   );

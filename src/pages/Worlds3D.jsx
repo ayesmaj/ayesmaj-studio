@@ -1,489 +1,240 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import { Box, Mountain, Clapperboard, Shapes } from "lucide-react";
-
-import AyesmajBackground from "@/components/ayesmaj/AyesmajBackground";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Box,
+  Cuboid,
+  Globe2,
+  Layers,
+  Play,
+  ScanLine,
+  Sparkles,
+} from "lucide-react";
+import Seo from "@/components/ayesmaj/Seo";
 import AyesmajNav from "@/components/ayesmaj/AyesmajNav";
 import AyesmajFooter from "@/components/ayesmaj/AyesmajFooter";
-import CinematicButton from "@/components/ayesmaj/CinematicButton";
-import SectionHeader from "@/components/ayesmaj/SectionHeader";
-import BeforeAfterSlider from "@/components/ayesmaj/BeforeAfterSlider";
-import { COLORS, FONTS } from "@/components/ayesmaj/theme";
+import "./Worlds3D.css";
 
-// ---- Purple accent (3D Worlds) -------------------------------------------
-const ACCENT = "#9B5CFF";
-const ACCENT_LIGHT = "#C084FC";
-const ACCENT_RGB = "155,92,255";
+const GENERATED = "/assets/ayesmaj/service-worlds";
 
-const fade = (d = 0) => ({
-  initial: { opacity: 0, y: 30 },
+const reveal = (delay = 0) => ({
+  initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.8, delay: d, ease: [0.22, 1, 0.36, 1] },
+  viewport: { once: true, margin: "-70px" },
+  transition: { duration: 0.68, delay, ease: [0.16, 1, 0.3, 1] },
 });
 
-const sectionStyle = {
-  maxWidth: 1440,
-  margin: "0 auto",
-  padding: "clamp(64px,8vw,120px) clamp(20px,5vw,64px)",
-};
-
-const glassCard = {
-  background: "rgba(255,255,255,0.045)",
-  border: "1px solid rgba(255,255,255,0.09)",
-  backdropFilter: "blur(18px)",
-  WebkitBackdropFilter: "blur(18px)",
-  borderRadius: 24,
-};
-
-const label = {
-  fontFamily: FONTS.ui,
-  fontSize: 12,
-  fontWeight: 600,
-  letterSpacing: "0.28em",
-  textTransform: "uppercase",
-  color: ACCENT,
-};
-
-const hideOnError = (e) => { e.currentTarget.style.display = "none"; };
-
-const SERVICES = [
+const capabilities = [
   {
-    icon: Box,
-    title: "Product Modeling",
-    body: "Photoreal 3D models of your products, packaging, and concepts — render-ready for hero shots, web, AR, and animation.",
+    number: "01",
+    icon: Cuboid,
+    title: "Product CGI",
+    body: "Photoreal products, exploded views, material studies, and launch-ready hero renders.",
+    image: `${GENERATED}/worlds3d-product.webp`,
   },
   {
-    icon: Mountain,
-    title: "3D Environments",
-    body: "Cinematic worlds and product stages built from scratch — lit, textured, and composed to set the tone before a word is said.",
+    number: "02",
+    icon: Globe2,
+    title: "Immersive Spaces",
+    body: "Digital showrooms, virtual tours, brand pavilions, and environments people can explore.",
+    image: `${GENERATED}/worlds3d-environment.webp`,
   },
   {
-    icon: Clapperboard,
-    title: "CGI Commercials",
-    body: "Fully rendered spots and launch films. Camera moves, turntables, and immersive sequences engineered for campaigns.",
-  },
-  {
-    icon: Shapes,
-    title: "Character / Object Design",
-    body: "Original characters, mascots, and hero objects sculpted with personality and built for motion across every channel.",
+    number: "03",
+    icon: Sparkles,
+    title: "Characters & Worlds",
+    body: "Original characters, cinematic settings, and visual universes designed to carry a story.",
+    image: "/characters/1.jpeg",
   },
 ];
 
-export default function Worlds3D() {
-  const navigate = useNavigate();
+const reels = [
+  { title: "Noam — Material Reveal", video: "/brands/noam/18.webm", label: "Product film" },
+  { title: "Noam — Precision Motion", video: "/brands/noam/19.webm", label: "CGI sequence" },
+  { title: "Noam — Launch Cut", video: "/brands/noam/20.webm", label: "Brand motion" },
+];
 
+const characters = [
+  ["/characters/1.jpeg", "Cinematic mascot"],
+  ["/characters/4.png", "Creature study"],
+  ["/characters/5.png", "Hero character"],
+  ["/characters/10.png", "Stylized portrait"],
+  ["/characters/20.png", "World character"],
+  ["/characters/31.png", "Campaign character"],
+];
+
+const steps = [
+  ["01", "Shape", "Block the object, space, or character around the story it needs to tell."],
+  ["02", "Surface", "Build materials, texture, detail, and a visual language people can feel."],
+  ["03", "Light", "Direct the atmosphere with cinematic light, scale, and camera movement."],
+  ["04", "Launch", "Deliver stills, film, interactive scenes, and optimized web experiences."],
+];
+
+export default function Worlds3D() {
   useEffect(() => {
-    document.title = "3D Worlds & Models | AYESMAJ Studios";
-    window.scrollTo(0, 0);
+    document.title = "3D Worlds, CGI & Models | AYESMAJ Studios";
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
-  const scrollToWork = () => {
-    document.getElementById("3d-work")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <div style={{ background: "#020302", minHeight: "100vh", overflowX: "clip", position: "relative" }}>
-      <AyesmajBackground accent={ACCENT_RGB} />
+    <div className="worlds-page">
+      <Seo
+        title="3D Worlds, CGI & Models | AYESMAJ Studios"
+        description="Cinematic product CGI, immersive 3D environments, characters, and interactive brand worlds by AYESMAJ Studios."
+        path="/Worlds3D"
+      />
+      <div className="service-nav-backdrop" aria-hidden="true" />
+      <AyesmajNav />
 
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <AyesmajNav />
-
-        <main>
-          {/* 1. HERO -------------------------------------------------------- */}
-          <section style={{ ...sectionStyle, paddingTop: "clamp(120px,14vw,180px)" }}>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%,420px),1fr))",
-                gap: "clamp(40px,6vw,80px)",
-                alignItems: "center",
-              }}
-            >
-              {/* Left: copy */}
-              <motion.div {...fade(0)}>
-                <p style={{ ...label, marginBottom: 22 }}>3D Worlds &amp; Models</p>
-                <h1
-                  style={{
-                    fontFamily: FONTS.display,
-                    fontSize: "clamp(44px,6.4vw,92px)",
-                    fontWeight: 800,
-                    lineHeight: 0.95,
-                    letterSpacing: "0.01em",
-                    textTransform: "uppercase",
-                    color: COLORS.white,
-                    margin: 0,
-                  }}
-                >
-                  Immersive Worlds{" "}
-                  <span
-                    style={{
-                      background: `linear-gradient(120deg, ${ACCENT}, ${ACCENT_LIGHT})`,
-                      WebkitBackgroundClip: "text",
-                      backgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      color: "transparent",
-                    }}
-                  >
-                    Built for Brands
-                  </span>
-                </h1>
-                <p
-                  style={{
-                    fontFamily: FONTS.ui,
-                    fontSize: "clamp(15px,1.4vw,19px)",
-                    lineHeight: 1.65,
-                    color: COLORS.gray,
-                    margin: "26px 0 0",
-                    maxWidth: 540,
-                  }}
-                >
-                  We build cinematic 3D environments, product models, character visuals,
-                  CGI commercials, and immersive brand worlds.
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 16, marginTop: 38 }}>
-                  <CinematicButton
-                    label="Start a Project"
-                    accent={ACCENT}
-                    variant="solid"
-                    size="lg"
-                    onClick={() => navigate("/Contact")}
-                  />
-                  <CinematicButton
-                    label="See 3D Work"
-                    accent={ACCENT}
-                    size="lg"
-                    onClick={scrollToWork}
-                  />
-                </div>
-              </motion.div>
-
-              {/* Right: floating glass frames */}
-              <motion.div
-                {...fade(0.15)}
-                style={{ position: "relative", minHeight: 440 }}
-              >
-                {/* purple glow behind frames */}
-                <div
-                  aria-hidden
-                  style={{
-                    position: "absolute",
-                    inset: "-10% -6%",
-                    background: `radial-gradient(60% 60% at 60% 45%, rgba(${ACCENT_RGB},0.30), transparent 70%)`,
-                    filter: "blur(20px)",
-                    zIndex: 0,
-                  }}
-                />
-                {/* main frame */}
-                <motion.div
-                  animate={{ y: [0, -14, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                  style={{
-                    ...glassCard,
-                    position: "relative",
-                    zIndex: 2,
-                    overflow: "hidden",
-                    aspectRatio: "4 / 5",
-                    maxWidth: 420,
-                    margin: "0 0 0 auto",
-                    boxShadow: `0 0 60px rgba(${ACCENT_RGB},0.22)`,
-                  }}
-                >
-                  <img
-                    src="/assets/ayesmaj/hero/hero-world-3d.png"
-                    alt="3D brand world render"
-                    onError={hideOnError}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                </motion.div>
-                {/* small overlapping frame */}
-                <motion.div
-                  animate={{ y: [0, 12, 0] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-                  style={{
-                    ...glassCard,
-                    position: "absolute",
-                    left: 0,
-                    bottom: "8%",
-                    zIndex: 3,
-                    overflow: "hidden",
-                    width: "46%",
-                    aspectRatio: "1 / 1",
-                    boxShadow: `0 0 45px rgba(${ACCENT_RGB},0.25)`,
-                  }}
-                >
-                  <img
-                    src="/assets/ayesmaj/hero/panel-3d.png"
-                    alt="3D model detail"
-                    onError={hideOnError}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                </motion.div>
-              </motion.div>
+      <main>
+        <section className="worlds-hero">
+          <motion.div {...reveal()} className="worlds-hero-copy">
+            <p className="worlds-kicker"><Box size={15} aria-hidden="true" /> 3D worlds & CGI</p>
+            <h1>Objects.<br />Spaces.<br /><em>Worlds.</em></h1>
+            <p>
+              From a single product to an entire environment, we build visual experiences
+              that feel tangible, cinematic, and impossible to ignore.
+            </p>
+            <div className="worlds-actions">
+              <Link to="/Contact" className="worlds-button worlds-button--primary">
+                Build a world <ArrowRight aria-hidden="true" />
+              </Link>
+              <a href="#worlds-work" className="worlds-button worlds-button--ghost">
+                Explore CGI <Play aria-hidden="true" />
+              </a>
             </div>
-          </section>
+            <div className="worlds-hero-tags" aria-label="3D capabilities">
+              <span>Product visualization</span>
+              <span>Interactive 3D</span>
+              <span>Environment design</span>
+            </div>
+          </motion.div>
 
-          {/* 2. SERVICE CARDS --------------------------------------------- */}
-          <section style={sectionStyle}>
-            <SectionHeader
-              eyebrow="What We Build"
-              title="3D Services"
-              subtitle="From a single hero product to an entire animated brand universe."
-              accent={ACCENT}
+          <motion.div {...reveal(0.12)} className="worlds-hero-art">
+            <img
+              src={`${GENERATED}/worlds3d-hero.webp`}
+              alt="A bright futuristic 3D sculpture gallery with a sneaker, watch, chrome ring, and violet orbital form"
             />
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%,300px),1fr))",
-                gap: 24,
-                marginTop: 56,
-              }}
-            >
-              {SERVICES.map((s, i) => {
-                const Icon = s.icon;
-                return (
-                  <motion.div
-                    key={s.title}
-                    {...fade(i * 0.08)}
-                    className="ayes-glass-card"
-                    style={{ ...glassCard, padding: 32 }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "translateY(-6px)";
-                      e.currentTarget.style.borderColor = `rgba(${ACCENT_RGB},0.35)`;
-                      e.currentTarget.style.boxShadow = `0 0 45px rgba(${ACCENT_RGB},0.10)`;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)";
-                      e.currentTarget.style.boxShadow = "none";
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: 52,
-                        height: 52,
-                        borderRadius: 14,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: `rgba(${ACCENT_RGB},0.12)`,
-                        border: `1px solid rgba(${ACCENT_RGB},0.3)`,
-                        marginBottom: 22,
-                      }}
-                    >
-                      <Icon size={24} color={ACCENT_LIGHT} />
-                    </div>
-                    <h3
-                      style={{
-                        fontFamily: FONTS.display,
-                        fontSize: 22,
-                        fontWeight: 800,
-                        letterSpacing: "0.01em",
-                        textTransform: "uppercase",
-                        color: COLORS.white,
-                        margin: "0 0 12px",
-                      }}
-                    >
-                      {s.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontFamily: FONTS.ui,
-                        fontSize: 15,
-                        lineHeight: 1.6,
-                        color: COLORS.gray,
-                        margin: 0,
-                      }}
-                    >
-                      {s.body}
-                    </p>
-                  </motion.div>
-                );
-              })}
+            <div className="worlds-hero-orbit worlds-hero-orbit--one" aria-hidden="true" />
+            <div className="worlds-hero-orbit worlds-hero-orbit--two" aria-hidden="true" />
+            <div className="worlds-hero-note">
+              <ScanLine aria-hidden="true" />
+              <span>CGI / Environment / Product</span>
+              <strong>One world, every camera.</strong>
             </div>
-          </section>
+          </motion.div>
+        </section>
 
-          {/* 3. FROM CLAY TO FINAL RENDER --------------------------------- */}
-          <section style={sectionStyle}>
-            <SectionHeader
-              eyebrow="Process"
-              title="From Clay to Final Render"
-              subtitle="Every world starts as raw geometry. Drag to see how it transforms."
-              accent={ACCENT}
-            />
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%,360px),1fr))",
-                gap: 28,
-                marginTop: 56,
-              }}
-            >
-              <motion.div {...fade(0)}>
-                <BeforeAfterSlider
-                  beforeImg="/assets/ayesmaj/hero/hero-world-3d.png"
-                  afterImg="/assets/ayesmaj/hero/hero-world-3d.png"
-                  beforeLabel="CLAY MODEL"
-                  afterLabel="FINAL RENDER"
-                  accent={ACCENT}
-                  accentRGB={ACCENT_RGB}
-                />
-              </motion.div>
-              <motion.div {...fade(0.12)}>
-                <BeforeAfterSlider
-                  beforeImg="/assets/ayesmaj/hero/hero-world-3d.png"
-                  afterImg="/assets/ayesmaj/hero/hero-world-3d.png"
-                  beforeLabel="RAW MODEL"
-                  afterLabel="FINAL RENDER"
-                  accent={ACCENT}
-                  accentRGB={ACCENT_RGB}
-                />
-              </motion.div>
-            </div>
-          </section>
+        <section className="worlds-signal" aria-label="3D studio promise">
+          <span>Model</span><i aria-hidden="true" />
+          <span>Texture</span><i aria-hidden="true" />
+          <span>Light</span><i aria-hidden="true" />
+          <span>Animate</span><i aria-hidden="true" />
+          <span>Experience</span>
+        </section>
 
-          {/* 4. ANIMATION GRID ------------------------------------------- */}
-          <section id="3d-work" style={sectionStyle}>
-            <SectionHeader
-              eyebrow="Motion Work"
-              title="Animations"
-              subtitle="Turntables, camera moves, and immersive sequences. New reels dropping soon."
-              accent={ACCENT}
-            />
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%,300px),1fr))",
-                gap: 24,
-                marginTop: 56,
-              }}
-            >
-              {Array.from({ length: 6 }).map((_, i) => (
-                <motion.div
-                  key={i}
-                  {...fade((i % 3) * 0.08)}
-                  style={{
-                    position: "relative",
-                    aspectRatio: "16 / 11",
-                    borderRadius: 24,
-                    overflow: "hidden",
-                    background: "#071207",
-                    border: "1px solid rgba(255,255,255,0.09)",
-                    boxShadow: `inset 0 0 80px rgba(${ACCENT_RGB},0.08)`,
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    padding: 22,
-                  }}
-                >
-                  {/* faint grid texture */}
-                  <div
-                    aria-hidden
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      opacity: 0.12,
-                      backgroundImage: [
-                        "repeating-linear-gradient(0deg, rgba(255,255,255,0.5) 0 1px, transparent 1px 40px)",
-                        "repeating-linear-gradient(90deg, rgba(255,255,255,0.5) 0 1px, transparent 1px 40px)",
-                      ].join(","),
-                      maskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, #000, transparent 80%)",
-                      WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, #000, transparent 80%)",
-                    }}
-                  />
-                  {/* purple glow */}
-                  <div
-                    aria-hidden
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      background: `radial-gradient(50% 50% at 50% 60%, rgba(${ACCENT_RGB},0.16), transparent 70%)`,
-                      pointerEvents: "none",
-                    }}
-                  />
-                  <span
-                    style={{
-                      ...label,
-                      position: "relative",
-                      zIndex: 1,
-                      fontSize: 13,
-                      color: ACCENT_LIGHT,
-                    }}
-                  >
-                    {`#${String(i + 1).padStart(2, "0")}`}
-                  </span>
-                  <span
-                    style={{
-                      position: "relative",
-                      zIndex: 1,
-                      fontFamily: FONTS.ui,
-                      fontSize: 12,
-                      letterSpacing: "0.24em",
-                      textTransform: "uppercase",
-                      color: COLORS.muted,
-                    }}
-                  >
-                    Coming Soon
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </section>
+        <section className="worlds-section worlds-capabilities">
+          <motion.div {...reveal()} className="worlds-heading">
+            <div><p className="worlds-kicker">What we build</p><h2>Made to feel<br /><em>physically real.</em></h2></div>
+            <p>Every surface, reflection, lens, and movement is art-directed to make the object—or the whole world—feel believable.</p>
+          </motion.div>
+          <div className="worlds-cap-grid">
+            {capabilities.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.article {...reveal(index * 0.08)} className="worlds-cap-card" key={item.title}>
+                  <div className="worlds-cap-media"><img src={item.image} alt="" loading="lazy" /><span>{item.number}</span></div>
+                  <div className="worlds-cap-copy"><Icon aria-hidden="true" /><h3>{item.title}</h3><p>{item.body}</p></div>
+                </motion.article>
+              );
+            })}
+          </div>
+        </section>
 
-          {/* 5. FINAL CTA ------------------------------------------------- */}
-          <section style={{ ...sectionStyle, textAlign: "center" }}>
-            <motion.div
-              {...fade(0)}
-              style={{
-                ...glassCard,
-                padding: "clamp(48px,7vw,88px) clamp(24px,5vw,64px)",
-                maxWidth: 980,
-                margin: "0 auto",
-                boxShadow: `0 0 70px rgba(${ACCENT_RGB},0.12)`,
-              }}
-            >
-              <p style={{ ...label, marginBottom: 18 }}>Let's Create</p>
-              <h2
-                style={{
-                  fontFamily: FONTS.display,
-                  fontSize: "clamp(34px,5vw,68px)",
-                  fontWeight: 800,
-                  lineHeight: 0.98,
-                  letterSpacing: "0.01em",
-                  textTransform: "uppercase",
-                  color: COLORS.white,
-                  margin: "0 0 30px",
-                }}
-              >
-                Let&apos;s Build Your{" "}
-                <span
-                  style={{
-                    background: `linear-gradient(120deg, ${ACCENT}, ${ACCENT_LIGHT})`,
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    color: "transparent",
-                  }}
-                >
-                  3D World
-                </span>
-              </h2>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <CinematicButton
-                  label="Start a Project"
-                  accent={ACCENT}
-                  variant="solid"
-                  size="lg"
-                  onClick={() => navigate("/Contact")}
-                />
-              </div>
+        <section id="worlds-work" className="worlds-motion">
+          <div className="worlds-motion-heading">
+            <motion.div {...reveal()}><p className="worlds-kicker worlds-kicker--light">In motion</p><h2>Pixels with<br /><em>weight.</em></h2></motion.div>
+            <motion.p {...reveal(0.1)}>Real AYESMAJ product CGI. Click through to the complete Noam visual system and motion study.</motion.p>
+          </div>
+          <div className="worlds-reel-grid">
+            {reels.map((reel, index) => (
+              <motion.article {...reveal(index * 0.08)} key={reel.title} className={index === 0 ? "worlds-reel worlds-reel--wide" : "worlds-reel"}>
+                <video src={reel.video} muted autoPlay loop playsInline preload="metadata" aria-label={`${reel.title} video preview`} />
+                <span className="worlds-reel-shade" aria-hidden="true" />
+                <div><span>{reel.label}</span><h3>{reel.title}</h3></div>
+                <Link to="/BrandDetail?slug=noam" aria-label={`View ${reel.title} case study`}><ArrowUpRight aria-hidden="true" /></Link>
+              </motion.article>
+            ))}
+          </div>
+        </section>
+
+        <section className="worlds-section worlds-transformation">
+          <motion.div {...reveal()} className="worlds-heading">
+            <div><p className="worlds-kicker">The transformation</p><h2>From blockout<br />to <em>final light.</em></h2></div>
+            <p>Not two copies of the same render. This is the visual jump from raw geometry to a directed, premium product image.</p>
+          </motion.div>
+          <motion.div {...reveal(0.08)} className="worlds-before-after">
+            <figure>
+              <img src="/assets/ayesmaj/generated/comparisons/before-3d.webp" alt="Simple gray 3D product blockout before art direction" loading="lazy" />
+              <figcaption><span>Before</span><strong>Raw geometry</strong></figcaption>
+            </figure>
+            <div className="worlds-transform-arrow" aria-hidden="true"><ArrowRight /></div>
+            <figure>
+              <img src="/assets/ayesmaj/generated/comparisons/after-3d.webp" alt="Premium final CGI product render with materials and cinematic light" loading="lazy" />
+              <figcaption><span>After AYESMAJ</span><strong>Material, light, story</strong></figcaption>
+            </figure>
+          </motion.div>
+        </section>
+
+        <section className="worlds-gallery-section">
+          <div className="worlds-gallery-heading">
+            <motion.div {...reveal()}><p className="worlds-kicker worlds-kicker--light">Character worlds</p><h2>Every character<br />needs a <em>universe.</em></h2></motion.div>
+            <motion.div {...reveal(0.08)} className="worlds-gallery-side">
+              <p>Original character studies, cinematic portraits, and visual experiments from the studio archive.</p>
+              <Link to="/BrandDetail?slug=characters">See all character work <ArrowRight aria-hidden="true" /></Link>
             </motion.div>
-          </section>
-        </main>
+          </div>
+          <div className="worlds-character-grid">
+            {characters.map(([src, label], index) => (
+              <motion.div {...reveal(index * 0.05)} className={`worlds-character-card worlds-character-card--${(index % 4) + 1}`} key={src}>
+                <img src={src} alt={label} loading="lazy" />
+                <span className="worlds-character-card__veil" aria-hidden="true" />
+                <span className="worlds-character-card__index">{String(index + 1).padStart(2, "0")}</span>
+                <span className="worlds-character-card__label">{label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
-        <AyesmajFooter />
-      </div>
+        <section className="worlds-section worlds-process">
+          <motion.div {...reveal()} className="worlds-heading worlds-heading--single">
+            <div><p className="worlds-kicker">How it becomes real</p><h2>Four moves.<br /><em>One believable world.</em></h2></div>
+          </motion.div>
+          <div className="worlds-steps">
+            {steps.map(([number, title, body], index) => (
+              <motion.article {...reveal(index * 0.07)} key={number}>
+                <span>{number}</span>
+                <div className="worlds-step-icon" aria-hidden="true">{index < 2 ? <Layers /> : index === 2 ? <ScanLine /> : <Globe2 />}</div>
+                <h3>{title}</h3><p>{body}</p>
+              </motion.article>
+            ))}
+          </div>
+        </section>
+
+        <section className="worlds-final">
+          <img src={`${GENERATED}/worlds3d-environment.webp`} alt="" aria-hidden="true" loading="lazy" />
+          <span className="worlds-final-shade" aria-hidden="true" />
+          <motion.div {...reveal()}>
+            <p className="worlds-kicker worlds-kicker--light">Enter the next world</p>
+            <h2>Give the brand somewhere unforgettable to live.</h2>
+            <Link to="/Contact" className="worlds-button worlds-button--light">Start a 3D project <ArrowRight aria-hidden="true" /></Link>
+          </motion.div>
+        </section>
+      </main>
+
+      <AyesmajFooter />
     </div>
   );
 }

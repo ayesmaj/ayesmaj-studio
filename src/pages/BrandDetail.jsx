@@ -1,37 +1,230 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, MotionConfig, useInView } from 'framer-motion';
+import { ArrowLeft, ArrowRight, Pause, Play, Volume2, VolumeX } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
 import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
-import { getBrand, BRANDS } from '@/data/brands';
+import ImageGallery from '@/components/ui/image-gallery';
+import { BRANDS, getBrand, getBrandAssetPath, getBrandVideo } from '@/data/brands';
+import './BrandDetail.css';
 
 const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 32 },
+  initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] },
+  viewport: { once: true, amount: 0.15 },
+  transition: { duration: 0.65, delay, ease: [0.16, 1, 0.3, 1] },
 });
 
-// ── Inline video player ────────────────────────────────────────────────────
-function VideoCard({ src, accent }) {
+const getAccentTheme = (hex = '#9B59B6') => {
+  const value = hex.replace('#', '');
+  if (!/^[0-9a-f]{6}$/i.test(value)) {
+    return { ink: '#68407a', buttonText: '#ffffff' };
+  }
+
+  const channels = [0, 2, 4].map((offset) => parseInt(value.slice(offset, offset + 2), 16));
+  const linear = channels.map((channel) => {
+    const normalized = channel / 255;
+    return normalized <= 0.03928
+      ? normalized / 12.92
+      : ((normalized + 0.055) / 1.055) ** 2.4;
+  });
+  const luminance = (0.2126 * linear[0]) + (0.7152 * linear[1]) + (0.0722 * linear[2]);
+  const inkChannels = luminance > 0.34
+    ? channels.map((channel) => Math.round(channel * 0.42))
+    : channels;
+
+  return {
+    ink: `rgb(${inkChannels.join(', ')})`,
+    buttonText: luminance > 0.46 ? '#17130f' : '#ffffff',
+  };
+};
+
+const normalizeHex = (hex = '#9B59B6') => (/^#[0-9a-f]{6}$/i.test(hex) ? hex : '#9B59B6');
+
+const blendHex = (from, to, amount) => {
+  const start = normalizeHex(from).slice(1);
+  const end = normalizeHex(to).slice(1);
+  const channels = [0, 2, 4].map((offset) => {
+    const first = parseInt(start.slice(offset, offset + 2), 16);
+    const second = parseInt(end.slice(offset, offset + 2), 16);
+    return Math.round(first + ((second - first) * amount));
+  });
+  return `#${channels.map((channel) => channel.toString(16).padStart(2, '0')).join('')}`.toUpperCase();
+};
+
+const getIdentityDirection = (brand) => {
+  const keywords = `${brand.name} ${brand.subtitle} ${brand.category} ${brand.description} ${brand.tags.join(' ')}`.toLowerCase();
+
+  if (/(luxury|spirits|wine|whiskey|beauty|ritual|interior|architectural)/.test(keywords)) {
+    return {
+      display: 'Editorial Serif',
+      body: 'DM Sans',
+      displayStack: 'Georgia, "Times New Roman", serif',
+      bodyStack: '"DM Sans", Arial, sans-serif',
+    };
+  }
+
+  if (/(ai|technology|digital|product visualization|cgi|3d|infrastructure)/.test(keywords)) {
+    return {
+      display: 'Outfit',
+      body: 'DM Sans',
+      displayStack: 'Outfit, "DM Sans", sans-serif',
+      bodyStack: '"DM Sans", Inter, Arial, sans-serif',
+    };
+  }
+
+  if (/(campaign|food|snack|motion|film|street)/.test(keywords)) {
+    return {
+      display: 'Outfit ExtraBold',
+      body: 'DM Sans',
+      displayStack: 'Outfit, "DM Sans", sans-serif',
+      bodyStack: '"DM Sans", Arial, sans-serif',
+    };
+  }
+
+  return {
+    display: 'Outfit',
+    body: 'DM Sans',
+    displayStack: 'Outfit, "DM Sans", sans-serif',
+    bodyStack: '"DM Sans", Arial, sans-serif',
+  };
+};
+
+const identitySectionPattern = /(identity|logo|brand visuals|logo & mark)/i;
+
+const getIdentityAssets = (brand) => {
+  const identitySection = brand.sections?.find((section) => identitySectionPattern.test(section.title));
+  const productSection = brand.sections?.find((section) => (
+    !identitySectionPattern.test(section.title)
+    && /(product|packaging|campaign|digital|launch|visual|apparel|environment)/i.test(section.title)
+  ));
+  // A logo is a distinct identity asset, not simply the first image in a
+  // brand board. Every case study declares its real mark explicitly.
+  const logoFile = brand.logo || identitySection?.images?.[0] || brand.images[0] || brand.featured;
+  const productFile = (brand.featured !== logoFile ? brand.featured : null)
+    || productSection?.images?.find((image) => image !== logoFile)
+    || brand.images.find((image) => image !== logoFile)
+    || brand.featured;
+
+  return { logoFile, productFile };
+};
+
+function IdentityBoard({ brand }) {
+  const accent = normalizeHex(brand.accent);
+  const palette = [
+    { name: 'Primary', value: accent },
+    { name: 'Deep', value: blendHex(accent, '#17140F', 0.55) },
+    { name: 'Signal', value: blendHex(accent, '#FFFFFF', 0.32) },
+    { name: 'Soft', value: blendHex(accent, '#FFFFFF', 0.78) },
+    { name: 'Paper', value: '#F8F5EF' },
+  ];
+  const typography = getIdentityDirection(brand);
+  const { logoFile, productFile } = getIdentityAssets(brand);
+
+  return (
+    <motion.figure {...fade(0.04)} className="identity-board">
+      <div className="identity-board-topline">
+        <span>{brand.name} / Visual identity</span>
+        <span>{brand.year} — AYESMAJ Studios</span>
+      </div>
+
+      <div className="identity-board-grid">
+        <section className="identity-logo-panel" aria-label={`${brand.name} logo system`}>
+          <p className="identity-board-label">Logo / signature</p>
+          <div className="identity-logo-art">
+            <img
+              src={getBrandAssetPath(brand, logoFile)}
+              alt={`${brand.name} logo`}
+              loading="lazy"
+            />
+          </div>
+          <div className="identity-brand-lockup">
+            <strong>{brand.name}</strong>
+            <span>{brand.subtitle}</span>
+          </div>
+        </section>
+
+        <section className="identity-system-panel" aria-label={`${brand.name} colors and typography`}>
+          <div className="identity-palette-block">
+            <p className="identity-board-label">Color palette</p>
+            <div className="identity-swatches">
+              {palette.map((color) => (
+                <div className="identity-swatch" key={color.name}>
+                  <span style={{ background: color.value }} aria-hidden="true" />
+                  <strong>{color.name}</strong>
+                  <small>{color.value}</small>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="identity-type-block">
+            <p className="identity-board-label">Typography</p>
+            <div className="identity-type-sample">
+              <span style={{ fontFamily: typography.displayStack }}>Aa</span>
+              <div>
+                <strong>{typography.display}</strong>
+                <small>Display / headlines</small>
+              </div>
+            </div>
+            <p className="identity-type-line" style={{ fontFamily: typography.bodyStack }}>
+              {typography.body} — clarity across every brand touchpoint.
+            </p>
+          </div>
+        </section>
+
+        <section className="identity-product-panel" aria-label={`${brand.name} product or packaging direction`}>
+          <img
+            src={getBrandAssetPath(brand, productFile)}
+            alt={`${brand.name} product, packaging, or campaign application`}
+            loading="lazy"
+          />
+          <div className="identity-product-overlay" aria-hidden="true" />
+          <div className="identity-product-caption">
+            <span>Product / packaging</span>
+            <strong>Built as one visual language.</strong>
+          </div>
+        </section>
+      </div>
+
+      <figcaption>
+        <span>Logo</span><i aria-hidden="true" /><span>Palette</span><i aria-hidden="true" />
+        <span>Typography</span><i aria-hidden="true" /><span>Application</span>
+      </figcaption>
+    </motion.figure>
+  );
+}
+
+function VideoCard({ src, accent, title }) {
   const [playing, setPlaying] = useState(false);
-  const [muted, setMuted]     = useState(false);
-  const ref    = useRef(null);
-  const inView = useInView(ref, { threshold: 0.3 });
+  const [muted, setMuted] = useState(false);
+  const ref = useRef(null);
+  const inView = useInView(ref, { amount: 0.3 });
 
   const handleMetadata = () => {
-    if (ref.current && !playing) ref.current.currentTime = 1.5;
+    if (ref.current && !playing && Number.isFinite(ref.current.duration)) {
+      ref.current.currentTime = Math.min(1.5, Math.max(0, ref.current.duration - 0.2));
+    }
   };
 
   const toggle = () => {
     if (!ref.current) return;
-    if (playing) { ref.current.pause(); setPlaying(false); }
-    else         { ref.current.currentTime = 0; ref.current.play(); setPlaying(true); }
+    if (playing) {
+      ref.current.pause();
+      setPlaying(false);
+      return;
+    }
+
+    ref.current.currentTime = 0;
+    ref.current.play();
+    setPlaying(true);
   };
 
   useEffect(() => {
-    if (!inView && playing && ref.current) { ref.current.pause(); setPlaying(false); }
+    if (!inView && playing && ref.current) {
+      ref.current.pause();
+      setPlaying(false);
+    }
   }, [inView, playing]);
 
   const toggleMute = () => {
@@ -41,252 +234,248 @@ function VideoCard({ src, accent }) {
   };
 
   return (
-    <motion.div {...fade()} className="relative rounded-2xl overflow-hidden group cursor-pointer"
-      style={{ aspectRatio:'16/9', border:`1px solid ${accent}22` }}
-      onClick={toggle}>
-      <video ref={ref} src={src} loop playsInline muted={muted} preload="metadata"
+    <motion.article {...fade()} className="case-video-card" style={{ '--video-accent': accent }}>
+      <video
+        ref={ref}
+        src={src}
+        loop
+        playsInline
+        muted={muted}
+        preload="metadata"
+        aria-label={title || 'Project film'}
         onLoadedMetadata={handleMetadata}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
       />
-      <div className="absolute inset-0"
-        style={{ background:'linear-gradient(to top, rgba(8,12,10,0.6) 0%, transparent 50%)' }} />
-
-      {/* Play/pause */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-16 h-16 rounded-full flex items-center justify-center transition-all"
-          style={{ background:'rgba(8,12,10,0.8)', border:`2px solid ${accent}cc`,
-            backdropFilter:'blur(8px)', boxShadow:`0 0 32px ${accent}44` }}>
-          {playing
-            ? <Pause size={20} style={{ color: accent }} fill={accent} />
-            : <Play  size={20} className="ml-1" style={{ color: accent }} fill={accent} />}
-        </div>
-      </div>
-
-      {/* Mute — 44px touch target */}
-      <button onClick={e => { e.stopPropagation(); toggleMute(); }}
-        className="absolute bottom-3 right-3 w-11 h-11 md:w-9 md:h-9 rounded-full flex items-center justify-center"
-        style={{ background:'rgba(0,0,0,0.65)', border:'1px solid rgba(255,255,255,0.2)' }}>
-        {muted ? <VolumeX size={14} className="text-white" /> : <Volume2 size={14} className="text-white" />}
+      <div className="case-video-shade" aria-hidden="true" />
+      <button
+        type="button"
+        className="case-video-toggle"
+        onClick={toggle}
+        aria-label={playing ? `Pause ${title || 'project film'}` : `Play ${title || 'project film'}`}
+      >
+        {playing
+          ? <Pause size={21} fill="currentColor" aria-hidden="true" />
+          : <Play size={21} fill="currentColor" aria-hidden="true" />}
       </button>
-    </motion.div>
+      <button
+        type="button"
+        className="case-video-mute"
+        onClick={toggleMute}
+        aria-label={muted ? 'Unmute project film' : 'Mute project film'}
+      >
+        {muted ? <VolumeX size={16} aria-hidden="true" /> : <Volume2 size={16} aria-hidden="true" />}
+      </button>
+      {title && <p className="case-video-title">{title}</p>}
+    </motion.article>
   );
 }
 
-// ── Main page ─────────────────────────────────────────────────────────────
+function ProjectNavCard({ brand, direction }) {
+  if (!brand) return null;
+  const isPrevious = direction === 'previous';
+
+  return (
+    <Link
+      to={`/BrandDetail?slug=${brand.id}`}
+      className={`case-project-nav-card ${isPrevious ? 'case-project-nav-card--previous' : ''}`}
+    >
+      <img src={getBrandAssetPath(brand, brand.featured)} alt="" aria-hidden="true" loading="lazy" />
+      <div className="case-project-nav-copy">
+        <span>{isPrevious ? 'Previous project' : 'Next project'}</span>
+        <strong>{brand.name}</strong>
+      </div>
+      <span className="case-project-nav-arrow" aria-hidden="true">
+        {isPrevious ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
+      </span>
+    </Link>
+  );
+}
+
 export default function BrandDetail() {
-  const [reducedMotion, setReducedMotion] = useState(false);
   const [brand, setBrand] = useState(null);
   const location = useLocation();
 
-  // Re-run every time the ?slug= query param changes so navigating
-  // between brands on the same route actually updates the page.
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mq.matches);
     const slug = new URLSearchParams(location.search).get('slug');
-    const b = slug ? getBrand(slug) : null;
-    setBrand(b);
-    if (b) document.title = `${b.name} — AYESMAJ Studios`;
-    else   document.title = 'Brand Not Found — AYESMAJ Studios';
+    const currentBrand = slug ? getBrand(slug) : null;
+    setBrand(currentBrand);
+    document.title = currentBrand
+      ? `${currentBrand.name} — AYESMAJ Studios`
+      : 'Brand Not Found — AYESMAJ Studios';
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [location.search]); // ← re-runs on every slug change
+  }, [location.search]);
 
-  const allIds = BRANDS.map(b => b.id);
-  const idx    = brand ? allIds.indexOf(brand.id) : -1;
-  const prev   = idx > 0                 ? BRANDS[idx - 1] : null;
-  const next   = idx < allIds.length - 1 ? BRANDS[idx + 1] : null;
+  const allIds = BRANDS.map((item) => item.id);
+  const index = brand ? allIds.indexOf(brand.id) : -1;
+  const previous = index > 0 ? BRANDS[index - 1] : null;
+  const next = index >= 0 && index < allIds.length - 1 ? BRANDS[index + 1] : null;
 
   if (!brand) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-6 text-white"
-        style={{ background:'#030303' }}>
-        <p className="text-gray-500 text-xs tracking-[0.3em] uppercase">Brand not found</p>
-        <Link to="/Brands" className="text-[#B3FF3F] text-sm hover:underline flex items-center gap-2">
-          <ArrowLeft size={14} /> Back to all brands
-        </Link>
-      </div>
+      <main className="case-not-found">
+        <p>Brand not found</p>
+        <Link to="/Branding"><ArrowLeft size={16} aria-hidden="true" /> Back to branding</Link>
+      </main>
     );
   }
 
-  const assetBase = `/brands/${brand.id}`;
   const { accent } = brand;
+  const accentTheme = getAccentTheme(accent);
+  const identityDirection = getIdentityDirection(brand);
+  const casePaper = blendHex(accent, '#FFFDF9', 0.9);
+  const casePaperDeep = blendHex(accent, '#F4EEE5', 0.82);
+  const caseSurface = blendHex(accent, '#FFFFFF', 0.94);
+  const featuredImage = getBrandAssetPath(brand, brand.featured);
+  const sections = brand.sections || [{ title: 'Selected Work', images: brand.images }];
+  const existingIdentityIndex = sections.findIndex((section) => identitySectionPattern.test(section.title));
+  const identityGallerySection = existingIdentityIndex >= 0
+    ? { ...sections[existingIdentityIndex], showIdentityBoard: true }
+    : { title: 'Identity System', images: [], showIdentityBoard: true };
+  const remainingGallerySections = sections
+    .filter((_, sectionIndex) => sectionIndex !== existingIdentityIndex)
+    .map((section) => ({ ...section, showIdentityBoard: false }));
+
+  const renderGallerySection = (section, sectionIndex) => {
+    const visibleImages = section.showIdentityBoard && section.images.length === 1
+      ? []
+      : section.images;
+
+    return (
+      <div className="case-gallery-section" key={section.title}>
+        <motion.header {...fade()} className="case-section-heading">
+          <span>{String(sectionIndex + 1).padStart(2, '0')}</span>
+          <h2>{section.showIdentityBoard ? 'Identity System' : section.title}</h2>
+          <div aria-hidden="true" />
+        </motion.header>
+        {section.showIdentityBoard && <IdentityBoard brand={brand} />}
+        {visibleImages.length > 0 && (
+          <div className={section.showIdentityBoard ? 'case-gallery-after-board' : undefined}>
+            <ImageGallery
+              label={`${brand.name} - ${section.title}`}
+              cards={visibleImages.map((image, imageIndex) => ({
+                id: `${brand.id}-${sectionIndex}-${imageIndex}`,
+                src: getBrandAssetPath(brand, image),
+                alt: `${brand.name} - ${section.title} ${imageIndex + 1}`,
+                eyebrow: `${String(sectionIndex + 1).padStart(2, '0')} / ${brand.name}`,
+                title: section.title,
+              }))}
+            />
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden" style={{ background:'#030303' }}>
-      <AyesmajNav />
+    <MotionConfig reducedMotion="user">
+      <div
+        className="case-page"
+        style={{
+          '--case-accent': accent,
+          '--case-accent-ink': accentTheme.ink,
+          '--case-button-text': accentTheme.buttonText,
+          '--case-paper': casePaper,
+          '--case-paper-deep': casePaperDeep,
+          '--case-surface': caseSurface,
+          '--case-display-font': identityDirection.displayStack,
+          '--case-body-font': identityDirection.bodyStack,
+        }}
+      >
+        <div className="case-nav-backdrop" aria-hidden="true" />
+        <AyesmajNav />
 
-      {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[85vh] min-h-[85svh] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={`${assetBase}/${brand.featured}`} alt={brand.name}
-            className="w-full h-full object-cover" />
-          <div className="absolute inset-0"
-            style={{ background:'linear-gradient(to top, #030303 0%, rgba(8,12,9,0.6) 50%, rgba(8,12,9,0.15) 100%)' }} />
-        </div>
+        <main>
+          <section className="case-hero">
+            <img className="case-hero-media" src={featuredImage} alt={`${brand.name} featured project artwork`} />
+            <div className="case-hero-wash" aria-hidden="true" />
+            <Link to="/Branding" className="case-back-link">
+              <ArrowLeft size={16} aria-hidden="true" /> Branding work
+            </Link>
 
-        {/* Glow */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"
-          style={{ background:`radial-gradient(ellipse at 50% 100%, ${accent}22 0%, transparent 70%)` }} />
-
-        {/* Back — safe below notch on mobile */}
-        <Link to="/Brands"
-          className="absolute z-10 flex items-center gap-2 text-xs font-bold tracking-widest uppercase transition-colors"
-          style={{ color:`${accent}bb`, top:'calc(env(safe-area-inset-top, 0px) + 88px)', left:'1.5rem' }}>
-          <ArrowLeft size={14} /> All Brands
-        </Link>
-
-        {/* Text */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-5 md:px-6 lg:px-12 pb-16 md:pb-20">
-          <motion.div initial={{ opacity:0, y:40 }} animate={{ opacity:1, y:0 }}
-            transition={{ duration:1, ease:[0.16,1,0.3,1] }}>
-            <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4" style={{ color: accent }}>
-              {brand.category}
-            </p>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black text-white leading-none mb-3 break-words">
-              {brand.name}
-            </h1>
-            <p className="text-lg md:text-2xl font-light text-white/40 mb-6 md:mb-8">{brand.subtitle}</p>
-            <div className="flex flex-wrap gap-2">
-              {brand.tags.map(t => (
-                <span key={t} className="text-[10px] font-bold tracking-[0.3em] uppercase px-3 py-1.5 rounded-full"
-                  style={{ background:`${accent}18`, border:`1px solid ${accent}35`, color: accent }}>
-                  {t}
-                </span>
-              ))}
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-3 py-1.5 rounded-full"
-                style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', color:'rgba(255,255,255,0.35)' }}>
-                {brand.year}
-              </span>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── DESCRIPTION ───────────────────────────────────────────────── */}
-      <section className="max-w-4xl mx-auto px-6 lg:px-12 py-20">
-        <motion.p {...fade()} className="text-lg md:text-xl text-white/55 leading-relaxed">
-          {brand.description}
-        </motion.p>
-      </section>
-
-      {/* ── GALLERY ───────────────────────────────────────────────────── */}
-      {brand.images.length > 0 && (
-        <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-16">
-          {brand.sections ? (
-            /* ── Sectioned layout ── */
-            brand.sections.map((sec, si) => (
-              <div key={sec.title} className={si > 0 ? 'mt-20' : ''}>
-                {/* Section header */}
-                <motion.div {...fade()} className="flex items-center gap-4 mb-8">
-                  <p className="shrink-0 text-[10px] font-bold tracking-[0.4em] uppercase"
-                    style={{ color: accent }}>{sec.title}</p>
-                  <div className="flex-1 h-px" style={{ background:`${accent}25` }} />
-                </motion.div>
-                {/* Masonry per section */}
-                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-gap:1rem]">
-                  {sec.images.map((img, i) => (
-                    <motion.div key={img} {...fade(i * 0.05)}
-                      className="break-inside-avoid mb-4 overflow-hidden rounded-2xl group"
-                      style={{ border:`1px solid ${accent}12` }}>
-                      <img src={`${assetBase}/${img}`} alt={`${brand.name} — ${sec.title}`}
-                        loading="lazy"
-                        className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                      />
-                    </motion.div>
-                  ))}
+            <div className="case-hero-inner">
+              <motion.div
+                className="case-hero-card"
+                initial={{ opacity: 0, y: 36 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="case-eyebrow-row">
+                  <p>{brand.category}</p>
+                  <span>{brand.year}</span>
                 </div>
-              </div>
-            ))
-          ) : (
-            /* ── Flat masonry fallback ── */
-            <>
-              <motion.p {...fade()} className="text-[10px] font-bold tracking-[0.4em] uppercase mb-10"
-                style={{ color: accent }}>Gallery</motion.p>
-              <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-gap:1rem]">
-                {brand.images.map((img, i) => (
-                  <motion.div key={img} {...fade(i * 0.04)}
-                    className="break-inside-avoid mb-4 overflow-hidden rounded-2xl group"
-                    style={{ border:`1px solid ${accent}12` }}>
-                    <img src={`${assetBase}/${img}`} alt={`${brand.name} ${i + 1}`}
-                      loading="lazy"
-                      className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </>
+                <h1>{brand.name}</h1>
+                <p className="case-subtitle">{brand.subtitle}</p>
+                <div className="case-tags" aria-label="Project services">
+                  {brand.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          <section className="case-intro">
+            <motion.div {...fade()} className="case-intro-label">
+              <span>Project story</span>
+              <strong>Visual direction, built to feel unmistakable.</strong>
+            </motion.div>
+            <motion.p {...fade(0.08)}>{brand.description}</motion.p>
+          </section>
+
+          <section
+            className="case-gallery-shell case-gallery-shell--identity"
+            aria-label={`${brand.name} identity system`}
+          >
+            {renderGallerySection(identityGallerySection, 0)}
+          </section>
+
+          {remainingGallerySections.length > 0 && (
+            <section className="case-gallery-shell" aria-label={`${brand.name} project gallery`}>
+              {remainingGallerySections.map((section, sectionIndex) => (
+                renderGallerySection(section, sectionIndex + 1)
+              ))}
+            </section>
           )}
-        </section>
-      )}
 
-      {/* ── VIDEOS ────────────────────────────────────────────────────── */}
-      {brand.videos.length > 0 && (
-        <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-24">
-          <motion.p {...fade()} className="text-[10px] font-bold tracking-[0.4em] uppercase mb-10"
-            style={{ color: accent }}>
-            Films &amp; Motion
-          </motion.p>
-          <div className={`grid gap-6 ${brand.videos.length > 1 ? 'md:grid-cols-2' : 'max-w-4xl'}`}>
-            {brand.videos.map(v => (
-              <VideoCard key={v} src={`${assetBase}/${v}`} accent={accent} />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* ── PREV / NEXT ───────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16 border-t"
-        style={{ borderColor:'rgba(255,255,255,0.05)' }}>
-        <div className="flex items-center justify-between gap-6">
-          {prev ? (
-            <Link to={`/BrandDetail?slug=${prev.id}`}
-              className="group flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all"
-                style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)' }}>
-                <ArrowLeft size={16} className="text-white/50 group-hover:text-white transition-colors" />
+          {brand.videos.length > 0 && (
+            <section className="case-films">
+              <motion.header {...fade()} className="case-films-heading">
+                <p>Films &amp; motion</p>
+                <h2>See the visual world move.</h2>
+              </motion.header>
+              <div className={`case-video-grid ${brand.videos.length === 1 ? 'case-video-grid--single' : ''}`}>
+                {brand.videos.map((video, videoIndex) => {
+                  const item = getBrandVideo(brand, video);
+                  return (
+                    <VideoCard
+                      key={`${item.src}-${videoIndex}`}
+                      src={item.src}
+                      title={item.title}
+                      accent={accent}
+                    />
+                  );
+                })}
               </div>
-              <div>
-                <p className="text-[10px] tracking-widest uppercase text-white/25 mb-0.5">Previous</p>
-                <p className="font-bold text-white/70 group-hover:text-white transition-colors">{prev.name}</p>
-              </div>
-            </Link>
-          ) : <div />}
+            </section>
+          )}
 
-          {next ? (
-            <Link to={`/BrandDetail?slug=${next.id}`}
-              className="group flex items-center gap-3 text-right">
-              <div>
-                <p className="text-[10px] tracking-widest uppercase text-white/25 mb-0.5">Next</p>
-                <p className="font-bold text-white/70 group-hover:text-white transition-colors">{next.name}</p>
-              </div>
-              <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all"
-                style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)' }}>
-                <ArrowRight size={16} className="text-white/50 group-hover:text-white transition-colors" />
-              </div>
-            </Link>
-          ) : <div />}
-        </div>
-      </section>
+          <nav className="case-project-nav" aria-label="Browse case studies">
+            <ProjectNavCard brand={previous} direction="previous" />
+            <ProjectNavCard brand={next} direction="next" />
+          </nav>
 
-      {/* ── CTA ───────────────────────────────────────────────────────── */}
-      <section className="relative py-40 px-6 text-center overflow-hidden border-t"
-        style={{ borderColor:'rgba(255,255,255,0.04)' }}>
-        <div className="pointer-events-none absolute inset-0"
-          style={{ background:`radial-gradient(ellipse at 50% 60%, ${accent}12 0%, transparent 60%)` }} />
-        <motion.div {...fade()}>
-          <p className="text-[11px] tracking-[0.4em] uppercase mb-6" style={{ color:`${accent}88` }}>Next Step</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-10">
-            Let's Build the Next<br />Brand System
-          </h2>
-          <a href="/#contact"
-            className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-black text-sm font-bold hover:scale-105 transition-all duration-300 group"
-            style={{ background: accent }}>
-            Start Your Project <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-          </a>
-        </motion.div>
-      </section>
+          <section className="case-cta">
+            <img src={featuredImage} alt="" aria-hidden="true" loading="lazy" />
+            <div className="case-cta-wash" aria-hidden="true" />
+            <motion.div {...fade()} className="case-cta-copy">
+              <p>Ready for your transformation?</p>
+              <h2>Let’s build the next<br />brand people remember.</h2>
+              <a href="/#start-a-project">
+                Start your project <ArrowRight size={18} aria-hidden="true" />
+              </a>
+            </motion.div>
+          </section>
+        </main>
 
-      <AyesmajFooter />
-    </div>
+        <AyesmajFooter />
+      </div>
+    </MotionConfig>
   );
 }

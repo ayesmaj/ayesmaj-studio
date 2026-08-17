@@ -35,18 +35,18 @@ export function ContactCard({
       {/* Left info panel */}
       <div className="flex flex-col justify-between lg:col-span-2">
         <div className="relative h-full space-y-6 px-8 py-10 md:p-10">
-          <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#C8A44E', fontFamily: 'Satoshi, sans-serif' }}>
+          <p className="text-xs tracking-[0.5em] uppercase" style={{ color: '#C8A44E', fontFamily: 'DM Sans, sans-serif' }}>
             GET IN TOUCH
           </p>
           <h1
             className="text-3xl font-black md:text-4xl lg:text-5xl leading-tight"
-            style={{ color: '#F2EDE4', fontFamily: 'Satoshi, sans-serif', letterSpacing: '-0.03em' }}
+            style={{ color: '#F2EDE4', fontFamily: 'DM Sans, sans-serif', letterSpacing: '-0.03em' }}
           >
             {title}
           </h1>
           <p
             className="max-w-xl text-sm md:text-base"
-            style={{ color: 'rgba(242,237,228,0.5)', fontFamily: 'Satoshi, sans-serif', lineHeight: 1.7 }}
+            style={{ color: 'rgba(242,237,228,0.5)', fontFamily: 'DM Sans, sans-serif', lineHeight: 1.7 }}
           >
             {description}
           </p>
@@ -89,10 +89,10 @@ function ContactInfoItem({ icon: Icon, label, value, className, ...props }) {
         <Icon className="h-4 w-4" style={{ color: '#C8A44E' }} />
       </div>
       <div>
-        <p className="text-xs font-semibold tracking-wider uppercase" style={{ color: '#C8A44E', fontFamily: 'Satoshi, sans-serif' }}>
+        <p className="text-xs font-semibold tracking-wider uppercase" style={{ color: '#C8A44E', fontFamily: 'DM Sans, sans-serif' }}>
           {label}
         </p>
-        <p className="text-sm mt-0.5" style={{ color: 'rgba(242,237,228,0.65)', fontFamily: 'Satoshi, sans-serif' }}>
+        <p className="text-sm mt-0.5" style={{ color: 'rgba(242,237,228,0.65)', fontFamily: 'DM Sans, sans-serif' }}>
           {value}
         </p>
       </div>

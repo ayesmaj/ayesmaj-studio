@@ -66,6 +66,17 @@ import WebExperiences from './pages/WebExperiences';
 import AiMarketing from './pages/AiMarketing';
 import Worlds3D from './pages/Worlds3D';
 import Work from './pages/Work';
+import AiVideos from './pages/AiVideos';
+import AiPosts from './pages/AiPosts';
+import Storyboards from './pages/Storyboards';
+import Studio from './pages/Studio';
+import ServiceBranding from './pages/ServiceBranding';
+import Insights from './pages/Insights';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Cookies from './pages/Cookies';
+import Accessibility from './pages/Accessibility';
+import Faq from './pages/Faq';
 import __Layout from './Layout.jsx';
 
 
@@ -89,6 +100,17 @@ export const PAGES = {
     "AiMarketing": AiMarketing,
     "Worlds3D": Worlds3D,
     "Work": Work,
+    "AiVideos": AiVideos,
+    "AiPosts": AiPosts,
+    "Storyboards": Storyboards,
+    "ServiceBranding": ServiceBranding,
+    "Insights": Insights,
+    "Studio": Studio,
+    "Privacy": Privacy,
+    "Terms": Terms,
+    "Cookies": Cookies,
+    "Accessibility": Accessibility,
+    "Faq": Faq,
 }
 
 export const pagesConfig = {

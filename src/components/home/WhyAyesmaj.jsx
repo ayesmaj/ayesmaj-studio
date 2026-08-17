@@ -50,7 +50,7 @@ export default function WhyAyesmaj() {
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(8px,0.75vw,10px)',
                 letterSpacing: '0.52em', textTransform: 'uppercase',
                 color: GOLD, marginBottom: 18,
@@ -62,7 +62,7 @@ export default function WhyAyesmaj() {
             <motion.h2
               {...fade(0.08)}
               style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(28px,4.2vw,58px)',
                 fontWeight: 800, lineHeight: 1.02,
                 letterSpacing: '-0.032em', color: '#F8FAFC',
@@ -82,7 +82,7 @@ export default function WhyAyesmaj() {
             <motion.p
               {...fade(0.16)}
               style={{
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
                 fontSize: 'clamp(14px,1.2vw,17px)',
                 color: 'rgba(248,250,252,0.5)',
                 lineHeight: 1.72,
@@ -142,7 +142,7 @@ export default function WhyAyesmaj() {
                   </div>
                   <div>
                     <h3 style={{
-                      fontFamily: "'Satoshi', system-ui, sans-serif",
+                      fontFamily: "'DM Sans', system-ui, sans-serif",
                       fontSize: 'clamp(14px,1.1vw,16px)',
                       fontWeight: 700, color: '#F8FAFC',
                       marginBottom: 6, letterSpacing: '-0.01em',
@@ -150,7 +150,7 @@ export default function WhyAyesmaj() {
                       {point.title}
                     </h3>
                     <p style={{
-                      fontFamily: "'Satoshi', system-ui, sans-serif",
+                      fontFamily: "'DM Sans', system-ui, sans-serif",
                       fontSize: 'clamp(12px,0.95vw,14px)',
                       color: 'rgba(248,250,252,0.44)',
                       lineHeight: 1.68,

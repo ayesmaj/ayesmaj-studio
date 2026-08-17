@@ -32,7 +32,7 @@ function CopyBtn({ text }) {
         display: 'inline-flex', alignItems: 'center', gap: 5,
         fontSize: 10, color: copied ? GREEN : 'rgba(255,255,255,0.3)',
         background: 'none', border: 'none', cursor: 'pointer',
-        transition: 'color 0.2s', fontFamily: "'Satoshi', system-ui, sans-serif",
+        transition: 'color 0.2s', fontFamily: "'DM Sans', system-ui, sans-serif",
         letterSpacing: '0.08em',
       }}
     >
@@ -54,13 +54,13 @@ function OutputBlock({ label, content }) {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
         <span style={{
           fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
-          color: GOLD, fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+          color: GOLD, fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
         }}>{label}</span>
         <CopyBtn text={content} />
       </div>
       <p style={{
         fontSize: 13, color: 'rgba(248,250,252,0.75)', lineHeight: 1.7,
-        fontFamily: "'Satoshi', system-ui, sans-serif", whiteSpace: 'pre-wrap',
+        fontFamily: "'DM Sans', system-ui, sans-serif", whiteSpace: 'pre-wrap',
       }}>{content}</p>
     </div>
   );
@@ -71,7 +71,7 @@ function SysField({ label, placeholder, value, onChange }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
       <label style={{
         fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase',
-        color: 'rgba(255,176,0,0.5)', fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+        color: 'rgba(255,176,0,0.5)', fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
       }}>{label}</label>
       <input
         value={value}
@@ -82,7 +82,7 @@ function SysField({ label, placeholder, value, onChange }) {
           border: '1px solid rgba(255,255,255,0.07)',
           borderRadius: 10, padding: '10px 14px',
           color: '#F8FAFC', fontSize: 13,
-          fontFamily: "'Satoshi', system-ui, sans-serif",
+          fontFamily: "'DM Sans', system-ui, sans-serif",
           outline: 'none', transition: 'border-color 0.2s',
           width: '100%', boxSizing: 'border-box',
         }}
@@ -98,7 +98,7 @@ function SysTextarea({ label, placeholder, value, onChange, rows = 3 }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
       <label style={{
         fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase',
-        color: 'rgba(255,176,0,0.5)', fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+        color: 'rgba(255,176,0,0.5)', fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
       }}>{label}</label>
       <textarea
         value={value}
@@ -110,7 +110,7 @@ function SysTextarea({ label, placeholder, value, onChange, rows = 3 }) {
           border: '1px solid rgba(255,255,255,0.07)',
           borderRadius: 10, padding: '10px 14px',
           color: '#F8FAFC', fontSize: 13,
-          fontFamily: "'Satoshi', system-ui, sans-serif",
+          fontFamily: "'DM Sans', system-ui, sans-serif",
           outline: 'none', resize: 'none', transition: 'border-color 0.2s',
           width: '100%', boxSizing: 'border-box',
         }}
@@ -133,7 +133,7 @@ function RunButton({ loading, onClick, disabled, label = 'EXECUTE' }) {
         border: `1px solid ${loading || disabled ? 'rgba(255,176,0,0.12)' : 'rgba(255,176,0,0.35)'}`,
         color: loading || disabled ? 'rgba(255,176,0,0.35)' : GOLD,
         fontSize: 10, fontWeight: 700, letterSpacing: '0.2em',
-        fontFamily: "'Satoshi', system-ui, sans-serif",
+        fontFamily: "'DM Sans', system-ui, sans-serif",
         cursor: loading || disabled ? 'not-allowed' : 'pointer',
         transition: 'all 0.25s',
       }}
@@ -165,13 +165,13 @@ function Module({ title, tag, children, defaultOpen = false }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <span style={{
             fontSize: 8, letterSpacing: '0.22em', textTransform: 'uppercase',
-            color: GOLD, fontWeight: 700, fontFamily: "'Satoshi', system-ui, sans-serif",
+            color: GOLD, fontWeight: 700, fontFamily: "'DM Sans', system-ui, sans-serif",
             background: 'rgba(255,176,0,0.1)', border: '1px solid rgba(255,176,0,0.2)',
             borderRadius: 100, padding: '3px 10px',
           }}>{tag}</span>
           <span style={{
             fontSize: 14, fontWeight: 700, color: '#F8FAFC',
-            fontFamily: "'Satoshi', system-ui, sans-serif", letterSpacing: '-0.01em',
+            fontFamily: "'DM Sans', system-ui, sans-serif", letterSpacing: '-0.01em',
           }}>{title}</span>
         </div>
         <div style={{ color: 'rgba(255,255,255,0.25)', flexShrink: 0 }}>
@@ -246,7 +246,7 @@ Generate:
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
           <label style={{
             fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase',
-            color: 'rgba(255,176,0,0.5)', fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+            color: 'rgba(255,176,0,0.5)', fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
           }}>Industry</label>
           <select
             value={form.industry}
@@ -254,7 +254,7 @@ Generate:
             style={{
               background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
               borderRadius: 10, padding: '10px 14px', color: form.industry ? '#F8FAFC' : 'rgba(255,255,255,0.25)',
-              fontSize: 13, fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontSize: 13, fontFamily: "'DM Sans', system-ui, sans-serif",
               outline: 'none', width: '100%', boxSizing: 'border-box',
             }}
           >
@@ -278,7 +278,7 @@ Generate:
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
-                color: GOLD, fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+                color: GOLD, fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
                 display: 'block', marginBottom: 10,
               }}>Brand Voice</span>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -288,7 +288,7 @@ Generate:
                     border: '1px solid rgba(255,176,0,0.25)',
                     background: 'rgba(255,176,0,0.08)',
                     color: GOLD_LIGHT, fontSize: 11, fontWeight: 600,
-                    fontFamily: "'Satoshi', system-ui, sans-serif",
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
                     letterSpacing: '0.05em',
                   }}>{v}</span>
                 ))}
@@ -359,17 +359,17 @@ Generate:
           }}>
             <span style={{
               fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
-              color: GOLD, fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+              color: GOLD, fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
               display: 'block', marginBottom: 6,
             }}>Campaign Title</span>
             <p style={{
               fontSize: 20, fontWeight: 800, color: '#F8FAFC',
-              fontFamily: "'Satoshi', system-ui, sans-serif", letterSpacing: '-0.02em',
+              fontFamily: "'DM Sans', system-ui, sans-serif", letterSpacing: '-0.02em',
             }}>{result.campaign_title}</p>
             {result.hook && (
               <p style={{
                 fontSize: 12, color: GOLD, marginTop: 4, fontStyle: 'italic',
-                fontFamily: "'Satoshi', system-ui, sans-serif",
+                fontFamily: "'DM Sans', system-ui, sans-serif",
               }}>"{result.hook}"</p>
             )}
           </div>
@@ -382,7 +382,7 @@ Generate:
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
-                color: GOLD, fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+                color: GOLD, fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
                 display: 'block', marginBottom: 10,
               }}>Distribution Channels</span>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -392,7 +392,7 @@ Generate:
                     border: '1px solid rgba(179,230,90,0.2)',
                     background: 'rgba(179,230,90,0.06)',
                     color: GREEN, fontSize: 11, fontWeight: 600,
-                    fontFamily: "'Satoshi', system-ui, sans-serif",
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
                   }}>{ch}</span>
                 ))}
               </div>
@@ -458,7 +458,7 @@ Generate:
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
-                color: GOLD, fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+                color: GOLD, fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
                 display: 'block', marginBottom: 10,
               }}>Color Palette</span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
@@ -475,7 +475,7 @@ Generate:
                       )}
                       <span style={{
                         fontSize: 12, color: 'rgba(248,250,252,0.7)',
-                        fontFamily: "'Satoshi', system-ui, sans-serif",
+                        fontFamily: "'DM Sans', system-ui, sans-serif",
                       }}>{c}</span>
                     </div>
                   );
@@ -492,7 +492,7 @@ Generate:
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
-                color: GOLD, fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+                color: GOLD, fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
                 display: 'block', marginBottom: 10,
               }}>Mood</span>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -502,7 +502,7 @@ Generate:
                     border: '1px solid rgba(255,176,0,0.2)',
                     background: 'rgba(255,176,0,0.06)',
                     color: GOLD_LIGHT, fontSize: 11, fontWeight: 600,
-                    fontFamily: "'Satoshi', system-ui, sans-serif", fontStyle: 'italic',
+                    fontFamily: "'DM Sans', system-ui, sans-serif", fontStyle: 'italic',
                   }}>{m}</span>
                 ))}
               </div>
@@ -515,7 +515,7 @@ Generate:
             }}>
               <span style={{
                 fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
-                color: GOLD, fontFamily: "'Satoshi', system-ui, sans-serif", fontWeight: 700,
+                color: GOLD, fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700,
                 display: 'block', marginBottom: 10,
               }}>Creative References</span>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
@@ -523,7 +523,7 @@ Generate:
                   <li key={i} style={{
                     display: 'flex', alignItems: 'flex-start', gap: 8,
                     fontSize: 12, color: 'rgba(248,250,252,0.7)',
-                    fontFamily: "'Satoshi', system-ui, sans-serif",
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
                   }}>
                     <span style={{ color: GOLD, marginTop: 1, flexShrink: 0 }}>→</span>
                     {r}
@@ -636,7 +636,7 @@ export default function System() {
             <div style={{ width: 6, height: 6, borderRadius: '50%', background: GREEN, boxShadow: `0 0 8px ${GREEN}` }} />
             <span style={{
               fontSize: 9, letterSpacing: '0.3em', textTransform: 'uppercase',
-              color: GOLD, fontWeight: 700, fontFamily: "'Satoshi', system-ui, sans-serif",
+              color: GOLD, fontWeight: 700, fontFamily: "'DM Sans', system-ui, sans-serif",
             }}>SYSTEM ACTIVE · PRIVATE ACCESS</span>
             <Lock size={10} style={{ color: GOLD, opacity: 0.6 }} />
           </motion.div>
@@ -647,7 +647,7 @@ export default function System() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(36px,6vw,76px)', fontWeight: 800,
               lineHeight: 0.95, letterSpacing: '-0.04em',
               color: '#F8FAFC', marginBottom: 24,
@@ -667,7 +667,7 @@ export default function System() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: 'clamp(14px,1.5vw,17px)', color: 'rgba(248,250,252,0.45)',
               maxWidth: 520, margin: '0 auto', lineHeight: 1.65,
             }}
@@ -694,12 +694,12 @@ export default function System() {
                 <span style={{ color: GOLD, opacity: 0.7 }}>{stat.icon}</span>
                 <div style={{ textAlign: 'left' }}>
                   <p style={{
-                    fontFamily: "'Satoshi', system-ui, sans-serif",
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
                     fontSize: 17, fontWeight: 800, color: '#F8FAFC',
                     letterSpacing: '-0.02em', lineHeight: 1,
                   }}>{stat.value}</p>
                   <p style={{
-                    fontFamily: "'Satoshi', system-ui, sans-serif",
+                    fontFamily: "'DM Sans', system-ui, sans-serif",
                     fontSize: 10, color: 'rgba(248,250,252,0.35)',
                     letterSpacing: '0.06em', marginTop: 2,
                   }}>{stat.label}</p>
@@ -741,7 +741,7 @@ export default function System() {
           <div style={{ flex: 1, height: 1, background: 'rgba(255,176,0,0.12)' }} />
           <span style={{
             fontSize: 9, letterSpacing: '0.32em', textTransform: 'uppercase',
-            color: GOLD, fontWeight: 700, fontFamily: "'Satoshi', system-ui, sans-serif",
+            color: GOLD, fontWeight: 700, fontFamily: "'DM Sans', system-ui, sans-serif",
             whiteSpace: 'nowrap',
           }}>GENERATION MODULES</span>
           <div style={{ flex: 1, height: 1, background: 'rgba(255,176,0,0.12)' }} />
@@ -757,7 +757,7 @@ export default function System() {
         }}>
           <div style={{ width: 6, height: 6, borderRadius: '50%', background: GREEN, flexShrink: 0 }} />
           <p style={{
-            fontFamily: "'Satoshi', system-ui, sans-serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 11, color: 'rgba(179,230,90,0.6)', letterSpacing: '0.04em',
           }}>
             All outputs are AI-generated drafts. Review before use in production assets.
@@ -782,7 +782,7 @@ export default function System() {
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 clamp(24px,5vw,60px) clamp(48px,6vw,80px)', position: 'relative', zIndex: 10 }}>
         <div style={{ height: 1, background: 'linear-gradient(to right, transparent, rgba(255,176,0,0.15), transparent)', marginBottom: 32 }} />
         <p style={{
-          textAlign: 'center', fontFamily: "'Satoshi', system-ui, sans-serif",
+          textAlign: 'center', fontFamily: "'DM Sans', system-ui, sans-serif",
           fontSize: 10, letterSpacing: '0.22em', color: 'rgba(255,176,0,0.3)',
           textTransform: 'uppercase',
         }}>

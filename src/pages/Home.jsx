@@ -1,17 +1,21 @@
 import React, { useEffect } from 'react';
+import Seo from '@/components/ayesmaj/Seo';
 import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
 import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import AyesmajBackground from '@/components/ayesmaj/AyesmajBackground';
 import HeroWorlds from '@/components/ayesmaj/HeroWorlds';
 import FutureOfBranding from '@/components/ayesmaj/sections/FutureOfBranding';
+import CapabilitiesShowcase from '@/components/ayesmaj/sections/CapabilitiesShowcase';
 import WebExpPreview from '@/components/ayesmaj/sections/WebExpPreview';
 import Commercials from '@/components/ayesmaj/sections/Commercials';
 import SelectedWorlds from '@/components/ayesmaj/sections/SelectedWorlds';
+import ConceptLab from '@/components/ayesmaj/sections/ConceptLab';
 import PerceptionPrice from '@/components/ayesmaj/sections/PerceptionPrice';
 import CreativeSystem from '@/components/ayesmaj/sections/CreativeSystem';
 import StudioAbout from '@/components/ayesmaj/sections/StudioAbout';
 import ClientsStrip from '@/components/ayesmaj/sections/ClientsStrip';
-import FinalCTA from '@/components/ayesmaj/sections/FinalCTA';
+import BeforeAfterShowcase from '@/components/ayesmaj/sections/BeforeAfterShowcase';
+import BrandWorldCTA from '@/components/ayesmaj/sections/BrandWorldCTA';
 
 export default function Home() {
   useEffect(() => {
@@ -20,6 +24,11 @@ export default function Home() {
 
   return (
     <div style={{ background: '#020302', minHeight: '100vh', overflowX: 'clip', position: 'relative' }}>
+      <Seo
+        title="AYESMAJ Studios | Cinematic Branding, AI Content, Websites & 3D Worlds"
+        description="AYESMAJ Studios builds complete visual worlds — brand identity, cinematic websites, AI content production, and immersive 3D — as one connected creative system."
+        path="/"
+      />
       {/* Shared cinematic background atmosphere */}
       <AyesmajBackground accent="255,176,0" />
 
@@ -28,8 +37,11 @@ export default function Home() {
         <AyesmajNav />
         <HeroWorlds />
 
-        {/* Three business categories */}
+        {/* Full-screen visual universe */}
         <FutureOfBranding />
+
+        {/* A concise overview of the studio's full skill set */}
+        <CapabilitiesShowcase />
 
         {/* Web experiences preview */}
         <WebExpPreview />
@@ -40,20 +52,26 @@ export default function Home() {
         {/* Portfolio showcase */}
         <SelectedWorlds />
 
+        {/* Self-initiated work and visual experiments */}
+        <ConceptLab />
+
         {/* Perception / value argument */}
         <PerceptionPrice />
 
-        {/* Creative process timeline */}
+        {/* Storyboard — from idea to launch */}
         <CreativeSystem />
+
+        {/* Before / after — drag to compare */}
+        <BeforeAfterShowcase />
 
         {/* The studio + stats */}
         <StudioAbout />
 
-        {/* Clients marquee */}
+        {/* Clients wall with hover reveal */}
         <ClientsStrip />
 
-        {/* Final CTA */}
-        <FinalCTA />
+        {/* Ready to build a brand world — bright luxury form */}
+        <BrandWorldCTA />
 
         <AyesmajFooter />
       </div>

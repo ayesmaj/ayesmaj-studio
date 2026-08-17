@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone } from 'lucide-react';
+import useSmoothVideoPlayback from './components/ayesmaj/useSmoothVideoPlayback';
 
 export default function Layout({ children, currentPageName }) {
   const [scrolled, setScrolled] = useState(false);
+  const layoutRef = useRef(null);
+
+  useSmoothVideoPlayback(layoutRef);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 300);
@@ -12,11 +16,6 @@ export default function Layout({ children, currentPageName }) {
   }, []);
 
   useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://api.fontshare.com/v2/css?f[]=satoshi@700,900&display=swap';
-    document.head.appendChild(link);
-
     // Custom cursor
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
@@ -34,7 +33,7 @@ export default function Layout({ children, currentPageName }) {
   }, []);
 
   return (
-    <div style={{ background: '#030303', minHeight: '100vh', overflow: 'visible', position: 'relative', WebkitOverflowScrolling: 'touch' }}>
+    <div ref={layoutRef} style={{ background: '#030303', minHeight: '100vh', overflow: 'visible', position: 'relative', WebkitOverflowScrolling: 'touch' }}>
       <style>{`
         .custom-cursor {
           position: fixed;
@@ -54,6 +53,7 @@ export default function Layout({ children, currentPageName }) {
       <AnimatePresence>
         {scrolled && (
           <motion.a
+            className="ayes-floating-call"
             href="tel:5093197999"
             initial={{ opacity: 0, scale: 0.7, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function Layout({ children, currentPageName }) {
               borderRadius: '100px',
               background: 'linear-gradient(135deg, #E8C96D 0%, #C8A44E 100%)',
               color: '#07100A',
-              fontFamily: "'Satoshi', system-ui, sans-serif",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
               fontSize: '14px',
               fontWeight: 800,
               letterSpacing: '0.06em',
