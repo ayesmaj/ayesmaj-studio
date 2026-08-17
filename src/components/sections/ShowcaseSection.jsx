@@ -9,56 +9,56 @@ const projects = [
     title: 'Character Design',
     category: '3D Animation',
     result: 'Cinematic CGI Breakdown',
-    img: '/characters/1.jpeg',
+    img: '/characters/1.webp',
     span: 'lg:col-span-2'
   },
   {
     title: 'Interior Design',
     category: 'AI Photography',
     result: 'Real Estate Visual Campaign',
-    img: '/brands/interior-design/1.jpeg',
+    img: '/brands/interior-design/1.webp',
     span: ''
   },
   {
     title: 'Brand Identities',
     category: 'Brand Identity',
     result: 'Full Logo System Delivery',
-    img: '/logos/1.png',
+    img: '/logos/1.webp',
     span: ''
   },
   {
     title: 'NOAM Audio',
     category: 'Product Visualization',
     result: 'E-commerce Launch Asset',
-    img: '/brands/noam/1.png',
+    img: '/brands/noam/1.webp',
     span: ''
   },
   {
     title: 'Blenday',
     category: 'CGI Commercial',
     result: 'Product Ad Campaign',
-    img: '/brands/blenday/1.png',
+    img: '/brands/blenday/1.webp',
     span: ''
   },
   {
     title: 'ASHÉ Campaign',
     category: 'Brand Campaign',
     result: 'Full Brand World Delivery',
-    img: '/brands/ashe/5.png',
+    img: '/brands/ashe/5.webp',
     span: ''
   },
   {
     title: 'Boom Chicka Pop',
     category: 'Packaging Design',
     result: 'CGI Product Reveal',
-    img: '/brands/boom-chica/2.png',
+    img: '/brands/boom-chica/2.webp',
     span: ''
   },
   {
     title: 'LaCroix',
     category: 'CGI Commercial',
     result: 'Product Hero Shot',
-    img: '/brands/lacroix/1.jpg',
+    img: '/brands/lacroix/1.webp',
     span: 'lg:col-span-2'
   },
 ];

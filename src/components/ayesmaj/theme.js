@@ -24,7 +24,7 @@ export const WORLDS = [
     accent: "#B3FF3F",
     accentSoft: "#6CFF8F",
     accentRGB: "179,255,63",
-    image: "/assets/ayesmaj/hero/hero-world-website.png",
+    image: "/assets/ayesmaj/hero/hero-world-website.webp",
     // radial glow position (x% of panel)
     glowAt: "35% 70%",
   },
@@ -37,7 +37,7 @@ export const WORLDS = [
     accent: "#FFB000",
     accentSoft: "#FFD36A",
     accentRGB: "255,176,0",
-    image: "/assets/ayesmaj/hero/hero-world-ai-marketing.png",
+    image: "/assets/ayesmaj/hero/hero-world-ai-marketing.webp",
     glowAt: "50% 70%",
     featured: true,
   },
@@ -50,7 +50,7 @@ export const WORLDS = [
     accent: "#9B5CFF",
     accentSoft: "#C084FC",
     accentRGB: "155,92,255",
-    image: "/assets/ayesmaj/hero/hero-world-3d.png",
+    image: "/assets/ayesmaj/hero/hero-world-3d.webp",
     glowAt: "65% 70%",
   },
 ];

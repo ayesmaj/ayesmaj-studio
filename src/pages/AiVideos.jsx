@@ -166,11 +166,11 @@ export default function AiVideos() {
               <span className="motion-feature__caption"><small>Featured film</small><strong>{FEATURED.title}</strong></span>
             </button>
             <figure className="motion-stage-card motion-stage-card--one">
-              <img src="/assets/ayesmaj/motion-posters/optimus.jpg" alt="Optimus 3D animation campaign frame" />
+              <img src="/assets/ayesmaj/motion-posters/optimus.webp" alt="Optimus 3D animation campaign frame" />
               <figcaption>3D / Animation</figcaption>
             </figure>
             <figure className="motion-stage-card motion-stage-card--two">
-              <img src="/assets/ayesmaj/motion-posters/yafora.jpg" alt="Yafora product film with cinematic liquid effects" />
+              <img src="/assets/ayesmaj/motion-posters/yafora.webp" alt="Yafora product film with cinematic liquid effects" />
               <figcaption>Product / VFX</figcaption>
             </figure>
             <div className="motion-stage-note"><ScanLine aria-hidden="true" /><span>Film · AI · CGI · VFX</span><strong>One visual system. Every frame.</strong></div>
@@ -218,7 +218,7 @@ export default function AiVideos() {
         </section>
 
         <section className="motion-final">
-          <img src="/assets/ayesmaj/motion-posters/syntropic-53.jpg" alt="Syntropic cinematic technology film frame" loading="lazy" />
+          <img src="/assets/ayesmaj/motion-posters/syntropic-53.webp" alt="Syntropic cinematic technology film frame" loading="lazy" />
           <span aria-hidden="true" />
           <motion.div {...reveal()}>
             <p className="motion-kicker motion-kicker--light">Your story, in motion</p>

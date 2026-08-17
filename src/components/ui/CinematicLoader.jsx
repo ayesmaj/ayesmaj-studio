@@ -39,7 +39,7 @@ export default function CinematicLoader({ onComplete }) {
             className="relative flex flex-col items-center gap-4"
           >
             <img
-              src="/logo-full.png"
+              src="/logo-full.webp"
               alt="AYESMAJ Studios"
               style={{ height: '70px', width: 'auto', objectFit: 'contain' }}
             />

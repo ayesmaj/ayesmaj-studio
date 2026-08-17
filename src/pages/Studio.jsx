@@ -45,12 +45,12 @@ const MANIFESTO = [
 ];
 
 const WALL = [
-  { label: 'Identity',    type: 'img',   src: '/brands/ashe/1.png' },
+  { label: 'Identity',    type: 'img',   src: '/brands/ashe/1.webp' },
   { label: 'Websites',    type: 'video', src: SITE_DEMOS[0].src, poster: SITE_DEMOS[0].poster },
   { label: 'AI Content',  type: 'img',   src: AI_POSTS[0].src },
   { label: '3D',          type: 'video', src: ANIMATIONS[2].src },
-  { label: 'Storyboards', type: 'img',   src: '/generated/storyboards/sb-02-hero.png' },
-  { label: 'Direction',   type: 'img',   src: '/generated/about/about-philosophy-01.png' },
+  { label: 'Storyboards', type: 'img',   src: '/generated/storyboards/sb-03-hero.webp' },
+  { label: 'Direction',   type: 'img',   src: '/generated/about/about-philosophy-01.webp' },
 ];
 
 const PROCESS = [
@@ -79,7 +79,7 @@ export default function Studio() {
         <section style={{ position: 'relative', minHeight: '92vh', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(120% 90% at 50% 10%, #181C19 0%, #0B0D0C 45%, #050505 100%)' }} />
           <img
-            src="/generated/about/about-hero-world.png"
+            src="/generated/about/about-hero-world.webp"
             alt=""
             onError={hideOnError}
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}

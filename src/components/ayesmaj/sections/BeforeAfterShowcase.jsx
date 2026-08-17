@@ -21,8 +21,8 @@ const TABS = [
   { id: 'brand', label: 'Brand', beforeLabel: 'EXPLORATION', afterLabel: 'IDENTITY', ...PURPLE },
 ].map((t) => ({
   ...t,
-  beforeImg: `/generated/before-after/${t.id === 'website' ? 'web' : t.id}-before.png`,
-  afterImg: `/generated/before-after/${t.id === 'website' ? 'web' : t.id}-after.png`,
+  beforeImg: `/generated/before-after/${t.id === 'website' ? 'web' : t.id}-before.webp`,
+  afterImg: `/generated/before-after/${t.id === 'website' ? 'web' : t.id}-after.webp`,
 }));
 
 export default function BeforeAfterShowcase() {

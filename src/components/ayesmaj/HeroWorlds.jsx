@@ -6,7 +6,7 @@ import CinematicButton from "./CinematicButton";
 import MagneticText from "./MagneticText";
 import { WORLDS, COLORS, FONTS } from "./theme";
 
-const COMPOSITE = "/assets/ayesmaj/hero/hero-composite.png";
+const COMPOSITE = "/assets/ayesmaj/hero/hero-composite.webp";
 
 // Each world's extra "reveal" copy + signature stats. Shown on hover.
 const REVEALS = {
@@ -26,9 +26,9 @@ const REVEALS = {
 
 // Per-world diagonal panel images (transparent, separated from the composite)
 const PANEL_IMAGES = {
-  website: "/assets/ayesmaj/hero/panel-website.png",
-  "ai-marketing": "/assets/ayesmaj/hero/panel-ai.png",
-  "3d-worlds": "/assets/ayesmaj/hero/panel-3d.png",
+  website: "/assets/ayesmaj/hero/panel-website.webp",
+  "ai-marketing": "/assets/ayesmaj/hero/panel-ai.webp",
+  "3d-worlds": "/assets/ayesmaj/hero/panel-3d.webp",
 };
 
 /**

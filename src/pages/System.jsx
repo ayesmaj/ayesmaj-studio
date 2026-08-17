@@ -7,7 +7,7 @@ import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import CircuitBackground from '@/components/home/CircuitBackground';
 import { base44 } from '@/api/base44Client';
 
-const LOGO_URL = '/logo.png';
+const LOGO_URL = '/logo.webp';
 const GOLD = '#FFB000';
 const GOLD_LIGHT = '#FFD36A';
 const GREEN = '#B3E65A';

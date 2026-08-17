@@ -67,7 +67,7 @@ const CORE_WORLDS = [
 
 const CAPABILITIES = [
   { number: "01", title: "Brand Strategy & Identity", text: "Positioning, identity, logo systems, typography, and brand language.", tags: ["Strategy", "Identity", "Guidelines"], route: "/services/branding", icon: Compass, media: "/assets/ayesmaj/generated/capabilities/capability-01-brand-strategy.webp" },
-  { number: "02", title: "Packaging & Label Design", text: "Packaging, labels, boxes, product systems, and retail presentation.", tags: ["Packaging", "Labels", "Retail"], route: "/services/branding", icon: Package, media: "/generated/projects/ashe/cover.png" },
+  { number: "02", title: "Packaging & Label Design", text: "Packaging, labels, boxes, product systems, and retail presentation.", tags: ["Packaging", "Labels", "Retail"], route: "/services/branding", icon: Package, media: "/generated/projects/ashe/cover.webp" },
   { number: "03", title: "Web Design & Development", text: "Premium websites, landing pages, responsive systems, and interaction.", tags: ["UX / UI", "Development", "Web"], route: "/services/web-design", icon: Code2, media: "/assets/ayesmaj/generated/capabilities/capability-03-web-design.webp" },
   { number: "04", title: "AI Image Production", text: "Campaign images, social content, advertising visuals, and product worlds.", tags: ["Campaigns", "Social", "AI Images"], route: "/services/ai-content", icon: Sparkles, media: "/assets/ayesmaj/service-worlds/ai-fashion-campaign.webp" },
   { number: "05", title: "AI Video Production", text: "Commercials, social videos, cinematic campaigns, and brand films.", tags: ["AI Film", "Commercials", "Content"], route: "/services/ai-content", icon: Film, media: "/assets/ayesmaj/generated/capabilities/capability-02-ai-content.webp", video: AI_VIDEOS[1] },
@@ -88,20 +88,20 @@ const SELECTOR = [
 ];
 
 const STORYBOARD_FRAMES = [
-  ["01", "Idea", "/generated/storyboards/sb-01-idea.png"],
-  ["02", "Visual direction", "/generated/storyboards/sb-02-direction.png"],
+  ["01", "Idea", "/generated/storyboards/sb-01-idea.webp"],
+  ["02", "Visual direction", "/generated/storyboards/sb-02-direction.webp"],
   ["03", "Shot design", "/storyboards-10/04-podos-infrastructure-arrives.webp"],
-  ["04", "Hero frame", "/generated/storyboards/sb-03-hero.png"],
-  ["05", "Motion", "/generated/storyboards/sb-04-expand.png"],
-  ["06", "Final campaign", "/generated/storyboards/sb-05-launch.png"],
+  ["04", "Hero frame", "/generated/storyboards/sb-03-hero.webp"],
+  ["05", "Motion", "/generated/storyboards/sb-04-expand.webp"],
+  ["06", "Final campaign", "/generated/storyboards/sb-05-launch.webp"],
 ];
 
 const PROJECTS = [
-  { name: "ASHÉ", category: "Branding", slug: "ashe", image: "/generated/projects/ashe/cover.png" },
-  { name: "Blenday", category: "AI", slug: "blenday", image: "/generated/projects/blenday/cover.png" },
+  { name: "ASHÉ", category: "Branding", slug: "ashe", image: "/generated/projects/ashe/cover.webp" },
+  { name: "Blenday", category: "AI", slug: "blenday", image: "/generated/projects/blenday/cover.webp" },
   { name: "PODOS AI", category: "Web", slug: "podos-ai", image: "/brands/podos%20ai/generated/master/brand-world-master.webp" },
-  { name: "Noam", category: "3D", slug: "noam", image: "/generated/projects/noam/cover.png" },
-  { name: "Paranormal", category: "Motion", slug: "paranormal", image: "/generated/projects/paranormal/cover.png" },
+  { name: "Noam", category: "3D", slug: "noam", image: "/generated/projects/noam/cover.webp" },
+  { name: "Paranormal", category: "Motion", slug: "paranormal", image: "/generated/projects/paranormal/cover.webp" },
   { name: "Syntropic", category: "Storyboard", slug: "syntropic", image: "/brands/syntropic/generated/master/brand-world-master.webp" },
   { name: "Arizona Chimney Pros", category: "Branding", slug: "arizona-chimney-pros", image: "/brands/arizona%20chimney%20pros/generated/master/brand-world-master.webp" },
   { name: "Kolie", category: "Web", slug: "kolie", image: "/brands/kolie/generated/master/brand-world-master.webp" },
@@ -256,7 +256,7 @@ export default function Services() {
 
         <section className="svc-feature svc-feature--branding section-paper">
           <motion.div className="svc-feature__copy" {...reveal()}><p className="svc-kicker">Branding & identity</p><h2>Build the language<br />before you build the noise.</h2><p>We create the visual system that everything else grows from.</p><div className="svc-tags">Strategy · Visual identity · Logo systems · Typography · Packaging · Guidelines</div><Link className="svc-button svc-button--ink" to="/services/branding">Explore branding <ArrowRight /></Link></motion.div>
-          <motion.div className="svc-feature__brand-board" {...reveal(0.08)}><img src={local("/brands/ashe/generated/master/brand-world-master.webp")} alt="ASHÉ identity system with logo, palette, typography, packaging, and applications" loading="lazy" /><img src={local("/brands/blenday/generated/packaging/packaging-lineup.webp")} alt="Blenday packaging system" loading="lazy" /><img src={local("/generated/projects/paranormal/cover.png")} alt="Paranormal campaign poster" loading="lazy" /></motion.div>
+          <motion.div className="svc-feature__brand-board" {...reveal(0.08)}><img src={local("/brands/ashe/generated/master/brand-world-master.webp")} alt="ASHÉ identity system with logo, palette, typography, packaging, and applications" loading="lazy" /><img src={local("/brands/blenday/generated/packaging/packaging-lineup.webp")} alt="Blenday packaging system" loading="lazy" /><img src={local("/generated/projects/paranormal/cover.webp")} alt="Paranormal campaign poster" loading="lazy" /></motion.div>
         </section>
 
         <section className="svc-feature svc-feature--web section-glass">
@@ -271,7 +271,7 @@ export default function Services() {
 
         <section className="svc-cgi section-cgi">
           <motion.header className="svc-section-head svc-section-head--center" {...reveal()}><p className="svc-kicker">3D & CGI</p><h2>If it doesn’t exist,<br /><span>we can build it.</span></h2></motion.header>
-          <div className="svc-cgi__stages">{[["Sketch", "/generated/before-after/product-before.png"], ["Wireframe", "/assets/ayesmaj/generated/capabilities/capability-04-3d-cgi.webp"], ["Material", "/assets/ayesmaj/service-worlds/worlds3d-product.webp"], ["Final CGI", "/assets/ayesmaj/service-worlds/worlds3d-hero.webp"]].map(([label, image], index) => <motion.figure key={label} {...reveal(index * .05)}><img src={local(image)} alt={`${label} stage of AYESMAJ 3D production`} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, "0")}</span>{label}</figcaption></motion.figure>)}</div>
+          <div className="svc-cgi__stages">{[["Sketch", "/generated/before-after/product-before.webp"], ["Wireframe", "/assets/ayesmaj/generated/capabilities/capability-04-3d-cgi.webp"], ["Material", "/assets/ayesmaj/service-worlds/worlds3d-product.webp"], ["Final CGI", "/assets/ayesmaj/service-worlds/worlds3d-hero.webp"]].map(([label, image], index) => <motion.figure key={label} {...reveal(index * .05)}><img src={local(image)} alt={`${label} stage of AYESMAJ 3D production`} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, "0")}</span>{label}</figcaption></motion.figure>)}</div>
           <div className="svc-cgi__reel"><Video media={{ src: ANIMATIONS[10].src, poster: "/assets/ayesmaj/service-worlds/worlds3d-environment.webp" }} label="AYESMAJ 3D environment animation" /><div><p>Modeling · Product visualization · Environments · Characters · Animation · Simulation</p><Link className="svc-button svc-button--glass" to="/services/3d-cgi">Explore 3D & CGI <ArrowRight /></Link></div></div>
         </section>
 
@@ -290,7 +290,7 @@ export default function Services() {
         <section className="svc-applications section-paper">
           <motion.header className="svc-section-head" {...reveal()}><p className="svc-kicker">Packaging & campaign applications</p><h2>A brand should work<br /><span>everywhere it appears.</span></h2></motion.header>
           <div className="svc-applications__grid">{[
-            ["/generated/projects/ashe/cover.png", "ASHÉ packaging"], ["/generated/projects/blenday/cover.png", "Blenday product campaign"], ["/brands/arizona%20chimney%20pros/generated/master/brand-world-master.webp", "Arizona Chimney Pros vehicle and service branding"], ["/generated/projects/lacroix/cover.png", "LaCroix product campaign"], ["/generated/projects/paranormal/cover.png", "Paranormal packaging and poster"], ["/generated/projects/pita-basta/cover.png", "Pita Basta retail brand application"]
+            ["/generated/projects/ashe/cover.webp", "ASHÉ packaging"], ["/generated/projects/blenday/cover.webp", "Blenday product campaign"], ["/brands/arizona%20chimney%20pros/generated/master/brand-world-master.webp", "Arizona Chimney Pros vehicle and service branding"], ["/generated/projects/lacroix/cover.webp", "LaCroix product campaign"], ["/generated/projects/paranormal/cover.webp", "Paranormal packaging and poster"], ["/generated/projects/pita-basta/cover.webp", "Pita Basta retail brand application"]
           ].map(([image, alt], index) => <motion.img key={image} src={local(image)} alt={alt} loading="lazy" {...reveal(index * .03)} />)}</div>
         </section>
 
@@ -312,7 +312,7 @@ export default function Services() {
         </section>
 
         <section className="svc-final">
-          <div className="svc-final__media" aria-hidden="true"><img src={local("/generated/projects/ashe/cover.png")} alt="" /><img src={local("/assets/ayesmaj/generated/capabilities/capability-03-web-design.webp")} alt="" /><img src={local("/assets/ayesmaj/service-worlds/worlds3d-hero.webp")} alt="" /><img src={local("/generated/projects/blenday/cover.png")} alt="" /></div>
+          <div className="svc-final__media" aria-hidden="true"><img src={local("/generated/projects/ashe/cover.webp")} alt="" /><img src={local("/assets/ayesmaj/generated/capabilities/capability-03-web-design.webp")} alt="" /><img src={local("/assets/ayesmaj/service-worlds/worlds3d-hero.webp")} alt="" /><img src={local("/generated/projects/blenday/cover.webp")} alt="" /></div>
           <motion.div {...reveal()}><p className="svc-kicker">Build the complete system</p><h2>Don’t buy a service.<br /><span>Build a brand world.</span></h2><p>Tell us what you’re building. We’ll help define the right combination of strategy, design, content, web, and 3D.</p><div className="svc-actions"><Link className="svc-button svc-button--gold" to="/Contact">Start a project <ArrowRight /></Link><Link className="svc-button svc-button--glass" to="/Work">View our work <ArrowRight /></Link></div></motion.div>
         </section>
       </main>

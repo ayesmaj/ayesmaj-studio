@@ -6,7 +6,7 @@ import MagneticButton from '@/components/ui/MagneticButton';
 import { MenuItem, Menu as NavMenu, HoveredLink, MenuDivider } from '@/components/ui/navbar-menu';
 import { BRAND_NAV_GROUPS, BRANDS } from '@/data/brands';
 
-const LOGO_URL = "/logo.png";
+const LOGO_URL = "/logo.webp";
 
 const mobileLinks = [
   { label: 'Home',     href: '#hero' },

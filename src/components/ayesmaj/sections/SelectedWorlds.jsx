@@ -107,7 +107,7 @@ export default function SelectedWorlds() {
                 }}
               >
                 <img
-                  src={`/generated/projects/${b.id}/cover.png`}
+                  src={`/generated/projects/${b.id}/cover.webp`}
                   alt={b.name}
                   loading="lazy"
                   onError={(e) => {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Phone } from 'lucide-react';
 
-const LOGO_URL = '/logo-full.png';
+const LOGO_URL = '/logo-full.webp';
 
 export default function HomeFooter() {
   const go = (id) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });

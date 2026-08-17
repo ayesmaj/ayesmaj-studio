@@ -5,37 +5,37 @@ const CATEGORIES = [
   {
     id: 1,
     title: 'PRODUCT BRANDS',
-    image: '/images/cat-product-brands.png',
+    image: '/images/cat-product-brands.webp',
     desc: 'Elevating everyday products into visual icons',
   },
   {
     id: 2,
     title: 'LUXURY GOODS',
-    image: '/images/cat-luxury.png',
+    image: '/images/cat-luxury.webp',
     desc: 'Crafting desire through cinematic detail',
   },
   {
     id: 3,
     title: 'TECH & STARTUPS',
-    image: '/images/cat-tech.png',
+    image: '/images/cat-tech.webp',
     desc: 'Translating innovation into compelling visuals',
   },
   {
     id: 4,
     title: 'FASHION & BEAUTY',
-    image: '/images/cat-fashion.png',
+    image: '/images/cat-fashion.webp',
     desc: 'Where aesthetics meet storytelling',
   },
   {
     id: 5,
     title: 'ARCHITECTURE',
-    image: '/images/cat-architecture.png',
+    image: '/images/cat-architecture.webp',
     desc: 'Bringing structures to life before they exist',
   },
   {
     id: 6,
     title: 'GLOBAL CAMPAIGNS',
-    image: '/images/cat-luxury-2.png',
+    image: '/images/cat-luxury-2.webp',
     desc: 'World-class visuals for international reach',
   },
 ];

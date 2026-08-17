@@ -61,11 +61,11 @@ const DEVELOPMENT_FRAMES = [
 ].map(([title, src], index) => ({ title, src, n: String(index + 1).padStart(2, '0') }));
 
 const PROCESS_FRAMES = [
-  { n: '01', title: 'Find the Signal', caption: 'Position the idea, audience, and single point of view.', src: '/generated/storyboards/sb-01-idea.png' },
-  { n: '02', title: 'Build the Language', caption: 'Lock the palette, light, lens, texture, and visual grammar.', src: '/generated/storyboards/sb-02-direction.png' },
-  { n: '03', title: 'Create the Hero', caption: 'Direct the centerpiece asset frame by frame.', src: '/generated/storyboards/sb-03-hero.png' },
-  { n: '04', title: 'Expand the World', caption: 'Turn one strong frame into a complete campaign system.', src: '/generated/storyboards/sb-04-expand.png' },
-  { n: '05', title: 'Launch in Motion', caption: 'Carry the approved direction into film, web, social, and launch.', src: '/generated/storyboards/sb-05-launch.png' },
+  { n: '01', title: 'Find the Signal', caption: 'Position the idea, audience, and single point of view.', src: '/generated/storyboards/sb-01-idea.webp' },
+  { n: '02', title: 'Build the Language', caption: 'Lock the palette, light, lens, texture, and visual grammar.', src: '/generated/storyboards/sb-02-direction.webp' },
+  { n: '03', title: 'Create the Hero', caption: 'Direct the centerpiece asset frame by frame.', src: '/generated/storyboards/sb-03-hero.webp' },
+  { n: '04', title: 'Expand the World', caption: 'Turn one strong frame into a complete campaign system.', src: '/generated/storyboards/sb-04-expand.webp' },
+  { n: '05', title: 'Launch in Motion', caption: 'Carry the approved direction into film, web, social, and launch.', src: '/generated/storyboards/sb-05-launch.webp' },
 ];
 
 const reveal = (reducedMotion, delay = 0) => reducedMotion
@@ -239,7 +239,7 @@ export default function Storyboards() {
           <div className="story-shell">
             <motion.div className="story-production-board__card" {...reveal(reducedMotion)}>
               <div className="story-production-board__top"><span>Scene — Production Board</span><span>AYESMAJ / Director's Cut</span></div>
-              <img src="/assets/ayesmaj/storyboard-ref.png" alt="Syntropic explainer production storyboard with seven directed scenes" loading="lazy" decoding="async" />
+              <img src="/assets/ayesmaj/storyboard-ref.webp" alt="Syntropic explainer production storyboard with seven directed scenes" loading="lazy" decoding="async" />
             </motion.div>
           </div>
         </section>

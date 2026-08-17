@@ -28,21 +28,21 @@ const section = { maxWidth: 1320, margin: "0 auto", padding: "0 clamp(24px,5vw,8
 /* --------------------------- client wall data --------------------------- */
 
 const CLIENTS = [
-  { name: "ASHÉ",                  thumb: "/brands/ashe/1.png" },
-  { name: "BLENDAY",               thumb: "/brands/blenday/1.png" },
-  { name: "BOOM CHICKA POP",       thumb: "/brands/boom-chica/1.png" },
-  { name: "LaCROIX",               thumb: "/brands/lacroix/1.jpg" },
-  { name: "HONEY",                 thumb: "/brands/honey/1.jpg" },
-  { name: "NOAM",                  thumb: "/brands/noam/1.png" },
-  { name: "PITA BASTA",            thumb: "/brands/pita-basta/1.png" },
-  { name: "BARON HERZOG",          thumb: "/brands/baron-herzog/1.png" },
-  { name: "VUDU ENERGY",           thumb: "/videos/websites/posters/vudu-energy.jpg" },
-  { name: "PODOS AI",              thumb: "/videos/websites/posters/podos-ai.jpg" },
-  { name: "SYNTROPIC",             thumb: "/videos/websites/posters/syntropic.jpg" },
-  { name: "REBOUND",               thumb: "/videos/websites/posters/rebound-skincare.jpg" },
-  { name: "CASA ORA",              thumb: "/videos/websites/posters/casa-ora.jpg" },
-  { name: "KOLIE",                 thumb: "/videos/websites/posters/kolie.png" },
-  { name: "ELECTRIC FUEL AMERICA", thumb: "/videos/websites/posters/electric-fuel-america.jpg" },
+  { name: "ASHÉ",                  thumb: "/brands/ashe/1.webp" },
+  { name: "BLENDAY",               thumb: "/brands/blenday/1.webp" },
+  { name: "BOOM CHICKA POP",       thumb: "/brands/boom-chica/1.webp" },
+  { name: "LaCROIX",               thumb: "/brands/lacroix/1.webp" },
+  { name: "HONEY",                 thumb: "/brands/honey/1.webp" },
+  { name: "NOAM",                  thumb: "/brands/noam/1.webp" },
+  { name: "PITA BASTA",            thumb: "/brands/pita-basta/1.webp" },
+  { name: "BARON HERZOG",          thumb: "/brands/baron-herzog/1.webp" },
+  { name: "VUDU ENERGY",           thumb: "/videos/websites/posters/vudu-energy.webp" },
+  { name: "PODOS AI",              thumb: "/videos/websites/posters/podos-ai.webp" },
+  { name: "SYNTROPIC",             thumb: "/videos/websites/posters/syntropic.webp" },
+  { name: "REBOUND",               thumb: "/videos/websites/posters/rebound-skincare.webp" },
+  { name: "CASA ORA",              thumb: "/videos/websites/posters/casa-ora.webp" },
+  { name: "KOLIE",                 thumb: "/videos/websites/posters/kolie.webp" },
+  { name: "ELECTRIC FUEL AMERICA", thumb: "/videos/websites/posters/electric-fuel-america.webp" },
 ];
 
 /* -------------------------------- section ------------------------------- */
@@ -55,7 +55,7 @@ export default function ClientsStrip() {
     <section style={{ position: "relative", background: "#0D0F0E", overflow: "hidden", padding: "clamp(90px,11vw,160px) 0 0" }}>
       {/* subtle wall backdrop */}
       <img
-        src="/generated/clients/clients-wall.png"
+        src="/generated/clients/clients-wall.webp"
         alt=""
         onError={hideOnError}
         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.12, pointerEvents: "none" }}

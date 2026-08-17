@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
-const LOGO_URL = "/logo.png";
+const LOGO_URL = "/logo.webp";
 
 export default function Footer() {
   const go = (id) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });

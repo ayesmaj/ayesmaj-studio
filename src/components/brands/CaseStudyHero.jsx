@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { ArrowLeft } from 'lucide-react';
 
-const PLACEHOLDER = '/brands/ashe/1.png';
+const PLACEHOLDER = '/brands/ashe/1.webp';
 
 export default function CaseStudyHero({ brand }) {
   return (

@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 const items = [
-  { title: 'NOAM Audio',      cat: 'Product Visualization',   img: '/brands/noam/2.png',       span: 'md:col-span-1' },
-  { title: 'Character CGI',   cat: 'CGI Commercial',          img: '/characters/3.png', span: 'md:col-span-1' },
-  { title: 'Boom Chicka Pop', cat: 'Brand Animation',         img: '/brands/boom-chica/2.png', span: 'md:col-span-2' },
-  { title: 'Blenday Motion',  cat: 'Motion Graphics',         img: '/brands/blenday/4.png',    span: 'md:col-span-1' },
-  { title: 'ASHÉ Ritual',     cat: '3D Animation',            img: '/brands/ashe/4.png',       span: 'md:col-span-1' },
+  { title: 'NOAM Audio',      cat: 'Product Visualization',   img: '/brands/noam/2.webp',       span: 'md:col-span-1' },
+  { title: 'Character CGI',   cat: 'CGI Commercial',          img: '/characters/3.webp', span: 'md:col-span-1' },
+  { title: 'Boom Chicka Pop', cat: 'Brand Animation',         img: '/brands/boom-chica/2.webp', span: 'md:col-span-2' },
+  { title: 'Blenday Motion',  cat: 'Motion Graphics',         img: '/brands/blenday/4.webp',    span: 'md:col-span-1' },
+  { title: 'ASHÉ Ritual',     cat: '3D Animation',            img: '/brands/ashe/4.webp',       span: 'md:col-span-1' },
 ];
 
 export default function PortfolioSection() {

@@ -17,31 +17,31 @@ const FRAMES = [
     n: "01",
     title: "IDEA",
     sub: "One conversation becomes one clear creative direction.",
-    img: "/generated/storyboards/sb-01-idea.png",
+    img: "/generated/storyboards/sb-01-idea.webp",
   },
   {
     n: "02",
     title: "VISUAL DIRECTION",
     sub: "Colors, type and mood locked before we build.",
-    img: "/generated/storyboards/sb-02-direction.png",
+    img: "/generated/storyboards/sb-02-direction.webp",
   },
   {
     n: "03",
     title: "HERO BUILD",
     sub: "We craft the centerpiece your brand leads with.",
-    img: "/generated/storyboards/sb-03-hero.png",
+    img: "/generated/storyboards/sb-03-hero.webp",
   },
   {
     n: "04",
     title: "EXPAND THE SYSTEM",
     sub: "One hero becomes a full library of assets.",
-    img: "/generated/storyboards/sb-04-expand.png",
+    img: "/generated/storyboards/sb-04-expand.webp",
   },
   {
     n: "05",
     title: "LAUNCH IN MOTION",
     sub: "Everything ships animated, ready for every channel.",
-    img: "/generated/storyboards/sb-05-launch.png",
+    img: "/generated/storyboards/sb-05-launch.webp",
   },
 ];
 

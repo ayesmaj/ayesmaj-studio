@@ -171,9 +171,9 @@ function HoverShowcase() {
 
 // ── Capability data ──────────────────────────────────────────────────────────
 const HERO_WEBSITES = [
-  { id: 'casa-ora', label: 'Casa Ora', sub: 'Premium Business Website', img: '/videos/websites/posters/casa-ora.jpg', number: '01' },
-  { id: 'podos-ai', label: 'Podos AI', sub: 'Interactive Product Platform', img: '/videos/websites/posters/podos-ai.jpg', number: '02' },
-  { id: 'rebound', label: 'Rebound', sub: 'Responsive Beauty Commerce', img: '/videos/websites/posters/rebound-skincare.jpg', number: '03' },
+  { id: 'casa-ora', label: 'Casa Ora', sub: 'Premium Business Website', img: '/videos/websites/posters/casa-ora.webp', number: '01' },
+  { id: 'podos-ai', label: 'Podos AI', sub: 'Interactive Product Platform', img: '/videos/websites/posters/podos-ai.webp', number: '02' },
+  { id: 'rebound', label: 'Rebound', sub: 'Responsive Beauty Commerce', img: '/videos/websites/posters/rebound-skincare.webp', number: '03' },
 ];
 
 function AyesmajWebShowcase() {
@@ -359,12 +359,12 @@ function ServiceCards() {
 // ── SELECTED WORK ────────────────────────────────────────────────────────────
 const FILTERS = ['All', 'Business', 'E-Commerce', 'AI', 'Landing Pages'];
 const PROJECTS = [
-  { id: 'casa-ora', title: 'CASA ORA', type: 'Luxury Home Experience', cat: 'Business', poster: '/videos/websites/posters/casa-ora.jpg', video: `${R2}/sites/casa-ora.mp4` },
-  { id: 'podos-ai', title: 'PODOS AI', type: 'AI Product Platform', cat: 'AI', poster: '/videos/websites/posters/podos-ai.jpg', video: `${R2}/sites/podos-ai.mp4` },
-  { id: 'rebound', title: 'REBOUND SKINCARE', type: 'Beauty & Medspa Website', cat: 'E-Commerce', poster: '/videos/websites/posters/rebound-skincare.jpg', video: `${R2}/sites/rebound-skincare.mp4` },
-  { id: 'electric-fuel', title: 'ELECTRIC FUEL AMERICA', type: 'Cinematic Product Story', cat: 'Landing Pages', poster: '/videos/websites/posters/electric-fuel-america.jpg', video: `${R2}/sites/electric-fuel-america.mp4` },
-  { id: 'syntropic', title: 'SYNTROPIC', type: 'Deep-Tech Digital Experience', cat: 'AI', poster: '/videos/websites/posters/syntropic.jpg', video: `${R2}/sites/syntropic.mp4` },
-  { id: 'arizona-chimney', title: 'ARIZONA CHIMNEY PROS', type: 'Local Service Website', cat: 'Business', poster: '/videos/websites/posters/arizona-chimney-pros.jpg', video: `${R2}/sites/arizona-chimney-pros.mp4` },
+  { id: 'casa-ora', title: 'CASA ORA', type: 'Luxury Home Experience', cat: 'Business', poster: '/videos/websites/posters/casa-ora.webp', video: `${R2}/sites/casa-ora.mp4` },
+  { id: 'podos-ai', title: 'PODOS AI', type: 'AI Product Platform', cat: 'AI', poster: '/videos/websites/posters/podos-ai.webp', video: `${R2}/sites/podos-ai.mp4` },
+  { id: 'rebound', title: 'REBOUND SKINCARE', type: 'Beauty & Medspa Website', cat: 'E-Commerce', poster: '/videos/websites/posters/rebound-skincare.webp', video: `${R2}/sites/rebound-skincare.mp4` },
+  { id: 'electric-fuel', title: 'ELECTRIC FUEL AMERICA', type: 'Cinematic Product Story', cat: 'Landing Pages', poster: '/videos/websites/posters/electric-fuel-america.webp', video: `${R2}/sites/electric-fuel-america.mp4` },
+  { id: 'syntropic', title: 'SYNTROPIC', type: 'Deep-Tech Digital Experience', cat: 'AI', poster: '/videos/websites/posters/syntropic.webp', video: `${R2}/sites/syntropic.mp4` },
+  { id: 'arizona-chimney', title: 'ARIZONA CHIMNEY PROS', type: 'Local Service Website', cat: 'Business', poster: '/videos/websites/posters/arizona-chimney-pros.webp', video: `${R2}/sites/arizona-chimney-pros.mp4` },
 ];
 
 function SelectedWork() {
@@ -429,15 +429,15 @@ function SelectedWork() {
 }
 
 const WEBSITE_REELS = [
-  { title: 'Casa Ora', type: 'Luxury Real Estate', video: `${R2}/sites/casa-ora.mp4`, poster: '/videos/websites/posters/casa-ora.jpg' },
-  { title: 'Podos AI', type: 'AI Product Platform', video: `${R2}/sites/podos-ai.mp4`, poster: '/videos/websites/posters/podos-ai.jpg' },
-  { title: 'Vudu Energy', type: 'Energy Brand', video: `${R2}/sites/vudu-energy.mp4`, poster: '/videos/websites/posters/vudu-energy.jpg' },
-  { title: 'Arizona Chimney Pros', type: 'Local Service Website', video: `${R2}/sites/arizona-chimney-pros.mp4`, poster: '/videos/websites/posters/arizona-chimney-pros.jpg' },
-  { title: 'Syntropic', type: 'Technology Experience', video: `${R2}/sites/syntropic.mp4`, poster: '/videos/websites/posters/syntropic.jpg' },
-  { title: 'Electric Fuel America', type: 'Automotive Product Story', video: `${R2}/sites/electric-fuel-america.mp4`, poster: '/videos/websites/posters/electric-fuel-america.jpg' },
-  { title: 'AYESMAJ Studios', type: 'Studio Website', video: `${R2}/sites/ayesmaj-studios.mp4`, poster: '/videos/websites/posters/ayesmaj-studios.jpg' },
-  { title: 'Kolie', type: 'Editorial Website', video: `${R2}/sites/kolie.mp4`, poster: '/videos/websites/posters/kolie.png' },
-  { title: 'Rebound Skincare', type: 'Beauty E-commerce', video: `${R2}/sites/rebound-skincare.mp4`, poster: '/videos/websites/posters/rebound-skincare.jpg' },
+  { title: 'Casa Ora', type: 'Luxury Real Estate', video: `${R2}/sites/casa-ora.mp4`, poster: '/videos/websites/posters/casa-ora.webp' },
+  { title: 'Podos AI', type: 'AI Product Platform', video: `${R2}/sites/podos-ai.mp4`, poster: '/videos/websites/posters/podos-ai.webp' },
+  { title: 'Vudu Energy', type: 'Energy Brand', video: `${R2}/sites/vudu-energy.mp4`, poster: '/videos/websites/posters/vudu-energy.webp' },
+  { title: 'Arizona Chimney Pros', type: 'Local Service Website', video: `${R2}/sites/arizona-chimney-pros.mp4`, poster: '/videos/websites/posters/arizona-chimney-pros.webp' },
+  { title: 'Syntropic', type: 'Technology Experience', video: `${R2}/sites/syntropic.mp4`, poster: '/videos/websites/posters/syntropic.webp' },
+  { title: 'Electric Fuel America', type: 'Automotive Product Story', video: `${R2}/sites/electric-fuel-america.mp4`, poster: '/videos/websites/posters/electric-fuel-america.webp' },
+  { title: 'AYESMAJ Studios', type: 'Studio Website', video: `${R2}/sites/ayesmaj-studios.mp4`, poster: '/videos/websites/posters/ayesmaj-studios.webp' },
+  { title: 'Kolie', type: 'Editorial Website', video: `${R2}/sites/kolie.mp4`, poster: '/videos/websites/posters/kolie.webp' },
+  { title: 'Rebound Skincare', type: 'Beauty E-commerce', video: `${R2}/sites/rebound-skincare.mp4`, poster: '/videos/websites/posters/rebound-skincare.webp' },
 ];
 
 function WebsiteReels() {

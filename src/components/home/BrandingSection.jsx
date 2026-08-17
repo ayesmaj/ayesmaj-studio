@@ -14,31 +14,31 @@ const BLOCKS = [
   {
     title: 'ASHÉ Ritual Roast',
     sub: 'Brand Identity · Packaging Design',
-    img: '/brands/ashe/1.png',
+    img: '/brands/ashe/1.webp',
     slug: 'ashe',
   },
   {
     title: 'Boom Chicka Pop',
     sub: 'Product Campaign · Art Direction',
-    img: '/brands/boom-chica/1.png',
+    img: '/brands/boom-chica/1.webp',
     slug: 'boom-chica',
   },
   {
     title: 'LaCROIX',
     sub: 'CGI Commercial · 3D Render',
-    img: '/brands/lacroix/3.png',
+    img: '/brands/lacroix/3.webp',
     slug: 'lacroix',
   },
   {
     title: 'NOAM Audio',
     sub: 'Product Visualization · CGI · Ad Creative',
-    img: '/brands/noam/1.png',
+    img: '/brands/noam/1.webp',
     slug: 'noam',
   },
   {
     title: 'BLENDAY',
     sub: 'Brand Film · CGI · Motion',
-    img: '/brands/blenday/1.png',
+    img: '/brands/blenday/1.webp',
     slug: 'blenday',
   },
 ];

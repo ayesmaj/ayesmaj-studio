@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { BRANDS, BRAND_NAV_GROUPS } from '@/data/brands';
 
-const LOGO_URL = '/logo.png';
+const LOGO_URL = '/logo.webp';
 const GOLD     = '#C8A44E';
 const GOLD_DIM = 'rgba(200,164,78,0.42)';
 

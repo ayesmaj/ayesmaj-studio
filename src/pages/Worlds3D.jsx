@@ -46,7 +46,7 @@ const capabilities = [
     icon: Sparkles,
     title: "Characters & Worlds",
     body: "Original characters, cinematic settings, and visual universes designed to carry a story.",
-    image: "/characters/1.jpeg",
+    image: "/characters/1.webp",
   },
 ];
 
@@ -57,12 +57,12 @@ const reels = [
 ];
 
 const characters = [
-  ["/characters/1.jpeg", "Cinematic mascot"],
-  ["/characters/4.png", "Creature study"],
-  ["/characters/5.png", "Hero character"],
-  ["/characters/10.png", "Stylized portrait"],
-  ["/characters/20.png", "World character"],
-  ["/characters/31.png", "Campaign character"],
+  ["/characters/1.webp", "Cinematic mascot"],
+  ["/characters/4.webp", "Creature study"],
+  ["/characters/5.webp", "Hero character"],
+  ["/characters/10.webp", "Stylized portrait"],
+  ["/characters/20.webp", "World character"],
+  ["/characters/31.webp", "Campaign character"],
 ];
 
 const steps = [

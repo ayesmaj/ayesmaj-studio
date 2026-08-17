@@ -130,8 +130,8 @@ export default function BeforeAfterSection() {
               Slider 01 — Clay to Final Render
             </p>
             <Slider
-              beforeImg="/images/can-raw.png"
-              afterImg="/images/can-final.png"
+              beforeImg="/images/can-raw.webp"
+              afterImg="/images/can-final.webp"
               beforeLabel="Clay Model"
               afterLabel="Final Render"
             />
@@ -141,8 +141,8 @@ export default function BeforeAfterSection() {
               Slider 02 — Raw Model to Final Render
             </p>
             <Slider
-              beforeImg="/images/car-raw.png"
-              afterImg="/images/car-final.png"
+              beforeImg="/images/car-raw.webp"
+              afterImg="/images/car-final.webp"
               beforeLabel="Raw Model"
               afterLabel="Final Render"
             />

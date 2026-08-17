@@ -4,13 +4,13 @@ import { ZoomParallax } from '@/components/ui/zoom-parallax';
 
 // 7 hero shots from across the brand portfolio
 const PARALLAX_IMAGES = [
-  { src: '/brands/ashe/1.png',        alt: 'ASHÉ Ritual Roast' },
-  { src: '/brands/blenday/1.png',     alt: 'BLENDAY Campaign' },
-  { src: '/brands/paranormal/1.jpeg', alt: 'PARANORMAL' },
-  { src: '/brands/boom-chica/1.png',  alt: 'BOOM CHICKA POP' },
-  { src: '/brands/pita-basta/2.png',  alt: 'PITA BASTA' },
-  { src: '/brands/lacroix/1.jpg',     alt: 'LaCROIX' },
-  { src: '/characters/1.jpeg', alt: 'Character Design' },
+  { src: '/brands/ashe/1.webp',        alt: 'ASHÉ Ritual Roast' },
+  { src: '/brands/blenday/1.webp',     alt: 'BLENDAY Campaign' },
+  { src: '/brands/paranormal/1.webp', alt: 'PARANORMAL' },
+  { src: '/brands/boom-chica/1.webp',  alt: 'BOOM CHICKA POP' },
+  { src: '/brands/pita-basta/2.webp',  alt: 'PITA BASTA' },
+  { src: '/brands/lacroix/1.webp',     alt: 'LaCROIX' },
+  { src: '/characters/1.webp', alt: 'Character Design' },
 ];
 
 export default function ZoomParallaxSection() {

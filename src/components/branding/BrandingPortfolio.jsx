@@ -20,9 +20,9 @@ const BRANDS = [
     accent: "#C8922A",
     description:
       "Ancient Fire. Modern Ritual. A cinematic brand identity for an artisan coffee roaster — blending sacred symbolism with premium product storytelling.",
-    images: ['1.png','2.png','3.png','4.png','5.png'],
+    images: ['1.webp','2.webp','3.webp','4.webp','5.webp'],
     videos: [],
-    featured: '1.png',
+    featured: '1.webp',
   },
   {
     id: 'boom-chica',
@@ -32,9 +32,9 @@ const BRANDS = [
     accent: "#E91E8C",
     description:
       "High-energy product campaign for Angie's Boom Chicka Pop — vibrant compositions that pop off the screen and drive irresistible appetite appeal.",
-    images: ['1.png','2.png','3.png'],
+    images: ['1.webp','2.webp','3.webp'],
     videos: [],
-    featured: '1.png',
+    featured: '1.webp',
   },
   {
     id: 'lacroix',
@@ -44,9 +44,9 @@ const BRANDS = [
     accent: "#5BCA6A",
     description:
       "Fresh, dynamic product visualization for LaCroix sparkling water — clean compositions with cinematic liquid motion and explosive color.",
-    images: ['1.png'],
+    images: ['1.webp'],
     videos: [],
-    featured: '1.png',
+    featured: '1.webp',
   },
   {
     id: 'blenday',
@@ -56,9 +56,9 @@ const BRANDS = [
     accent: "#9B59B6",
     description:
       "Full brand identity and motion graphics for BLENDAY frozen fruit blends — bold color, kinetic energy, and lifestyle-driven visual storytelling.",
-    images: ['1.png','2.png','3.png','4.png','5.png'],
+    images: ['1.webp','2.webp','3.webp','4.webp','5.webp'],
     videos: ['6.mp4','7.mp4'],
-    featured: '1.png',
+    featured: '1.webp',
   },
   {
     id: 'characters',
@@ -68,9 +68,9 @@ const BRANDS = [
     accent: "#FFD700",
     description:
       "AI-powered character creation and brand mascot development — from concept to fully realized 3D characters with personality, presence, and cultural resonance.",
-    images: ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png'],
+    images: ['1.webp','2.webp','3.webp','4.webp','5.webp','6.webp','7.webp','8.webp'],
     videos: [],
-    featured: '2.png',
+    featured: '2.webp',
   },
   {
     id: 'noam',
@@ -80,9 +80,9 @@ const BRANDS = [
     accent: "#E8E8E8",
     description:
       "Studio-grade cinematic product visualization and motion production — dramatic lighting, precision staging, and film-quality post-production.",
-    images: ['1.png','2.png','3.jpeg'],
+    images: ['1.webp','2.webp','3.webp'],
     videos: [],
-    featured: '1.png',
+    featured: '1.webp',
   },
   {
     id: 'interior-design',
@@ -92,9 +92,9 @@ const BRANDS = [
     accent: "#D2A679",
     description:
       "Photorealistic architectural visualization for luxury residential and commercial spaces — bringing blueprints to life with cinematic precision and warmth.",
-    images: ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg'],
+    images: ['1.webp','2.webp','3.webp','4.webp','5.webp','6.webp','7.webp','8.webp'],
     videos: [],
-    featured: '1.jpeg',
+    featured: '1.webp',
   },
   {
     id: 'logos',
@@ -104,9 +104,9 @@ const BRANDS = [
     accent: "#B3FF3F",
     description:
       "Logo design and complete brand identity systems — from concept to full visual language, built to command attention and communicate power.",
-    images: ['1.png','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg'],
+    images: ['1.webp','2.webp','3.webp','4.webp','5.webp','6.webp','7.webp','8.webp'],
     videos: [],
-    featured: '1.png',
+    featured: '1.webp',
   },
 ];
 

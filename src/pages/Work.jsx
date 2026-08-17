@@ -64,7 +64,7 @@ function buildFeed() {
     ...BRANDS.map((b) => ({
       key: `brand-${b.id}`, kind: 'brand', size: 'tall', types: brandTypes(b),
       tag: brandTypes(b)[0], title: b.name, subtitle: b.subtitle, accent: b.accent,
-      cover: `/generated/projects/${b.id}/cover.png`,
+      cover: `/generated/projects/${b.id}/cover.webp`,
       fallback: getBrandAssetPath(b, b.featured), slug: b.id, year: b.year,
     })),
     {

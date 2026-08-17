@@ -99,7 +99,7 @@ export default function AyesmajFooter() {
       >
         {/* giant faint A watermark */}
         <img
-          src="/assets/ayesmaj/logo-a.png"
+          src="/assets/ayesmaj/logo-a.webp"
           alt=""
           aria-hidden="true"
           onError={(e) => (e.currentTarget.style.display = "none")}
@@ -193,7 +193,7 @@ export default function AyesmajFooter() {
             {strip.map((b, i) => (
               <img
                 key={`${b.id}-${i}`}
-                src={`/generated/projects/${b.id}/cover.png`}
+                src={`/generated/projects/${b.id}/cover.webp`}
                 onError={coverError(b)}
                 alt=""
                 loading="lazy"

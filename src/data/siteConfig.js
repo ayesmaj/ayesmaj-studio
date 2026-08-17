@@ -22,7 +22,7 @@ export const SITE = {
     youtube: "",
     linkedin: "",
   },
-  defaultOgImage: "/assets/ayesmaj/hero/hero-composite.png",
+  defaultOgImage: "/assets/ayesmaj/hero/hero-composite.webp",
 };
 
 // Canonical navigation (top-level)

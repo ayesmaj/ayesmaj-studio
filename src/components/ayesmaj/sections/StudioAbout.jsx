@@ -34,7 +34,7 @@ const hideOnError = (e) => { e.currentTarget.style.display = 'none'; };
 const heroFallback = (e) => {
   if (e.currentTarget.dataset.fb) return;
   e.currentTarget.dataset.fb = '1';
-  e.currentTarget.src = '/assets/ayesmaj/hero/hero-composite.png';
+  e.currentTarget.src = '/assets/ayesmaj/hero/hero-composite.webp';
 };
 
 const PILLARS = [
@@ -257,7 +257,7 @@ export default function StudioAbout() {
           >
             <div style={{ aspectRatio: '4 / 5', overflow: 'hidden', borderRadius: 16 }}>
               <img
-                src="/generated/about/about-hero-world.png"
+                src="/generated/about/about-hero-world.webp"
                 alt=""
                 loading="lazy"
                 onError={heroFallback}
@@ -272,7 +272,7 @@ export default function StudioAbout() {
             style={{ ...frame, top: '5%', left: '2%', width: '34%', rotate: -6, zIndex: 2 }}
           >
             <div style={{ aspectRatio: '4 / 5', overflow: 'hidden', borderRadius: 16 }}>
-              <img src="/brands/ashe/1.png" alt="" loading="lazy" onError={hideOnError} style={media} />
+              <img src="/brands/ashe/1.webp" alt="" loading="lazy" onError={hideOnError} style={media} />
             </div>
           </motion.div>
 
@@ -303,7 +303,7 @@ export default function StudioAbout() {
           >
             <div style={{ aspectRatio: '16 / 10', overflow: 'hidden', borderRadius: 16 }}>
               <img
-                src="/generated/storyboards/sb-03-hero.png"
+                src="/generated/storyboards/sb-03-hero.webp"
                 alt=""
                 loading="lazy"
                 onError={hideOnError}

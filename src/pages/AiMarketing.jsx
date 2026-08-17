@@ -46,7 +46,7 @@ const services = [
     number: "03",
     title: "Always-On Social",
     body: "A repeatable content engine that keeps every format recognizable, premium, and ready for the next channel.",
-    image: "/brands/blenday/4.png",
+    image: "/brands/blenday/4.webp",
   },
 ];
 

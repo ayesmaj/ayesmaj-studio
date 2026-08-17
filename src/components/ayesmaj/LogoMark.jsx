@@ -15,7 +15,7 @@ export default function LogoMark({ size = 38, showText = true, color = "#F6F3ED"
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: size * 0.32 }}>
       <img
-        src="/assets/ayesmaj/logo-a.png"
+        src="/assets/ayesmaj/logo-a.webp"
         alt="AYESMAJ Studios"
         height={size}
         style={{ height: size, width: "auto", display: "block", objectFit: "contain", userSelect: "none" }}

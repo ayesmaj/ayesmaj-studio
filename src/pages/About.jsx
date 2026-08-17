@@ -49,7 +49,7 @@ function BrandCover({ id, alt, radius = 0 }) {
   if (!brand) return null;
   return (
     <img
-      src={`/generated/projects/${id}/cover.png`}
+      src={`/generated/projects/${id}/cover.webp`}
       alt={alt || `${brand.name} — ${brand.category}`}
       loading="lazy"
       onError={(e) => {
@@ -70,18 +70,18 @@ function BrandCover({ id, alt, radius = 0 }) {
 // Hero collage — 4 small real fragments (brands + generated), drifting slowly.
 const COLLAGE = [
   { type: 'cover', id: 'ashe', drift: 12, dur: 7 },
-  { type: 'img', src: '/brands/butterfly/1.png', fb: '/brands/butterfly/2.png', drift: -14, dur: 9 },
+  { type: 'img', src: '/brands/butterfly/1.webp', fb: '/brands/butterfly/2.webp', drift: -14, dur: 9 },
   { type: 'img', src: AI_POSTS[0].src, fb: AI_POSTS[1].src, drift: 10, dur: 8 },
-  { type: 'img', src: '/brands/noam/1.png', fb: '/brands/noam/logo.png', drift: -10, dur: 10 },
+  { type: 'img', src: '/brands/noam/1.webp', fb: '/brands/noam/logo.webp', drift: -10, dur: 10 },
 ];
 
 const APPROACH = [
-  { n: '01', label: 'Strategy', line: 'Positioning before pixels.', thumb: '/logos/1.png' },
-  { n: '02', label: 'Visual Language', line: 'One system for every surface.', thumb: '/brands/ashe/3.png' },
+  { n: '01', label: 'Strategy', line: 'Positioning before pixels.', thumb: '/logos/1.webp' },
+  { n: '02', label: 'Visual Language', line: 'One system for every surface.', thumb: '/brands/ashe/3.webp' },
   { n: '03', label: 'Content', line: 'Campaigns, not one-offs.', thumb: AI_POSTS[1].src },
-  { n: '04', label: 'Digital Experience', line: 'Sites built to convert.', thumb: '/videos/websites/posters/vudu-energy.jpg' },
-  { n: '05', label: 'Motion', line: 'Film-grade movement.', thumb: '/brands/blenday/1.png' },
-  { n: '06', label: 'Launch', line: 'Everything ships together.', thumb: '/brands/pita-basta/1.png' },
+  { n: '04', label: 'Digital Experience', line: 'Sites built to convert.', thumb: '/videos/websites/posters/vudu-energy.webp' },
+  { n: '05', label: 'Motion', line: 'Film-grade movement.', thumb: '/brands/blenday/1.webp' },
+  { n: '06', label: 'Launch', line: 'Everything ships together.', thumb: '/brands/pita-basta/1.webp' },
 ];
 
 const WORK_WALL = ['ashe', 'blenday', 'butterfly', 'pita-basta', 'noam', 'lacroix'];

@@ -131,7 +131,7 @@ export default function ServiceBranding() {
               >
                 <div style={{ aspectRatio: '4 / 5', overflow: 'hidden' }}>
                   <img
-                    src={`/generated/projects/${b.id}/cover.png`}
+                    src={`/generated/projects/${b.id}/cover.webp`}
                     alt={`${b.name} — ${b.category}`}
                     loading="lazy"
                     onError={(e) => {

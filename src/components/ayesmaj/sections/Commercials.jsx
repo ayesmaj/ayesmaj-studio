@@ -25,7 +25,7 @@ const CARDS = [
     category: "Beverage Commercial",
     accent: "#B3FF3F",
     accentRGB: "179,255,63",
-    poster: "/brands/lacroix/3.png",
+    poster: "/brands/lacroix/3.webp",
     videoSrc: "/brands/lacroix/4.mp4",
   },
   {
