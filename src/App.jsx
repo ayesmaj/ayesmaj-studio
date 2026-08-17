@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import { pagesConfig } from './pages.config'
+import { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -35,6 +36,10 @@ function AnimatedRoutes() {
         exit="exit"
         style={{ minHeight: '100vh' }}
       >
+        {/* Pages are lazy-loaded (see pages.config.js), so a route change can
+            suspend. The fallback is a plain block in the site background so a
+            slow chunk reads as a pause, not a white flash. */}
+        <Suspense fallback={<div style={{ minHeight: '100vh', background: '#0B0F0C' }} />}>
         <Routes location={location}>
           <Route path="/" element={
             <LayoutWrapper currentPageName={mainPageKey}>
@@ -84,6 +89,7 @@ function AnimatedRoutes() {
             </div>
           } />
         </Routes>
+        </Suspense>
       </motion.div>
     </AnimatePresence>
   );

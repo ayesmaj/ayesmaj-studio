@@ -47,36 +47,38 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
-import About from './pages/About';
-import Animations from './pages/Animations';
-import BrandDetail from './pages/BrandDetail';
-import Branding from './pages/Branding';
-import BrandingCaseStudy from './pages/BrandingCaseStudy';
-import Brands from './pages/Brands';
-import Clients from './pages/Clients';
-import Contact from './pages/Contact';
-import Home from './pages/Home';
-import Pricing from './pages/Pricing';
-import ProjectDetail from './pages/ProjectDetail';
-import Reel from './pages/Reel';
-import ServiceAnimation from './pages/ServiceAnimation';
-import Services from './pages/Services';
-import System from './pages/System';
-import WebExperiences from './pages/WebExperiences';
-import AiMarketing from './pages/AiMarketing';
-import Worlds3D from './pages/Worlds3D';
-import Work from './pages/Work';
-import AiVideos from './pages/AiVideos';
-import AiPosts from './pages/AiPosts';
-import Storyboards from './pages/Storyboards';
-import Studio from './pages/Studio';
-import ServiceBranding from './pages/ServiceBranding';
-import Insights from './pages/Insights';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import Cookies from './pages/Cookies';
-import Accessibility from './pages/Accessibility';
-import Faq from './pages/Faq';
+import { lazy } from 'react';
+
+const About = lazy(() => import('./pages/About'));
+const Animations = lazy(() => import('./pages/Animations'));
+const BrandDetail = lazy(() => import('./pages/BrandDetail'));
+const Branding = lazy(() => import('./pages/Branding'));
+const BrandingCaseStudy = lazy(() => import('./pages/BrandingCaseStudy'));
+const Brands = lazy(() => import('./pages/Brands'));
+const Clients = lazy(() => import('./pages/Clients'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Home = lazy(() => import('./pages/Home'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
+const Reel = lazy(() => import('./pages/Reel'));
+const ServiceAnimation = lazy(() => import('./pages/ServiceAnimation'));
+const Services = lazy(() => import('./pages/Services'));
+const System = lazy(() => import('./pages/System'));
+const WebExperiences = lazy(() => import('./pages/WebExperiences'));
+const AiMarketing = lazy(() => import('./pages/AiMarketing'));
+const Worlds3D = lazy(() => import('./pages/Worlds3D'));
+const Work = lazy(() => import('./pages/Work'));
+const AiVideos = lazy(() => import('./pages/AiVideos'));
+const AiPosts = lazy(() => import('./pages/AiPosts'));
+const Storyboards = lazy(() => import('./pages/Storyboards'));
+const Studio = lazy(() => import('./pages/Studio'));
+const ServiceBranding = lazy(() => import('./pages/ServiceBranding'));
+const Insights = lazy(() => import('./pages/Insights'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
+const Cookies = lazy(() => import('./pages/Cookies'));
+const Accessibility = lazy(() => import('./pages/Accessibility'));
+const Faq = lazy(() => import('./pages/Faq'));
 import __Layout from './Layout.jsx';
 
 
