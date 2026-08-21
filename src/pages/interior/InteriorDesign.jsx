@@ -41,7 +41,7 @@ const HERO_PANELS = [
 function Hero() {
   return (
     <section className="idv2-section idv2-hero">
-      <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(360px, 0.95fr) 1.15fr', gap: 'clamp(28px, 4vw, 64px)', alignItems: 'center', minHeight: '92svh' }}>
+      <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 0.95fr) 1.35fr', gap: 'clamp(28px, 4vw, 64px)', alignItems: 'center', minHeight: '84svh', paddingBottom: 'clamp(48px, 5vw, 80px)' }}>
         <div style={{ display: 'grid', gap: 26, alignContent: 'center' }}>
           <motion.div {...rise(0)}><Eyebrow>{IDV_EYEBROW}</Eyebrow></motion.div>
           <motion.h1 {...rise(0.08)} className="idv2-display idv2-display--hero">

@@ -159,6 +159,31 @@ function RawVsReady() {
   );
 }
 
+function MorePairs() {
+  // kitchen, bath, canal, primary: none of these images appear elsewhere on this page
+  const rooms = ['kitchen', 'bath', 'canal', 'primary'];
+  const picks = APARTMENT.pairs.filter((p) => rooms.includes(p.room));
+  return (
+    <section className="idv2-section idv2-dark idv2-acc-capture idv2-bgc idv2-bgc-08">
+      <div className="idv2-inner" style={{ display: 'grid', gap: 24 }}>
+        <div className="idv2-reveal" style={{ display: 'grid', gap: 14, maxWidth: 900 }}>
+          <Eyebrow>EVERY ROOM, THE SAME HONESTY</Eyebrow>
+          <h2 className="idv2-h2">Source on the left. <span className="idv2-acc-text">Design-ready on the right.</span></h2>
+          <p className="idv-lede">Each editorial was generated from its own raw frame with the architecture locked — geometry, openings and furniture positions unchanged.</p>
+        </div>
+        <div className="idv-grid-2">
+          {picks.map((p) => (
+            <div key={p.room} style={{ display: 'grid', gap: 10 }}>
+              <BeforeAfterSlider beforeImg={p.raw} afterImg={p.editorial} beforeLabel="RAW SOURCE" afterLabel="DESIGN-READY" accent="#7FA6C8" accentRGB="127,166,200" />
+              <div className="idv-mono-label">CANAL APARTMENT — {p.label.toUpperCase()}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ClientUnderstands() {
   return (
     <section className="idv2-full idv2-acc-capture">
@@ -227,6 +252,7 @@ export default function InteriorAiScanApartment() {
       <WhatExists />
       <Transformation />
       <RawVsReady />
+      <MorePairs />
       <ClientUnderstands />
       <div className="idv2-section idv2-bright idv2-acc-capture">
         <div className="idv2-inner idv2-section--flush" style={{ paddingTop: 'clamp(60px, 7vw, 110px)', paddingBottom: 'clamp(40px, 5vw, 80px)' }}>

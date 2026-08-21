@@ -102,6 +102,15 @@ export const APARTMENT = {
   /** The one complete honest pair: the surviving raw + a fresh gpt-image-2
       editorial generated from it under the architectural lock. */
   pair: { room: 'Terrace', raw: `${A}/pairs/terrace-raw.webp`, editorial: `${A}/pairs/terrace-editorial-v2.webp` },
+  /** All eight honest pairs (owner request 2026-08-21): the raw source frame
+      and a gpt-image-2 editorial generated from it under the architectural
+      lock. Raws were recovered from git history as generation sources. */
+  pairs: ['terrace', 'kitchen', 'bath', 'canal', 'primary', 'living', 'dining', 'lounge'].map((r) => ({
+    room: r,
+    label: r[0].toUpperCase() + r.slice(1),
+    raw: `${A}/pairs/${r}-raw.webp`,
+    editorial: `${A}/pairs/${r}-editorial-v2.webp`,
+  })),
 };
 
 // ── MAISON VALMONT — renovation: before → process → after → film ───────────
