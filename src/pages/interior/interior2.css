@@ -53,19 +53,26 @@
 .idv2-section { position: relative; overflow: hidden; }
 .idv2-inner { max-width: var(--idv-max); margin: 0 auto; padding: clamp(84px, 9vw, 150px) var(--idv-pad); position: relative; }
 
-/* Bright gradient hero world: cream → ivory → pale lavender + restrained glows */
+/* Dark cinematic hero (owner mockup): deep ground, purple/gold atmosphere,
+   reflective floor light under the fan, glass cards. */
 .idv2-hero {
-  color: var(--idv2-ink);
+  color: #F5F5F0;
   background:
-    radial-gradient(1100px 640px at 88% 8%, rgba(163, 91, 218, 0.16), transparent 62%),
-    radial-gradient(900px 560px at 78% 88%, rgba(216, 183, 90, 0.18), transparent 58%),
-    linear-gradient(100deg, #F3ECE1 0%, #F6F1E9 46%, #EFE8EF 100%);
+    radial-gradient(1100px 620px at 82% 4%, rgba(122, 72, 255, 0.2), transparent 60%),
+    radial-gradient(820px 460px at 16% 110%, rgba(216, 151, 60, 0.16), transparent 58%),
+    linear-gradient(180deg, #060607 0%, #0B0A10 68%, #14100C 100%);
 }
-.idv2-hero::after { /* gold edge light */
+.idv2-hero .idv-lede { color: rgba(245, 245, 240, 0.76); }
+.idv2-hero .idv-mono-label { color: rgba(245, 245, 240, 0.55); }
+.idv2-hero::after { /* reflective floor light under the fan */
   content: '';
-  position: absolute; right: 0; top: 10%; bottom: 10%; width: 1px;
-  background: linear-gradient(180deg, transparent, rgba(216, 183, 90, 0.7), transparent);
+  position: absolute; left: 8%; right: 0; bottom: 6%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(216, 183, 90, 0.55) 30%, rgba(163, 91, 218, 0.5) 70%, transparent);
+  filter: blur(0.5px);
+  box-shadow: 0 0 44px 10px rgba(216, 165, 80, 0.18);
 }
+/* Hero-sized display: fits the brief's four hard line breaks in a half column. */
+.idv2-display--hero { font-size: clamp(46px, 4.9vw, 92px); line-height: 0.92; }
 
 .idv2-dark {
   color: #F5F5F0;
@@ -98,18 +105,22 @@
 
 /* ── Hero fan v2: growing cards, film dominant (brief §5-hero) ───────────── */
 .idv2-fan { display: flex; align-items: flex-end; justify-content: flex-end; position: relative; }
+.idv2-fan { padding-top: clamp(24px, 3vw, 56px); }
 .idv2-fan-card {
-  position: relative; border-radius: 18px; overflow: hidden;
-  border: 5px solid rgba(255, 255, 255, 0.92);
-  box-shadow: 0 34px 80px rgba(43, 30, 14, 0.28);
-  background: var(--idv-canvas);
+  position: relative; border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(216, 183, 90, 0.12);
 }
 .idv2-fan-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.idv2-fan-card:nth-child(1) { width: 20%; aspect-ratio: 3/4; transform: rotate(-7deg) translateY(-6%); z-index: 1; }
-.idv2-fan-card:nth-child(2) { width: 27%; aspect-ratio: 3/4; margin-left: -5%; transform: rotate(-3deg) translateY(-12%); z-index: 2; }
-.idv2-fan-card:nth-child(3) { width: 34%; aspect-ratio: 3/4; margin-left: -5%; transform: rotate(2deg) translateY(-18%); z-index: 3; }
-.idv2-fan-card:nth-child(4) { width: 48%; aspect-ratio: 16/11; margin-left: -6%; transform: rotate(5deg) translateY(-24%); z-index: 4; }
+.idv2-fan-card:nth-child(1) { width: 24%; aspect-ratio: 3/4; transform: rotate(-5deg) translateY(-2%); z-index: 1; }
+.idv2-fan-card:nth-child(2) { width: 30%; aspect-ratio: 3/4; margin-left: -7%; transform: rotate(-2deg) translateY(-6%); z-index: 2; }
+.idv2-fan-card:nth-child(3) { width: 38%; aspect-ratio: 3/4; margin-left: -7%; transform: rotate(2deg) translateY(-10%); z-index: 3; }
+.idv2-fan-card:nth-child(4) { width: 50%; aspect-ratio: 16/11; margin-left: -8%; transform: rotate(4deg) translateY(-14%); z-index: 4; }
 .idv2-fan-card:hover { z-index: 9; }
+.idv2-fan-card .idv-fan-label { background: rgba(8, 8, 10, 0.78); }
+.idv2-fan-card .idv-fan-label .idv-fan-title { color: #F5F5F0; }
 
 /* ── Growing stage panels (brief section 3) ──────────────────────────────── */
 .idv2-stages { display: grid; grid-template-columns: 0.78fr 0.92fr 1.08fr 1.26fr; gap: clamp(14px, 1.6vw, 24px); align-items: stretch; }

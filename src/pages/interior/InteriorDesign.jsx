@@ -40,11 +40,12 @@ const HERO_PANELS = [
 function Hero() {
   return (
     <section className="idv2-section idv2-hero">
-      <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(320px, 0.78fr) 1.35fr', gap: 'clamp(28px, 4vw, 64px)', alignItems: 'center', minHeight: '92svh' }}>
+      <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(360px, 0.95fr) 1.15fr', gap: 'clamp(28px, 4vw, 64px)', alignItems: 'center', minHeight: '92svh' }}>
         <div style={{ display: 'grid', gap: 26, alignContent: 'center' }}>
           <motion.div {...rise(0)}><Eyebrow>{IDV_EYEBROW}</Eyebrow></motion.div>
-          <motion.h1 {...rise(0.08)} className="idv2-display">
-            From floor plan<br />to a home<br />your client<br />
+          <motion.h1 {...rise(0.08)} className="idv2-display idv2-display--hero">
+            From floor plan<br />to a home<br />
+            <span className="idv2-grad">your client</span><br />
             <motion.span {...rise(0.55)} className="idv2-grad" style={{ display: 'inline-block' }}>can already feel.</motion.span>
           </motion.h1>
           <motion.p {...rise(0.2)} className="idv-lede">
@@ -52,8 +53,8 @@ function Hero() {
             photorealistic interiors, cinematic films and complete branded presentations.
           </motion.p>
           <motion.div {...rise(0.3)} style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <IdvButton onClick={() => scrollToId('stages')}>Explore the methods</IdvButton>
-            <IdvButton to="/Contact" ghost>Build my visual presentation</IdvButton>
+            <button type="button" onClick={() => scrollToId('stages')} className="idv-btn" style={{ background: 'transparent', color: 'var(--idv-champagne)', border: '1px solid rgba(216,183,90,0.75)' }}>Explore the methods</button>
+            <Link to="/Contact" className="idv-btn" style={{ background: 'transparent', color: '#F5F5F0', border: '1px solid rgba(255,255,255,0.35)' }}>Build my visual presentation</Link>
           </motion.div>
           <motion.div {...rise(0.4)} className="idv-mono-label">APARTMENTS · HOUSES · BUILDINGS</motion.div>
         </div>
@@ -525,11 +526,11 @@ export default function InteriorDesign() {
     <InteriorShell path={IDV_BASE}>
       <Hero />
       <hr className="idv2-spill" />
-      <Problem />
       <StageSystem />
+      <Problem />
+      <Truths />
       <SpatialModels />
       <FullInterior />
-      <Truths />
       <ScrollFilm />
       <CaseProof />
       <OneStudio />
