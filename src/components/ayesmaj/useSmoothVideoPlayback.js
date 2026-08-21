@@ -67,6 +67,9 @@ export default function useSmoothVideoPlayback(rootRef) {
 
     const registerVideo = (video) => {
       if (videoStates.has(video)) return;
+      // Scroll-scrubbed videos (data-scrub) set their own currentTime; forcing
+      // `loop` on them wraps the last frame back to frame 0 at the end of the scrub.
+      if (video.hasAttribute('data-scrub')) return;
 
       // Native looping is smoother and more reliable than restarting in JS.
       video.loop = true;

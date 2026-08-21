@@ -324,7 +324,8 @@ function ScrollFilm() {
       if (range <= 0) return;
       const p = Math.max(0, Math.min(1, -rect.top / range));
       setProgress(p);
-      video.currentTime = p * video.duration;
+      // one frame short of the end: seeking to exactly `duration` fires `ended`
+      video.currentTime = Math.min(p * video.duration, video.duration - 1 / 30);
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -348,6 +349,7 @@ function ScrollFilm() {
             muted={!sound}
             playsInline
             preload="metadata"
+            data-scrub=""
             controls={flat}
             style={flat ? { position: 'relative', width: '100%', height: 'auto', display: 'block' } : undefined}
             aria-label="The Patel cinematic development film"
