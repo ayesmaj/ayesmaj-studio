@@ -151,8 +151,8 @@ function MethodWorlds() {
             afterImg={pair.editorial}
             beforeLabel="RAW SOURCE"
             afterLabel="EDITORIAL RESULT"
-            accent="#B79661"
-            accentRGB="183,150,97"
+            accent="#D8B75A"
+            accentRGB="216,183,90"
           />
           <div className="idv-mono-label">Canal Apartment — the same frame, source capture vs finished visual</div>
         </div>
@@ -370,15 +370,15 @@ function Recommender() {
             onClick={() => setGoal(g.key)}
             className="idv-btn"
             style={goal === g.key
-              ? { background: 'var(--idv-ink)', color: 'var(--idv-porcelain)', border: '1px solid var(--idv-ink)' }
-              : { background: '#fff', color: 'var(--idv-ink)', border: '1px solid var(--idv-stone)' }}
+              ? { background: 'var(--idv-champagne)', color: '#07100A', border: '1px solid var(--idv-champagne)' }
+              : { background: 'var(--idv-panel)', color: 'var(--idv-ink)', border: '1px solid var(--idv-stone)' }}
           >
             {g.label}
           </button>
         ))}
       </div>
       {picked ? (
-        <div style={{ marginTop: 36, border: '1px solid var(--idv-stone)', borderRadius: 18, background: '#fff', padding: 'clamp(24px, 3vw, 44px)', display: 'grid', gap: 18 }} aria-live="polite">
+        <div style={{ marginTop: 36, border: '1px solid var(--idv-stone)', borderRadius: 18, background: 'var(--idv-panel)', padding: 'clamp(24px, 3vw, 44px)', display: 'grid', gap: 18 }} aria-live="polite">
           <div className="idv-mono-label">RECOMMENDED VISUAL SYSTEM</div>
           <ol style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 12 }}>
             {picked.stack.map((key, i) => (

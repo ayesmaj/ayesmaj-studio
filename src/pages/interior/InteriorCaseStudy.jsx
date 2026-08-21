@@ -251,7 +251,7 @@ function ThePatel() {
       </section>
 
       <section className="idv-section idv-section--flush">
-        <div style={{ background: 'var(--idv-ink)', borderRadius: 18, padding: 'clamp(40px, 6vw, 96px) clamp(24px, 5vw, 72px)', display: 'grid', justifyItems: 'center', gap: 20 }}>
+        <div style={{ background: 'var(--idv-canvas)', borderRadius: 18, padding: 'clamp(40px, 6vw, 96px) clamp(24px, 5vw, 72px)', display: 'grid', justifyItems: 'center', gap: 20 }}>
           <img
             src={PATEL.brand}
             alt="The Patel brand lockup"
@@ -277,7 +277,7 @@ function MethodsUsed({ study }) {
     border: '1px solid var(--idv-stone)',
     borderRadius: 999,
     padding: '9px 18px',
-    background: '#fff',
+    background: 'var(--idv-panel)',
   };
   return (
     <section className="idv-section idv-section--flush" style={{ display: 'grid', gap: 28 }}>

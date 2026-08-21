@@ -61,7 +61,7 @@ function CaseBlock({ c, index }) {
           <span
             key={m}
             className="idv-mono-label"
-            style={{ border: '1px solid var(--idv-stone)', borderRadius: 999, padding: '8px 14px', background: '#fff' }}
+            style={{ border: '1px solid var(--idv-stone)', borderRadius: 999, padding: '8px 14px', background: 'var(--idv-panel)' }}
           >
             {m}
           </span>

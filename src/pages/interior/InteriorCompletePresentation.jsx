@@ -94,7 +94,7 @@ function Craft() {
       />
       <div className="idv-grid-2">
         <div style={{ display: 'grid', gap: 10, alignContent: 'start' }}>
-          <div style={{ background: 'var(--idv-ink)', borderRadius: 18, padding: 'clamp(24px, 3vw, 48px)' }}>
+          <div style={{ background: 'var(--idv-canvas)', borderRadius: 18, padding: 'clamp(24px, 3vw, 48px)' }}>
             <MediaFigure
               src={PATEL.brand}
               alt="The Patel — brand lockup: project wordmark over the Miami tower"

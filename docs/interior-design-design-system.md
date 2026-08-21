@@ -1,5 +1,11 @@
 # Interior Design — Design System (local world inside AYESMAJ)
 
+> **2026-08-21 re-skin:** the owner reviewed the live pages and ruled the warm porcelain
+> palette off-brand. The world now uses the site language from theme.js — #030303 blacks,
+> #F5F5F0 white, glass rgba(255,255,255,0.045) panels, Anton uppercase display, DM Sans
+> UI/kickers, gold #D8B75A with the gold-to-purple gradient as accent. Token NAMES kept
+> (values flipped) so no page changed. Owner feedback overrides the original brief palette.
+
 Persisted master: `design-system/ayesmaj-interior-design/MASTER.md` (ui-ux-pro-max output).
 **Spec overrides applied** — the generator's blue/orange palette and Cinzel/Josefin pairing
 are rejected; the brief's explicit palette and typography govern.

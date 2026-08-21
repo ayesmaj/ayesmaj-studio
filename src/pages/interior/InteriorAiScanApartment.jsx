@@ -35,8 +35,8 @@ function SourceToResult() {
               afterImg={pair.editorial}
               beforeLabel="RAW SOURCE"
               afterLabel="EDITORIAL RESULT"
-              accent="#B79661"
-              accentRGB="183,150,97"
+              accent="#D8B75A"
+              accentRGB="216,183,90"
             />
             <div className="idv-mono-label">Canal Apartment — {pair.label}</div>
           </div>

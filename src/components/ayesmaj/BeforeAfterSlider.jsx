@@ -46,6 +46,21 @@ export default function BeforeAfterSlider({
   const onMove = (e) => { if (dragging.current) update(e.clientX); };
   const onUp = () => { dragging.current = false; };
 
+  // Keyboard support, adapted from diceui's Compare Slider (21st.dev):
+  // arrows ±1, Shift+arrow / PageUp/Down ±10, Home/End to the extremes.
+  const onKeyDown = (e) => {
+    const step =
+      e.key === 'Home' ? -100 :
+      e.key === 'End' ? 100 :
+      e.key === 'PageDown' ? 10 :
+      e.key === 'PageUp' ? -10 :
+      e.key === 'ArrowRight' ? (e.shiftKey ? 10 : 1) :
+      e.key === 'ArrowLeft' ? (e.shiftKey ? -10 : -1) : null;
+    if (step === null) return;
+    e.preventDefault();
+    setPos((p) => Math.max(0, Math.min(100, p + step)));
+  };
+
   const img = {
     position: 'absolute',
     inset: 0,
@@ -59,6 +74,13 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={ref}
+      role="slider"
+      tabIndex={0}
+      aria-label={`Comparison: ${beforeLabel} versus ${afterLabel}`}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(pos)}
+      onKeyDown={onKeyDown}
       onPointerDown={onDown}
       onPointerMove={onMove}
       onPointerUp={onUp}
