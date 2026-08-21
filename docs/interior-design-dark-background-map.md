@@ -20,7 +20,7 @@ Two application mechanisms, same assets:
 | Spatial models | left | CSS grid pattern | **04 Geometric Facets** | .58 | brief: 3D floor plan → 04 |
 | Scroll film | left | `#050505` | **01 Cosmic Energy** (visible in flat/mobile mode and at the pin edges) | .62 | brief: AI VIDEO → 01 |
 | One Studio | left | flat `.idv2-dark` | **08 Topographic Contours** (was 03 — 03 is now footer-only) | .55 | owner rule 2026-08-21: never the same background twice on a page, footer included |
-| Final CTA | left | full-bleed villa pool photo | **07 Cinematic Light Leak** | .42 | brief names 07 the strongest option for this headline; villa photo retired here |
+| Final CTA | — | — | **section removed** (owner 2026-08-21: "too much" — the footer CTA closes the page) | — | 07 is free on the hub again |
 
 No asset repeats on the hub; no two consecutive dark sections share a treatment.
 

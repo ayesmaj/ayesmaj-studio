@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher } from '@/components/interior/kit';
-import { IDV_BASE, IDV_EYEBROW, METHODS, GOALS, CASE_STUDIES, FINAL_CTA, CAPABILITIES } from '@/data/interiorDesign';
+import { IDV_BASE, IDV_EYEBROW, METHODS, GOALS, CASE_STUDIES, CAPABILITIES } from '@/data/interiorDesign';
 import { VILLA, APARTMENT, VALMONT, PATEL, CASE_COVERS, MODELS } from '@/data/interiorMedia';
 import ModelViewer from '@/components/interior/ModelViewer';
 import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
@@ -507,27 +507,6 @@ function OneStudio() {
   );
 }
 
-/* ── 10 · FINAL CTA — full-screen cinematic ending ────────────────────────── */
-function FinalCta() {
-  return (
-    <section className="idv2-full" style={{ background: '#050506' }}>
-      <DarkSectionBackground asset="cinematic-light" position="center bottom" overlay={0.42} textSide="left" />
-      <div className="idv2-inner" style={{ position: 'relative', display: 'grid', gap: 22, width: '100%' }}>
-        <Eyebrow>{IDV_EYEBROW}</Eyebrow>
-        <h2 className="idv2-display" style={{ maxWidth: 1050, fontSize: 'clamp(52px, 6.5vw, 112px)' }}>
-          The project already exists in your mind.{' '}
-          <span className="idv2-grad">Let the client see it.</span>
-        </h2>
-        <p className="idv-lede" style={{ color: 'rgba(245,245,240,0.82)' }}>{FINAL_CTA.copy}</p>
-        <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', paddingBottom: 'clamp(44px, 6vw, 90px)' }}>
-          <IdvButton to="/Contact">Start an Interior Design project</IdvButton>
-          <IdvButton to={`${IDV_BASE}/case-studies`} ghost>View case studies</IdvButton>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function InteriorDesign() {
   return (
     <InteriorShell path={IDV_BASE}>
@@ -541,7 +520,6 @@ export default function InteriorDesign() {
       <ScrollFilm />
       <CaseProof />
       <OneStudio />
-      <FinalCta />
     </InteriorShell>
   );
 }
