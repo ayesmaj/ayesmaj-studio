@@ -153,7 +153,7 @@ export default function Worlds3D() {
           </div>
         </section>
 
-        <section id="worlds-work" className="worlds-motion">
+        <section id="worlds-work" className="worlds-motion idv2-bgc idv2-bgc-04">
           <div className="worlds-motion-heading">
             <motion.div {...reveal()}><p className="worlds-kicker worlds-kicker--light">In motion</p><h2>Pixels with<br /><em>weight.</em></h2></motion.div>
             <motion.p {...reveal(0.1)}>Real AYESMAJ product CGI. Click through to the complete Noam visual system and motion study.</motion.p>
@@ -188,7 +188,7 @@ export default function Worlds3D() {
           </motion.div>
         </section>
 
-        <section className="worlds-gallery-section">
+        <section className="worlds-gallery-section idv2-bgc idv2-bgc-02">
           <div className="worlds-gallery-heading">
             <motion.div {...reveal()}><p className="worlds-kicker worlds-kicker--light">Character worlds</p><h2>Every character<br />needs a <em>universe.</em></h2></motion.div>
             <motion.div {...reveal(0.08)} className="worlds-gallery-side">

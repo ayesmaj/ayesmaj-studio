@@ -193,7 +193,7 @@ export default function AiVideos() {
           </motion.p>
         </section>
 
-        <section id="motion-work" className="motion-archive">
+        <section id="motion-work" className="motion-archive idv2-bgc idv2-bgc-01">
           <motion.div {...reveal()} className="motion-archive__heading">
             <div><p className="motion-kicker motion-kicker--light"><Film aria-hidden="true" /> Selected films</p><h2>Six films.<br /><em>Six different worlds.</em></h2></div>
             <p>Hover for a moving preview. Select any film to watch it full screen with sound and controls.</p>

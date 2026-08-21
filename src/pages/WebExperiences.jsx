@@ -338,7 +338,7 @@ function LiveSiteCard({ service, index }) {
 
 function ServiceCards() {
   return (
-    <section id="live-websites" style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)' }}>
+    <section id="live-websites" className="idv2-bgc idv2-bgc-02" style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <motion.h2 {...fade(0)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(28px,4vw,56px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 clamp(40px,5vw,64px)', letterSpacing: '0.01em' }}>
           Websites Built to Make Brands Feel Premium
@@ -442,7 +442,7 @@ const WEBSITE_REELS = [
 
 function WebsiteReels() {
   return (
-    <section style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)', borderTop: `1px solid ${BORDER}` }}>
+    <section className="idv2-bgc idv2-bgc-04" style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)', borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <motion.p {...fade(0)} style={{ fontFamily: UI, fontSize: 12, fontWeight: 600, letterSpacing: '0.4em', textTransform: 'uppercase', color: GREEN, textAlign: 'center', marginBottom: 16 }}>Website Films</motion.p>
         <motion.h2 {...fade(0.05)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(30px,4vw,58px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 16px' }}>
@@ -482,7 +482,7 @@ const STEPS = [
 
 function Process() {
   return (
-    <section style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)', borderTop: `1px solid ${BORDER}` }}>
+    <section className="idv2-bgc idv2-bgc-07" style={{ padding: 'clamp(70px,8vw,120px) clamp(24px,5vw,80px)', borderTop: `1px solid ${BORDER}` }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <motion.h2 {...fade(0)} style={{ fontFamily: DISPLAY, fontSize: 'clamp(28px,4vw,56px)', fontWeight: 800, textTransform: 'uppercase', textAlign: 'center', color: WHITE, margin: '0 0 14px', letterSpacing: '0.01em' }}>
           From Website to Brand World

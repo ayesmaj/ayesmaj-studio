@@ -185,7 +185,7 @@ export default function Storyboards() {
           </div>
         </section>
 
-        <section className="story-featured" id="storyboard-gallery">
+        <section className="story-featured idv2-bgc idv2-bgc-08" id="storyboard-gallery">
           <div className="story-shell">
             <div className="story-section-heading">
               <div><p className="story-kicker"><Eye size={16} aria-hidden="true" /> Director's Boards</p><h2>Ten Stories.<br />Ten Visual Worlds.</h2></div>
@@ -261,7 +261,7 @@ export default function Storyboards() {
           </div>
         </section>
 
-        <section className="story-process">
+        <section className="story-process idv2-bgc idv2-bgc-06">
           <div className="story-shell">
             <div className="story-section-heading">
               <div><p className="story-kicker"><Clapperboard size={16} aria-hidden="true" /> Our Direction System</p><h2>Five Scenes<br />to Launch.</h2></div>

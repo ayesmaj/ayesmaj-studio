@@ -208,7 +208,7 @@ export default function Services() {
           </motion.div>
         </section>
 
-        <section id="core-worlds" className="svc-core section-dark">
+        <section id="core-worlds" className="svc-core section-dark idv2-bgc idv2-bgc-04">
           <motion.header className="svc-section-head svc-section-head--center" {...reveal()}>
             <p className="svc-kicker">The connected system</p>
             <h2>Three worlds.<br /><span>One brand system.</span></h2>
@@ -275,7 +275,7 @@ export default function Services() {
           <div className="svc-cgi__reel"><Video media={{ src: ANIMATIONS[10].src, poster: "/assets/ayesmaj/service-worlds/worlds3d-environment.webp" }} label="AYESMAJ 3D environment animation" /><div><p>Modeling · Product visualization · Environments · Characters · Animation · Simulation</p><Link className="svc-button svc-button--glass" to="/services/3d-cgi">Explore 3D & CGI <ArrowRight /></Link></div></div>
         </section>
 
-        <section className="svc-motion section-film">
+        <section className="svc-motion section-film idv2-bgc idv2-bgc-01">
           <motion.header className="svc-section-head" {...reveal()}><p className="svc-kicker">Motion, film & VFX</p><h2>Make it move.<br /><span>Make it stay with them.</span></h2></motion.header>
           <div className="svc-motion__strip">{SHOWREEL_FILMS.map((film, index) => <motion.article key={film.id} {...reveal(index * .06)}><Video media={film} label={film.title} /><div><Play aria-hidden="true" /><span>{film.title}</span><small>{film.category}</small></div></motion.article>)}</div>
           <Link className="svc-button svc-button--gold" to="/services/motion-vfx">Explore motion <ArrowRight /></Link>
@@ -294,7 +294,7 @@ export default function Services() {
           ].map(([image, alt], index) => <motion.img key={image} src={local(image)} alt={alt} loading="lazy" {...reveal(index * .03)} />)}</div>
         </section>
 
-        <section className="svc-work section-dark">
+        <section className="svc-work section-dark idv2-bgc idv2-bgc-08">
           <motion.header className="svc-section-head" {...reveal()}><p className="svc-kicker">Selected service work</p><h2>Selected <span>work.</span></h2></motion.header>
           <div className="svc-work__filters" role="group" aria-label="Filter selected work">{["All", "Branding", "Web", "AI", "3D", "Motion", "Storyboard"].map((item) => <button type="button" aria-pressed={filter === item} key={item} onClick={() => setFilter(item)}>{item}</button>)}</div>
           <motion.div className="svc-work__grid" layout>{filteredProjects.map((project) => <motion.article layout key={project.slug}><Link to={`/BrandDetail?slug=${project.slug}`}><img src={local(project.image)} alt={`${project.name} project`} loading="lazy" /><div><span>{project.category}</span><h3>{project.name}</h3><p>View project <ArrowUpRight /></p></div></Link></motion.article>)}</motion.div>

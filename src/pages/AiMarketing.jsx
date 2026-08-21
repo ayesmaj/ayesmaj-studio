@@ -193,7 +193,7 @@ export default function AiMarketing() {
           </div>
         </section>
 
-        <section id="ai-work" className="ai-work-section">
+        <section id="ai-work" className="ai-work-section idv2-bgc idv2-bgc-01">
           <div className="ai-work-intro">
             <motion.div {...reveal()}>
               <p className="ai-kicker ai-kicker--light">Selected motion</p>

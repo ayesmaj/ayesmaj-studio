@@ -91,7 +91,7 @@ export default function ServiceBranding() {
       </section>
 
       {/* ── What we deliver ─────────────────────────────────────────────── */}
-      <section style={{ padding: '90px 24px 110px', background: '#0B0D0C' }}>
+      <section className="idv2-bgc idv2-bgc-03" style={{ padding: '90px 24px 110px', background: '#0B0D0C' }}>
         <SectionHeader eyebrow="What we deliver" title="One identity, every touchpoint" accent={GOLD} />
         <div style={{
           maxWidth: 1180, margin: '64px auto 0', display: 'grid', gap: 20,
@@ -111,7 +111,7 @@ export default function ServiceBranding() {
       </section>
 
       {/* ── Selected identity work ──────────────────────────────────────── */}
-      <section style={{ padding: '100px 24px 110px' }}>
+      <section className="idv2-bgc idv2-bgc-05" style={{ padding: '100px 24px 110px' }}>
         <SectionHeader eyebrow="Selected identity work" title="Brands we built from zero" accent={GOLD} />
         <div style={{
           maxWidth: 1180, margin: '64px auto 0', display: 'grid', gap: 22,
@@ -160,7 +160,7 @@ export default function ServiceBranding() {
       </section>
 
       {/* ── Process strip ───────────────────────────────────────────────── */}
-      <section style={{ padding: '90px 24px 110px', background: '#0B0D0C' }}>
+      <section className="idv2-bgc idv2-bgc-06" style={{ padding: '90px 24px 110px', background: '#0B0D0C' }}>
         <SectionHeader eyebrow="Process" title="Five moves. One world." accent={GOLD} />
         <div style={{ maxWidth: 1180, margin: '64px auto 0', position: 'relative' }}>
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: GRADIENT, opacity: 0.6 }} />

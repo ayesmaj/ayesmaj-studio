@@ -48,3 +48,19 @@ are skipped.
   modifier reverses it.
 - Motion: 10px drift max, 1.00→1.025 scale nowhere yet (reserved), static under
   reduced motion.
+
+## Service pages (owner extension 2026-08-21)
+
+The classes are now loaded site-wide (main.jsx), so the same assets serve the six service
+pages and the Services hub. Applied add-only by one agent per page: hero untouched,
+media-covered and light sections skipped, sequence in page order, never consecutive.
+
+| Route | Sequence |
+|---|---|
+| /Services | 04 facets → 01 cosmic → 08 topographic |
+| /ServiceBranding | 03 stone & bronze → 05 silk → 06 concrete |
+| /WebExperiences | 02 grid → 04 facets → 07 light leak |
+| /AiMarketing | 01 cosmic → 05 silk → 07 light leak |
+| /Worlds3D | 04 facets → 02 grid → 01 cosmic |
+| /AiVideos | 01 cosmic → 07 light leak → 05 silk |
+| /Storyboards | 08 topographic → 06 concrete → 03 stone & bronze |
