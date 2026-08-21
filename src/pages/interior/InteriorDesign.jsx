@@ -6,7 +6,7 @@
  */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import {
   InteriorShell, Eyebrow, SectionHead, MediaFigure, MethodSwitcher, IdvButton, CtaBand,
 } from '@/components/interior/kit';
@@ -20,11 +20,19 @@ import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
 const scrollToId = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
 /* ── 1. HERO — one project, four visual stages ────────────────────────────── */
+/* The reference mockup's staggered collage: one project, four visual
+   languages, fanned like prints on a table. Geometry adapted from 21st.dev
+   "Stacked Card Carousel", rebuilt CSS-only (.idv-fan). */
+const HERO_PANELS = [
+  { n: '01', title: 'FLOOR PLAN', src: VILLA.plans[0].src },
+  { n: '02', title: '3D VISUALIZATION', src: VILLA.plans[1].src },
+  { n: '03', title: 'INTERIOR RENDER', src: VILLA.sequence[3].src },
+  { n: '04', title: 'CINEMATIC FILM', src: VILLA.sequence[25].src, play: true },
+];
+
 function Hero() {
-  const [stage, setStage] = useState(HERO_STAGES[3].key);
-  const active = HERO_STAGES.find((s) => s.key === stage) || HERO_STAGES[3];
   return (
-    <section className="idv-section" style={{ paddingTop: 'clamp(140px, 15vw, 210px)', display: 'grid', gap: 34 }}>
+    <section className="idv-section idv-wash" style={{ paddingTop: 'clamp(140px, 15vw, 210px)', display: 'grid', gap: 34 }}>
       <Eyebrow>{IDV_EYEBROW}</Eyebrow>
       <h1 className="idv-display" style={{ maxWidth: 1100 }}>
         From floor plan<br />to a home your client can <span className="idv-accent">already feel.</span>
@@ -39,35 +47,27 @@ function Hero() {
       </div>
       <div className="idv-mono-label">APARTMENTS · HOUSES · BUILDINGS</div>
 
-      <div style={{ display: 'grid', gap: 16, marginTop: 18 }}>
-        <MethodSwitcher
-          ariaLabel="Visual stage"
-          options={HERO_STAGES.map((s) => ({ key: s.key, label: s.label }))}
-          value={stage}
-          onChange={setStage}
-        />
-        <MediaFigure
-          src={active.src}
-          alt={`Poolside Villa — ${active.label}: the same project shown as ${active.room === 'plan' ? 'a floor plan' : 'a ' + active.room + ' view'}`}
-          caption={`Poolside Villa — ${active.label}`}
-          tag="SAME PROJECT · FOUR VISUAL LANGUAGES"
-          ratio="wide"
-          eager
-        />
-        <div className="idv-grid-4">
-          {HERO_STAGES.map((s) => (
-            <button
-              key={s.key}
-              type="button"
-              onClick={() => setStage(s.key)}
-              style={{ padding: 0, border: s.key === stage ? '2px solid var(--idv-champagne)' : '1px solid var(--idv-stone)', borderRadius: 12, overflow: 'hidden', cursor: 'pointer', background: 'none' }}
-              aria-pressed={s.key === stage}
-              aria-label={s.label}
-            >
-              <img src={s.src} alt="" loading="lazy" decoding="async" style={{ display: 'block', width: '100%', aspectRatio: '16/10', objectFit: 'cover' }} />
-            </button>
-          ))}
-        </div>
+      <div className="idv-fan" aria-label="Poolside Villa — the same project in four visual languages">
+        {HERO_PANELS.map((p) => (
+          <div key={p.n} className="idv-fan-card">
+            <img
+              src={p.src}
+              alt={`Poolside Villa — ${p.title.toLowerCase()}`}
+              loading={p.n === '01' ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+            <span className="idv-fan-label">
+              <span className="idv-fan-num">{p.n}</span>
+              <span className="idv-fan-title">{p.title}</span>
+            </span>
+            {p.play ? (
+              <span className="idv-fan-play" aria-hidden="true"><Play size={20} fill="currentColor" /></span>
+            ) : null}
+          </div>
+        ))}
+      </div>
+      <div className="idv-mono-label" style={{ textAlign: 'center', letterSpacing: '0.24em' }}>
+        SAME PROPERTY · MULTIPLE VISUAL LANGUAGES
       </div>
       <div className="idv-mono-label" style={{ letterSpacing: '0.24em' }}>SCAN · VISUALIZE · EXPERIENCE · PRESENT</div>
     </section>
@@ -102,6 +102,13 @@ function CommunicationGap() {
 }
 
 /* ── 3. The four-stage system ─────────────────────────────────────────────── */
+// One unused villa frame per stage — never repeating the hero fan images.
+const STAGE_IMAGES = [
+  VILLA.sequence[0].src,  // capture: the house as it stands
+  VILLA.sequence[10].src, // understand: the stair that links the levels
+  VILLA.sequence[12].src, // experience: the primary suite
+  VILLA.sequence[26].src, // present: pool at water level
+];
 function StageSystem() {
   return (
     <section className="idv-section">
@@ -116,7 +123,7 @@ function StageSystem() {
             <div className="idv-stage-num">{s.num}</div>
             <h3 className="idv-h3">{s.title}</h3>
             <p className="idv-mono-label" style={{ color: 'var(--idv-walnut)' }}>{s.question}</p>
-            <img src={HERO_STAGES[i].src} alt="" loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '16/10', objectFit: 'cover', borderRadius: 10 }} />
+            <img src={STAGE_IMAGES[i]} alt="" loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '16/10', objectFit: 'cover', borderRadius: 10 }} />
             <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 6, fontSize: 14, color: 'var(--idv-graphite)' }}>
               {s.methods.map((m) => <li key={m}>{m}</li>)}
             </ul>
@@ -161,10 +168,10 @@ function MethodWorlds() {
       {/* 3D FLOOR PLANS */}
       <div className="idv-grid-2 idv-reveal">
         <div style={{ display: 'grid', gap: 12 }}>
-          <MediaFigure src={VILLA.plans[0].src} alt="Poolside Villa ground floor plan with furniture, pool and garage" caption="Poolside Villa — ground floor" tag="PLAN" ratio="wide" />
+          <MediaFigure src={APARTMENT.studies[4].src} alt="Canal Apartment overview plan study with furniture placement" caption="Canal Apartment — overview study" tag="STUDY" ratio="wide" />
           <div className="idv-grid-2" style={{ gap: 12 }}>
-            <MediaFigure src={VILLA.plans[1].src} alt="Poolside Villa upper floor plan" caption="Upper floor" />
-            <MediaFigure src={PATEL.unit.floorplan} alt="The Patel Residence 1802 unit floor plan" caption="The Patel — Residence 1802" />
+            <MediaFigure src={APARTMENT.studies[3].src} alt="Canal Apartment living room plan study" caption="Living study" />
+            <MediaFigure src={APARTMENT.studies[2].src} alt="Canal Apartment kitchen plan study" caption="Kitchen study" />
           </div>
         </div>
         <div style={{ display: 'grid', gap: 18, alignContent: 'start' }}>
@@ -206,10 +213,10 @@ function MethodWorlds() {
 
 /* ── 5. Same project, different methods ───────────────────────────────────── */
 const TRUTHS = [
-  { key: 'plan', label: 'PLAN', src: VILLA.plans[0].src, caption: 'Where is everything?', reveals: ['Existing rooms', 'General geometry', 'The spatial source of truth'] },
-  { key: 'levels', label: 'LEVELS', src: VILLA.plans[1].src, caption: 'How do the floors relate?', reveals: ['Level logic', 'Stair alignment', 'Private-zone organization'] },
-  { key: 'render', label: 'RENDER', src: VILLA.sequence[4].src, caption: 'What will it look like?', reveals: ['Material', 'Furniture language', 'Lighting and atmosphere'] },
-  { key: 'film', label: 'FILM FRAME', src: VILLA.sequence[25].src, caption: 'What will it feel like?', reveals: ['Arrival and movement', 'Sequence', 'Emotional value'] },
+  { key: 'plan', label: 'PLAN', src: PATEL.unit.floorplan, caption: 'Where is everything?', reveals: ['The rooms of Residence 1802', 'Furniture at true scale', 'The spatial source of truth'] },
+  { key: 'building', label: 'BUILDING', src: PATEL.tower[1].src, caption: 'What is the scale?', reveals: ['The full volume', 'Where the residence sits', 'Exterior identity'] },
+  { key: 'render', label: 'RENDER', src: PATEL.interiors[0].src, caption: 'What will it look like?', reveals: ['Material', 'Furniture language', 'Lighting and atmosphere'] },
+  { key: 'film', label: 'FILM FRAME', src: PATEL.film.poster, caption: 'What will it feel like?', reveals: ['Arrival and movement', 'Sequence', 'Emotional value'] },
 ];
 function SameProject() {
   const [view, setView] = useState('plan');
@@ -220,7 +227,7 @@ function SameProject() {
         <SectionHead
           eyebrow="COMPARISON"
           title="Each method reveals a different truth."
-          lede="One property. Four ways to see it. The orientation and the architecture never change — only the level of understanding does."
+          lede="One property — The Patel, Miami. Four ways to see it, from Residence 1802's plan to the tower in its skyline. The architecture never changes; only the level of understanding does."
         />
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher
@@ -230,7 +237,7 @@ function SameProject() {
             onChange={setView}
           />
           <div className="idv-grid-2" style={{ gridTemplateColumns: '2fr 1fr', alignItems: 'start' }}>
-            <MediaFigure src={active.src} alt={`Poolside Villa shown as ${active.label.toLowerCase()}`} caption={`Poolside Villa — ${active.caption}`} tag={active.label} ratio="wide" />
+            <MediaFigure src={active.src} alt={`The Patel shown as ${active.label.toLowerCase()}`} caption={`The Patel — ${active.caption}`} tag={active.label} ratio="wide" />
             <div style={{ display: 'grid', gap: 10, alignContent: 'start' }}>
               <div className="idv-mono-label">This view reveals</div>
               {active.reveals.map((r) => (
@@ -370,7 +377,7 @@ function Recommender() {
             onClick={() => setGoal(g.key)}
             className="idv-btn"
             style={goal === g.key
-              ? { background: 'var(--idv-champagne)', color: '#07100A', border: '1px solid var(--idv-champagne)' }
+              ? { background: 'var(--idv-ink)', color: '#FAF7F1', border: '1px solid var(--idv-ink)' }
               : { background: 'var(--idv-panel)', color: 'var(--idv-ink)', border: '1px solid var(--idv-stone)' }}
           >
             {g.label}

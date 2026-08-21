@@ -251,7 +251,7 @@ function ThePatel() {
       </section>
 
       <section className="idv-section idv-section--flush">
-        <div style={{ background: 'var(--idv-canvas)', borderRadius: 18, padding: 'clamp(40px, 6vw, 96px) clamp(24px, 5vw, 72px)', display: 'grid', justifyItems: 'center', gap: 20 }}>
+        <div style={{ background: 'var(--idv-dark-panel)', borderRadius: 18, padding: 'clamp(40px, 6vw, 96px) clamp(24px, 5vw, 72px)', display: 'grid', justifyItems: 'center', gap: 20 }}>
           <img
             src={PATEL.brand}
             alt="The Patel brand lockup"

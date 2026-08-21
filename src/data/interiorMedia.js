@@ -93,13 +93,15 @@ export const APARTMENT = {
   studies: ['bath', 'dining', 'kitchen', 'living', 'overview', 'sunroom', 'waterfront'].map(
     (r) => ({ src: `${A}/plans/${r}.webp`, label: `${r[0].toUpperCase() + r.slice(1)} — study`, room: r }),
   ),
-  /** Same frame, raw source vs editorial enhancement. The honest AI demo. */
+  /** Same frame, raw source vs editorial enhancement. The honest AI demo.
+      -v2 entries are gpt-image-2 regenerations (architectural lock) that
+      replace the original editorial where the owner asked for a fresh pass. */
   pairs: ['bath', 'canal', 'dining', 'kitchen', 'living', 'lounge', 'primary', 'terrace'].map(
     (r) => ({
       room: r,
       label: r[0].toUpperCase() + r.slice(1),
       raw: `${A}/pairs/${r}-raw.webp`,
-      editorial: `${A}/pairs/${r}-editorial.webp`,
+      editorial: `${A}/pairs/${r}-editorial${r === 'living' ? '-v2' : ''}.webp`,
     }),
   ),
 };
@@ -189,7 +191,7 @@ export const PROJECTS = { 'poolside-villa': VILLA, 'canal-apartment': APARTMENT,
 
 /** Case-study cover images (index page + hub rail). */
 export const CASE_COVERS = {
-  'poolside-villa': VILLA.sequence[25].src,
+  'poolside-villa': VILLA.sequence[1].src,
   'maison-valmont': VALMONT.film.posterFinal,
   'the-patel': PATEL.tower[0].src,
 };

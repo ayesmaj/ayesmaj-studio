@@ -15,39 +15,11 @@ export default function Layout({ children, currentPageName }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    // Custom cursor
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    document.body.appendChild(cursor);
-
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-
-    document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
-    document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
-
-    return () => cursor.remove();
-  }, []);
+  // Custom gold cursor-follower removed 2026-08-21 at the owner's request.
 
   return (
     <div ref={layoutRef} style={{ background: '#030303', minHeight: '100vh', overflow: 'visible', position: 'relative', WebkitOverflowScrolling: 'touch' }}>
       <style>{`
-        .custom-cursor {
-          position: fixed;
-          width: 10px;
-          height: 10px;
-          background: #C8A34F;
-          border-radius: 50%;
-          pointer-events: none;
-          z-index: 9999;
-          transform: translate(-50%, -50%);
-          box-shadow: 0 0 10px rgba(200,163,78,0.5);
-          opacity: 0;
-          transition: opacity 0.2s;
-        }
       `}</style>
       {/* ── Floating Call Now button (fixed bottom-right) ── */}
       <AnimatePresence>

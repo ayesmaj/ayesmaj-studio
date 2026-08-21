@@ -1,40 +1,55 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   INTERIOR DESIGN VISUALIZATION — in the AYESMAJ cinematic language.
-   Same class + token names as v1; values re-skinned to the site system
-   (theme.js): #030303 blacks, #F5F5F0 white, glass rgba(255,255,255,0.045),
-   Anton display voice, DM Sans UI, gold #D8B75A with the gold→purple
-   signature gradient as accent. Scoped under .idv-page.
+   INTERIOR DESIGN VISUALIZATION — built to the owner's reference mockup:
+   warm ivory ground with soft lavender/peach washes, the dark AYESMAJ nav as
+   an opaque band, massive ink Anton display with the gold→purple signature
+   gradient on accent words, dark ink pill CTAs, white cards with gradient
+   stage numbers. Token names stable since v1; values follow the reference.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .idv-page {
   /* surfaces */
-  --idv-porcelain: #030303;            /* page ground */
-  --idv-bone: #0A0A09;                 /* alternate section ground */
-  --idv-canvas: #121110;               /* media / dark panel ground */
-  --idv-panel: rgba(255, 255, 255, 0.045); /* glass card */
+  --idv-porcelain: #F5F0E9;              /* page ground */
+  --idv-bone: #EDE6DC;                   /* alternate section ground */
+  --idv-canvas: #E4DCCF;                 /* media placeholder */
+  --idv-panel: #FFFFFF;                  /* cards */
+  --idv-dark-panel: #101010;             /* brand-lockup panels */
   /* type */
-  --idv-ink: #F5F5F0;                  /* primary text */
-  --idv-graphite: rgba(245, 245, 240, 0.72); /* secondary text */
-  --idv-walnut: #A9A9A9;               /* captions */
-  --idv-olive: rgba(245, 245, 240, 0.55);    /* labels */
+  --idv-ink: #16140F;
+  --idv-graphite: #4A463E;
+  --idv-walnut: #8A8072;                 /* captions */
+  --idv-olive: #6F6A5E;                  /* labels */
   /* accents */
-  --idv-champagne: #D8B75A;            /* gold */
-  --idv-stone: rgba(255, 255, 255, 0.12);    /* borders */
-  --idv-pool: #91AEB5;                 /* focus */
-  --idv-gradient: linear-gradient(90deg, #D8B75A 0%, #C58B57 28%, #A35BDA 72%, #7A48FF 100%);
+  --idv-champagne: #C8963E;              /* gold, readable on ivory */
+  --idv-stone: #DCD3C4;                  /* borders */
+  --idv-pool: #91AEB5;
+  --idv-gradient: linear-gradient(90deg, #D8A23A 0%, #C58B57 30%, #A35BDA 70%, #7A48FF 100%);
 
-  --idv-serif: 'Outfit', 'DM Sans', system-ui, sans-serif; /* card-title voice */
+  --idv-serif: 'Outfit', 'DM Sans', system-ui, sans-serif;
   --idv-sans: 'DM Sans', 'Inter', system-ui, sans-serif;
-  --idv-mono: 'DM Sans', 'Inter', system-ui, sans-serif;   /* kicker voice */
+  --idv-mono: 'DM Sans', 'Inter', system-ui, sans-serif;
   --idv-display: 'Anton', 'Bebas Neue', 'Oswald', system-ui, sans-serif;
 
   --idv-max: 1280px;
   --idv-pad: clamp(20px, 4vw, 64px);
+  --idv-shadow: 0 18px 44px rgba(62, 48, 24, 0.1);
 
   background: var(--idv-porcelain);
   color: var(--idv-ink);
   font-family: var(--idv-sans);
   min-height: 100vh;
+}
+
+/* The reference shows the dark nav as an opaque band over the light page. */
+.idv-page .ayes-nav-root {
+  background: rgba(8, 9, 8, 0.95) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+/* Soft atmospheric washes (lavender top-right, peach top-left) per mockup. */
+.idv-wash {
+  background:
+    radial-gradient(900px 480px at 88% -8%, rgba(163, 91, 218, 0.13), transparent 62%),
+    radial-gradient(760px 420px at 6% -4%, rgba(216, 150, 90, 0.15), transparent 56%);
 }
 
 /* ── Typography ──────────────────────────────────────────────────────────── */
@@ -44,7 +59,7 @@
   font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--idv-champagne);
+  color: var(--idv-olive);
 }
 
 .idv-display {
@@ -82,7 +97,7 @@
   max-width: 620px;
 }
 
-/* Gradient accent word — the site signature, replacing the old italic serif */
+/* Gradient accent words — the mockup's signature treatment. */
 .idv-accent {
   font-style: normal;
   background: var(--idv-gradient);
@@ -115,9 +130,9 @@
   height: 1px;
   border: 0;
   margin: 0;
-  background: linear-gradient(90deg, var(--idv-stone), rgba(255, 255, 255, 0));
+  background: linear-gradient(90deg, var(--idv-stone), rgba(220, 211, 196, 0));
 }
-.idv-rule--ai { background: var(--idv-gradient); opacity: 0.55; }
+.idv-rule--ai { background: var(--idv-gradient); opacity: 0.6; }
 
 .idv-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 72px); align-items: start; }
 .idv-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.5vw, 36px); }
@@ -145,81 +160,73 @@
   color: var(--idv-walnut);
 }
 .idv-figure--frame img, .idv-figure--frame video {
-  border: 1px solid var(--idv-stone);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--idv-shadow);
 }
 .idv-ratio { aspect-ratio: 16 / 10; object-fit: cover; }
 .idv-ratio-45 { aspect-ratio: 4 / 5; object-fit: cover; }
 .idv-ratio-sq { aspect-ratio: 1 / 1; object-fit: cover; }
 
-/* ── Buttons — the CinematicButton language ──────────────────────────────── */
+/* ── Buttons — mockup: dark ink pill primary, white outline secondary ────── */
 .idv-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-family: var(--idv-sans);
-  font-weight: 700;
-  font-size: 12.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
   padding: 15px 30px;
   border-radius: 999px;
-  border: 1px solid transparent;
+  border: 1px solid var(--idv-ink);
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
-.idv-btn--primary {
-  background: linear-gradient(135deg, #E8C96D 0%, #C8A44E 100%);
-  color: #07100A;
-}
+.idv-btn--primary { background: var(--idv-ink); color: #FAF7F1; }
 .idv-btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 34px rgba(216, 183, 90, 0.28);
+  box-shadow: 0 14px 30px rgba(22, 20, 15, 0.28);
 }
-.idv-btn--ghost {
-  background: transparent;
-  color: var(--idv-ink);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-.idv-btn--ghost:hover { background: rgba(255, 255, 255, 0.06); transform: translateY(-2px); }
+.idv-btn--ghost { background: #FFFFFF; color: var(--idv-ink); border-color: var(--idv-stone); }
+.idv-btn--ghost:hover { border-color: var(--idv-ink); transform: translateY(-2px); }
 .idv-btn svg { transition: transform 0.25s ease; }
 .idv-btn:hover svg { transform: translateX(4px); }
-.idv-btn:focus-visible { outline: 3px solid rgba(216, 183, 90, 0.6); outline-offset: 3px; }
+.idv-btn:focus-visible { outline: 3px solid rgba(200, 150, 62, 0.55); outline-offset: 3px; }
 
-/* ── Stage cards → glass panels ──────────────────────────────────────────── */
+/* ── Stage cards — white, soft shadow, gradient numbers (mockup 01-04) ───── */
 .idv-stage {
   background: var(--idv-panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 20px;
-  backdrop-filter: blur(12px);
+  box-shadow: var(--idv-shadow);
   padding: clamp(20px, 2.4vw, 32px);
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
 }
-.idv-stage:hover {
-  transform: translateY(-6px);
-  border-color: rgba(216, 183, 90, 0.35);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
-}
-.idv-stage .idv-stage-num {
-  font-family: var(--idv-mono);
-  font-weight: 600;
-  font-size: 13px;
-  color: var(--idv-champagne);
-  letter-spacing: 0.18em;
+.idv-stage:hover { transform: translateY(-6px); box-shadow: 0 28px 60px rgba(62, 48, 24, 0.16); }
+.idv-stage .idv-stage-num,
+.idv-stage-num {
+  font-family: var(--idv-display);
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  background: var(--idv-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* ── Method switcher ─────────────────────────────────────────────────────── */
+/* ── Method switcher — mockup: light bar, ink active pill ────────────────── */
 .idv-switch {
   display: inline-flex;
   gap: 4px;
   padding: 5px;
   border: 1px solid var(--idv-stone);
   border-radius: 999px;
-  background: var(--idv-panel);
-  backdrop-filter: blur(12px);
+  background: #FFFFFF;
+  box-shadow: var(--idv-shadow);
 }
 .idv-switch button {
   font-family: var(--idv-mono);
@@ -235,8 +242,71 @@
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease;
 }
-.idv-switch button[aria-pressed='true'] { background: var(--idv-champagne); color: #07100A; }
-.idv-switch button:focus-visible { outline: 3px solid rgba(216, 183, 90, 0.6); outline-offset: 2px; }
+.idv-switch button[aria-pressed='true'] { background: var(--idv-ink); color: #FAF7F1; }
+.idv-switch button:focus-visible { outline: 3px solid rgba(200, 150, 62, 0.55); outline-offset: 2px; }
+
+/* ── Hero fan — the mockup's staggered overlapping panel collage.
+      Geometry adapted from 21st.dev "Stacked Card Carousel" (rotation +
+      overlap + depth), rebuilt as CSS-only for a static hero. ─────────────── */
+.idv-fan {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: clamp(16px, 3vw, 40px) 0 clamp(8px, 2vw, 24px);
+}
+.idv-fan-card {
+  position: relative;
+  flex: 0 0 clamp(150px, 24%, 320px);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 6px solid #FFFFFF;
+  box-shadow: 0 30px 70px rgba(62, 48, 24, 0.22);
+  background: var(--idv-canvas);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), z-index 0s;
+}
+.idv-fan-card img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.idv-fan-card:nth-child(1) { transform: rotate(-8deg) translateY(6%); z-index: 1; }
+.idv-fan-card:nth-child(2) { transform: rotate(-3deg) translateY(-2%); z-index: 2; margin-left: -6%; }
+.idv-fan-card:nth-child(3) { transform: rotate(3deg) translateY(-8%); z-index: 3; margin-left: -6%; }
+.idv-fan-card:nth-child(4) { transform: rotate(8deg) translateY(-14%); z-index: 4; margin-left: -6%; }
+.idv-fan-card:hover { transform: rotate(0deg) translateY(-16%) scale(1.04); z-index: 9; }
+.idv-fan-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: grid;
+  gap: 2px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+}
+.idv-fan-label .idv-fan-num {
+  font-family: var(--idv-display);
+  font-size: 15px;
+  background: var(--idv-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.idv-fan-label .idv-fan-title {
+  font-family: var(--idv-mono);
+  font-weight: 700;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  color: var(--idv-ink);
+}
+.idv-fan-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
 
 /* ── Sequence strip ──────────────────────────────────────────────────────── */
 .idv-strip {
@@ -249,7 +319,7 @@
 }
 .idv-strip > * { flex: 0 0 clamp(220px, 26vw, 340px); scroll-snap-align: start; }
 .idv-strip::-webkit-scrollbar { height: 6px; }
-.idv-strip::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.18); border-radius: 3px; }
+.idv-strip::-webkit-scrollbar-thumb { background: var(--idv-stone); border-radius: 3px; }
 
 /* ── Comparison rows ─────────────────────────────────────────────────────── */
 .idv-row { border-top: 1px solid var(--idv-stone); }
@@ -289,7 +359,7 @@
   align-items: baseline;
 }
 
-/* ── Case cards → glass ──────────────────────────────────────────────────── */
+/* ── Case cards — white with soft shadow ─────────────────────────────────── */
 .idv-case {
   position: relative;
   display: block;
@@ -297,15 +367,12 @@
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   background: var(--idv-panel);
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: var(--idv-shadow);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
 }
-.idv-case:hover {
-  transform: translateY(-6px);
-  border-color: rgba(216, 183, 90, 0.35);
-  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.55);
-}
+.idv-case:hover { transform: translateY(-6px); box-shadow: 0 30px 64px rgba(62, 48, 24, 0.18); }
 .idv-case img { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
 .idv-case:hover img { transform: scale(1.035); }
 .idv-case .idv-case-meta { padding: 18px 20px 22px; display: grid; gap: 6px; }
@@ -323,7 +390,7 @@
   top: -1px; left: 0; right: 0;
   height: 1px;
   background: var(--idv-gradient);
-  opacity: 0.55;
+  opacity: 0.6;
 }
 
 /* ── Scroll reveals ──────────────────────────────────────────────────────── */
@@ -354,4 +421,6 @@
   .idv-journey-step > :last-child { grid-column: 2; }
   .idv-display { font-size: clamp(40px, 11vw, 60px); }
   .idv-strip > * { flex-basis: 78vw; }
+  .idv-fan { flex-wrap: wrap; gap: 14px; }
+  .idv-fan-card { flex: 0 0 44%; margin-left: 0 !important; transform: none !important; }
 }

@@ -81,7 +81,7 @@ export default function Interior3dBuilding() {
         />
         <div className="idv-grid-2 idv-reveal">
           <figure className="idv-figure">
-            <div style={{ background: 'var(--idv-canvas)', borderRadius: 14, border: '1px solid var(--idv-stone)', padding: 'clamp(28px, 5vw, 64px)', display: 'grid', placeItems: 'center' }}>
+            <div style={{ background: 'var(--idv-dark-panel)', borderRadius: 14, border: '1px solid var(--idv-stone)', padding: 'clamp(28px, 5vw, 64px)', display: 'grid', placeItems: 'center' }}>
               <img
                 src={PATEL.brand}
                 alt="The Patel brand lockup"

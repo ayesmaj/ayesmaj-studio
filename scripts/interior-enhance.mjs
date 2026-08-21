@@ -61,7 +61,13 @@ const form = new FormData();
 form.append('model', 'gpt-image-2');
 form.append('prompt', LOCK_PROMPT);
 form.append('size', 'auto');
-form.append('image', new Blob([fs.readFileSync(src)]), path.basename(src));
+const MIME = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp' };
+const mime = MIME[path.extname(src).toLowerCase()];
+if (!mime) {
+  console.error(`interior-enhance: unsupported source format ${path.extname(src)}`);
+  process.exit(1);
+}
+form.append('image', new Blob([fs.readFileSync(src)], { type: mime }), path.basename(src));
 
 const res = await fetch('https://api.openai.com/v1/images/edits', {
   method: 'POST',

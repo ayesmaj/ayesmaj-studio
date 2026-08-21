@@ -43,7 +43,7 @@ function GoalPicker() {
             onClick={() => setGoal(g.key)}
             className="idv-btn"
             style={goal === g.key
-              ? { background: 'var(--idv-champagne)', color: '#07100A', border: '1px solid var(--idv-champagne)' }
+              ? { background: 'var(--idv-ink)', color: '#FAF7F1', border: '1px solid var(--idv-ink)' }
               : { background: 'var(--idv-panel)', color: 'var(--idv-ink)', border: '1px solid var(--idv-stone)' }}
           >
             {g.label}
