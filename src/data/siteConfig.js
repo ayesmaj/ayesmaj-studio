@@ -11,6 +11,9 @@ export const SITE = {
   description:
     "AYESMAJ Studios builds complete visual worlds — brand identity, cinematic content, premium websites, AI production, and immersive 3D — as one connected creative system.",
   email: "ayesmajstudios@gmail.com",
+  // Branded mailbox — leave empty until hello@ayesmajstudios.com actually exists
+  // (the domain has no MX record as of 2026-08-21); the footer falls back to `email`.
+  brandedEmail: "",
   phone: "+1 (509) 319-7999",
   phoneHref: "tel:5093197999",
   location: "Phoenix, Arizona — working worldwide",
@@ -21,6 +24,7 @@ export const SITE = {
     instagram: "",
     youtube: "",
     linkedin: "",
+    behance: "",
   },
   defaultOgImage: "/assets/ayesmaj/hero/hero-composite.webp",
 };
@@ -60,20 +64,31 @@ export const WORK_MENU = [
   { label: "Showreel", to: "/Reel" },
 ];
 
+export const FOOTER_BLURB =
+  "A visualization, branding and marketing studio creating complete visual worlds for ambitious ideas, products and spaces.";
+
 export const FOOTER_EXPLORE = [
   { label: "Work", to: "/Work" },
-  { label: "Services", to: "/services" },
   { label: "Studio", to: "/Studio" },
   { label: "About", to: "/About" },
-  { label: "Contact", to: "/Contact" },
   { label: "Insights", to: "/Insights" },
-  { label: "Pricing", to: "/Pricing" },
-  { label: "Clients", to: "/Clients" },
-  { label: "FAQ", to: "/Faq" },
+  { label: "Contact", to: "/Contact" },
 ];
 
-export const FOOTER_SERVICES = SERVICES_MENU.map(({ label, to }) => ({ label, to }));
+const FOOTER_SERVICE_LABELS = [
+  "Brand Strategy & Identity",
+  "Premium Websites",
+  "AI Content Production",
+  "3D & CGI",
+  "Motion, Film & VFX",
+  "Interior Design Visualization",
+];
+export const FOOTER_SERVICES = FOOTER_SERVICE_LABELS
+  .map((label) => SERVICES_MENU.find((s) => s.label === label))
+  .filter(Boolean)
+  .map(({ label, to }) => ({ label, to }));
 
+// Kept for the prerender's crawlable link list; the footer itself now shows Selected Work.
 export const FOOTER_WORK = [
   { label: "Branding & Identity", to: "/Branding" },
   { label: "Web Experiences", to: "/WebExperiences" },

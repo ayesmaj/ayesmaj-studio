@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import CinematicButton from "./CinematicButton";
+import LogoMark from "./LogoMark";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { Instagram, Linkedin, Youtube, Mail, Phone, MapPin, Clock, ChevronDown } from "lucide-react";
 import { FONTS } from "./theme";
 import {
   SITE,
+  FOOTER_BLURB,
   FOOTER_EXPLORE,
   FOOTER_SERVICES,
-  FOOTER_WORK,
   LEGAL_LINKS,
 } from "@/data/siteConfig";
 import { BRANDS, getBrandAssetPath } from "@/data/brands";
@@ -31,61 +34,111 @@ const coverError = (brand) => (e) => {
   e.currentTarget.src = getBrandAssetPath(brand, brand.featured);
 };
 
-function FooterLink({ to, children, external }) {
-  const inner = (
-    <>
-      <span className="ayes-flink-dot" aria-hidden="true" />
-      {children}
-    </>
-  );
-  const style = {
-    fontFamily: FONTS.ui,
-    fontSize: 14.5,
-    color: "#AAA39A",
-    textDecoration: "none",
-    display: "inline-flex",
-    alignItems: "center",
-    gap: 0,
-    transition: "color 0.25s ease",
-    width: "fit-content",
-  };
+/* ── Global utility footer helpers ─────────────────────────────────────── */
+
+const BehanceIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M9.6 11.2c.9-.4 1.5-1.2 1.5-2.3 0-2.2-1.6-2.9-3.6-2.9H2v12h5.7c2.2 0 4.1-1 4.1-3.5 0-1.6-.8-2.8-2.2-3.3ZM4.6 8h2.6c1 0 1.7.4 1.7 1.4s-.7 1.4-1.7 1.4H4.6V8Zm2.9 8H4.6v-3.3h2.9c1.2 0 2 .5 2 1.7s-.8 1.6-2 1.6ZM22 13.6c0-2.8-1.6-4.8-4.5-4.8-2.8 0-4.7 2.1-4.7 4.8 0 2.8 1.8 4.8 4.7 4.8 2.2 0 3.7-1 4.3-3h-2.3c-.3.7-1 1.1-2 1.1-1.4 0-2.2-.8-2.3-2.2H22v-.7Zm-6.8-1c.2-1.2 1-1.9 2.2-1.9 1.3 0 2 .8 2.1 1.9h-4.3ZM14.3 6.5h5.4v1.3h-5.4V6.5Z" />
+  </svg>
+);
+
+const SOCIALS = [
+  { key: "instagram", label: "Instagram", Icon: Instagram },
+  { key: "linkedin", label: "LinkedIn", Icon: Linkedin },
+  { key: "behance", label: "Behance", Icon: BehanceIcon },
+  { key: "youtube", label: "YouTube", Icon: Youtube },
+];
+
+const ULINK = {
+  fontFamily: FONTS.ui,
+  fontSize: 14.5,
+  lineHeight: 1.4,
+  color: "#B3ACA2",
+  textDecoration: "none",
+  display: "inline-block",
+  width: "fit-content",
+};
+
+function ULink({ to, children, external, className = "" }) {
+  const cls = `ayes-ulink ${className}`.trim();
   return external ? (
-    <a href={to} className="ayes-flink" style={style}>
-      {inner}
-    </a>
+    <a href={to} className={cls} style={ULINK}>{children}</a>
   ) : (
-    <Link to={to} className="ayes-flink" style={style}>
-      {inner}
-    </Link>
+    <Link to={to} className={cls} style={ULINK}>{children}</Link>
   );
 }
 
-function SitemapCol({ title, children }) {
+function ColTitle({ children }) {
   return (
-    <div>
-      <h4
-        style={{
-          fontFamily: FONTS.ui,
-          fontSize: 11,
-          fontWeight: 700,
-          letterSpacing: "0.28em",
-          textTransform: "uppercase",
-          color: GOLD,
-          marginBottom: 20,
-        }}
-      >
-        {title}
-      </h4>
-      <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
-        {children}
-      </div>
-    </div>
+    <h4
+      style={{
+        fontFamily: FONTS.ui,
+        fontSize: 11,
+        fontWeight: 700,
+        letterSpacing: "0.3em",
+        textTransform: "uppercase",
+        color: GOLD,
+        margin: "0 0 22px",
+      }}
+    >
+      {children}
+    </h4>
   );
 }
+
+/* Desktop: plain column. Mobile: native <details> accordion (keyboard + screen-reader accessible for free). */
+function FootCol({ title, mobile, children }) {
+  if (!mobile) {
+    return (
+      <div className="ayes-ufoot-col">
+        <ColTitle>{title}</ColTitle>
+        <div className="ayes-ufoot-links">{children}</div>
+      </div>
+    );
+  }
+  return (
+    <details className="ayes-ufoot-acc">
+      <summary className="ayes-ufoot-sum">
+        <span
+          style={{
+            fontFamily: FONTS.ui,
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: "0.3em",
+            textTransform: "uppercase",
+            color: GOLD,
+          }}
+        >
+          {title}
+        </span>
+        <ChevronDown size={16} aria-hidden="true" className="ayes-ufoot-chev" />
+      </summary>
+      <div className="ayes-ufoot-links" style={{ paddingBottom: 18 }}>{children}</div>
+    </details>
+  );
+}
+
+/* Phoenix never observes DST, so a plain IANA zone is exact. */
+function usePhoenixTime() {
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(new Date()), 30000);
+    return () => window.clearInterval(id);
+  }, []);
+  const time = new Intl.DateTimeFormat("en-US", { timeZone: "America/Phoenix", hour: "numeric", minute: "2-digit" }).format(now);
+  const date = new Intl.DateTimeFormat("en-US", { timeZone: "America/Phoenix", month: "short", day: "numeric", year: "numeric" }).format(now);
+  return { time, date };
+}
+
+const SELECTED_WORK = BRANDS.slice(0, 4); // curated portfolio order, real projects only
 
 export default function AyesmajFooter() {
   const navigate = useNavigate();
   const strip = [...BRANDS, ...BRANDS]; // duplicated for seamless loop
+  const mobile = useIsMobile();
+  const phx = usePhoenixTime();
+  const email = SITE.brandedEmail || SITE.email;
+  const socials = SOCIALS.map((s) => ({ ...s, href: (SITE.social && SITE.social[s.key]) || "" }));
 
   return (
     <footer style={{ background: "#050505", overflow: "hidden" }}>
@@ -212,162 +265,239 @@ export default function AyesmajFooter() {
         </div>
       </section>
 
-      {/* ---------- LAYER 2 — sitemap ---------- */}
-      <section
-        style={{
-          background: "#0B0D0C",
-          borderTop: "1px solid rgba(255,255,255,0.09)",
-          padding: "clamp(48px,6vw,80px) clamp(24px,5vw,80px)",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1320,
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 210px), 1fr))",
-            gap: "clamp(32px,4vw,56px)",
-          }}
-        >
-          <SitemapCol title="Explore">
-            {FOOTER_EXPLORE.map((l) => (
-              <FooterLink key={l.to} to={l.to}>{l.label}</FooterLink>
-            ))}
-          </SitemapCol>
-          <SitemapCol title="Services">
-            {FOOTER_SERVICES.map((l) => (
-              <FooterLink key={l.to} to={l.to}>{l.label}</FooterLink>
-            ))}
-          </SitemapCol>
-          <SitemapCol title="Work">
-            {FOOTER_WORK.map((l) => (
-              <FooterLink key={l.to + l.label} to={l.to}>{l.label}</FooterLink>
-            ))}
-          </SitemapCol>
-          <SitemapCol title="Contact">
-            <FooterLink to={`mailto:${SITE.email}`} external>{SITE.email}</FooterLink>
-            <FooterLink to={SITE.phoneHref} external>{SITE.phone}</FooterLink>
-            <span style={{ fontFamily: FONTS.ui, fontSize: 14.5, color: "#AAA39A", lineHeight: 1.6 }}>
-              {SITE.location}
-            </span>
-          </SitemapCol>
-        </div>
-      </section>
+      {/* ---------- GLOBAL UTILITY FOOTER — quieter than the pre-footer above ---------- */}
+      <section className="ayes-ufoot" aria-label="Site information">
+        <div className="ayes-ufoot-grain" aria-hidden="true" />
+        <div className="ayes-ufoot-mono" aria-hidden="true" />
+        <div className="ayes-ufoot-light" aria-hidden="true" />
 
-      {/* ---------- LAYER 3 — utility bar ---------- */}
-      <section
-        style={{
-          background: "#0B0D0C",
-          borderTop: "1px solid rgba(255,255,255,0.09)",
-          padding: "22px clamp(24px,5vw,80px)",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1320,
-            margin: "0 auto",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "14px 28px",
-          }}
-        >
-          <nav
-            aria-label="Legal"
-            style={{ display: "flex", flexWrap: "wrap", gap: "8px 22px" }}
-          >
-            {LEGAL_LINKS.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="ayes-flink"
+        <div className="ayes-ufoot-inner">
+          <div className={`ayes-ufoot-grid${mobile ? " is-mobile" : ""}`}>
+            {/* 1 — BRAND */}
+            <div className="ayes-ufoot-brand">
+              <Link to="/" aria-label="AYESMAJ Studios — home" style={{ display: "inline-block", textDecoration: "none" }}>
+                <LogoMark size={34} />
+              </Link>
+              <p
                 style={{
                   fontFamily: FONTS.ui,
-                  fontSize: 12.5,
-                  color: "#70665A",
-                  textDecoration: "none",
-                  transition: "color 0.25s ease",
+                  fontSize: 14.5,
+                  lineHeight: 1.7,
+                  color: "#B3ACA2",
+                  maxWidth: 300,
+                  margin: "22px 0 26px",
                 }}
               >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
+                {FOOTER_BLURB}
+              </p>
+              <div className="ayes-ufoot-social" aria-label="Social profiles">
+                {socials.map(({ key, label, Icon, href }) =>
+                  href ? (
+                    <a key={key} href={href} target="_blank" rel="noopener noreferrer" className="ayes-usoc" aria-label={label} title={label}>
+                      <Icon size={18} aria-hidden="true" />
+                    </a>
+                  ) : (
+                    // Profile not configured in SITE.social yet — shown, not linked, never faked.
+                    <span key={key} className="ayes-usoc is-unset" aria-label={`${label} (link coming soon)`} title={`${label} — link coming soon`}>
+                      <Icon size={18} aria-hidden="true" />
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
 
-          <span style={{ fontFamily: FONTS.ui, fontSize: 12.5, color: "#70665A" }}>
-            © {new Date().getFullYear()} {SITE.name}. All rights reserved.
-          </span>
+            {/* 5 — CONTACT (second on mobile, last on desktop via CSS order) */}
+            <div className="ayes-ufoot-col ayes-ufoot-contact">
+              <ColTitle>Contact</ColTitle>
+              <div className="ayes-ufoot-links" style={{ gap: 16 }}>
+                <a href={`mailto:${email}`} className="ayes-umail" style={{ ...ULINK, color: IVORY, display: "inline-flex", alignItems: "center", gap: 10 }}>
+                  <Mail size={15} aria-hidden="true" style={{ color: GOLD, flexShrink: 0 }} />
+                  <span className="ayes-umail-text">{email}</span>
+                </a>
+                <a href={SITE.phoneHref} className="ayes-ulink" style={{ ...ULINK, display: "inline-flex", alignItems: "center", gap: 10 }}>
+                  <Phone size={15} aria-hidden="true" style={{ color: GOLD, flexShrink: 0 }} />
+                  {SITE.phone}
+                </a>
+                <div style={{ ...ULINK, display: "flex", alignItems: "flex-start", gap: 10 }}>
+                  <MapPin size={15} aria-hidden="true" style={{ color: GOLD, flexShrink: 0, marginTop: 3 }} />
+                  <span>Phoenix, Arizona<br />Working worldwide</span>
+                </div>
+                <div className="ayes-ufoot-time" style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                  <Clock size={15} aria-hidden="true" style={{ color: GOLD, flexShrink: 0, marginTop: 2 }} />
+                  <div>
+                    <div style={{ fontFamily: FONTS.ui, fontSize: 10.5, letterSpacing: "0.26em", textTransform: "uppercase", color: "#7E766B" }}>
+                      PHX local time
+                    </div>
+                    <div style={{ fontFamily: FONTS.ui, fontSize: 14.5, color: "#B3ACA2", fontVariantNumeric: "tabular-nums", marginTop: 4 }}>
+                      <time dateTime={new Date().toISOString()}>{phx.time}</time>
+                      <span style={{ display: "block", fontSize: 12.5, color: "#7E766B", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 2 }}>{phx.date}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <span
-            style={{
-              fontFamily: FONTS.ui,
-              fontSize: 12.5,
-              letterSpacing: "0.14em",
-              color: "#AAA39A",
-            }}
-          >
-            {SITE.tagline}
-          </span>
+            {/* 2 — EXPLORE */}
+            <FootCol title="Explore" mobile={mobile}>
+              {FOOTER_EXPLORE.map((l) => (
+                <ULink key={l.to} to={l.to}>{l.label}</ULink>
+              ))}
+            </FootCol>
 
-          <button
-            type="button"
-            className="ayes-flink"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            style={{
-              background: "none",
-              border: "1px solid rgba(255,255,255,0.09)",
-              borderRadius: 999,
-              padding: "8px 18px",
-              cursor: "pointer",
-              fontFamily: FONTS.ui,
-              fontSize: 12,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "#D7D1C8",
-              transition: "color 0.25s ease, border-color 0.25s ease",
-            }}
-          >
-            Back to top ↑
-          </button>
+            {/* 3 — SERVICES */}
+            <FootCol title="Services" mobile={mobile}>
+              {FOOTER_SERVICES.map((l) => (
+                <ULink key={l.to} to={l.to}>{l.label}</ULink>
+              ))}
+            </FootCol>
+
+            {/* 4 — SELECTED WORK (real projects from the portfolio data) */}
+            <FootCol title="Selected Work" mobile={mobile}>
+              {SELECTED_WORK.map((b) => (
+                <Link key={b.id} to={`/BrandDetail?slug=${b.id}`} className="ayes-uwork" aria-label={`${b.name} — ${b.category}`}>
+                  <img
+                    src={getBrandAssetPath(b, b.featured)}
+                    alt=""
+                    width={56}
+                    height={40}
+                    loading="lazy"
+                    decoding="async"
+                    onError={coverError(b)}
+                  />
+                  <span>
+                    <span className="ayes-uwork-name">{b.name}</span>
+                    <span className="ayes-uwork-cat">{b.category}</span>
+                  </span>
+                </Link>
+              ))}
+            </FootCol>
+          </div>
+        </div>
+
+        {/* BOTTOM BAR */}
+        <div className="ayes-ufoot-bar">
+          <div className="ayes-ufoot-bar-inner">
+            <nav aria-label="Legal" className="ayes-ufoot-legal">
+              {LEGAL_LINKS.map((l) => (
+                <Link key={l.to} to={l.to} className="ayes-ulink ayes-ulink--sm">{l.label}</Link>
+              ))}
+            </nav>
+            <span className="ayes-ufoot-copy">© {new Date().getFullYear()} {SITE.name}. All rights reserved.</span>
+            <span className="ayes-ufoot-tag">{SITE.tagline}</span>
+          </div>
         </div>
       </section>
 
       <style>{`
-        .ayes-strip-track {
-          animation: ayes-marquee 40s linear infinite;
+        .ayes-strip-track { animation: ayes-marquee 40s linear infinite; }
+        .ayes-strip:hover .ayes-strip-track { animation-play-state: paused; }
+        @keyframes ayes-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        /* ── utility footer ground ─────────────────────────────── */
+        .ayes-ufoot { position: relative; isolation: isolate; background: #070708; color: #B3ACA2; overflow: hidden; }
+        .ayes-ufoot::before { /* thin gold → purple divider */
+          content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px; z-index: 3;
+          background: ${GRAD}; opacity: .85;
         }
-        .ayes-strip:hover .ayes-strip-track {
-          animation-play-state: paused;
+        .ayes-ufoot-grain {
+          position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .045; mix-blend-mode: overlay;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
-        @keyframes ayes-marquee {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
+        .ayes-ufoot-mono { /* giant outline of the A monogram: logo mask minus a shrunken logo mask = ring */
+          position: absolute; left: -3%; bottom: -6%; z-index: 0; pointer-events: none;
+          width: min(44vw, 620px); aspect-ratio: 666 / 566; opacity: .045;
+          background: linear-gradient(135deg, #D8B75A 0%, #A45FDB 60%, #7A48FF 100%);
+          -webkit-mask-image: url('/assets/ayesmaj/logo-a.webp'), url('/assets/ayesmaj/logo-a.webp');
+          mask-image: url('/assets/ayesmaj/logo-a.webp'), url('/assets/ayesmaj/logo-a.webp');
+          -webkit-mask-size: 100% auto, calc(100% - 12px) auto; mask-size: 100% auto, calc(100% - 12px) auto;
+          -webkit-mask-position: center, center; mask-position: center, center;
+          -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+          -webkit-mask-composite: xor; mask-composite: exclude;
+        }
+        .ayes-ufoot-light { /* restrained purple + champagne light along the right edge */
+          position: absolute; right: 0; top: 0; bottom: 0; width: 46%; z-index: 0; pointer-events: none;
+          background:
+            radial-gradient(55% 48% at 100% 22%, rgba(122,72,255,.13), transparent 70%),
+            radial-gradient(48% 40% at 100% 88%, rgba(216,183,90,.09), transparent 70%);
+        }
+        .ayes-ufoot-inner { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; padding: clamp(64px, 7vw, 104px) clamp(24px, 5vw, 80px) clamp(48px, 5vw, 72px); }
+
+        /* ── five columns with soft vertical separators ────────── */
+        .ayes-ufoot-grid { display: grid; grid-template-columns: 1.45fr 0.8fr 1.15fr 1.3fr 1.1fr; gap: clamp(28px, 3.2vw, 48px); align-items: start; }
+        .ayes-ufoot-col { padding-left: clamp(20px, 2.4vw, 32px); border-left: 1px solid rgba(255,255,255,.065); min-height: 100%; }
+        .ayes-ufoot-contact { order: 5; }
+        .ayes-ufoot-links { display: flex; flex-direction: column; gap: 13px; }
+        .ayes-ufoot-brand { padding-right: clamp(8px, 2vw, 24px); }
+        .ayes-ufoot-social { display: flex; gap: 10px; }
+        .ayes-usoc {
+          display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px;
+          color: #B3ACA2; border: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.02);
+          transition: color .2s ease, border-color .2s ease, transform .2s ease;
+        }
+        .ayes-usoc:hover, .ayes-usoc:focus-visible { color: ${IVORY}; border-color: rgba(216,183,90,.55); transform: translateY(-2px); }
+        .ayes-usoc.is-unset { opacity: .42; cursor: default; }
+        .ayes-usoc.is-unset:hover { transform: none; color: #B3ACA2; border-color: rgba(255,255,255,.09); }
+
+        /* ── links: slide 4px right + gold→purple hairline ─────── */
+        .ayes-ulink { position: relative; cursor: pointer; transition: color .2s ease, transform .2s ease; }
+        .ayes-ulink::after {
+          content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: ${GRAD};
+          transform: scaleX(0); transform-origin: left; transition: transform .2s ease;
+        }
+        .ayes-ulink:hover, .ayes-ulink:focus-visible { color: ${IVORY}; transform: translateX(4px); }
+        .ayes-ulink:hover::after, .ayes-ulink:focus-visible::after { transform: scaleX(1); }
+        .ayes-ulink--sm { font-family: ${FONTS.ui}; font-size: 12.5px; color: #7E766B; text-decoration: none; }
+
+        /* ── email: ivory → gradient text ───────────────────────── */
+        .ayes-umail { transition: color .2s ease; }
+        .ayes-umail-text { background-image: ${GRAD}; -webkit-background-clip: text; background-clip: text; color: ${IVORY}; transition: color .2s ease; }
+        .ayes-umail:hover .ayes-umail-text, .ayes-umail:focus-visible .ayes-umail-text { color: transparent; }
+
+        /* ── selected work rows ─────────────────────────────────── */
+        .ayes-uwork { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #B3ACA2; width: fit-content; }
+        .ayes-uwork img { width: 56px; height: 40px; object-fit: cover; border-radius: 6px; border: 1px solid rgba(255,255,255,.08); filter: brightness(.82); transition: filter .2s ease, border-color .2s ease; flex-shrink: 0; background: #111; }
+        .ayes-uwork:hover img, .ayes-uwork:focus-visible img { filter: brightness(1.04); border-color: rgba(216,183,90,.45); }
+        .ayes-uwork > span { display: flex; flex-direction: column; gap: 2px; }
+        .ayes-uwork-name { font-family: ${FONTS.ui}; font-size: 14px; font-weight: 600; color: ${IVORY}; letter-spacing: .02em; transition: color .2s ease; }
+        .ayes-uwork-cat { font-family: ${FONTS.ui}; font-size: 12px; color: #7E766B; }
+        .ayes-uwork:hover .ayes-uwork-name { color: ${GOLD}; }
+
+        /* ── bottom bar ─────────────────────────────────────────── */
+        .ayes-ufoot-bar { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,.07); }
+        .ayes-ufoot-bar-inner { max-width: 1320px; margin: 0 auto; padding: 22px clamp(24px, 5vw, 80px); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px 28px; }
+        .ayes-ufoot-legal { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+        .ayes-ufoot-copy { font-family: ${FONTS.ui}; font-size: 12.5px; color: #7E766B; text-align: center; white-space: nowrap; }
+        .ayes-ufoot-tag { font-family: ${FONTS.ui}; font-size: 12px; letter-spacing: .2em; color: #B3ACA2; text-align: right; }
+
+        /* ── mobile: brand + contact first, then accordions ─────── */
+        .ayes-ufoot-grid.is-mobile { grid-template-columns: 1fr; gap: 0; }
+        .ayes-ufoot-grid.is-mobile .ayes-ufoot-brand { padding: 0 0 34px; }
+        .ayes-ufoot-grid.is-mobile .ayes-ufoot-col { border-left: 0; padding-left: 0; }
+        .ayes-ufoot-grid.is-mobile .ayes-ufoot-contact { order: 0; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 6px; }
+        .ayes-ufoot-acc { border-bottom: 1px solid rgba(255,255,255,.07); }
+        .ayes-ufoot-sum { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 4px 0; cursor: pointer; list-style: none; }
+        .ayes-ufoot-sum::-webkit-details-marker { display: none; }
+        .ayes-ufoot-chev { color: ${GOLD}; transition: transform .2s ease; }
+        .ayes-ufoot-acc[open] .ayes-ufoot-chev { transform: rotate(180deg); }
+        .ayes-ufoot-sum:focus-visible { outline: 2px solid ${GOLD}; outline-offset: 3px; border-radius: 4px; }
+        @media (max-width: 767px) {
+          .ayes-ufoot-bar-inner { grid-template-columns: 1fr; text-align: left; }
+          .ayes-ufoot-copy, .ayes-ufoot-tag { text-align: left; white-space: normal; }
+          .ayes-ufoot-mono { width: 78vw; left: -18%; bottom: -4%; }
+        }
+        @media (min-width: 768px) and (max-width: 1100px) {
+          .ayes-ufoot-grid { grid-template-columns: 1fr 1fr 1fr; }
+          .ayes-ufoot-brand { grid-column: 1 / -1; padding-bottom: 8px; }
+          .ayes-ufoot-col { border-left: 0; padding-left: 0; }
+        }
+
+        .ayes-ulink:focus-visible, .ayes-usoc:focus-visible, .ayes-uwork:focus-visible, .ayes-umail:focus-visible {
+          outline: 2px solid ${GOLD}; outline-offset: 3px; border-radius: 4px;
         }
         @media (prefers-reduced-motion: reduce) {
           .ayes-strip-track { animation: none; }
-        }
-        .ayes-flink-dot {
-          display: inline-block;
-          width: 0;
-          height: 5px;
-          border-radius: 999px;
-          background: ${GRAD};
-          opacity: 0;
-          transition: width 0.25s ease, margin-right 0.25s ease, opacity 0.25s ease;
-        }
-        .ayes-flink:hover, .ayes-flink:focus-visible { color: #FFFFFF !important; }
-        .ayes-flink:hover .ayes-flink-dot,
-        .ayes-flink:focus-visible .ayes-flink-dot {
-          width: 5px;
-          margin-right: 9px;
-          opacity: 1;
-        }
-        .ayes-flink:focus-visible,
-        footer button:focus-visible {
-          outline: 2px solid #D8B75A;
-          outline-offset: 3px;
-          border-radius: 4px;
+          .ayes-ulink, .ayes-ulink::after, .ayes-usoc, .ayes-uwork img, .ayes-umail-text, .ayes-ufoot-chev, .ayes-uwork-name { transition: none; }
+          .ayes-ulink:hover, .ayes-ulink:focus-visible, .ayes-usoc:hover, .ayes-usoc:focus-visible { transform: none; }
         }
       `}</style>
     </footer>
