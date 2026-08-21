@@ -64,3 +64,7 @@ copy_anims.ps1
 check_sizes.ps1
 
 .vercel
+
+# Interior Design project films are web-encoded (5.8-19.7 MB) and shipped;
+# the multi-hundred-MB masters remain in their source projects, not here.
+!public/interior-design/**/*.mp4
