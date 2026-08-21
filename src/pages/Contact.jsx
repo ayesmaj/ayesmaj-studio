@@ -106,7 +106,7 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ background: COLORS.black, minHeight: '100vh', overflowX: 'clip', color: COLORS.white }}>
+    <div className="idv2-bgc idv2-bgc-05" style={{ minHeight: '100vh', overflowX: 'clip', color: COLORS.white }}>
       <Seo
         title="Contact — AYESMAJ Studios"
         description="Start a project with AYESMAJ Studios. Based in Phoenix, Arizona and working worldwide — we respond within 24 hours."

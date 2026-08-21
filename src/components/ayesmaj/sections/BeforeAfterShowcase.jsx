@@ -29,7 +29,7 @@ export default function BeforeAfterShowcase() {
   const [active, setActive] = useState(TABS[0]);
 
   return (
-    <section style={{ background: '#141715', padding: 'clamp(80px, 10vw, 140px) 24px', overflow: 'hidden' }}>
+    <section className="idv2-bgc idv2-bgc-04" style={{ background: '#141715', padding: 'clamp(80px, 10vw, 140px) 24px', overflow: 'hidden' }}>
       <SectionHeader
         eyebrow="BEFORE / AFTER"
         title="FROM SKETCH TO SIGNATURE"

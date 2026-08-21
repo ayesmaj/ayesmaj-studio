@@ -194,6 +194,7 @@ export default function Animations() {
       </section>
 
       {/* ── Grid ─────────────────────────────────────────────────────────── */}
+      <div className="idv2-bgc idv2-bgc-04 idv2-bgc--fade-top" style={{ '--bgc-fade': '#0B0B0B' }}>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
         {/* 1 col mobile → 2 col tablet → 3 col desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -202,10 +203,11 @@ export default function Animations() {
           ))}
         </div>
       </section>
+      </div>
 
       {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <section
-        className="relative border-t py-24 px-6 text-center overflow-hidden"
+        className="relative border-t py-24 px-6 text-center overflow-hidden idv2-bgc idv2-bgc-08 idv2-bgc--fade-top"
         style={{ borderColor: 'rgba(255,255,255,0.04)' }}
       >
         <div

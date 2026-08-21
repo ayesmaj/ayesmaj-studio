@@ -202,7 +202,7 @@ export default function About() {
       </section>
 
       {/* 3 ── CREATIVE DIRECTION (dark, restrained) */}
-      <section style={{ background: '#0B0D0C', padding: 'clamp(80px,10vw,140px) 0' }}>
+      <section className="idv2-bgc idv2-bgc-08" style={{ background: '#0B0D0C', padding: 'clamp(80px,10vw,140px) 0' }}>
         <div style={{ ...section, maxWidth: 860, textAlign: 'center' }}>
           <motion.p {...fade(0)} style={eyebrowStyle()}>Creative Direction</motion.p>
           <motion.h2
@@ -299,7 +299,7 @@ export default function About() {
       </section>
 
       {/* 5 ── SELECTED WORK WALL (dark) */}
-      <section style={{ background: '#050505', padding: 'clamp(80px,10vw,150px) 0' }}>
+      <section className="idv2-bgc idv2-bgc-02" style={{ background: '#050505', padding: 'clamp(80px,10vw,150px) 0' }}>
         <div style={section}>
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'end', justifyContent: 'space-between', gap: 20, marginBottom: 'clamp(36px,4vw,60px)' }}>
             <div>
@@ -423,7 +423,7 @@ export default function About() {
       </section>
 
       {/* 7 ── FINAL CTA (dark) */}
-      <section style={{ background: '#050505', padding: 'clamp(90px,12vw,170px) 0' }}>
+      <section className="idv2-bgc idv2-bgc-06" style={{ background: '#050505', padding: 'clamp(90px,12vw,170px) 0' }}>
         <div style={{ ...section, textAlign: 'center' }}>
           <motion.h2
             {...fade(0)}

@@ -51,7 +51,7 @@ export default function PerceptionPrice() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="before-after" className="perception-comparison" style={{ borderTop: `1px solid ${COLORS.border}` }}>
+    <section id="before-after" className="perception-comparison idv2-bgc idv2-bgc-05" style={{ borderTop: `1px solid ${COLORS.border}` }}>
       <div className="perception-comparison__glow" />
       <div className="perception-comparison__inner">
         <SectionHeader

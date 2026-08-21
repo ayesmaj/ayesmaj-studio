@@ -82,6 +82,7 @@ export default function CapabilitiesShowcase() {
   return (
     <section
       id="capabilities"
+      className="idv2-bgc idv2-bgc-02"
       style={{
         position: "relative",
         padding: "clamp(72px,9vw,132px) clamp(24px,5vw,80px)",

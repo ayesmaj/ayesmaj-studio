@@ -47,3 +47,8 @@
 }
 
 .idv2-full > .idv2-inner { position: relative; z-index: 1; }
+
+/* Soft top edge for image sections that follow a flat or image block.
+   --bgc-fade = the colour of the block above (default site black). */
+.idv2-bgc--fade-top { position: relative; isolation: isolate; }
+.idv2-bgc--fade-top::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: clamp(80px, 12vw, 160px); z-index: -1; pointer-events: none; background: linear-gradient(180deg, var(--bgc-fade, #050505) 0%, transparent 100%); }

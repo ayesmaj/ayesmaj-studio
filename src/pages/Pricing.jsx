@@ -238,11 +238,13 @@ export default function Pricing() {
       </section>
 
       {/* CARDS */}
+      <div className="idv2-bgc idv2-bgc-02 idv2-bgc--fade-top" style={{ '--bgc-fade': '#030303' }}>
       <section style={{ maxWidth: 1400, margin: '0 auto', padding: '0 clamp(24px,5vw,80px) 96px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%,280px),1fr))', gap: 18 }}>
           {PACKAGES.map(pkg => <PriceCard key={pkg.id} pkg={pkg} billing={billing} />)}
         </div>
       </section>
+      </div>
 
       {/* ADD-ONS */}
       <section style={{ maxWidth: 1080, margin: '0 auto', padding: '0 clamp(24px,5vw,80px) 96px' }}>
@@ -277,7 +279,7 @@ export default function Pricing() {
       </section>
 
       {/* CTA */}
-      <section style={{ position: 'relative', padding: 'clamp(80px,11vw,150px) 24px', textAlign: 'center', overflow: 'hidden', borderTop: `1px solid ${COLORS.border}` }}>
+      <section className="idv2-bgc idv2-bgc-07" style={{ position: 'relative', padding: 'clamp(80px,11vw,150px) 24px', textAlign: 'center', overflow: 'hidden', borderTop: `1px solid ${COLORS.border}` }}>
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: `radial-gradient(ellipse 60% 60% at 50% 50%, rgba(${GOLD_RGB},0.09) 0%, transparent 70%)` }} />
         <motion.div {...fade()} style={{ position: 'relative', zIndex: 2 }}>
           <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(34px,5.5vw,76px)', fontWeight: 800, textTransform: 'uppercase', lineHeight: 0.98, color: COLORS.white, margin: '0 0 20px' }}>

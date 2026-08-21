@@ -99,6 +99,7 @@ export default function ProjectDetail() {
         </div>
 
         {/* BODY */}
+        <div className="idv2-bgc idv2-bgc-05 idv2-bgc--fade-top" style={{ '--bgc-fade': '#090909' }}>
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             {/* Main content */}
@@ -202,6 +203,7 @@ export default function ProjectDetail() {
               </div>
             </motion.div>
           </div>
+        </div>
         </div>
       </main>
 

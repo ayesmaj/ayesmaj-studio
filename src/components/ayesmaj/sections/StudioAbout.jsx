@@ -76,7 +76,7 @@ export default function StudioAbout() {
   const navigate = useNavigate();
 
   return (
-    <section
+    <section className="idv2-bgc idv2-bgc-01"
       style={{
         background: '#0B0D0C',
         borderTop: '1px solid rgba(255,255,255,0.09)',

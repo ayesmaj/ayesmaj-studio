@@ -86,7 +86,7 @@ export default function Insights() {
       </section>
 
       {/* ── Empty state ─────────────────────────────────────────────────── */}
-      <section style={{ padding: '0 24px 140px' }}>
+      <section className="idv2-bgc idv2-bgc-01 idv2-bgc--fade-top" style={{ padding: '0 24px 140px' }}>
         <motion.div {...fade(0.15)} style={{
           maxWidth: 720, margin: '0 auto', textAlign: 'center',
           background: GLASS, border: `1px solid ${BORDER}`, borderRadius: 24,

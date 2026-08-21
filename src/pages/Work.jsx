@@ -257,6 +257,7 @@ export default function Work() {
           </section>
 
           {/* GALLERY */}
+          <div className="idv2-bgc idv2-bgc-04 idv2-bgc--fade-top" style={{ '--bgc-fade': '#0D0F0E' }}>
           <section style={{ ...section, paddingBottom: 'clamp(64px,8vw,120px)' }}>
             <div className="work-grid">
               {items.map((item, i) => (
@@ -292,8 +293,10 @@ export default function Work() {
               ))}
             </div>
           </section>
+          </div>
 
           {/* CTA */}
+          <div className="idv2-bgc idv2-bgc-07 idv2-bgc--fade-top">
           <section style={{ ...section, paddingBottom: 'clamp(80px,10vw,140px)', textAlign: 'center' }}>
             <motion.div {...fade(0.1)}>
               <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(30px,4.6vw,64px)', fontWeight: 800, textTransform: 'uppercase', lineHeight: 0.98, color: '#F6F3ED', margin: '0 0 28px' }}>
@@ -304,6 +307,7 @@ export default function Work() {
               </div>
             </motion.div>
           </section>
+          </div>
         </main>
 
         <AyesmajFooter />

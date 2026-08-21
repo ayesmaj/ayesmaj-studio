@@ -81,7 +81,8 @@ export default function AiPosts() {
         </section>
 
         {/* DARK MASONRY GRID */}
-        <section style={{ background: '#0D0F0E', paddingTop: 'clamp(64px,8vw,110px)', paddingBottom: 'clamp(64px,8vw,120px)' }}>
+        <div className="idv2-bgc idv2-bgc-04">
+        <section style={{ paddingTop: 'clamp(64px,8vw,110px)', paddingBottom: 'clamp(64px,8vw,120px)' }}>
           <div style={section}>
             <div style={{ columns: '3 280px', columnGap: 'clamp(16px,2vw,24px)' }}>
               {AI_POSTS.map((post, i) => (
@@ -128,7 +129,7 @@ export default function AiPosts() {
         </section>
 
         {/* CTA */}
-        <section style={{ background: '#0D0F0E', paddingBottom: 'clamp(80px,10vw,140px)', textAlign: 'center' }}>
+        <section style={{ paddingBottom: 'clamp(80px,10vw,140px)', textAlign: 'center' }}>
           <div style={section}>
             <motion.div {...fade(0.05)}>
               <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(30px,4.5vw,64px)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 0.98, color: '#F6F3ED', margin: '0 0 28px' }}>
@@ -140,6 +141,7 @@ export default function AiPosts() {
             </motion.div>
           </div>
         </section>
+        </div>
       </main>
 
       <AyesmajFooter />

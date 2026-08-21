@@ -39,9 +39,9 @@ const section = { maxWidth: 1320, margin: '0 auto', padding: '0 clamp(24px,5vw,8
 /* ---------------------------------- data ---------------------------------- */
 
 const MANIFESTO = [
-  { a: 'A brand is not a logo.', b: "It's a world.", bg: '#050505', dark: true },
+  { a: 'A brand is not a logo.', b: "It's a world.", bg: '#050505', dark: true, cls: 'idv2-bgc idv2-bgc-06' },
   { a: 'Every layer speaks', b: 'one language.', bg: '#F7F3ED', dark: false },
-  { a: 'Directed, not decorated.', b: 'Frame by frame.', bg: '#0B0D0C', dark: true },
+  { a: 'Directed, not decorated.', b: 'Frame by frame.', bg: '#0B0D0C', dark: true, cls: 'idv2-bgc idv2-bgc-04' },
 ];
 
 const WALL = [
@@ -105,7 +105,7 @@ export default function Studio() {
 
         {/* 2. MANIFESTO — alternating dark / bright bands */}
         {MANIFESTO.map((m, i) => (
-          <section key={m.a} style={{ background: m.bg, padding: 'clamp(90px,11vw,160px) 0' }}>
+          <section key={m.a} className={m.cls} style={{ background: m.bg, padding: 'clamp(90px,11vw,160px) 0' }}>
             <motion.div {...fade()} style={{ ...section, textAlign: i % 2 ? 'right' : 'left' }}>
               <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(32px,5.2vw,76px)', lineHeight: 1.0, letterSpacing: '0.01em', textTransform: 'uppercase', color: m.dark ? '#F6F3ED' : '#111111', margin: 0, marginLeft: i % 2 ? 'auto' : 0, maxWidth: 900 }}>
                 {m.a}
@@ -117,7 +117,7 @@ export default function Studio() {
         ))}
 
         {/* 3. DISCIPLINES MEDIA WALL */}
-        <section style={{ background: '#0B0D0C', padding: 'clamp(100px,12vw,160px) 0' }}>
+        <section className="idv2-bgc idv2-bgc-01" style={{ background: '#0B0D0C', padding: 'clamp(100px,12vw,160px) 0' }}>
           <div style={section}>
             <SectionHeader
               eyebrow="Disciplines"
@@ -176,7 +176,7 @@ export default function Studio() {
         </section>
 
         {/* 4. PROCESS */}
-        <section style={{ background: '#050505', padding: 'clamp(100px,12vw,160px) 0' }}>
+        <section className="idv2-bgc idv2-bgc-06" style={{ background: '#050505', padding: 'clamp(100px,12vw,160px) 0' }}>
           <div style={section}>
             <SectionHeader
               eyebrow="Process"
@@ -205,7 +205,7 @@ export default function Studio() {
         </section>
 
         {/* 5. STUDIO REEL */}
-        <section style={{ background: '#0B0D0C', padding: 'clamp(100px,12vw,160px) 0' }}>
+        <section className="idv2-bgc idv2-bgc-04" style={{ background: '#0B0D0C', padding: 'clamp(100px,12vw,160px) 0' }}>
           <div style={section}>
             <SectionHeader
               eyebrow="Studio Reel"

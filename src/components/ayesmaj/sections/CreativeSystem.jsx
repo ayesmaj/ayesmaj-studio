@@ -49,7 +49,7 @@ export default function CreativeSystem() {
   const navigate = useNavigate();
 
   return (
-    <section id="creative-system" className="sb-section">
+    <section id="creative-system" className="sb-section idv2-bgc idv2-bgc-08">
       <div className="sb-inner">
         <SectionHeader
           eyebrow="The Storyboard"

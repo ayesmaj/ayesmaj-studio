@@ -70,3 +70,24 @@ media-covered and light sections skipped, sequence in page order, never consecut
 `AyesmajFooter` layer 1 ("Let's build something people remember") carries **03 Stone & Bronze** on
 every route. Checked against each page's closing dark section: no route ends on 03 directly
 before the footer (CompletePresentation's 03 block is followed by a bright section).
+
+### Rest of site (owner request 2026-08-21)
+
+| Route | Sections |
+|---|---|
+| / (Home) | 02 Capabilities · 05 PerceptionPrice · 08 CreativeSystem · 04 BeforeAfter · 01 StudioAbout |
+| /Work | 04 gallery (full-bleed wrapper, fade-top) · 07 CTA |
+| /About | 08 Creative Direction · 02 Selected Work · 06 Final CTA |
+| /Studio | 06 · 04 manifesto bands · 01 Layers · 06 Process · 04 Reel |
+| /Contact | 05 on the page wrapper (hero + form share one silk) |
+| /Pricing | 02 cards (full-bleed wrapper) · 07 CTA |
+| /Insights | 01 empty state (fade-top) |
+| /AiPosts | 04 grid + CTA as one continuous block |
+| /Animations | 04 grid (full-bleed wrapper) · 08 CTA |
+| /project/:slug | 05 body (full-bleed wrapper) |
+| /Faq | 08 accordion (full-bleed wrapper) |
+
+Left alone on purpose: Reel, Clients, System, BrandDetail (single <main> over the CircuitBackground
+canvas or photo-led layouts — no flat dark band to replace); legal pages (text documents).
+`.idv2-bgc--fade-top` (interior-bg.css) softens the top edge of an image section; `--bgc-fade`
+carries the colour of the block above.

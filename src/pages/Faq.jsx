@@ -107,6 +107,7 @@ export default function Faq() {
         </motion.p>
       </header>
 
+      <div className="idv2-bgc idv2-bgc-08 idv2-bgc--fade-top">
       <main style={{ maxWidth: 820, margin: '0 auto', padding: '20px 24px 110px' }}>
         {QA.map(({ q, a }, i) => (
           <motion.div key={q} {...fade(Math.min(i * 0.04, 0.2))}>
@@ -128,6 +129,7 @@ export default function Faq() {
           <a href={`mailto:${SITE.email}`} style={sA}>{SITE.email}</a> — we reply to every message.
         </motion.p>
       </main>
+      </div>
 
       <AyesmajFooter />
 
