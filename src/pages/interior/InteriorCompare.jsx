@@ -33,7 +33,7 @@ const rise = (d = 0) => ({
 
 /* One method-family image per stage — real projects, truthful labels. */
 const STAGE_MEDIA = {
-  capture: { src: APARTMENT.pairs[1].raw, alt: 'Canal Apartment canal-side room as raw captured source', caption: 'CANAL APARTMENT — RAW SOURCE', tag: 'CAPTURE' },
+  capture: { src: APARTMENT.pair.raw, alt: 'Canal Apartment canal-side room as raw captured source', caption: 'CANAL APARTMENT — RAW SOURCE', tag: 'CAPTURE' },
   understand: { src: APARTMENT.studies[0].src, alt: 'Canal Apartment bath plan study', caption: 'CANAL APARTMENT — PLAN STUDY', tag: 'UNDERSTAND' },
   experience: { src: VALMONT.gallery[2].src, alt: 'Maison Valmont restored dining room visualization', caption: 'MAISON VALMONT — RESTORED DINING', tag: 'EXPERIENCE' },
   present: { src: VALMONT.gallery[4].src, alt: 'Maison Valmont restored suite visualization', caption: 'MAISON VALMONT — RESTORED SUITE', tag: 'PRESENT' },

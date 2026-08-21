@@ -41,18 +41,18 @@ const SEQ = [
 /* Furniture-fit views — Canal Apartment, the clearance story per room. */
 const FIT_VIEWS = {
   living: {
-    img: APARTMENT.rooms[3],
+    img: APARTMENT.gallery[3],
     alt: 'Canal Apartment living room furnished at true scale in the 3D plan base',
     points: ['The seating group at true furniture scale', 'A clear walking route past the sofa', 'Sight lines to the windows stay open'],
   },
   dining: {
-    img: APARTMENT.rooms[1],
+    img: APARTMENT.gallery[0],
     alt: 'Canal Apartment dining room furnished at true scale in the 3D plan base',
     points: ['The table scaled to the room, not to wishful thinking', 'Chairs pulled out still leave the route past the table', 'The serving path stays clear'],
   },
-  waterfront: {
-    img: APARTMENT.rooms[6],
-    alt: 'Canal Apartment waterfront room furnished at true scale in the 3D plan base',
+  lounge: {
+    img: APARTMENT.gallery[1],
+    alt: 'Canal Apartment lounge room furnished at true scale in the 3D plan base',
     points: ['Furniture kept low and back from the glass', 'The window line stays unblocked end to end', 'Circulation runs behind the seating, not through the view'],
   },
 };
@@ -60,7 +60,7 @@ const FIT_VIEWS = {
 const FIT_OPTIONS = [
   { key: 'living', label: 'LIVING' },
   { key: 'dining', label: 'DINING' },
-  { key: 'waterfront', label: 'WATERFRONT' },
+  { key: 'lounge', label: 'LOUNGE' },
 ];
 
 const FAQ = [

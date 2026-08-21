@@ -86,24 +86,22 @@ export const APARTMENT = {
   slug: 'canal-apartment',
   name: 'Canal Apartment',
   base: A,
-  rooms: ['bath', 'dining', 'kitchen', 'living', 'overview', 'sunroom', 'waterfront'].map(
-    (r) => ({ src: `${A}/rooms/${r}.webp`, label: r === 'overview' ? 'Overview' : r[0].toUpperCase() + r.slice(1), room: r }),
-  ),
   /** Alternate generated study views — labeled as studies, not plans. */
   studies: ['bath', 'dining', 'kitchen', 'living', 'overview', 'sunroom', 'waterfront'].map(
     (r) => ({ src: `${A}/plans/${r}.webp`, label: `${r[0].toUpperCase() + r.slice(1)} — study`, room: r }),
   ),
-  /** Same frame, raw source vs editorial enhancement. The honest AI demo.
-      -v2 entries are gpt-image-2 regenerations (architectural lock) that
-      replace the original editorial where the owner asked for a fresh pass. */
-  pairs: ['bath', 'canal', 'dining', 'kitchen', 'living', 'lounge', 'primary', 'terrace'].map(
-    (r) => ({
-      room: r,
-      label: r[0].toUpperCase() + r.slice(1),
-      raw: `${A}/pairs/${r}-raw.webp`,
-      editorial: `${A}/pairs/${r}-editorial${r === 'living' ? '-v2' : ''}.webp`,
-    }),
-  ),
+  /** Owner curation 2026-08-21: the CGI rooms set and most raw/editorial
+      pairs were deleted at source; the site mirrors that. What survives:
+      three source editorials plus our gpt-image-2 living regeneration. */
+  gallery: [
+    { src: `${A}/pairs/dining-editorial.webp`, label: 'Dining', room: 'dining' },
+    { src: `${A}/pairs/lounge-editorial.webp`, label: 'Lounge', room: 'lounge' },
+    { src: `${A}/pairs/primary-editorial.webp`, label: 'Primary', room: 'primary' },
+    { src: `${A}/pairs/living-editorial-v2.webp`, label: 'Living', room: 'living' },
+  ],
+  /** The one complete honest pair: the surviving raw + a fresh gpt-image-2
+      editorial generated from it under the architectural lock. */
+  pair: { room: 'Terrace', raw: `${A}/pairs/terrace-raw.webp`, editorial: `${A}/pairs/terrace-editorial-v2.webp` },
 };
 
 // ── MAISON VALMONT — renovation: before → process → after → film ───────────

@@ -31,11 +31,11 @@ const rise = (d = 0) => ({
    asset is the view shot — labeled honestly, not renamed to balcony. */
 const SHOTS = [
   { key: 'plan', label: 'PLAN STUDY', src: APARTMENT.studies[4].src, alt: 'Canal Apartment overview study — the film opens on the geometry', purpose: 'State the geography first: every later shot is a place on this study.', camera: 'Top-down, slow push-in over the study.' },
-  { key: 'living', label: 'LIVING', src: APARTMENT.rooms[3].src, alt: 'Canal Apartment living room — the establishing shot', purpose: 'Establish the main space and its light — the room the film keeps returning to.', camera: 'Forward dolly from the entry line, walking pace.' },
-  { key: 'kitchen', label: 'KITCHEN', src: APARTMENT.rooms[2].src, alt: 'Canal Apartment kitchen at counter height', purpose: 'Show the working heart of the apartment at counter height.', camera: 'Lateral glide along the counter line.' },
-  { key: 'bath', label: 'BATH', src: APARTMENT.rooms[0].src, alt: 'Canal Apartment bath — a held, quiet frame', purpose: 'A quiet beat between the big rooms — material and calm.', camera: 'Static frame; the light moves, the camera does not.' },
-  { key: 'sunroom', label: 'SUNROOM', src: APARTMENT.rooms[5].src, alt: 'Canal Apartment sunroom filled with daylight', purpose: 'Lift the mood — the brightest room carries the film’s turn.', camera: 'Slow pivot toward the glazing.' },
-  { key: 'waterfront', label: 'WATERFRONT', src: APARTMENT.rooms[6].src, alt: 'Canal Apartment waterfront view — the closing shot', purpose: 'End on the view the apartment is named for.', camera: 'Ease out toward the water and hold.' },
+  { key: 'living', label: 'LIVING', src: APARTMENT.gallery[3].src, alt: 'Canal Apartment living room — the establishing shot', purpose: 'Establish the main space and its light — the room the film keeps returning to.', camera: 'Forward dolly from the entry line, walking pace.' },
+  { key: 'dining', label: 'DINING', src: APARTMENT.gallery[0].src, alt: 'Canal Apartment dining at counter height', purpose: 'Show the working heart of the apartment at counter height.', camera: 'Lateral glide along the counter line.' },
+  { key: 'primary', label: 'PRIMARY', src: APARTMENT.gallery[2].src, alt: 'Canal Apartment primary — a held, quiet frame', purpose: 'A quiet beat between the big rooms — material and calm.', camera: 'Static frame; the light moves, the camera does not.' },
+  { key: 'lounge', label: 'LOUNGE', src: APARTMENT.gallery[1].src, alt: 'Canal Apartment lounge filled with daylight', purpose: 'Lift the mood — the brightest room carries the film’s turn.', camera: 'Slow pivot toward the glazing.' },
+  { key: 'waterfront', label: 'WATERFRONT STUDY', src: APARTMENT.studies[6].src, alt: 'Canal Apartment waterfront view — the closing shot', purpose: 'End on the view the apartment is named for.', camera: 'Ease out toward the water and hold.' },
 ];
 
 /* Camera language over Poolside Villa master frames — the film-ready
@@ -57,7 +57,7 @@ function Hero() {
     <section className="idv2-full idv2-acc-experience">
       <video
         src={PATEL.film.mobile}
-        poster={APARTMENT.rooms[4].src}
+        poster={APARTMENT.studies[4].src}
         autoPlay muted loop playsInline preload="metadata"
         aria-label="The Patel — rendered hero film, shown as a craft reference from a separate project"
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
@@ -221,7 +221,7 @@ export default function InteriorAiVideoApartment() {
           <MethodOutro method={m} methods={METHODS} />
         </div>
       </div>
-      <NextPortal methodKey="ai-video-apartment" image={APARTMENT.pairs[5].editorial} />
+      <NextPortal methodKey="ai-video-apartment" image={APARTMENT.pair.editorial} />
       <CtaBand
         eyebrow="AYESMAJ STUDIOS / AI APARTMENT VIDEO"
         headline="The plan explains the space. The film explains the feeling."

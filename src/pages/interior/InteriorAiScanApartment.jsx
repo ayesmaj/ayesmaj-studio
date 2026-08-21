@@ -29,12 +29,11 @@ const rise = (d = 0) => ({
   transition: { duration: 0.7, delay: d, ease: [0.22, 1, 0.36, 1] },
 });
 
-/* One project thread — the Canal Apartment kitchen, source to result. */
+/* One project thread — Canal Apartment studies resolving into a finished room. */
 const SEQ = [
-  { label: 'SOURCE', src: APARTMENT.pairs[3].raw, alt: 'Canal Apartment kitchen as raw captured source', line: 'The apartment as it arrives: unpolished capture, true geometry.' },
-  { label: 'PLAN STUDY', src: APARTMENT.studies[2].src, alt: 'Canal Apartment kitchen plan study', line: 'Rooms, openings and fixed elements organized into a readable study.' },
-  { label: 'SPATIAL BASE', src: APARTMENT.rooms[2].src, alt: 'Canal Apartment kitchen as a spatial visualization base', line: 'The study becomes a spatial base the whole project can build on.' },
-  { label: 'EDITORIAL RESULT', src: APARTMENT.pairs[3].editorial, alt: 'Canal Apartment kitchen as finished editorial visual', line: 'The same kitchen, design-ready: material, light and atmosphere.' },
+  { label: 'PLAN STUDY', src: APARTMENT.studies[4].src, alt: 'Canal Apartment overview plan study', line: 'Rooms, openings and fixed elements organized into a readable study.' },
+  { label: 'ROOM STUDY', src: APARTMENT.studies[2].src, alt: 'Canal Apartment kitchen plan study', line: 'Each room resolves into its own working study.' },
+  { label: 'EDITORIAL RESULT', src: APARTMENT.gallery[3].src, alt: 'Canal Apartment living room as finished editorial visual', line: 'The study becomes a design-ready room: material, light, atmosphere.' },
 ];
 
 const CLIENT_LABELS = [
@@ -77,12 +76,12 @@ function Hero() {
           <motion.div {...rise(0.36)} className="idv-mono-label">ANSWERS: {m.question.toUpperCase()}</motion.div>
         </div>
         {/* Layered capture system — real assets, truthful labels */}
-        <div className="idv2-fan" aria-label="Canal Apartment — from source capture to spatial base">
+        <div className="idv2-fan" aria-label="Canal Apartment — from plan studies to design-ready rooms">
           {[
-            { n: '01', t: 'SOURCE', src: APARTMENT.pairs[6].raw },
-            { n: '02', t: 'PLAN STUDY', src: APARTMENT.studies[0].src },
-            { n: '03', t: 'SPATIAL BASE', src: APARTMENT.rooms[0].src },
-            { n: '04', t: 'DESIGN-READY', src: APARTMENT.pairs[6].editorial },
+            { n: '01', t: 'PLAN STUDY', src: APARTMENT.studies[0].src },
+            { n: '02', t: 'STUDY', src: APARTMENT.studies[5].src },
+            { n: '03', t: 'EDITORIAL', src: APARTMENT.gallery[2].src },
+            { n: '04', t: 'DESIGN-READY', src: APARTMENT.gallery[0].src },
           ].map((p, i) => (
             <motion.div key={p.n} className="idv2-fan-card"
               initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
@@ -103,8 +102,8 @@ function WhatExists() {
     <section className="idv2-section idv2-bright idv2-acc-capture">
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 'clamp(24px, 3.5vw, 56px)', alignItems: 'center' }} >
         <figure className="idv-figure idv-figure--frame idv2-reveal" style={{ margin: 0 }}>
-          <img src={APARTMENT.pairs[0].raw} alt="Canal Apartment bath as raw captured source with detected structure" loading="lazy" decoding="async" style={{ borderRadius: 18 }} />
-          <figcaption><span>CANAL APARTMENT — RAW SOURCE</span><span>WHAT EXISTS</span></figcaption>
+          <img src={APARTMENT.studies[3].src} alt="Canal Apartment living plan study with detected structure" loading="lazy" decoding="async" style={{ borderRadius: 18 }} />
+          <figcaption><span>CANAL APARTMENT — PLAN STUDY</span><span>WHAT EXISTS</span></figcaption>
         </figure>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16 }}>
           <h2 className="idv2-h2">Start with the space <span className="idv2-acc-text">that is real.</span></h2>
@@ -126,17 +125,17 @@ function Transformation() {
       <div className="idv2-inner idv2-section--flush" style={{ paddingBottom: 24 }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 940 }}>
           <Eyebrow>THE SCAN WORKFLOW</Eyebrow>
-          <h2 className="idv2-h2">One kitchen, <span className="idv2-acc-text">source to design-ready.</span></h2>
-          <p className="idv-lede">Scroll: every frame below is the same Canal Apartment kitchen, honestly labeled at each stage.</p>
+          <h2 className="idv2-h2">From study to <span className="idv2-acc-text">design-ready.</span></h2>
+          <p className="idv-lede">Scroll: real Canal Apartment studies resolving into a finished, design-ready room — honestly labeled at each stage.</p>
         </div>
       </div>
-      <PinSeq stages={SEQ} height="380vh" accentClass="idv2-acc-capture" ariaLabel="Canal Apartment kitchen scan transformation" />
+      <PinSeq stages={SEQ} height="380vh" accentClass="idv2-acc-capture" ariaLabel="Canal Apartment study-to-room transformation" />
     </section>
   );
 }
 
 function RawVsReady() {
-  const pair = APARTMENT.pairs[7]; // terrace
+  const pair = APARTMENT.pair; // terrace: surviving raw + fresh generation
   return (
     <section className="idv2-section idv2-dark idv2-acc-capture" style={{ background: '#0A0B0D' }}>
       <div className="idv2-inner" style={{ display: 'grid', gap: 24 }}>
@@ -163,7 +162,7 @@ function RawVsReady() {
 function ClientUnderstands() {
   return (
     <section className="idv2-full idv2-acc-capture">
-      <img src={APARTMENT.rooms[5].src} alt="Canal Apartment sunroom — what the client now understands about the space" loading="lazy" decoding="async" />
+      <img src={APARTMENT.gallery[1].src} alt="Canal Apartment lounge — what the client now understands about the space" loading="lazy" decoding="async" />
       <div className="idv2-full-scrim" style={{ background: 'linear-gradient(180deg, rgba(5,6,8,0.55), rgba(5,6,8,0.25) 40%, rgba(5,6,8,0.6))' }} />
       {CLIENT_LABELS.map((l) => (
         <span key={l.text} className="idv2-float-label" style={l.style}>{l.text}</span>

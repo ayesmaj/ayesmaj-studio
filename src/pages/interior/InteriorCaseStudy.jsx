@@ -259,13 +259,23 @@ function ThePatel({ study }) {
             lede="A development sells twice. The first sale is the tower itself, in its Miami light."
           />
           <div>
+            {/* Generated breakout hero (gpt-image-2, owner brief 2026-08-21):
+                the tower breaking out of its own presentation frame — the
+                project identity as one image. */}
+            <MediaFigure
+              src={`${PATEL.base}/brand/patel-breakout-hero.webp`}
+              alt="PATEL — A Private Vertical World Above Miami: the tower breaking out of its digital residence-selection frame"
+              caption="PATEL — the building becomes the website"
+              tag="PROJECT IDENTITY · GENERATED"
+              ratio="wide"
+              eager
+            />
+            <div style={{ marginTop: 'clamp(18px, 2.5vw, 36px)' }} />
             <MediaFigure
               src={PATEL.tower[0].src}
               alt={`The Patel — ${PATEL.tower[0].label}: the Miami tower at skyline scale`}
               caption={`The Patel — ${PATEL.tower[0].label}`}
               tag="BUILDING VISUALIZATION"
-              ratio="wide"
-              eager
             />
             <div className="idv-grid-3" style={{ marginTop: 'clamp(18px, 2.5vw, 36px)' }}>
               {PATEL.tower.slice(1).map((t) => (

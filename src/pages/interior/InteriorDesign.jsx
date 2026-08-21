@@ -85,16 +85,16 @@ function Problem() {
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: wrapRef, offset: ['start start', 'end end'] });
   const editorialOpacity = useTransform(scrollYProgress, [0.15, 0.7], [0, 1]);
-  const pair = APARTMENT.pairs[4]; // living: raw source → generated editorial
+  const pair = APARTMENT.pair; // terrace: surviving raw → generated editorial
 
   return (
     <section className="idv2-section idv2-dark">
       <div ref={wrapRef} className="idv2-pin-wrap" style={{ height: reduced ? 'auto' : '260vh' }}>
         <div className="idv2-pin" style={reduced ? { position: 'relative', height: '100svh' } : undefined}>
-          <img src={pair.raw} alt="Canal Apartment living room as raw captured source" loading="lazy" decoding="async" />
+          <img src={pair.raw} alt="Canal Apartment terrace as raw captured source" loading="lazy" decoding="async" />
           <motion.img
             src={pair.editorial}
-            alt="The same Canal Apartment living room as the finished editorial visual"
+            alt="The same Canal Apartment terrace as the finished editorial visual"
             style={{ opacity: reduced ? 1 : editorialOpacity }}
             loading="lazy"
             decoding="async"
@@ -466,7 +466,7 @@ function CaseProof() {
 const COLLAGE = [
   { src: VILLA.sequence[7].src, alt: 'Poolside Villa kitchen render', style: { left: '2%', top: '6%', width: '30%', aspectRatio: '16/10' } },
   { src: PATEL.tower[2].src, alt: 'The Patel in its Miami environment', style: { right: '4%', top: '0%', width: '26%', aspectRatio: '4/5' } },
-  { src: APARTMENT.rooms[6].src, alt: 'Canal Apartment waterfront room', style: { left: '38%', top: '22%', width: '30%', aspectRatio: '16/10', zIndex: 2 } },
+  { src: APARTMENT.gallery[1].src, alt: 'Canal Apartment lounge', style: { left: '38%', top: '22%', width: '30%', aspectRatio: '16/10', zIndex: 2 } },
   { src: VALMONT.materials[0].src, alt: 'Maison Valmont calacatta material study', style: { left: '10%', bottom: '4%', width: '20%', aspectRatio: '1/1' } },
   { src: VALMONT.gallery[0].src, alt: 'Maison Valmont arrival sequence frame', style: { right: '14%', bottom: '8%', width: '24%', aspectRatio: '16/10' } },
   { src: VILLA.sequence[15].src, alt: 'Poolside Villa primary bath render', style: { left: '68%', top: '48%', width: '18%', aspectRatio: '3/4', zIndex: 1 } },
