@@ -1,100 +1,76 @@
 /**
- * /interior-design — hub of the Interior Design Visualization world.
- * Education (what each method answers) + showcase (one real project through
- * every stage) + conversion (recommender → brief). All copy comes from
- * @/data/interiorDesign; all media from @/data/interiorMedia.
+ * /interior-design — cinematic hub, rebuilt to the owner's redesign brief:
+ * alternating bright/dark rhythm, wide grid, condensed AYESMAJ display type,
+ * one gradient phrase per section, pinned scroll moments, media-dominant
+ * layouts. Copy still comes from @/data/interiorDesign; media from
+ * @/data/interiorMedia — every image appears exactly once on this page.
+ *
+ * Section rhythm (brief §2):
+ * 01 bright gradient hero → 02 black pinned problem → 03 bright growing
+ * stages → 04 dark spatial 3D models → 05 full-screen interior → 06 soft
+ * gradient truths → 07 black scroll-film → 08 bright case proof (+ compact
+ * recommender) → 09 dark studio collage → 10 full-screen CTA.
  */
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
-import {
-  InteriorShell, Eyebrow, SectionHead, MediaFigure, MethodSwitcher, IdvButton, CtaBand,
-} from '@/components/interior/kit';
-import {
-  IDV_BASE, IDV_EYEBROW, STAGES, METHODS, COMMUNICATION_GAP, COMPARISON,
-  COMPARISON_VERDICT, JOURNEY, CAPABILITIES, GOALS, CASE_STUDIES, FINAL_CTA,
-} from '@/data/interiorDesign';
-import { VILLA, HERO_STAGES, APARTMENT, VALMONT, PATEL, CASE_COVERS, MODELS } from '@/data/interiorMedia';
+import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher } from '@/components/interior/kit';
+import { IDV_BASE, IDV_EYEBROW, METHODS, GOALS, CASE_STUDIES, FINAL_CTA, CAPABILITIES } from '@/data/interiorDesign';
+import { VILLA, APARTMENT, VALMONT, PATEL, CASE_COVERS, MODELS } from '@/data/interiorMedia';
 import ModelViewer from '@/components/interior/ModelViewer';
-import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
+import './interior2.css';
 
 const scrollToId = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-/* ── 1. HERO — one project, four visual stages ────────────────────────────── */
-/* The reference mockup's staggered collage: one project, four visual
-   languages, fanned like prints on a table. Geometry adapted from 21st.dev
-   "Stacked Card Carousel", rebuilt CSS-only (.idv-fan). */
+const rise = (d = 0) => ({
+  initial: { opacity: 0, y: 26 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay: d, ease: [0.22, 1, 0.36, 1] },
+});
+
+/* ── 01 · HERO — bright gradient world, growing transformation fan ────────── */
 const HERO_PANELS = [
-  { n: '01', title: 'FLOOR PLAN', src: VILLA.plans[0].src },
-  { n: '02', title: '3D VISUALIZATION', src: VILLA.plans[1].src },
-  { n: '03', title: 'INTERIOR RENDER', src: VILLA.sequence[3].src },
-  { n: '04', title: 'CINEMATIC FILM', src: VILLA.sequence[25].src, play: true },
+  { n: '01', t: 'FLOOR PLAN', src: VILLA.plans[0].src },
+  { n: '02', t: '3D VISUALIZATION', src: VILLA.plans[1].src },
+  { n: '03', t: 'INTERIOR RENDER', src: VILLA.sequence[3].src },
+  { n: '04', t: 'CINEMATIC FILM', src: VILLA.sequence[25].src, play: true },
 ];
 
 function Hero() {
   return (
-    <section className="idv-section idv-wash" style={{ paddingTop: 'clamp(140px, 15vw, 210px)', display: 'grid', gap: 34 }}>
-      <Eyebrow>{IDV_EYEBROW}</Eyebrow>
-      <h1 className="idv-display" style={{ maxWidth: 1100 }}>
-        From floor plan<br />to a home your client can <span className="idv-accent">already feel.</span>
-      </h1>
-      <p className="idv-lede">
-        We transform scans, architectural plans and 3D models into clear spatial visuals,
-        photorealistic interiors, cinematic films and complete branded presentations.
-      </p>
-      <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-        <IdvButton onClick={() => scrollToId('method-worlds')}>Explore the methods</IdvButton>
-        <IdvButton to="/Contact" ghost>Build my presentation</IdvButton>
-      </div>
-      <div className="idv-mono-label">APARTMENTS · HOUSES · BUILDINGS</div>
+    <section className="idv2-section idv2-hero">
+      <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(320px, 0.78fr) 1.35fr', gap: 'clamp(28px, 4vw, 64px)', alignItems: 'center', minHeight: '92svh' }}>
+        <div style={{ display: 'grid', gap: 26, alignContent: 'center' }}>
+          <motion.div {...rise(0)}><Eyebrow>{IDV_EYEBROW}</Eyebrow></motion.div>
+          <motion.h1 {...rise(0.08)} className="idv2-display">
+            From floor plan<br />to a home<br />your client<br />
+            <motion.span {...rise(0.55)} className="idv2-grad" style={{ display: 'inline-block' }}>can already feel.</motion.span>
+          </motion.h1>
+          <motion.p {...rise(0.2)} className="idv-lede">
+            We transform scans, architectural plans and 3D models into clear spatial visuals,
+            photorealistic interiors, cinematic films and complete branded presentations.
+          </motion.p>
+          <motion.div {...rise(0.3)} style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+            <IdvButton onClick={() => scrollToId('stages')}>Explore the methods</IdvButton>
+            <IdvButton to="/Contact" ghost>Build my visual presentation</IdvButton>
+          </motion.div>
+          <motion.div {...rise(0.4)} className="idv-mono-label">APARTMENTS · HOUSES · BUILDINGS</motion.div>
+        </div>
 
-      <div className="idv-fan" aria-label="Poolside Villa — the same project in four visual languages">
-        {HERO_PANELS.map((p) => (
-          <div key={p.n} className="idv-fan-card">
-            <img
-              src={p.src}
-              alt={`Poolside Villa — ${p.title.toLowerCase()}`}
-              loading={p.n === '01' ? 'eager' : 'lazy'}
-              decoding="async"
-            />
-            <span className="idv-fan-label">
-              <span className="idv-fan-num">{p.n}</span>
-              <span className="idv-fan-title">{p.title}</span>
-            </span>
-            {p.play ? (
-              <span className="idv-fan-play" aria-hidden="true"><Play size={20} fill="currentColor" /></span>
-            ) : null}
-          </div>
-        ))}
-      </div>
-      <div className="idv-mono-label" style={{ textAlign: 'center', letterSpacing: '0.24em' }}>
-        SAME PROPERTY · MULTIPLE VISUAL LANGUAGES
-      </div>
-      <div className="idv-mono-label" style={{ letterSpacing: '0.24em' }}>SCAN · VISUALIZE · EXPERIENCE · PRESENT</div>
-    </section>
-  );
-}
-
-/* ── 2. The communication problem ─────────────────────────────────────────── */
-function CommunicationGap() {
-  return (
-    <section className="idv-section--bone">
-      <div className="idv-inner idv-section">
-        <SectionHead
-          eyebrow="THE PROBLEM"
-          title={<>The design may be clear to you.<br />That does not mean the client can see it.</>}
-          lede={COMMUNICATION_GAP.copy}
-        />
-        <div className="idv-grid-2 idv-reveal">
-          {[['DESIGNER UNDERSTANDS', COMMUNICATION_GAP.designer], ['CLIENT NEEDS TO SEE', COMMUNICATION_GAP.client]].map(([title, items]) => (
-            <div key={title} style={{ display: 'grid', gap: 12, alignContent: 'start' }}>
-              <div className="idv-mono-label">{title}</div>
-              <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
-                {items.map((it) => (
-                  <li key={it} style={{ borderTop: '1px solid var(--idv-stone)', padding: '12px 0', fontFamily: 'var(--idv-serif)', fontSize: 'clamp(19px, 1.8vw, 26px)' }}>{it}</li>
-                ))}
-              </ul>
-            </div>
+        <div className="idv2-fan" aria-label="Poolside Villa — one project growing from plan to cinematic film">
+          {HERO_PANELS.map((p, i) => (
+            <motion.div
+              key={p.n}
+              className="idv2-fan-card"
+              initial={{ opacity: 0, y: 44 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15 + i * 0.14, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <img src={p.src} alt={`Poolside Villa — ${p.t.toLowerCase()}`} loading={i < 2 ? 'eager' : 'lazy'} decoding="async" />
+              <span className="idv-fan-label"><span className="idv-fan-num">{p.n}</span><span className="idv-fan-title">{p.t}</span></span>
+              {p.play ? <span className="idv-fan-play" aria-hidden="true"><Play size={20} fill="currentColor" /></span> : null}
+            </motion.div>
           ))}
         </div>
       </div>
@@ -102,350 +78,444 @@ function CommunicationGap() {
   );
 }
 
-/* ── 3. The four-stage system ─────────────────────────────────────────────── */
-// One unused villa frame per stage — never repeating the hero fan images.
-const STAGE_IMAGES = [
-  VILLA.sequence[0].src,  // capture: the house as it stands
-  VILLA.sequence[10].src, // understand: the stair that links the levels
-  VILLA.sequence[12].src, // experience: the primary suite
-  VILLA.sequence[26].src, // present: pool at water level
+/* ── 02 · THE PROBLEM — black pinned transformation (raw → editorial) ─────── */
+function Problem() {
+  const wrapRef = useRef(null);
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: wrapRef, offset: ['start start', 'end end'] });
+  const editorialOpacity = useTransform(scrollYProgress, [0.15, 0.7], [0, 1]);
+  const pair = APARTMENT.pairs[4]; // living: raw source → generated editorial
+
+  return (
+    <section className="idv2-section idv2-dark">
+      <div ref={wrapRef} className="idv2-pin-wrap" style={{ height: reduced ? 'auto' : '260vh' }}>
+        <div className="idv2-pin" style={reduced ? { position: 'relative', height: '100svh' } : undefined}>
+          <img src={pair.raw} alt="Canal Apartment living room as raw captured source" loading="lazy" decoding="async" />
+          <motion.img
+            src={pair.editorial}
+            alt="The same Canal Apartment living room as the finished editorial visual"
+            style={{ opacity: reduced ? 1 : editorialOpacity }}
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="idv2-pin-scrim" />
+          <div className="idv2-inner" style={{ position: 'relative', display: 'grid', alignContent: 'center', gap: 22, height: '100%' }}>
+            <div style={{ maxWidth: 620, display: 'grid', gap: 20 }}>
+              <Eyebrow>THE PROBLEM</Eyebrow>
+              <h2 className="idv2-h2">
+                The design may be clear to you.{' '}
+                <span className="idv2-grad">Make it visible to them.</span>
+              </h2>
+              <p className="idv-lede">
+                Designers read scale, circulation, proportion and material from plans. Clients need
+                to see the complete room, understand how furniture fits and feel what the final
+                result could become.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, maxWidth: 480 }}>
+                {[['DESIGNER SEES', ['Scale', 'Circulation', 'Proportion', 'Technical intent']],
+                  ['CLIENT EXPERIENCES', ['The complete room', 'Furniture fit', 'Material', 'Atmosphere']]].map(([t, items]) => (
+                  <div key={t} style={{ display: 'grid', gap: 8 }}>
+                    <div className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{t}</div>
+                    {items.map((it) => <div key={it} style={{ borderTop: '1px solid rgba(255,255,255,0.16)', paddingTop: 7, fontSize: 14.5 }}>{it}</div>)}
+                  </div>
+                ))}
+              </div>
+              <div className="idv-mono-label">CANAL APARTMENT — SCROLL: SOURCE BECOMES ROOM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── 03 · THE SYSTEM — bright, growing panels ─────────────────────────────── */
+const STAGES2 = [
+  { n: '01', t: 'Capture', q: 'What exists now?', line: 'Scans and existing-condition capture build the fast, honest foundation.', src: VILLA.sequence[0].src, alt: 'Poolside Villa exterior as captured condition', accent: '#8FA3B5', to: METHODS['ai-scan-house'].route },
+  { n: '02', t: 'Understand', q: 'How is the space organized?', line: 'Plans and 3D floor plans make the whole layout readable at once.', src: APARTMENT.studies[4].src, alt: 'Canal Apartment overview plan study', accent: '#8B9268', to: METHODS['3d-floor-plan-house'].route },
+  { n: '03', t: 'Experience', q: 'What will it feel like?', line: 'Renders and film add material, light, movement and emotion.', src: VILLA.sequence[12].src, alt: 'Poolside Villa primary bedroom render', accent: '#D8963A', to: METHODS['ai-video-house'].route },
+  { n: '04', t: 'Present', q: 'How should it be communicated?', line: 'Identity, website and deck turn visuals into approvals and sales.', src: PATEL.interiors[1].src, alt: 'The Patel presentation-ready interior', accent: '#A35BDA', to: METHODS['complete-visual-presentation'].route },
 ];
+
 function StageSystem() {
   return (
-    <section className="idv-section">
-      <SectionHead
-        eyebrow="THE AYESMAJ VISUALIZATION SYSTEM"
-        title={<>One project.<br />Multiple levels of understanding.</>}
-        lede="Every visualization method answers a different question. Together they create a complete client experience."
-      />
-      <div className="idv-grid-4">
-        {STAGES.map((s, i) => (
-          <article key={s.key} className="idv-stage idv-reveal">
-            <div className="idv-stage-num">{s.num}</div>
-            <h3 className="idv-h3">{s.title}</h3>
-            <p className="idv-mono-label" style={{ color: 'var(--idv-walnut)' }}>{s.question}</p>
-            <img src={STAGE_IMAGES[i]} alt="" loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '16/10', objectFit: 'cover', borderRadius: 10 }} />
-            <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 6, fontSize: 14, color: 'var(--idv-graphite)' }}>
-              {s.methods.map((m) => <li key={m}>{m}</li>)}
-            </ul>
-          </article>
-        ))}
+    <section className="idv2-section idv2-bright" id="stages">
+      <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(36px, 4vw, 60px)' }}>
+        <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
+          <Eyebrow>THE AYESMAJ VISUALIZATION SYSTEM</Eyebrow>
+          <h2 className="idv2-h2">One project. <span className="idv2-grad">Multiple levels</span> of understanding.</h2>
+          <p className="idv-lede">Every visualization method answers a different question. Together they create a complete client experience.</p>
+        </div>
+        <div className="idv2-stages">
+          {STAGES2.map((s) => (
+            <Link key={s.n} to={s.to} className="idv2-stage idv2-reveal" style={{ '--stage-accent': s.accent, textDecoration: 'none', color: 'inherit' }}>
+              <span className="idv2-stage-num">{s.n}</span>
+              <span className="idv-h3">{s.t}</span>
+              <span className="idv-mono-label">{s.q}</span>
+              <img src={s.src} alt={s.alt} loading="lazy" decoding="async" />
+              <span style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--idv-graphite)' }}>{s.line}</span>
+              <span className="idv-mono-label" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: s.accent }}>EXPLORE <ArrowRight size={12} aria-hidden="true" /></span>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-/* ── 4. Method worlds — three editorial chapters ──────────────────────────── */
-function MethodWorlds() {
-  const pair = APARTMENT.pairs[4]; // living
+/* ── 04 · SPATIAL DEPTH — dark technical world with the live models ───────── */
+function SpatialModels() {
   return (
-    <section className="idv-section" id="method-worlds" style={{ display: 'grid', gap: 'clamp(72px, 8vw, 130px)' }}>
-      <SectionHead eyebrow="THE METHODS" title="Three ways a project learns to speak." />
+    <section className="idv2-section idv2-spatial">
+      <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(32px, 4vw, 56px)' }}>
+        <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
+          <Eyebrow>02 / UNDERSTAND · INTERACTIVE 3D</Eyebrow>
+          <h2 className="idv2-h2">Make the entire <span className="idv2-grad">layout</span> understandable.</h2>
+          <p className="idv-lede">
+            Not screenshots — the actual models. Drag them, turn them, read the space in the round.
+            Every model loads only when you tap it.
+          </p>
+        </div>
 
-      {/* AI SCANS */}
-      <div className="idv-grid-2 idv-reveal">
-        <div style={{ display: 'grid', gap: 18, alignContent: 'start' }}>
-          <div className="idv-mono-label">01 / CAPTURE</div>
-          <h3 className="idv-h2" style={{ fontSize: 'clamp(34px, 3.6vw, 56px)' }}>Capture what exists.</h3>
-          <p className="idv-lede">Build a fast visual foundation for renovations, redesigns, furniture planning and early client conversations.</p>
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <Link className="idv-btn idv-btn--ghost" to={METHODS['ai-scan-apartment'].route}>Apartment Scan <ArrowRight size={14} aria-hidden="true" /></Link>
-            <Link className="idv-btn idv-btn--ghost" to={METHODS['ai-scan-house'].route}>House Scan <ArrowRight size={14} aria-hidden="true" /></Link>
+        <div className="idv-grid-2" style={{ gridTemplateColumns: '2fr 1fr', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gap: 12 }}>
+            <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>THE REAL THING</span> · CLIENT PROJECT</div>
+            <ModelViewer model={MODELS.featured} ratio="16 / 10" />
+          </div>
+          <div style={{ display: 'grid', gap: 4, alignContent: 'start' }}>
+            <div className="idv-mono-label" style={{ marginBottom: 10 }}>WHAT A 3D PLAN REVEALS</div>
+            {['Furniture scale', 'Circulation', 'Room relationships', 'Indoor / outdoor', 'Multi-level flow'].map((c) => (
+              <div key={c} style={{ borderTop: '1px solid rgba(255,255,255,0.14)', padding: '10px 2px', fontSize: 14.5, color: 'rgba(245,245,240,0.82)' }}>{c}</div>
+            ))}
+            <div style={{ marginTop: 18, display: 'grid' }}>
+              <Link className="idv2-line-link" to={METHODS['3d-floor-plan-apartment'].route}>Apartment 3D plan <ArrowRight size={15} aria-hidden="true" /></Link>
+              <Link className="idv2-line-link" to={METHODS['3d-floor-plan-house'].route}>House 3D plan <ArrowRight size={15} aria-hidden="true" /></Link>
+              <Link className="idv2-line-link" to={METHODS['3d-building-visualization'].route}>Building visualization <ArrowRight size={15} aria-hidden="true" /></Link>
+            </div>
           </div>
         </div>
-        <div style={{ display: 'grid', gap: 12 }}>
-          <BeforeAfterSlider
-            beforeImg={pair.raw}
-            afterImg={pair.editorial}
-            beforeLabel="RAW SOURCE"
-            afterLabel="EDITORIAL RESULT"
-            accent="#D8B75A"
-            accentRGB="216,183,90"
-          />
-          <div className="idv-mono-label">Canal Apartment — the same frame, source capture vs finished visual</div>
-        </div>
-      </div>
 
-      {/* 3D FLOOR PLANS */}
-      <div className="idv-grid-2 idv-reveal">
-        <div style={{ display: 'grid', gap: 12 }}>
-          <MediaFigure src={APARTMENT.studies[4].src} alt="Canal Apartment overview plan study with furniture placement" caption="Canal Apartment — overview study" tag="STUDY" ratio="wide" />
-          <div className="idv-grid-2" style={{ gap: 12 }}>
-            <MediaFigure src={APARTMENT.studies[3].src} alt="Canal Apartment living room plan study" caption="Living study" />
-            <MediaFigure src={APARTMENT.studies[2].src} alt="Canal Apartment kitchen plan study" caption="Kitchen study" />
+        <div style={{ display: 'grid', gap: 14 }}>
+          <div className="idv-mono-label">FROM THE SKYLINE TO THE FAUCET — NINE SHOWCASE MODELS</div>
+          <div className="idv-strip">
+            {[...MODELS.spaces, ...MODELS.objects].map((m) => (
+              <div key={m.key} style={{ display: 'grid', gap: 8 }}>
+                <ModelViewer model={m} ratio="4 / 3" />
+              </div>
+            ))}
           </div>
         </div>
-        <div style={{ display: 'grid', gap: 18, alignContent: 'start' }}>
-          <div className="idv-mono-label">02 / UNDERSTAND</div>
-          <h3 className="idv-h2" style={{ fontSize: 'clamp(34px, 3.6vw, 56px)' }}>Make the entire layout understandable.</h3>
-          <p className="idv-lede">Show room relationships, furniture, scale, circulation, levels, garages, pools and outdoor connections at one glance.</p>
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <Link className="idv-btn idv-btn--ghost" to={METHODS['3d-floor-plan-apartment'].route}>Apartment 3D Plan <ArrowRight size={14} aria-hidden="true" /></Link>
-            <Link className="idv-btn idv-btn--ghost" to={METHODS['3d-floor-plan-house'].route}>House 3D Plan <ArrowRight size={14} aria-hidden="true" /></Link>
-            <Link className="idv-btn idv-btn--ghost" to={METHODS['3d-building-visualization'].route}>Building <ArrowRight size={14} aria-hidden="true" /></Link>
-          </div>
-        </div>
-      </div>
-
-      {/* CINEMATIC AI VIDEO */}
-      <div className="idv-grid-2 idv-reveal">
-        <div style={{ display: 'grid', gap: 18, alignContent: 'start' }}>
-          <div className="idv-mono-label">03 / EXPERIENCE</div>
-          <h3 className="idv-h2" style={{ fontSize: 'clamp(34px, 3.6vw, 56px)' }}>Turn the design into a journey.</h3>
-          <p className="idv-lede">Use movement, light and atmosphere to help the client emotionally experience the property.</p>
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <Link className="idv-btn idv-btn--ghost" to={METHODS['ai-video-apartment'].route}>Apartment Video <ArrowRight size={14} aria-hidden="true" /></Link>
-            <Link className="idv-btn idv-btn--ghost" to={METHODS['ai-video-house'].route}>House Video <ArrowRight size={14} aria-hidden="true" /></Link>
-          </div>
-        </div>
-        <MediaFigure
-          video
-          src={VALMONT.film.src}
-          poster={VALMONT.film.poster}
-          alt="Maison Valmont transformation film"
-          caption="Maison Valmont — transformation film"
-          tag="FILM"
-          ratio="wide"
-        />
       </div>
     </section>
   );
 }
 
-/* ── 5. Same project, different methods ───────────────────────────────────── */
+/* ── 05 · FULL-SCREEN INTERIOR ────────────────────────────────────────────── */
+function FullInterior() {
+  return (
+    <section className="idv2-full">
+      <img src={VILLA.sequence[4].src} alt="Poolside Villa living room opening to the pool, photorealistic visualization" loading="lazy" decoding="async" />
+      <div className="idv2-full-scrim" />
+      <div className="idv2-inner" style={{ position: 'relative', display: 'grid', gap: 20, width: '100%' }}>
+        <Eyebrow>03 / EXPERIENCE</Eyebrow>
+        <h2 className="idv2-h2" style={{ maxWidth: 820 }}>
+          A floor plan shows the space. Light makes it <span className="idv2-grad">feel real.</span>
+        </h2>
+        <p className="idv-lede" style={{ color: 'rgba(245,245,240,0.8)' }}>
+          Photorealistic interiors reveal material, atmosphere, furniture scale and the emotional
+          character of the project.
+        </p>
+        <div style={{ paddingBottom: 'clamp(40px, 6vw, 80px)' }}>
+          <IdvButton to={METHODS['ai-video-apartment'].route} ghost>Explore interior visualization</IdvButton>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── 06 · SAME PROJECT, DIFFERENT TRUTHS — soft gradient, dominant media ──── */
 const TRUTHS = [
-  { key: 'plan', label: 'PLAN', src: PATEL.unit.floorplan, caption: 'Where is everything?', reveals: ['The rooms of Residence 1802', 'Furniture at true scale', 'The spatial source of truth'] },
-  { key: 'building', label: 'BUILDING', src: PATEL.tower[1].src, caption: 'What is the scale?', reveals: ['The full volume', 'Where the residence sits', 'Exterior identity'] },
-  { key: 'render', label: 'RENDER', src: PATEL.interiors[0].src, caption: 'What will it look like?', reveals: ['Material', 'Furniture language', 'Lighting and atmosphere'] },
-  { key: 'film', label: 'FILM FRAME', src: PATEL.film.poster, caption: 'What will it feel like?', reveals: ['Arrival and movement', 'Sequence', 'Emotional value'] },
+  { key: 'plan', label: 'PLAN', src: PATEL.unit.floorplan, alt: 'The Patel Residence 1802 furnished floor plan', shows: ['Furniture scale', 'Circulation', 'Spatial relationships', 'Indoor / outdoor connection'] },
+  { key: 'building', label: 'BUILDING', src: PATEL.tower[1].src, alt: 'The Patel tower architecture study', shows: ['The full volume', 'Where the residence sits', 'Exterior identity'] },
+  { key: 'render', label: 'RENDER', src: PATEL.interiors[0].src, alt: 'The Patel interior render, Atlantic calm direction', shows: ['Material', 'Furniture language', 'Lighting and atmosphere'] },
+  { key: 'film', label: 'FILM', src: PATEL.film.poster, alt: 'The Patel cinematic film frame', shows: ['Arrival and movement', 'Sequence', 'Emotional value'] },
 ];
-function SameProject() {
+
+function Truths() {
   const [view, setView] = useState('plan');
   const active = TRUTHS.find((t) => t.key === view) || TRUTHS[0];
   return (
-    <section className="idv-section--bone">
-      <div className="idv-inner idv-section">
-        <SectionHead
-          eyebrow="COMPARISON"
-          title="Each method reveals a different truth."
-          lede="One property — The Patel, Miami. Four ways to see it, from Residence 1802's plan to the tower in its skyline. The architecture never changes; only the level of understanding does."
-        />
+    <section className="idv2-section idv2-gradient-soft">
+      <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 3.6vw, 48px)' }}>
+        <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 960 }}>
+          <Eyebrow>COMPARISON · THE PATEL, MIAMI</Eyebrow>
+          <h2 className="idv2-h2">Each method reveals a <span className="idv2-grad">different truth.</span></h2>
+        </div>
         <div style={{ display: 'grid', gap: 16 }}>
-          <MethodSwitcher
-            ariaLabel="Method view"
-            options={TRUTHS.map((t) => ({ key: t.key, label: t.label }))}
-            value={view}
-            onChange={setView}
-          />
-          <div className="idv-grid-2" style={{ gridTemplateColumns: '2fr 1fr', alignItems: 'start' }}>
-            <MediaFigure src={active.src} alt={`The Patel shown as ${active.label.toLowerCase()}`} caption={`The Patel — ${active.caption}`} tag={active.label} ratio="wide" />
-            <div style={{ display: 'grid', gap: 10, alignContent: 'start' }}>
-              <div className="idv-mono-label">This view reveals</div>
-              {active.reveals.map((r) => (
-                <div key={r} style={{ borderTop: '1px solid var(--idv-stone)', paddingTop: 10, fontFamily: 'var(--idv-serif)', fontSize: 'clamp(18px, 1.7vw, 24px)' }}>{r}</div>
-              ))}
+          <MethodSwitcher ariaLabel="Method view" options={TRUTHS.map((t) => ({ key: t.key, label: t.label }))} value={view} onChange={setView} />
+          <div className="idv2-truths-media">
+            <img src={active.src} alt={active.alt} loading="lazy" decoding="async" />
+            <div className="idv2-truths-panel" aria-live="polite">
+              <div className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{active.label} SHOWS</div>
+              {active.shows.map((s) => <div key={s} style={{ fontSize: 13.5, borderTop: '1px solid rgba(255,255,255,0.14)', paddingTop: 6 }}>{s}</div>)}
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── 5b. Interactive models — tap to load, drag to orbit ──────────────────── */
-function ModelPlayground() {
-  const Card = ({ m, ratio }) => (
-    <div className="idv-reveal" style={{ display: 'grid', gap: 10 }}>
-      <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>SCALE {m.scale}</span></div>
-      <ModelViewer model={m} ratio={ratio} />
-      <p className="idv-lede" style={{ fontSize: 14, margin: 0 }}>{m.line}</p>
-    </div>
-  );
-  return (
-    <section className="idv-section">
-      <SectionHead
-        eyebrow="INTERACTIVE 3D / FROM THE SKYLINE TO THE FAUCET"
-        title={<>Drag it. Turn it. <span className="idv-accent">Understand it.</span></>}
-        lede="The Patel tower itself, then nine showcase models on one descending scale: a tower, a building, a house, an apartment, a plan - down to the island, the desk, the bookcase and the faucet. The same interactive presentations we build into client experiences. Every model loads only when you ask."
-      />
-      <div style={{ display: 'grid', gap: 'clamp(28px, 4vw, 48px)' }}>
-        <div className="idv-reveal" style={{ display: 'grid', gap: 12 }}>
-          <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>THE REAL THING</span> · CLIENT PROJECT</div>
-          <ModelViewer model={MODELS.featured} ratio="21 / 10" />
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-            <p className="idv-lede" style={{ fontSize: 14, margin: 0, maxWidth: 560 }}>{MODELS.featured.line}</p>
-            <Link to={`${IDV_BASE}/case-studies/the-patel`} className="idv-btn idv-btn--ghost" style={{ padding: '10px 18px', fontSize: 12 }}>
-              The Patel case study <ArrowRight size={14} aria-hidden="true" />
+          <div className="idv2-thumbs" role="group" aria-label="Method thumbnails">
+            {TRUTHS.map((t) => (
+              <button key={t.key} type="button" aria-pressed={view === t.key} aria-label={t.label} onClick={() => setView(t.key)}>
+                <img src={t.src} alt="" loading="lazy" decoding="async" />
+              </button>
+            ))}
+          </div>
+          <div>
+            <Link to={`${IDV_BASE}/compare-visualization-methods`} className="idv-mono-label" style={{ display: 'inline-flex', gap: 8, alignItems: 'center', textDecoration: 'none', color: 'var(--idv-walnut)' }}>
+              COMPARE ALL METHODS <ArrowRight size={12} aria-hidden="true" />
             </Link>
           </div>
         </div>
-        <div className="idv-grid-3">
-          {MODELS.spaces.slice(0, 3).map((m) => <Card key={m.key} m={m} ratio="4 / 3" />)}
-        </div>
-        <div className="idv-grid-2">
-          {MODELS.spaces.slice(3).map((m) => <Card key={m.key} m={m} ratio="16 / 10" />)}
-        </div>
-        <div style={{ display: 'grid', gap: 18 }}>
-          <hr className="idv-rule idv-rule--ai" />
-          <div className="idv-mono-label">DOWN TO THE OBJECT</div>
-          <div className="idv-grid-4">
-            {MODELS.objects.map((m) => <Card key={m.key} m={m} ratio="1 / 1" />)}
-          </div>
-        </div>
       </div>
     </section>
   );
 }
 
-/* ── 6. Which method is best? ─────────────────────────────────────────────── */
-function WhichIsBest() {
-  return (
-    <section className="idv-section">
-      <SectionHead eyebrow="THE HONEST ANSWER" title={COMPARISON_VERDICT.question}>
-        <p className="idv-h3" style={{ color: 'var(--idv-champagne)', fontStyle: 'italic' }}>{COMPARISON_VERDICT.answer}</p>
-        <p className="idv-lede">{COMPARISON_VERDICT.copy}</p>
-      </SectionHead>
-      <div>
-        {COMPARISON.map((row) => (
-          <details key={row.dim} className="idv-row">
-            <summary>
-              <span>{row.dim}</span>
-              <span className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{METHODS[row.best].label}</span>
-            </summary>
-            <div className="idv-row-body">
-              <p className="idv-lede" style={{ margin: 0 }}>{row.note}</p>
-              <Link to={METHODS[row.best].route} className="idv-mono-label" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 12, textDecoration: 'none' }}>
-                {METHODS[row.best].label} <ArrowRight size={12} aria-hidden="true" />
-              </Link>
-            </div>
-          </details>
-        ))}
-      </div>
-      <div style={{ marginTop: 36 }}>
-        <IdvButton to={`${IDV_BASE}/compare-visualization-methods`}>Compare all methods</IdvButton>
-      </div>
-    </section>
-  );
-}
+/* ── 07 · AI FILM — black cinema, scroll-controlled playback ──────────────── */
+/* Scrub technique adapted from 21st.dev "Scroll-Linked Video Scrubber"
+   (pulkitxm): tall wrapper + sticky viewport + scroll progress mapped to
+   video.currentTime. Chapters and reduced-motion/mobile fallbacks added. */
+const FILM_CHAPTERS = [
+  { at: 0.0, n: '01 PLAN', line: 'Understand the space.' },
+  { at: 0.3, n: '02 INTERIOR', line: 'See the design.' },
+  { at: 0.6, n: '03 MOTION', line: 'Experience the journey.' },
+  { at: 0.85, n: '04 PRESENTATION', line: null },
+];
 
-/* ── 7. Client journey ────────────────────────────────────────────────────── */
-function ClientJourney() {
+function ScrollFilm() {
+  const wrapRef = useRef(null);
+  const videoRef = useRef(null);
+  const reduced = useReducedMotion();
+  const [simple, setSimple] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [sound, setSound] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 860px)');
+    const set = () => setSimple(mq.matches);
+    set();
+    mq.addEventListener('change', set);
+    return () => mq.removeEventListener('change', set);
+  }, []);
+
+  useEffect(() => {
+    if (simple || reduced) return undefined;
+    const wrap = wrapRef.current;
+    const video = videoRef.current;
+    if (!wrap || !video) return undefined;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      if (!Number.isFinite(video.duration) || video.duration === 0) return;
+      const rect = wrap.getBoundingClientRect();
+      const range = rect.height - window.innerHeight;
+      if (range <= 0) return;
+      const p = Math.max(0, Math.min(1, -rect.top / range));
+      setProgress(p);
+      video.currentTime = p * video.duration;
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    video.addEventListener('loadedmetadata', update);
+    update();
+    return () => { window.removeEventListener('scroll', onScroll); video.removeEventListener('loadedmetadata', update); if (raf) cancelAnimationFrame(raf); };
+  }, [simple, reduced]);
+
+  const chapter = FILM_CHAPTERS.reduce((acc, c) => (progress >= c.at ? c : acc), FILM_CHAPTERS[0]);
+  const flat = simple || reduced;
+
   return (
-    <section className="idv-section">
-      <SectionHead
-        eyebrow="THE JOURNEY"
-        title="Use the right visual at the right moment."
-        lede="A renovation told in eight stages — Maison Valmont from existing condition to reveal."
-      />
-      <div className="idv-strip idv-reveal" aria-label="Maison Valmont renovation stages">
-        {VALMONT.process.map((p, i) => (
-          <MediaFigure key={p.src} src={p.src} alt={`Maison Valmont renovation stage: ${p.label}`} caption={`0${i + 1} — ${p.label}`} ratio="45" />
-        ))}
-      </div>
-      <div className="idv-journey" style={{ marginTop: 48 }}>
-        {JOURNEY.map((j, i) => (
-          <div key={j.stage} className="idv-journey-step idv-reveal">
-            <div className="idv-stage-num">0{i + 1}</div>
+    <section className="idv2-section" style={{ background: '#050505', color: '#F5F5F0' }}>
+      <div ref={wrapRef} className="idv2-pin-wrap" style={{ height: flat ? 'auto' : '380vh' }}>
+        <div className="idv2-pin" style={flat ? { position: 'relative', height: 'auto', minHeight: '70svh' } : undefined}>
+          <video
+            ref={videoRef}
+            src={PATEL.film.desktop}
+            poster={PATEL.environment}
+            muted={!sound}
+            playsInline
+            preload="metadata"
+            controls={flat}
+            style={flat ? { position: 'relative', width: '100%', height: 'auto', display: 'block' } : undefined}
+            aria-label="The Patel cinematic development film"
+          />
+          <div className="idv2-chapter">
+            <Eyebrow>AI FILM · THE PATEL</Eyebrow>
+            {chapter.line ? (
+              <>
+                <div className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{chapter.n}</div>
+                <h2 className="idv2-h2" style={{ fontSize: 'clamp(34px, 4.4vw, 64px)' }}>{chapter.line}</h2>
+              </>
+            ) : (
+              <>
+                <div className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>04 PRESENTATION</div>
+                <h2 className="idv2-h2" style={{ fontSize: 'clamp(34px, 4.4vw, 64px)' }}>Make the project <span className="idv2-grad">unforgettable.</span></h2>
+              </>
+            )}
+            {!flat ? <div className="idv-mono-label">SCROLL TO PLAY</div> : null}
             <div>
-              <h3 className="idv-h3">{j.stage}</h3>
-              <p className="idv-mono-label" style={{ marginTop: 8 }}>{j.use.join(' · ')}</p>
+              <button
+                type="button"
+                className="idv-btn idv-btn--ghost"
+                style={{ background: 'transparent', color: '#F5F5F0', borderColor: 'rgba(255,255,255,0.35)', padding: '10px 18px', fontSize: 11.5 }}
+                onClick={() => { setSound((s) => !s); const v = videoRef.current; if (v && flat) v.play().catch(() => {}); }}
+              >
+                {sound ? 'MUTE' : 'PLAY WITH SOUND'}
+              </button>
             </div>
-            <p className="idv-lede" style={{ margin: 0 }}>{j.point}</p>
           </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ── 8. Why AYESMAJ ───────────────────────────────────────────────────────── */
-function WhyAyesmaj() {
-  return (
-    <section className="idv-section--bone">
-      <div className="idv-inner idv-section">
-        <SectionHead
-          eyebrow="WHY AYESMAJ STUDIOS"
-          title="One studio for the entire visual world."
-          lede="A one-studio visual system for spatial projects — visualization, film, branding, web and marketing built as one connected system."
-        />
-        <div className="idv-grid-3 idv-reveal" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-          {CAPABILITIES.map((c) => (
-            <div key={c.title} style={{ display: 'grid', gap: 10, alignContent: 'start' }}>
-              <div className="idv-mono-label">{c.title}</div>
-              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 7, fontSize: 15, color: 'var(--idv-graphite)' }}>
-                {c.items.map((it) => <li key={it} style={{ borderTop: '1px solid var(--idv-stone)', paddingTop: 7 }}>{it}</li>)}
-              </ul>
-            </div>
-          ))}
+          {!flat ? (
+            <div className="idv2-progress" aria-hidden="true"><span style={{ transform: `scaleX(${progress})` }} /></div>
+          ) : null}
         </div>
       </div>
     </section>
   );
 }
 
-/* ── 9. Case studies rail ─────────────────────────────────────────────────── */
-function CaseRail() {
-  return (
-    <section className="idv-section">
-      <SectionHead eyebrow="CASE STUDIES" title="From source material to complete visual world." />
-      <div className="idv-grid-3">
-        {CASE_STUDIES.map((c) => (
-          <Link key={c.slug} to={`${IDV_BASE}/case-studies/${c.slug}`} className="idv-case idv-reveal">
-            <img src={CASE_COVERS[c.slug]} alt={`${c.name} — ${c.kind}`} loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
-            <div className="idv-case-meta">
-              <span className="idv-mono-label">{c.kind}</span>
-              <span style={{ fontFamily: 'var(--idv-serif)', fontSize: 26 }}>{c.name}</span>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ── 10. Recommender ──────────────────────────────────────────────────────── */
+/* ── 08 · CASE PROOF — bright, image-heavy, honest ────────────────────────── */
 function Recommender() {
   const [goal, setGoal] = useState(null);
   const picked = GOALS.find((g) => g.key === goal);
   return (
-    <section className="idv-section" id="recommender">
-      <SectionHead
-        eyebrow="START HERE"
-        title="What does your client need to understand?"
-        lede="Choose the next decision. We answer with the visual stack that gets it approved."
-      />
+    <div id="recommender" style={{ borderTop: '1px solid var(--idv-stone)', paddingTop: 'clamp(28px, 3vw, 44px)', display: 'grid', gap: 20 }}>
+      <div className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>START HERE — WHAT DOES YOUR CLIENT NEED TO UNDERSTAND?</div>
       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }} role="group" aria-label="Project goal">
         {GOALS.map((g) => (
-          <button
-            key={g.key}
-            type="button"
-            aria-pressed={goal === g.key}
-            onClick={() => setGoal(g.key)}
-            className="idv-btn"
+          <button key={g.key} type="button" aria-pressed={goal === g.key} onClick={() => setGoal(g.key)} className="idv-btn"
             style={goal === g.key
-              ? { background: 'var(--idv-ink)', color: '#FAF7F1', border: '1px solid var(--idv-ink)' }
-              : { background: 'var(--idv-panel)', color: 'var(--idv-ink)', border: '1px solid var(--idv-stone)' }}
-          >
+              ? { background: 'var(--idv-ink)', color: '#FAF7F1', border: '1px solid var(--idv-ink)', padding: '11px 20px', fontSize: 12 }
+              : { background: '#FFFDF9', color: 'var(--idv-ink)', border: '1px solid var(--idv-stone)', padding: '11px 20px', fontSize: 12 }}>
             {g.label}
           </button>
         ))}
       </div>
       {picked ? (
-        <div style={{ marginTop: 36, border: '1px solid var(--idv-stone)', borderRadius: 18, background: 'var(--idv-panel)', padding: 'clamp(24px, 3vw, 44px)', display: 'grid', gap: 18 }} aria-live="polite">
+        <div aria-live="polite" style={{ display: 'grid', gap: 12 }}>
           <div className="idv-mono-label">RECOMMENDED VISUAL SYSTEM</div>
-          <ol style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 12 }}>
+          <ol style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
             {picked.stack.map((key, i) => (
-              <li key={key} style={{ display: 'flex', alignItems: 'baseline', gap: 16, borderTop: '1px solid var(--idv-stone)', paddingTop: 12 }}>
-                <span className="idv-stage-num">0{i + 1}</span>
-                <Link to={METHODS[key].route} style={{ fontFamily: 'var(--idv-serif)', fontSize: 'clamp(20px, 2vw, 30px)', color: 'inherit', textDecoration: 'none' }}>
-                  {METHODS[key].label}
-                </Link>
+              <li key={key} style={{ display: 'flex', alignItems: 'baseline', gap: 14, borderTop: '1px solid var(--idv-stone)', paddingTop: 10 }}>
+                <span className="idv-stage-num" style={{ fontSize: 15 }}>0{i + 1}</span>
+                <Link to={METHODS[key].route} style={{ fontFamily: 'var(--idv-serif)', fontWeight: 600, fontSize: 'clamp(17px, 1.6vw, 24px)', color: 'inherit', textDecoration: 'none' }}>{METHODS[key].label}</Link>
               </li>
             ))}
           </ol>
           <div><IdvButton to="/Contact">Send this brief to AYESMAJ</IdvButton></div>
         </div>
       ) : null}
+    </div>
+  );
+}
+
+function CaseProof() {
+  return (
+    <section className="idv2-section idv2-bright">
+      <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(30px, 4vw, 52px)' }}>
+        <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
+          <Eyebrow>CASE STUDIES</Eyebrow>
+          <h2 className="idv2-h2">From source material to a complete <span className="idv2-grad">visual world.</span></h2>
+        </div>
+
+        <div className="idv2-case-grid idv2-reveal">
+          <div style={{ display: 'grid', gap: 14 }}>
+            <figure className="idv-figure"><img src={VILLA.contactSheet} alt="Poolside Villa film contact sheet — the source sequence" loading="lazy" decoding="async" style={{ borderRadius: 14 }} /><figcaption><span>SOURCE — CONTACT SHEET</span></figcaption></figure>
+            <figure className="idv-figure"><img src={VALMONT.pairs[0].before} alt="Maison Valmont salon in existing condition" loading="lazy" decoding="async" style={{ borderRadius: 14 }} /><figcaption><span>SOURCE — EXISTING SALON</span></figcaption></figure>
+          </div>
+          <figure className="idv-figure">
+            <img src={VALMONT.after[4].src} alt="Maison Valmont salon restored in evening light — the finished world" loading="lazy" decoding="async" style={{ aspectRatio: '4/5', width: '100%', objectFit: 'cover', borderRadius: 18 }} />
+            <figcaption><span>MAISON VALMONT — THE FINISHED WORLD</span><span>RESULT</span></figcaption>
+          </figure>
+          <div style={{ display: 'grid', gap: 14 }}>
+            <figure className="idv-figure" style={{ background: 'var(--idv-dark-panel)', borderRadius: 14, padding: 'clamp(16px, 2vw, 28px)' }}><img src={PATEL.brand} alt="The Patel project identity lockup" loading="lazy" decoding="async" /><figcaption style={{ paddingTop: 12 }}><span style={{ color: '#A9A9A9' }}>DELIVERABLE — IDENTITY</span></figcaption></figure>
+            <figure className="idv-figure"><img src={VALMONT.gallery[6].src} alt="Maison Valmont salon wide presentation frame" loading="lazy" decoding="async" style={{ borderRadius: 14 }} /><figcaption><span>DELIVERABLE — PRESENTATION FRAME</span></figcaption></figure>
+          </div>
+        </div>
+
+        {/* Honest capability statements — the brief bans invented percentages. */}
+        <div className="idv2-honest idv2-reveal">
+          {[['ONE SOURCE', 'Multiple visual outputs'], ['ONE STUDIO', 'One consistent language'], ['FROM EARLY CONCEPT', 'To final presentation']].map(([a, b]) => (
+            <div key={a}><span className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{a}</span><span style={{ fontFamily: 'var(--idv-serif)', fontWeight: 600, fontSize: 'clamp(18px, 1.6vw, 24px)' }}>{b}</span></div>
+          ))}
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
+          {CASE_STUDIES.map((c) => (
+            <Link key={c.slug} to={`${IDV_BASE}/case-studies/${c.slug}`} className="idv-case idv2-reveal">
+              <img src={CASE_COVERS[c.slug]} alt={`${c.name} — ${c.kind}`} loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '16/10', objectFit: 'cover', display: 'block' }} />
+              <div className="idv-case-meta"><span className="idv-mono-label">{c.kind}</span><span style={{ fontSize: 20 }}>{c.name}</span></div>
+            </Link>
+          ))}
+        </div>
+
+        <Recommender />
+      </div>
+    </section>
+  );
+}
+
+/* ── 09 · ONE STUDIO — dark brand world, layered collage ──────────────────── */
+const COLLAGE = [
+  { src: VILLA.sequence[7].src, alt: 'Poolside Villa kitchen render', style: { left: '2%', top: '6%', width: '30%', aspectRatio: '16/10' } },
+  { src: PATEL.tower[2].src, alt: 'The Patel in its Miami environment', style: { right: '4%', top: '0%', width: '26%', aspectRatio: '4/5' } },
+  { src: APARTMENT.rooms[6].src, alt: 'Canal Apartment waterfront room', style: { left: '38%', top: '22%', width: '30%', aspectRatio: '16/10', zIndex: 2 } },
+  { src: VALMONT.materials[0].src, alt: 'Maison Valmont calacatta material study', style: { left: '10%', bottom: '4%', width: '20%', aspectRatio: '1/1' } },
+  { src: VALMONT.gallery[0].src, alt: 'Maison Valmont arrival sequence frame', style: { right: '14%', bottom: '8%', width: '24%', aspectRatio: '16/10' } },
+  { src: VILLA.sequence[15].src, alt: 'Poolside Villa primary bath render', style: { left: '68%', top: '48%', width: '18%', aspectRatio: '3/4', zIndex: 1 } },
+];
+
+function OneStudio() {
+  return (
+    <section className="idv2-section idv2-dark">
+      <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(30px, 4vw, 52px)' }}>
+        <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
+          <Eyebrow>WHY AYESMAJ STUDIOS</Eyebrow>
+          <h2 className="idv2-h2">One studio. <span className="idv2-grad">Every visual language</span> the project needs.</h2>
+        </div>
+        <div className="idv2-collage idv2-reveal" aria-label="Studio work across every visual language">
+          <div className="idv2-glow-gold" style={{ left: '-6%', top: '-10%' }} />
+          <div className="idv2-glow-purple" style={{ right: '-4%', bottom: '-12%' }} />
+          {COLLAGE.map((f) => (
+            <div key={f.src} className="idv2-collage-frame" style={f.style}>
+              <img src={f.src} alt={f.alt} loading="lazy" decoding="async" />
+            </div>
+          ))}
+        </div>
+        <div style={{ display: 'flex', gap: 'clamp(14px, 2.2vw, 34px)', flexWrap: 'wrap' }}>
+          {CAPABILITIES.flatMap((c) => c.items.slice(0, 2)).slice(0, 8).map((w) => (
+            <span key={w} className="idv-mono-label" style={{ borderTop: '1px solid rgba(216,183,90,0.4)', paddingTop: 8 }}>{w}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── 10 · FINAL CTA — full-screen cinematic ending ────────────────────────── */
+function FinalCta() {
+  return (
+    <section className="idv2-full">
+      <img src={VILLA.sequence[26].src} alt="Poolside Villa pool at water level at dusk" loading="lazy" decoding="async" />
+      <div className="idv2-full-scrim" style={{ background: 'linear-gradient(180deg, rgba(5,5,4,0.35), rgba(5,5,4,0.82))' }} />
+      <div className="idv2-inner" style={{ position: 'relative', display: 'grid', gap: 22, width: '100%' }}>
+        <Eyebrow>{IDV_EYEBROW}</Eyebrow>
+        <h2 className="idv2-display" style={{ maxWidth: 1050, fontSize: 'clamp(52px, 6.5vw, 112px)' }}>
+          The project already exists in your mind.{' '}
+          <span className="idv2-grad">Let the client see it.</span>
+        </h2>
+        <p className="idv-lede" style={{ color: 'rgba(245,245,240,0.82)' }}>{FINAL_CTA.copy}</p>
+        <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', paddingBottom: 'clamp(44px, 6vw, 90px)' }}>
+          <IdvButton to="/Contact">Start an Interior Design project</IdvButton>
+          <IdvButton to={`${IDV_BASE}/case-studies`} ghost>View case studies</IdvButton>
+        </div>
+      </div>
     </section>
   );
 }
@@ -454,23 +524,16 @@ export default function InteriorDesign() {
   return (
     <InteriorShell path={IDV_BASE}>
       <Hero />
-      <CommunicationGap />
+      <hr className="idv2-spill" />
+      <Problem />
       <StageSystem />
-      <MethodWorlds />
-      <SameProject />
-      <ModelPlayground />
-      <WhichIsBest />
-      <ClientJourney />
-      <WhyAyesmaj />
-      <CaseRail />
-      <Recommender />
-      <CtaBand
-        eyebrow={IDV_EYEBROW}
-        headline={FINAL_CTA.headline}
-        copy={FINAL_CTA.copy}
-        primary={FINAL_CTA.primary}
-        secondary={FINAL_CTA.secondary}
-      />
+      <SpatialModels />
+      <FullInterior />
+      <Truths />
+      <ScrollFilm />
+      <CaseProof />
+      <OneStudio />
+      <FinalCta />
     </InteriorShell>
   );
 }

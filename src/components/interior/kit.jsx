@@ -17,14 +17,56 @@ import '@/pages/interior/interior.css';
  * Page wrapper: head tags (from the same seoMeta the prerender uses, so
  * client head always matches crawler head), nav scrim, footer, scroll reset.
  */
+/**
+ * Floating project tab — replaces the site's yellow CALL NOW pill inside the
+ * Interior Design world (owner brief §6: black tab, gold border, purple hover
+ * line on desktop; compact sticky bar on mobile). Appears after the hero.
+ */
+function FloatingProjectTab() {
+  const [visible, setVisible] = useState(false);
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 700);
+    const mq = window.matchMedia('(max-width: 860px)');
+    const onMq = () => setMobile(mq.matches);
+    onMq();
+    mq.addEventListener('change', onMq);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => { window.removeEventListener('scroll', onScroll); mq.removeEventListener('change', onMq); };
+  }, []);
+  if (!visible) return null;
+  if (mobile) {
+    return (
+      <div style={{ position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 60, display: 'flex', background: 'rgba(8,9,8,0.96)', backdropFilter: 'blur(14px)', borderTop: '1px solid rgba(216,183,90,0.4)' }}>
+        <Link to="/Contact" style={{ flex: 2, textAlign: 'center', padding: '15px 0', color: '#F5F5F0', fontWeight: 700, fontSize: 12.5, letterSpacing: '0.1em', textDecoration: 'none' }}>START PROJECT</Link>
+        <a href="tel:5093197999" style={{ flex: 1, textAlign: 'center', padding: '15px 0', color: '#D8B75A', fontWeight: 700, fontSize: 12.5, letterSpacing: '0.1em', textDecoration: 'none', borderLeft: '1px solid rgba(255,255,255,0.14)' }}>CALL</a>
+      </div>
+    );
+  }
+  return (
+    <Link
+      to="/Contact"
+      onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'inset 0 -2px 0 #A35BDA'; }}
+      onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; }}
+      style={{ position: 'fixed', right: 26, bottom: 26, zIndex: 60, display: 'inline-flex', alignItems: 'center', gap: 10, padding: '13px 22px', borderRadius: 999, background: 'rgba(8,9,8,0.95)', border: '1px solid rgba(216,183,90,0.65)', color: '#F5F5F0', fontWeight: 700, fontSize: 12, letterSpacing: '0.1em', textDecoration: 'none', transition: 'box-shadow 0.25s ease' }}
+    >
+      START A PROJECT <ArrowRight size={14} aria-hidden="true" />
+    </Link>
+  );
+}
+
 export function InteriorShell({ path, jsonLd = null, children }) {
   const meta = SEO_ROUTES[path] || {};
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div className="idv-page" style={{ position: 'relative' }}>
+      {/* Owner brief §6: the yellow contractor-style CALL NOW pill is off-brand
+          in this world; the FloatingProjectTab below replaces it. */}
+      <style>{'body:has(.idv-page) .ayes-floating-call { display: none !important; }'}</style>
       <Seo title={meta.title} description={meta.description} path={path} image={meta.image} jsonLd={jsonLd} />
       <AyesmajNav />
       <main>{children}</main>
+      <FloatingProjectTab />
       <AyesmajFooter />
     </div>
   );

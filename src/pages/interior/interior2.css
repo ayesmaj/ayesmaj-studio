@@ -1,0 +1,214 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   INTERIOR DESIGN — CINEMATIC LAYER (hub only; loaded by InteriorDesign.jsx).
+   Implements the owner's redesign brief: alternating bright/dark rhythm,
+   wider grid, condensed display scale, gradient phrase treatment, pinned
+   scroll sections. The base idv- layer (interior.css) keeps serving the
+   eleven method/case pages untouched.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.idv-page {
+  /* Brief §3: the world was too narrow. */
+  --idv-max: 1560px;
+  --idv-pad: clamp(24px, 4.5vw, 84px);
+  --idv2-ink: #16140F;
+  --idv2-ivory: #F5F0E9;
+  --idv2-black: #0A0908;
+  --idv2-black2: #11100E;
+  --idv2-grad: linear-gradient(92deg, #D8B75A 0%, #E08D4B 22%, #E0664B 42%, #C25AA8 66%, #A35BDA 84%, #7A48FF 100%);
+}
+
+/* ── Type scale (brief §4) ───────────────────────────────────────────────── */
+.idv2-display {
+  font-family: var(--idv-display);
+  font-weight: 400;
+  font-size: clamp(66px, 8vw, 138px);
+  line-height: 0.88;
+  letter-spacing: 0.004em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.idv2-h2 {
+  font-family: var(--idv-display);
+  font-weight: 400;
+  font-size: clamp(48px, 6vw, 96px);
+  line-height: 0.92;
+  letter-spacing: 0.004em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.idv2-grad {
+  background: var(--idv2-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.idv2-serif {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Section grounds ─────────────────────────────────────────────────────── */
+.idv2-section { position: relative; overflow: hidden; }
+.idv2-inner { max-width: var(--idv-max); margin: 0 auto; padding: clamp(84px, 9vw, 150px) var(--idv-pad); position: relative; }
+
+/* Bright gradient hero world: cream → ivory → pale lavender + restrained glows */
+.idv2-hero {
+  color: var(--idv2-ink);
+  background:
+    radial-gradient(1100px 640px at 88% 8%, rgba(163, 91, 218, 0.16), transparent 62%),
+    radial-gradient(900px 560px at 78% 88%, rgba(216, 183, 90, 0.18), transparent 58%),
+    linear-gradient(100deg, #F3ECE1 0%, #F6F1E9 46%, #EFE8EF 100%);
+}
+.idv2-hero::after { /* gold edge light */
+  content: '';
+  position: absolute; right: 0; top: 10%; bottom: 10%; width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(216, 183, 90, 0.7), transparent);
+}
+
+.idv2-dark {
+  color: #F5F5F0;
+  background: linear-gradient(180deg, var(--idv2-black) 0%, var(--idv2-black2) 100%);
+}
+.idv2-dark .idv-lede { color: rgba(245, 245, 240, 0.74); }
+.idv2-dark .idv-mono-label { color: rgba(245, 245, 240, 0.55); }
+
+.idv2-bright { background: #F6F0E7; color: var(--idv2-ink); }
+.idv2-gradient-soft {
+  color: var(--idv2-ink);
+  background: linear-gradient(115deg, #F5EFE4 0%, #F2E7CF 40%, #EDE4F2 100%);
+}
+
+/* Spatial dark: architectural grid + faint purple axes (brief section 4) */
+.idv2-spatial {
+  color: #F5F5F0;
+  background:
+    linear-gradient(rgba(155, 92, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(155, 92, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(900px 500px at 20% 15%, rgba(120, 140, 170, 0.12), transparent 60%),
+    linear-gradient(180deg, #0B0B0D, #100F12);
+  background-size: 64px 64px, 64px 64px, auto, auto;
+}
+.idv2-spatial .idv-lede { color: rgba(245, 245, 240, 0.74); }
+.idv2-spatial .idv-mono-label { color: rgba(245, 245, 240, 0.55); }
+
+/* Gradient spill bridges (brief §2 + §9) */
+.idv2-spill { height: 1px; background: var(--idv2-grad); opacity: 0.55; border: 0; margin: 0; }
+
+/* ── Hero fan v2: growing cards, film dominant (brief §5-hero) ───────────── */
+.idv2-fan { display: flex; align-items: flex-end; justify-content: flex-end; position: relative; }
+.idv2-fan-card {
+  position: relative; border-radius: 18px; overflow: hidden;
+  border: 5px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 34px 80px rgba(43, 30, 14, 0.28);
+  background: var(--idv-canvas);
+}
+.idv2-fan-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.idv2-fan-card:nth-child(1) { width: 20%; aspect-ratio: 3/4; transform: rotate(-7deg) translateY(-6%); z-index: 1; }
+.idv2-fan-card:nth-child(2) { width: 27%; aspect-ratio: 3/4; margin-left: -5%; transform: rotate(-3deg) translateY(-12%); z-index: 2; }
+.idv2-fan-card:nth-child(3) { width: 34%; aspect-ratio: 3/4; margin-left: -5%; transform: rotate(2deg) translateY(-18%); z-index: 3; }
+.idv2-fan-card:nth-child(4) { width: 48%; aspect-ratio: 16/11; margin-left: -6%; transform: rotate(5deg) translateY(-24%); z-index: 4; }
+.idv2-fan-card:hover { z-index: 9; }
+
+/* ── Growing stage panels (brief section 3) ──────────────────────────────── */
+.idv2-stages { display: grid; grid-template-columns: 0.78fr 0.92fr 1.08fr 1.26fr; gap: clamp(14px, 1.6vw, 24px); align-items: stretch; }
+.idv2-stage {
+  display: grid; align-content: start; gap: 12px;
+  border-radius: 20px; padding: clamp(18px, 2vw, 28px);
+  background: #FFFDF9; border-top: 3px solid var(--stage-accent, var(--idv-champagne));
+  box-shadow: 0 18px 44px rgba(62, 48, 24, 0.1);
+}
+.idv2-stage img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; }
+.idv2-stage .idv2-stage-num { font-family: var(--idv-display); font-size: 26px; color: var(--stage-accent, var(--idv-champagne)); }
+
+/* ── Thin premium links (brief section 4) ────────────────────────────────── */
+.idv2-line-link {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 16px 2px; border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: #F5F5F0; text-decoration: none;
+  font-weight: 600; font-size: 13.5px; letter-spacing: 0.12em; text-transform: uppercase;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+}
+.idv2-line-link:hover { color: var(--idv-champagne); padding-left: 8px; }
+.idv2-line-link svg { transition: transform 0.25s ease; }
+.idv2-line-link:hover svg { transform: translateX(5px); }
+
+/* ── Full-screen media sections (brief sections 5 + 10) ──────────────────── */
+.idv2-full {
+  position: relative; min-height: 100svh;
+  display: grid; align-items: end;
+  color: #F5F5F0;
+}
+.idv2-full > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.idv2-full .idv2-full-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(6, 5, 4, 0.78) 0%, rgba(6, 5, 4, 0.35) 46%, rgba(6, 5, 4, 0.12) 100%);
+}
+.idv2-full .idv2-inner { padding-top: clamp(120px, 14vw, 200px); }
+
+/* ── Pinned scroll stages (problem + film) ───────────────────────────────── */
+.idv2-pin-wrap { position: relative; }
+.idv2-pin { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+.idv2-pin img, .idv2-pin video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.idv2-pin .idv2-pin-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 5, 5, 0.82) 0%, rgba(5, 5, 5, 0.4) 50%, rgba(5, 5, 5, 0.15) 100%); }
+
+/* ── Truths selector v2: dominant media + floating context panel ─────────── */
+.idv2-truths-media { position: relative; }
+.idv2-truths-media img { width: 100%; min-height: 62vh; max-height: 78vh; object-fit: cover; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 30px 70px rgba(62, 48, 24, 0.2); }
+.idv2-truths-panel {
+  position: absolute; right: clamp(12px, 2vw, 28px); bottom: clamp(12px, 2vw, 28px);
+  max-width: 300px; display: grid; gap: 8px;
+  background: rgba(10, 9, 8, 0.88); backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 183, 90, 0.4); border-radius: 14px;
+  padding: 18px 20px; color: #F5F5F0;
+}
+.idv2-thumbs { display: flex; gap: 10px; flex-wrap: wrap; }
+.idv2-thumbs button { padding: 0; border-radius: 10px; overflow: hidden; cursor: pointer; background: none; border: 2px solid transparent; width: clamp(84px, 9vw, 132px); }
+.idv2-thumbs button[aria-pressed='true'] { border-color: var(--idv-champagne); }
+.idv2-thumbs img { display: block; width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+
+/* ── Film chapters ───────────────────────────────────────────────────────── */
+.idv2-chapter { position: absolute; left: var(--idv-pad); bottom: clamp(70px, 10vh, 120px); max-width: 560px; color: #F5F5F0; display: grid; gap: 10px; }
+.idv2-progress { position: absolute; left: var(--idv-pad); right: var(--idv-pad); bottom: 34px; height: 2px; background: rgba(255, 255, 255, 0.18); }
+.idv2-progress > span { display: block; height: 100%; background: var(--idv2-grad); transform-origin: left; }
+
+/* ── Case composition (brief section 8) ──────────────────────────────────── */
+.idv2-case-grid { display: grid; grid-template-columns: 0.9fr 2fr 0.9fr; gap: clamp(14px, 1.8vw, 26px); align-items: center; }
+.idv2-case-grid img { width: 100%; object-fit: cover; border-radius: 14px; box-shadow: 0 20px 50px rgba(62, 48, 24, 0.16); }
+.idv2-honest { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--idv-stone); border: 1px solid var(--idv-stone); border-radius: 16px; overflow: hidden; }
+.idv2-honest > div { background: #FFFDF9; padding: clamp(18px, 2vw, 28px); display: grid; gap: 6px; }
+
+/* ── Studio collage (brief section 9) ────────────────────────────────────── */
+.idv2-collage { position: relative; min-height: 68vh; }
+.idv2-collage-frame {
+  position: absolute; border-radius: 14px; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+}
+.idv2-collage-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.idv2-glow-gold { position: absolute; width: 44vw; height: 44vw; border-radius: 50%; background: radial-gradient(circle, rgba(216, 183, 90, 0.16), transparent 65%); pointer-events: none; }
+.idv2-glow-purple { position: absolute; width: 40vw; height: 40vw; border-radius: 50%; background: radial-gradient(circle, rgba(155, 92, 255, 0.16), transparent 65%); pointer-events: none; }
+
+/* ── Reveal (reuses view() gate; framer handles hero) ────────────────────── */
+@supports (animation-timeline: view()) {
+  .idv2-reveal { animation: idv2-rise linear both; animation-timeline: view(); animation-range: entry 5% cover 28%; }
+  @keyframes idv2-rise { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .idv2-fan-card, .idv2-reveal { animation: none !important; transition: none !important; }
+}
+
+/* ── Mobile (brief section 10) ───────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .idv2-display { font-size: clamp(46px, 12.5vw, 66px); }
+  .idv2-h2 { font-size: clamp(36px, 10vw, 52px); }
+  .idv2-fan { flex-wrap: nowrap; overflow-x: auto; gap: 12px; padding-bottom: 10px; scroll-snap-type: x mandatory; }
+  .idv2-fan-card { flex: 0 0 62vw; width: auto !important; margin-left: 0 !important; transform: none !important; scroll-snap-align: start; aspect-ratio: 4/5 !important; }
+  .idv2-stages { grid-template-columns: 1fr; }
+  .idv2-case-grid { grid-template-columns: 1fr; }
+  .idv2-honest { grid-template-columns: 1fr; }
+  .idv2-truths-panel { position: static; max-width: none; margin-top: 12px; }
+  .idv2-truths-media img { min-height: 46vh; }
+}
