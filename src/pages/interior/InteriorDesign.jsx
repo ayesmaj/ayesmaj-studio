@@ -41,6 +41,7 @@ const HERO_PANELS = [
 function Hero() {
   return (
     <section className="idv2-section idv2-hero">
+      <DarkSectionBackground asset="silk-wave" position="center right" mobilePosition="center top" overlay={0.58} textSide="left" glow="purple" />
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 0.95fr) 1.35fr', gap: 'clamp(28px, 4vw, 64px)', alignItems: 'center', minHeight: '84svh', paddingBottom: 'clamp(48px, 5vw, 80px)' }}>
         <div style={{ display: 'grid', gap: 26, alignContent: 'center' }}>
           <motion.div {...rise(0)}><Eyebrow>{IDV_EYEBROW}</Eyebrow></motion.div>
