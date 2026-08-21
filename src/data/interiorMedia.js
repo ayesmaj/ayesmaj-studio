@@ -187,6 +187,15 @@ export const PATEL = {
   },
 };
 
+/** Interactive showcase models (draco GLB, loaded only on tap).
+    Sketchfab showcase assets, not client projects — labeled as such.
+    Weights are the served file sizes, shown on the tap-to-load card. */
+export const MODELS = [
+  { key: 'building', name: 'Residential building', file: '/interior-design/models/building.glb', weight: '22.5 MB', credit: 'SHOWCASE MODEL', line: 'The scale story: volume, levels, and where each residence sits.' },
+  { key: 'house', name: 'Coastal hillside house', file: '/interior-design/models/house.glb', weight: '15.7 MB', credit: 'SHOWCASE MODEL', line: 'The whole home at one glance — levels, terraces, and the drop of the site.' },
+  { key: 'apartment', name: 'Apartment floor plan', file: '/interior-design/models/apartment.glb', weight: '4.5 MB', credit: 'SHOWCASE MODEL', line: 'A furnished plan you can turn in your hands.' },
+];
+
 export const PROJECTS = { 'poolside-villa': VILLA, 'canal-apartment': APARTMENT, 'maison-valmont': VALMONT, 'the-patel': PATEL };
 
 /** Case-study cover images (index page + hub rail). */

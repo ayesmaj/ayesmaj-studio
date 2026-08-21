@@ -14,7 +14,8 @@ import {
   IDV_BASE, IDV_EYEBROW, STAGES, METHODS, COMMUNICATION_GAP, COMPARISON,
   COMPARISON_VERDICT, JOURNEY, CAPABILITIES, GOALS, CASE_STUDIES, FINAL_CTA,
 } from '@/data/interiorDesign';
-import { VILLA, HERO_STAGES, APARTMENT, VALMONT, PATEL, CASE_COVERS } from '@/data/interiorMedia';
+import { VILLA, HERO_STAGES, APARTMENT, VALMONT, PATEL, CASE_COVERS, MODELS } from '@/data/interiorMedia';
+import ModelViewer from '@/components/interior/ModelViewer';
 import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
 
 const scrollToId = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -251,6 +252,27 @@ function SameProject() {
   );
 }
 
+/* ── 5b. Interactive models — tap to load, drag to orbit ──────────────────── */
+function ModelPlayground() {
+  return (
+    <section className="idv-section">
+      <SectionHead
+        eyebrow="INTERACTIVE 3D"
+        title={<>Drag it. Turn it. <span className="idv-accent">Understand it.</span></>}
+        lede="Stills explain a design; holding it explains it faster. Tap a model and walk around a building, a house, and an apartment plan — the same interactive presentations we build into client experiences. Models load only when you ask."
+      />
+      <div className="idv-grid-3">
+        {MODELS.map((m) => (
+          <div key={m.key} className="idv-reveal" style={{ display: 'grid', gap: 12 }}>
+            <ModelViewer model={m} ratio="4 / 3" />
+            <p className="idv-lede" style={{ fontSize: 14, margin: 0 }}>{m.line}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ── 6. Which method is best? ─────────────────────────────────────────────── */
 function WhichIsBest() {
   return (
@@ -412,6 +434,7 @@ export default function InteriorDesign() {
       <StageSystem />
       <MethodWorlds />
       <SameProject />
+      <ModelPlayground />
       <WhichIsBest />
       <ClientJourney />
       <WhyAyesmaj />
