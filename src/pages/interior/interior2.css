@@ -50,7 +50,11 @@
 }
 
 /* ── Section grounds ─────────────────────────────────────────────────────── */
-.idv2-section { position: relative; overflow: hidden; }
+/* overflow: clip, NOT hidden - an overflow:hidden ancestor disables
+   position:sticky, which broke every pinned section into an empty black
+   wrapper. clip crops the fan's rotated corners without creating a scroll
+   container, so the pins stick. */
+.idv2-section { position: relative; overflow: clip; }
 .idv2-inner { max-width: var(--idv-max); margin: 0 auto; padding: clamp(84px, 9vw, 150px) var(--idv-pad); position: relative; }
 
 /* Dark cinematic hero (owner mockup): deep ground, purple/gold atmosphere,
