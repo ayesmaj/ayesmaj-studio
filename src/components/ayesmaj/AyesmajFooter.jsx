@@ -90,7 +90,7 @@ export default function AyesmajFooter() {
   return (
     <footer style={{ background: "#050505", overflow: "hidden" }}>
       {/* ---------- LAYER 1 — cinematic CTA ---------- */}
-      <section
+      <section className="idv2-bgc idv2-bgc-03"
         style={{
           position: "relative",
           padding: "clamp(80px,10vw,150px) clamp(24px,5vw,80px) clamp(48px,6vw,80px)",
