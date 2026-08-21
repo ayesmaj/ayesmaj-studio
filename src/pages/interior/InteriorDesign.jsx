@@ -19,6 +19,7 @@ import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher } from '@/components/
 import { IDV_BASE, IDV_EYEBROW, METHODS, GOALS, CASE_STUDIES, FINAL_CTA, CAPABILITIES } from '@/data/interiorDesign';
 import { VILLA, APARTMENT, VALMONT, PATEL, CASE_COVERS, MODELS } from '@/data/interiorMedia';
 import ModelViewer from '@/components/interior/ModelViewer';
+import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 import './interior2.css';
 
 const scrollToId = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -89,6 +90,7 @@ function Problem() {
 
   return (
     <section className="idv2-section idv2-dark">
+      <DarkSectionBackground asset="architectural-grid" position="right bottom" overlay={0.7} textSide="left" parallax="none" />
       <div ref={wrapRef} className="idv2-pin-wrap" style={{ height: reduced ? 'auto' : '260vh' }}>
         <div className="idv2-pin" style={reduced ? { position: 'relative', height: '100svh' } : undefined}>
           <img src={pair.raw} alt="Canal Apartment terrace as raw captured source" loading="lazy" decoding="async" />
@@ -168,6 +170,7 @@ function StageSystem() {
 function SpatialModels() {
   return (
     <section className="idv2-section idv2-spatial">
+      <DarkSectionBackground asset="geometric-facets" position="center right" overlay={0.58} textSide="left" glow="purple" />
       <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(32px, 4vw, 56px)' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
           <Eyebrow>02 / UNDERSTAND · INTERACTIVE 3D</Eyebrow>
@@ -334,6 +337,7 @@ function ScrollFilm() {
 
   return (
     <section className="idv2-section" style={{ background: '#050505', color: '#F5F5F0' }}>
+      <DarkSectionBackground asset="cosmic-energy" position="center right" overlay={0.62} textSide="left" parallax="none" />
       <div ref={wrapRef} className="idv2-pin-wrap" style={{ height: flat ? 'auto' : '380vh' }}>
         <div className="idv2-pin" style={flat ? { position: 'relative', height: 'auto', minHeight: '70svh' } : undefined}>
           <video
@@ -475,6 +479,7 @@ const COLLAGE = [
 function OneStudio() {
   return (
     <section className="idv2-section idv2-dark">
+      <DarkSectionBackground asset="stone-bronze" position="center right" overlay={0.55} textSide="left" glow="gold" />
       <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(30px, 4vw, 52px)' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
           <Eyebrow>WHY AYESMAJ STUDIOS</Eyebrow>
@@ -502,9 +507,8 @@ function OneStudio() {
 /* ── 10 · FINAL CTA — full-screen cinematic ending ────────────────────────── */
 function FinalCta() {
   return (
-    <section className="idv2-full">
-      <img src={VILLA.sequence[26].src} alt="Poolside Villa pool at water level at dusk" loading="lazy" decoding="async" />
-      <div className="idv2-full-scrim" style={{ background: 'linear-gradient(180deg, rgba(5,5,4,0.35), rgba(5,5,4,0.82))' }} />
+    <section className="idv2-full" style={{ background: '#050506' }}>
+      <DarkSectionBackground asset="cinematic-light" position="center bottom" overlay={0.42} textSide="left" />
       <div className="idv2-inner" style={{ position: 'relative', display: 'grid', gap: 22, width: '100%' }}>
         <Eyebrow>{IDV_EYEBROW}</Eyebrow>
         <h2 className="idv2-display" style={{ maxWidth: 1050, fontSize: 'clamp(52px, 6.5vw, 112px)' }}>

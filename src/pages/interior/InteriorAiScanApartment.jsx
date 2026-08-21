@@ -121,7 +121,7 @@ function WhatExists() {
 
 function Transformation() {
   return (
-    <section id="scan-seq" className="idv2-section idv2-dark idv2-acc-capture">
+    <section id="scan-seq" className="idv2-section idv2-dark idv2-acc-capture idv2-bgc idv2-bgc-02">
       <div className="idv2-inner idv2-section--flush" style={{ paddingBottom: 24 }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 940 }}>
           <Eyebrow>THE SCAN WORKFLOW</Eyebrow>
@@ -137,7 +137,7 @@ function Transformation() {
 function RawVsReady() {
   const pair = APARTMENT.pair; // terrace: surviving raw + fresh generation
   return (
-    <section className="idv2-section idv2-dark idv2-acc-capture" style={{ background: '#0A0B0D' }}>
+    <section className="idv2-section idv2-dark idv2-acc-capture idv2-bgc idv2-bgc-06" style={{ background: '#0A0B0D' }}>
       <div className="idv2-inner" style={{ display: 'grid', gap: 24 }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 14, maxWidth: 900 }}>
           <Eyebrow>RAW SOURCE ↔ DESIGN-READY BASE</Eyebrow>
@@ -179,7 +179,7 @@ function ClientUnderstands() {
 
 function Limitations() {
   return (
-    <section className="idv2-section idv2-spatial idv2-acc-capture">
+    <section className="idv2-section idv2-spatial idv2-acc-capture idv2-bgc idv2-bgc-08">
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 'clamp(24px, 3.5vw, 56px)', alignItems: 'center' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 18 }}>
           <Eyebrow>HONEST LIMITS</Eyebrow>

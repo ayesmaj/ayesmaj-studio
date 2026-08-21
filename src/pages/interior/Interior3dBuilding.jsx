@@ -96,7 +96,7 @@ function Hero() {
 function BuildingInTheRound() {
   const trio = ['3d-floor-plan-apartment', '3d-floor-plan-house'];
   return (
-    <section className="idv2-section idv2-spatial idv2-acc-understand">
+    <section className="idv2-section idv2-spatial idv2-acc-understand idv2-bgc idv2-bgc-02">
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: '1.35fr 1fr', gap: 'clamp(24px, 3.5vw, 56px)', alignItems: 'center' }}>
         <div className="idv2-reveal">
           <ModelViewer model={MODELS.featured} ratio="16 / 10" />
@@ -125,7 +125,7 @@ function BuildingInTheRound() {
 
 function ScaleStory() {
   return (
-    <section id="scale-story" className="idv2-section idv2-dark idv2-acc-understand">
+    <section id="scale-story" className="idv2-section idv2-dark idv2-acc-understand idv2-bgc idv2-bgc-04">
       <div className="idv2-inner idv2-section--flush" style={{ paddingBottom: 24 }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 940 }}>
           <Eyebrow>THE SCALE STORY</Eyebrow>
@@ -164,7 +164,7 @@ function WhoNeedsThis() {
 
 function BuildingNeedsAWorld() {
   return (
-    <section className="idv2-section idv2-dark idv2-acc-understand" style={{ background: '#0A0B0D' }}>
+    <section className="idv2-section idv2-dark idv2-acc-understand idv2-bgc idv2-bgc-01" style={{ background: '#0A0B0D' }}>
       <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 4vw, 48px)' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 14, maxWidth: 940 }}>
           <Eyebrow>BEYOND THE RENDER</Eyebrow>

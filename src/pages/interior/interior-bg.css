@@ -1,0 +1,49 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   INTERIOR DESIGN — DARK SECTION BACKGROUNDS (owner brief 2026-08-21)
+   Eight generated material/energy backgrounds. Two ways to apply:
+     1. <DarkSectionBackground asset="…"/> (hub: picture/avif, parallax, grain)
+     2. .idv2-bgc-NN classes (subpages: CSS-only, overlay baked into the
+        gradient stack, mobile crop swapped under 860px)
+   Content stays real HTML above the image: .idv2-inner gets z-index 1.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.idv2-section > .idv2-inner, .idv2-section > .idv2-pin-wrap { position: relative; z-index: 1; }
+.idv2-bgwrap { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+@media (max-width: 860px) {
+  .idv2-bgimg { object-position: var(--bg-mobile-pos, center) !important; }
+}
+
+/* CSS-only variants for subpages. Overlay is a left-text readability
+   gradient by default; the --right modifier reverses it. */
+.idv2-bgc { background-size: cover !important; background-repeat: no-repeat !important; background-color: #08080A !important; }
+.idv2-bgc--right { }
+.idv2-bgc-01 { background-image: linear-gradient(90deg, rgba(5,5,6,.9) 0%, rgba(5,5,6,.66) 36%, rgba(5,5,6,.28) 70%, rgba(5,5,6,.14) 100%), url('/interior-design/backgrounds/web/01-cosmic-energy-flow.webp') !important; background-position: center right !important; }
+.idv2-bgc-02 { background-image: linear-gradient(90deg, rgba(5,5,6,.92) 0%, rgba(5,5,6,.74) 38%, rgba(5,5,6,.4) 72%, rgba(5,5,6,.22) 100%), url('/interior-design/backgrounds/web/02-architectural-grid.webp') !important; background-position: right bottom !important; }
+.idv2-bgc-03 { background-image: linear-gradient(90deg, rgba(5,5,6,.9) 0%, rgba(5,5,6,.6) 38%, rgba(5,5,6,.25) 70%, rgba(5,5,6,.1) 100%), url('/interior-design/backgrounds/web/03-stone-bronze-material.webp') !important; background-position: center right !important; }
+.idv2-bgc-04 { background-image: linear-gradient(90deg, rgba(5,5,6,.9) 0%, rgba(5,5,6,.64) 36%, rgba(5,5,6,.3) 70%, rgba(5,5,6,.14) 100%), url('/interior-design/backgrounds/web/04-geometric-facets.webp') !important; background-position: center right !important; }
+.idv2-bgc-05 { background-image: linear-gradient(180deg, rgba(5,5,6,.88) 0%, rgba(5,5,6,.5) 45%, rgba(5,5,6,.2) 100%), url('/interior-design/backgrounds/web/05-silk-wave-flow.webp') !important; background-position: center bottom !important; }
+.idv2-bgc-06 { background-image: linear-gradient(180deg, rgba(5,5,6,.55) 0%, rgba(5,5,6,.42) 50%, rgba(5,5,6,.55) 100%), url('/interior-design/backgrounds/web/06-dark-concrete.webp') !important; background-position: center !important; }
+.idv2-bgc-07 { background-image: linear-gradient(180deg, rgba(5,5,6,.8) 0%, rgba(5,5,6,.42) 50%, rgba(5,5,6,.3) 100%), url('/interior-design/backgrounds/web/07-cinematic-light-leak.webp') !important; background-position: center bottom !important; }
+.idv2-bgc-08 { background-image: linear-gradient(90deg, rgba(5,5,6,.9) 0%, rgba(5,5,6,.68) 38%, rgba(5,5,6,.34) 72%, rgba(5,5,6,.18) 100%), url('/interior-design/backgrounds/web/08-topographic-contours.webp') !important; background-position: right bottom !important; }
+
+/* Right-text sections reverse the readability ramp. */
+.idv2-bgc--right.idv2-bgc-01, .idv2-bgc--right.idv2-bgc-02, .idv2-bgc--right.idv2-bgc-03,
+.idv2-bgc--right.idv2-bgc-04, .idv2-bgc--right.idv2-bgc-08 { background-position: center left !important; }
+
+/* Mobile: intentional portrait crops. */
+@media (max-width: 860px) {
+  .idv2-bgc-01 { background-image: linear-gradient(180deg, rgba(5,5,6,.9) 0%, rgba(5,5,6,.55) 55%, rgba(5,5,6,.3) 100%), url('/interior-design/backgrounds/mobile/01-cosmic-energy-flow.webp') !important; background-position: center !important; }
+  .idv2-bgc-02 { background-image: linear-gradient(180deg, rgba(5,5,6,.92) 0%, rgba(5,5,6,.6) 55%, rgba(5,5,6,.35) 100%), url('/interior-design/backgrounds/mobile/02-architectural-grid.webp') !important; background-position: center !important; }
+  .idv2-bgc-03 { background-image: linear-gradient(180deg, rgba(5,5,6,.9) 0%, rgba(5,5,6,.5) 55%, rgba(5,5,6,.2) 100%), url('/interior-design/backgrounds/mobile/03-stone-bronze-material.webp') !important; background-position: center !important; }
+  .idv2-bgc-04 { background-image: linear-gradient(180deg, rgba(5,5,6,.9) 0%, rgba(5,5,6,.55) 55%, rgba(5,5,6,.3) 100%), url('/interior-design/backgrounds/mobile/04-geometric-facets.webp') !important; background-position: center !important; }
+  .idv2-bgc-05 { background-image: linear-gradient(180deg, rgba(5,5,6,.88) 0%, rgba(5,5,6,.45) 55%, rgba(5,5,6,.2) 100%), url('/interior-design/backgrounds/mobile/05-silk-wave-flow.webp') !important; background-position: center !important; }
+  .idv2-bgc-06 { background-image: linear-gradient(180deg, rgba(5,5,6,.55) 0%, rgba(5,5,6,.45) 50%, rgba(5,5,6,.55) 100%), url('/interior-design/backgrounds/mobile/06-dark-concrete.webp') !important; background-position: center !important; }
+  .idv2-bgc-07 { background-image: linear-gradient(180deg, rgba(5,5,6,.8) 0%, rgba(5,5,6,.4) 55%, rgba(5,5,6,.3) 100%), url('/interior-design/backgrounds/mobile/07-cinematic-light-leak.webp') !important; background-position: center !important; }
+  .idv2-bgc-08 { background-image: linear-gradient(180deg, rgba(5,5,6,.9) 0%, rgba(5,5,6,.6) 55%, rgba(5,5,6,.3) 100%), url('/interior-design/backgrounds/mobile/08-topographic-contours.webp') !important; background-position: center !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .idv2-bgwrap picture { transform: none !important; }
+}
+
+.idv2-full > .idv2-inner { position: relative; z-index: 1; }

@@ -115,7 +115,7 @@ function PoolsideVilla({ study }) {
         </div>
       </section>
 
-      <section className="idv2-section idv2-dark idv2-acc-present">
+      <section className="idv2-section idv2-dark idv2-acc-present idv2-bgc idv2-bgc-08">
         <div className="idv2-inner">
           <Head
             eyebrow="THE SEQUENCE"
@@ -186,7 +186,7 @@ function MaisonValmont({ study }) {
         </div>
       </section>
 
-      <section className="idv2-section idv2-dark idv2-acc-present">
+      <section className="idv2-section idv2-dark idv2-acc-present idv2-bgc idv2-bgc-04">
         <div className="idv2-inner">
           <Head
             eyebrow="PROCESS"
@@ -222,7 +222,7 @@ function MaisonValmont({ study }) {
         </div>
       </section>
 
-      <section className="idv2-section idv2-spatial idv2-acc-present">
+      <section className="idv2-section idv2-spatial idv2-acc-present idv2-bgc idv2-bgc-03">
         <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 4vw, 52px)' }}>
           <Head
             eyebrow="MATERIALS"
@@ -293,7 +293,7 @@ function ThePatel({ study }) {
         </div>
       </section>
 
-      <section className="idv2-section idv2-dark idv2-acc-present">
+      <section className="idv2-section idv2-dark idv2-acc-present idv2-bgc idv2-bgc-08">
         <div className="idv2-inner">
           <Head
             eyebrow="RESIDENCE 1802"
@@ -336,7 +336,7 @@ function ThePatel({ study }) {
         </div>
       </section>
 
-      <section className="idv2-section idv2-spatial idv2-acc-present">
+      <section className="idv2-section idv2-spatial idv2-acc-present idv2-bgc idv2-bgc-04">
         <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 4vw, 52px)' }}>
           <Head eyebrow="IDENTITY" title={<>One identity across <span className="idv2-acc-text">both scales.</span></>} />
           <div className="idv2-reveal" style={{ display: 'grid', justifyItems: 'center', gap: 20, padding: 'clamp(30px, 4vw, 64px) 0' }}>

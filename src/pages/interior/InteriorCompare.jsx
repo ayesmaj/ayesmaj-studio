@@ -198,7 +198,7 @@ function MethodExplorer() {
 /* ── 03 · CLOSING — the stack, not the method ─────────────────────────────── */
 function StackStatement() {
   return (
-    <section className="idv2-section idv2-spatial idv2-acc-present">
+    <section className="idv2-section idv2-spatial idv2-acc-present idv2-bgc idv2-bgc-08">
       <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(24px, 3vw, 40px)', maxWidth: 1200 }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16 }}>
           <Eyebrow>THE VERDICT</Eyebrow>

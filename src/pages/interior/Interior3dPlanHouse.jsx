@@ -100,7 +100,7 @@ function Hero() {
 
 function LevelFlow() {
   return (
-    <section id="level-flow" className="idv2-section idv2-spatial idv2-acc-understand">
+    <section id="level-flow" className="idv2-section idv2-spatial idv2-acc-understand idv2-bgc idv2-bgc-04">
       <div className="idv2-inner idv2-section--flush" style={{ paddingBottom: 24 }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 940 }}>
           <Eyebrow>MULTI-LEVEL FLOW</Eyebrow>
@@ -170,7 +170,7 @@ function Limitation() {
 
 function TurnTheHouse() {
   return (
-    <section className="idv2-section idv2-spatial idv2-acc-understand">
+    <section className="idv2-section idv2-spatial idv2-acc-understand idv2-bgc idv2-bgc-08">
       <div className="idv2-inner" style={{ display: 'grid', gap: 28 }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 900 }}>
           <Eyebrow>INTERACTIVE</Eyebrow>

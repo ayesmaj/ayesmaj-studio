@@ -118,7 +118,7 @@ function Hero() {
 
 function CompleteWorkflow() {
   return (
-    <section id="complete-workflow" className="idv2-section idv2-spatial idv2-acc-present">
+    <section id="complete-workflow" className="idv2-section idv2-spatial idv2-acc-present idv2-bgc idv2-bgc-01">
       <div className="idv2-inner idv2-section--flush" style={{ paddingBottom: 24 }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 960 }}>
           <Eyebrow>THE COMPLETE WORKFLOW</Eyebrow>
@@ -204,7 +204,7 @@ function DeliverableBuilder() {
 
 function PresentationCraft() {
   return (
-    <section className="idv2-section idv2-dark idv2-acc-present" style={{ background: '#0A0908' }}>
+    <section className="idv2-section idv2-dark idv2-acc-present idv2-bgc idv2-bgc-03" style={{ background: '#0A0908' }}>
       <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(26px, 3vw, 44px)' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 940 }}>
           <Eyebrow>PRESENTATION CRAFT</Eyebrow>

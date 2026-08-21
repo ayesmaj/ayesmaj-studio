@@ -162,7 +162,7 @@ function UseCases() {
 
 function Limitations() {
   return (
-    <section className="idv2-section idv2-spatial idv2-acc-capture">
+    <section className="idv2-section idv2-spatial idv2-acc-capture idv2-bgc idv2-bgc-02">
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 'clamp(24px, 3.5vw, 56px)', alignItems: 'center' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 18 }}>
           <Eyebrow>HONEST LIMITS</Eyebrow>

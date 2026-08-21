@@ -190,7 +190,7 @@ function Limitation() {
 
 function Faq() {
   return (
-    <section className="idv2-section idv2-spatial idv2-acc-experience">
+    <section className="idv2-section idv2-spatial idv2-acc-experience idv2-bgc idv2-bgc-01">
       <div className="idv2-inner" style={{ display: 'grid', gap: 24, maxWidth: 980 }}>
         <Eyebrow>QUESTIONS DESIGNERS ASK</Eyebrow>
         <div>

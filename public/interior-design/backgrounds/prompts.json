@@ -1,0 +1,82 @@
+[
+  {
+    "id": "cosmic-energy",
+    "file": "01-cosmic-energy-flow.png",
+    "title": "Cosmic Energy Flow",
+    "textSafeArea": "left",
+    "focalPosition": "center right",
+    "overlayStrength": 0.62,
+    "mobileFocus": "right",
+    "prompt": "Ultra-wide 2:1 premium abstract website background. Deep black and charcoal atmospheric space, sophisticated and cinematic, not outer-space fantasy. Flowing translucent energy ribbons travel horizontally and diagonally across the right two-thirds: extremely fine layered strands in restrained champagne gold, warm bronze, coral, violet and deep purple, with elegant motion trails, subtle particles and a few controlled light intersections with gentle bloom. The left 38 percent stays dark, quiet and low-detail; detail and brightness grow gradually toward the center-right. Fine grain, soft atmospheric depth, premium cinematic contrast. Absolutely no text, letters, numbers, logos, typography, people, interface, cards, planets, starscape, galaxies, lightning, sci-fi portal, bright neon blue or rainbow gradient. Asymmetrical, polished, restrained, luxurious."
+  },
+  {
+    "id": "architectural-grid",
+    "file": "02-architectural-grid.png",
+    "title": "Architectural Grid",
+    "textSafeArea": "left",
+    "focalPosition": "right bottom",
+    "overlayStrength": 0.7,
+    "mobileFocus": "bottom",
+    "prompt": "Ultra-wide 2:1 dark architectural visualization background. Deep charcoal-black technical drafting surface with extremely thin abstract architectural linework: incomplete floor-plan outlines, construction guides, coordinate marks, wall geometry, axis points, measurement ticks and faint perspective grids, layered at several opacities for depth. Lines in soft gray, muted blue-gray and extremely restrained champagne gold, with a few faint purple nodes at intersections. Highest geometry density on the right half and lower-right; the left 40 percent stays dark and quiet. Cinematic shadow, subtle drafting-board grain, controlled edge light. It must read as a premium architecture studio, not engineering software. Absolutely no text, readable dimensions, numbers, letters, logos, interface, people, fully rendered buildings, bright blueprint blue, hologram cliche, neon glow or white background."
+  },
+  {
+    "id": "stone-bronze",
+    "file": "03-stone-bronze-material.png",
+    "title": "Stone and Bronze Material",
+    "textSafeArea": "left",
+    "focalPosition": "center right",
+    "overlayStrength": 0.55,
+    "mobileFocus": "right",
+    "prompt": "Ultra-wide 2:1 luxury abstract material background, cinematic macro photography. Deep black natural stone and charcoal slate with realistic tactile texture, subtle cracks, mineral variation and restrained directional light. From the right side, a large smooth sculptural curved brushed-bronze architectural form enters, with a thin champagne-gold rim light. The center holds a subtle meeting point between rough stone and refined metal. The left 40 percent remains dark and calm. Soft warm highlights, deep shadows, extremely realistic texture response. Absolutely no objects, furniture, room, product, text, letters, logo, people, interface, loud white marble veins, shiny gold everywhere or jewelry aesthetic. Editorial, architectural, tactile, refined, dark."
+  },
+  {
+    "id": "geometric-facets",
+    "file": "04-geometric-facets.png",
+    "title": "Geometric Facets",
+    "textSafeArea": "left",
+    "focalPosition": "center right",
+    "overlayStrength": 0.58,
+    "mobileFocus": "bottom",
+    "prompt": "Ultra-wide 2:1 premium abstract geometric website background. Deep matte black and graphite polygonal planes form a subtle architectural composition of folded surfaces and building facets, low-contrast black-on-black depth with realistic soft shadows between planes, slight surface variation and controlled directional lighting. Extremely thin edge lines in restrained champagne gold, muted coral and deep violet connect selected planes without outlining every shape. The left 38 percent stays visually calm; more dimensional facets toward the center-right. Architectural and strategic, not futuristic or gaming. Absolutely no text, letters, numbers, logos, people, interface, randomly floating triangles, neon wireframe, metallic chrome, bright gradient background or excessive glow. Modern, minimal, sophisticated."
+  },
+  {
+    "id": "silk-wave",
+    "file": "05-silk-wave-flow.png",
+    "title": "Silk Wave Flow",
+    "textSafeArea": "left",
+    "focalPosition": "center bottom",
+    "overlayStrength": 0.52,
+    "mobileFocus": "bottom",
+    "prompt": "Ultra-wide 2:1 elegant abstract wave background. Nearly black base with several flowing translucent silk-like waves moving horizontally across the lower and middle portions of the frame, weightless, refined and cinematic, like illuminated silk, fine smoke or translucent fabric. Layered tones of dark purple, muted violet, bronze, soft coral and champagne with subtle overlapping transparency, soft edge lighting and gentle atmospheric depth. The upper-left 40 percent stays calm and dark; waves grow richer toward the center and lower-right. Absolutely no text, letters, logo, people, furniture, stars, particles everywhere, lightning, aggressive saturation, rainbow, sharp wave peaks or audio-waveform look. Luxury, flowing, emotionally cinematic."
+  },
+  {
+    "id": "dark-concrete",
+    "file": "06-dark-concrete.png",
+    "title": "Dark Concrete",
+    "textSafeArea": "both",
+    "focalPosition": "center",
+    "overlayStrength": 0.45,
+    "mobileFocus": "center",
+    "prompt": "Ultra-wide 2:1 photographic background of premium dark architectural concrete. Charcoal, nearly black surface with realistic pores, formwork lines, soft tonal variation and subtle imperfections; faint vertical construction joints and a few restrained hairline cracks. A controlled side light grazes the surface revealing depth without brightness. One very subtle warm-bronze light reflection near an edge. Broad calm areas throughout for typography. The wall of an elite architecture studio or luxury modern residence. Absolutely no text, graffiti, letters, logo, people, dramatic damage, dirty industrial feeling, bright stains, repeated tile texture or obvious stock-photo lighting. Tactile, understated, serious, premium."
+  },
+  {
+    "id": "cinematic-light",
+    "file": "07-cinematic-light-leak.png",
+    "title": "Cinematic Light Leak",
+    "textSafeArea": "center",
+    "focalPosition": "center bottom",
+    "overlayStrength": 0.42,
+    "mobileFocus": "bottom",
+    "prompt": "Ultra-wide 2:1 cinematic abstract light background. Deep black and dark bronze environment. A low horizontal light horizon crosses the lower third, transitioning from warm champagne gold and amber on the left, through soft coral at center, into violet and purple on the right. Extremely soft cinematic light leaks, restrained lens diffusion, atmospheric haze, deep shadow, a subtle refined glow at center rather than an explosion. The upper third and outer edges stay dark enough for white typography. A studio light moving through space, an idea becoming visible. Absolutely no text, letters, logo, people, furniture, camera equipment, lens-flare circles, rainbow, bright white center, neon line or sci-fi horizon. Sophisticated, emotionally powerful, premium."
+  },
+  {
+    "id": "topographic",
+    "file": "08-topographic-contours.png",
+    "title": "Topographic Contours",
+    "textSafeArea": "left",
+    "focalPosition": "right bottom",
+    "overlayStrength": 0.6,
+    "mobileFocus": "edges",
+    "prompt": "Ultra-wide 2:1 dark topographic background. Deep black matte surface with extremely fine organic contour lines flowing across the composition, referencing land, spatial movement, architecture and project layers. Mostly graphite and charcoal lines with selected thin lines in restrained bronze, coral and deep purple. Line density is highest around the lower-right and far-right; the left 40 percent stays dark and calm. Subtle depth from varied line opacity, thickness and elevation spacing, with faint atmospheric shadows beneath some contour layers. Absolutely no text, labels, numbers, coordinates, map names, logo, people, bright neon, glowing wireframe landscape, literal mountain illustration or green terrain colors. Elegant, technical, abstract, premium."
+  }
+]

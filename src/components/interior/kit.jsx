@@ -15,6 +15,7 @@ import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import { SEO_ROUTES } from '@/data/seoMeta';
 import '@/pages/interior/interior.css';
 import '@/pages/interior/interior2.css';
+import '@/pages/interior/interior-bg.css';
 
 /**
  * Page wrapper: head tags (from the same seoMeta the prerender uses, so

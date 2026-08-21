@@ -114,7 +114,7 @@ function Journey() {
 
 function WhatFilmAdds() {
   return (
-    <section className="idv2-section idv2-dark idv2-acc-experience">
+    <section className="idv2-section idv2-dark idv2-acc-experience idv2-bgc idv2-bgc-01">
       <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 4vw, 52px)' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 900 }}>
           <Eyebrow>WHAT FILM ADDS</Eyebrow>
