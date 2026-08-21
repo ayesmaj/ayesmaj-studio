@@ -480,7 +480,7 @@ const COLLAGE = [
 function OneStudio() {
   return (
     <section className="idv2-section idv2-dark">
-      <DarkSectionBackground asset="stone-bronze" position="center right" overlay={0.55} textSide="left" glow="gold" />
+      <DarkSectionBackground asset="topographic" position="right bottom" overlay={0.55} textSide="left" glow="gold" />
       <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(30px, 4vw, 52px)' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
           <Eyebrow>WHY AYESMAJ STUDIOS</Eyebrow>

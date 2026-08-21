@@ -176,7 +176,7 @@ export default function Studio() {
         </section>
 
         {/* 4. PROCESS */}
-        <section className="idv2-bgc idv2-bgc-06" style={{ background: '#050505', padding: 'clamp(100px,12vw,160px) 0' }}>
+        <section className="idv2-bgc idv2-bgc-08" style={{ background: '#050505', padding: 'clamp(100px,12vw,160px) 0' }}>
           <div style={section}>
             <SectionHeader
               eyebrow="Process"
@@ -205,7 +205,7 @@ export default function Studio() {
         </section>
 
         {/* 5. STUDIO REEL */}
-        <section className="idv2-bgc idv2-bgc-04" style={{ background: '#0B0D0C', padding: 'clamp(100px,12vw,160px) 0' }}>
+        <section className="idv2-bgc idv2-bgc-07" style={{ background: '#0B0D0C', padding: 'clamp(100px,12vw,160px) 0' }}>
           <div style={section}>
             <SectionHeader
               eyebrow="Studio Reel"

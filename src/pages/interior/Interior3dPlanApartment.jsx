@@ -110,7 +110,7 @@ function Hero() {
 
 function PlanToRoom() {
   return (
-    <section id="plan-to-room" className="idv2-section idv2-dark idv2-acc-understand">
+    <section id="plan-to-room" className="idv2-section idv2-dark idv2-acc-understand idv2-bgc idv2-bgc-04">
       <div className="idv2-inner" style={{ paddingBottom: 24 }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 940 }}>
           <Eyebrow>PLAN TO ROOM — THE PATEL, RESIDENCE 1802</Eyebrow>

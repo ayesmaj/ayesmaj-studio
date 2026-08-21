@@ -19,31 +19,35 @@ Two application mechanisms, same assets:
 | Problem (pinned) | left | flat `.idv2-dark` wrapper | **02 Architectural Grid** on the wrapper (visible around the pin + in flat/mobile mode) | .70 | brief: THE PROBLEM → 02 |
 | Spatial models | left | CSS grid pattern | **04 Geometric Facets** | .58 | brief: 3D floor plan → 04 |
 | Scroll film | left | `#050505` | **01 Cosmic Energy** (visible in flat/mobile mode and at the pin edges) | .62 | brief: AI VIDEO → 01 |
-| One Studio | left | flat `.idv2-dark` | **03 Stone & Bronze** | .55 | brief: ONE STUDIO → 03 |
+| One Studio | left | flat `.idv2-dark` | **08 Topographic Contours** (was 03 — 03 is now footer-only) | .55 | owner rule 2026-08-21: never the same background twice on a page, footer included |
 | Final CTA | left | full-bleed villa pool photo | **07 Cinematic Light Leak** | .42 | brief names 07 the strongest option for this headline; villa photo retired here |
 
 No asset repeats on the hub; no two consecutive dark sections share a treatment.
 
 ## Subpages — first/second/third dark section in document order
 
-| Route | 1st dark | 2nd dark | 3rd dark |
-|---|---|---|---|
-| ai-scan-apartment | 02 grid | 06 concrete | 08 topographic |
-| ai-scan-house | 02 grid | 08 topographic | 04 facets |
-| 3d-floor-plan-apartment | 04 facets | 02 grid | 05 silk |
-| 3d-floor-plan-house | 04 facets | 08 topographic | 07 light leak |
-| 3d-building-visualization | 02 grid | 04 facets | 01 cosmic |
-| ai-video-apartment | 01 cosmic | 05 silk | 07 light leak |
-| ai-video-house | 01 cosmic | 07 light leak | 03 stone |
-| complete-visual-presentation | 01 cosmic | 03 stone | 07 light leak (08 if a 4th) |
-| compare / client-presentation / case studies | 08 topographic | 04 facets | 03 stone |
+| Route | Hero | Dark sections in order |
+|---|---|---|
+| ai-scan-apartment | 01 cosmic | 02 grid · 06 concrete · 08 topographic · 04 facets |
+| ai-scan-house | 04 facets | 02 grid |
+| 3d-floor-plan-apartment | bright hero (kept) | 04 facets |
+| 3d-floor-plan-house | 02 grid | 04 facets · 08 topographic |
+| 3d-building-visualization | 08 topographic | 02 grid · 04 facets · 01 cosmic |
+| ai-video-apartment | film hero (kept) | 01 cosmic |
+| ai-video-house | film hero (kept) | 01 cosmic |
+| compare | 04 facets | 08 topographic |
+| complete-visual-presentation | 07 light leak | 01 cosmic · 06 concrete |
+| case-studies | 07 light leak | — |
+| client-presentation | 01 cosmic | — |
+| case-studies/:slug | 05 silk | 08 · 04 · 02 · 01 · 06 |
 
-Hero sections on subpages keep their custom accent gradients; backgrounds apply to
-subsequent `idv2-dark` / `idv2-spatial` sections. Pinned sequences are image-covered and
-are skipped.
+Dark subpage heroes carry `<DarkSectionBackground>` (owner request 2026-08-21); the two
+film heroes and the one bright hero keep their own art. Pinned sequences are image-covered
+and are skipped.
 
 ## Rules carried
-- ≤ 2 uses of one asset per page; never consecutive.
+- **One use of an asset per page, the footer included** (owner rule 2026-08-21). 03 Stone & Bronze
+  is the footer's alone — no section anywhere may use it.
 - Text-safe side respected: left-text sections use the left-dark ramp; the `--right`
   modifier reverses it.
 - Motion: 10px drift max, 1.00→1.025 scale nowhere yet (reserved), static under
@@ -58,7 +62,7 @@ media-covered and light sections skipped, sequence in page order, never consecut
 | Route | Sequence |
 |---|---|
 | /Services | 04 facets → 01 cosmic → 08 topographic |
-| /ServiceBranding | 03 stone & bronze → 05 silk → 06 concrete |
+| /ServiceBranding | 08 topographic → 05 silk → 06 concrete |
 | /WebExperiences | 02 grid → 04 facets → 07 light leak |
 | /AiMarketing | 01 cosmic → 05 silk → 07 light leak |
 | /Worlds3D | 04 facets → 02 grid → 01 cosmic |
@@ -78,7 +82,7 @@ before the footer (CompletePresentation's 03 block is followed by a bright secti
 | / (Home) | 02 Capabilities · 05 PerceptionPrice · 08 CreativeSystem · 04 BeforeAfter · 01 StudioAbout |
 | /Work | 04 gallery (full-bleed wrapper, fade-top) · 07 CTA |
 | /About | 08 Creative Direction · 02 Selected Work · 06 Final CTA |
-| /Studio | 06 · 04 manifesto bands · 01 Layers · 06 Process · 04 Reel |
+| /Studio | 06 · 04 manifesto bands · 01 Layers · 08 Process · 07 Reel |
 | /Contact | 05 on the page wrapper (hero + form share one silk) |
 | /Pricing | 02 cards (full-bleed wrapper) · 07 CTA |
 | /Insights | 01 empty state (fade-top) |

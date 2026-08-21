@@ -13,6 +13,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { InteriorShell, Eyebrow, IdvButton, MethodRail, CtaBand } from '@/components/interior/kit';
 import { VALMONT } from '@/data/interiorMedia';
+import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 
 const rise = (d = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -48,6 +49,7 @@ const FAQ = [
 function Hero() {
   return (
     <section className="idv2-section idv2-dark idv2-acc-present" style={{ background: 'radial-gradient(900px 540px at 82% 0%, rgba(216,183,90,0.13), transparent 60%), radial-gradient(700px 460px at 8% 100%, rgba(122,72,255,0.14), transparent 55%), linear-gradient(180deg, #060708, #0B0A10)' }}>
+      <DarkSectionBackground asset="cosmic-energy" position="center right" overlay={0.6} textSide="left" glow="gold" />
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 1.15fr) 1fr', gap: 'clamp(28px, 4vw, 60px)', alignItems: 'center', minHeight: '88svh' }}>
         <div style={{ display: 'grid', gap: 22 }}>
           <motion.div {...rise(0)}><Eyebrow>AYESMAJ STUDIOS / CLIENT PRESENTATION</Eyebrow></motion.div>

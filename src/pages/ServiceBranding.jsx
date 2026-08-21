@@ -91,7 +91,7 @@ export default function ServiceBranding() {
       </section>
 
       {/* ── What we deliver ─────────────────────────────────────────────── */}
-      <section className="idv2-bgc idv2-bgc-03" style={{ padding: '90px 24px 110px', background: '#0B0D0C' }}>
+      <section className="idv2-bgc idv2-bgc-08" style={{ padding: '90px 24px 110px', background: '#0B0D0C' }}>
         <SectionHeader eyebrow="What we deliver" title="One identity, every touchpoint" accent={GOLD} />
         <div style={{
           maxWidth: 1180, margin: '64px auto 0', display: 'grid', gap: 20,

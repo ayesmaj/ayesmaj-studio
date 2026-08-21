@@ -11,6 +11,7 @@ import {
 } from '@/components/interior/kit';
 import { IDV_BASE, IDV_EYEBROW, CASE_STUDIES, FINAL_CTA, METHODS } from '@/data/interiorDesign';
 import { CASE_COVERS } from '@/data/interiorMedia';
+import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 
 /** What each cover image actually shows — honest, per-project alt text. */
 const COVER_ALTS = {
@@ -65,6 +66,7 @@ function FilterChip({ label, active, onClick }) {
 function Hero({ filter, setFilter }) {
   return (
     <section className="idv2-section idv2-dark idv2-acc-present" style={{ background: 'radial-gradient(900px 540px at 82% 0%, rgba(122,72,255,0.16), transparent 60%), radial-gradient(700px 460px at 8% 100%, rgba(216,183,90,0.13), transparent 55%), linear-gradient(180deg, #060708, #0B0C10)' }}>
+      <DarkSectionBackground asset="cinematic-light" position="center bottom" overlay={0.6} textSide="left" glow="none" />
       <div className="idv2-inner" style={{ display: 'grid', gap: 24, minHeight: '74svh', alignContent: 'center' }}>
         <motion.div {...rise(0)}><Eyebrow>{IDV_EYEBROW} / CASE STUDIES</Eyebrow></motion.div>
         <motion.h1 {...rise(0.08)} className="idv2-display idv2-display--hero" style={{ maxWidth: 980 }}>

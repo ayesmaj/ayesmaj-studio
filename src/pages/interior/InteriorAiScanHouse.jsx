@@ -20,6 +20,7 @@ import {
 } from '@/components/interior/kit';
 import { METHODS, IDV_BASE } from '@/data/interiorDesign';
 import { VILLA, APARTMENT } from '@/data/interiorMedia';
+import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 
 const m = METHODS['ai-scan-house'];
 
@@ -74,6 +75,7 @@ const FAQ = [
 function Hero() {
   return (
     <section className="idv2-section idv2-dark idv2-acc-capture" style={{ background: 'radial-gradient(1000px 580px at 82% 0%, rgba(127,166,200,0.14), transparent 60%), radial-gradient(760px 480px at 8% 100%, rgba(163,91,218,0.12), transparent 55%), linear-gradient(180deg, #060708, #0B0C10)' }}>
+      <DarkSectionBackground asset="geometric-facets" position="center right" overlay={0.6} textSide="left" glow="none" />
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 1fr) 1.05fr', gap: 'clamp(28px, 4vw, 60px)', alignItems: 'center', minHeight: '92svh' }}>
         <div style={{ display: 'grid', gap: 22 }}>
           <motion.div {...rise(0)}><Eyebrow>AYESMAJ STUDIOS / AI HOUSE SCAN</Eyebrow></motion.div>

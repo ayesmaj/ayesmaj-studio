@@ -21,6 +21,7 @@ import {
 import { METHODS, IDV_BASE } from '@/data/interiorDesign';
 import { PATEL, MODELS } from '@/data/interiorMedia';
 import ModelViewer from '@/components/interior/ModelViewer';
+import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 
 const m = METHODS['3d-building-visualization'];
 
@@ -62,6 +63,7 @@ const FAQ = [
 function Hero() {
   return (
     <section className="idv2-section idv2-dark idv2-acc-understand" style={{ background: 'radial-gradient(1000px 620px at 78% 8%, rgba(122,72,255,0.22), transparent 60%), radial-gradient(720px 480px at 10% 96%, rgba(216,183,90,0.1), transparent 55%), linear-gradient(180deg, #04060C, #0A0C16)' }}>
+      <DarkSectionBackground asset="topographic" position="right bottom" overlay={0.6} textSide="left" glow="none" />
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 1fr) 1.05fr', gap: 'clamp(28px, 4vw, 60px)', alignItems: 'center', minHeight: '88svh' }}>
         <div style={{ display: 'grid', gap: 22 }}>
           <motion.div {...rise(0)}><Eyebrow>AYESMAJ STUDIOS / 3D BUILDING VISUALIZATION</Eyebrow></motion.div>

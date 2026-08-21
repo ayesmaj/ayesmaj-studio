@@ -20,6 +20,7 @@ import {
 } from '@/components/interior/kit';
 import { METHODS, IDV_BASE } from '@/data/interiorDesign';
 import { VALMONT } from '@/data/interiorMedia';
+import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 
 const m = METHODS['complete-visual-presentation'];
 
@@ -75,6 +76,7 @@ const FAQ = [
 function Hero() {
   return (
     <section className="idv2-section idv2-dark idv2-acc-present" style={{ background: 'radial-gradient(950px 560px at 82% 0%, rgba(122,72,255,0.16), transparent 60%), radial-gradient(760px 480px at 8% 100%, rgba(216,183,90,0.15), transparent 55%), linear-gradient(180deg, #060607, #0C0A10)' }}>
+      <DarkSectionBackground asset="cinematic-light" position="center bottom" overlay={0.6} textSide="left" glow="purple" />
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 1fr) 1.05fr', gap: 'clamp(28px, 4vw, 60px)', alignItems: 'center', minHeight: '88svh' }}>
         <div style={{ display: 'grid', gap: 22 }}>
           <motion.div {...rise(0)}><Eyebrow>AYESMAJ STUDIOS / COMPLETE VISUAL PRESENTATION</Eyebrow></motion.div>
@@ -204,7 +206,7 @@ function DeliverableBuilder() {
 
 function PresentationCraft() {
   return (
-    <section className="idv2-section idv2-dark idv2-acc-present idv2-bgc idv2-bgc-03" style={{ background: '#0A0908' }}>
+    <section className="idv2-section idv2-dark idv2-acc-present idv2-bgc idv2-bgc-06" style={{ background: '#0A0908' }}>
       <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(26px, 3vw, 44px)' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 940 }}>
           <Eyebrow>PRESENTATION CRAFT</Eyebrow>

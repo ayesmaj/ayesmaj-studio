@@ -20,6 +20,7 @@ import {
 import { METHODS, IDV_BASE } from '@/data/interiorDesign';
 import { APARTMENT, VILLA } from '@/data/interiorMedia';
 import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
+import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 
 const m = METHODS['ai-scan-apartment'];
 
@@ -53,6 +54,7 @@ const FAQ = [
 function Hero() {
   return (
     <section className="idv2-section idv2-dark idv2-acc-capture" style={{ background: 'radial-gradient(900px 540px at 80% 0%, rgba(127,166,200,0.14), transparent 60%), radial-gradient(700px 460px at 10% 100%, rgba(163,91,218,0.12), transparent 55%), linear-gradient(180deg, #060708, #0B0C10)' }}>
+      <DarkSectionBackground asset="cosmic-energy" position="center right" overlay={0.6} textSide="left" glow="none" />
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 1fr) 1.05fr', gap: 'clamp(28px, 4vw, 60px)', alignItems: 'center', minHeight: '88svh' }}>
         <div style={{ display: 'grid', gap: 22 }}>
           <motion.div {...rise(0)}><Eyebrow>AYESMAJ STUDIOS / AI APARTMENT SCAN</Eyebrow></motion.div>
@@ -204,7 +206,7 @@ function ClientUnderstands() {
 
 function Limitations() {
   return (
-    <section className="idv2-section idv2-spatial idv2-acc-capture idv2-bgc idv2-bgc-08">
+    <section className="idv2-section idv2-spatial idv2-acc-capture idv2-bgc idv2-bgc-04">
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 'clamp(24px, 3.5vw, 56px)', alignItems: 'center' }}>
         <div className="idv2-reveal" style={{ display: 'grid', gap: 18 }}>
           <Eyebrow>HONEST LIMITS</Eyebrow>

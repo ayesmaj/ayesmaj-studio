@@ -16,6 +16,7 @@ import {
 import { IDV_BASE, CASE_STUDIES } from '@/data/interiorDesign';
 import { VILLA, VALMONT, PATEL, PROJECTS, CASE_COVERS } from '@/data/interiorMedia';
 import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
+import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 
 const ACCENT = '#B79661';
 const ACCENT_RGB = '183,150,97';
@@ -61,6 +62,7 @@ function CaseHero({ study }) {
   const last = words.pop();
   return (
     <section className="idv2-section idv2-dark idv2-acc-present" style={{ background: 'radial-gradient(900px 540px at 80% 0%, rgba(122,72,255,0.15), transparent 60%), radial-gradient(700px 460px at 10% 100%, rgba(216,183,90,0.13), transparent 55%), linear-gradient(180deg, #060708, #0B0C10)' }}>
+      <DarkSectionBackground asset="silk-wave" position="center right" overlay={0.6} textSide="left" glow="purple" />
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'clamp(28px, 4vw, 60px)', alignItems: 'end', minHeight: '76svh' }}>
         <div style={{ display: 'grid', gap: 22, alignContent: 'center' }}>
           <motion.div {...rise(0)}><Eyebrow>CASE STUDY / {study.kind.toUpperCase()}</Eyebrow></motion.div>
@@ -222,7 +224,7 @@ function MaisonValmont({ study }) {
         </div>
       </section>
 
-      <section className="idv2-section idv2-spatial idv2-acc-present idv2-bgc idv2-bgc-03">
+      <section className="idv2-section idv2-spatial idv2-acc-present idv2-bgc idv2-bgc-02">
         <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 4vw, 52px)' }}>
           <Head
             eyebrow="MATERIALS"
@@ -293,7 +295,7 @@ function ThePatel({ study }) {
         </div>
       </section>
 
-      <section className="idv2-section idv2-dark idv2-acc-present idv2-bgc idv2-bgc-08">
+      <section className="idv2-section idv2-dark idv2-acc-present idv2-bgc idv2-bgc-01">
         <div className="idv2-inner">
           <Head
             eyebrow="RESIDENCE 1802"
@@ -336,7 +338,7 @@ function ThePatel({ study }) {
         </div>
       </section>
 
-      <section className="idv2-section idv2-spatial idv2-acc-present idv2-bgc idv2-bgc-04">
+      <section className="idv2-section idv2-spatial idv2-acc-present idv2-bgc idv2-bgc-06">
         <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 4vw, 52px)' }}>
           <Head eyebrow="IDENTITY" title={<>One identity across <span className="idv2-acc-text">both scales.</span></>} />
           <div className="idv2-reveal" style={{ display: 'grid', justifyItems: 'center', gap: 20, padding: 'clamp(30px, 4vw, 64px) 0' }}>

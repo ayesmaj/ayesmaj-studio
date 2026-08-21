@@ -22,6 +22,7 @@ import {
   METHODS, METHOD_ORDER, GOALS, COMPARISON, COMPARISON_VERDICT, STAGES, IDV_BASE,
 } from '@/data/interiorDesign';
 import { VILLA, APARTMENT, VALMONT } from '@/data/interiorMedia';
+import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 
 const ROUTE = `${IDV_BASE}/compare-visualization-methods`;
 
@@ -49,6 +50,7 @@ const FAQ = [
 function Hero() {
   return (
     <section className="idv2-section idv2-dark idv2-acc-present" style={{ background: 'radial-gradient(1000px 560px at 80% 0%, rgba(122,72,255,0.16), transparent 60%), radial-gradient(720px 460px at 10% 100%, rgba(216,183,90,0.12), transparent 55%), linear-gradient(180deg, #060708, #0B0C10)' }}>
+      <DarkSectionBackground asset="geometric-facets" position="center right" overlay={0.6} textSide="left" glow="purple" />
       <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 1fr) 1.05fr', gap: 'clamp(28px, 4vw, 60px)', alignItems: 'center', minHeight: '88svh' }}>
         <div style={{ display: 'grid', gap: 22 }}>
           <motion.div {...rise(0)}><Eyebrow>AYESMAJ STUDIOS / COMPARE VISUALIZATION METHODS</Eyebrow></motion.div>
