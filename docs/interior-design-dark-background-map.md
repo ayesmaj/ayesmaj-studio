@@ -64,3 +64,9 @@ media-covered and light sections skipped, sequence in page order, never consecut
 | /Worlds3D | 04 facets → 02 grid → 01 cosmic |
 | /AiVideos | 01 cosmic → 07 light leak → 05 silk |
 | /Storyboards | 08 topographic → 06 concrete → 03 stone & bronze |
+
+### Site-wide footer CTA (owner request 2026-08-21)
+
+`AyesmajFooter` layer 1 ("Let's build something people remember") carries **03 Stone & Bronze** on
+every route. Checked against each page's closing dark section: no route ends on 03 directly
+before the footer (CompletePresentation's 03 block is followed by a bright section).
