@@ -266,9 +266,19 @@ function ModelPlayground() {
       <SectionHead
         eyebrow="INTERACTIVE 3D / FROM THE SKYLINE TO THE FAUCET"
         title={<>Drag it. Turn it. <span className="idv-accent">Understand it.</span></>}
-        lede="Nine interactive models, one descending scale: a tower, a building, a house, an apartment, a plan - down to the island, the desk, the bookcase and the faucet. The same interactive presentations we build into client experiences. Every model loads only when you ask."
+        lede="The Patel tower itself, then nine showcase models on one descending scale: a tower, a building, a house, an apartment, a plan - down to the island, the desk, the bookcase and the faucet. The same interactive presentations we build into client experiences. Every model loads only when you ask."
       />
       <div style={{ display: 'grid', gap: 'clamp(28px, 4vw, 48px)' }}>
+        <div className="idv-reveal" style={{ display: 'grid', gap: 12 }}>
+          <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>THE REAL THING</span> · CLIENT PROJECT</div>
+          <ModelViewer model={MODELS.featured} ratio="21 / 10" />
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+            <p className="idv-lede" style={{ fontSize: 14, margin: 0, maxWidth: 560 }}>{MODELS.featured.line}</p>
+            <Link to={`${IDV_BASE}/case-studies/the-patel`} className="idv-btn idv-btn--ghost" style={{ padding: '10px 18px', fontSize: 12 }}>
+              The Patel case study <ArrowRight size={14} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
         <div className="idv-grid-3">
           {MODELS.spaces.slice(0, 3).map((m) => <Card key={m.key} m={m} ratio="4 / 3" />)}
         </div>

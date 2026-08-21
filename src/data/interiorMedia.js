@@ -191,6 +191,8 @@ export const PATEL = {
     Sketchfab showcase assets, not client projects — labeled as such.
     Weights are the served file sizes, shown on the tap-to-load card. */
 export const MODELS = {
+  /** The real thing: the studio's own development project, full tower model. */
+  featured: { key: 'the-patel', name: 'The Patel — Miami', file: '/interior-design/models/the-patel.glb', weight: '37.7 MB', credit: 'CLIENT PROJECT', line: 'Not a stock asset: the actual tower model behind The Patel development presentation. Walk the massing, the balconies, and the crown.' },
   /** The scale ladder, top down: skyline to a single faucet. */
   spaces: [
     { key: 'skyline', scale: '01', name: 'Skyline tower', file: '/interior-design/models/skyline.glb', weight: '7.2 MB', credit: 'SHOWCASE MODEL', line: 'Where a project starts: the tower against its city.' },
