@@ -29,6 +29,7 @@ export const SITE = {
 export const NAV = [
   { label: "Work", to: "/Work" },
   { label: "Services", to: "/services", mega: "services" },
+  { label: "Interior Design", to: "/interior-design" },
   { label: "Studio", to: "/Studio" },
   { label: "About", to: "/About" },
   { label: "Contact", to: "/Contact" },
@@ -42,6 +43,7 @@ export const SERVICES_MENU = [
   { label: "3D & CGI", to: "/services/3d-cgi", line: "Product modeling, environments, photoreal renders." },
   { label: "Motion, Film & VFX", to: "/services/motion-vfx", line: "Commercials, brand films, launch reels." },
   { label: "Storyboards & Direction", to: "/services/storyboards", line: "See the film before it exists." },
+  { label: "Interior Design Visualization", to: "/interior-design", line: "Scans, 3D plans, AI film and client presentations for spatial projects." },
   { label: "AI Brand System", to: "/System", line: "Turn a brief into a connected brand and content direction." },
 ];
 

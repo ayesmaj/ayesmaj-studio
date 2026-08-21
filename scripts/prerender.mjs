@@ -68,7 +68,12 @@ function jsonLdFor(route, meta) {
 
   const url = SITE.url + route;
   const crumbs = [{ name: 'Home', item: SITE.url + '/' }];
-  if (SERVICE_ROUTES[route]) {
+  if (route.startsWith('/interior-design/')) {
+    crumbs.push({ name: 'Interior Design', item: SITE.url + '/interior-design' });
+    if (route.startsWith('/interior-design/case-studies/')) {
+      crumbs.push({ name: 'Case Studies', item: SITE.url + '/interior-design/case-studies' });
+    }
+  } else if (SERVICE_ROUTES[route]) {
     crumbs.push({ name: 'Services', item: SITE.url + '/Services' });
   }
   crumbs.push({ name: meta.h1, item: url });

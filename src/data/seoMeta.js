@@ -202,6 +202,118 @@ export const SEO_ROUTES = {
     blurb:
       "Our commitment to accessible design, the standards we work toward, and how to report an issue.",
   },
+  "/interior-design": {
+    title: "Interior Design Visualization | AYESMAJ Studios",
+    description:
+      "AI scans, 3D floor plans, building visualization, photorealistic interiors, cinematic AI video and complete client presentations - one connected visual system for spatial projects.",
+    h1: "From floor plan to a home your client can already feel.",
+    blurb:
+      "AYESMAJ Studios turns scans, architectural plans and 3D models into clear spatial visuals, photorealistic interiors, cinematic films and complete branded presentations - for apartments, houses and buildings.",
+  },
+  "/interior-design/ai-scan-apartment": {
+    title: "AI Apartment Scan | AYESMAJ Studios",
+    description:
+      "Turn apartment photos, video or plans into a clean spatial foundation - AI-assisted existing-condition capture for renovations, remote design and furniture planning.",
+    h1: "Capture the apartment as it exists today.",
+    blurb:
+      "An AI-assisted apartment scan builds a fast visual foundation for renovations, redesigns, furniture planning and early client conversations. It is a communication foundation, not survey documentation - key measurements are verified on site.",
+  },
+  "/interior-design/ai-scan-house": {
+    title: "AI House Scan | AYESMAJ Studios",
+    description:
+      "AI-assisted capture of the existing house - floors, garage, yard and pool become one clear visual foundation for renovation and design.",
+    h1: "Turn the existing house into a clear visual foundation.",
+    blurb:
+      "A house capture brings floors, garage, yard, pool and the building footprint into one coherent picture. A design and communication foundation, not engineering, permit or survey certification.",
+  },
+  "/interior-design/3d-floor-plan-apartment": {
+    title: "3D Apartment Floor Plan | AYESMAJ Studios",
+    description:
+      "Furnished 3D floor plans that show furniture scale, circulation and how every room connects - built for client approval, rentals and renovation decisions.",
+    h1: "See the complete apartment in one glance.",
+    blurb:
+      "A furnished 3D floor plan shows what flat drawings cannot: true furniture scale, circulation between rooms, storage and kitchen relationships, bedroom privacy and balcony connections.",
+  },
+  "/interior-design/3d-floor-plan-house": {
+    title: "3D House Floor Plan | AYESMAJ Studios",
+    description:
+      "3D house floor plans across levels - public and private zones, stair alignment, garage, pool and outdoor living, readable in one view.",
+    h1: "Understand the entire home before entering a room.",
+    blurb:
+      "Multi-level living made readable: public versus private zones, the garage-to-house route, stair alignment, and how indoor living meets pool and yard. Communicates the design; does not replace structural or permit documentation.",
+  },
+  "/interior-design/3d-building-visualization": {
+    title: "3D Building Visualization | AYESMAJ Studios",
+    description:
+      "Building visualization for developments - the full volume, exploded levels, unit locations, amenities and exterior identity for sales and investors.",
+    h1: "Show the scale before showing the unit.",
+    blurb:
+      "For buildings and developments the story starts above the unit: the full volume, exploded levels, where each residence sits, and what the lobby, amenities and roof promise buyers and investors.",
+  },
+  "/interior-design/ai-video-apartment": {
+    title: "AI Apartment Video | AYESMAJ Studios",
+    description:
+      "Cinematic AI apartment films - movement, light and atmosphere that let clients feel the space before it is built.",
+    h1: "Turn the apartment plan into a journey.",
+    blurb:
+      "An apartment film walks the client from living room to balcony: movement, room sequence, light and atmosphere. Plans remain the spatial source of truth; the film moves the camera, not the walls.",
+  },
+  "/interior-design/ai-video-house": {
+    title: "AI House Video | AYESMAJ Studios",
+    description:
+      "Cinematic AI house films - arrival, flow and indoor-outdoor life for luxury presentation, marketing and homeowner approval.",
+    h1: "Show the life between the rooms.",
+    blurb:
+      "A house film is about arrival and flow: the approach, the entry, the stair, the primary suite, and the moment the living room opens to the pool. It sells the life, not the drawing.",
+  },
+  "/interior-design/compare-visualization-methods": {
+    title: "Compare Visualization Methods | AYESMAJ Studios",
+    description:
+      "Scan, 3D floor plan, render or AI video? Compare every visualization method by speed, clarity, realism and impact - and get the right stack for the next decision.",
+    h1: "The best method depends on the next decision.",
+    blurb:
+      "None of the methods wins alone. Scans capture what exists, plans win layout approvals, renders carry material and light, film delivers emotion - the strongest presentations combine them in the right order.",
+  },
+  "/interior-design/complete-visual-presentation": {
+    title: "Complete Visual Presentation | AYESMAJ Studios",
+    description:
+      "From one plan to a complete visual campaign: scans, 3D plans, imagery, film, identity, website and presentation as one modular system.",
+    h1: "From one plan to a complete visual campaign.",
+    blurb:
+      "Visualization wins understanding; presentation wins decisions. Identity, website, deck and social content turn project visuals into a modular system built for approval, sales and launch.",
+  },
+  "/interior-design/case-studies": {
+    title: "Interior Visualization Case Studies | AYESMAJ Studios",
+    description:
+      "Real projects taken from source material to complete visual worlds - a new-build villa, a Maison Valmont restoration and a Miami development.",
+    h1: "From source material to complete visual world.",
+    blurb:
+      "Three real projects, three different communication problems: a new-build poolside villa, the restoration of Maison Valmont, and The Patel, a Miami residential development presented at two scales.",
+  },
+  "/interior-design/case-studies/poolside-villa": {
+    title: "Poolside Villa Case Study | AYESMAJ Studios",
+    description:
+      "A new-build house taken from two floor plans to a 29-frame cinematic visual sequence - every room, both levels and the pool terrace.",
+    h1: "Poolside Villa",
+    blurb:
+      "Two flat floor plans became a home the owners could walk through in their minds: twenty-nine master frames covering every room, both levels and the pool terrace, in one consistent architecture.",
+  },
+  "/interior-design/case-studies/maison-valmont": {
+    title: "Maison Valmont Case Study | AYESMAJ Studios",
+    description:
+      "A restoration made visible: existing rooms, an eight-stage process, before-and-after pairs and a transformation film.",
+    h1: "Maison Valmont",
+    blurb:
+      "The value of a restoration is invisible in ruined rooms. Before-and-after pairs made the decision tangible, an eight-stage sequence showed the path, and the transformation film delivered the reveal.",
+  },
+  "/interior-design/case-studies/the-patel": {
+    title: "The Patel Case Study | AYESMAJ Studios",
+    description:
+      "A Miami residential tower presented at two scales - the building in its skyline, then Residence 1802 with its own plan and rooms.",
+    h1: "The Patel",
+    blurb:
+      "A development sells twice: first the tower at skyline scale in its Miami light, then the drill-down into Residence 1802 with its own floor plan and rooms - carried by one project identity.",
+  },
 };
 
 /**
@@ -218,4 +330,13 @@ export const SERVICE_ROUTES = {
   "/Worlds3D": "3D modeling and CGI",
   "/AiVideos": "Video production and visual effects",
   "/Storyboards": "Storyboard and art direction",
+  "/interior-design": "Interior design visualization",
+  "/interior-design/ai-scan-apartment": "AI apartment scanning",
+  "/interior-design/ai-scan-house": "AI house scanning",
+  "/interior-design/3d-floor-plan-apartment": "3D floor plan design",
+  "/interior-design/3d-floor-plan-house": "3D floor plan design",
+  "/interior-design/3d-building-visualization": "Architectural building visualization",
+  "/interior-design/ai-video-apartment": "AI interior video production",
+  "/interior-design/ai-video-house": "AI interior video production",
+  "/interior-design/complete-visual-presentation": "Visual presentation systems",
 };

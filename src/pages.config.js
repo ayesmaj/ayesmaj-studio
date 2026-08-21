@@ -79,6 +79,18 @@ const Terms = lazy(() => import('./pages/Terms'));
 const Cookies = lazy(() => import('./pages/Cookies'));
 const Accessibility = lazy(() => import('./pages/Accessibility'));
 const Faq = lazy(() => import('./pages/Faq'));
+const InteriorDesign = lazy(() => import('./pages/interior/InteriorDesign'));
+const InteriorAiScanApartment = lazy(() => import('./pages/interior/InteriorAiScanApartment'));
+const InteriorAiScanHouse = lazy(() => import('./pages/interior/InteriorAiScanHouse'));
+const Interior3dPlanApartment = lazy(() => import('./pages/interior/Interior3dPlanApartment'));
+const Interior3dPlanHouse = lazy(() => import('./pages/interior/Interior3dPlanHouse'));
+const Interior3dBuilding = lazy(() => import('./pages/interior/Interior3dBuilding'));
+const InteriorAiVideoApartment = lazy(() => import('./pages/interior/InteriorAiVideoApartment'));
+const InteriorAiVideoHouse = lazy(() => import('./pages/interior/InteriorAiVideoHouse'));
+const InteriorCompare = lazy(() => import('./pages/interior/InteriorCompare'));
+const InteriorCompletePresentation = lazy(() => import('./pages/interior/InteriorCompletePresentation'));
+const InteriorCaseStudies = lazy(() => import('./pages/interior/InteriorCaseStudies'));
+const InteriorCaseStudy = lazy(() => import('./pages/interior/InteriorCaseStudy'));
 import __Layout from './Layout.jsx';
 
 
@@ -113,6 +125,18 @@ export const PAGES = {
     "Cookies": Cookies,
     "Accessibility": Accessibility,
     "Faq": Faq,
+    "InteriorDesign": InteriorDesign,
+    "InteriorAiScanApartment": InteriorAiScanApartment,
+    "InteriorAiScanHouse": InteriorAiScanHouse,
+    "Interior3dPlanApartment": Interior3dPlanApartment,
+    "Interior3dPlanHouse": Interior3dPlanHouse,
+    "Interior3dBuilding": Interior3dBuilding,
+    "InteriorAiVideoApartment": InteriorAiVideoApartment,
+    "InteriorAiVideoHouse": InteriorAiVideoHouse,
+    "InteriorCompare": InteriorCompare,
+    "InteriorCompletePresentation": InteriorCompletePresentation,
+    "InteriorCaseStudies": InteriorCaseStudies,
+    "InteriorCaseStudy": InteriorCaseStudy,
 }
 
 export const pagesConfig = {

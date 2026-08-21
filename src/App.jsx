@@ -54,6 +54,18 @@ function AnimatedRoutes() {
             ["/services/3d-cgi", "Worlds3D"],
             ["/services/motion-vfx", "AiVideos"],
             ["/services/storyboards", "Storyboards"],
+            ["/interior-design", "InteriorDesign"],
+            ["/interior-design/ai-scan-apartment", "InteriorAiScanApartment"],
+            ["/interior-design/ai-scan-house", "InteriorAiScanHouse"],
+            ["/interior-design/3d-floor-plan-apartment", "Interior3dPlanApartment"],
+            ["/interior-design/3d-floor-plan-house", "Interior3dPlanHouse"],
+            ["/interior-design/3d-building-visualization", "Interior3dBuilding"],
+            ["/interior-design/ai-video-apartment", "InteriorAiVideoApartment"],
+            ["/interior-design/ai-video-house", "InteriorAiVideoHouse"],
+            ["/interior-design/compare-visualization-methods", "InteriorCompare"],
+            ["/interior-design/complete-visual-presentation", "InteriorCompletePresentation"],
+            ["/interior-design/case-studies", "InteriorCaseStudies"],
+            ["/interior-design/case-studies/:slug", "InteriorCaseStudy"],
           ].map(([path, pageName]) => {
             const ServicePage = Pages[pageName];
             return ServicePage ? (

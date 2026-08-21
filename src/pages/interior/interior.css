@@ -1,0 +1,318 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   INTERIOR DESIGN VISUALIZATION — local design world inside AYESMAJ
+   Warm architectural palette; editorial serif display; mono technical labels.
+   Tokens are prefixed --idv- and scoped under .idv-page so nothing leaks
+   into the rest of the site.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.idv-page {
+  --idv-porcelain: #FAF7F1;
+  --idv-bone: #EFE7DC;
+  --idv-canvas: #E3D9CC;
+  --idv-ink: #191815;
+  --idv-graphite: #2A2824;
+  --idv-walnut: #4B372B;
+  --idv-olive: #6C735C;
+  --idv-champagne: #B79661;
+  --idv-stone: #CFC2B2;
+  --idv-pool: #91AEB5;
+
+  --idv-serif: 'Instrument Serif', 'Georgia', serif;
+  --idv-sans: 'DM Sans', 'Inter', system-ui, sans-serif;
+  --idv-mono: 'IBM Plex Mono', 'Consolas', monospace;
+
+  --idv-max: 1280px;
+  --idv-pad: clamp(20px, 4vw, 64px);
+
+  background: var(--idv-porcelain);
+  color: var(--idv-ink);
+  font-family: var(--idv-sans);
+  min-height: 100vh;
+}
+
+/* Readability scrim behind the fixed dark-text nav: thin ink fade at the very
+   top so white nav links stay legible over the porcelain page. */
+.idv-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 140px;
+  background: linear-gradient(180deg, rgba(10, 10, 9, 0.82), rgba(10, 10, 9, 0));
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ── Typography ──────────────────────────────────────────────────────────── */
+.idv-eyebrow {
+  font-family: var(--idv-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--idv-walnut);
+}
+
+.idv-display {
+  font-family: var(--idv-serif);
+  font-weight: 400;
+  font-size: clamp(64px, 8vw, 128px);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.idv-h2 {
+  font-family: var(--idv-serif);
+  font-weight: 400;
+  font-size: clamp(42px, 5vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.idv-h3 {
+  font-family: var(--idv-serif);
+  font-weight: 400;
+  font-size: clamp(26px, 2.6vw, 40px);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.idv-lede {
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.65;
+  color: var(--idv-graphite);
+  max-width: 620px;
+}
+
+.idv-accent { color: var(--idv-champagne); font-style: italic; }
+.idv-mono-label {
+  font-family: var(--idv-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--idv-olive);
+}
+
+/* ── Layout primitives ───────────────────────────────────────────────────── */
+.idv-section {
+  max-width: var(--idv-max);
+  margin: 0 auto;
+  padding: clamp(72px, 9vw, 150px) var(--idv-pad);
+}
+.idv-section--bone { background: var(--idv-bone); max-width: none; }
+.idv-section--bone > .idv-inner,
+.idv-inner { max-width: var(--idv-max); margin: 0 auto; }
+.idv-section--flush { padding-top: 0; }
+
+.idv-rule {
+  height: 1px;
+  border: 0;
+  margin: 0;
+  background: linear-gradient(90deg, var(--idv-stone), rgba(207, 194, 178, 0));
+}
+/* The only sanctioned AYESMAJ-gradient appearance: a thin AI-process rule. */
+.idv-rule--ai {
+  background: linear-gradient(90deg, #D8B75A, #A35BDA 60%, rgba(163, 91, 218, 0));
+  opacity: 0.65;
+}
+
+.idv-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 72px); align-items: start; }
+.idv-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.5vw, 36px); }
+.idv-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 28px); }
+
+/* ── Media ───────────────────────────────────────────────────────────────── */
+.idv-figure { margin: 0; }
+.idv-figure img, .idv-figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  background: var(--idv-canvas);
+}
+.idv-figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  font-family: var(--idv-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--idv-walnut);
+}
+.idv-figure--frame img, .idv-figure--frame video {
+  border: 1px solid var(--idv-stone);
+}
+.idv-ratio { aspect-ratio: 16 / 10; object-fit: cover; }
+.idv-ratio-45 { aspect-ratio: 4 / 5; object-fit: cover; }
+.idv-ratio-sq { aspect-ratio: 1 / 1; object-fit: cover; }
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.idv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--idv-sans);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  padding: 15px 28px;
+  border-radius: 999px;
+  border: 1px solid var(--idv-ink);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease, color 0.25s ease;
+}
+.idv-btn--primary { background: var(--idv-ink); color: var(--idv-porcelain); }
+.idv-btn--primary:hover { background: var(--idv-walnut); border-color: var(--idv-walnut); transform: translateY(-2px); }
+.idv-btn--ghost { background: transparent; color: var(--idv-ink); }
+.idv-btn--ghost:hover { background: var(--idv-bone); transform: translateY(-2px); }
+.idv-btn svg { transition: transform 0.25s ease; }
+.idv-btn:hover svg { transform: translateX(4px); }
+.idv-btn:focus-visible { outline: 3px solid var(--idv-pool); outline-offset: 3px; }
+
+/* ── Stage cards (01 CAPTURE … 04 PRESENT) ───────────────────────────────── */
+.idv-stage {
+  background: #fff;
+  border: 1px solid var(--idv-stone);
+  border-radius: 18px;
+  padding: clamp(20px, 2.4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.idv-stage:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(43, 33, 24, 0.1); }
+.idv-stage .idv-stage-num {
+  font-family: var(--idv-mono);
+  font-size: 13px;
+  color: var(--idv-champagne);
+  letter-spacing: 0.18em;
+}
+
+/* ── Method switcher (SCAN → PLAN → 3D → FILM) ───────────────────────────── */
+.idv-switch {
+  display: inline-flex;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid var(--idv-stone);
+  border-radius: 999px;
+  background: #fff;
+}
+.idv-switch button {
+  font-family: var(--idv-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--idv-graphite);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.idv-switch button[aria-pressed='true'] { background: var(--idv-ink); color: var(--idv-porcelain); }
+.idv-switch button:focus-visible { outline: 3px solid var(--idv-pool); outline-offset: 2px; }
+
+/* ── Sequence strip (horizontal scroll of frames) ────────────────────────── */
+.idv-strip {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 14px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.idv-strip > * { flex: 0 0 clamp(220px, 26vw, 340px); scroll-snap-align: start; }
+.idv-strip::-webkit-scrollbar { height: 6px; }
+.idv-strip::-webkit-scrollbar-thumb { background: var(--idv-stone); border-radius: 3px; }
+
+/* ── Comparison rows (expandable, no cramped table) ──────────────────────── */
+.idv-row { border-top: 1px solid var(--idv-stone); }
+.idv-row:last-child { border-bottom: 1px solid var(--idv-stone); }
+.idv-row summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  padding: 22px 4px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--idv-serif);
+  font-size: clamp(20px, 2vw, 28px);
+}
+.idv-row summary::-webkit-details-marker { display: none; }
+.idv-row summary::after {
+  content: '+';
+  font-family: var(--idv-mono);
+  color: var(--idv-champagne);
+  font-size: 18px;
+}
+.idv-row[open] summary::after { content: '−'; }
+.idv-row .idv-row-body { padding: 0 4px 24px; max-width: 640px; }
+
+/* ── Journey timeline ────────────────────────────────────────────────────── */
+.idv-journey { display: grid; gap: 0; }
+.idv-journey-step {
+  display: grid;
+  grid-template-columns: 72px 1fr 1.2fr;
+  gap: clamp(14px, 2.4vw, 40px);
+  padding: 26px 0;
+  border-top: 1px solid var(--idv-stone);
+  align-items: baseline;
+}
+
+/* ── Case-study rail cards ───────────────────────────────────────────────── */
+.idv-case {
+  position: relative;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--idv-stone);
+  background: #fff;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.idv-case:hover { transform: translateY(-6px); box-shadow: 0 28px 56px rgba(43, 33, 24, 0.12); }
+.idv-case img { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+.idv-case:hover img { transform: scale(1.035); }
+.idv-case .idv-case-meta { padding: 18px 20px 22px; display: grid; gap: 6px; }
+
+/* ── CTA band ────────────────────────────────────────────────────────────── */
+.idv-cta {
+  background: var(--idv-bone);
+  border-top: 1px solid var(--idv-stone);
+}
+
+/* ── Scroll reveals: view() where supported, static elsewhere ────────────── */
+@supports (animation-timeline: view()) {
+  .idv-reveal {
+    animation: idv-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+  }
+  @keyframes idv-rise {
+    from { opacity: 0; transform: translateY(36px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ── Reduced motion: everything settles instantly ────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .idv-page *, .idv-page *::before, .idv-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .idv-grid-2, .idv-grid-3, .idv-grid-4 { grid-template-columns: 1fr; }
+  .idv-grid-4 { grid-template-columns: 1fr 1fr; }
+  .idv-journey-step { grid-template-columns: 48px 1fr; }
+  .idv-journey-step > :last-child { grid-column: 2; }
+  .idv-display { font-size: clamp(46px, 13vw, 72px); }
+  .idv-strip > * { flex-basis: 78vw; }
+}
