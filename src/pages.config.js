@@ -90,6 +90,7 @@ const InteriorAiVideoHouse = lazy(() => import('./pages/interior/InteriorAiVideo
 const InteriorCompare = lazy(() => import('./pages/interior/InteriorCompare'));
 const InteriorCompletePresentation = lazy(() => import('./pages/interior/InteriorCompletePresentation'));
 const InteriorCaseStudies = lazy(() => import('./pages/interior/InteriorCaseStudies'));
+const InteriorClientPresentation = lazy(() => import('./pages/interior/InteriorClientPresentation'));
 const InteriorCaseStudy = lazy(() => import('./pages/interior/InteriorCaseStudy'));
 import __Layout from './Layout.jsx';
 
@@ -136,6 +137,7 @@ export const PAGES = {
     "InteriorCompare": InteriorCompare,
     "InteriorCompletePresentation": InteriorCompletePresentation,
     "InteriorCaseStudies": InteriorCaseStudies,
+    "InteriorClientPresentation": InteriorClientPresentation,
     "InteriorCaseStudy": InteriorCaseStudy,
 }
 

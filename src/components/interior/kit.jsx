@@ -4,14 +4,17 @@
  * from '@/components/interior/kit' and nothing else, which keeps twelve
  * parallel-built pages visually identical.
  */
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useScroll, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { METHODS, METHOD_ORDER, STAGES, METHOD_FLOW } from '@/data/interiorDesign';
 import Seo from '@/components/ayesmaj/Seo';
 import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
 import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
 import { SEO_ROUTES } from '@/data/seoMeta';
 import '@/pages/interior/interior.css';
+import '@/pages/interior/interior2.css';
 
 /**
  * Page wrapper: head tags (from the same seoMeta the prerender uses, so
@@ -217,5 +220,109 @@ export function MethodOutro({ method, methods }) {
       </div>
       <hr className="idv-rule idv-rule--ai" />
     </section>
+  );
+}
+
+
+/**
+ * MethodRail -- slim sticky method navigation (addendum s6). Groups the eight
+ * methods by stage; the current route gets the gold pill.
+ */
+export function MethodRail() {
+  const { pathname } = useLocation();
+  return (
+    <nav className="idv2-rail" aria-label="Visualization methods">
+      {STAGES.map((s) => (
+        <React.Fragment key={s.key}>
+          <span className="idv2-rail-group">{s.title.toUpperCase()}</span>
+          {METHOD_ORDER.filter((k) => METHODS[k].stage === s.key).map((k) => (
+            <Link key={k} to={METHODS[k].route} aria-current={pathname.startsWith(METHODS[k].route) ? 'page' : undefined}>
+              {METHODS[k].label.replace('AI ', '').replace('3D ', '')}
+            </Link>
+          ))}
+        </React.Fragment>
+      ))}
+    </nav>
+  );
+}
+
+/**
+ * NextPortal -- the large "next client question" link ending every method
+ * page (addendum s6/s21): explains WHY the next method follows.
+ */
+export function NextPortal({ methodKey, image }) {
+  const flow = METHOD_FLOW[methodKey];
+  if (!flow) return null;
+  const to = flow.nextRoute || (flow.next ? METHODS[flow.next].route : '/Contact');
+  const label = flow.nextLabel || (flow.next ? METHODS[flow.next].label : 'Start a project');
+  return (
+    <Link to={to} className="idv2-portal">
+      {image ? <img src={image} alt="" loading="lazy" decoding="async" /> : null}
+      <div className="idv2-inner">
+        <span className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>THE NEXT CLIENT QUESTION</span>
+        <span className="idv2-h2" style={{ maxWidth: 900 }}>{flow.nextLine}</span>
+        <span className="idv-mono-label" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: '#F5F5F0' }}>
+          NEXT: {label.toUpperCase()} <ArrowRight size={14} aria-hidden="true" />
+        </span>
+      </div>
+    </Link>
+  );
+}
+
+/**
+ * PinSeq -- reusable pinned scroll sequence (addendum s5): tall wrapper,
+ * sticky viewport, crossfading stages with a chip bar. Shares the 21st.dev
+ * scrubber skeleton already used on the hub. Reduced motion and mobile get
+ * a flowing stack instead of the pin.
+ */
+export function PinSeq({ stages, height = '350vh', accentClass = '', ariaLabel = 'Transformation sequence' }) {
+  const ref = useRef(null);
+  const reduced = useReducedMotion();
+  const [simple, setSimple] = useState(false);
+  const [idx, setIdx] = useState(0);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 860px)');
+    const set = () => setSimple(mq.matches);
+    set();
+    mq.addEventListener('change', set);
+    return () => mq.removeEventListener('change', set);
+  }, []);
+
+  useEffect(() => scrollYProgress.on('change', (p) => {
+    setIdx(Math.min(stages.length - 1, Math.floor(p * stages.length)));
+  }), [scrollYProgress, stages.length]);
+
+  const flat = simple || reduced;
+  if (flat) {
+    return (
+      <div className={accentClass} style={{ display: 'grid', gap: 18 }} aria-label={ariaLabel}>
+        {stages.map((s, i) => (
+          <figure key={s.label} className="idv-figure idv-figure--frame" style={{ margin: 0 }}>
+            <img src={s.src} alt={s.alt || s.label} loading="lazy" decoding="async" style={{ borderRadius: 14 }} />
+            <figcaption><span>{'0' + (i + 1) + ' - ' + s.label}</span><span>{s.line}</span></figcaption>
+          </figure>
+        ))}
+      </div>
+    );
+  }
+  const active = stages[idx];
+  return (
+    <div ref={ref} className={'idv2-pin-wrap ' + accentClass} style={{ height }} aria-label={ariaLabel}>
+      <div className="idv2-pin">
+        {stages.map((s, i) => (
+          <img key={s.label} src={s.src} alt={i === idx ? (s.alt || s.label) : ''} loading={i === 0 ? 'eager' : 'lazy'} decoding="async"
+            style={{ opacity: i === idx ? 1 : 0, transition: 'opacity 0.45s ease' }} />
+        ))}
+        <div className="idv2-pin-scrim" />
+        <div style={{ position: 'absolute', left: 'var(--idv-pad)', right: 'var(--idv-pad)', bottom: 'clamp(50px, 8vh, 110px)', display: 'grid', gap: 14, color: '#F5F5F0' }}>
+          <div className="idv2-pinseq-stagebar">
+            {stages.map((s, i) => <span key={s.label} data-active={i === idx}>{'0' + (i + 1) + ' ' + s.label}</span>)}
+          </div>
+          <p className="idv-lede" style={{ color: 'rgba(245,245,240,0.85)', margin: 0 }} aria-live="polite">{active.line}</p>
+        </div>
+      </div>
+    </div>
   );
 }

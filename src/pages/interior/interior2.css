@@ -223,3 +223,70 @@
   .idv2-truths-panel { position: static; max-width: none; margin-top: 12px; }
   .idv2-truths-media img { min-height: 46vh; }
 }
+
+
+/* == Subpage accent system (addendum s20) ================================== */
+.idv2-acc-capture { --acc: #7FA6C8; --acc2: #A35BDA; }
+.idv2-acc-understand { --acc: #D8B75A; --acc2: #E0664B; }
+.idv2-acc-experience { --acc: #E08D4B; --acc2: #A35BDA; }
+.idv2-acc-present { --acc: #D8B75A; --acc2: #7A48FF; }
+.idv2-acc-text {
+  background: linear-gradient(92deg, var(--acc, #D8B75A), var(--acc2, #7A48FF));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.idv2-acc-rule { height: 2px; border: 0; margin: 0; background: linear-gradient(90deg, var(--acc, #D8B75A), var(--acc2, #7A48FF), transparent); opacity: 0.8; }
+
+/* == Method rail (addendum s6) ============================================= */
+.idv2-rail {
+  position: sticky; top: 0; z-index: 40;
+  display: flex; gap: 4px; align-items: center;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  padding: 10px var(--idv-pad);
+  background: rgba(8, 9, 8, 0.92); backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.idv2-rail .idv2-rail-group {
+  font-weight: 700; font-size: 10px; letter-spacing: 0.18em;
+  color: rgba(245, 245, 240, 0.45); padding: 6px 10px 6px 18px; white-space: nowrap;
+}
+.idv2-rail a {
+  white-space: nowrap; text-decoration: none;
+  font-weight: 600; font-size: 11.5px; letter-spacing: 0.08em;
+  color: rgba(245, 245, 240, 0.78);
+  padding: 7px 12px; border-radius: 999px; border: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.idv2-rail a:hover { color: #F5F5F0; border-color: rgba(255, 255, 255, 0.25); }
+.idv2-rail a[aria-current='page'] { color: #07100A; background: var(--idv-champagne); }
+
+/* == Next-method portal (addendum s6/s21) ================================== */
+.idv2-portal {
+  position: relative; display: block; overflow: hidden; text-decoration: none;
+  color: #F5F5F0; background: #0B0A09;
+  border-top: 1px solid rgba(216, 183, 90, 0.35);
+}
+.idv2-portal img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.34; transition: opacity 0.5s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+.idv2-portal:hover img { opacity: 0.5; transform: scale(1.03); }
+.idv2-portal .idv2-inner { position: relative; display: grid; gap: 16px; padding-top: clamp(64px, 8vw, 120px); padding-bottom: clamp(64px, 8vw, 120px); }
+
+/* == PinSeq stage chips ==================================================== */
+.idv2-pinseq-stagebar { display: flex; gap: 8px; flex-wrap: wrap; }
+.idv2-pinseq-stagebar span {
+  font-weight: 700; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(245, 245, 240, 0.6); transition: all 0.25s ease;
+}
+.idv2-pinseq-stagebar span[data-active='true'] { background: var(--acc, #D8B75A); border-color: var(--acc, #D8B75A); color: #07100A; }
+
+/* Floating labels over full-bleed media */
+.idv2-float-label {
+  position: absolute; display: grid; gap: 2px;
+  padding: 10px 14px; border-radius: 12px;
+  background: rgba(8, 8, 10, 0.82); backdrop-filter: blur(10px);
+  border: 1px solid rgba(216, 183, 90, 0.4);
+  color: #F5F5F0; font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em;
+  max-width: 220px;
+}
+@media (max-width: 860px) {
+  .idv2-float-label { position: static; max-width: none; }
+}

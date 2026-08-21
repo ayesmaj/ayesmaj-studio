@@ -220,6 +220,19 @@ export const METHOD_ORDER = [
   'complete-visual-presentation',
 ];
 
+/** The educational journey between methods (addendum §21):
+    what usually precedes a method, and the next client question after it. */
+export const METHOD_FLOW = {
+  'ai-scan-apartment': { next: '3d-floor-plan-apartment', nextLine: 'You captured the apartment. Now make the layout understandable.' },
+  'ai-scan-house': { next: '3d-floor-plan-house', nextLine: 'The house is captured. Now show how it all connects.' },
+  '3d-floor-plan-apartment': { prev: 'ai-scan-apartment', next: 'ai-video-apartment', nextLine: 'The plan explains the space. The film explains the feeling.' },
+  '3d-floor-plan-house': { prev: 'ai-scan-house', next: 'ai-video-house', nextLine: 'You understand the home. Now experience the journey.' },
+  '3d-building-visualization': { prev: '3d-floor-plan-apartment', next: 'complete-visual-presentation', nextLine: 'A building needs more than a render. It needs a world.' },
+  'ai-video-apartment': { prev: '3d-floor-plan-apartment', next: 'complete-visual-presentation', nextLine: 'The film creates emotion. Now build the full presentation.' },
+  'ai-video-house': { prev: '3d-floor-plan-house', next: 'complete-visual-presentation', nextLine: 'The house is more than rooms. Present the experience.' },
+  'complete-visual-presentation': { prev: 'ai-video-house', nextRoute: '/interior-design/client-presentation', nextLabel: 'Client Presentation', nextLine: 'Do not send the client a folder of files. Give them an experience.' },
+};
+
 // ── The communication problem (hub section 2) ───────────────────────────────
 export const COMMUNICATION_GAP = {
   headline: 'The design may be clear to you. That does not mean the client can see it.',

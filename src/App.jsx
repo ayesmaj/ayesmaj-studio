@@ -64,6 +64,7 @@ function AnimatedRoutes() {
             ["/interior-design/ai-video-house", "InteriorAiVideoHouse"],
             ["/interior-design/compare-visualization-methods", "InteriorCompare"],
             ["/interior-design/complete-visual-presentation", "InteriorCompletePresentation"],
+            ["/interior-design/client-presentation", "InteriorClientPresentation"],
             ["/interior-design/case-studies", "InteriorCaseStudies"],
             ["/interior-design/case-studies/:slug", "InteriorCaseStudy"],
           ].map(([path, pageName]) => {

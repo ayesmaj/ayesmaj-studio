@@ -211,7 +211,8 @@ export const SEO_ROUTES = {
       "AYESMAJ Studios turns scans, architectural plans and 3D models into clear spatial visuals, photorealistic interiors, cinematic films and complete branded presentations - for apartments, houses and buildings.",
   },
   "/interior-design/ai-scan-apartment": {
-    title: "AI Apartment Scan | AYESMAJ Studios",
+    title: "AI Apartment Scan & Existing-Condition Visualization | AYESMAJ Studios",
+    ogTitle: "AI Apartment Scan | AYESMAJ Studios",
     description:
       "Turn apartment photos, video or plans into a clean spatial foundation - AI-assisted existing-condition capture for renovations, remote design and furniture planning.",
     h1: "Capture the apartment as it exists today.",
@@ -219,7 +220,8 @@ export const SEO_ROUTES = {
       "An AI-assisted apartment scan builds a fast visual foundation for renovations, redesigns, furniture planning and early client conversations. It is a communication foundation, not survey documentation - key measurements are verified on site.",
   },
   "/interior-design/ai-scan-house": {
-    title: "AI House Scan | AYESMAJ Studios",
+    title: "AI House Scan for Renovation and Visualization | AYESMAJ Studios",
+    ogTitle: "AI House Scan | AYESMAJ Studios",
     description:
       "AI-assisted capture of the existing house - floors, garage, yard and pool become one clear visual foundation for renovation and design.",
     h1: "Turn the existing house into a clear visual foundation.",
@@ -227,7 +229,8 @@ export const SEO_ROUTES = {
       "A house capture brings floors, garage, yard, pool and the building footprint into one coherent picture. A design and communication foundation, not engineering, permit or survey certification.",
   },
   "/interior-design/3d-floor-plan-apartment": {
-    title: "3D Apartment Floor Plan | AYESMAJ Studios",
+    title: "3D Apartment Floor Plans and Interior Visualization | AYESMAJ Studios",
+    ogTitle: "3D Apartment Floor Plan | AYESMAJ Studios",
     description:
       "Furnished 3D floor plans that show furniture scale, circulation and how every room connects - built for client approval, rentals and renovation decisions.",
     h1: "See the complete apartment in one glance.",
@@ -235,7 +238,8 @@ export const SEO_ROUTES = {
       "A furnished 3D floor plan shows what flat drawings cannot: true furniture scale, circulation between rooms, storage and kitchen relationships, bedroom privacy and balcony connections.",
   },
   "/interior-design/3d-floor-plan-house": {
-    title: "3D House Floor Plan | AYESMAJ Studios",
+    title: "3D House Floor Plans with Pool, Garage and Interiors | AYESMAJ Studios",
+    ogTitle: "3D House Floor Plan | AYESMAJ Studios",
     description:
       "3D house floor plans across levels - public and private zones, stair alignment, garage, pool and outdoor living, readable in one view.",
     h1: "Understand the entire home before entering a room.",
@@ -243,7 +247,8 @@ export const SEO_ROUTES = {
       "Multi-level living made readable: public versus private zones, the garage-to-house route, stair alignment, and how indoor living meets pool and yard. Communicates the design; does not replace structural or permit documentation.",
   },
   "/interior-design/3d-building-visualization": {
-    title: "3D Building Visualization | AYESMAJ Studios",
+    title: "3D Building Visualization for Architects and Developers | AYESMAJ Studios",
+    ogTitle: "3D Building Visualization | AYESMAJ Studios",
     description:
       "Building visualization for developments - the full volume, exploded levels, unit locations, amenities and exterior identity for sales and investors.",
     h1: "Show the scale before showing the unit.",
@@ -251,7 +256,8 @@ export const SEO_ROUTES = {
       "For buildings and developments the story starts above the unit: the full volume, exploded levels, where each residence sits, and what the lobby, amenities and roof promise buyers and investors.",
   },
   "/interior-design/ai-video-apartment": {
-    title: "AI Apartment Video | AYESMAJ Studios",
+    title: "AI Apartment Walkthrough Video and Interior Film | AYESMAJ Studios",
+    ogTitle: "AI Apartment Film | AYESMAJ Studios",
     description:
       "Cinematic AI apartment films - movement, light and atmosphere that let clients feel the space before it is built.",
     h1: "Turn the apartment plan into a journey.",
@@ -259,7 +265,8 @@ export const SEO_ROUTES = {
       "An apartment film walks the client from living room to balcony: movement, room sequence, light and atmosphere. Plans remain the spatial source of truth; the film moves the camera, not the walls.",
   },
   "/interior-design/ai-video-house": {
-    title: "AI House Video | AYESMAJ Studios",
+    title: "AI House Walkthrough Video and Property Film | AYESMAJ Studios",
+    ogTitle: "AI House Film | AYESMAJ Studios",
     description:
       "Cinematic AI house films - arrival, flow and indoor-outdoor life for luxury presentation, marketing and homeowner approval.",
     h1: "Show the life between the rooms.",
@@ -281,6 +288,14 @@ export const SEO_ROUTES = {
     h1: "From one plan to a complete visual campaign.",
     blurb:
       "Visualization wins understanding; presentation wins decisions. Identity, website, deck and social content turn project visuals into a modular system built for approval, sales and launch.",
+  },
+  "/interior-design/client-presentation": {
+    title: "Client Presentation Experiences | AYESMAJ Studios",
+    description:
+      "Do not send the client a folder of files. AYESMAJ builds branded presentation experiences - story, plans, rooms, materials, film and approvals in one place.",
+    h1: "Give the client an experience, not a folder.",
+    blurb:
+      "A client presentation gathers the project story, floor plans, room views, materials, film and approval steps into one branded experience built for decisions.",
   },
   "/interior-design/case-studies": {
     title: "Interior Visualization Case Studies | AYESMAJ Studios",
