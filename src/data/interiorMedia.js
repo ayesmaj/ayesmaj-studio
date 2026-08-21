@@ -190,11 +190,22 @@ export const PATEL = {
 /** Interactive showcase models (draco GLB, loaded only on tap).
     Sketchfab showcase assets, not client projects — labeled as such.
     Weights are the served file sizes, shown on the tap-to-load card. */
-export const MODELS = [
-  { key: 'building', name: 'Residential building', file: '/interior-design/models/building.glb', weight: '22.5 MB', credit: 'SHOWCASE MODEL', line: 'The scale story: volume, levels, and where each residence sits.' },
-  { key: 'house', name: 'Coastal hillside house', file: '/interior-design/models/house.glb', weight: '15.7 MB', credit: 'SHOWCASE MODEL', line: 'The whole home at one glance — levels, terraces, and the drop of the site.' },
-  { key: 'apartment', name: 'Apartment floor plan', file: '/interior-design/models/apartment.glb', weight: '4.5 MB', credit: 'SHOWCASE MODEL', line: 'A furnished plan you can turn in your hands.' },
-];
+export const MODELS = {
+  /** The scale ladder, top down: skyline to a single faucet. */
+  spaces: [
+    { key: 'skyline', scale: '01', name: 'Skyline tower', file: '/interior-design/models/skyline.glb', weight: '7.2 MB', credit: 'SHOWCASE MODEL', line: 'Where a project starts: the tower against its city.' },
+    { key: 'building', scale: '02', name: 'Residential building', file: '/interior-design/models/building.glb', weight: '22.5 MB', credit: 'SHOWCASE MODEL', line: 'The scale story: volume, levels, and where each residence sits.' },
+    { key: 'house', scale: '03', name: 'Coastal hillside house', file: '/interior-design/models/house.glb', weight: '15.7 MB', credit: 'SHOWCASE MODEL', line: 'The whole home at one glance - levels, terraces, and the drop of the site.' },
+    { key: 'apartment', scale: '04', name: 'Apartment floor plan', file: '/interior-design/models/apartment.glb', weight: '4.5 MB', credit: 'SHOWCASE MODEL', line: 'A furnished plan you can turn in your hands.' },
+    { key: 'plan-study', scale: '05', name: 'Floor-plan study', file: '/interior-design/models/plan-study.glb', weight: '20 MB', credit: 'SHOWCASE MODEL', line: 'The layout as an object: rooms, walls, and circulation in the round.' },
+  ],
+  objects: [
+    { key: 'kitchen-island', scale: '06', name: 'Kitchen island', file: '/interior-design/models/kitchen-island.glb', weight: '16.7 MB', credit: 'SHOWCASE MODEL', line: 'Where the plan meets daily life.' },
+    { key: 'office-desk', scale: '07', name: 'Office desk', file: '/interior-design/models/office-desk.glb', weight: '8.8 MB', credit: 'SHOWCASE MODEL', line: 'Furniture at true scale.' },
+    { key: 'bookcase', scale: '08', name: 'Organic bookcase', file: '/interior-design/models/bookcase.glb', weight: '1.7 MB', credit: 'SHOWCASE MODEL', line: 'A statement piece, inspectable from every side.' },
+    { key: 'sinks', scale: '09', name: 'Sinks and faucets', file: '/interior-design/models/sinks.glb', weight: '5.6 MB', credit: 'SHOWCASE MODEL', line: 'Down to the fixture the client will touch every day.' },
+  ],
+};
 
 export const PROJECTS = { 'poolside-villa': VILLA, 'canal-apartment': APARTMENT, 'maison-valmont': VALMONT, 'the-patel': PATEL };
 

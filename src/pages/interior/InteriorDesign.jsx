@@ -254,20 +254,34 @@ function SameProject() {
 
 /* ── 5b. Interactive models — tap to load, drag to orbit ──────────────────── */
 function ModelPlayground() {
+  const Card = ({ m, ratio }) => (
+    <div className="idv-reveal" style={{ display: 'grid', gap: 10 }}>
+      <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>SCALE {m.scale}</span></div>
+      <ModelViewer model={m} ratio={ratio} />
+      <p className="idv-lede" style={{ fontSize: 14, margin: 0 }}>{m.line}</p>
+    </div>
+  );
   return (
     <section className="idv-section">
       <SectionHead
-        eyebrow="INTERACTIVE 3D"
+        eyebrow="INTERACTIVE 3D / FROM THE SKYLINE TO THE FAUCET"
         title={<>Drag it. Turn it. <span className="idv-accent">Understand it.</span></>}
-        lede="Stills explain a design; holding it explains it faster. Tap a model and walk around a building, a house, and an apartment plan — the same interactive presentations we build into client experiences. Models load only when you ask."
+        lede="Nine interactive models, one descending scale: a tower, a building, a house, an apartment, a plan - down to the island, the desk, the bookcase and the faucet. The same interactive presentations we build into client experiences. Every model loads only when you ask."
       />
-      <div className="idv-grid-3">
-        {MODELS.map((m) => (
-          <div key={m.key} className="idv-reveal" style={{ display: 'grid', gap: 12 }}>
-            <ModelViewer model={m} ratio="4 / 3" />
-            <p className="idv-lede" style={{ fontSize: 14, margin: 0 }}>{m.line}</p>
+      <div style={{ display: 'grid', gap: 'clamp(28px, 4vw, 48px)' }}>
+        <div className="idv-grid-3">
+          {MODELS.spaces.slice(0, 3).map((m) => <Card key={m.key} m={m} ratio="4 / 3" />)}
+        </div>
+        <div className="idv-grid-2">
+          {MODELS.spaces.slice(3).map((m) => <Card key={m.key} m={m} ratio="16 / 10" />)}
+        </div>
+        <div style={{ display: 'grid', gap: 18 }}>
+          <hr className="idv-rule idv-rule--ai" />
+          <div className="idv-mono-label">DOWN TO THE OBJECT</div>
+          <div className="idv-grid-4">
+            {MODELS.objects.map((m) => <Card key={m.key} m={m} ratio="1 / 1" />)}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
