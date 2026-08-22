@@ -14,12 +14,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher } from '@/components/interior/kit';
 import { IDV_BASE, IDV_EYEBROW, METHODS, GOALS, CASE_STUDIES, CAPABILITIES } from '@/data/interiorDesign';
 import { VILLA, APARTMENT, VALMONT, PATEL, CASE_COVERS, MODELS } from '@/data/interiorMedia';
 import ModelViewer from '@/components/interior/ModelViewer';
 import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
+import InteriorDesignHero from '@/features/interior-design/hero/InteriorDesignHero.jsx';
 import './interior2.css';
 
 const scrollToId = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -31,56 +32,6 @@ const rise = (d = 0) => ({
 });
 
 /* ── 01 · HERO — bright gradient world, growing transformation fan ────────── */
-const HERO_PANELS = [
-  { n: '01', t: 'FLOOR PLAN', src: VILLA.plans[0].src },
-  { n: '02', t: '3D VISUALIZATION', src: VILLA.plans[1].src },
-  { n: '03', t: 'INTERIOR RENDER', src: VILLA.sequence[3].src },
-  { n: '04', t: 'CINEMATIC FILM', src: VILLA.sequence[25].src, play: true },
-];
-
-function Hero() {
-  return (
-    <section className="idv2-section idv2-hero">
-      <DarkSectionBackground asset="silk-wave" position="center right" mobilePosition="center top" overlay={0.58} textSide="left" glow="purple" />
-      <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 0.95fr) 1.35fr', gap: 'clamp(28px, 4vw, 64px)', alignItems: 'center', minHeight: '84svh', paddingBottom: 'clamp(48px, 5vw, 80px)' }}>
-        <div style={{ display: 'grid', gap: 26, alignContent: 'center' }}>
-          <motion.div {...rise(0)}><Eyebrow>{IDV_EYEBROW}</Eyebrow></motion.div>
-          <motion.h1 {...rise(0.08)} className="idv2-display idv2-display--hero">
-            From floor plan<br />to a home<br />
-            <span className="idv2-grad">your client</span><br />
-            <motion.span {...rise(0.55)} className="idv2-grad" style={{ display: 'inline-block' }}>can already feel.</motion.span>
-          </motion.h1>
-          <motion.p {...rise(0.2)} className="idv-lede">
-            We transform scans, architectural plans and 3D models into clear spatial visuals,
-            photorealistic interiors, cinematic films and complete branded presentations.
-          </motion.p>
-          <motion.div {...rise(0.3)} style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <button type="button" onClick={() => scrollToId('stages')} className="idv-btn" style={{ background: 'transparent', color: 'var(--idv-champagne)', border: '1px solid rgba(216,183,90,0.75)' }}>Explore the methods</button>
-            <Link to="/Contact" className="idv-btn" style={{ background: 'transparent', color: '#F5F5F0', border: '1px solid rgba(255,255,255,0.35)' }}>Build my visual presentation</Link>
-          </motion.div>
-          <motion.div {...rise(0.4)} className="idv-mono-label">APARTMENTS · HOUSES · BUILDINGS</motion.div>
-        </div>
-
-        <div className="idv2-fan" aria-label="Poolside Villa — one project growing from plan to cinematic film">
-          {HERO_PANELS.map((p, i) => (
-            <motion.div
-              key={p.n}
-              className="idv2-fan-card"
-              initial={{ opacity: 0, y: 44 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 + i * 0.14, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <img src={p.src} alt={`Poolside Villa — ${p.t.toLowerCase()}`} loading={i < 2 ? 'eager' : 'lazy'} decoding="async" />
-              <span className="idv-fan-label"><span className="idv-fan-num">{p.n}</span><span className="idv-fan-title">{p.t}</span></span>
-              {p.play ? <span className="idv-fan-play" aria-hidden="true"><Play size={20} fill="currentColor" /></span> : null}
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ── 02 · THE PROBLEM — black pinned transformation (raw → editorial) ─────── */
 function Problem() {
   const wrapRef = useRef(null);
@@ -510,7 +461,7 @@ function OneStudio() {
 export default function InteriorDesign() {
   return (
     <InteriorShell path={IDV_BASE}>
-      <Hero />
+      <InteriorDesignHero />
       <hr className="idv2-spill" />
       <StageSystem />
       <Problem />

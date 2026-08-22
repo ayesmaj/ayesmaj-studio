@@ -15,7 +15,7 @@ Two application mechanisms, same assets:
 
 | Section | Text | Old ground | New background | Overlay | Why |
 |---|---|---|---|---|---|
-| Hero | left | custom purple/gold gradient | **05 Silk Wave** via `<DarkSectionBackground>` (owner request 2026-08-21; gold-to-purple silk matches the headline gradient) | .58 + purple glow | first use of 05 on the hub |
+| Hero | left | — | **replaced by the PATEL tower breakout hero** (generated Miami bay photo + real-time 3D; see docs/patel-hero-source-audit.md) | — | 05 is free on the hub again |
 | Problem (pinned) | left | flat `.idv2-dark` wrapper | **02 Architectural Grid** on the wrapper (visible around the pin + in flat/mobile mode) | .70 | brief: THE PROBLEM → 02 |
 | Spatial models | left | CSS grid pattern | **04 Geometric Facets** | .58 | brief: 3D floor plan → 04 |
 | Scroll film | left | `#050505` | **01 Cosmic Energy** (visible in flat/mobile mode and at the pin edges) | .62 | brief: AI VIDEO → 01 |
