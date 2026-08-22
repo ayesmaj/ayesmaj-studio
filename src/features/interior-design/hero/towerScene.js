@@ -138,7 +138,7 @@ export async function createTowerScene(o) {
   const fillFrac = mobile ? SCENE.fill.mobile : SCENE.fill.desktop;
   const camY = roofY + 3.2;
   let w = 1, h = 1;
-  const fx = mobile ? 0.5 : 0.58; // tower centre at this fraction of the canvas width
+  const fx = mobile ? 0.5 : 0.745; // tower centre at this fraction of the canvas width (desktop host = whole hero)
   const fy = mobile ? 0.52 : 0.5; // tower mid-height at this fraction of the canvas height
   function frame() {
     const rect = host.getBoundingClientRect();
@@ -162,19 +162,24 @@ export async function createTowerScene(o) {
   frame();
 
   /* ── interaction ──────────────────────────────────────────────────── */
-  const pointer = { x: 0, y: 0 };                    // NDC over the host
+  const pointer = { x: 0, y: 0, active: false, width: 1, height: 1 }; // NDC over the host; active while the cursor is over the stage
   const target = { yaw: 0, pitch: 0 };
   let dragYaw = 0, dragging = false, dragX = 0;
   const maxDrag = deg(SCENE.drag.maxDeg);
   pointerMove = (e) => {
     const r = rects.host;
-    pointer.x = THREE.MathUtils.clamp(((e.clientX - r.left) / r.width) * 2 - 1, -1, 1);
-    pointer.y = THREE.MathUtils.clamp(-(((e.clientY - r.top) / r.height) * 2 - 1), -1, 1);
+    const nx = ((e.clientX - r.left) / r.width) * 2 - 1, ny = -(((e.clientY - r.top) / r.height) * 2 - 1);
+    pointer.active = Math.abs(nx) <= 1.02 && Math.abs(ny) <= 1.02;
+    pointer.width = r.width; pointer.height = r.height;
+    pointer.x = THREE.MathUtils.clamp(nx, -1, 1);
+    pointer.y = THREE.MathUtils.clamp(ny, -1, 1);
     if (!reduced) { target.yaw = pointer.x * deg(SCENE.parallax.yawDeg); target.pitch = -pointer.y * deg(SCENE.parallax.pitchDeg); }
     if (dragging) { dragYaw = THREE.MathUtils.clamp(dragYaw + (e.clientX - dragX) * deg(SCENE.drag.degPerPx), -maxDrag, maxDrag); dragX = e.clientX; }
   };
   const onDown = (e) => { dragging = true; dragX = e.clientX; glCanvas.setPointerCapture?.(e.pointerId); glCanvas.style.cursor = 'grabbing'; };
   const onUp = (e) => { dragging = false; glCanvas.releasePointerCapture?.(e.pointerId); glCanvas.style.cursor = 'grab'; };
+  const onLeave = () => { pointer.active = false; };
+  document.addEventListener('mouseleave', onLeave);
   glCanvas.addEventListener('pointerdown', onDown);
   glCanvas.addEventListener('pointerup', onUp);
   glCanvas.addEventListener('pointercancel', onUp);
@@ -204,7 +209,7 @@ export async function createTowerScene(o) {
     if (!dragging) dragYaw = damp(dragYaw, 0, SCENE.drag.springLambda, dt);
     rig.rotation.y = damp(rig.rotation.y, target.yaw + dragYaw, 6, dt);
     rig.rotation.x = damp(rig.rotation.x, target.pitch, 6, dt);
-    if (flock && intro > 0.3 && !document.hidden) flock.update(dt, camera, pointer);
+    if (flock && intro > 0.3 && !document.hidden) { flock.update(dt, camera, pointer); host.dataset.birdErr = flock.screenError.toFixed(0); }
     renderer.render(scene, camera);
 
     // blit the same frame into the screen's inner canvas, mapped through (cached) rects
@@ -241,6 +246,7 @@ export async function createTowerScene(o) {
       stop(); ro.disconnect(); io.disconnect();
       document.removeEventListener('visibilitychange', onVis);
       window.removeEventListener('scroll', markDirty);
+      document.removeEventListener('mouseleave', onLeave);
       glCanvas.removeEventListener('webglcontextlost', onLost);
       glCanvas.removeEventListener('pointerdown', onDown);
       glCanvas.removeEventListener('pointerup', onUp);

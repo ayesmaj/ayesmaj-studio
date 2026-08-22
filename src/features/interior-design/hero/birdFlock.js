@@ -102,6 +102,8 @@ export class BirdFlock {
       forwardAxis: new THREE.Vector3(0, 0, 1), up: new THREE.Vector3(0, 1, 0), right: new THREE.Vector3(),
     };
     this.time = 0;
+    this.liveInfluence = 0;
+    this.screenError = 0; // px between the leader and the cursor, for verification
   }
 
   avoidTower(point) {
@@ -125,14 +127,16 @@ export class BirdFlock {
     s.natural.set(Math.cos(orbit) * 21, 16.5 + Math.sin(time * 0.048) * 5.2, Math.sin(orbit) * 19 + 2);
 
     let cursorWeight = 0;
-    if (this.pointerEnabled && this.influence > 0) {
+    const wanted = this.pointerEnabled && pointer.active ? this.influence : 0;
+    this.liveInfluence = THREE.MathUtils.damp(this.liveInfluence, wanted, 3, delta);
+    if (this.liveInfluence > 0.001) {
       const dx = pointer.x - s.previousPointer.x;
       const dy = pointer.y - s.previousPointer.y;
       const speed = Math.hypot(dx, dy) / Math.max(delta, 0.001);
       s.pointerVelocity += (speed - s.pointerVelocity) * (1 - Math.exp(-6 * delta));
       s.previousPointer.set(pointer.x, pointer.y);
       const attenuation = 1 / (1 + s.pointerVelocity * 0.03);
-      cursorWeight = this.influence * attenuation;
+      cursorWeight = this.liveInfluence * attenuation;
 
       s.ndc.set(pointer.x, pointer.y, 0.5).unproject(camera);
       s.ndc.sub(camera.position).normalize();
@@ -173,6 +177,10 @@ export class BirdFlock {
     if (s.delta.length() > step) s.delta.setLength(step);
     s.leader.add(s.delta);
     s.leaderVelocity.copy(s.delta).divideScalar(Math.max(delta, 0.001));
+    if (pointer.active && pointer.width) {
+      const p = s.ndc.copy(s.leader).project(camera);
+      this.screenError = Math.hypot((p.x - pointer.x) * pointer.width / 2, (p.y - pointer.y) * pointer.height / 2);
+    }
 
     for (const bird of this.birds) {
       s.target.copy(s.leader).add(bird.offset);

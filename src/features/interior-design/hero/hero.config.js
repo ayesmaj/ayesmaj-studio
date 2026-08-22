@@ -70,8 +70,9 @@ export const SCENE = {
   /** pixel-ratio caps by tier */
   dpr: { high: 1.5, medium: 1.25, low: 1 },
   birds: { high: 16, medium: 11, low: 10, mobile: 5, reduced: 4 },
-  /** pointer influence on the flock (brief §12: 35–55 %) */
-  birdInfluence: 0.45,
+  /** pointer influence on the flock while the cursor is over the stage (owner 2026-08-21: birds must sit ON the cursor;
+      the brief's 35–55 % read as too loose). Off the stage the flock returns to its own loop. */
+  birdInfluence: 1,
 };
 
 /** Device tiering. `null` = no real-time 3D, show the poster. */
