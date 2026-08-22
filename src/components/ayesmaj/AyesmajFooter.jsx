@@ -268,9 +268,6 @@ export default function AyesmajFooter() {
 
       {/* ---------- GLOBAL UTILITY FOOTER — quieter than the pre-footer above ---------- */}
       <section className="ayes-ufoot" aria-label="Site information">
-        <div className="ayes-ufoot-grain" aria-hidden="true" />
-        <div className="ayes-ufoot-mono" aria-hidden="true" />
-        <div className="ayes-ufoot-light" aria-hidden="true" />
 
         <div className="ayes-ufoot-inner">
           <div className={`ayes-ufoot-grid${mobile ? " is-mobile" : ""}`}>
@@ -400,31 +397,16 @@ export default function AyesmajFooter() {
         }
 
         /* ── utility footer ground ─────────────────────────────── */
-        .ayes-ufoot { position: relative; isolation: isolate; background: #070708; color: #B3ACA2; overflow: hidden; }
+        .ayes-ufoot {
+          position: relative; isolation: isolate; color: #B3ACA2; overflow: hidden;
+          background-color: #070708;
+          background-image: url('/assets/ayesmaj/footer/web/footer-bg.webp');
+          background-image: image-set(url('/assets/ayesmaj/footer/web/footer-bg.avif') type('image/avif'), url('/assets/ayesmaj/footer/web/footer-bg.webp') type('image/webp'));
+          background-size: cover; background-position: center; background-repeat: no-repeat;
+        }
         .ayes-ufoot::before { /* thin gold → purple divider */
           content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px; z-index: 3;
           background: ${GRAD}; opacity: .85;
-        }
-        .ayes-ufoot-grain {
-          position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .045; mix-blend-mode: overlay;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        }
-        .ayes-ufoot-mono { /* giant outline of the A monogram: logo mask minus a shrunken logo mask = ring */
-          position: absolute; left: -3%; bottom: -6%; z-index: 0; pointer-events: none;
-          width: min(44vw, 620px); aspect-ratio: 666 / 566; opacity: .045;
-          background: linear-gradient(135deg, #D8B75A 0%, #A45FDB 60%, #7A48FF 100%);
-          -webkit-mask-image: url('/assets/ayesmaj/logo-a.webp'), url('/assets/ayesmaj/logo-a.webp');
-          mask-image: url('/assets/ayesmaj/logo-a.webp'), url('/assets/ayesmaj/logo-a.webp');
-          -webkit-mask-size: 100% auto, calc(100% - 12px) auto; mask-size: 100% auto, calc(100% - 12px) auto;
-          -webkit-mask-position: center, center; mask-position: center, center;
-          -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-          -webkit-mask-composite: xor; mask-composite: exclude;
-        }
-        .ayes-ufoot-light { /* restrained purple + champagne light along the right edge */
-          position: absolute; right: 0; top: 0; bottom: 0; width: 46%; z-index: 0; pointer-events: none;
-          background:
-            radial-gradient(55% 48% at 100% 22%, rgba(122,72,255,.13), transparent 70%),
-            radial-gradient(48% 40% at 100% 88%, rgba(216,183,90,.09), transparent 70%);
         }
         .ayes-ufoot-inner { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; padding: clamp(64px, 7vw, 104px) clamp(24px, 5vw, 80px) clamp(48px, 5vw, 72px); }
 
@@ -497,7 +479,7 @@ export default function AyesmajFooter() {
           .ayes-ufoot-legal { gap: 0 22px; }
           .ayes-ufoot-bar-inner { grid-template-columns: 1fr; text-align: left; }
           .ayes-ufoot-copy, .ayes-ufoot-tag { text-align: left; white-space: normal; }
-          .ayes-ufoot-mono { width: 78vw; left: -18%; bottom: -4%; }
+          .ayes-ufoot { background-image: url('/assets/ayesmaj/footer/web/footer-bg-1080.webp'); background-position: 68% center; }
         }
         @media (min-width: 768px) and (max-width: 1100px) {
           .ayes-ufoot-grid { grid-template-columns: 1fr 1fr 1fr; }
