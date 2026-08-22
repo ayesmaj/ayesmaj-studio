@@ -53,24 +53,18 @@ const ULINK = {
   fontFamily: FONTS.ui,
   fontSize: 14.5,
   lineHeight: 1.4,
-  color: "#B3ACA2",
   textDecoration: "none",
   display: "inline-block",
   width: "fit-content",
 };
 
-function ULink({ to, children, external, className = "" }) {
-  const cls = `ayes-ulink ${className}`.trim();
-  return external ? (
-    <a href={to} className={cls} style={ULINK}>{children}</a>
-  ) : (
-    <Link to={to} className={cls} style={ULINK}>{children}</Link>
-  );
+function ULink({ to, children }) {
+  return <Link to={to} className="ayes-ulink" style={ULINK}>{children}</Link>;
 }
 
 function ColTitle({ children }) {
   return (
-    <h4
+    <h3
       style={{
         fontFamily: FONTS.ui,
         fontSize: 11,
@@ -82,7 +76,7 @@ function ColTitle({ children }) {
       }}
     >
       {children}
-    </h4>
+    </h3>
   );
 }
 
@@ -99,7 +93,7 @@ function FootCol({ title, mobile, children }) {
   return (
     <details className="ayes-ufoot-acc">
       <summary className="ayes-ufoot-sum">
-        <span
+        <h3
           style={{
             fontFamily: FONTS.ui,
             fontSize: 11,
@@ -107,10 +101,11 @@ function FootCol({ title, mobile, children }) {
             letterSpacing: "0.3em",
             textTransform: "uppercase",
             color: GOLD,
+            margin: 0,
           }}
         >
           {title}
-        </span>
+        </h3>
         <ChevronDown size={16} aria-hidden="true" className="ayes-ufoot-chev" />
       </summary>
       <div className="ayes-ufoot-links" style={{ paddingBottom: 18 }}>{children}</div>
@@ -127,7 +122,12 @@ function usePhoenixTime() {
   }, []);
   const time = new Intl.DateTimeFormat("en-US", { timeZone: "America/Phoenix", hour: "numeric", minute: "2-digit" }).format(now);
   const date = new Intl.DateTimeFormat("en-US", { timeZone: "America/Phoenix", month: "short", day: "numeric", year: "numeric" }).format(now);
-  return { time, date };
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-CA", { timeZone: "America/Phoenix", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
+      .formatToParts(now).map((x) => [x.type, x.value])
+  );
+  const iso = `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}-07:00`;
+  return { time, date, iso };
 }
 
 const SELECTED_WORK = BRANDS.slice(0, 4); // curated portfolio order, real projects only
@@ -138,7 +138,8 @@ export default function AyesmajFooter() {
   const mobile = useIsMobile();
   const phx = usePhoenixTime();
   const email = SITE.brandedEmail || SITE.email;
-  const socials = SOCIALS.map((s) => ({ ...s, href: (SITE.social && SITE.social[s.key]) || "" }));
+  // Only profiles with a URL in SITE.social render — never a dead or invented link.
+  const socials = SOCIALS.map((s) => ({ ...s, href: (SITE.social && SITE.social[s.key]) || "" })).filter((s) => s.href);
 
   return (
     <footer style={{ background: "#050505", overflow: "hidden" }}>
@@ -275,7 +276,7 @@ export default function AyesmajFooter() {
           <div className={`ayes-ufoot-grid${mobile ? " is-mobile" : ""}`}>
             {/* 1 — BRAND */}
             <div className="ayes-ufoot-brand">
-              <Link to="/" aria-label="AYESMAJ Studios — home" style={{ display: "inline-block", textDecoration: "none" }}>
+              <Link to="/" className="ayes-ulogo" aria-label="AYESMAJ Studios — home" style={{ display: "inline-block", textDecoration: "none" }}>
                 <LogoMark size={34} />
               </Link>
               <p
@@ -290,20 +291,15 @@ export default function AyesmajFooter() {
               >
                 {FOOTER_BLURB}
               </p>
-              <div className="ayes-ufoot-social" aria-label="Social profiles">
-                {socials.map(({ key, label, Icon, href }) =>
-                  href ? (
+              {socials.length ? (
+                <nav className="ayes-ufoot-social" aria-label="Social profiles">
+                  {socials.map(({ key, label, Icon, href }) => (
                     <a key={key} href={href} target="_blank" rel="noopener noreferrer" className="ayes-usoc" aria-label={label} title={label}>
                       <Icon size={18} aria-hidden="true" />
                     </a>
-                  ) : (
-                    // Profile not configured in SITE.social yet — shown, not linked, never faked.
-                    <span key={key} className="ayes-usoc is-unset" aria-label={`${label} (link coming soon)`} title={`${label} — link coming soon`}>
-                      <Icon size={18} aria-hidden="true" />
-                    </span>
-                  )
-                )}
-              </div>
+                  ))}
+                </nav>
+              ) : null}
             </div>
 
             {/* 5 — CONTACT (second on mobile, last on desktop via CSS order) */}
@@ -318,19 +314,19 @@ export default function AyesmajFooter() {
                   <Phone size={15} aria-hidden="true" style={{ color: GOLD, flexShrink: 0 }} />
                   {SITE.phone}
                 </a>
-                <div style={{ ...ULINK, display: "flex", alignItems: "flex-start", gap: 10 }}>
+                <div style={{ ...ULINK, color: "#B3ACA2", display: "flex", alignItems: "flex-start", gap: 10 }}>
                   <MapPin size={15} aria-hidden="true" style={{ color: GOLD, flexShrink: 0, marginTop: 3 }} />
                   <span>Phoenix, Arizona<br />Working worldwide</span>
                 </div>
                 <div className="ayes-ufoot-time" style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
                   <Clock size={15} aria-hidden="true" style={{ color: GOLD, flexShrink: 0, marginTop: 2 }} />
                   <div>
-                    <div style={{ fontFamily: FONTS.ui, fontSize: 10.5, letterSpacing: "0.26em", textTransform: "uppercase", color: "#7E766B" }}>
+                    <div style={{ fontFamily: FONTS.ui, fontSize: 10.5, letterSpacing: "0.26em", textTransform: "uppercase", color: "#8A8277" }}>
                       PHX local time
                     </div>
                     <div style={{ fontFamily: FONTS.ui, fontSize: 14.5, color: "#B3ACA2", fontVariantNumeric: "tabular-nums", marginTop: 4 }}>
-                      <time dateTime={new Date().toISOString()}>{phx.time}</time>
-                      <span style={{ display: "block", fontSize: 12.5, color: "#7E766B", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 2 }}>{phx.date}</span>
+                      <time dateTime={phx.iso}>{phx.time}</time>
+                      <span style={{ display: "block", fontSize: 12.5, color: "#8A8277", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: 2 }}>{phx.date}</span>
                     </div>
                   </div>
                 </div>
@@ -362,7 +358,7 @@ export default function AyesmajFooter() {
                     height={40}
                     loading="lazy"
                     decoding="async"
-                    onError={coverError(b)}
+                    onError={(e) => { e.currentTarget.style.visibility = "hidden"; }}
                   />
                   <span>
                     <span className="ayes-uwork-name">{b.name}</span>
@@ -389,9 +385,19 @@ export default function AyesmajFooter() {
       </section>
 
       <style>{`
-        .ayes-strip-track { animation: ayes-marquee 40s linear infinite; }
-        .ayes-strip:hover .ayes-strip-track { animation-play-state: paused; }
-        @keyframes ayes-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .ayes-strip-track {
+          animation: ayes-marquee 40s linear infinite;
+        }
+        .ayes-strip:hover .ayes-strip-track {
+          animation-play-state: paused;
+        }
+        @keyframes ayes-marquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .ayes-strip-track { animation: none; }
+        }
 
         /* ── utility footer ground ─────────────────────────────── */
         .ayes-ufoot { position: relative; isolation: isolate; background: #070708; color: #B3ACA2; overflow: hidden; }
@@ -423,8 +429,8 @@ export default function AyesmajFooter() {
         .ayes-ufoot-inner { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; padding: clamp(64px, 7vw, 104px) clamp(24px, 5vw, 80px) clamp(48px, 5vw, 72px); }
 
         /* ── five columns with soft vertical separators ────────── */
-        .ayes-ufoot-grid { display: grid; grid-template-columns: 1.45fr 0.8fr 1.15fr 1.3fr 1.1fr; gap: clamp(28px, 3.2vw, 48px); align-items: start; }
-        .ayes-ufoot-col { padding-left: clamp(20px, 2.4vw, 32px); border-left: 1px solid rgba(255,255,255,.065); min-height: 100%; }
+        .ayes-ufoot-grid { display: grid; grid-template-columns: 1.45fr 0.8fr 1.15fr 1.3fr 1.1fr; gap: clamp(28px, 3.2vw, 48px); }
+        .ayes-ufoot-col { padding-left: clamp(20px, 2.4vw, 32px); border-left: 1px solid rgba(255,255,255,.065); }
         .ayes-ufoot-contact { order: 5; }
         .ayes-ufoot-links { display: flex; flex-direction: column; gap: 13px; }
         .ayes-ufoot-brand { padding-right: clamp(8px, 2vw, 24px); }
@@ -435,18 +441,16 @@ export default function AyesmajFooter() {
           transition: color .2s ease, border-color .2s ease, transform .2s ease;
         }
         .ayes-usoc:hover, .ayes-usoc:focus-visible { color: ${IVORY}; border-color: rgba(216,183,90,.55); transform: translateY(-2px); }
-        .ayes-usoc.is-unset { opacity: .42; cursor: default; }
-        .ayes-usoc.is-unset:hover { transform: none; color: #B3ACA2; border-color: rgba(255,255,255,.09); }
 
         /* ── links: slide 4px right + gold→purple hairline ─────── */
-        .ayes-ulink { position: relative; cursor: pointer; transition: color .2s ease, transform .2s ease; }
+        .ayes-ulink { position: relative; color: #B3ACA2; cursor: pointer; transition: color .2s ease, transform .2s ease; }
         .ayes-ulink::after {
           content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: ${GRAD};
           transform: scaleX(0); transform-origin: left; transition: transform .2s ease;
         }
         .ayes-ulink:hover, .ayes-ulink:focus-visible { color: ${IVORY}; transform: translateX(4px); }
         .ayes-ulink:hover::after, .ayes-ulink:focus-visible::after { transform: scaleX(1); }
-        .ayes-ulink--sm { font-family: ${FONTS.ui}; font-size: 12.5px; color: #7E766B; text-decoration: none; }
+        .ayes-ulink--sm { display: inline-block; font-family: ${FONTS.ui}; font-size: 12.5px; color: #8A8277; text-decoration: none; }
 
         /* ── email: ivory → gradient text ───────────────────────── */
         .ayes-umail { transition: color .2s ease; }
@@ -459,14 +463,14 @@ export default function AyesmajFooter() {
         .ayes-uwork:hover img, .ayes-uwork:focus-visible img { filter: brightness(1.04); border-color: rgba(216,183,90,.45); }
         .ayes-uwork > span { display: flex; flex-direction: column; gap: 2px; }
         .ayes-uwork-name { font-family: ${FONTS.ui}; font-size: 14px; font-weight: 600; color: ${IVORY}; letter-spacing: .02em; transition: color .2s ease; }
-        .ayes-uwork-cat { font-family: ${FONTS.ui}; font-size: 12px; color: #7E766B; }
+        .ayes-uwork-cat { font-family: ${FONTS.ui}; font-size: 12px; color: #8A8277; }
         .ayes-uwork:hover .ayes-uwork-name { color: ${GOLD}; }
 
         /* ── bottom bar ─────────────────────────────────────────── */
         .ayes-ufoot-bar { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,.07); }
         .ayes-ufoot-bar-inner { max-width: 1320px; margin: 0 auto; padding: 22px clamp(24px, 5vw, 80px); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px 28px; }
         .ayes-ufoot-legal { display: flex; flex-wrap: wrap; gap: 8px 22px; }
-        .ayes-ufoot-copy { font-family: ${FONTS.ui}; font-size: 12.5px; color: #7E766B; text-align: center; white-space: nowrap; }
+        .ayes-ufoot-copy { font-family: ${FONTS.ui}; font-size: 12.5px; color: #8A8277; text-align: center; white-space: nowrap; }
         .ayes-ufoot-tag { font-family: ${FONTS.ui}; font-size: 12px; letter-spacing: .2em; color: #B3ACA2; text-align: right; }
 
         /* ── mobile: brand + contact first, then accordions ─────── */
@@ -481,6 +485,16 @@ export default function AyesmajFooter() {
         .ayes-ufoot-acc[open] .ayes-ufoot-chev { transform: rotate(180deg); }
         .ayes-ufoot-sum:focus-visible { outline: 2px solid ${GOLD}; outline-offset: 3px; border-radius: 4px; }
         @media (max-width: 767px) {
+          /* CSS holds the single-column stack before React swaps in the accordions */
+          .ayes-ufoot-grid { grid-template-columns: 1fr; gap: 0; }
+          .ayes-ufoot-brand { padding: 0 0 34px; }
+          .ayes-ufoot-col { border-left: 0; padding-left: 0; }
+          .ayes-ufoot-contact { order: 0; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 6px; }
+          .ayes-ufoot-col:not(.ayes-ufoot-contact) { padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+          .ayes-ufoot-links { gap: 0; }
+          .ayes-ulink, .ayes-uwork { display: flex; align-items: center; min-height: 44px; }
+          .ayes-ulink--sm { padding: 12px 0; min-height: 44px; }
+          .ayes-ufoot-legal { gap: 0 22px; }
           .ayes-ufoot-bar-inner { grid-template-columns: 1fr; text-align: left; }
           .ayes-ufoot-copy, .ayes-ufoot-tag { text-align: left; white-space: normal; }
           .ayes-ufoot-mono { width: 78vw; left: -18%; bottom: -4%; }
@@ -491,12 +505,11 @@ export default function AyesmajFooter() {
           .ayes-ufoot-col { border-left: 0; padding-left: 0; }
         }
 
-        .ayes-ulink:focus-visible, .ayes-usoc:focus-visible, .ayes-uwork:focus-visible, .ayes-umail:focus-visible {
+        .ayes-ulink:focus-visible, .ayes-usoc:focus-visible, .ayes-uwork:focus-visible, .ayes-umail:focus-visible, .ayes-ulogo:focus-visible {
           outline: 2px solid ${GOLD}; outline-offset: 3px; border-radius: 4px;
         }
         @media (prefers-reduced-motion: reduce) {
-          .ayes-strip-track { animation: none; }
-          .ayes-ulink, .ayes-ulink::after, .ayes-usoc, .ayes-uwork img, .ayes-umail-text, .ayes-ufoot-chev, .ayes-uwork-name { transition: none; }
+          .ayes-ulink, .ayes-ulink::after, .ayes-usoc, .ayes-uwork img, .ayes-umail, .ayes-umail-text, .ayes-ufoot-chev, .ayes-ufoot-sum, .ayes-uwork-name { transition: none; }
           .ayes-ulink:hover, .ayes-ulink:focus-visible, .ayes-usoc:hover, .ayes-usoc:focus-visible { transform: none; }
         }
       `}</style>
