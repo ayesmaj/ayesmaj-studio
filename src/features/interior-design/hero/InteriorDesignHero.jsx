@@ -24,6 +24,7 @@ export default function InteriorDesignHero() {
   const hostRef = useRef(null);
   const glRef = useRef(null);
   const innerRef = useRef(null);
+  const dragRef = useRef(null);
   const sectionRef = useRef(null);
   const [status, setStatus] = useState('idle'); // idle | loading | ready | fallback | error
   const [progress, setProgress] = useState(0);
@@ -41,7 +42,7 @@ export default function InteriorDesignHero() {
       .then(({ createTowerScene }) => {
         if (dead) return null; // left the page during the import: never create a context
         return createTowerScene({
-          glCanvas: glRef.current, innerCanvas: innerRef.current, host: hostRef.current,
+          glCanvas: glRef.current, innerCanvas: innerRef.current, host: hostRef.current, dragEl: dragRef.current,
           tier, mobile: isMobile, onProgress: (p) => { if (!dead) setProgress(p); },
           onLost: () => { if (!dead) setStatus('fallback'); },
         });
@@ -128,8 +129,10 @@ export default function InteriorDesignHero() {
             role={ready ? 'img' : undefined}
             aria-label={ready ? HERO_COPY.canvasLabel : undefined}
             aria-hidden={!ready}
-            style={{ opacity: ready ? 1 : 0, pointerEvents: ready ? 'auto' : 'none' }}
+            style={{ opacity: ready ? 1 : 0 }}
           />
+          {/* drag zone over the tower column only — the canvas itself is click-transparent so copy/CTAs work through it */}
+          <div ref={dragRef} className="idh-drag" aria-hidden="true" style={{ display: ready ? 'block' : 'none' }} />
 
           {fallback ? (
             <img className="idh-poster" src={HERO_ASSETS.poster} alt="The PATEL tower rising out of a digital presentation screen above Biscayne Bay at golden hour." decoding="async" />

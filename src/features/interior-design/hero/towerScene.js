@@ -54,6 +54,7 @@ const damp = (a, b, lambda, dt) => THREE.MathUtils.damp(a, b, lambda, dt);
  */
 export async function createTowerScene(o) {
   const { glCanvas, innerCanvas, host, tier, mobile } = o;
+  const dragEl = o.dragEl || glCanvas;
   const reduced = tier === 'reduced';
   const quality = reduced ? 'medium' : tier;
   const dpr = Math.min(window.devicePixelRatio || 1, SCENE.dpr[quality] ?? 1.25);
@@ -176,15 +177,15 @@ export async function createTowerScene(o) {
     if (!reduced) { target.yaw = pointer.x * deg(SCENE.parallax.yawDeg); target.pitch = -pointer.y * deg(SCENE.parallax.pitchDeg); }
     if (dragging) { dragYaw = THREE.MathUtils.clamp(dragYaw + (e.clientX - dragX) * deg(SCENE.drag.degPerPx), -maxDrag, maxDrag); dragX = e.clientX; }
   };
-  const onDown = (e) => { dragging = true; dragX = e.clientX; glCanvas.setPointerCapture?.(e.pointerId); glCanvas.style.cursor = 'grabbing'; };
-  const onUp = (e) => { dragging = false; glCanvas.releasePointerCapture?.(e.pointerId); glCanvas.style.cursor = 'grab'; };
+  const onDown = (e) => { dragging = true; dragX = e.clientX; dragEl.setPointerCapture?.(e.pointerId); dragEl.style.cursor = 'grabbing'; };
+  const onUp = (e) => { dragging = false; dragEl.releasePointerCapture?.(e.pointerId); dragEl.style.cursor = 'grab'; };
   const onLeave = () => { pointer.active = false; };
   document.addEventListener('mouseleave', onLeave);
-  glCanvas.addEventListener('pointerdown', onDown);
-  glCanvas.addEventListener('pointerup', onUp);
-  glCanvas.addEventListener('pointercancel', onUp);
-  glCanvas.style.cursor = 'grab';
-  glCanvas.style.touchAction = 'pan-y'; // page scroll stays natural on touch
+  dragEl.addEventListener('pointerdown', onDown);
+  dragEl.addEventListener('pointerup', onUp);
+  dragEl.addEventListener('pointercancel', onUp);
+  dragEl.style.cursor = 'grab';
+  dragEl.style.touchAction = 'pan-y'; // page scroll stays natural on touch
 
   /* ── intro (brief §14 stages 3–5): tower resolves, rises, settles ───── */
   let intro = reduced ? 1 : 0;
@@ -248,9 +249,9 @@ export async function createTowerScene(o) {
       window.removeEventListener('scroll', markDirty);
       document.removeEventListener('mouseleave', onLeave);
       glCanvas.removeEventListener('webglcontextlost', onLost);
-      glCanvas.removeEventListener('pointerdown', onDown);
-      glCanvas.removeEventListener('pointerup', onUp);
-      glCanvas.removeEventListener('pointercancel', onUp);
+      dragEl.removeEventListener('pointerdown', onDown);
+      dragEl.removeEventListener('pointerup', onUp);
+      dragEl.removeEventListener('pointercancel', onUp);
       flock?.dispose();
       scene.traverse((obj) => {
         if (obj.geometry) obj.geometry.dispose();

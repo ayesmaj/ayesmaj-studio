@@ -93,7 +93,8 @@
 }
 
 /* breakout 3D view: above the bezel, clipped by the engine to the region above the screen's top edge */
-.idh-gl { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 4; display: block; transition: opacity .6s ease; transform: translateY(calc(var(--p) * -4%)); }
+.idh-gl { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 4; display: block; transition: opacity .6s ease; transform: translateY(calc(var(--p) * -4%)); pointer-events: none; }
+.idh-drag { position: absolute; top: 0; bottom: 0; left: 50%; right: 0; z-index: 5; cursor: grab; }
 .idh-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; z-index: 5; border-radius: 22px; }
 .idh--fallback .idh-screen { display: none; }
 .idh-loader { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%); z-index: 6; display: grid; justify-items: center; gap: 10px; text-align: center; }
@@ -161,7 +162,11 @@
 /* Desktop: the 3D surface covers the WHOLE hero (owner 2026-08-21: birds follow the cursor across the section,
    not just the stage). Copy sits above it (z 3 vs the stage's own stacking context at z 2), so CTAs stay clickable. */
 @media (min-width: 1024px) {
-  .idh-stage { grid-column: 1 / 13; position: absolute; left: 0; right: -14%; top: 0; bottom: 0; min-height: 0; margin: 0; }
+  /* stage above the copy (owner: birds fly over the text); the canvas is pointer-transparent so the copy stays clickable */
+  .idh-stage { grid-column: 1 / 13; position: absolute; left: 0; right: -14%; top: 0; bottom: 0; min-height: 0; margin: 0; z-index: 4; }
+  .idh-stage { pointer-events: none; }            /* the overlay is click-through… */
+  .idh-screen, .idh-drag { pointer-events: auto; } /* …except the screen and the drag zone */
+  .idh-drag { left: 63%; }
   .idh-screen { left: 46%; }
   .idh-credit { right: 14%; }
 }
