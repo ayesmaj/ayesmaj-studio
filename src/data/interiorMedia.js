@@ -196,23 +196,25 @@ export const PATEL = {
 
 /** Interactive showcase models (draco GLB, loaded only on tap).
     Sketchfab showcase assets, not client projects — labeled as such.
-    Weights are the served file sizes, shown on the tap-to-load card. */
+    Weights are the served file sizes, shown on the tap-to-load card.
+    `lite` is the phone build (textures <= 256-512px, fewer vertices) picked by
+    ModelViewer on small / coarse-pointer / low-memory devices (2026-08-21 diet). */
 export const MODELS = {
   /** The real thing: the studio's own development project, full tower model. */
-  featured: { key: 'the-patel', name: 'The Patel — Miami', file: '/interior-design/models/the-patel.glb', weight: '37.7 MB', credit: 'CLIENT PROJECT', line: 'Not a stock asset: the actual tower model behind The Patel development presentation. Walk the massing, the balconies, and the crown.' },
+  featured: { key: 'the-patel', name: 'The Patel — Miami', file: '/interior-design/models/the-patel.glb', weight: '11.8 MB', lite: '/interior-design/models/the-patel-lite.glb', liteWeight: '5.5 MB', credit: 'CLIENT PROJECT', line: 'Not a stock asset: the actual tower model behind The Patel development presentation. Walk the massing, the balconies, and the crown.' },
   /** The scale ladder, top down: skyline to a single faucet. */
   spaces: [
-    { key: 'skyline', scale: '01', name: 'Skyline tower', file: '/interior-design/models/skyline.glb', weight: '7.2 MB', credit: 'SHOWCASE MODEL', line: 'Where a project starts: the tower against its city.' },
-    { key: 'building', scale: '02', name: 'Residential building', file: '/interior-design/models/building.glb', weight: '22.5 MB', credit: 'SHOWCASE MODEL', line: 'The scale story: volume, levels, and where each residence sits.' },
-    { key: 'house', scale: '03', name: 'Coastal hillside house', file: '/interior-design/models/house.glb', weight: '15.7 MB', credit: 'SHOWCASE MODEL', line: 'The whole home at one glance - levels, terraces, and the drop of the site.' },
-    { key: 'apartment', scale: '04', name: 'Apartment floor plan', file: '/interior-design/models/apartment.glb', weight: '4.5 MB', credit: 'SHOWCASE MODEL', line: 'A furnished plan you can turn in your hands.' },
-    { key: 'plan-study', scale: '05', name: 'Floor-plan study', file: '/interior-design/models/plan-study.glb', weight: '20 MB', credit: 'SHOWCASE MODEL', line: 'The layout as an object: rooms, walls, and circulation in the round.' },
+    { key: 'skyline', scale: '01', name: 'Skyline tower', file: '/interior-design/models/skyline.glb', weight: '1.5 MB', lite: '/interior-design/models/skyline-lite.glb', liteWeight: '1.0 MB', credit: 'SHOWCASE MODEL', line: 'Where a project starts: the tower against its city.' },
+    { key: 'building', scale: '02', name: 'Residential building', file: '/interior-design/models/building.glb', weight: '1.0 MB', lite: '/interior-design/models/building-lite.glb', liteWeight: '0.5 MB', credit: 'SHOWCASE MODEL', line: 'The scale story: volume, levels, and where each residence sits.' },
+    { key: 'house', scale: '03', name: 'Coastal hillside house', file: '/interior-design/models/house.glb', weight: '5.1 MB', lite: '/interior-design/models/house-lite.glb', liteWeight: '4.6 MB', credit: 'SHOWCASE MODEL', line: 'The whole home at one glance - levels, terraces, and the drop of the site.' },
+    { key: 'apartment', scale: '04', name: 'Apartment floor plan', file: '/interior-design/models/apartment.glb', weight: '1.5 MB', lite: '/interior-design/models/apartment-lite.glb', liteWeight: '1.3 MB', credit: 'SHOWCASE MODEL', line: 'A furnished plan you can turn in your hands.' },
+    { key: 'plan-study', scale: '05', name: 'Floor-plan study', file: '/interior-design/models/plan-study.glb', weight: '4.4 MB', lite: '/interior-design/models/plan-study-lite.glb', liteWeight: '3.4 MB', credit: 'SHOWCASE MODEL', line: 'The layout as an object: rooms, walls, and circulation in the round.' },
   ],
   objects: [
-    { key: 'kitchen-island', scale: '06', name: 'Kitchen island', file: '/interior-design/models/kitchen-island.glb', weight: '16.7 MB', credit: 'SHOWCASE MODEL', line: 'Where the plan meets daily life.' },
-    { key: 'office-desk', scale: '07', name: 'Office desk', file: '/interior-design/models/office-desk.glb', weight: '8.8 MB', credit: 'SHOWCASE MODEL', line: 'Furniture at true scale.' },
-    { key: 'bookcase', scale: '08', name: 'Organic bookcase', file: '/interior-design/models/bookcase.glb', weight: '1.7 MB', credit: 'SHOWCASE MODEL', line: 'A statement piece, inspectable from every side.' },
-    { key: 'sinks', scale: '09', name: 'Sinks and faucets', file: '/interior-design/models/sinks.glb', weight: '5.6 MB', credit: 'SHOWCASE MODEL', line: 'Down to the fixture the client will touch every day.' },
+    { key: 'kitchen-island', scale: '06', name: 'Kitchen island', file: '/interior-design/models/kitchen-island.glb', weight: '0.9 MB', lite: '/interior-design/models/kitchen-island-lite.glb', liteWeight: '0.4 MB', credit: 'SHOWCASE MODEL', line: 'Where the plan meets daily life.' },
+    { key: 'office-desk', scale: '07', name: 'Office desk', file: '/interior-design/models/office-desk.glb', weight: '0.0 MB', lite: '/interior-design/models/office-desk-lite.glb', liteWeight: '0.0 MB', credit: 'SHOWCASE MODEL', line: 'Furniture at true scale.' },
+    { key: 'bookcase', scale: '08', name: 'Organic bookcase', file: '/interior-design/models/bookcase.glb', weight: '1.1 MB', lite: '/interior-design/models/bookcase-lite.glb', liteWeight: '0.7 MB', credit: 'SHOWCASE MODEL', line: 'A statement piece, inspectable from every side.' },
+    { key: 'sinks', scale: '09', name: 'Sinks and faucets', file: '/interior-design/models/sinks.glb', weight: '1.6 MB', lite: '/interior-design/models/sinks-lite.glb', liteWeight: '0.9 MB', credit: 'SHOWCASE MODEL', line: 'Down to the fixture the client will touch every day.' },
   ],
 };
 

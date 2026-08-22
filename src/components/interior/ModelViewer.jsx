@@ -10,12 +10,47 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, RotateCcw } from 'lucide-react';
 
+/* ── memory guards (owner report 2026-08-21: the 3D files crashed the site) ──
+   1. Only ONE viewer is live at a time: activating a second tears the first
+      down, so the page never holds several WebGL contexts + models.
+   2. Phones / small screens / low-memory devices get the `-lite` file
+      (textures <= 256-512px, fewer vertices) — never the desktop build.
+   3. A viewer that scrolls far out of view unloads itself and goes back to
+      the tap card; a lost WebGL context shows a message instead of hanging. */
+let liveViewer = null;               // () => void — deactivates the current viewer
+const LITE_QUERY = '(max-width: 860px), (pointer: coarse)';
+function wantsLite() {
+  if (typeof window === 'undefined') return false;
+  const mem = navigator.deviceMemory;          // Chrome/Android only; undefined elsewhere
+  return window.matchMedia(LITE_QUERY).matches || (typeof mem === 'number' && mem <= 4);
+}
+function pickFile(model) {
+  return wantsLite() && model.lite ? { file: model.lite, weight: model.liteWeight || model.weight } : { file: model.file, weight: model.weight };
+}
+
 export default function ModelViewer({ model, ratio = '16 / 10' }) {
   const [active, setActive] = useState(false);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
+  const [pick, setPick] = useState(() => ({ file: model.file, weight: model.weight }));
   const mountRef = useRef(null);
   const cleanupRef = useRef(null);
+
+  // decide desktop vs lite on the client (matchMedia is not available at prerender)
+  useEffect(() => { setPick(pickFile(model)); }, [model]);
+
+  // one live viewer per page; unload when scrolled far away
+  useEffect(() => {
+    if (!active) return undefined;
+    if (liveViewer) liveViewer();
+    const off = () => { setActive(false); setProgress(0); };
+    liveViewer = off;
+    const io = mountRef.current && 'IntersectionObserver' in window
+      ? new IntersectionObserver((entries) => { if (!entries[0].isIntersecting) off(); }, { rootMargin: '800px 0px' })
+      : null;
+    io?.observe(mountRef.current);
+    return () => { io?.disconnect(); if (liveViewer === off) liveViewer = null; };
+  }, [active]);
 
   useEffect(() => {
     if (!active || !mountRef.current) return undefined;
@@ -32,8 +67,13 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
         if (dead) return;
 
         const mount = mountRef.current;
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        const lite = wantsLite();
+        const renderer = new THREE.WebGLRenderer({ antialias: !lite, alpha: true, powerPreference: 'high-performance' });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, lite ? 1.25 : 1.5));
+        renderer.domElement.addEventListener('webglcontextlost', (ev) => {
+          ev.preventDefault();
+          if (!dead) setError('The 3D view was stopped to protect this device. Tap to try again.');
+        }, { once: true });
         renderer.setSize(mount.clientWidth, mount.clientHeight);
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         mount.appendChild(renderer.domElement);
@@ -68,13 +108,13 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
 
         const gltf = await new Promise((resolve, reject) => {
           loader.load(
-            model.file,
+            pick.file,
             resolve,
             (e) => { if (e.total) setProgress(Math.round((e.loaded / e.total) * 100)); },
             reject,
           );
         });
-        if (dead) { renderer.dispose(); return; }
+        if (dead) { renderer.dispose(); renderer.domElement.remove(); return; }
 
         // frame the model: center it, pull the camera back by its size
         const root = gltf.scene;
@@ -126,7 +166,7 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
     })();
 
     return () => { dead = true; cleanupRef.current?.(); cleanupRef.current = null; };
-  }, [active, model.file]);
+  }, [active, pick.file]);
 
   return (
     <figure className="idv-figure" style={{ margin: 0 }}>
@@ -157,7 +197,7 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
                 <Box size={26} strokeWidth={1.6} aria-hidden="true" />
               </span>
               <span className="idv-mono-label" style={{ color: 'var(--idv-ink)' }}>TAP TO EXPLORE IN 3D</span>
-              <span className="idv-mono-label">{model.weight}</span>
+              <span className="idv-mono-label">{pick.weight}</span>
             </span>
           </button>
         ) : null}
@@ -167,9 +207,14 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
           </div>
         ) : null}
         {error ? (
-          <div role="alert" style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center' }}>
-            <span className="idv-mono-label">{error}</span>
-          </div>
+          <button
+            type="button"
+            role="alert"
+            onClick={() => { setError(null); setActive(false); }}
+            style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', border: 0, background: 'transparent', cursor: 'pointer', padding: 24 }}
+          >
+            <span className="idv-mono-label" style={{ textAlign: 'center', lineHeight: 1.6 }}>{error}</span>
+          </button>
         ) : null}
         {active && progress === 100 && !error ? (
           <span className="idv-mono-label" style={{ position: 'absolute', left: 12, bottom: 10, display: 'inline-flex', alignItems: 'center', gap: 6, pointerEvents: 'none', color: 'var(--idv-graphite)' }}>
