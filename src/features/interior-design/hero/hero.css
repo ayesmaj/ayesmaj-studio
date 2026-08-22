@@ -19,7 +19,7 @@
 /* 2. AYESMAJ atmosphere — vignette left, purple behind the screen, dark foot, grain, one gold trail */
 .idh-atmo { position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(5,5,7,.94) 0%, rgba(5,5,7,.82) 22%, rgba(5,5,7,.42) 40%, rgba(5,5,7,.06) 60%, rgba(5,5,7,0) 75%),
+    linear-gradient(90deg, rgba(5,5,7,.95) 0%, rgba(5,5,7,.86) 24%, rgba(5,5,7,.76) 38%, rgba(5,5,7,.5) 50%, rgba(5,5,7,.08) 66%, rgba(5,5,7,0) 78%),
     radial-gradient(52% 60% at 74% 66%, rgba(122,72,255,.22), transparent 70%),
     linear-gradient(180deg, rgba(5,5,7,.34) 0%, rgba(5,5,7,0) 22%, rgba(5,5,7,0) 62%, rgba(5,5,7,.78) 92%, #070708 100%);
 }
@@ -41,7 +41,7 @@
   min-height: 106svh; align-items: center;
 }
 .idh-copy { grid-column: 1 / 6; position: relative; z-index: 3; display: grid; gap: 22px; align-content: center; padding-bottom: clamp(80px, 9vw, 130px);
-  opacity: calc(1 - var(--p) * 1.3); transform: translateY(calc(var(--p) * -12px)); }
+  opacity: calc(1 - var(--p) * 1.3); transform: translateY(calc(var(--p) * -12px)); text-shadow: 0 1px 16px rgba(5,5,7,.75); }
 .idh-h1 { font-size: clamp(44px, 4.9vw, 92px); line-height: 0.92; margin: 0; }
 .idh-lede { max-width: 34ch; color: rgba(245,245,240,.8); }
 .idh-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -49,14 +49,15 @@
 .idh-btn--gold { color: var(--gold); border-color: rgba(216,183,90,.75); }
 .idh-btn:hover, .idh-btn:focus-visible { border-color: var(--gold); color: var(--gold); }
 .idh-methods { color: var(--gold) !important; letter-spacing: .3em; }
-.idh-hint { opacity: .7; }
+.idh-hint { color: rgba(245,245,240,.78) !important; }
 
 /* 4. stage */
-.idh-stage { grid-column: 6 / 13; position: relative; z-index: 2; align-self: stretch; min-height: 84svh; transform: translateY(calc(var(--p) * -4%)); }
+.idh-stage { grid-column: 6 / 13; position: relative; z-index: 2; align-self: stretch; min-height: 84svh; margin-right: -14%; }
+.idh--ready { --ready: 1; }
 
 /* digital project screen (brief §8) */
 .idh-screen {
-  position: absolute; left: 4%; right: -14%; top: var(--screen-top); bottom: 5%; z-index: 1;
+  position: absolute; left: 4%; right: 0; top: var(--screen-top); bottom: 5%; z-index: 1;
   border-radius: 22px; overflow: hidden;
   background: #0b0b0e;
   border: 1px solid rgba(216,183,90,.42);
@@ -90,14 +91,14 @@
 }
 
 /* breakout 3D view: above the bezel, clipped by the engine to the region above the screen's top edge */
-.idh-gl { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 4; display: block; transition: opacity .6s ease; }
+.idh-gl { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 4; display: block; transition: opacity .6s ease; transform: translateY(calc(var(--p) * -4%)); }
 .idh-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; z-index: 5; border-radius: 22px; }
 .idh--fallback .idh-screen { display: none; }
 .idh-loader { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%); z-index: 6; display: grid; justify-items: center; gap: 10px; text-align: center; }
 .idh-loader-line { font-size: 11px; letter-spacing: .28em; color: rgba(245,245,240,.72); }
 .idh-loader-bar { width: 160px; height: 1px; background: rgba(255,255,255,.14); overflow: hidden; }
 .idh-loader-bar i { display: block; height: 100%; background: linear-gradient(90deg, #D8B75A, #7A48FF); transform-origin: left; transition: transform .3s ease; }
-.idh-credit { position: absolute; right: 2%; bottom: 1.5%; z-index: 6; opacity: .55; }
+.idh-credit { position: absolute; right: 14%; bottom: 1.5%; z-index: 6; color: rgba(245,245,240,.72) !important; }
 
 /* 5. method strip (brief §15) */
 .idh-strip { position: relative; z-index: 3; max-width: 1480px; margin: clamp(-56px, -4vw, -40px) auto 0; padding: 0 clamp(24px, 5vw, 72px) clamp(28px, 3vw, 44px);
@@ -126,8 +127,9 @@
 @media (max-width: 1023px) {
   .idh-grid { min-height: 0; align-items: start; }
   .idh-copy { grid-column: 1 / 8; padding-bottom: 24px; }
-  .idh-stage { grid-column: 1 / 13; min-height: 0; aspect-ratio: 4 / 5; max-height: 92svh; }
-  .idh-screen { left: 2%; right: -10%; top: 48%; bottom: 4%; }
+  .idh-stage { grid-column: 1 / 13; min-height: 0; aspect-ratio: 4 / 5; max-height: 92svh; margin-right: -10%; }
+  .idh-screen { left: 2%; right: 0; top: 48%; bottom: 4%; }
+  .idh-credit { right: 12%; }
   .idh-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 0; }
   .idh-strip-item:nth-child(3) { border-left: 0; }
   .idh-strip-item:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.07); }
@@ -136,16 +138,16 @@
   .idh-grid { padding-top: 92px; }
   .idh-copy { grid-column: 1 / 13; }
   .idh-h1 { font-size: clamp(38px, 11vw, 52px); }
-  .idh-stage { aspect-ratio: 4 / 5; margin-top: -6%; }
-  .idh-screen { left: -2%; right: -12%; top: 46%; bottom: 3%; border-radius: 18px; }
+  .idh-stage { aspect-ratio: 4 / 5; margin-top: -6%; margin-right: -12%; }
+  .idh-screen { left: -2%; right: 0; top: 46%; bottom: 3%; border-radius: 18px; }
   .idh-screen-text { max-width: 48%; top: 18%; }
   .idh-screen-text strong { font-size: 24px; }
-  .idh-credit { right: 4%; bottom: 2%; }
+  .idh-credit { right: 14%; bottom: 2%; }
   .idh-strip { grid-template-columns: 1fr; padding-left: 16px; padding-right: 16px; }
   .idh-strip-item { border-left: 0; border-top: 1px solid rgba(255,255,255,.07); padding: 16px 8px; }
   .idh-strip-item:first-child { border-top: 0; }
   .idh-atmo { background:
-    linear-gradient(180deg, rgba(5,5,7,.9) 0%, rgba(5,5,7,.7) 30%, rgba(5,5,7,.1) 55%, rgba(5,5,7,0) 70%, rgba(5,5,7,.85) 94%, #070708 100%),
+    linear-gradient(180deg, rgba(5,5,7,.92) 0%, rgba(5,5,7,.8) 34%, rgba(5,5,7,.7) 50%, rgba(5,5,7,.1) 66%, rgba(5,5,7,0) 74%, rgba(5,5,7,.85) 94%, #070708 100%),
     radial-gradient(60% 40% at 70% 70%, rgba(122,72,255,.2), transparent 70%); }
 }
 @media (prefers-reduced-motion: reduce) {

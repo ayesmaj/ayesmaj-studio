@@ -11,6 +11,7 @@ export const HERO_ASSETS = {
     medium: `${BASE}/models/patel-tower-medium.glb`,
     low: `${BASE}/models/patel-tower-low.glb`,
   },
+  towerBytes: { high: 2430632, medium: 1142784, low: 909312 }, // progress fallback when Content-Encoding hides e.total
   bird: `${BASE}/models/patel-bird.glb`,             // the PATEL gull: 4k verts, one 17 s flight clip
   environment: `${BASE}/environment/miami-sunset-pano.webp`, // LDR IBL (PATEL medium tier); .exr tooling unavailable here
   background: {
@@ -68,7 +69,7 @@ export const SCENE = {
   drag: { maxDeg: 8, degPerPx: 0.06, springLambda: 4 },
   /** pixel-ratio caps by tier */
   dpr: { high: 1.5, medium: 1.25, low: 1 },
-  birds: { high: 16, medium: 11, low: 6, mobile: 5, reduced: 4 },
+  birds: { high: 16, medium: 11, low: 10, mobile: 5, reduced: 4 },
   /** pointer influence on the flock (brief §12: 35–55 %) */
   birdInfluence: 0.45,
 };
@@ -87,5 +88,7 @@ export function pickTier() {
   if (reduced) return 'reduced';
   if (narrow || coarse || (typeof mem === 'number' && mem <= 4)) return 'low';
   if (window.innerWidth < 1440) return 'medium';
+  // Firefox/Safari never report deviceMemory: only call it high with plenty of cores.
+  if (typeof mem !== 'number') return (navigator.hardwareConcurrency || 4) >= 8 ? 'high' : 'medium';
   return 'high';
 }

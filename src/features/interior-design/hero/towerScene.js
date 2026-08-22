@@ -58,8 +58,17 @@ export async function createTowerScene(o) {
   const quality = reduced ? 'medium' : tier;
   const dpr = Math.min(window.devicePixelRatio || 1, SCENE.dpr[quality] ?? 1.25);
 
+  const createdAt = performance.now();
   const renderer = new THREE.WebGLRenderer({ canvas: glCanvas, antialias: quality !== 'low', alpha: true, powerPreference: 'high-performance' });
   renderer.setPixelRatio(dpr);
+  let envTex = null, draco = null, flock = null;
+  const onLost = (ev) => { ev.preventDefault(); stop(); o.onLost?.(); };
+  glCanvas.addEventListener('webglcontextlost', onLost);
+  let running = false, raf = 0;
+  const stop = () => { running = false; host.dataset.running = '0'; cancelAnimationFrame(raf); window.removeEventListener('pointermove', onMove); };
+  const onMove = (e) => pointerMove(e);
+  let pointerMove = () => {};
+  try {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = SCENE.toneMappingExposure;
@@ -76,7 +85,7 @@ export async function createTowerScene(o) {
   const fill = new THREE.DirectionalLight(DUSK.fill, 1.25); fill.position.set(-18, 13, 10); scene.add(fill);
 
   // IBL — the PATEL medium-tier LDR panorama (PanoramaEnvironment: rotation 2.9, intensity 1.5).
-  const envTex = await new THREE.TextureLoader().loadAsync(HERO_ASSETS.environment);
+  envTex = await new THREE.TextureLoader().loadAsync(HERO_ASSETS.environment);
   envTex.mapping = THREE.EquirectangularReflectionMapping;
   envTex.colorSpace = THREE.SRGBColorSpace;
   scene.environment = envTex;
@@ -84,10 +93,11 @@ export async function createTowerScene(o) {
   scene.environmentRotation.set(0, SCENE.environmentRotation, 0);
 
   // Tower
-  const draco = new DRACOLoader(); draco.setDecoderPath(HERO_ASSETS.draco);
+  draco = new DRACOLoader(); draco.setDecoderPath(HERO_ASSETS.draco);
   const loader = new GLTFLoader(); loader.setDRACOLoader(draco);
   const towerUrl = HERO_ASSETS.tower[quality === 'low' ? 'low' : quality === 'medium' ? 'medium' : 'high'];
-  const gltf = await new Promise((res, rej) => loader.load(towerUrl, res, (e) => { if (e.total && o.onProgress) o.onProgress(Math.min(0.92, e.loaded / e.total)); }, rej));
+  const expected = HERO_ASSETS.towerBytes[quality === 'low' ? 'low' : quality === 'medium' ? 'medium' : 'high'];
+  const gltf = await new Promise((res, rej) => loader.load(towerUrl, res, (e) => { const total = e.total || expected; if (total && o.onProgress) o.onProgress(Math.min(0.92, e.loaded / total)); }, rej));
   const tower = gltf.scene;
   const styled = new Map();
   tower.traverse((obj) => {
@@ -112,7 +122,6 @@ export async function createTowerScene(o) {
 
   // Birds (PATEL led flock). Reduced motion: a few distant drifters, no pointer term.
   // Touch devices: a slow autonomous flock, fewer birds, no pointer term (brief §12 Mobile).
-  let flock = null;
   {
     const bird = await loader.loadAsync(HERO_ASSETS.bird);
     const count = reduced ? SCENE.birds.reduced : mobile ? SCENE.birds.mobile : SCENE.birds[quality] ?? 8;
@@ -157,16 +166,15 @@ export async function createTowerScene(o) {
   const target = { yaw: 0, pitch: 0 };
   let dragYaw = 0, dragging = false, dragX = 0;
   const maxDrag = deg(SCENE.drag.maxDeg);
-  const onMove = (e) => {
-    const r = host.getBoundingClientRect();
-    pointer.x = ((e.clientX - r.left) / r.width) * 2 - 1;
-    pointer.y = -(((e.clientY - r.top) / r.height) * 2 - 1);
+  pointerMove = (e) => {
+    const r = rects.host;
+    pointer.x = THREE.MathUtils.clamp(((e.clientX - r.left) / r.width) * 2 - 1, -1, 1);
+    pointer.y = THREE.MathUtils.clamp(-(((e.clientY - r.top) / r.height) * 2 - 1), -1, 1);
     if (!reduced) { target.yaw = pointer.x * deg(SCENE.parallax.yawDeg); target.pitch = -pointer.y * deg(SCENE.parallax.pitchDeg); }
     if (dragging) { dragYaw = THREE.MathUtils.clamp(dragYaw + (e.clientX - dragX) * deg(SCENE.drag.degPerPx), -maxDrag, maxDrag); dragX = e.clientX; }
   };
   const onDown = (e) => { dragging = true; dragX = e.clientX; glCanvas.setPointerCapture?.(e.pointerId); glCanvas.style.cursor = 'grabbing'; };
   const onUp = (e) => { dragging = false; glCanvas.releasePointerCapture?.(e.pointerId); glCanvas.style.cursor = 'grab'; };
-  window.addEventListener('pointermove', onMove, { passive: true });
   glCanvas.addEventListener('pointerdown', onDown);
   glCanvas.addEventListener('pointerup', onUp);
   glCanvas.addEventListener('pointercancel', onUp);
@@ -175,16 +183,21 @@ export async function createTowerScene(o) {
 
   /* ── intro (brief §14 stages 3–5): tower resolves, rises, settles ───── */
   let intro = reduced ? 1 : 0;
+  const introGate = createdAt + 450;
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 
   /* ── frame loop with blit ─────────────────────────────────────────── */
   const ictx = innerCanvas.getContext('2d');
   const clock = new THREE.Clock();
-  let raf = 0, running = false, lastClip = '';
+  let lastClip = '', visible = false;
+  // Layout reads happen only when something moved (resize / scroll), never per frame.
+  const rects = { host: host.getBoundingClientRect(), g: null, s: null, dirty: true };
+  const markDirty = () => { rects.dirty = true; };
+  const readRects = () => { rects.host = host.getBoundingClientRect(); rects.g = glCanvas.getBoundingClientRect(); rects.s = innerCanvas.getBoundingClientRect(); rects.dirty = false; };
   const tick = () => {
     raf = requestAnimationFrame(tick);
     const dt = Math.min(clock.getDelta(), 0.05);
-    if (intro < 1) intro = Math.min(1, intro + dt / 1.25);
+    if (intro < 1 && performance.now() > introGate) intro = Math.min(1, intro + dt / 1.6);
     const e = easeOut(intro);
     rig.position.y = (1 - e) * -2.4;
     rig.scale.setScalar(0.96 + 0.04 * e);
@@ -194,36 +207,41 @@ export async function createTowerScene(o) {
     if (flock && intro > 0.3 && !document.hidden) flock.update(dt, camera, pointer);
     renderer.render(scene, camera);
 
-    // blit the same frame into the screen's inner canvas, mapped through live rects
-    const g = glCanvas.getBoundingClientRect();
-    const s = innerCanvas.getBoundingClientRect();
+    // blit the same frame into the screen's inner canvas, mapped through (cached) rects
+    if (rects.dirty) readRects();
+    const g = rects.g, s = rects.s;
     if (g.width > 0 && s.width > 0) {
       const k = glCanvas.width / g.width;
       const cw = Math.round(s.width * k), ch = Math.round(s.height * k);
       if (innerCanvas.width !== cw || innerCanvas.height !== ch) { innerCanvas.width = cw; innerCanvas.height = ch; }
+      // snap the source offset to device pixels so both surfaces agree on the breakout line
+      const sy = Math.round((s.top - g.top) * k), sx = Math.round((s.left - g.left) * k);
       ictx.clearRect(0, 0, cw, ch);
-      ictx.drawImage(glCanvas, (s.left - g.left) * k, (s.top - g.top) * k, cw, ch, 0, 0, cw, ch);
-      // breakout: the GL canvas only shows above the screen's top edge
-      const clip = `inset(0 0 ${Math.max(0, Math.round(g.bottom - s.top))}px 0)`;
+      ictx.drawImage(glCanvas, sx, sy, cw, ch, 0, 0, cw, ch);
+      const clip = `inset(0 0 ${Math.max(0, Math.round(g.height - sy / k))}px 0)`;
       if (clip !== lastClip) { glCanvas.style.clipPath = clip; lastClip = clip; }
     }
   };
-  const start = () => { if (!running) { running = true; clock.start(); raf = requestAnimationFrame(tick); } };
-  const stop = () => { running = false; cancelAnimationFrame(raf); };
+  const start = () => {
+    if (running || !visible || document.hidden) return;
+    running = true; host.dataset.running = '1'; rects.dirty = true; clock.start(); raf = requestAnimationFrame(tick);
+    window.addEventListener('pointermove', onMove, { passive: true });
+  };
 
-  const ro = new ResizeObserver(frame);
+  const ro = new ResizeObserver(() => { frame(); markDirty(); });
   ro.observe(host);
-  const io = new IntersectionObserver((entries) => (entries[0].isIntersecting ? start() : stop()), { rootMargin: '120px 0px' });
-  io.observe(host);
+  const io = new IntersectionObserver((entries) => { visible = entries[entries.length - 1].isIntersecting; if (visible) start(); else stop(); }, { rootMargin: '120px 0px' });
+  io.observe(host); // fires immediately with the current state
   const onVis = () => (document.hidden ? stop() : start());
   document.addEventListener('visibilitychange', onVis);
-  start();
+  window.addEventListener('scroll', markDirty, { passive: true });
 
   return {
     dispose() {
       stop(); ro.disconnect(); io.disconnect();
       document.removeEventListener('visibilitychange', onVis);
-      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('scroll', markDirty);
+      glCanvas.removeEventListener('webglcontextlost', onLost);
       glCanvas.removeEventListener('pointerdown', onDown);
       glCanvas.removeEventListener('pointerup', onUp);
       glCanvas.removeEventListener('pointercancel', onUp);
@@ -232,8 +250,14 @@ export async function createTowerScene(o) {
         if (obj.geometry) obj.geometry.dispose();
         if (obj.material) (Array.isArray(obj.material) ? obj.material : [obj.material]).forEach((m) => { Object.values(m).forEach((v) => v?.isTexture && v.dispose()); m.dispose(); });
       });
-      envTex.dispose(); draco.dispose(); renderer.dispose();
+      envTex?.dispose(); draco?.dispose(); renderer.dispose();
       renderer.forceContextLoss?.();
     },
   };
+  } catch (err) {
+    // Never leave an orphaned WebGL context behind (unmount mid-load, 404, decode failure).
+    stop(); glCanvas.removeEventListener('webglcontextlost', onLost);
+    flock?.dispose(); envTex?.dispose(); draco?.dispose(); renderer.dispose(); renderer.forceContextLoss?.();
+    throw err;
+  }
 }

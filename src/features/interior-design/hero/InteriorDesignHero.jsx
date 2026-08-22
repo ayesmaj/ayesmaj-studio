@@ -27,22 +27,26 @@ export default function InteriorDesignHero() {
   const sectionRef = useRef(null);
   const [status, setStatus] = useState('idle'); // idle | loading | ready | fallback | error
   const [progress, setProgress] = useState(0);
-  const [mobile, setMobile] = useState(false);
+  const [touch, setTouch] = useState(false);
 
   // 3D lifecycle: tier → lazy engine → dispose on unmount
   useEffect(() => {
     const tier = pickTier();
     const isMobile = window.innerWidth < 768;
-    setMobile(isMobile);
+    setTouch(isMobile || tier === 'reduced' || window.matchMedia('(pointer: coarse)').matches);
     if (!tier) { setStatus('fallback'); return undefined; }
     let scene = null, dead = false;
     setStatus('loading');
     import('./towerScene.js')
-      .then(({ createTowerScene }) => createTowerScene({
-        glCanvas: glRef.current, innerCanvas: innerRef.current, host: hostRef.current,
-        tier, mobile: isMobile, onProgress: (p) => { if (!dead) setProgress(p); },
-      }))
-      .then((s) => { if (dead) { s.dispose(); return; } scene = s; setStatus('ready'); })
+      .then(({ createTowerScene }) => {
+        if (dead) return null; // left the page during the import: never create a context
+        return createTowerScene({
+          glCanvas: glRef.current, innerCanvas: innerRef.current, host: hostRef.current,
+          tier, mobile: isMobile, onProgress: (p) => { if (!dead) setProgress(p); },
+          onLost: () => { if (!dead) setStatus('fallback'); },
+        });
+      })
+      .then((s) => { if (!s) return; if (dead) { s.dispose(); return; } scene = s; setStatus('ready'); })
       .catch((err) => { console.error('Interior hero 3D failed; showing poster', err); if (!dead) setStatus('fallback'); });
     return () => { dead = true; scene?.dispose(); };
   }, []);
@@ -69,13 +73,14 @@ export default function InteriorDesignHero() {
     : { initial: { opacity: 0, y: 22 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay, ease: EASE } };
   const loading = status === 'loading';
   const fallback = status === 'fallback';
+  const ready = status === 'ready';
 
   return (
     <section ref={sectionRef} className={`idh idh--${status}${reduced ? ' idh--reduced' : ''}`} aria-label="Interior Design Visualization">
       <picture className="idh-bg" aria-hidden="true">
         <source media="(max-width: 767px)" srcSet={HERO_ASSETS.background.mobile} type="image/webp" />
         <source srcSet={HERO_ASSETS.background.avif} type="image/avif" />
-        <img src={HERO_ASSETS.background.webp} alt="" decoding="async" fetchPriority="high" />
+        <img src={HERO_ASSETS.background.webp} alt="" decoding="async" fetchpriority="high" />
       </picture>
       <div className="idh-atmo" aria-hidden="true" />
 
@@ -94,7 +99,7 @@ export default function InteriorDesignHero() {
           </motion.div>
           <motion.div {...rise(1.4)} className="idv-mono-label idh-methods">{HERO_COPY.methods}</motion.div>
           {!fallback ? (
-            <motion.div {...rise(1.5)} className="idv-mono-label idh-hint">{mobile ? HERO_COPY.hintTouch : HERO_COPY.hint}</motion.div>
+            <motion.div {...rise(1.5)} className="idv-mono-label idh-hint">{touch ? HERO_COPY.hintTouch : HERO_COPY.hint}</motion.div>
           ) : null}
         </div>
 
@@ -120,9 +125,10 @@ export default function InteriorDesignHero() {
           <canvas
             ref={glRef}
             className="idh-gl"
-            role="img"
-            aria-label={HERO_COPY.canvasLabel}
-            style={{ opacity: status === 'ready' ? 1 : 0 }}
+            role={ready ? 'img' : undefined}
+            aria-label={ready ? HERO_COPY.canvasLabel : undefined}
+            aria-hidden={!ready}
+            style={{ opacity: ready ? 1 : 0, pointerEvents: ready ? 'auto' : 'none' }}
           />
 
           {fallback ? (

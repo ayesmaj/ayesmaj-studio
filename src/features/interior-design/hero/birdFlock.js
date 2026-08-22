@@ -209,10 +209,7 @@ export class BirdFlock {
   }
 
   dispose() {
-    for (const bird of this.birds) {
-      bird.mixer.stopAllAction();
-      bird.carrier.traverse((o) => { if (o.isMesh) { o.geometry?.dispose(); } });
-    }
-    this.birds = [];
+    for (const bird of this.birds) { bird.mixer.stopAllAction(); bird.mixer.uncacheRoot(bird.mixer.getRoot()); }
+    this.birds = []; // geometry/materials are disposed by the scene traversal in towerScene.dispose()
   }
 }

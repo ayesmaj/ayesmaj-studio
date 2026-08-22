@@ -206,9 +206,9 @@ export const SEO_ROUTES = {
     title: "Interior Design Visualization | AYESMAJ Studios",
     description:
       "AI scans, 3D floor plans, building visualization, photorealistic interiors, cinematic AI video and complete client presentations - one connected visual system for spatial projects.",
-    h1: "From floor plan to a home your client can already feel.",
+    h1: "From model to a world your client can enter.",
     blurb:
-      "AYESMAJ Studios turns scans, architectural plans and 3D models into clear spatial visuals, photorealistic interiors, cinematic films and complete branded presentations - for apartments, houses and buildings.",
+      "We transform scans, plans and architectural models into immersive visual experiences clients can understand, explore and remember - apartments, houses and buildings, from AI scan to cinematic film.",
   },
   "/interior-design/ai-scan-apartment": {
     title: "AI Apartment Scan & Existing-Condition Visualization | AYESMAJ Studios",
