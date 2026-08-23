@@ -246,15 +246,23 @@ function ChapterSwitcher({ c, M }) {
 }
 
 function ChapterModel({ c }) {
+  const models = c.models || [c.model];
+  const [i, setI] = useState(0);
+  const model = models[i] || models[0];
   return (
     <section className={`idv2-section idv2-spatial idv2-bgc idv2-bgc-${c.bgc} idv2-m3d-section`}>
-      <div className="idv2-m3d" aria-label="Interactive 3D model stage"><ModelViewer model={c.model} auto stage shift={c.flip ? -0.25 : 0.25} /></div>
+      <div className="idv2-m3d" aria-label="Interactive 3D model stage"><ModelViewer key={model.key} model={model} auto stage shift={c.flip ? -0.25 : 0.25} /></div>
       <div className="idv2-inner idv2-m3d-copy">
         <div className={`idv2-m3d-col${c.flip ? ' idv2-m3d-col--right' : ''}`}>
           <Eyebrow>{c.eyebrow}</Eyebrow>
           <Headline className="idv2-h2" lines={c.title} gradient={c.gradient || []} />
           {c.lede ? <p className="idv-lede">{c.lede}</p> : null}
-          <div className="idv2-m3d-meta"><div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>{c.model.credit}</span> · {c.model.name.toUpperCase()} · DRAG TO TURN</div></div>
+          {models.length > 1 ? (
+            <div className="idv2-chips" role="group" aria-label="Choose a model">
+              {models.map((m, k) => <button key={m.key} type="button" className="idv2-chip" aria-pressed={k === i} onClick={() => setI(k)}>{m.name}</button>)}
+            </div>
+          ) : null}
+          <div className="idv2-m3d-meta"><div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>{model.credit}</span> · {model.name.toUpperCase()} · DRAG TO TURN</div></div>
         </div>
       </div>
     </section>

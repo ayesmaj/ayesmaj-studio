@@ -20,7 +20,7 @@ const cfg = {
     layers: ['02_apartment_source', '03_apartment_clean_plan', '10_apartment_film_frame'],
   },
   chapters: [
-    { kind: 'split', bright: 'lilac', eyebrow: 'THE 3D FLOOR PLAN', title: ['The whole flat', 'in one view.'], gradient: [1], lede: 'Furniture at true scale, every room in relation to the next, the balcony and the water beyond — read in seconds by people who cannot read drawings.', media: ['04_apartment_3d_plan', '03_apartment_clean_plan', '02_apartment_source'] },
+    { kind: 'split', bright: 'lilac', eyebrow: 'THE 3D FLOOR PLAN', title: ['The whole flat', 'in one view.'], gradient: [1], lede: 'Furniture at true scale, every room in relation to the next, the balcony and the water beyond — read in seconds by people who cannot read drawings.', media: ['04_apartment_3d_plan', '03_apartment_clean_plan'] },
     { kind: 'full', media: '05_apartment_living', eyebrow: 'THE LIVING ROOM', title: ['Then step inside.'], gradient: [0] },
     { kind: 'compare', bgc: '06', eyebrow: 'SCAN → VISUALIZATION', title: ['Same apartment.', 'Design-ready.'], gradient: [1], lede: 'The source frame and the visualization generated from it, with walls, openings and furniture positions locked.', before: '11_apartment_before', after: '11_apartment_after', beforeLabel: 'SOURCE', afterLabel: 'VISUALIZED' },
     { kind: 'gallery', columns: 4, eyebrow: 'ROOM BY ROOM', title: ['Kitchen, bedroom,', 'bathroom, balcony.'], gradient: [1], lede: 'The same apartment, every room — one palette, one light, one project.', media: ['06_apartment_kitchen', '07_apartment_bedroom', '08_apartment_bathroom', '09_apartment_balcony'] },

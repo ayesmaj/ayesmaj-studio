@@ -40,12 +40,16 @@
 .idsp-h2 { font-size: clamp(48px, 6vw, 96px) !important; line-height: 0.9 !important; }
 
 /* split chapter: dominant media + side frames / list */
-.idsp-split { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(18px, 2.4vw, 36px); align-items: start; }
+.idsp-split { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(18px, 2.4vw, 36px); align-items: stretch; }
+.idsp-split-main { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; }
+.idsp-split-main picture { display: block; min-height: 0; height: 100%; }
+.idsp-split-main picture img { height: 100%; }
 .idsp-split--flip { grid-template-columns: 1fr 1.5fr; }
 .idsp-split--flip .idsp-split-main { order: 2; }
 .idsp-split figure { margin: 0; }
 .idsp-split-main picture img, .idsp-split-side picture img { border-radius: 18px; }
 .idsp-split-side { display: grid; gap: 18px; align-content: start; }
+.idsp-split-side picture img { height: auto !important; } /* Pic sets height:100% inline; inside a stretched grid column that resolves against the row and pushes the caption out of the figure */
 .idsp-list { list-style: none; margin: 0; padding: 0; display: grid; }
 .idsp-list li { display: grid; gap: 4px; padding: 14px 0; border-top: 1px solid rgba(255,255,255,.14); font-size: 15px; }
 .idv2-bright .idsp-list li, .idv2-gradient-soft .idsp-list li { border-top-color: rgba(20,18,16,.14); }

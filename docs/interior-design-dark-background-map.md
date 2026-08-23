@@ -96,15 +96,15 @@ canvas or photo-led layouts — no flat dark band to replace); legal pages (text
 `.idv2-bgc--fade-top` (interior-bg.css) softens the top edge of an image section; `--bgc-fade`
 carries the colour of the block above.
 
-## Spaces & Property types pages (2026-08-22)
+## Spaces & Property types pages (2026-08-23)
 
 Six pages under `/interior-design/*` rendered by `src/pages/interior/spaces/SpacePage.jsx`. Hero backgrounds are set via `hero.bgAsset` (dark heroes) and chapter backgrounds via `bgc` on `split`/`model`/`film`/`compare` chapters. Rule unchanged: one asset per page, footer included (03 is footer-only).
 
 | Page | Hero | Chapter backgrounds | Footer | Uniqueness |
 |---|---|---|---|---|
-| /interior-design/kitchens | bright | 06 concrete, 08 topographic, 01 cosmic | 03 stone & bronze | OK |
+| /interior-design/kitchens | bright | 06 concrete, 05 silk, 08 topographic, 01 cosmic | 03 stone & bronze | OK |
 | /interior-design/bathrooms | dark · 07 light leak | 06 concrete, 01 cosmic | 03 stone & bronze | OK |
-| /interior-design/furniture-decor | dark · 05 silk | 08 topographic, 01 cosmic | 03 stone & bronze | OK |
+| /interior-design/furniture-decor | dark · 05 silk | 08 topographic, 06 concrete, 01 cosmic | 03 stone & bronze | OK |
 | /interior-design/apartments | dark · 02 architectural grid | 06 concrete, 01 cosmic | 03 stone & bronze | OK |
 | /interior-design/homes | full | 04 facets, 01 cosmic | 03 stone & bronze | OK |
 | /interior-design/buildings | breakout | 04 facets, 01 cosmic | 03 stone & bronze | OK |

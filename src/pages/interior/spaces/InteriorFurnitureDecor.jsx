@@ -1,5 +1,8 @@
 import React from 'react';
 import SpacePage from './SpacePage.jsx';
+import { MODELS } from '@/data/interiorMedia';
+
+const DECOR_MODELS = ['office-desk', 'bookcase'].map((key) => MODELS.objects.find((m) => m.key === key)).filter(Boolean);
 
 const cfg = {
   path: '/interior-design/furniture-decor',
@@ -21,9 +24,11 @@ const cfg = {
   chapters: [
     { kind: 'split', bright: 'lilac', flip: true, eyebrow: 'THE FURNITURE PLAN', title: ['Placement', 'before pieces.'], gradient: [1], lede: 'Circulation, sightlines and scale are decided on the plan first — then every piece is chosen to fit the room it will live in.', media: ['04_furniture_plan', '05_reference_direction'], items: [['CIRCULATION', 'Clear routes through every room'], ['SCALE', 'Pieces sized to the shell'], ['LAYERS', 'Rug, seating, table, light'], ['IDENTITY', 'One language across rooms']] },
     { kind: 'full', media: '03_furnished_room', eyebrow: 'THE STYLED ROOM', title: ['Textiles, art,', 'books and light.'], gradient: [] },
-    { kind: 'compare', bgc: '08', eyebrow: 'SHELL → ROOM', title: ['Empty shell.', 'Finished room.'], gradient: [1], lede: 'The exact same room — walls, windows and floor untouched — before and after furniture and decor design.', before: '02_empty_room', after: '03_furnished_room', beforeLabel: 'SHELL', afterLabel: 'FURNISHED' },
-    { kind: 'gallery', columns: 3, eyebrow: 'COLLECTIONS', title: ['Living, bedroom,', 'dining.'], gradient: [1], lede: 'Three rooms, one palette: olive and neutral fabrics, walnut and oak, stone, bronze — and the objects that make it lived in.', media: ['06_living_collection', '07_bedroom_collection', '08_dining_collection', '09_decor_detail', '10_material_palette', '05_reference_direction'] },
-    { kind: 'film', bgc: '01', eyebrow: 'THE STYLED ROOM, IN MOTION', title: ['Seen as film.'], gradient: [0], lede: 'A styled room reads differently as the camera moves — the frame below is a still from that language.', poster: '01_furniture_decor_hero' },
+    { kind: 'compare', bgc: '08', eyebrow: 'EMPTY → FURNISHED', title: ['Empty room.', 'Finished room.'], gradient: [1], lede: 'The exact same lounge — walls, windows, floor and joinery untouched — empty, and then furnished and styled. Poolside Villa; both views visualized.', before: '02_empty_room', after: '03_furnished_room', beforeLabel: 'EMPTY', afterLabel: 'FURNISHED' },
+    { kind: 'gallery', columns: 3, eyebrow: 'COLLECTIONS', title: ['Living, bedroom,', 'dining.'], gradient: [1], lede: 'Three rooms, one palette: olive and neutral fabrics, walnut and oak, stone, bronze — and the objects that make it lived in.', media: ['06_living_collection', '07_bedroom_collection', '08_dining_collection', '21_office_collection', '09_decor_detail', '10_material_palette'] },
+    { kind: 'gallery', bright: 'lilac', columns: 3, eyebrow: 'THE DECOR LIBRARY', title: ['Pieces to choose from,', 'in one language.'], gradient: [1], lede: 'Sofas, chairs, lamps, rugs, tables, ceramics, art and textiles — studio studies in the same palette, so every option already belongs in the room.', media: ['12_decor_sofa', '13_decor_armchair', '14_decor_floor_lamp', '15_decor_pendant', '16_decor_rug', '17_decor_side_table', '18_decor_ceramics', '19_decor_art', '20_decor_textiles'] },
+    { kind: 'model', bgc: '06', models: DECOR_MODELS, eyebrow: 'PIECES, IN THE ROUND', title: ['Turn the desk.', 'Open the bookcase.'], gradient: [0], lede: 'Furniture as real-time 3D — proportions, joinery and material read from every side before a piece is chosen for the room.' },
+    { kind: 'film', bgc: '01', eyebrow: 'THE STYLED ROOM, IN MOTION', title: ['Seen as film.'], gradient: [0], lede: 'A styled room reads differently as the camera moves — the frame below is a still from that language.', poster: '11_furniture_cinematic_frame' },
   ],
   next: { to: '/interior-design/apartments', label: 'Apartments', line: 'See the entire apartment. Then step inside.', media: '09_decor_detail' },
   cta: { eyebrow: 'FURNITURE & DECOR', headline: 'The space is built. Now give it a life.', copy: 'Send the plan or photos of the finished shell. We return the furniture plan, the reference direction and the styled rooms as imagery.', primary: { label: 'Start a furnishing project', to: '/Contact' }, secondary: { label: 'All interior design', to: '/interior-design' } },
