@@ -167,7 +167,16 @@ function ChapterSplit({ c, M, dark }) {
   return (
     <section className={`idv2-section ${dark ? `idv2-spatial idv2-bgc idv2-bgc-${c.bgc}` : c.bright === 'lilac' ? 'idv2-gradient-soft' : 'idv2-bright'}`}>
       <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 4vw, 52px)' }}>
-        <ChapterHead c={c} />
+        {c.model ? (
+          <div className="idsp-head-row">
+            <ChapterHead c={c} />
+            <div className="idsp-head-model idv2-reveal">
+              <ModelViewer model={c.model} auto ratio="21 / 10" />
+            </div>
+          </div>
+        ) : (
+          <ChapterHead c={c} />
+        )}
         <div className={`idsp-split${c.flip ? ' idsp-split--flip' : ''}`}>
           <figure className="idsp-split-main idv2-reveal"><Pic m={main} /><Caption m={main} /></figure>
           <div className="idsp-split-side">
