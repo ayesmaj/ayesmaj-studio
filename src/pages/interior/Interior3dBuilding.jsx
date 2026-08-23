@@ -98,12 +98,12 @@ function Hero() {
 function BuildingInTheRound() {
   const trio = ['3d-floor-plan-apartment', '3d-floor-plan-house'];
   return (
-    <section className="idv2-section idv2-spatial idv2-acc-understand idv2-bgc idv2-bgc-02">
-      <div className="idv2-inner" style={{ display: 'grid', gridTemplateColumns: '1.35fr 1fr', gap: 'clamp(24px, 3.5vw, 56px)', alignItems: 'center' }}>
-        <div className="idv2-reveal">
-          <ModelViewer model={MODELS.featured} ratio="16 / 10" />
-        </div>
-        <div className="idv2-reveal" style={{ display: 'grid', gap: 18 }}>
+    <section className="idv2-section idv2-spatial idv2-acc-understand idv2-bgc idv2-bgc-02 idv2-stage-section">
+      <div className="idv2-stage" aria-label="Interactive 3D model stage">
+        <ModelViewer model={MODELS.featured} auto stage shift={-0.17} />
+      </div>
+      <div className="idv2-inner idv2-stage-copy">
+        <div className="idv2-reveal idv2-stage-col idv2-stage-col--right">
           <Eyebrow>THE REAL MODEL</Eyebrow>
           <h2 className="idv2-h2">The building <span className="idv2-acc-text">in the round.</span></h2>
           <p className="idv-lede">{MODELS.featured.line}</p>

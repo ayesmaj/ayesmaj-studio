@@ -28,7 +28,13 @@ function pickFile(model) {
   return wantsLite() && model.lite ? { file: model.lite, weight: model.liteWeight || model.weight } : { file: model.file, weight: model.weight };
 }
 
-export default function ModelViewer({ model, ratio = '16 / 10' }) {
+/**
+ * Props (owner 2026-08-21: "3D appears instantly, big and free in the whole section, text on the side"):
+ *   auto   — load when the section scrolls near (no tap); unloads again when far away
+ *   stage  — full-bleed surface: no card chrome, fills its container, full orbit, model shifted by `shift`
+ *   shift  — horizontal offset of the model as a fraction of the width (+ = right), so copy can sit beside it
+ */
+export default function ModelViewer({ model, ratio = '16 / 10', auto = false, stage = false, shift = 0 }) {
   const [active, setActive] = useState(false);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
@@ -38,6 +44,14 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
 
   // decide desktop vs lite on the client (matchMedia is not available at prerender)
   useEffect(() => { setPick(pickFile(model)); }, [model]);
+
+  // auto mode: activate when the section comes within reach (the unload observer below handles leaving)
+  useEffect(() => {
+    if (!auto || !mountRef.current || !('IntersectionObserver' in window)) return undefined;
+    const io = new IntersectionObserver((entries) => { if (entries[entries.length - 1].isIntersecting) setActive(true); }, { rootMargin: '500px 0px' });
+    io.observe(mountRef.current);
+    return () => io.disconnect();
+  }, [auto]);
 
   // one live viewer per page; unload when scrolled far away
   useEffect(() => {
@@ -88,6 +102,7 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
         controls.dampingFactor = 0.06;
+        if (stage) { controls.enableZoom = false; controls.enablePan = false; renderer.domElement.style.touchAction = 'pan-y'; }
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         controls.autoRotate = !reduced;
         controls.autoRotateSpeed = 0.9;
@@ -128,6 +143,8 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
         controls.target.set(0, 0, 0);
         camera.near = maxDim / 100;
         camera.far = maxDim * 10;
+        const applyShift = () => { const w = mount.clientWidth, h = mount.clientHeight; if (shift && w > 860) camera.setViewOffset(w, h, -w * shift, 0, w, h); else camera.clearViewOffset(); };
+        applyShift();
         camera.updateProjectionMatrix();
         setProgress(100);
 
@@ -137,6 +154,7 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
 
         const ro = new ResizeObserver(() => {
           camera.aspect = mount.clientWidth / mount.clientHeight;
+          applyShift();
           camera.updateProjectionMatrix();
           renderer.setSize(mount.clientWidth, mount.clientHeight);
         });
@@ -166,13 +184,13 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
     })();
 
     return () => { dead = true; cleanupRef.current?.(); cleanupRef.current = null; };
-  }, [active, pick.file]);
+  }, [active, pick.file, stage, shift]);
 
   return (
-    <figure className="idv-figure" style={{ margin: 0 }}>
+    <figure className={`idv-figure${stage ? ' idv-figure--stage' : ''}`} style={stage ? { position: 'absolute', inset: 0, margin: 0 } : { margin: 0 }}>
       <div
         ref={mountRef}
-        style={{
+        style={stage ? { position: 'absolute', inset: 0 } : {
           position: 'relative',
           aspectRatio: ratio,
           borderRadius: 16,
@@ -182,7 +200,12 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
           boxShadow: 'var(--idv-shadow)',
         }}
       >
-        {!active ? (
+        {!active && auto ? (
+          <div className="idv-mono-label" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', color: 'rgba(245,245,240,.6)' }} aria-live="polite">
+            PREPARING {model.name.toUpperCase()} · {pick.weight}
+          </div>
+        ) : null}
+        {!active && !auto ? (
           <button
             type="button"
             onClick={() => setActive(true)}
@@ -203,7 +226,7 @@ export default function ModelViewer({ model, ratio = '16 / 10' }) {
         ) : null}
         {active && progress < 100 && !error ? (
           <div aria-live="polite" style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', pointerEvents: 'none' }}>
-            <span className="idv-mono-label" style={{ color: 'var(--idv-ink)' }}>LOADING MODEL · {progress}%</span>
+            <span className="idv-mono-label" style={{ color: stage ? 'rgba(245,245,240,.75)' : 'var(--idv-ink)' }}>LOADING MODEL · {progress}%</span>
           </div>
         ) : null}
         {error ? (

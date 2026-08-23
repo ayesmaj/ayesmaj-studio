@@ -172,19 +172,19 @@ function Limitation() {
 
 function TurnTheHouse() {
   return (
-    <section className="idv2-section idv2-spatial idv2-acc-understand idv2-bgc idv2-bgc-08">
-      <div className="idv2-inner" style={{ display: 'grid', gap: 28 }}>
-        <div className="idv2-reveal" style={{ display: 'grid', gap: 16, maxWidth: 900 }}>
+    <section className="idv2-section idv2-spatial idv2-acc-understand idv2-bgc idv2-bgc-08 idv2-stage-section">
+      <div className="idv2-stage" aria-label="Interactive 3D model stage">
+        <ModelViewer model={MODELS.spaces[2]} auto stage shift={0.17} />
+      </div>
+      <div className="idv2-inner idv2-stage-copy">
+        <div className="idv2-reveal idv2-stage-col">
           <Eyebrow>INTERACTIVE</Eyebrow>
           <h2 className="idv2-h2">Turn the whole idea <span className="idv2-grad">in your hands.</span></h2>
           <p className="idv-lede">
             A page can only show one angle at a time. A model can show them all — drag the
-            coastal hillside house below and read its levels, terraces, and site drop yourself.
-            It is a showcase model, labeled as such, loaded only when you tap.
+            coastal hillside house and read its levels, terraces, and site drop yourself.
+            It is a showcase model, labeled as such, and it loads as you arrive.
           </p>
-        </div>
-        <div className="idv2-reveal">
-          <ModelViewer model={MODELS.spaces[2]} />
         </div>
       </div>
     </section>

@@ -119,46 +119,35 @@ function StageSystem() {
 }
 
 /* ── 04 · SPATIAL DEPTH — dark technical world with the live models ───────── */
+const ALL_MODELS = [MODELS.featured, ...MODELS.spaces, ...MODELS.objects];
+
 function SpatialModels() {
+  const [idx, setIdx] = useState(0);
+  const m = ALL_MODELS[idx];
   return (
-    <section className="idv2-section idv2-spatial">
+    <section className="idv2-section idv2-spatial idv2-stage-section" id="models">
       <DarkSectionBackground asset="geometric-facets" position="center right" overlay={0.58} textSide="left" glow="purple" />
-      <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(32px, 4vw, 56px)' }}>
-        <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
+      <div className="idv2-stage" aria-label="Interactive 3D model stage">
+        <ModelViewer model={m} auto stage shift={0.17} />
+      </div>
+      <div className="idv2-inner idv2-stage-copy">
+        <div className="idv2-stage-col idv2-reveal">
           <Eyebrow>02 / UNDERSTAND · INTERACTIVE 3D</Eyebrow>
           <h2 className="idv2-h2">Make the entire <span className="idv2-grad">layout</span> understandable.</h2>
-          <p className="idv-lede">
-            Not screenshots — the actual models. Drag them, turn them, read the space in the round.
-            Every model loads only when you tap it.
-          </p>
-        </div>
-
-        <div className="idv-grid-2" style={{ gridTemplateColumns: '2fr 1fr', alignItems: 'start' }}>
-          <div style={{ display: 'grid', gap: 12 }}>
-            <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>THE REAL THING</span> · CLIENT PROJECT</div>
-            <ModelViewer model={MODELS.featured} ratio="16 / 10" />
-          </div>
-          <div style={{ display: 'grid', gap: 4, alignContent: 'start' }}>
-            <div className="idv-mono-label" style={{ marginBottom: 10 }}>WHAT A 3D PLAN REVEALS</div>
-            {['Furniture scale', 'Circulation', 'Room relationships', 'Indoor / outdoor', 'Multi-level flow'].map((c) => (
-              <div key={c} style={{ borderTop: '1px solid rgba(255,255,255,0.14)', padding: '10px 2px', fontSize: 14.5, color: 'rgba(245,245,240,0.82)' }}>{c}</div>
+          <p className="idv-lede">Not screenshots — the actual models, loaded as you arrive. Drag to turn them and read the space in the round.</p>
+          <div className="idv2-chips" role="group" aria-label="Choose a model">
+            {ALL_MODELS.map((x, i) => (
+              <button key={x.key} type="button" className="idv2-chip" aria-pressed={i === idx} onClick={() => setIdx(i)}>{x.name}</button>
             ))}
-            <div style={{ marginTop: 18, display: 'grid' }}>
-              <Link className="idv2-line-link" to={METHODS['3d-floor-plan-apartment'].route}>Apartment 3D plan <ArrowRight size={15} aria-hidden="true" /></Link>
-              <Link className="idv2-line-link" to={METHODS['3d-floor-plan-house'].route}>House 3D plan <ArrowRight size={15} aria-hidden="true" /></Link>
-              <Link className="idv2-line-link" to={METHODS['3d-building-visualization'].route}>Building visualization <ArrowRight size={15} aria-hidden="true" /></Link>
-            </div>
           </div>
-        </div>
-
-        <div style={{ display: 'grid', gap: 14 }}>
-          <div className="idv-mono-label">FROM THE SKYLINE TO THE FAUCET — NINE SHOWCASE MODELS</div>
-          <div className="idv-strip">
-            {[...MODELS.spaces, ...MODELS.objects].map((m) => (
-              <div key={m.key} style={{ display: 'grid', gap: 8 }}>
-                <ModelViewer model={m} ratio="4 / 3" />
-              </div>
-            ))}
+          <div className="idv2-stage-meta">
+            <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>{m.credit}</span> · {m.name.toUpperCase()}</div>
+            <p style={{ margin: 0, fontSize: 14.5, color: 'rgba(245,245,240,0.82)' }}>{m.line}</p>
+          </div>
+          <div style={{ display: 'grid' }}>
+            <Link className="idv2-line-link" to={METHODS['3d-floor-plan-apartment'].route}>Apartment 3D plan <ArrowRight size={15} aria-hidden="true" /></Link>
+            <Link className="idv2-line-link" to={METHODS['3d-floor-plan-house'].route}>House 3D plan <ArrowRight size={15} aria-hidden="true" /></Link>
+            <Link className="idv2-line-link" to={METHODS['3d-building-visualization'].route}>Building visualization <ArrowRight size={15} aria-hidden="true" /></Link>
           </div>
         </div>
       </div>
