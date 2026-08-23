@@ -154,34 +154,35 @@
   "page": "kitchens",
   "slot": "05_kitchen_before",
   "section": "sections",
-  "type": "existing",
+  "type": "edit",
   "sources": [
-   "public/interior-design/projects/canal-apartment/pairs/kitchen-raw.webp"
+   "source-assets/interior-generated/kitchens/06_kitchen_after.png"
   ],
-  "prompt": "",
-  "size": null,
+  "prompt": "Show this exact room as an EMPTY CONSTRUCTION SHELL before the kitchen is installed: identical camera, walls, ceiling height, windows, door openings and floor outline. Remove ALL cabinetry, the island, appliances, lighting fixtures, stools and styling. Bare skim-coated plaster walls with patch marks, unfinished grey concrete screed floor, capped plumbing and electrical points visible on the wall, a single bare work light, dusty daylight through the same windows, no furniture, no people, no text. Realistic construction-site photograph of the shell.",
+  "size": "auto",
   "cls": "editorial",
-  "alt": "Canal Apartment kitchen — 3D source frame before visualization",
-  "project": "Canal Apartment — client project",
-  "lock": false,
+  "alt": "Poolside Villa kitchen as the empty construction shell — bare walls, screed floor, the same windows and openings",
+  "project": "VILLA",
+  "lock": true,
   "mobile": null,
-  "focus": 0.5
+  "focus": 0.5,
+  "world": false
  },
  {
   "id": "06_kitchen_after",
   "page": "kitchens",
   "slot": "06_kitchen_after",
   "section": "sections",
-  "type": "existing",
+  "type": "edit",
   "sources": [
-   "public/interior-design/projects/canal-apartment/pairs/kitchen-editorial-v2.webp"
+   "public/interior-design/projects/poolside-villa/renders/10_kitchen_island_detail.webp"
   ],
-  "prompt": "",
-  "size": null,
+  "prompt": "Render this exact kitchen as the finished, fully designed room at early evening: the same camera, walls, windows, ceiling and openings; the same island and cabinetry positions. Upgrade every material to the premium finish — natural oak cabinetry, honed limestone island with a waterfall edge, integrated appliances, warm under-cabinet and pendant light, bar stools, a styled counter with a bowl of fruit and a ceramic vase, a glimpse of the garden and pool through the glass. Ultra-realistic, premium editorial photography, no people, no text.",
+  "size": "auto",
   "cls": "editorial",
-  "alt": "Canal Apartment kitchen — visualized with the architecture locked",
-  "project": "Canal Apartment — client project",
-  "lock": false,
+  "alt": "Poolside Villa kitchen — the designed kitchen: oak cabinetry, stone island, warm evening light",
+  "project": "VILLA",
+  "lock": true,
   "mobile": null,
   "focus": 0.5
  },

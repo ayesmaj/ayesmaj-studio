@@ -45,7 +45,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/09_kitchen_master.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -62,7 +62,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a one-wall kitchen: a single run of cabinets and appliances along one wall, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Showcase diagram"
@@ -79,7 +79,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a galley kitchen: two parallel runs of cabinets with a walkway between, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Showcase diagram"
@@ -96,7 +96,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of an L-shaped kitchen: cabinets along two adjacent walls meeting in a corner, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Showcase diagram"
@@ -113,7 +113,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a U-shaped kitchen: cabinets along three walls, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Showcase diagram"
@@ -130,7 +130,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a kitchen with a single central island and one run of wall cabinets, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Showcase diagram"
@@ -147,7 +147,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a kitchen with two parallel islands and a run of wall cabinets, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Showcase diagram"
@@ -166,7 +166,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/gallery/kitchen-island.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Maison Valmont — studio renovation set"
@@ -185,7 +185,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/details/calacatta.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Maison Valmont — studio renovation set"
@@ -196,18 +196,18 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "section": "sections",
     "file": "/interior-design/generated/kitchens/sections/05_kitchen_before.webp",
     "mobileFile": null,
-    "alt": "Canal Apartment kitchen — 3D source frame before visualization",
-    "width": 1800,
-    "height": 1137,
-    "aspectRatio": "1.58:1",
-    "prompt": "",
+    "alt": "Poolside Villa kitchen as the empty construction shell — bare walls, screed floor, the same windows and openings",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": "3:2",
+    "prompt": "Show this exact room as an EMPTY CONSTRUCTION SHELL before the kitchen is installed: identical camera, walls, ceiling height, windows, door openings and floor outline. Remove ALL cabinetry, the island, appliances, lighting fixtures, stools and styling. Bare skim-coated plaster walls with patch marks, unfinished grey concrete screed floor, capped plumbing and electrical points visible on the wall, a single bare work light, dusty daylight through the same windows, no furniture, no people, no text. Realistic construction-site photograph of the shell.",
     "sourceReferences": [
-      "public/interior-design/projects/canal-apartment/pairs/kitchen-raw.webp"
+      "source-assets/interior-generated/kitchens/06_kitchen_after.png"
     ],
-    "generatedAt": "2026-08-22",
-    "status": "existing",
-    "architectureLocked": false,
-    "project": "Canal Apartment — client project"
+    "generatedAt": "2026-08-23",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "VILLA"
   },
   {
     "id": "06_kitchen_after",
@@ -215,18 +215,18 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "section": "sections",
     "file": "/interior-design/generated/kitchens/sections/06_kitchen_after.webp",
     "mobileFile": null,
-    "alt": "Canal Apartment kitchen — visualized with the architecture locked",
-    "width": 1576,
-    "height": 998,
-    "aspectRatio": "1.58:1",
-    "prompt": "",
+    "alt": "Poolside Villa kitchen — the designed kitchen: oak cabinetry, stone island, warm evening light",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": "3:2",
+    "prompt": "Render this exact kitchen as the finished, fully designed room at early evening: the same camera, walls, windows, ceiling and openings; the same island and cabinetry positions. Upgrade every material to the premium finish — natural oak cabinetry, honed limestone island with a waterfall edge, integrated appliances, warm under-cabinet and pendant light, bar stools, a styled counter with a bowl of fruit and a ceramic vase, a glimpse of the garden and pool through the glass. Ultra-realistic, premium editorial photography, no people, no text.",
     "sourceReferences": [
-      "public/interior-design/projects/canal-apartment/pairs/kitchen-editorial-v2.webp"
+      "public/interior-design/projects/poolside-villa/renders/10_kitchen_island_detail.webp"
     ],
-    "generatedAt": "2026-08-22",
-    "status": "existing",
-    "architectureLocked": false,
-    "project": "Canal Apartment — client project"
+    "generatedAt": "2026-08-23",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "VILLA"
   },
   {
     "id": "07_kitchen_3d_floor_plan",
@@ -243,7 +243,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
       "public/interior-design/projects/canal-apartment/plans/kitchen.webp",
       "public/interior-design/projects/canal-apartment/pairs/kitchen-raw.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Canal Apartment — client project (plan study)"
@@ -262,7 +262,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/09_kitchen_master.png"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Poolside Villa — client project"
@@ -281,7 +281,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/kitchen/kitchen-detail.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Maison Valmont — studio renovation set"
@@ -300,7 +300,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/after/bath-restored.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Maison Valmont — studio renovation set"
@@ -319,7 +319,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/plans/bath.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Canal Apartment — client project (plan study)"
@@ -338,7 +338,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/17_primary_bath_master.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -357,7 +357,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/21_secondary_bath.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -374,7 +374,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "2:3",
     "prompt": "A premium compact powder room: wall-hung basin on a limestone slab, a brass wall tap, dark warm plaster walls, a single bronze pendant, a tall mirror with soft edge lighting, oak door, photographed from the doorway, calm and realistic, no text, no people.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Studio concept"
@@ -393,7 +393,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/details/limestone.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Maison Valmont — studio renovation set"
@@ -412,7 +412,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/bath-raw.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -431,7 +431,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/bath-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -450,7 +450,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/gallery/bath-detail.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Maison Valmont — studio renovation set"
@@ -469,7 +469,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/17_primary_bath_master.png"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Poolside Villa — client project"
@@ -488,7 +488,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -507,7 +507,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Canal Apartment — client project"
@@ -526,7 +526,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -545,7 +545,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/plans/living.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Canal Apartment — client project (plan study)"
@@ -562,7 +562,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "3:2",
     "prompt": "An editorial flat-lay moodboard photographed from above on a pale plaster ground: swatches of natural linen and olive boucle, a slab of travertine, a block of oiled walnut and one of white oak, a brushed bronze sample, a ceramic vessel, a folded wool throw; soft north daylight; no text, no labels, no logos.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Studio concept"
@@ -581,7 +581,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/07_living_detail.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -600,7 +600,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/primary-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -619,7 +619,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/dining-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -638,7 +638,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/details/chandelier.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Maison Valmont — studio renovation set"
@@ -657,7 +657,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/details/wool-linen.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Maison Valmont — studio renovation set"
@@ -677,7 +677,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
       "public/interior-design/projects/canal-apartment/plans/overview.webp",
       "public/interior-design/projects/canal-apartment/pairs/canal-raw.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Canal Apartment — client project (plan study)"
@@ -694,10 +694,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "2:1",
     "prompt": "The same furnished 3D floor-plan axonometric, camera 30 degrees lower and closer so the living room and the waterfront edge dominate, evening light, warm lamps inside the rooms, the canal reflecting beyond; nothing in the plan changes.",
     "sourceReferences": [
-      "public/interior-design/generated/apartments/originals/04_apartment_3d_plan.png",
+      "source-assets/interior-generated/apartments/04_apartment_3d_plan.png",
       "public/interior-design/projects/canal-apartment/pairs/canal-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Canal Apartment — client project (plan study)"
@@ -716,7 +716,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/canal-raw.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -735,7 +735,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/plans/overview.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Canal Apartment — client project (plan study)"
@@ -754,7 +754,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -773,7 +773,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/kitchen-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -792,7 +792,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/primary-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -811,7 +811,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/bath-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -830,7 +830,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/terrace-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -849,7 +849,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/canal-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Canal Apartment — client project (cinematic frame)"
@@ -868,7 +868,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/lounge-raw.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -887,7 +887,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/lounge-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
@@ -906,7 +906,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/03_exterior_pool_master.png"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -925,7 +925,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/00_ground_floor_plan.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Poolside Villa — client project"
@@ -944,7 +944,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/01_upper_floor_plan.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Poolside Villa — client project"
@@ -965,7 +965,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
       "public/interior-design/projects/poolside-villa/renders/00_ground_floor_plan.webp",
       "public/interior-design/projects/poolside-villa/renders/01_upper_floor_plan.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Poolside Villa — client project"
@@ -984,7 +984,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/06_living_pool_view.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -1003,7 +1003,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/10_kitchen_island_detail.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -1022,7 +1022,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/14_primary_bedroom_master.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -1041,7 +1041,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/18_primary_bath_detail.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -1060,7 +1060,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/27_pool_hero.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -1079,7 +1079,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/23_garage.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -1098,7 +1098,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/02_exterior_front_day.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -1117,7 +1117,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/26_outdoor_kitchen.png"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
@@ -1136,7 +1136,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/27_pool_hero.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "Poolside Villa — client project"
@@ -1155,7 +1155,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-hero-realistic-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "The Patel — client project"
@@ -1174,7 +1174,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-architecture-single.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": true,
     "project": "The Patel — client project (study)"
@@ -1193,7 +1193,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-hero-single.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "The Patel — client project"
@@ -1212,7 +1212,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/the-patel/residence-1802/floorplan.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "The Patel — client project"
@@ -1229,7 +1229,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "3:2",
     "prompt": "A double-height residential tower lobby in Miami: travertine floor, a fluted oak feature wall, a brass reception desk, full-height glass with palms and warm sunset light outside, a single sculptural pendant, restrained luxury, no text, no people.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Studio concept"
@@ -1246,7 +1246,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "aspectRatio": "3:2",
     "prompt": "A resident lounge beside an indoor pool deck with an ocean view through full-height glass: travertine and oak, bronze details, low lounge seating, warm evening light, Miami skyline faint outside, no text, no people.",
     "sourceReferences": [],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "approved",
     "architectureLocked": false,
     "project": "Studio concept"
@@ -1265,7 +1265,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-rooftop-single-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "The Patel — client project"
@@ -1284,7 +1284,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/the-patel/residence-1802/living.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "The Patel — client project"
@@ -1303,7 +1303,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "C:/Users/smadj/Documents/the patel - appartments/website/public/media/patel/patel-hero-poster-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "The Patel — client project"
@@ -1322,7 +1322,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/the-patel/brand/patel-breakout-hero.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "The Patel — client project"
@@ -1341,7 +1341,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/the-patel/brand/patel-breakout-hero.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "navigation preview"
@@ -1360,7 +1360,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/10_kitchen_island_detail.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "navigation preview"
@@ -1379,7 +1379,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/18_primary_bath_detail.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "navigation preview"
@@ -1398,7 +1398,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/dining-editorial.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "navigation preview"
@@ -1417,7 +1417,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/terrace-editorial-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "navigation preview"
@@ -1436,7 +1436,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/28_pool_water_level.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "navigation preview"
@@ -1455,7 +1455,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-rooftop-single-v2.webp"
     ],
-    "generatedAt": "2026-08-22",
+    "generatedAt": "2026-08-23",
     "status": "existing",
     "architectureLocked": false,
     "project": "navigation preview"
