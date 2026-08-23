@@ -298,6 +298,7 @@ export const SEO_ROUTES = {
       "A client presentation gathers the project story, floor plans, room views, materials, film and approval steps into one branded experience built for decisions.",
   },
   "/interior-design/kitchens": {
+    image: "/interior-design/generated/og/kitchens.jpg",
     title: "Kitchen Design Visualization | AYESMAJ Studios",
     ogTitle: "Kitchen Visualization | AYESMAJ Studios",
     description:
@@ -307,6 +308,7 @@ export const SEO_ROUTES = {
       "Kitchen visualization from AYESMAJ Studios: layouts compared, cabinetry and appliance walls resolved, materials chosen in context, and the finished kitchen shown as photoreal imagery and film frames before anything is built.",
   },
   "/interior-design/bathrooms": {
+    image: "/interior-design/generated/og/bathrooms.jpg",
     title: "Bathroom Design Visualization | AYESMAJ Studios",
     ogTitle: "Bathroom Visualization | AYESMAJ Studios",
     description:
@@ -316,6 +318,7 @@ export const SEO_ROUTES = {
       "Bathroom visualization from AYESMAJ Studios: layouts, primary and compact bathrooms, powder rooms, stone and fixture materials and before-and-after imagery of the same architecture.",
   },
   "/interior-design/furniture-decor": {
+    image: "/interior-design/generated/og/furniture-decor.jpg",
     title: "Furniture & Decor Visualization | AYESMAJ Studios",
     ogTitle: "Furniture & Decor | AYESMAJ Studios",
     description:
@@ -325,6 +328,7 @@ export const SEO_ROUTES = {
       "Furniture and decor visualization from AYESMAJ Studios: the empty shell, the furniture plan, the reference direction and the styled finished room - living, bedroom and dining collections in one consistent language.",
   },
   "/interior-design/apartments": {
+    image: "/interior-design/generated/og/apartments.jpg",
     title: "Apartment Visualization | AYESMAJ Studios",
     ogTitle: "Apartment Visualization | AYESMAJ Studios",
     description:
@@ -334,6 +338,7 @@ export const SEO_ROUTES = {
       "Apartment visualization from AYESMAJ Studios: an existing-condition scan becomes a clean plan, a furnished 3D floor plan and photoreal living, kitchen, bedroom, bathroom and balcony imagery of the same apartment.",
   },
   "/interior-design/homes": {
+    image: "/interior-design/generated/og/homes.jpg",
     title: "House Visualization | AYESMAJ Studios",
     ogTitle: "House Visualization | AYESMAJ Studios",
     description:
@@ -343,6 +348,7 @@ export const SEO_ROUTES = {
       "House visualization from AYESMAJ Studios: one consistent modern home shown as 3D floor plans, a whole-house cutaway, room imagery, pool and outdoor living, garage, arrival and a continuous house film.",
   },
   "/interior-design/buildings": {
+    image: "/interior-design/generated/og/buildings.jpg",
     title: "Building & Development Visualization | AYESMAJ Studios",
     ogTitle: "Building Visualization | AYESMAJ Studios",
     description:

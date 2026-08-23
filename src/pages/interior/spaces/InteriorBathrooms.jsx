@@ -6,7 +6,7 @@ const cfg = {
   page: 'bathrooms',
   hero: {
     variant: 'dark',
-    bgAsset: 'stone-bronze',
+    bgAsset: 'cinematic-light',
     glow: 'gold',
     eyebrow: 'AYESMAJ STUDIOS / INTERIOR DESIGN / BATHROOMS',
     lines: ['Stone.', 'Water.', 'Light.'],

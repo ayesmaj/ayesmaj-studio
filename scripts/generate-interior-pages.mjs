@@ -28,7 +28,7 @@ const KEY = process.env.OPENAI_API_KEY;
 if (!KEY && !dry) { console.error('OPENAI_API_KEY is not set'); process.exit(1); }
 
 const ROOT = 'public/interior-design/generated';
-const jobs = JSON.parse(fs.readFileSync(jobsPath, 'utf8')).filter((j) => (!onlyPage || j.page === onlyPage) && (!onlyId || j.id === onlyId));
+const jobs = JSON.parse(fs.readFileSync(jobsPath, 'utf8')).filter((j) => (j.type === 'edit' || j.type === 'text') && (!onlyPage || j.page === onlyPage) && (!onlyId || j.id === onlyId));
 
 /** §30 — the architecture lock, verbatim from the brief. */
 const LOCK = `Use the supplied source image as the exact architectural source of truth.
