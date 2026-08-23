@@ -18,6 +18,7 @@ import { ArrowRight } from 'lucide-react';
 import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher } from '@/components/interior/kit';
 import { IDV_BASE, IDV_EYEBROW, METHODS, GOALS, CASE_STUDIES, CAPABILITIES } from '@/data/interiorDesign';
 import { INTERIOR_MENU } from '@/data/siteConfig';
+import { media as getGenerated } from '@/content/interior-design-generated-media';
 import { VILLA, APARTMENT, VALMONT, PATEL, CASE_COVERS, MODELS } from '@/data/interiorMedia';
 import ModelViewer from '@/components/interior/ModelViewer';
 import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
@@ -192,11 +193,13 @@ function FullInterior() {
 }
 
 /* ── 06 · SAME PROJECT, DIFFERENT TRUTHS — soft gradient, dominant media ──── */
+/* Owner request 2026-08-23: the strongest library asset per method, each tied to its page.
+   Real projects only, labeled — no picture is repeated elsewhere on this page. */
 const TRUTHS = [
-  { key: 'plan', label: 'PLAN', src: PATEL.unit.floorplan, alt: 'The Patel Residence 1802 furnished floor plan', shows: ['Furniture scale', 'Circulation', 'Spatial relationships', 'Indoor / outdoor connection'] },
-  { key: 'building', label: 'BUILDING', src: PATEL.tower[1].src, alt: 'The Patel tower architecture study', shows: ['The full volume', 'Where the residence sits', 'Exterior identity'] },
-  { key: 'render', label: 'RENDER', src: PATEL.interiors[0].src, alt: 'The Patel interior render, Atlantic calm direction', shows: ['Material', 'Furniture language', 'Lighting and atmosphere'] },
-  { key: 'film', label: 'FILM', src: PATEL.film.poster, alt: 'The Patel cinematic film frame', shows: ['Arrival and movement', 'Sequence', 'Emotional value'] },
+  { key: 'plan', label: 'PLAN', src: getGenerated('homes', '02_home_ground_floor')?.file, alt: 'Poolside Villa ground floor as a furnished 3D floor plan — pool, garage, every room', project: 'CLIENT PROJECT · POOLSIDE VILLA', to: `${IDV_BASE}/3d-floor-plan-house`, cta: 'THE 3D FLOOR PLANS', shows: ['Furniture scale', 'Circulation', 'Spatial relationships', 'Indoor / outdoor connection'] },
+  { key: 'building', label: 'BUILDING', src: getGenerated('buildings', '02_building_full_exterior')?.file, alt: 'The PATEL tower at sunset on Biscayne Bay', project: 'CLIENT PROJECT · THE PATEL, MIAMI', to: `${IDV_BASE}/buildings`, cta: 'BUILDINGS & DEVELOPMENTS', shows: ['The full volume', 'Where the residence sits', 'Exterior identity'] },
+  { key: 'render', label: 'RENDER', src: getGenerated('homes', '13_home_blue_hour')?.file, alt: 'Poolside Villa at blue hour — the pool deck and the lit interiors', project: 'CLIENT PROJECT · POOLSIDE VILLA', to: `${IDV_BASE}/homes`, cta: 'HOMES', shows: ['Material', 'Light and atmosphere', 'The finished result'] },
+  { key: 'film', label: 'FILM', src: VILLA.film.poster, video: VILLA.film, alt: 'Poolside Villa house film — one continuous take from the plan to the pool', project: 'CLIENT PROJECT · POOLSIDE VILLA · 35 S', to: `${IDV_BASE}/ai-video-house`, cta: 'THE HOUSE FILM', shows: ['Arrival and movement', 'Sequence', 'Emotional value'] },
 ];
 
 function Truths() {
@@ -212,10 +215,21 @@ function Truths() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Method view" options={TRUTHS.map((t) => ({ key: t.key, label: t.label }))} value={view} onChange={setView} />
           <div className="idv2-truths-media">
-            <img src={active.src} alt={active.alt} loading="lazy" decoding="async" />
+            {active.video ? (
+              <video key="film" autoPlay muted loop playsInline preload="metadata" poster={active.video.poster} aria-label={active.alt}>
+                <source src={active.video.mobile} media="(max-width: 767px)" type="video/mp4" />
+                <source src={active.video.desktop} type="video/mp4" />
+              </video>
+            ) : (
+              <img key={active.key} src={active.src} alt={active.alt} loading="lazy" decoding="async" />
+            )}
             <div className="idv2-truths-panel" aria-live="polite">
               <div className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{active.label} SHOWS</div>
               {active.shows.map((s) => <div key={s} style={{ fontSize: 13.5, borderTop: '1px solid rgba(255,255,255,0.14)', paddingTop: 6 }}>{s}</div>)}
+              <div className="idv-mono-label" style={{ marginTop: 10, fontSize: 10, opacity: 0.7 }}>{active.project}</div>
+              <Link to={active.to} className="idv-mono-label" style={{ display: 'inline-flex', gap: 8, alignItems: 'center', textDecoration: 'none', color: 'var(--idv-champagne)', marginTop: 4 }}>
+                {active.cta} <ArrowRight size={12} aria-hidden="true" />
+              </Link>
             </div>
           </div>
           <div className="idv2-thumbs" role="group" aria-label="Method thumbnails">

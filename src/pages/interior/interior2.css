@@ -173,7 +173,7 @@
 
 /* ── Truths selector v2: dominant media + floating context panel ─────────── */
 .idv2-truths-media { position: relative; }
-.idv2-truths-media img { width: 100%; min-height: 62vh; max-height: 78vh; object-fit: cover; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 30px 70px rgba(62, 48, 24, 0.2); }
+.idv2-truths-media img, .idv2-truths-media video { width: 100%; min-height: 62vh; max-height: 78vh; object-fit: cover; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 30px 70px rgba(62, 48, 24, 0.2); }
 .idv2-truths-panel {
   position: absolute; right: clamp(12px, 2vw, 28px); bottom: clamp(12px, 2vw, 28px);
   max-width: 300px; display: grid; gap: 8px;
@@ -228,7 +228,7 @@
   .idv2-case-grid { grid-template-columns: 1fr; }
   .idv2-honest { grid-template-columns: 1fr; }
   .idv2-truths-panel { position: static; max-width: none; margin-top: 12px; }
-  .idv2-truths-media img { min-height: 46vh; }
+  .idv2-truths-media img, .idv2-truths-media video { min-height: 46vh; }
 }
 
 
