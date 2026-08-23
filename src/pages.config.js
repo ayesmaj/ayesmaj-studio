@@ -80,6 +80,12 @@ const Cookies = lazy(() => import('./pages/Cookies'));
 const Accessibility = lazy(() => import('./pages/Accessibility'));
 const Faq = lazy(() => import('./pages/Faq'));
 const InteriorDesign = lazy(() => import('./pages/interior/InteriorDesign'));
+const InteriorKitchens = lazy(() => import('./pages/interior/spaces/InteriorKitchens'));
+const InteriorBathrooms = lazy(() => import('./pages/interior/spaces/InteriorBathrooms'));
+const InteriorFurnitureDecor = lazy(() => import('./pages/interior/spaces/InteriorFurnitureDecor'));
+const InteriorApartments = lazy(() => import('./pages/interior/spaces/InteriorApartments'));
+const InteriorHomes = lazy(() => import('./pages/interior/spaces/InteriorHomes'));
+const InteriorBuildings = lazy(() => import('./pages/interior/spaces/InteriorBuildings'));
 const InteriorAiScanApartment = lazy(() => import('./pages/interior/InteriorAiScanApartment'));
 const InteriorAiScanHouse = lazy(() => import('./pages/interior/InteriorAiScanHouse'));
 const Interior3dPlanApartment = lazy(() => import('./pages/interior/Interior3dPlanApartment'));
@@ -127,6 +133,12 @@ export const PAGES = {
     "Accessibility": Accessibility,
     "Faq": Faq,
     "InteriorDesign": InteriorDesign,
+    "InteriorKitchens": InteriorKitchens,
+    "InteriorBathrooms": InteriorBathrooms,
+    "InteriorFurnitureDecor": InteriorFurnitureDecor,
+    "InteriorApartments": InteriorApartments,
+    "InteriorHomes": InteriorHomes,
+    "InteriorBuildings": InteriorBuildings,
     "InteriorAiScanApartment": InteriorAiScanApartment,
     "InteriorAiScanHouse": InteriorAiScanHouse,
     "Interior3dPlanApartment": Interior3dPlanApartment,

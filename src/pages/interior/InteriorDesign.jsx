@@ -17,6 +17,8 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion
 import { ArrowRight } from 'lucide-react';
 import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher } from '@/components/interior/kit';
 import { IDV_BASE, IDV_EYEBROW, METHODS, GOALS, CASE_STUDIES, CAPABILITIES } from '@/data/interiorDesign';
+import { INTERIOR_MENU } from '@/data/siteConfig';
+import { media as getGenerated } from '@/content/interior-design-generated-media';
 import { VILLA, APARTMENT, VALMONT, PATEL, CASE_COVERS, MODELS } from '@/data/interiorMedia';
 import ModelViewer from '@/components/interior/ModelViewer';
 import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
@@ -33,6 +35,42 @@ const rise = (d = 0) => ({
 
 /* ── 01 · HERO — bright gradient world, growing transformation fan ────────── */
 /* ── 02 · THE PROBLEM — black pinned transformation (raw → editorial) ─────── */
+/* Spaces & Property types (owner IA 2026-08-22): six pages, each on its own hero. */
+const SPACE_HERO = { '/interior-design/kitchens': ['kitchens', '01_kitchen_hero'], '/interior-design/bathrooms': ['bathrooms', '01_bathroom_hero'], '/interior-design/furniture-decor': ['furniture-decor', '01_furniture_decor_hero'], '/interior-design/apartments': ['apartments', '05_apartment_living'], '/interior-design/homes': ['homes', '01_home_hero'], '/interior-design/buildings': ['buildings', '02_building_full_exterior'] };
+function SpacesAndTypes() {
+  return (
+    <section className="idv2-section idv2-bright" id="spaces">
+      <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(30px, 4vw, 52px)' }}>
+        <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
+          <Eyebrow>SPACES · PROPERTY TYPES</Eyebrow>
+          <h2 className="idv2-h2">Pick the room, <span className="idv2-grad">or the whole property.</span></h2>
+          <p className="idv-lede">Kitchens, bathrooms and furnishing on one side; apartments, houses and buildings on the other. Every page runs the same system — scan, plan, visualize, experience — on real projects.</p>
+        </div>
+        {INTERIOR_MENU.groups.map((g) => (
+          <div key={g.title} style={{ display: 'grid', gap: 16 }}>
+            <div className="idv-mono-label">{g.title.toUpperCase()}</div>
+            <div className="idv2-cases" style={{ gridAutoRows: 'clamp(260px, 26vw, 400px)' }}>
+              {g.items.map((it, i) => {
+                const [pg, id] = SPACE_HERO[it.to]; const m = getGenerated(pg, id);
+                return (
+                  <div key={it.to} className="idv2-case-card" style={{ gridColumn: 'span 4' }}>
+                    <Link to={it.to} className="idv2-case-link" aria-label={`${it.label} — ${it.line}`}>
+                      {m ? <img src={m.file} alt="" loading="lazy" decoding="async" /> : null}
+                      <span className="idv2-case-num" aria-hidden="true">0{i + 1}</span>
+                      <span className="idv2-case-meta"><span className="idv-mono-label">{g.title.toUpperCase()}</span><span className="idv2-case-name">{it.label}</span><span className="idv2-case-aud">{it.line}</span></span>
+                      <span className="idv2-case-arrow" aria-hidden="true"><ArrowRight size={18} /></span>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Problem() {
   const wrapRef = useRef(null);
   const reduced = useReducedMotion();
@@ -455,6 +493,7 @@ export default function InteriorDesign() {
       <InteriorDesignHero />
       <hr className="idv2-spill" />
       <StageSystem />
+      <SpacesAndTypes />
       <Problem />
       <Truths />
       <SpatialModels />

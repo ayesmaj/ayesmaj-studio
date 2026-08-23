@@ -297,6 +297,60 @@ export const SEO_ROUTES = {
     blurb:
       "A client presentation gathers the project story, floor plans, room views, materials, film and approval steps into one branded experience built for decisions.",
   },
+  "/interior-design/kitchens": {
+    title: "Kitchen Design Visualization | AYESMAJ Studios",
+    ogTitle: "Kitchen Visualization | AYESMAJ Studios",
+    description:
+      "Kitchen layouts, cabinetry, materials and photoreal 3D visualization - design the room everything revolves around, from plan to cinematic frame.",
+    h1: "Design the room everything revolves around.",
+    blurb:
+      "Kitchen visualization from AYESMAJ Studios: layouts compared, cabinetry and appliance walls resolved, materials chosen in context, and the finished kitchen shown as photoreal imagery and film frames before anything is built.",
+  },
+  "/interior-design/bathrooms": {
+    title: "Bathroom Design Visualization | AYESMAJ Studios",
+    ogTitle: "Bathroom Visualization | AYESMAJ Studios",
+    description:
+      "Bathroom layouts, stone and fixture selection and photoreal 3D visualization - primary, compact and powder rooms resolved before construction.",
+    h1: "Stone. Water. Light.",
+    blurb:
+      "Bathroom visualization from AYESMAJ Studios: layouts, primary and compact bathrooms, powder rooms, stone and fixture materials and before-and-after imagery of the same architecture.",
+  },
+  "/interior-design/furniture-decor": {
+    title: "Furniture & Decor Visualization | AYESMAJ Studios",
+    ogTitle: "Furniture & Decor | AYESMAJ Studios",
+    description:
+      "Furniture layouts, material palettes and styled-room visualization - the same architectural shell empty and fully furnished, from reference direction to finished room.",
+    h1: "The space is built. Now give it a life.",
+    blurb:
+      "Furniture and decor visualization from AYESMAJ Studios: the empty shell, the furniture plan, the reference direction and the styled finished room - living, bedroom and dining collections in one consistent language.",
+  },
+  "/interior-design/apartments": {
+    title: "Apartment Visualization | AYESMAJ Studios",
+    ogTitle: "Apartment Visualization | AYESMAJ Studios",
+    description:
+      "Apartment scans, clean plans, furnished 3D floor plans and photoreal rooms - see the entire apartment, then step inside, one consistent project from source to film frame.",
+    h1: "See the entire apartment. Then step inside.",
+    blurb:
+      "Apartment visualization from AYESMAJ Studios: an existing-condition scan becomes a clean plan, a furnished 3D floor plan and photoreal living, kitchen, bedroom, bathroom and balcony imagery of the same apartment.",
+  },
+  "/interior-design/homes": {
+    title: "House Visualization | AYESMAJ Studios",
+    ogTitle: "House Visualization | AYESMAJ Studios",
+    description:
+      "Complete house visualization - ground and upper 3D floor plans, cutaway, living, kitchen, primary suite, pool, garage and landscape of one consistent modern home, plus the house film.",
+    h1: "Understand the whole home. Experience every part of it.",
+    blurb:
+      "House visualization from AYESMAJ Studios: one consistent modern home shown as 3D floor plans, a whole-house cutaway, room imagery, pool and outdoor living, garage, arrival and a continuous house film.",
+  },
+  "/interior-design/buildings": {
+    title: "Building & Development Visualization | AYESMAJ Studios",
+    ogTitle: "Building Visualization | AYESMAJ Studios",
+    description:
+      "Residential building and development visualization - the real PATEL tower model, exploded levels, unit selection, residence plans, lobby, amenities, rooftop and launch film.",
+    h1: "From building model to a world buyers can enter.",
+    blurb:
+      "Building and development visualization from AYESMAJ Studios, built on the real PATEL Miami tower: interactive model, exploded levels, unit selection, residence plans, lobby and amenities, rooftop, residence interiors and the launch film.",
+  },
   "/interior-design/case-studies": {
     title: "Interior Visualization Case Studies | AYESMAJ Studios",
     description:
@@ -346,6 +400,12 @@ export const SERVICE_ROUTES = {
   "/AiVideos": "Video production and visual effects",
   "/Storyboards": "Storyboard and art direction",
   "/interior-design": "Interior design visualization",
+  "/interior-design/kitchens": "Kitchen design visualization",
+  "/interior-design/bathrooms": "Bathroom design visualization",
+  "/interior-design/furniture-decor": "Furniture and decor visualization",
+  "/interior-design/apartments": "Apartment design visualization",
+  "/interior-design/homes": "House design visualization",
+  "/interior-design/buildings": "Architectural building visualization",
   "/interior-design/ai-scan-apartment": "AI apartment scanning",
   "/interior-design/ai-scan-house": "AI house scanning",
   "/interior-design/3d-floor-plan-apartment": "3D floor plan design",

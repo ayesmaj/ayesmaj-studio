@@ -1,0 +1,1355 @@
+[
+ {
+  "id": "01_kitchen_hero",
+  "page": "kitchens",
+  "slot": "01_kitchen_hero",
+  "section": "hero",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/09_kitchen_master.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "hero",
+  "alt": "Poolside Villa kitchen \u2014 stone island, oak cabinetry and the dining room beyond",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": "crop",
+  "focus": 0.55
+ },
+ {
+  "id": "02_kitchen_layout_one-wall",
+  "page": "kitchens",
+  "slot": "02_kitchen_layout_one-wall",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "Top-down 3D cutaway diagram of a one-wall kitchen: a single run of cabinets and appliances along one wall, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Kitchen layout diagram \u2014 one wall",
+  "project": "Showcase diagram",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "02_kitchen_layout_galley",
+  "page": "kitchens",
+  "slot": "02_kitchen_layout_galley",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "Top-down 3D cutaway diagram of a galley kitchen: two parallel runs of cabinets with a walkway between, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Kitchen layout diagram \u2014 galley",
+  "project": "Showcase diagram",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "02_kitchen_layout_l-shaped",
+  "page": "kitchens",
+  "slot": "02_kitchen_layout_l-shaped",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "Top-down 3D cutaway diagram of an L-shaped kitchen: cabinets along two adjacent walls meeting in a corner, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Kitchen layout diagram \u2014 l shaped",
+  "project": "Showcase diagram",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "02_kitchen_layout_u-shaped",
+  "page": "kitchens",
+  "slot": "02_kitchen_layout_u-shaped",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "Top-down 3D cutaway diagram of a U-shaped kitchen: cabinets along three walls, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Kitchen layout diagram \u2014 u shaped",
+  "project": "Showcase diagram",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "02_kitchen_layout_island",
+  "page": "kitchens",
+  "slot": "02_kitchen_layout_island",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "Top-down 3D cutaway diagram of a kitchen with a single central island and one run of wall cabinets, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Kitchen layout diagram \u2014 island",
+  "project": "Showcase diagram",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "02_kitchen_layout_double-island",
+  "page": "kitchens",
+  "slot": "02_kitchen_layout_double-island",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "Top-down 3D cutaway diagram of a kitchen with two parallel islands and a run of wall cabinets, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Kitchen layout diagram \u2014 double island",
+  "project": "Showcase diagram",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "03_kitchen_cabinetry",
+  "page": "kitchens",
+  "slot": "03_kitchen_cabinetry",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/maison-valmont/gallery/kitchen-island.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "editorial",
+  "alt": "Maison Valmont kitchen \u2014 cabinetry, appliance wall and island",
+  "project": "Maison Valmont \u2014 studio renovation set",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "04_kitchen_materials",
+  "page": "kitchens",
+  "slot": "04_kitchen_materials",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/maison-valmont/details/calacatta.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Calacatta stone, oak and brass \u2014 kitchen material detail",
+  "project": "Maison Valmont \u2014 studio renovation set",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "05_kitchen_before",
+  "page": "kitchens",
+  "slot": "05_kitchen_before",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/kitchen-raw.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "editorial",
+  "alt": "Canal Apartment kitchen \u2014 3D source frame before visualization",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "06_kitchen_after",
+  "page": "kitchens",
+  "slot": "06_kitchen_after",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/kitchen-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "editorial",
+  "alt": "Canal Apartment kitchen \u2014 visualized with the architecture locked",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "07_kitchen_3d_floor_plan",
+  "page": "kitchens",
+  "slot": "07_kitchen_3d_floor_plan",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/plans/kitchen.webp",
+   "public/interior-design/projects/canal-apartment/pairs/kitchen-raw.webp"
+  ],
+  "prompt": "Redraw this kitchen as an isometric 3D floor-plan cutaway of the kitchen only: counters, island and appliances exactly where they are, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Canal Apartment kitchen \u2014 3D floor-plan study with clearances and zones",
+  "project": "Canal Apartment \u2014 client project (plan study)",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "08_kitchen_cinematic_frame",
+  "page": "kitchens",
+  "slot": "08_kitchen_cinematic_frame",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/09_kitchen_master.png"
+  ],
+  "prompt": "The same kitchen at dusk: pendants and under-cabinet lighting on, a low warm sun outside, slight atmospheric haze, cinematic 2.39 framing and grade, everything in the room exactly as it is.",
+  "size": "2048x1024",
+  "cls": "wide",
+  "alt": "Poolside Villa kitchen at dusk \u2014 cinematic frame",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "09_kitchen_detail",
+  "page": "kitchens",
+  "slot": "09_kitchen_detail",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/maison-valmont/kitchen/kitchen-detail.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Kitchen detail \u2014 stone, cabinetry, tap and lighting",
+  "project": "Maison Valmont \u2014 studio renovation set",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "01_bathroom_hero",
+  "page": "bathrooms",
+  "slot": "01_bathroom_hero",
+  "section": "hero",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/maison-valmont/after/bath-restored.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "hero",
+  "alt": "Maison Valmont bathroom \u2014 limestone, oak vanity, bronze fixtures and low-iron glass",
+  "project": "Maison Valmont \u2014 studio renovation set",
+  "lock": false,
+  "mobile": "crop",
+  "focus": 0.5
+ },
+ {
+  "id": "02_bathroom_layout",
+  "page": "bathrooms",
+  "slot": "02_bathroom_layout",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/plans/bath.webp"
+  ],
+  "prompt": "Redraw this bathroom as a true top-down 3D cutaway: vanity, toilet, shower, tub and storage exactly where they are, circulation clear, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Canal Apartment bathroom \u2014 top-down layout study",
+  "project": "Canal Apartment \u2014 client project (plan study)",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "03_primary_bathroom",
+  "page": "bathrooms",
+  "slot": "03_primary_bathroom",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/17_primary_bath_master.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "wide",
+  "alt": "Poolside Villa primary bathroom \u2014 freestanding tub, stone vanity and walk-in shower",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "04_compact_bathroom",
+  "page": "bathrooms",
+  "slot": "04_compact_bathroom",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/21_secondary_bath.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Poolside Villa secondary bathroom \u2014 compact plan",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "05_powder_room",
+  "page": "bathrooms",
+  "slot": "05_powder_room",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "A premium compact powder room: wall-hung basin on a limestone slab, a brass wall tap, dark warm plaster walls, a single bronze pendant, a tall mirror with soft edge lighting, oak door, photographed from the doorway, calm and realistic, no text, no people.",
+  "size": "1024x1536",
+  "cls": "card",
+  "alt": "Powder room \u2014 studio concept in limestone, plaster and bronze",
+  "project": "Studio concept",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "06_bathroom_materials",
+  "page": "bathrooms",
+  "slot": "06_bathroom_materials",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/maison-valmont/details/limestone.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Limestone, oak and bronze \u2014 bathroom material detail",
+  "project": "Maison Valmont \u2014 studio renovation set",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "07_bathroom_before",
+  "page": "bathrooms",
+  "slot": "07_bathroom_before",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/bath-raw.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "editorial",
+  "alt": "Canal Apartment bathroom \u2014 3D source frame before visualization",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "08_bathroom_after",
+  "page": "bathrooms",
+  "slot": "08_bathroom_after",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/bath-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "editorial",
+  "alt": "Canal Apartment bathroom \u2014 visualized with the architecture locked",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "09_bathroom_detail",
+  "page": "bathrooms",
+  "slot": "09_bathroom_detail",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/maison-valmont/gallery/bath-detail.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Bathroom detail \u2014 vanity, stone, mirror lighting and fixture",
+  "project": "Maison Valmont \u2014 studio renovation set",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "10_bathroom_cinematic_frame",
+  "page": "bathrooms",
+  "slot": "10_bathroom_cinematic_frame",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/17_primary_bath_master.png"
+  ],
+  "prompt": "The same primary bathroom at blue hour: the tub lit by the window, a trace of steam, warm vanity light against a deep blue exterior, cinematic 2.39 framing and grade, nothing moved.",
+  "size": "2048x1024",
+  "cls": "wide",
+  "alt": "Poolside Villa primary bathroom at blue hour \u2014 cinematic frame",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "01_furniture_decor_hero",
+  "page": "furniture-decor",
+  "slot": "01_furniture_decor_hero",
+  "section": "hero",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "hero",
+  "alt": "Canal Apartment living room \u2014 furniture, textiles, art and light in one language",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": "crop",
+  "focus": 0.45
+ },
+ {
+  "id": "02_empty_room",
+  "page": "furniture-decor",
+  "slot": "02_empty_room",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
+  ],
+  "prompt": "Remove every piece of furniture, rug, artwork, plant and decor object from this room so it is an empty architectural shell. Keep the floor, walls, windows, ceiling, doors and the lighting fixtures exactly as they are, same camera, same light.",
+  "size": "1536x1024",
+  "cls": "wide",
+  "alt": "The same living room as an empty architectural shell",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "03_furnished_room",
+  "page": "furniture-decor",
+  "slot": "03_furnished_room",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "wide",
+  "alt": "The same living room fully furnished and styled",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "04_furniture_plan",
+  "page": "furniture-decor",
+  "slot": "04_furniture_plan",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/plans/living.webp"
+  ],
+  "prompt": "Redraw this living room as a top-down furnished plan: sofa, rug, coffee table, lounge chairs and media wall exactly where they are, circulation routes clear, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Canal Apartment living room \u2014 furniture placement and circulation plan study",
+  "project": "Canal Apartment \u2014 client project (plan study)",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "05_reference_direction",
+  "page": "furniture-decor",
+  "slot": "05_reference_direction",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "An editorial flat-lay moodboard photographed from above on a pale plaster ground: swatches of natural linen and olive boucle, a slab of travertine, a block of oiled walnut and one of white oak, a brushed bronze sample, a ceramic vessel, a folded wool throw; soft north daylight; no text, no labels, no logos.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Reference direction \u2014 fabric, stone, wood and metal moodboard",
+  "project": "Studio concept",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "06_living_collection",
+  "page": "furniture-decor",
+  "slot": "06_living_collection",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/07_living_detail.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Living collection \u2014 sofa, lounge chairs, coffee table and rug",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "07_bedroom_collection",
+  "page": "furniture-decor",
+  "slot": "07_bedroom_collection",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/primary-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Bedroom collection \u2014 bed, nightstands, bench, rug, lighting and art",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "08_dining_collection",
+  "page": "furniture-decor",
+  "slot": "08_dining_collection",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/dining-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Dining collection \u2014 table, chairs, pendant and sideboard",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "09_decor_detail",
+  "page": "furniture-decor",
+  "slot": "09_decor_detail",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/maison-valmont/details/chandelier.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Decor detail \u2014 light, ceramics and material",
+  "project": "Maison Valmont \u2014 studio renovation set",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "10_material_palette",
+  "page": "furniture-decor",
+  "slot": "10_material_palette",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/maison-valmont/details/wool-linen.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Material palette \u2014 wool, linen, oak and stone",
+  "project": "Maison Valmont \u2014 studio renovation set",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "04_apartment_3d_plan",
+  "page": "apartments",
+  "slot": "04_apartment_3d_plan",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/plans/overview.webp",
+   "public/interior-design/projects/canal-apartment/pairs/canal-raw.webp"
+  ],
+  "prompt": "Redraw this whole apartment as a furnished 3D floor-plan axonometric cutaway seen from 45 degrees above: every room, wall and window exactly as in the source, the waterfront side toward the bottom, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+  "size": "2048x1024",
+  "cls": "wide",
+  "alt": "Canal Apartment \u2014 furnished 3D floor-plan study",
+  "project": "Canal Apartment \u2014 client project (plan study)",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "01_apartment_hero",
+  "page": "apartments",
+  "slot": "01_apartment_hero",
+  "section": "hero",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/generated/apartments/originals/04_apartment_3d_plan.png",
+   "public/interior-design/projects/canal-apartment/pairs/canal-editorial-v2.webp"
+  ],
+  "prompt": "The same furnished 3D floor-plan axonometric, camera 30 degrees lower and closer so the living room and the waterfront edge dominate, evening light, warm lamps inside the rooms, the canal reflecting beyond; nothing in the plan changes.",
+  "size": "2048x1024",
+  "cls": "hero",
+  "alt": "Canal Apartment \u2014 the furnished 3D plan at evening, about to step inside",
+  "project": "Canal Apartment \u2014 client project (plan study)",
+  "lock": true,
+  "mobile": "crop",
+  "focus": 0.5
+ },
+ {
+  "id": "02_apartment_source",
+  "page": "apartments",
+  "slot": "02_apartment_source",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/canal-raw.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Canal Apartment \u2014 3D source frame of the existing condition",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "03_apartment_clean_plan",
+  "page": "apartments",
+  "slot": "03_apartment_clean_plan",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/plans/overview.webp"
+  ],
+  "prompt": "Redraw this apartment as a clean professional 2D architectural floor plan: black line work on white, correct wall thickness, door swings, window openings and fixed furniture footprints exactly as in the source, no text, no dimensions, no labels.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Canal Apartment \u2014 clean 2D plan study (not a survey)",
+  "project": "Canal Apartment \u2014 client project (plan study)",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "05_apartment_living",
+  "page": "apartments",
+  "slot": "05_apartment_living",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "wide",
+  "alt": "Canal Apartment living room",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "06_apartment_kitchen",
+  "page": "apartments",
+  "slot": "06_apartment_kitchen",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/kitchen-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Canal Apartment kitchen",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "07_apartment_bedroom",
+  "page": "apartments",
+  "slot": "07_apartment_bedroom",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/primary-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Canal Apartment primary bedroom",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "08_apartment_bathroom",
+  "page": "apartments",
+  "slot": "08_apartment_bathroom",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/bath-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Canal Apartment bathroom",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "09_apartment_balcony",
+  "page": "apartments",
+  "slot": "09_apartment_balcony",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/terrace-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Canal Apartment terrace and waterfront view",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "10_apartment_film_frame",
+  "page": "apartments",
+  "slot": "10_apartment_film_frame",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/canal-editorial-v2.webp"
+  ],
+  "prompt": "The same room at dusk: interior lamps on, the canal outside turning blue, cinematic 2.39 framing and grade, slight haze in the light; nothing moved.",
+  "size": "2048x1024",
+  "cls": "wide",
+  "alt": "Canal Apartment at dusk \u2014 cinematic frame (no film exists for this project)",
+  "project": "Canal Apartment \u2014 client project (cinematic frame)",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "11_apartment_before",
+  "page": "apartments",
+  "slot": "11_apartment_before",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/lounge-raw.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "editorial",
+  "alt": "Canal Apartment lounge \u2014 3D source frame",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "11_apartment_after",
+  "page": "apartments",
+  "slot": "11_apartment_after",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/lounge-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "editorial",
+  "alt": "Canal Apartment lounge \u2014 visualized with the architecture locked",
+  "project": "Canal Apartment \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "01_home_hero",
+  "page": "homes",
+  "slot": "01_home_hero",
+  "section": "hero",
+  "type": "import",
+  "sources": [
+   "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/03_exterior_pool_master.png"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "hero",
+  "alt": "Poolside Villa \u2014 the complete two-storey house, pool, garage and landscape",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": "crop",
+  "focus": 0.55
+ },
+ {
+  "id": "02_home_ground_floor",
+  "page": "homes",
+  "slot": "02_home_ground_floor",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/00_ground_floor_plan.webp"
+  ],
+  "prompt": "Render this ground floor as a photorealistic 3D floor-plan axonometric: every wall, opening and piece of furniture exactly as in the source, pool terrace and garage included, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+  "size": "1536x1024",
+  "cls": "wide",
+  "alt": "Poolside Villa \u2014 ground floor 3D plan",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "03_home_upper_floor",
+  "page": "homes",
+  "slot": "03_home_upper_floor",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/01_upper_floor_plan.webp"
+  ],
+  "prompt": "Render this upper floor as a photorealistic 3D floor-plan axonometric: every wall, opening and piece of furniture exactly as in the source, balcony included, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+  "size": "1536x1024",
+  "cls": "wide",
+  "alt": "Poolside Villa \u2014 upper floor 3D plan",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "04_home_whole_house",
+  "page": "homes",
+  "slot": "04_home_whole_house",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp",
+   "public/interior-design/projects/poolside-villa/renders/00_ground_floor_plan.webp",
+   "public/interior-design/projects/poolside-villa/renders/01_upper_floor_plan.webp"
+  ],
+  "prompt": "A section cutaway of this exact two-storey house: the pool-side wall removed so both furnished floors read at once, pool in the foreground, the architecture, pool, garage and landscape exactly as in the first image, room layouts as in the plans, late afternoon light.",
+  "size": "2048x1024",
+  "cls": "wide",
+  "alt": "Poolside Villa \u2014 whole-house cutaway",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "05_home_living",
+  "page": "homes",
+  "slot": "05_home_living",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/06_living_pool_view.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "wide",
+  "alt": "Poolside Villa living room opening to the pool",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "06_home_kitchen",
+  "page": "homes",
+  "slot": "06_home_kitchen",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/10_kitchen_island_detail.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Poolside Villa kitchen island",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "07_home_primary_bedroom",
+  "page": "homes",
+  "slot": "07_home_primary_bedroom",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/14_primary_bedroom_master.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Poolside Villa primary bedroom",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "08_home_primary_bath",
+  "page": "homes",
+  "slot": "08_home_primary_bath",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/18_primary_bath_detail.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Poolside Villa primary bathroom detail",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "09_home_pool",
+  "page": "homes",
+  "slot": "09_home_pool",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/27_pool_hero.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Poolside Villa pool and outdoor living",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "10_home_garage",
+  "page": "homes",
+  "slot": "10_home_garage",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/23_garage.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Poolside Villa garage",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "11_home_landscape",
+  "page": "homes",
+  "slot": "11_home_landscape",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/02_exterior_front_day.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "Poolside Villa \u2014 arrival and landscape",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "12_home_cinematic_frame",
+  "page": "homes",
+  "slot": "12_home_cinematic_frame",
+  "section": "sections",
+  "type": "import",
+  "sources": [
+   "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/26_outdoor_kitchen.png"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "wide",
+  "alt": "Poolside Villa outdoor kitchen at golden hour \u2014 house-film frame",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "13_home_blue_hour",
+  "page": "homes",
+  "slot": "13_home_blue_hour",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/27_pool_hero.webp"
+  ],
+  "prompt": "The same pool terrace and house at blue hour: deep blue sky, underwater pool lights on, warm light glowing from every window, nothing moved or added.",
+  "size": "2048x1024",
+  "cls": "wide",
+  "alt": "Poolside Villa at blue hour",
+  "project": "Poolside Villa \u2014 client project",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "02_building_full_exterior",
+  "page": "buildings",
+  "slot": "02_building_full_exterior",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/the-patel/renders/patel-hero-realistic-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "wide",
+  "alt": "The Patel \u2014 full tower exterior at golden hour",
+  "project": "The Patel \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "03_building_exploded_floors",
+  "page": "buildings",
+  "slot": "03_building_exploded_floors",
+  "section": "sections",
+  "type": "edit",
+  "sources": [
+   "public/interior-design/projects/the-patel/renders/patel-architecture-single.webp"
+  ],
+  "prompt": "The same tower drawn as an exploded axonometric: the floor plates separated vertically with equal gaps, the facade geometry, fins and crown unchanged, white architectural model with subtle shadows, plain pale background, no text.",
+  "size": "1024x1536",
+  "cls": "card",
+  "alt": "The Patel \u2014 exploded levels study",
+  "project": "The Patel \u2014 client project (study)",
+  "lock": true,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "04_building_unit_selection",
+  "page": "buildings",
+  "slot": "04_building_unit_selection",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/the-patel/renders/patel-hero-single.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "wide",
+  "alt": "The Patel \u2014 the tower with one residence level in focus",
+  "project": "The Patel \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "05_building_residence_plan",
+  "page": "buildings",
+  "slot": "05_building_residence_plan",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/the-patel/residence-1802/floorplan.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "The Patel \u2014 Residence 1802 floor plan",
+  "project": "The Patel \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "06_building_lobby",
+  "page": "buildings",
+  "slot": "06_building_lobby",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "A double-height residential tower lobby in Miami: travertine floor, a fluted oak feature wall, a brass reception desk, full-height glass with palms and warm sunset light outside, a single sculptural pendant, restrained luxury, no text, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Residential lobby \u2014 studio concept for the PATEL presentation",
+  "project": "Studio concept",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "07_building_amenity",
+  "page": "buildings",
+  "slot": "07_building_amenity",
+  "section": "sections",
+  "type": "text",
+  "sources": [],
+  "prompt": "A resident lounge beside an indoor pool deck with an ocean view through full-height glass: travertine and oak, bronze details, low lounge seating, warm evening light, Miami skyline faint outside, no text, no people.",
+  "size": "1536x1024",
+  "cls": "card",
+  "alt": "Resident amenity \u2014 studio concept for the PATEL presentation",
+  "project": "Studio concept",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "08_building_rooftop",
+  "page": "buildings",
+  "slot": "08_building_rooftop",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/the-patel/renders/patel-rooftop-single-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "The Patel \u2014 rooftop pool and landscape",
+  "project": "The Patel \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "09_building_residence_interior",
+  "page": "buildings",
+  "slot": "09_building_residence_interior",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/the-patel/residence-1802/living.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "wide",
+  "alt": "The Patel \u2014 Residence 1802 living room with the Miami view",
+  "project": "The Patel \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "10_building_cinematic_frame",
+  "page": "buildings",
+  "slot": "10_building_cinematic_frame",
+  "section": "sections",
+  "type": "import",
+  "sources": [
+   "C:/Users/smadj/Documents/the patel - appartments/website/public/media/patel/patel-hero-poster-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "wide",
+  "alt": "The Patel \u2014 launch-film frame",
+  "project": "The Patel \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "11_building_website_mockup",
+  "page": "buildings",
+  "slot": "11_building_website_mockup",
+  "section": "sections",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/the-patel/brand/patel-breakout-hero.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "card",
+  "alt": "The Patel \u2014 interactive development website presentation",
+  "project": "The Patel \u2014 client project",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "overview",
+  "page": "navigation",
+  "slot": "overview",
+  "section": "",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/the-patel/brand/patel-breakout-hero.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "thumb",
+  "alt": "Interior Design overview \u2014 preview",
+  "project": "navigation preview",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.6
+ },
+ {
+  "id": "kitchens",
+  "page": "navigation",
+  "slot": "kitchens",
+  "section": "",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/10_kitchen_island_detail.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "thumb",
+  "alt": "Kitchens \u2014 preview",
+  "project": "navigation preview",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "bathrooms",
+  "page": "navigation",
+  "slot": "bathrooms",
+  "section": "",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/18_primary_bath_detail.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "thumb",
+  "alt": "Bathrooms \u2014 preview",
+  "project": "navigation preview",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "furniture-decor",
+  "page": "navigation",
+  "slot": "furniture-decor",
+  "section": "",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/dining-editorial.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "thumb",
+  "alt": "Furniture & Decor \u2014 preview",
+  "project": "navigation preview",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "apartments",
+  "page": "navigation",
+  "slot": "apartments",
+  "section": "",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/terrace-editorial-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "thumb",
+  "alt": "Apartments \u2014 preview",
+  "project": "navigation preview",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "homes",
+  "page": "navigation",
+  "slot": "homes",
+  "section": "",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/28_pool_water_level.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "thumb",
+  "alt": "Homes \u2014 preview",
+  "project": "navigation preview",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ },
+ {
+  "id": "buildings",
+  "page": "navigation",
+  "slot": "buildings",
+  "section": "",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/the-patel/renders/patel-rooftop-single-v2.webp"
+  ],
+  "prompt": "",
+  "size": null,
+  "cls": "thumb",
+  "alt": "Buildings & Developments \u2014 preview",
+  "project": "navigation preview",
+  "lock": false,
+  "mobile": null,
+  "focus": 0.5
+ }
+]

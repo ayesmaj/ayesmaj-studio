@@ -33,11 +33,29 @@ export const SITE = {
 export const NAV = [
   { label: "Work", to: "/Work" },
   { label: "Services", to: "/services", mega: "services" },
-  { label: "Interior Design", to: "/interior-design" },
+  { label: "Interior Design", to: "/interior-design", mega: "interior" },
   { label: "Studio", to: "/Studio" },
   { label: "About", to: "/About" },
   { label: "Contact", to: "/Contact" },
 ];
+
+// Interior Design mega-menu (owner IA 2026-08-22): Overview · Spaces · Property types.
+// Previews live in /interior-design/generated/navigation (see src/content/interior-design-generated-media.ts).
+export const INTERIOR_MENU = {
+  overview: { label: "Overview", to: "/interior-design", line: "From scan and plan to a world the client can enter.", preview: "/interior-design/generated/navigation/overview.webp" },
+  groups: [
+    { title: "Spaces", items: [
+      { label: "Kitchens", to: "/interior-design/kitchens", line: "The room everything revolves around.", preview: "/interior-design/generated/navigation/kitchens.webp" },
+      { label: "Bathrooms", to: "/interior-design/bathrooms", line: "Stone, water, light.", preview: "/interior-design/generated/navigation/bathrooms.webp" },
+      { label: "Furniture & Decor", to: "/interior-design/furniture-decor", line: "The space is built - now give it a life.", preview: "/interior-design/generated/navigation/furniture-decor.webp" },
+    ] },
+    { title: "Property types", items: [
+      { label: "Apartments", to: "/interior-design/apartments", line: "See the entire apartment, then step inside.", preview: "/interior-design/generated/navigation/apartments.webp" },
+      { label: "Homes", to: "/interior-design/homes", line: "Understand the whole home, experience every part.", preview: "/interior-design/generated/navigation/homes.webp" },
+      { label: "Buildings & Developments", to: "/interior-design/buildings", line: "From building model to a world buyers can enter.", preview: "/interior-design/generated/navigation/buildings.webp" },
+    ] },
+  ],
+};
 
 // Services mega-menu items (each links to a full service page)
 export const SERVICES_MENU = [

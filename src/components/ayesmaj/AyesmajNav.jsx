@@ -9,7 +9,7 @@ import {
 import LogoMark from "./LogoMark";
 import CinematicButton from "./CinematicButton";
 import { COLORS, FONTS } from "./theme";
-import { SITE, NAV, SERVICES_MENU, WORK_MENU } from "../../data/siteConfig";
+import { SITE, NAV, SERVICES_MENU, WORK_MENU, INTERIOR_MENU } from "../../data/siteConfig";
 
 const GRADIENT = "linear-gradient(90deg,#D8B75A 0%,#C88B58 30%,#A45FDB 70%,#7A48FF 100%)";
 const SERVICE_ICONS = [Hexagon, Globe, Sparkles, Box, Clapperboard, PenTool];
@@ -44,7 +44,8 @@ export default function AyesmajNav() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  const [openMenu, setOpenMenu] = useState(null); // "services" | "work" | null
+  const [openMenu, setOpenMenu] = useState(null); // "services" | "work" | "interior" | null
+  const [interiorPreview, setInteriorPreview] = useState(null); // hovered item in the Interior Design mega menu
   const [drawer, setDrawer] = useState(false);
 
   useEffect(() => {
@@ -125,7 +126,7 @@ export default function AyesmajNav() {
         <nav className="ayes-nav-links" aria-label="Primary" style={{ display: "flex", gap: 34, alignItems: "center" }}>
           {NAV.map((item) => {
             const active = isActive(item, pathname);
-            const menuKey = item.mega === "services" ? "services" : item.label === "Work" ? "work" : null;
+            const menuKey = item.mega === "services" ? "services" : item.mega === "interior" ? "interior" : item.label === "Work" ? "work" : null;
             const trigger = (
               <button
                 onClick={() => go(item.to)}
@@ -247,6 +248,71 @@ export default function AyesmajNav() {
                       })}
                     </motion.div>
                   )}
+                </AnimatePresence>
+
+                {/* INTERIOR DESIGN mega menu (owner IA 2026-08-22) */}
+                <AnimatePresence>
+                  {menuKey === "interior" && openMenu === "interior" && (() => {
+                    const all = [INTERIOR_MENU.overview, ...INTERIOR_MENU.groups.flatMap((g) => g.items)];
+                    const current = interiorPreview || all.find((i) => pathname.startsWith(i.to) && i.to !== "/interior-design") || INTERIOR_MENU.overview;
+                    const itemBtn = (it) => (
+                      <button
+                        key={it.to}
+                        role="menuitem"
+                        className="ayes-mega-item"
+                        onClick={() => go(it.to)}
+                        onMouseEnter={() => setInteriorPreview(it)}
+                        onFocus={() => setInteriorPreview(it)}
+                        style={{ display: "flex", flexDirection: "column", gap: 3, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "10px 14px", borderRadius: 12, transition: "background 0.25s ease, transform 0.25s ease", width: "100%" }}
+                      >
+                        <span style={{ fontFamily: FONTS.display, fontSize: 19, letterSpacing: "0.04em", textTransform: "uppercase", color: current.to === it.to ? "#D8B75A" : "#F6F3ED", lineHeight: 1 }}>{it.label}</span>
+                        <span style={{ fontFamily: FONTS.ui, fontSize: 12, color: "#AAA39A", lineHeight: 1.4 }}>{it.line}</span>
+                      </button>
+                    );
+                    return (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, x: "-50%" }}
+                        animate={{ opacity: 1, y: 0, x: "-50%" }}
+                        exit={{ opacity: 0, y: 8, x: "-50%" }}
+                        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                        role="menu"
+                        aria-label="Interior Design"
+                        onMouseLeave={() => setInteriorPreview(null)}
+                        style={{ ...panelStyle, width: "min(860px, 94vw)", padding: 14, display: "grid", gridTemplateColumns: "1fr 1fr 1.35fr", gap: 6, border: "1px solid rgba(216,183,90,0.28)", boxShadow: "0 30px 80px rgba(0,0,0,0.6), 0 18px 40px -10px rgba(122,72,255,0.35)" }}
+                      >
+                        <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                          <div style={{ fontFamily: FONTS.ui, fontSize: 10.5, fontWeight: 600, letterSpacing: "0.3em", textTransform: "uppercase", color: "#70665A", padding: "8px 14px 6px" }}>Overview</div>
+                          {itemBtn(INTERIOR_MENU.overview)}
+                          <div style={{ fontFamily: FONTS.ui, fontSize: 10.5, fontWeight: 600, letterSpacing: "0.3em", textTransform: "uppercase", color: "#70665A", padding: "14px 14px 6px" }}>{INTERIOR_MENU.groups[0].title}</div>
+                          {INTERIOR_MENU.groups[0].items.map(itemBtn)}
+                        </div>
+                        <div style={{ display: "flex", flexDirection: "column", gap: 2, borderLeft: "1px solid rgba(255,255,255,0.07)" }}>
+                          <div style={{ fontFamily: FONTS.ui, fontSize: 10.5, fontWeight: 600, letterSpacing: "0.3em", textTransform: "uppercase", color: "#70665A", padding: "8px 14px 6px" }}>{INTERIOR_MENU.groups[1].title}</div>
+                          {INTERIOR_MENU.groups[1].items.map(itemBtn)}
+                        </div>
+                        <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", minHeight: 250, background: "#0b0b0d", border: "1px solid rgba(255,255,255,0.07)" }} aria-hidden>
+                          <AnimatePresence mode="wait">
+                            <motion.img
+                              key={current.preview}
+                              src={current.preview}
+                              alt=""
+                              initial={{ opacity: 0, scale: 1.03 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                            />
+                          </AnimatePresence>
+                          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(5,5,7,0) 45%, rgba(5,5,7,0.82) 100%)" }} />
+                          <div style={{ position: "absolute", left: 14, right: 14, bottom: 12, display: "grid", gap: 4 }}>
+                            <span style={{ fontFamily: FONTS.ui, fontSize: 10.5, letterSpacing: "0.3em", textTransform: "uppercase", color: "#D8B75A" }}>Interior Design</span>
+                            <span style={{ fontFamily: FONTS.display, fontSize: 22, textTransform: "uppercase", color: "#F6F3ED", lineHeight: 1 }}>{current.label}</span>
+                          </div>
+                          <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 1, background: GRADIENT, opacity: 0.8 }} />
+                        </div>
+                      </motion.div>
+                    );
+                  })()}
                 </AnimatePresence>
 
                 {/* WORK dropdown */}
@@ -431,6 +497,22 @@ export default function AyesmajNav() {
                   }}
                 >
                   {s.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Interior Design group */}
+            <div style={{ marginTop: 32 }}>
+              <div style={{ fontFamily: FONTS.ui, fontSize: 11, fontWeight: 600, letterSpacing: "0.3em", textTransform: "uppercase", color: "#70665A", marginBottom: 10 }}>
+                Interior Design
+              </div>
+              {[INTERIOR_MENU.overview, ...INTERIOR_MENU.groups.flatMap((g) => g.items)].map((it) => (
+                <button
+                  key={it.to}
+                  onClick={() => go(it.to)}
+                  style={{ display: "block", width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", fontFamily: FONTS.ui, fontSize: 16, fontWeight: 500, color: pathname === it.to ? "#D8B75A" : "#D7D1C8", padding: "13px 0", minHeight: 48, borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+                >
+                  {it.label}
                 </button>
               ))}
             </div>

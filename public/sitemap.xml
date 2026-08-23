@@ -22,6 +22,12 @@
   <url><loc>https://ayesmajstudios.com/Cookies</loc><changefreq>weekly</changefreq><priority>0.3</priority></url>
   <url><loc>https://ayesmajstudios.com/Accessibility</loc><changefreq>weekly</changefreq><priority>0.3</priority></url>
   <url><loc>https://ayesmajstudios.com/interior-design</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ayesmajstudios.com/interior-design/kitchens</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ayesmajstudios.com/interior-design/bathrooms</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ayesmajstudios.com/interior-design/furniture-decor</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ayesmajstudios.com/interior-design/apartments</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ayesmajstudios.com/interior-design/homes</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ayesmajstudios.com/interior-design/buildings</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ayesmajstudios.com/interior-design/ai-scan-apartment</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ayesmajstudios.com/interior-design/ai-scan-house</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ayesmajstudios.com/interior-design/3d-floor-plan-apartment</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>

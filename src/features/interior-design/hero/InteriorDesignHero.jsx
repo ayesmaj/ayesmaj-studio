@@ -19,7 +19,8 @@ import './hero.css';
 
 const EASE = [0.22, 1, 0.36, 1];
 
-export default function InteriorDesignHero() {
+export default function InteriorDesignHero({ copy: copyOverride = null }) {
+  const HERO = { ...HERO_COPY, ...(copyOverride || {}) };
   const reduced = useReducedMotion();
   const hostRef = useRef(null);
   const glRef = useRef(null);
@@ -88,19 +89,19 @@ export default function InteriorDesignHero() {
       <div className="idh-grid">
         {/* ── copy ─────────────────────────────────────────────────── */}
         <div className="idh-copy">
-          <motion.div {...rise(0.9)} className="idv-eyebrow">{HERO_COPY.eyebrow}</motion.div>
+          <motion.div {...rise(0.9)} className="idv-eyebrow">{HERO.eyebrow}</motion.div>
           <motion.h1 {...rise(1.0)} className="idv2-display idv2-display--hero idh-h1">
-            {HERO_COPY.headline.map((line) => <React.Fragment key={line}>{line}<br /></React.Fragment>)}
-            <motion.span {...rise(1.55)} className="idv2-grad" style={{ display: 'inline-block' }}>{HERO_COPY.headlineGradient}</motion.span>
+            {HERO.headline.map((line) => <React.Fragment key={line}>{line}<br /></React.Fragment>)}
+            <motion.span {...rise(1.55)} className="idv2-grad" style={{ display: 'inline-block' }}>{HERO.headlineGradient}</motion.span>
           </motion.h1>
-          <motion.p {...rise(1.15)} className="idv-lede idh-lede">{HERO_COPY.body}</motion.p>
+          <motion.p {...rise(1.15)} className="idv-lede idh-lede">{HERO.body}</motion.p>
           <motion.div {...rise(1.3)} className="idh-ctas">
-            <a href={HERO_COPY.primary.to} className="idv-btn idh-btn idh-btn--gold">{HERO_COPY.primary.label} <ArrowRight size={15} aria-hidden="true" /></a>
-            <Link to={HERO_COPY.secondary.to} className="idv-btn idh-btn">{HERO_COPY.secondary.label} <ArrowRight size={15} aria-hidden="true" /></Link>
+            <a href={HERO.primary.to} className="idv-btn idh-btn idh-btn--gold">{HERO.primary.label} <ArrowRight size={15} aria-hidden="true" /></a>
+            <Link to={HERO.secondary.to} className="idv-btn idh-btn">{HERO.secondary.label} <ArrowRight size={15} aria-hidden="true" /></Link>
           </motion.div>
-          <motion.div {...rise(1.4)} className="idv-mono-label idh-methods">{HERO_COPY.methods}</motion.div>
+          <motion.div {...rise(1.4)} className="idv-mono-label idh-methods">{HERO.methods}</motion.div>
           {!fallback ? (
-            <motion.div {...rise(1.5)} className="idv-mono-label idh-hint">{touch ? HERO_COPY.hintTouch : HERO_COPY.hint}</motion.div>
+            <motion.div {...rise(1.5)} className="idv-mono-label idh-hint">{touch ? HERO.hintTouch : HERO.hint}</motion.div>
           ) : null}
         </div>
 
@@ -113,11 +114,11 @@ export default function InteriorDesignHero() {
             <div className="idh-screen-ui">
               <span className="idh-dots" aria-hidden="true"><i /><i /><i /></span>
               <div className="idh-screen-text">
-                <span className="idv-mono-label">{HERO_COPY.screen.eyebrow}</span>
-                <strong>{HERO_COPY.screen.title}</strong>
-                <span className="idh-screen-sub">{HERO_COPY.screen.sub}</span>
-                <span className="idv-mono-label idh-screen-kind">{HERO_COPY.screen.kind}</span>
-                <Link to={HERO_COPY.screen.to} className="idh-screen-cta">{HERO_COPY.screen.cta} <ArrowRight size={13} aria-hidden="true" /></Link>
+                <span className="idv-mono-label">{HERO.screen.eyebrow}</span>
+                <strong>{HERO.screen.title}</strong>
+                <span className="idh-screen-sub">{HERO.screen.sub}</span>
+                <span className="idv-mono-label idh-screen-kind">{HERO.screen.kind}</span>
+                <Link to={HERO.screen.to} className="idh-screen-cta">{HERO.screen.cta} <ArrowRight size={13} aria-hidden="true" /></Link>
               </div>
             </div>
             <div className="idh-screen-edge" aria-hidden="true" />
@@ -127,7 +128,7 @@ export default function InteriorDesignHero() {
             ref={glRef}
             className="idh-gl"
             role={ready ? 'img' : undefined}
-            aria-label={ready ? HERO_COPY.canvasLabel : undefined}
+            aria-label={ready ? HERO.canvasLabel : undefined}
             aria-hidden={!ready}
             style={{ opacity: ready ? 1 : 0 }}
           />
@@ -140,13 +141,13 @@ export default function InteriorDesignHero() {
 
           {loading ? (
             <div className="idh-loader" role="status" aria-live="polite">
-              <span className="idv-mono-label">{HERO_COPY.loader[0]}</span>
-              <span className="idh-loader-line">{HERO_COPY.loader[1]}</span>
+              <span className="idv-mono-label">{HERO.loader[0]}</span>
+              <span className="idh-loader-line">{HERO.loader[1]}</span>
               <span className="idh-loader-bar" aria-hidden="true"><i style={{ transform: `scaleX(${Math.max(0.04, progress)})` }} /></span>
             </div>
           ) : null}
 
-          <div className="idv-mono-label idh-credit">{HERO_COPY.credit}</div>
+          <div className="idv-mono-label idh-credit">{HERO.credit}</div>
         </div>
       </div>
 
