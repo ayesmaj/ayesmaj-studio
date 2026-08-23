@@ -139,7 +139,16 @@ export default function ModelViewer({ model, ratio = '16 / 10', auto = false, st
         root.position.sub(center);
         scene.add(root);
         const maxDim = Math.max(size.x, size.y, size.z);
-        camera.position.set(maxDim * 0.9, maxDim * 0.55, maxDim * 0.9);
+        // Frame from the bounding sphere. Stage mode keeps the model within half the width so the copy beside it stays clear.
+        const radius = size.length() / 2;
+        const vfov = THREE.MathUtils.degToRad(camera.fov);
+        let dist = radius / Math.sin(vfov / 2) * (stage ? 1.06 : 0.95);
+        if (stage) {
+          const hfov = 2 * Math.atan(Math.tan(vfov / 2) * camera.aspect);
+          const maxFrac = mount.clientWidth > 860 ? 0.44 : 0.92;
+          dist = Math.max(dist, radius / (Math.tan(hfov / 2) * maxFrac));
+        }
+        camera.position.set(0.66, 0.4, 0.66).normalize().multiplyScalar(dist);
         controls.target.set(0, 0, 0);
         camera.near = maxDim / 100;
         camera.far = maxDim * 10;

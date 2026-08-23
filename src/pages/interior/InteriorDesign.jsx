@@ -125,13 +125,13 @@ function SpatialModels() {
   const [idx, setIdx] = useState(0);
   const m = ALL_MODELS[idx];
   return (
-    <section className="idv2-section idv2-spatial idv2-stage-section" id="models">
+    <section className="idv2-section idv2-spatial idv2-m3d-section" id="models">
       <DarkSectionBackground asset="geometric-facets" position="center right" overlay={0.58} textSide="left" glow="purple" />
-      <div className="idv2-stage" aria-label="Interactive 3D model stage">
-        <ModelViewer model={m} auto stage shift={0.17} />
+      <div className="idv2-m3d" aria-label="Interactive 3D model stage">
+        <ModelViewer model={m} auto stage shift={0.25} />
       </div>
-      <div className="idv2-inner idv2-stage-copy">
-        <div className="idv2-stage-col idv2-reveal">
+      <div className="idv2-inner idv2-m3d-copy">
+        <div className="idv2-m3d-col idv2-reveal">
           <Eyebrow>02 / UNDERSTAND · INTERACTIVE 3D</Eyebrow>
           <h2 className="idv2-h2">Make the entire <span className="idv2-grad">layout</span> understandable.</h2>
           <p className="idv-lede">Not screenshots — the actual models, loaded as you arrive. Drag to turn them and read the space in the round.</p>
@@ -140,7 +140,7 @@ function SpatialModels() {
               <button key={x.key} type="button" className="idv2-chip" aria-pressed={i === idx} onClick={() => setIdx(i)}>{x.name}</button>
             ))}
           </div>
-          <div className="idv2-stage-meta">
+          <div className="idv2-m3d-meta">
             <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>{m.credit}</span> · {m.name.toUpperCase()}</div>
             <p style={{ margin: 0, fontSize: 14.5, color: 'rgba(245,245,240,0.82)' }}>{m.line}</p>
           </div>

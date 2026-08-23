@@ -299,26 +299,33 @@
 }
 
 /* ── Full-bleed 3D stage sections (owner 2026-08-21: the model is the section, text beside it) ── */
-.idv2-stage-section { position: relative; min-height: 100svh; display: grid; align-items: center; overflow: clip; }
-.idv2-stage { position: absolute; inset: 0; z-index: 1; }
-.idv2-stage canvas { display: block; }
+.idv2-m3d-section { position: relative; min-height: 100svh; display: grid; align-items: center; overflow: clip; }
+.idv2-m3d { position: absolute; inset: 0; z-index: 1; }
+.idv2-m3d canvas { display: block; }
 /* .idv-figure is a grid; in a stage the figure and its mount must be plain blocks that fill the section */
-.idv2-stage .idv-figure--stage { display: block; height: 100%; }
-.idv2-stage .idv-figure--stage > div { height: 100% !important; }
-.idv2-stage-copy { position: relative; z-index: 2; pointer-events: none; }
-.idv2-stage-copy a, .idv2-stage-copy button, .idv2-stage-copy .idv2-chip { pointer-events: auto; }
-.idv2-stage-col { max-width: 520px; display: grid; gap: 18px; }
-.idv2-stage-col--right { margin-left: auto; }
+.idv2-m3d .idv-figure--stage { display: block; height: 100%; }
+.idv2-m3d .idv-figure--stage > div { height: 100% !important; }
+.idv-figure--stage figcaption { display: none; }   /* name + credit live in the copy column on a stage */
+/* readability ramp under the copy column, on whichever side it sits (above the canvas, below the text) */
+.idv2-m3d-copy::before { content: ''; position: absolute; top: -12%; bottom: -12%; left: -30vw; right: 48%; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(8,8,10,.94) 0%, rgba(8,8,10,.82) 55%, rgba(8,8,10,.35) 82%, rgba(8,8,10,0) 100%); }
+.idv2-m3d-copy:has(.idv2-m3d-col--right)::before { left: 48%; right: -30vw;
+  background: linear-gradient(270deg, rgba(8,8,10,.94) 0%, rgba(8,8,10,.82) 55%, rgba(8,8,10,.35) 82%, rgba(8,8,10,0) 100%); }
+@media (max-width: 860px) { .idv2-m3d-copy::before, .idv2-m3d-copy:has(.idv2-m3d-col--right)::before { display: none; } }
+.idv2-m3d-copy { position: relative; z-index: 2; pointer-events: none; width: 100%; justify-self: stretch; } /* a grid item would otherwise shrink-wrap and centre the copy */
+.idv2-m3d-copy a, .idv2-m3d-copy button, .idv2-m3d-copy .idv2-chip { pointer-events: auto; }
+.idv2-m3d-col { max-width: 520px; display: grid; gap: 18px; }
+.idv2-m3d-col--right { margin-left: auto; }
 .idv2-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
 .idv2-chip { font-family: var(--idv-font-mono, 'DM Mono', ui-monospace, monospace); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
   padding: 9px 13px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); background: rgba(5,5,7,.45); color: rgba(245,245,240,.82); cursor: pointer; transition: border-color .2s, color .2s, background .2s; }
 .idv2-chip:hover, .idv2-chip:focus-visible { border-color: var(--idv-champagne); color: var(--idv-champagne); }
 .idv2-chip[aria-pressed="true"] { border-color: var(--idv-champagne); background: rgba(216,183,90,.16); color: var(--idv-champagne); }
 .idv2-chip:focus-visible { outline: 2px solid var(--idv-champagne); outline-offset: 3px; }
-.idv2-stage-meta { display: grid; gap: 6px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.14); }
+.idv2-m3d-meta { display: grid; gap: 6px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.14); }
 @media (max-width: 860px) {
-  .idv2-stage-section { min-height: 0; display: block; }
-  .idv2-stage { position: relative; inset: auto; height: 78svh; }
-  .idv2-stage-copy { padding-top: 0; }
-  .idv2-stage-col--right { margin-left: 0; }
+  .idv2-m3d-section { min-height: 0; display: block; }
+  .idv2-m3d { position: relative; inset: auto; height: 78svh; }
+  .idv2-m3d-copy { padding-top: 0; }
+  .idv2-m3d-col--right { margin-left: 0; }
 }
