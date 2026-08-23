@@ -55,6 +55,9 @@ export const VILLA = {
     villaFrame('27_pool_hero.webp', 'Pool', 'pool'),
     villaFrame('28_pool_water_level.webp', 'Pool, water level', 'pool'),
   ],
+  /** The house film — 35 s, one continuous take generated with Seedance 2.0 from the master frames in shooting order
+      (sketch → plan → house → living → kitchen → bath → bedroom → pool), 2026-08-22. scripts/seedance-villa-film.mjs. */
+  film: { desktop: `${V}/film/house-film-desktop.mp4`, mobile: `${V}/film/house-film-mobile.mp4`, poster: `${V}/film/house-film-poster.webp`, duration: '35 s' },
 };
 
 /** The spec's house-film order (§26), drawn from one consistent project. */

@@ -2,8 +2,8 @@
  * /interior-design/ai-video-house — the most cinematic page of the world
  * (addendum §13, accent: experience orange → violet).
  *
- * Structure: full-bleed film hero (Maison Valmont — the one transformation
- * film that actually exists) → pinned six-chapter journey built from the
+ * Structure: full-bleed film hero (the Poolside Villa house film, generated
+ * 2026-08-22 from its master frames) → pinned six-chapter journey built from the
  * Poolside Villa master-frame sequence → what film adds → storyboard-first
  * honesty → facts → FAQ → next portal → CTA.
  *
@@ -56,16 +56,18 @@ function Hero() {
   return (
     <section className="idv2-full idv2-acc-experience" style={{ gridTemplateRows: '1fr auto', background: '#060505' }}>
       <video
-        src={VALMONT.film.src}
-        poster={VALMONT.film.posterFinal}
+        poster={VILLA.film.poster}
         muted
         loop
         autoPlay
         playsInline
         preload="metadata"
-        aria-label="Maison Valmont transformation film — ruined rooms becoming restored rooms"
+        aria-label="Poolside Villa house film — from the sketched plan through the rooms to the pool, one continuous take"
         style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-      />
+      >
+        <source src={VILLA.film.mobile} media="(max-width: 767px)" type="video/mp4" />
+        <source src={VILLA.film.desktop} type="video/mp4" />
+      </video>
       <div className="idv2-full-scrim" style={{ background: 'linear-gradient(90deg, rgba(5,4,4,0.82) 0%, rgba(5,4,4,0.42) 52%, rgba(5,4,4,0.12) 100%)' }} />
       <div className="idv2-inner" style={{ display: 'grid', gap: 22, alignSelf: 'end', width: '100%', paddingBottom: 'clamp(50px, 6vw, 90px)' }}>
         <motion.div {...rise(0)}><Eyebrow>AYESMAJ STUDIOS / AI HOUSE VIDEO</Eyebrow></motion.div>
@@ -85,7 +87,7 @@ function Hero() {
           <IdvButton to="/Contact" ghost>{m.cta}</IdvButton>
         </motion.div>
         <motion.div {...rise(0.36)} className="idv-mono-label" style={{ color: 'rgba(245,245,240,0.6)' }}>
-          NOW PLAYING: MAISON VALMONT — TRANSFORMATION FILM
+          NOW PLAYING: POOLSIDE VILLA — HOUSE FILM · 35 S · ONE CONTINUOUS TAKE
         </motion.div>
       </div>
       <MethodRail />

@@ -172,14 +172,22 @@ function PoolsideVilla({ study }) {
       <section className="idv2-section idv2-gradient-soft idv2-acc-present">
         <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 4vw, 52px)' }}>
           <Head
-            eyebrow="FILM PREP — POOLSIDE VILLA"
-            title={<>Directed for film — <span className="idv2-acc-text">not yet rendered.</span></>}
-            lede="The master frames arranged in shooting order: the film-ready storyboard the future film would be directed from. No rendered film exists for this project."
+            eyebrow="FILM — POOLSIDE VILLA"
+            title={<>Directed for film — <span className="idv2-acc-text">and rendered.</span></>}
+            lede="The house film: one continuous 35-second take generated from the master frames in shooting order — the sketched plan becomes the plan, the plan becomes the house, and the camera walks living room, kitchen, bath and bedroom out to the pool. No cuts; every transition starts on the frame the last one ended on."
+          />
+          <MediaFigure
+            video
+            src={VILLA.film.desktop}
+            poster={VILLA.film.poster}
+            alt="Poolside Villa house film — from the sketched floor plan through the rooms to the pool, one continuous take"
+            caption={`Poolside Villa — house film, ${VILLA.film.duration}, AI-generated from the master frames`}
+            tag="POOLSIDE VILLA"
           />
           <MediaFigure
             src={VILLA.contactSheet}
             alt="Poolside Villa film contact sheet: the master frames arranged in shooting order"
-            caption="Film contact sheet"
+            caption="How it was directed — the master frames in shooting order"
             tag="POOLSIDE VILLA"
           />
           <ChipRow label="The delivered system" items={study.system} />
