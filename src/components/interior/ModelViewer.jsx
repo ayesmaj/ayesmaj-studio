@@ -142,11 +142,15 @@ export default function ModelViewer({ model, ratio = '16 / 10', auto = false, st
         // Frame from the bounding sphere. Stage mode keeps the model within half the width so the copy beside it stays clear.
         const radius = size.length() / 2;
         const vfov = THREE.MathUtils.degToRad(camera.fov);
-        let dist = radius / Math.sin(vfov / 2) * (stage ? 1.06 : 0.95);
+        let dist = radius / Math.sin(vfov / 2) * 0.95;
         if (stage) {
+          // Fit the box, not the sphere: tall models fill ~85% of the height, wide ones stay within maxFrac of the width.
           const hfov = 2 * Math.atan(Math.tan(vfov / 2) * camera.aspect);
           const maxFrac = mount.clientWidth > 860 ? 0.44 : 0.92;
-          dist = Math.max(dist, radius / (Math.tan(hfov / 2) * maxFrac));
+          const halfW = Math.max(size.x, size.z) * 0.6; // three-quarter view widens the footprint
+          const distV = (size.y / 2) / Math.tan(vfov / 2) * 1.18;
+          const distH = halfW / (Math.tan(hfov / 2) * maxFrac);
+          dist = Math.max(distV, distH, radius * 1.05);
         }
         camera.position.set(0.66, 0.4, 0.66).normalize().multiplyScalar(dist);
         controls.target.set(0, 0, 0);
