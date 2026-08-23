@@ -1,0 +1,26 @@
+[
+ {
+  "id": "02_basic_3d",
+  "page": "hub",
+  "type": "edit",
+  "world": false,
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/poolside-villa/scan/house-scan-frame.png"
+  ],
+  "size": "auto",
+  "prompt": "Convert this rough AI 3D scan of a modern two-storey house with a pool into a clean BASIC 3D MODEL render: the exact same geometry, footprint, roof, pool, terraces, garage and camera angle, but as a matte white clay / white-card architectural massing model with thin dark edge lines like a CAD viewport, simple ambient occlusion, no textures, no materials, no colours except the white model and soft grey shadows, plain dark charcoal studio background with a faint floor grid, no trees, no cars, no furniture, no people, no text. Clean, precise, minimal \u2014 a designer's working model."
+ },
+ {
+  "id": "03_realistic",
+  "page": "hub",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/hub/02_basic_3d.png",
+   "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp"
+  ],
+  "size": "auto",
+  "prompt": "Render this exact white 3D massing model as an ULTRA-REALISTIC photograph of the finished modern house: same camera angle, same geometry, roof, pool position, terraces and garage. Aerial three-quarter view at golden hour, warm interior lights glowing through floor-to-ceiling glass, turquoise pool with wet stone deck, lush landscaping, warm stucco and natural wood facade, two cars in the open garage, sun loungers by the pool \u2014 materials, palette and mood matched to the second reference image of the same house. Cinematic, premium real-estate photography, extreme detail, no people, no text."
+ }
+]

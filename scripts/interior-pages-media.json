@@ -622,7 +622,7 @@
   "section": "hero",
   "type": "edit",
   "sources": [
-   "public/interior-design/generated/apartments/originals/04_apartment_3d_plan.png",
+   "source-assets/interior-generated/apartments/04_apartment_3d_plan.png",
    "public/interior-design/projects/canal-apartment/pairs/canal-editorial-v2.webp"
   ],
   "prompt": "The same furnished 3D floor-plan axonometric, camera 30 degrees lower and closer so the living room and the waterfront edge dominate, evening light, warm lamps inside the rooms, the canal reflecting beyond; nothing in the plan changes.",

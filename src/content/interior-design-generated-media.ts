@@ -51,6 +51,108 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "project": "Poolside Villa — client project"
   },
   {
+    "id": "02_kitchen_layout_one-wall",
+    "page": "kitchens",
+    "section": "sections",
+    "file": "/interior-design/generated/kitchens/sections/02_kitchen_layout_one-wall.webp",
+    "mobileFile": null,
+    "alt": "Kitchen layout diagram — one wall",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Top-down 3D cutaway diagram of a one-wall kitchen: a single run of cabinets and appliances along one wall, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Showcase diagram"
+  },
+  {
+    "id": "02_kitchen_layout_galley",
+    "page": "kitchens",
+    "section": "sections",
+    "file": "/interior-design/generated/kitchens/sections/02_kitchen_layout_galley.webp",
+    "mobileFile": null,
+    "alt": "Kitchen layout diagram — galley",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Top-down 3D cutaway diagram of a galley kitchen: two parallel runs of cabinets with a walkway between, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Showcase diagram"
+  },
+  {
+    "id": "02_kitchen_layout_l-shaped",
+    "page": "kitchens",
+    "section": "sections",
+    "file": "/interior-design/generated/kitchens/sections/02_kitchen_layout_l-shaped.webp",
+    "mobileFile": null,
+    "alt": "Kitchen layout diagram — l shaped",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Top-down 3D cutaway diagram of an L-shaped kitchen: cabinets along two adjacent walls meeting in a corner, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Showcase diagram"
+  },
+  {
+    "id": "02_kitchen_layout_u-shaped",
+    "page": "kitchens",
+    "section": "sections",
+    "file": "/interior-design/generated/kitchens/sections/02_kitchen_layout_u-shaped.webp",
+    "mobileFile": null,
+    "alt": "Kitchen layout diagram — u shaped",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Top-down 3D cutaway diagram of a U-shaped kitchen: cabinets along three walls, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Showcase diagram"
+  },
+  {
+    "id": "02_kitchen_layout_island",
+    "page": "kitchens",
+    "section": "sections",
+    "file": "/interior-design/generated/kitchens/sections/02_kitchen_layout_island.webp",
+    "mobileFile": null,
+    "alt": "Kitchen layout diagram — island",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Top-down 3D cutaway diagram of a kitchen with a single central island and one run of wall cabinets, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Showcase diagram"
+  },
+  {
+    "id": "02_kitchen_layout_double-island",
+    "page": "kitchens",
+    "section": "sections",
+    "file": "/interior-design/generated/kitchens/sections/02_kitchen_layout_double-island.webp",
+    "mobileFile": null,
+    "alt": "Kitchen layout diagram — double island",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Top-down 3D cutaway diagram of a kitchen with two parallel islands and a run of wall cabinets, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Showcase diagram"
+  },
+  {
     "id": "03_kitchen_cabinetry",
     "page": "kitchens",
     "section": "sections",
@@ -127,6 +229,45 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "project": "Canal Apartment — client project"
   },
   {
+    "id": "07_kitchen_3d_floor_plan",
+    "page": "kitchens",
+    "section": "sections",
+    "file": "/interior-design/generated/kitchens/sections/07_kitchen_3d_floor_plan.webp",
+    "mobileFile": null,
+    "alt": "Canal Apartment kitchen — 3D floor-plan study with clearances and zones",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Redraw this kitchen as an isometric 3D floor-plan cutaway of the kitchen only: counters, island and appliances exactly where they are, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "sourceReferences": [
+      "public/interior-design/projects/canal-apartment/plans/kitchen.webp",
+      "public/interior-design/projects/canal-apartment/pairs/kitchen-raw.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Canal Apartment — client project (plan study)"
+  },
+  {
+    "id": "08_kitchen_cinematic_frame",
+    "page": "kitchens",
+    "section": "sections",
+    "file": "/interior-design/generated/kitchens/sections/08_kitchen_cinematic_frame.webp",
+    "mobileFile": null,
+    "alt": "Poolside Villa kitchen at dusk — cinematic frame",
+    "width": 2048,
+    "height": 1024,
+    "aspectRatio": "2:1",
+    "prompt": "The same kitchen at dusk: pendants and under-cabinet lighting on, a low warm sun outside, slight atmospheric haze, cinematic 2.39 framing and grade, everything in the room exactly as it is.",
+    "sourceReferences": [
+      "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/09_kitchen_master.png"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Poolside Villa — client project"
+  },
+  {
     "id": "09_kitchen_detail",
     "page": "kitchens",
     "section": "sections",
@@ -165,6 +306,25 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "project": "Maison Valmont — studio renovation set"
   },
   {
+    "id": "02_bathroom_layout",
+    "page": "bathrooms",
+    "section": "sections",
+    "file": "/interior-design/generated/bathrooms/sections/02_bathroom_layout.webp",
+    "mobileFile": null,
+    "alt": "Canal Apartment bathroom — top-down layout study",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Redraw this bathroom as a true top-down 3D cutaway: vanity, toilet, shower, tub and storage exactly where they are, circulation clear, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "sourceReferences": [
+      "public/interior-design/projects/canal-apartment/plans/bath.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Canal Apartment — client project (plan study)"
+  },
+  {
     "id": "03_primary_bathroom",
     "page": "bathrooms",
     "section": "sections",
@@ -201,6 +361,23 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "status": "existing",
     "architectureLocked": false,
     "project": "Poolside Villa — client project"
+  },
+  {
+    "id": "05_powder_room",
+    "page": "bathrooms",
+    "section": "sections",
+    "file": "/interior-design/generated/bathrooms/sections/05_powder_room.webp",
+    "mobileFile": null,
+    "alt": "Powder room — studio concept in limestone, plaster and bronze",
+    "width": 1024,
+    "height": 1536,
+    "aspectRatio": "2:3",
+    "prompt": "A premium compact powder room: wall-hung basin on a limestone slab, a brass wall tap, dark warm plaster walls, a single bronze pendant, a tall mirror with soft edge lighting, oak door, photographed from the doorway, calm and realistic, no text, no people.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Studio concept"
   },
   {
     "id": "06_bathroom_materials",
@@ -279,6 +456,25 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "project": "Maison Valmont — studio renovation set"
   },
   {
+    "id": "10_bathroom_cinematic_frame",
+    "page": "bathrooms",
+    "section": "sections",
+    "file": "/interior-design/generated/bathrooms/sections/10_bathroom_cinematic_frame.webp",
+    "mobileFile": null,
+    "alt": "Poolside Villa primary bathroom at blue hour — cinematic frame",
+    "width": 2048,
+    "height": 1024,
+    "aspectRatio": "2:1",
+    "prompt": "The same primary bathroom at blue hour: the tub lit by the window, a trace of steam, warm vanity light against a deep blue exterior, cinematic 2.39 framing and grade, nothing moved.",
+    "sourceReferences": [
+      "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/17_primary_bath_master.png"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Poolside Villa — client project"
+  },
+  {
     "id": "01_furniture_decor_hero",
     "page": "furniture-decor",
     "section": "hero",
@@ -295,6 +491,25 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "generatedAt": "2026-08-22",
     "status": "existing",
     "architectureLocked": false,
+    "project": "Canal Apartment — client project"
+  },
+  {
+    "id": "02_empty_room",
+    "page": "furniture-decor",
+    "section": "sections",
+    "file": "/interior-design/generated/furniture-decor/sections/02_empty_room.webp",
+    "mobileFile": null,
+    "alt": "The same living room as an empty architectural shell",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": "3:2",
+    "prompt": "Remove every piece of furniture, rug, artwork, plant and decor object from this room so it is an empty architectural shell. Keep the floor, walls, windows, ceiling, doors and the lighting fixtures exactly as they are, same camera, same light.",
+    "sourceReferences": [
+      "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
     "project": "Canal Apartment — client project"
   },
   {
@@ -315,6 +530,42 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
+  },
+  {
+    "id": "04_furniture_plan",
+    "page": "furniture-decor",
+    "section": "sections",
+    "file": "/interior-design/generated/furniture-decor/sections/04_furniture_plan.webp",
+    "mobileFile": null,
+    "alt": "Canal Apartment living room — furniture placement and circulation plan study",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Redraw this living room as a top-down furnished plan: sofa, rug, coffee table, lounge chairs and media wall exactly where they are, circulation routes clear, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "sourceReferences": [
+      "public/interior-design/projects/canal-apartment/plans/living.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Canal Apartment — client project (plan study)"
+  },
+  {
+    "id": "05_reference_direction",
+    "page": "furniture-decor",
+    "section": "sections",
+    "file": "/interior-design/generated/furniture-decor/sections/05_reference_direction.webp",
+    "mobileFile": null,
+    "alt": "Reference direction — fabric, stone, wood and metal moodboard",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "An editorial flat-lay moodboard photographed from above on a pale plaster ground: swatches of natural linen and olive boucle, a slab of travertine, a block of oiled walnut and one of white oak, a brushed bronze sample, a ceramic vessel, a folded wool throw; soft north daylight; no text, no labels, no logos.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Studio concept"
   },
   {
     "id": "06_living_collection",
@@ -412,6 +663,46 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "project": "Maison Valmont — studio renovation set"
   },
   {
+    "id": "04_apartment_3d_plan",
+    "page": "apartments",
+    "section": "sections",
+    "file": "/interior-design/generated/apartments/sections/04_apartment_3d_plan.webp",
+    "mobileFile": null,
+    "alt": "Canal Apartment — furnished 3D floor-plan study",
+    "width": 2048,
+    "height": 1024,
+    "aspectRatio": "2:1",
+    "prompt": "Redraw this whole apartment as a furnished 3D floor-plan axonometric cutaway seen from 45 degrees above: every room, wall and window exactly as in the source, the waterfront side toward the bottom, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "sourceReferences": [
+      "public/interior-design/projects/canal-apartment/plans/overview.webp",
+      "public/interior-design/projects/canal-apartment/pairs/canal-raw.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Canal Apartment — client project (plan study)"
+  },
+  {
+    "id": "01_apartment_hero",
+    "page": "apartments",
+    "section": "hero",
+    "file": "/interior-design/generated/apartments/hero/01_apartment_hero.webp",
+    "mobileFile": "/interior-design/generated/apartments/mobile/01_apartment_hero.webp",
+    "alt": "Canal Apartment — the furnished 3D plan at evening, about to step inside",
+    "width": 2048,
+    "height": 1024,
+    "aspectRatio": "2:1",
+    "prompt": "The same furnished 3D floor-plan axonometric, camera 30 degrees lower and closer so the living room and the waterfront edge dominate, evening light, warm lamps inside the rooms, the canal reflecting beyond; nothing in the plan changes.",
+    "sourceReferences": [
+      "public/interior-design/generated/apartments/originals/04_apartment_3d_plan.png",
+      "public/interior-design/projects/canal-apartment/pairs/canal-editorial-v2.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Canal Apartment — client project (plan study)"
+  },
+  {
     "id": "02_apartment_source",
     "page": "apartments",
     "section": "sections",
@@ -429,6 +720,25 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "status": "existing",
     "architectureLocked": false,
     "project": "Canal Apartment — client project"
+  },
+  {
+    "id": "03_apartment_clean_plan",
+    "page": "apartments",
+    "section": "sections",
+    "file": "/interior-design/generated/apartments/sections/03_apartment_clean_plan.webp",
+    "mobileFile": null,
+    "alt": "Canal Apartment — clean 2D plan study (not a survey)",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "Redraw this apartment as a clean professional 2D architectural floor plan: black line work on white, correct wall thickness, door swings, window openings and fixed furniture footprints exactly as in the source, no text, no dimensions, no labels.",
+    "sourceReferences": [
+      "public/interior-design/projects/canal-apartment/plans/overview.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Canal Apartment — client project (plan study)"
   },
   {
     "id": "05_apartment_living",
@@ -526,6 +836,25 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "project": "Canal Apartment — client project"
   },
   {
+    "id": "10_apartment_film_frame",
+    "page": "apartments",
+    "section": "sections",
+    "file": "/interior-design/generated/apartments/sections/10_apartment_film_frame.webp",
+    "mobileFile": null,
+    "alt": "Canal Apartment at dusk — cinematic frame (no film exists for this project)",
+    "width": 2048,
+    "height": 1024,
+    "aspectRatio": "2:1",
+    "prompt": "The same room at dusk: interior lamps on, the canal outside turning blue, cinematic 2.39 framing and grade, slight haze in the light; nothing moved.",
+    "sourceReferences": [
+      "public/interior-design/projects/canal-apartment/pairs/canal-editorial-v2.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Canal Apartment — client project (cinematic frame)"
+  },
+  {
     "id": "11_apartment_before",
     "page": "apartments",
     "section": "sections",
@@ -580,6 +909,65 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "generatedAt": "2026-08-22",
     "status": "existing",
     "architectureLocked": false,
+    "project": "Poolside Villa — client project"
+  },
+  {
+    "id": "02_home_ground_floor",
+    "page": "homes",
+    "section": "sections",
+    "file": "/interior-design/generated/homes/sections/02_home_ground_floor.webp",
+    "mobileFile": null,
+    "alt": "Poolside Villa — ground floor 3D plan",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": "3:2",
+    "prompt": "Render this ground floor as a photorealistic 3D floor-plan axonometric: every wall, opening and piece of furniture exactly as in the source, pool terrace and garage included, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "sourceReferences": [
+      "public/interior-design/projects/poolside-villa/renders/00_ground_floor_plan.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Poolside Villa — client project"
+  },
+  {
+    "id": "03_home_upper_floor",
+    "page": "homes",
+    "section": "sections",
+    "file": "/interior-design/generated/homes/sections/03_home_upper_floor.webp",
+    "mobileFile": null,
+    "alt": "Poolside Villa — upper floor 3D plan",
+    "width": 1536,
+    "height": 1024,
+    "aspectRatio": "3:2",
+    "prompt": "Render this upper floor as a photorealistic 3D floor-plan axonometric: every wall, opening and piece of furniture exactly as in the source, balcony included, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people. This is the UPPER level: NO swimming pool on this floor (the pool is on the ground floor below) — show balconies and a terrace overlooking the garden instead; bedrooms, bathrooms, stair landing.",
+    "sourceReferences": [
+      "public/interior-design/projects/poolside-villa/renders/01_upper_floor_plan.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Poolside Villa — client project"
+  },
+  {
+    "id": "04_home_whole_house",
+    "page": "homes",
+    "section": "sections",
+    "file": "/interior-design/generated/homes/sections/04_home_whole_house.webp",
+    "mobileFile": null,
+    "alt": "Poolside Villa — whole-house cutaway",
+    "width": 2048,
+    "height": 1024,
+    "aspectRatio": "2:1",
+    "prompt": "A section cutaway of this exact two-storey house: the pool-side wall removed so both furnished floors read at once, pool in the foreground, the architecture, pool, garage and landscape exactly as in the first image, room layouts as in the plans, late afternoon light.",
+    "sourceReferences": [
+      "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp",
+      "public/interior-design/projects/poolside-villa/renders/00_ground_floor_plan.webp",
+      "public/interior-design/projects/poolside-villa/renders/01_upper_floor_plan.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
     "project": "Poolside Villa — client project"
   },
   {
@@ -735,6 +1123,25 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "project": "Poolside Villa — client project"
   },
   {
+    "id": "13_home_blue_hour",
+    "page": "homes",
+    "section": "sections",
+    "file": "/interior-design/generated/homes/sections/13_home_blue_hour.webp",
+    "mobileFile": null,
+    "alt": "Poolside Villa at blue hour",
+    "width": 2048,
+    "height": 1024,
+    "aspectRatio": "2:1",
+    "prompt": "The same pool terrace and house at blue hour: deep blue sky, underwater pool lights on, warm light glowing from every window, nothing moved or added.",
+    "sourceReferences": [
+      "public/interior-design/projects/poolside-villa/renders/27_pool_hero.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "Poolside Villa — client project"
+  },
+  {
     "id": "02_building_full_exterior",
     "page": "buildings",
     "section": "sections",
@@ -752,6 +1159,25 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "status": "existing",
     "architectureLocked": false,
     "project": "The Patel — client project"
+  },
+  {
+    "id": "03_building_exploded_floors",
+    "page": "buildings",
+    "section": "sections",
+    "file": "/interior-design/generated/buildings/sections/03_building_exploded_floors.webp",
+    "mobileFile": null,
+    "alt": "The Patel — exploded levels study",
+    "width": 1024,
+    "height": 1536,
+    "aspectRatio": "2:3",
+    "prompt": "The same tower drawn as an exploded axonometric: the floor plates separated vertically with equal gaps, the facade geometry, fins and crown unchanged, white architectural model with subtle shadows, plain pale background, no text.",
+    "sourceReferences": [
+      "public/interior-design/projects/the-patel/renders/patel-architecture-single.webp"
+    ],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "The Patel — client project (study)"
   },
   {
     "id": "04_building_unit_selection",
@@ -790,6 +1216,40 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "status": "existing",
     "architectureLocked": false,
     "project": "The Patel — client project"
+  },
+  {
+    "id": "06_building_lobby",
+    "page": "buildings",
+    "section": "sections",
+    "file": "/interior-design/generated/buildings/sections/06_building_lobby.webp",
+    "mobileFile": null,
+    "alt": "Residential lobby — studio concept for the PATEL presentation",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "A double-height residential tower lobby in Miami: travertine floor, a fluted oak feature wall, a brass reception desk, full-height glass with palms and warm sunset light outside, a single sculptural pendant, restrained luxury, no text, no people.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Studio concept"
+  },
+  {
+    "id": "07_building_amenity",
+    "page": "buildings",
+    "section": "sections",
+    "file": "/interior-design/generated/buildings/sections/07_building_amenity.webp",
+    "mobileFile": null,
+    "alt": "Resident amenity — studio concept for the PATEL presentation",
+    "width": 1200,
+    "height": 800,
+    "aspectRatio": "3:2",
+    "prompt": "A resident lounge beside an indoor pool deck with an ocean view through full-height glass: travertine and oak, bronze details, low lounge seating, warm evening light, Miami skyline faint outside, no text, no people.",
+    "sourceReferences": [],
+    "generatedAt": "2026-08-22",
+    "status": "approved",
+    "architectureLocked": false,
+    "project": "Studio concept"
   },
   {
     "id": "08_building_rooftop",

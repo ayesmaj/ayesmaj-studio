@@ -8,7 +8,7 @@
  *     (reference chaining: approved masters feed alternate angles/details);
  *   • "text": gpt-image-2 text-to-image for visuals with no source (layout
  *     diagrams, material editorials, moodboards).
- * Masters are written to <page>/originals/<id>.png; optimisation/crops happen
+ * Masters are written to source-assets/interior-generated/<page>/<id>.png; optimisation/crops happen
  * in scripts/optimize-interior-pages.py. Existing outputs are skipped unless
  * --force. --only <id> runs one job. --page <page> runs one page.
  *
@@ -46,7 +46,7 @@ async function callEdit(job) {
   const form = new FormData();
   form.append('model', 'gpt-image-2');
   const refs = job.sources.slice(1);
-  const prompt = `${LOCK}\n\n${job.lock === false ? '' : 'The FIRST image is the architectural source of truth.'} ${refs.length ? `The other ${refs.length} image(s) are references for materials, furniture identity, lighting and palette of the same project — keep them consistent.` : ''}\n\nArt direction: ${job.prompt}\n\n${WORLD}`;
+  const prompt = `${LOCK}\n\n${job.lock === false ? '' : 'The FIRST image is the architectural source of truth.'} ${refs.length ? `The other ${refs.length} image(s) are references for materials, furniture identity, lighting and palette of the same project — keep them consistent.` : ''}\n\nArt direction: ${job.prompt}\n\n${job.world === false ? '' : WORLD}`;
   form.append('prompt', prompt);
   form.append('size', job.size || 'auto');
   form.append('quality', 'high');
@@ -62,7 +62,7 @@ async function callText(job) {
 
 let ok = 0, fail = 0;
 for (const job of jobs) {
-  const out = path.join(ROOT, job.page, 'originals', `${job.id}.png`);
+  const out = path.join('source-assets/interior-generated', job.page, `${job.id}.png`); // masters stay out of public/ (gitignored)
   if (fs.existsSync(out) && !force) { console.log(`skip ${job.id} (exists)`); continue; }
   console.log(`${job.type.toUpperCase()} ${job.page}/${job.id}  ${job.sources?.length ? '← ' + job.sources.map((s) => path.basename(s)).join(', ') : ''}`);
   if (dry) { for (const s of job.sources || []) if (!fs.existsSync(s)) console.error(`   MISSING source ${s}`); continue; }

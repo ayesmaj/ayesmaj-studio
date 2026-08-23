@@ -3,7 +3,7 @@ optimize-interior-pages — builds the web library + manifest for the Interior
 Design pages from scripts/interior-pages-media.json (owner brief §28, §39).
 
 For every entry: source = the real asset (existing/import) or the generated
-master in <page>/originals/<id>.png (edit/text). Writes
+master in source-assets/interior-generated/<page>/<id>.png (edit/text). Writes
   public/interior-design/generated/<page>/<section>/<id>.webp   (max width by class)
   public/interior-design/generated/<page>/mobile/<id>.webp      (1080x1350 dedicated crop, heroes)
   public/interior-design/generated/navigation/<id>.webp         (800x500, 16:10)
@@ -36,7 +36,7 @@ def crop_to(im, ratio, focus=0.5):
 for e in entries:
     if only_page and e['page'] != only_page: continue
     gen = e['type'] in ('edit', 'text')
-    src = f"{ROOT}/{e['page']}/originals/{e['id']}.png" if gen else e['sources'][0]
+    src = f"source-assets/interior-generated/{e['page']}/{e['id']}.png" if gen else e['sources'][0]
     if not os.path.exists(src):
         missing.append(f"{e['page']}/{e['id']} ← {src}"); continue
     im = Image.open(src).convert('RGB')

@@ -13,7 +13,7 @@
  */
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher } from '@/components/interior/kit';
 import { IDV_BASE, IDV_EYEBROW, METHODS, GOALS, CASE_STUDIES, CAPABILITIES } from '@/data/interiorDesign';
@@ -72,22 +72,23 @@ function Problem() {
   const wrapRef = useRef(null);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: wrapRef, offset: ['start start', 'end end'] });
-  const editorialOpacity = useTransform(scrollYProgress, [0.15, 0.7], [0, 1]);
-  const pair = APARTMENT.pair; // terrace: surviving raw → generated editorial
+  // Poolside Villa: real AI scan frame → basic 3D model → ultra-realistic render (same camera)
+  const modelOpacity = useTransform(scrollYProgress, [0.12, 0.4], [0, 1]);
+  const realOpacity = useTransform(scrollYProgress, [0.52, 0.82], [0, 1]);
+  const stage = useTransform(scrollYProgress, (v) => (v < 0.26 ? 0 : v < 0.67 ? 1 : 2));
+  const [active, setActive] = useState(0);
+  useMotionValueEvent(stage, 'change', setActive);
+  const prog = VILLA.progression;
+  const STAGES = ['AI SCAN', 'BASIC 3D', 'VISUALIZATION'];
 
   return (
     <section className="idv2-section idv2-dark">
       <DarkSectionBackground asset="architectural-grid" position="right bottom" overlay={0.7} textSide="left" parallax="none" />
-      <div ref={wrapRef} className="idv2-pin-wrap" style={{ height: reduced ? 'auto' : '260vh' }}>
+      <div ref={wrapRef} className="idv2-pin-wrap" style={{ height: reduced ? 'auto' : '320vh' }}>
         <div className="idv2-pin" style={reduced ? { position: 'relative', height: '100svh' } : undefined}>
-          <img src={pair.raw} alt="Canal Apartment terrace as raw captured source" loading="lazy" decoding="async" />
-          <motion.img
-            src={pair.editorial}
-            alt="The same Canal Apartment terrace as the finished editorial visual"
-            style={{ opacity: reduced ? 1 : editorialOpacity }}
-            loading="lazy"
-            decoding="async"
-          />
+          <img src={prog.scan} alt="Poolside Villa as the raw AI 3D scan — rough mesh, smeared textures" loading="lazy" decoding="async" />
+          <motion.img src={prog.model} alt="The same house as a basic white 3D model, same camera" style={{ opacity: reduced ? 0 : modelOpacity }} loading="lazy" decoding="async" />
+          <motion.img src={prog.real} alt="The same house as the ultra-realistic visualization, same camera" style={{ opacity: reduced ? 1 : realOpacity }} loading="lazy" decoding="async" />
           <div className="idv2-pin-scrim" />
           <div className="idv2-inner" style={{ position: 'relative', display: 'grid', alignContent: 'center', gap: 22, height: '100%' }}>
             <div style={{ maxWidth: 620, display: 'grid', gap: 20 }}>
@@ -110,7 +111,10 @@ function Problem() {
                   </div>
                 ))}
               </div>
-              <div className="idv-mono-label">CANAL APARTMENT — SCROLL: SOURCE BECOMES ROOM</div>
+              <div className="idv2-pinseq-stagebar" aria-label="Progression stage">
+                {STAGES.map((s, i) => <span key={s} data-active={reduced ? i === 2 : active === i}>{`0${i + 1} ${s}`}</span>)}
+              </div>
+              <div className="idv-mono-label">POOLSIDE VILLA — SCROLL: SCAN BECOMES MODEL BECOMES HOUSE</div>
             </div>
           </div>
         </div>

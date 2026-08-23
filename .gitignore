@@ -71,3 +71,6 @@ check_sizes.ps1
 
 # Villa AI-scan originals (160 + 171 MB) stay with the owner: C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/
 source-assets/models/villa-*.glb
+
+# gpt-image-2 masters for the Interior Design library (regenerable; web files live in public/)
+source-assets/interior-generated/

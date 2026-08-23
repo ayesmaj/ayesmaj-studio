@@ -230,3 +230,15 @@ landing progression (sketch / 00 / villa-3d-plan-ground-hero / 05 / 25) - landin
 - PATEL has no lobby/amenity/exploded imagery: all three are concepts, not deliverables.
 - Villa has no before/after pair: kitchen/bath before/after come from Canal (the only honest raw->editorial set).
 - Stray external `frames/ChatGPT Image Aug 22 ... .png` 1513x1039 is unclassified - not mapped.
+
+## Hub "The Problem" progression (2026-08-22)
+
+Owner request: replace the Canal terrace raw→editorial crossfade with "ugly scan → basic 3D → ultra-realistic". No scan of the Canal Apartment exists and a generated "scan" would be fabricated scan imagery, so the section moved to the Poolside Villa, the project with a real AI 3D scan:
+
+| Stage | File | Provenance |
+|---|---|---|
+| 01 AI SCAN | `public/interior-design/projects/poolside-villa/scan/house-scan-frame.webp` | Frame captured from the real house scan model (`villa-house.glb`) in the site viewer — REAL, not generated |
+| 02 BASIC 3D | `public/interior-design/generated/hub/sections/02_basic_3d.webp` | gpt-image-2 edit of the scan frame (architecture lock, `world:false`): white clay massing model, same camera |
+| 03 VISUALIZATION | `public/interior-design/generated/hub/sections/03_realistic.webp` | gpt-image-2 edit of stage 02 with `renders/03_exterior_pool_master.webp` as material reference, same camera |
+
+Jobs: `scripts/hub-problem-jobs.json`; masters in `source-assets/interior-generated/hub/` (gitignored). Wired via `VILLA.progression` in `src/data/interiorMedia.js`; `Problem()` in `src/pages/interior/InteriorDesign.jsx` drives the three layers and the stage bar from scroll progress.

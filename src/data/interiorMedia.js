@@ -18,6 +18,15 @@ const V = `${P}/poolside-villa`;
 const villaFrame = (file, label, room) => ({ src: `${V}/renders/${file}`, label, room });
 
 export const VILLA = {
+  /** Hub "Problem" progression (owner request 2026-08-22): the REAL AI 3D scan
+      frame (captured from the house scan model) → a basic white 3D model
+      generated from that exact frame → the ultra-realistic render generated
+      from the model with the villa master frame as material reference. */
+  progression: {
+    scan: '/interior-design/projects/poolside-villa/scan/house-scan-frame.webp',
+    model: '/interior-design/generated/hub/sections/02_basic_3d.webp',
+    real: '/interior-design/generated/hub/sections/03_realistic.webp',
+  },
   slug: 'poolside-villa',
   name: 'Poolside Villa',
   base: V,
