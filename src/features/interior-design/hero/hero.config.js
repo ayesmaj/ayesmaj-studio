@@ -28,7 +28,7 @@ export const HERO_COPY = {
   headline: ['From model', 'to a world', 'your client'],
   headlineGradient: 'can enter.',
   body: 'We transform scans, plans and architectural models into immersive visual experiences clients can understand, explore and remember.',
-  primary: { label: 'Explore interior design', to: '#stages' },
+  primary: { label: 'Explore interior design', to: '#spaces' },
   secondary: { label: 'View building visualization', to: '/interior-design/3d-building-visualization' },
   methods: 'SCAN · PLAN · VISUALIZE · EXPERIENCE',
   hint: 'MOVE THE CURSOR · DRAG THE TOWER',

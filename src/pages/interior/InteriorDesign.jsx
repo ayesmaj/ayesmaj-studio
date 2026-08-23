@@ -127,32 +127,6 @@ const STAGES2 = [
   { n: '04', t: 'Present', q: 'How should it be communicated?', line: 'Identity, website and deck turn visuals into approvals and sales.', src: PATEL.interiors[1].src, alt: 'The Patel presentation-ready interior', accent: '#A35BDA', to: METHODS['complete-visual-presentation'].route },
 ];
 
-function StageSystem() {
-  return (
-    <section className="idv2-section idv2-bright" id="stages">
-      <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(36px, 4vw, 60px)' }}>
-        <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
-          <Eyebrow>THE AYESMAJ VISUALIZATION SYSTEM</Eyebrow>
-          <h2 className="idv2-h2">One project. <span className="idv2-grad">Multiple levels</span> of understanding.</h2>
-          <p className="idv-lede">Every visualization method answers a different question. Together they create a complete client experience.</p>
-        </div>
-        <div className="idv2-stages">
-          {STAGES2.map((s) => (
-            <Link key={s.n} to={s.to} className="idv2-stage idv2-reveal" style={{ '--stage-accent': s.accent, textDecoration: 'none', color: 'inherit' }}>
-              <span className="idv2-stage-num">{s.n}</span>
-              <span className="idv-h3">{s.t}</span>
-              <span className="idv-mono-label">{s.q}</span>
-              <img src={s.src} alt={s.alt} loading="lazy" decoding="async" />
-              <span style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--idv-graphite)' }}>{s.line}</span>
-              <span className="idv-mono-label" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: s.accent }}>EXPLORE <ArrowRight size={12} aria-hidden="true" /></span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ── 04 · SPATIAL DEPTH — dark technical world with the live models ───────── */
 const ALL_MODELS = [MODELS.featured, ...MODELS.project, ...MODELS.spaces, ...MODELS.objects];
 
@@ -489,7 +463,6 @@ export default function InteriorDesign() {
     <InteriorShell path={IDV_BASE}>
       <InteriorDesignHero />
       <hr className="idv2-spill" />
-      <StageSystem />
       <SpacesAndTypes />
       <Problem />
       <Truths />
