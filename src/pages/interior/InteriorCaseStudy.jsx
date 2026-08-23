@@ -14,7 +14,8 @@ import {
   InteriorShell, Eyebrow, MediaFigure, MethodRail, CtaBand,
 } from '@/components/interior/kit';
 import { IDV_BASE, CASE_STUDIES } from '@/data/interiorDesign';
-import { VILLA, VALMONT, PATEL, PROJECTS, CASE_COVERS } from '@/data/interiorMedia';
+import { VILLA, VALMONT, PATEL, PROJECTS, CASE_COVERS, MODELS } from '@/data/interiorMedia';
+import ModelViewer from '@/components/interior/ModelViewer';
 import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
 import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 
@@ -56,10 +57,40 @@ function ChipRow({ label, items, dark = false }) {
   );
 }
 
+/* Studies that have their own 3D model open on it (owner 2026-08-22): the model is the hero, copy beside it. */
+const CASE_MODELS = { 'poolside-villa': MODELS.project[1], 'the-patel': MODELS.featured };
+
 /* ── Hero: project + problem ──────────────────────────────────────────────── */
 function CaseHero({ study }) {
   const words = study.name.toUpperCase().split(' ');
   const last = words.pop();
+  const model = CASE_MODELS[study.slug];
+  if (model) {
+    return (
+      <section className="idv2-section idv2-dark idv2-acc-present idv2-m3d-section">
+        <DarkSectionBackground asset="silk-wave" position="center right" overlay={0.6} textSide="left" glow="purple" />
+        <div className="idv2-m3d" aria-label="Interactive 3D model stage">
+          <ModelViewer model={model} auto stage shift={0.25} />
+        </div>
+        <div className="idv2-inner idv2-m3d-copy">
+          <div className="idv2-m3d-col" style={{ gap: 20 }}>
+            <motion.div {...rise(0)}><Eyebrow>CASE STUDY / {study.kind.toUpperCase()}</Eyebrow></motion.div>
+            <motion.h1 {...rise(0.08)} className="idv2-display idv2-display--hero">
+              {words.join(' ')}{words.length ? <br /> : null}
+              <span className="idv2-grad">{last}.</span>
+            </motion.h1>
+            <motion.p {...rise(0.18)} className="idv-lede">{study.challenge}</motion.p>
+            <motion.div {...rise(0.26)} className="idv2-m3d-meta" style={{ gap: 12 }}>
+              <div className="idv-mono-label">Audience · <span style={{ color: 'rgba(245,245,240,.82)' }}>{study.audience}</span></div>
+              <div className="idv-mono-label">Why this system · <span style={{ color: 'rgba(245,245,240,.82)' }}>{study.why}</span></div>
+              <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>{model.credit}</span> · {model.name.toUpperCase()} · DRAG TO TURN</div>
+            </motion.div>
+          </div>
+        </div>
+        <MethodRail />
+      </section>
+    );
+  }
   return (
     <section className="idv2-section idv2-dark idv2-acc-present" style={{ background: 'radial-gradient(900px 540px at 80% 0%, rgba(122,72,255,0.15), transparent 60%), radial-gradient(700px 460px at 10% 100%, rgba(216,183,90,0.13), transparent 55%), linear-gradient(180deg, #060708, #0B0C10)' }}>
       <DarkSectionBackground asset="silk-wave" position="center right" overlay={0.6} textSide="left" glow="purple" />
