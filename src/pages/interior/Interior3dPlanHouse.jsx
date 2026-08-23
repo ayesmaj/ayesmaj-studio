@@ -53,7 +53,8 @@ const FAQ = [
 
 function Hero() {
   const [floor, setFloor] = useState('ground');
-  const plan = floor === 'ground' ? VILLA.plans[0] : VILLA.plans[1];
+  const plan = floor === 'upper' ? VILLA.plans[1] : VILLA.plans[0];
+  const model = MODELS.project[0]; // the villa's own floor-plan scan (owner 2026-08-22: 'view it as 3D')
   return (
     <section className="idv2-section idv2-dark idv2-acc-understand" style={{ background: 'radial-gradient(1000px 560px at 82% 0%, rgba(216,183,90,0.14), transparent 60%), radial-gradient(720px 480px at 8% 100%, rgba(224,102,75,0.12), transparent 55%), linear-gradient(180deg, #070605, #0C0B09)' }}>
       <DarkSectionBackground asset="architectural-grid" position="right bottom" overlay={0.6} textSide="left" glow="gold" />
@@ -84,15 +85,22 @@ function Hero() {
             ariaLabel="Choose a floor"
             value={floor}
             onChange={setFloor}
-            options={[{ key: 'ground', label: 'Ground floor' }, { key: 'upper', label: 'Upper floor' }]}
+            options={[{ key: 'ground', label: 'Ground floor' }, { key: 'upper', label: 'Upper floor' }, { key: '3d', label: 'View as 3D' }]}
           />
-          <MediaFigure
-            src={plan.src}
-            alt={`Poolside Villa — ${plan.label.toLowerCase()} in 3D`}
-            caption={`POOLSIDE VILLA — ${plan.label.toUpperCase()}`}
-            tag={floor === 'ground' ? 'PUBLIC LEVEL' : 'PRIVATE LEVEL'}
-            eager
-          />
+          {floor === '3d' ? (
+            <figure className="idv-figure" style={{ margin: 0 }}>
+              <ModelViewer model={model} auto ratio="16 / 9" />
+              <figcaption><span>POOLSIDE VILLA — FLOOR PLAN AS A 3D SCAN · DRAG TO TURN</span><span>{model.credit}</span></figcaption>
+            </figure>
+          ) : (
+            <MediaFigure
+              src={plan.src}
+              alt={`Poolside Villa — ${plan.label.toLowerCase()} in 3D`}
+              caption={`POOLSIDE VILLA — ${plan.label.toUpperCase()}`}
+              tag={floor === 'ground' ? 'PUBLIC LEVEL' : 'PRIVATE LEVEL'}
+              eager
+            />
+          )}
         </motion.div>
       </div>
       <MethodRail />
