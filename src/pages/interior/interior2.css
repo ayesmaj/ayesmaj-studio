@@ -329,3 +329,28 @@
   .idv2-m3d-copy { padding-top: 0; }
   .idv2-m3d-col--right { margin-left: 0; }
 }
+
+/* ── Case-study cards (adapted from 21st "Condition Grid") ─────────────────── */
+.idv2-cases { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(14px, 1.8vw, 24px); grid-auto-rows: clamp(300px, 34vw, 500px); }
+.idv2-case-card { position: relative; border-radius: 22px; overflow: hidden; background: #0B0B0D; box-shadow: 0 24px 56px rgba(62, 48, 24, 0.16); }
+.idv2-case-card--a { grid-column: span 7; }
+.idv2-case-card--b { grid-column: span 5; }
+.idv2-case-card--wide { grid-column: span 12; grid-row: span 1; }
+.idv2-case-link { position: absolute; inset: 0; display: block; color: #F5F5F0; text-decoration: none; }
+.idv2-case-link img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.idv2-case-link::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,5,7,.08) 0%, rgba(5,5,7,0) 38%, rgba(5,5,7,.72) 78%, rgba(5,5,7,.9) 100%); }
+.idv2-case-link:hover img, .idv2-case-link:focus-visible img { transform: scale(1.04); }
+.idv2-case-num { position: absolute; top: 18px; left: 20px; z-index: 2; font-family: var(--idv-display); font-size: 22px; color: rgba(245,245,240,.85); letter-spacing: .04em; }
+.idv2-case-meta { position: absolute; left: 22px; right: 84px; bottom: 22px; z-index: 2; display: grid; gap: 6px; }
+.idv2-case-meta .idv-mono-label { color: var(--idv-champagne) !important; }
+.idv2-case-name { font-family: var(--idv-display); font-size: clamp(30px, 3.2vw, 48px); line-height: .95; text-transform: uppercase; letter-spacing: .01em; }
+.idv2-case-aud { font-size: 14.5px; color: rgba(245,245,240,.78); max-width: 44ch; }
+.idv2-case-arrow { position: absolute; right: 20px; bottom: 20px; z-index: 2; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: rgba(245,245,240,.12); border: 1px solid rgba(245,245,240,.35); backdrop-filter: blur(8px); transition: background .2s, border-color .2s, transform .2s; }
+.idv2-case-link:hover .idv2-case-arrow, .idv2-case-link:focus-visible .idv2-case-arrow { background: var(--idv-champagne); border-color: var(--idv-champagne); color: #0B0B0D; transform: translate(2px, -2px); }
+.idv2-case-link:focus-visible { outline: 2px solid var(--idv-champagne); outline-offset: 3px; }
+@media (max-width: 900px) {
+  .idv2-cases { grid-auto-rows: clamp(260px, 62vw, 420px); }
+  .idv2-case-card--a, .idv2-case-card--b, .idv2-case-card--wide { grid-column: span 12; }
+  .idv2-case-name { font-size: clamp(28px, 8vw, 40px); }
+}
+@media (prefers-reduced-motion: reduce) { .idv2-case-link img, .idv2-case-arrow { transition: none; } }

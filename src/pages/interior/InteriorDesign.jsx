@@ -370,36 +370,38 @@ function CaseProof() {
         <div className="idv2-reveal" style={{ display: 'grid', gap: 18, maxWidth: 1000 }}>
           <Eyebrow>CASE STUDIES</Eyebrow>
           <h2 className="idv2-h2">From source material to a complete <span className="idv2-grad">visual world.</span></h2>
+          <p className="idv-lede">Three real projects, three different starting points — a pair of flat plans, an existing Paris salon, a Miami tower model. Open any of them to walk the full sequence.</p>
         </div>
 
-        <div className="idv2-case-grid idv2-reveal">
-          <div style={{ display: 'grid', gap: 14 }}>
-            <figure className="idv-figure"><img src={VILLA.contactSheet} alt="Poolside Villa film contact sheet — the source sequence" loading="lazy" decoding="async" style={{ borderRadius: 14 }} /><figcaption><span>SOURCE — CONTACT SHEET</span></figcaption></figure>
-            <figure className="idv-figure"><img src={VALMONT.pairs[0].before} alt="Maison Valmont salon in existing condition" loading="lazy" decoding="async" style={{ borderRadius: 14 }} /><figcaption><span>SOURCE — EXISTING SALON</span></figcaption></figure>
-          </div>
-          <figure className="idv-figure">
-            <img src={VALMONT.after[4].src} alt="Maison Valmont salon restored in evening light — the finished world" loading="lazy" decoding="async" style={{ aspectRatio: '4/5', width: '100%', objectFit: 'cover', borderRadius: 18 }} />
-            <figcaption><span>MAISON VALMONT — THE FINISHED WORLD</span><span>RESULT</span></figcaption>
-          </figure>
-          <div style={{ display: 'grid', gap: 14 }}>
-            <figure className="idv-figure" style={{ background: 'var(--idv-dark-panel)', borderRadius: 14, padding: 'clamp(16px, 2vw, 28px)' }}><img src={PATEL.brand} alt="The Patel project identity lockup" loading="lazy" decoding="async" /><figcaption style={{ paddingTop: 12 }}><span style={{ color: '#A9A9A9' }}>DELIVERABLE — IDENTITY</span></figcaption></figure>
-            <figure className="idv-figure"><img src={VALMONT.gallery[6].src} alt="Maison Valmont salon wide presentation frame" loading="lazy" decoding="async" style={{ borderRadius: 14 }} /><figcaption><span>DELIVERABLE — PRESENTATION FRAME</span></figcaption></figure>
-          </div>
+        {/* Adapted from 21st "Condition Grid": alternating spans, overlaid name badge + arrow. Covers are the projects' own frames. */}
+        <div className="idv2-cases idv2-reveal">
+          {CASE_STUDIES.map((c, i) => (
+            <motion.div
+              key={c.slug}
+              className={`idv2-case-card idv2-case-card--${i === 0 ? 'a' : i === 1 ? 'b' : 'wide'}`}
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Link to={`${IDV_BASE}/case-studies/${c.slug}`} className="idv2-case-link" aria-label={`${c.name} case study — ${c.kind}`}>
+                <img src={CASE_COVERS[c.slug]} alt="" loading="lazy" decoding="async" />
+                <span className="idv2-case-num" aria-hidden="true">0{i + 1}</span>
+                <span className="idv2-case-meta">
+                  <span className="idv-mono-label">{c.kind.toUpperCase()}</span>
+                  <span className="idv2-case-name">{c.name}</span>
+                  <span className="idv2-case-aud">{c.audience}</span>
+                </span>
+                <span className="idv2-case-arrow" aria-hidden="true"><ArrowRight size={18} /></span>
+              </Link>
+            </motion.div>
+          ))}
         </div>
 
         {/* Honest capability statements — the brief bans invented percentages. */}
         <div className="idv2-honest idv2-reveal">
           {[['ONE SOURCE', 'Multiple visual outputs'], ['ONE STUDIO', 'One consistent language'], ['FROM EARLY CONCEPT', 'To final presentation']].map(([a, b]) => (
-            <div key={a}><span className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{a}</span><span style={{ fontFamily: 'var(--idv-serif)', fontWeight: 600, fontSize: 'clamp(18px, 1.6vw, 24px)' }}>{b}</span></div>
-          ))}
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
-          {CASE_STUDIES.map((c) => (
-            <Link key={c.slug} to={`${IDV_BASE}/case-studies/${c.slug}`} className="idv-case idv2-reveal">
-              <img src={CASE_COVERS[c.slug]} alt={`${c.name} — ${c.kind}`} loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '16/10', objectFit: 'cover', display: 'block' }} />
-              <div className="idv-case-meta"><span className="idv-mono-label">{c.kind}</span><span style={{ fontSize: 20 }}>{c.name}</span></div>
-            </Link>
+            <div key={a}><span className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{a}</span><span style={{ fontFamily: 'var(--idv-serif)', fontWeight: 600, fontSize: 'clamp(18px, 1.6vw, 22px)' }}>{b}</span></div>
           ))}
         </div>
 
