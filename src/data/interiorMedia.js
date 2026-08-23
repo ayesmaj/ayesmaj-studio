@@ -202,6 +202,12 @@ export const PATEL = {
 export const MODELS = {
   /** The real thing: the studio's own development project, full tower model. */
   featured: { key: 'the-patel', name: 'The Patel — Miami', file: '/interior-design/models/the-patel.glb', weight: '11.8 MB', lite: '/interior-design/models/the-patel-lite.glb', liteWeight: '5.5 MB', credit: 'CLIENT PROJECT', line: 'Not a stock asset: the actual tower model behind The Patel development presentation. Walk the massing, the balconies, and the crown.' },
+  /** The Poolside Villa's own models — AI 3D scans generated from the project's plans and imagery (owner, 2026-08-22). Not stock. */
+  /*  Originals: C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/ (160 + 171 MB, Meshy); served files come from scripts/model-diet.py. */
+  project: [
+    { key: 'villa-floor-plan', scale: 'PLAN', name: 'Poolside Villa — floor-plan scan', file: '/interior-design/models/villa-floor-plan.glb', weight: '7.3 MB', lite: '/interior-design/models/villa-floor-plan-lite.glb', liteWeight: '3.7 MB', credit: 'CLIENT PROJECT · AI 3D SCAN', line: 'The villa\'s floor plan as a 3D object: an AI scan of the real layout — walls, openings and levels you can turn and read from above.' },
+    { key: 'villa-house', scale: 'HOUSE', name: 'Poolside Villa — house scan', file: '/interior-design/models/villa-house.glb', weight: '8.3 MB', lite: '/interior-design/models/villa-house-lite.glb', liteWeight: '5.5 MB', credit: 'CLIENT PROJECT · AI 3D SCAN', line: 'The whole villa captured as an AI 3D scan: massing, terraces and the pool deck — the same house the renders and the film are built on.' },
+  ],
   /** The scale ladder, top down: skyline to a single faucet. */
   spaces: [
     { key: 'skyline', scale: '01', name: 'Skyline tower', file: '/interior-design/models/skyline.glb', weight: '1.5 MB', lite: '/interior-design/models/skyline-lite.glb', liteWeight: '1.0 MB', credit: 'SHOWCASE MODEL', line: 'Where a project starts: the tower against its city.' },

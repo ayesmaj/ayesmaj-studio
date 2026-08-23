@@ -174,16 +174,16 @@ function TurnTheHouse() {
   return (
     <section className="idv2-section idv2-spatial idv2-acc-understand idv2-bgc idv2-bgc-08 idv2-m3d-section">
       <div className="idv2-m3d" aria-label="Interactive 3D model stage">
-        <ModelViewer model={MODELS.spaces[2]} auto stage shift={0.25} />
+        <ModelViewer model={MODELS.project[0]} auto stage shift={0.25} />
       </div>
       <div className="idv2-inner idv2-m3d-copy">
         <div className="idv2-reveal idv2-m3d-col">
           <Eyebrow>INTERACTIVE</Eyebrow>
           <h2 className="idv2-h2">Turn the whole idea <span className="idv2-grad">in your hands.</span></h2>
           <p className="idv-lede">
-            A page can only show one angle at a time. A model can show them all — drag the
-            coastal hillside house and read its levels, terraces, and site drop yourself.
-            It is a showcase model, labeled as such, and it loads as you arrive.
+            A page can only show one angle at a time. A model can show them all — this is the
+            Poolside Villa's own floor plan as an AI 3D scan. Drag it, tilt it, and read the
+            rooms, openings and levels yourself. It loads as you arrive.
           </p>
         </div>
       </div>

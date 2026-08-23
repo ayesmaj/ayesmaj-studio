@@ -68,3 +68,6 @@ check_sizes.ps1
 # Interior Design project films are web-encoded (5.8-19.7 MB) and shipped;
 # the multi-hundred-MB masters remain in their source projects, not here.
 !public/interior-design/**/*.mp4
+
+# Villa AI-scan originals (160 + 171 MB) stay with the owner: C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/
+source-assets/models/villa-*.glb

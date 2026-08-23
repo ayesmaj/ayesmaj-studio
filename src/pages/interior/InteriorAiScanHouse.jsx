@@ -19,8 +19,9 @@ import {
   PinSeq, MethodFacts, MethodOutro, CtaBand,
 } from '@/components/interior/kit';
 import { METHODS, IDV_BASE } from '@/data/interiorDesign';
-import { VILLA, APARTMENT } from '@/data/interiorMedia';
+import { VILLA, APARTMENT, MODELS } from '@/data/interiorMedia';
 import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
+import ModelViewer from '@/components/interior/ModelViewer';
 
 const m = METHODS['ai-scan-house'];
 
@@ -139,6 +140,27 @@ function PropertyLayers() {
   );
 }
 
+function ScanInTheRound() {
+  const m = MODELS.project[1];
+  return (
+    <section className="idv2-section idv2-spatial idv2-acc-capture idv2-m3d-section">
+      <div className="idv2-m3d" aria-label="Interactive 3D model stage">
+        <ModelViewer model={m} auto stage shift={0.25} />
+      </div>
+      <div className="idv2-inner idv2-m3d-copy">
+        <div className="idv2-reveal idv2-m3d-col">
+          <Eyebrow>THE SCAN ITSELF</Eyebrow>
+          <h2 className="idv2-h2">The whole house, <span className="idv2-acc-text">in the round.</span></h2>
+          <p className="idv-lede">{m.line} Drag to turn it; it loads as you arrive.</p>
+          <div className="idv2-m3d-meta">
+            <div className="idv-mono-label"><span style={{ color: 'var(--idv-champagne)' }}>{m.credit}</span> · POOLSIDE VILLA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function UseCases() {
   return (
     <section className="idv2-section idv2-bright idv2-acc-capture">
@@ -211,6 +233,7 @@ export default function InteriorAiScanHouse() {
     <InteriorShell path={m.route}>
       <Hero />
       <PropertyLayers />
+      <ScanInTheRound />
       <UseCases />
       <Limitations />
       <div className="idv2-section idv2-bright idv2-acc-capture">

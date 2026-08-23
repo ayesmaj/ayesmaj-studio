@@ -119,7 +119,7 @@ function StageSystem() {
 }
 
 /* ── 04 · SPATIAL DEPTH — dark technical world with the live models ───────── */
-const ALL_MODELS = [MODELS.featured, ...MODELS.spaces, ...MODELS.objects];
+const ALL_MODELS = [MODELS.featured, ...MODELS.project, ...MODELS.spaces, ...MODELS.objects];
 
 function SpatialModels() {
   const [idx, setIdx] = useState(0);
