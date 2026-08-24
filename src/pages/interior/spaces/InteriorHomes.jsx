@@ -112,7 +112,7 @@ const ROOMS = [
 function InsideHm() {
   const items = ROOMS.map(([id, label]) => ({ m: M(id), label })).filter((r) => r.m);
   return (
-    <section className="bx-types" aria-label="Inside the home">
+    <section className="bx-types idv2-spatial idv2-bgc idv2-bgc-06" aria-label="Inside the home">
       <div className="idv2-inner idsp-head idv2-reveal" style={{ paddingBottom: 'clamp(16px, 2vw, 30px)' }}>
         <Eyebrow>INSIDE THE HOME</Eyebrow>
         <h2 className="idv2-h2 idsp-h2">Every room has a role<br /><span className="idv2-grad">in the story.</span></h2>
@@ -198,7 +198,7 @@ function LightHm() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Time of day" value={key} onChange={setKey} options={items.map((l) => ({ key: l.key, label: l.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, calc(100svh - 460px))', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(66vh, calc(100svh - 430px))', objectFit: 'contain', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME CAMERA · DAY AND EVENING RELIT FROM THE MASTER</span></figcaption>
           </figure>
         </div>
@@ -229,7 +229,7 @@ function DirectionsHm() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Design direction" value={key} onChange={setKey} options={items.map((d) => ({ key: d.key, label: d.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, calc(100svh - 460px))', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(66vh, calc(100svh - 430px))', objectFit: 'contain', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>{active.key === 'modern' ? 'CLIENT PROJECT — AS DESIGNED' : 'SAME ARCHITECTURE, RESTYLED AS A STUDY'}</span></figcaption>
           </figure>
         </div>

@@ -16,6 +16,7 @@ const FILMS = [
   'public/interior-design/generated/apartments/film/apartment-film.mp4',
   'public/interior-design/generated/furniture-decor/film/furniture-film.mp4',
   'public/interior-design/projects/poolside-villa/film/house-film-desktop.mp4',
+  'public/interior-design/projects/the-patel/film/patel-hero-film-desktop.mp4',
 ];
 
 const mb = (p) => (statSync(p).size / 1048576).toFixed(1);

@@ -86,41 +86,16 @@ function MapAp() {
           <div className="ap-map-side">
             <Legend items={ROOMS} active={active} setActive={setActive} ariaLabel="Rooms" />
             {preview ? (
-              <a className="ap-map-preview" href={`#room-${current.key}`}>
+              <div className="ap-map-preview">
                 <img key={current.key} src={smallFile(preview)} alt={preview.alt} loading="lazy" decoding="async" />
-                <span className="idv-mono-label">{current.label.toUpperCase()} — {current.line} · GO TO ROOM ↓</span>
-              </a>
+                <span className="idv-mono-label">{current.label.toUpperCase()} — {current.line}</span>
+              </div>
             ) : (
               <div className="idv-mono-label" style={{ opacity: 0.6 }}>HOVER OR TAP A ROOM</div>
             )}
           </div>
         </div>
       </div>
-    </section>
-  );
-}
-
-function JourneyAp() {
-  const chapters = ROOMS.map((r, i) => ({ ...r, m: M(r.id), flip: i % 2 === 1 })).filter((r) => r.m);
-  return (
-    <section className="bx-types" aria-label="Room by room" style={{ display: 'grid', gap: 'clamp(40px, 6vw, 90px)' }}>
-      <div className="idv2-inner idsp-head idv2-reveal">
-        <Eyebrow>THE ROOM JOURNEY</Eyebrow>
-        <h2 className="idv2-h2 idsp-h2">Every room,<br /><span className="idv2-grad">at full size.</span></h2>
-      </div>
-      {chapters.map((r, i) => (
-        <div key={r.key} className="idv2-inner" id={`room-${r.key}`}>
-          <div className={`xp-chapter${r.flip ? ' xp-chapter--flip' : ''} idv2-reveal`}>
-            <div className="xp-chapter-copy">
-              <span className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{`0${i + 1}`}</span>
-              <h3 className="idv2-h2" style={{ fontSize: 'clamp(30px, 3.4vw, 54px)' }}>{r.label}</h3>
-              <p className="idv-lede" style={{ color: 'rgba(245,245,240,.8)' }}>{r.line}</p>
-              <span className="idv-mono-label" style={{ color: 'rgba(245,245,240,.5)' }}>CANAL APARTMENT — CLIENT PROJECT</span>
-            </div>
-            <figure className="xp-chapter-media"><img {...imgProps(r.m, '(max-width: 1023px) 100vw, 62vw')} alt={r.m.alt} loading="lazy" decoding="async" /></figure>
-          </div>
-        </div>
-      ))}
     </section>
   );
 }
@@ -147,7 +122,7 @@ function DirectionsAp() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Design direction" value={key} onChange={setKey} options={items.map((d) => ({ key: d.key, label: d.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, calc(100svh - 460px))', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(66vh, calc(100svh - 430px))', objectFit: 'contain', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME ARCHITECTURE, SAME CAMERA · CLIENT PROJECT, RESTYLED AS A STUDY</span></figcaption>
           </figure>
         </div>
@@ -261,7 +236,6 @@ export default function InteriorApartments() {
       <HeroAp />
       <TransformAp />
       <MapAp />
-      <JourneyAp />
       <DirectionsAp />
       <CompactAp />
       <CompareAp />

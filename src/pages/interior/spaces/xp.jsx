@@ -105,7 +105,9 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       if (range <= 0) return;
       const p = Math.max(0, Math.min(1, -rect.top / range));
       setProgress(p);
-      video.currentTime = Math.min(p * video.duration, video.duration - 1 / 30);
+      // seeks snap to the 0.25s keyframe grid so the decoder never walks a GOP
+      const target = Math.min(Math.round(p * video.duration * 4) / 4, video.duration - 1 / 30);
+      if (Math.abs(target - video.currentTime) >= 0.2) video.currentTime = target;
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     window.addEventListener('scroll', onScroll, { passive: true });

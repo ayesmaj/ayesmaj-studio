@@ -18,7 +18,7 @@ import './xp.css';
 
 const M = (id) => media('furniture-decor', id);
 const SW_FIG = '(max-width: 1023px) 100vw, 1280px';
-const DECOR_MODELS = ['office-desk', 'bookcase'].map((key) => MODELS.objects.find((m) => m.key === key)).filter(Boolean);
+const DECOR_MODELS = ['bookcase'].map((key) => MODELS.objects.find((m) => m.key === key)).filter(Boolean);
 
 function HeroFd() {
   const ref = useRef(null);
@@ -118,7 +118,7 @@ function LayoutsFd() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Furniture layout" value={key} onChange={setKey} options={items.map((l) => ({ key: l.key, label: l.label }))} />
           <figure className="bx-dir idv2-reveal" style={{ margin: 0 }}>
-            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, calc(100svh - 460px))', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(66vh, calc(100svh - 430px))', objectFit: 'contain', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME ROOM, SAME PIECES · STUDIO CONCEPT</span></figcaption>
           </figure>
         </div>
@@ -194,7 +194,7 @@ const DECOR_STRIP = ['12_decor_sofa', '13_decor_armchair', '14_decor_floor_lamp'
 function DecorFd() {
   const items = DECOR_STRIP.map(M).filter(Boolean);
   return (
-    <section className="bx-types" aria-label="Decor details">
+    <section className="bx-types idv2-spatial idv2-bgc idv2-bgc-05" aria-label="Decor details">
       <div className="idv2-inner idsp-head idv2-reveal" style={{ paddingBottom: 'clamp(16px, 2vw, 30px)' }}>
         <Eyebrow>DECOR DETAILS</Eyebrow>
         <h2 className="idv2-h2 idsp-h2">The details<br />make it<br /><span className="idv2-grad">personal.</span></h2>
@@ -244,7 +244,7 @@ function StylesFd() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Style direction" value={key} onChange={setKey} options={items.map((d) => ({ key: d.key, label: d.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, calc(100svh - 460px))', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(66vh, calc(100svh - 430px))', objectFit: 'contain', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME ARCHITECTURE, SAME CAMERA · STUDIO CONCEPT</span></figcaption>
           </figure>
         </div>

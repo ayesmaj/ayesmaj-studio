@@ -197,7 +197,7 @@ const TYPES = [
 function TypesBath() {
   const items = TYPES.map((t) => ({ ...t, m: M(t.id) })).filter((t) => t.m);
   return (
-    <section className="bx-types" aria-label="Bathroom types">
+    <section className="bx-types idv2-spatial idv2-bgc idv2-bgc-04" aria-label="Bathroom types">
       <div className="idv2-inner idsp-head idv2-reveal" style={{ paddingBottom: 'clamp(18px, 2.4vw, 34px)' }}>
         <Eyebrow>FOUR ROOMS, FOUR JOBS</Eyebrow>
         <h2 className="idv2-h2 idsp-h2">Primary, powder,<br /><span className="idv2-grad">guest, wet room.</span></h2>

@@ -56,6 +56,7 @@
 
 /* ── Massive compare ── */
 .bx-compare-sec { padding-top: clamp(40px, 5vw, 70px); }
+.bx-compare { width: 100%; max-width: min(100%, calc((100svh - 430px) * 1.5)); margin-inline: auto; }
 .bx-compare [role='slider'] { aspect-ratio: auto !important; height: min(74vh, calc(100svh - 430px)); }
 
 /* ── Directions ── */

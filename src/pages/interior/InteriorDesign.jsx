@@ -291,8 +291,9 @@ function ScrollFilm() {
       if (range <= 0) return;
       const p = Math.max(0, Math.min(1, -rect.top / range));
       setProgress(p);
-      // one frame short of the end: seeking to exactly `duration` fires `ended`
-      video.currentTime = Math.min(p * video.duration, video.duration - 1 / 30);
+      // keyframe-grid seeks; one frame short of the end so `ended` never fires
+      const target = Math.min(Math.round(p * video.duration * 4) / 4, video.duration - 1 / 30);
+      if (Math.abs(target - video.currentTime) >= 0.2) video.currentTime = target;
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     window.addEventListener('scroll', onScroll, { passive: true });

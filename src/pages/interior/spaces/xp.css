@@ -15,6 +15,7 @@
 .xp-hero-layer figcaption { font-family: var(--idv-mono, 'DM Mono', ui-monospace, monospace); font-size: 8.5px; letter-spacing: 0.22em; color: rgba(245, 245, 240, 0.75); }
 
 /* ── Massive compare ── */
+.xp-compare { width: 100%; max-width: min(100%, calc((100svh - 430px) * 1.58)); margin-inline: auto; }
 .xp-compare [role='slider'] { aspect-ratio: auto !important; height: min(74vh, calc(100svh - 430px)); }
 
 /* ── Spot overlays (plan relationships / room map) ── */
