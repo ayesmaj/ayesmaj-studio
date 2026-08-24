@@ -29,12 +29,19 @@ SRC_DIR = 'source-assets/models'       # untouched originals, outside public/ so
 MEM = {2048: 22.37, 1024: 5.59, 512: 1.4, 256: 0.35, 128: 0.09}  # MB per mipmapped RGBA texture
 BUDGET = {'desktop': 130, 'lite': 40}
 Q = {'desktop': 76, 'lite': 66}
-# simplification ratio by source vertex count (keep fewer vertices on the heavy scans)
-def ratio(verts, tier):
-    if verts > 2_000_000: return 0.30 if tier == 'desktop' else 0.12
-    if verts > 500_000:   return 0.50 if tier == 'desktop' else 0.22
-    if verts > 100_000:   return 0.75 if tier == 'desktop' else 0.40
-    return 1.0 if tier == 'desktop' else 0.6
+# Hard vertex ceiling per tier. Buckets alone left huge scans huge (the Patel kept
+# 2.8M verts -> multi-second Draco decode and a stuttering page). Target the ceiling
+# directly so every served model lands in the same budget. Owner report 2026-08-23.
+VERT_CEIL = {'desktop': 420_000, 'lite': 160_000}
+# The Patel is the hero model: thin balcony fins speckle below ~1M verts, so it gets a
+# larger budget (still ~7x lighter than the old cut).
+VERT_CEIL_OVERRIDE = {'the-patel': {'desktop': 1_000_000, 'lite': 300_000}}
+
+def ratio(verts, tier, key=None):
+    if not verts: return 1.0
+    ceil = VERT_CEIL_OVERRIDE.get(key, VERT_CEIL)[tier]
+    r = min(1.0, ceil / verts)
+    return round(max(r, 0.02), 3)
 
 def glb_json(path):
     with open(path, 'rb') as f:
@@ -72,7 +79,7 @@ for key in keys:
     n_tex, verts = len(g.get('images', [])), count_vertices(g)
     report[key] = {'source_mb': round(os.path.getsize(src) / 1048576, 1), 'textures': n_tex, 'vertices': verts}
     for tier, out in (('desktop', served), ('lite', f'{DIR}/{key}-lite.glb')):
-        size = pick_size(n_tex, BUDGET[tier]); r = ratio(verts, tier)
+        size = pick_size(n_tex, BUDGET[tier]); r = ratio(verts, tier, key)
         with tempfile.TemporaryDirectory() as td:
             mid = os.path.join(td, 'mid.glb').replace('\\', '/')
             simplify = 'true' if r < 1.0 else 'false'

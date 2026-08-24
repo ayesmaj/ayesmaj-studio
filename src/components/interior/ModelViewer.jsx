@@ -167,9 +167,30 @@ export default function ModelViewer({ model, ratio = '16 / 10', auto = false, st
         camera.updateProjectionMatrix();
         setProgress(100);
 
-        let raf;
-        const tick = () => { raf = requestAnimationFrame(tick); controls.update(); renderer.render(scene, camera); };
-        tick();
+        /* Render only when the canvas is actually on screen and the tab is visible, and
+           cap idle auto-rotation to ~30fps: a permanent 60fps loop competed with the
+           page's scroll effects and made heavy pages feel stuck (owner report 2026-08-23). */
+        let raf = 0;
+        let onScreen = true;
+        let last = 0;
+        const IDLE_MS = 1000 / 30;
+        const frame = (now) => {
+          raf = requestAnimationFrame(frame);
+          const dragging = controls.autoRotate === false;
+          if (!dragging && now - last < IDLE_MS) return;
+          last = now;
+          controls.update();
+          renderer.render(scene, camera);
+        };
+        const start = () => { if (!raf && onScreen && !document.hidden) { last = 0; raf = requestAnimationFrame(frame); } };
+        const stop = () => { if (raf) { cancelAnimationFrame(raf); raf = 0; } };
+        const visIo = 'IntersectionObserver' in window
+          ? new IntersectionObserver((entries) => { onScreen = entries[entries.length - 1].isIntersecting; if (onScreen) start(); else stop(); }, { rootMargin: '80px 0px' })
+          : null;
+        if (visIo) visIo.observe(mount); else onScreen = true;
+        const onVis = () => { if (document.hidden) stop(); else start(); };
+        document.addEventListener('visibilitychange', onVis);
+        start();
 
         const ro = new ResizeObserver(() => {
           camera.aspect = mount.clientWidth / mount.clientHeight;
@@ -180,7 +201,9 @@ export default function ModelViewer({ model, ratio = '16 / 10', auto = false, st
         ro.observe(mount);
 
         cleanupRef.current = () => {
-          cancelAnimationFrame(raf);
+          stop();
+          document.removeEventListener('visibilitychange', onVis);
+          if (visIo) visIo.disconnect();
           clearTimeout(idleTimer);
           ro.disconnect();
           controls.dispose();

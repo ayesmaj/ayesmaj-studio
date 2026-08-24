@@ -1,53 +1,19 @@
 {
-  "kitchen-island": {
-    "source_mb": 22.5,
-    "textures": 19,
-    "vertices": 63870,
+  "the-patel": {
+    "source_mb": 37.7,
+    "textures": 77,
+    "vertices": 7775801,
     "desktop": {
-      "mb": 1.2,
-      "tex": 1024,
-      "gpu_mb": 106,
-      "ratio": 1.0
-    },
-    "lite": {
-      "mb": 0.5,
+      "mb": 7.2,
       "tex": 512,
-      "gpu_mb": 27,
-      "ratio": 0.6
-    }
-  },
-  "kitchen-2": {
-    "source_mb": 26.9,
-    "textures": 12,
-    "vertices": 448798,
-    "desktop": {
-      "mb": 1.9,
-      "tex": 1024,
-      "gpu_mb": 67,
-      "ratio": 0.75
-    },
-    "lite": {
-      "mb": 0.8,
-      "tex": 512,
-      "gpu_mb": 17,
-      "ratio": 0.4
-    }
-  },
-  "kitchen-3": {
-    "source_mb": 207.5,
-    "textures": 63,
-    "vertices": 1792098,
-    "desktop": {
-      "mb": 5.3,
-      "tex": 512,
-      "gpu_mb": 88,
-      "ratio": 0.5
+      "gpu_mb": 108,
+      "ratio": 0.129
     },
     "lite": {
       "mb": 3.9,
       "tex": 256,
-      "gpu_mb": 22,
-      "ratio": 0.22
+      "gpu_mb": 27,
+      "ratio": 0.039
     }
   }
 }
