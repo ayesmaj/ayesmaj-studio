@@ -1,36 +1,53 @@
 {
-  "villa-floor-plan": {
-    "source_mb": 160.6,
-    "textures": 3,
-    "vertices": 2249173,
+  "kitchen-island": {
+    "source_mb": 22.5,
+    "textures": 19,
+    "vertices": 63870,
     "desktop": {
-      "mb": 7.3,
+      "mb": 1.2,
       "tex": 1024,
-      "gpu_mb": 17,
-      "ratio": 0.3
+      "gpu_mb": 106,
+      "ratio": 1.0
     },
     "lite": {
-      "mb": 3.7,
-      "tex": 1024,
-      "gpu_mb": 17,
-      "ratio": 0.12
+      "mb": 0.5,
+      "tex": 512,
+      "gpu_mb": 27,
+      "ratio": 0.6
     }
   },
-  "villa-house": {
-    "source_mb": 171.4,
-    "textures": 3,
-    "vertices": 2563071,
+  "kitchen-2": {
+    "source_mb": 26.9,
+    "textures": 12,
+    "vertices": 448798,
     "desktop": {
-      "mb": 8.3,
+      "mb": 1.9,
       "tex": 1024,
-      "gpu_mb": 17,
-      "ratio": 0.3
+      "gpu_mb": 67,
+      "ratio": 0.75
     },
     "lite": {
-      "mb": 5.5,
-      "tex": 1024,
+      "mb": 0.8,
+      "tex": 512,
       "gpu_mb": 17,
-      "ratio": 0.12
+      "ratio": 0.4
+    }
+  },
+  "kitchen-3": {
+    "source_mb": 207.5,
+    "textures": 63,
+    "vertices": 1792098,
+    "desktop": {
+      "mb": 5.3,
+      "tex": 512,
+      "gpu_mb": 88,
+      "ratio": 0.5
+    },
+    "lite": {
+      "mb": 3.9,
+      "tex": 256,
+      "gpu_mb": 22,
+      "ratio": 0.22
     }
   }
 }
