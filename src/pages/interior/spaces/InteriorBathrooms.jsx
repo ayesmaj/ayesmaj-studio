@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher, PinSeq } from '@/components/interior/kit';
 import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
@@ -234,6 +234,77 @@ function CompareBath() {
   );
 }
 
+const FILM = {
+  desktop: '/interior-design/generated/bathrooms/film/bathroom-film.mp4',
+  mobile: '/interior-design/generated/bathrooms/film/bathroom-film-mobile.mp4',
+  poster: '/interior-design/generated/bathrooms/film/bathroom-film-poster.png',
+};
+
+function FilmBath() {
+  const wrapRef = useRef(null);
+  const videoRef = useRef(null);
+  const reduced = useReducedMotion();
+  const [simple, setSimple] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 860px)');
+    const set = () => setSimple(mq.matches);
+    set();
+    mq.addEventListener('change', set);
+    return () => mq.removeEventListener('change', set);
+  }, []);
+
+  useEffect(() => {
+    if (simple || reduced) return undefined;
+    const wrap = wrapRef.current; const video = videoRef.current;
+    if (!wrap || !video) return undefined;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      if (!Number.isFinite(video.duration) || video.duration === 0) return;
+      const rect = wrap.getBoundingClientRect();
+      const range = rect.height - window.innerHeight;
+      if (range <= 0) return;
+      const p = Math.max(0, Math.min(1, -rect.top / range));
+      setProgress(p);
+      video.currentTime = Math.min(p * video.duration, video.duration - 1 / 30);
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    video.addEventListener('loadedmetadata', update);
+    update();
+    return () => { window.removeEventListener('scroll', onScroll); video.removeEventListener('loadedmetadata', update); if (raf) cancelAnimationFrame(raf); };
+  }, [simple, reduced]);
+
+  const flat = simple || reduced;
+  const late = progress > 0.28;
+  return (
+    <section className="bx-film" aria-label="The bathroom as film">
+      {flat ? (
+        <div className="bx-film-flat">
+          <video autoPlay muted loop playsInline preload="metadata" poster={FILM.poster} aria-label="Art Deco bathroom film - one continuous take from the doorway to dusk">
+            <source src={FILM.mobile} media="(max-width: 767px)" type="video/mp4" />
+            <source src={FILM.desktop} type="video/mp4" />
+          </video>
+          <div className="bx-film-copy"><h2 className="idv2-pinseq-head">Motion makes you <span className="idv2-grad">experience it.</span></h2></div>
+        </div>
+      ) : (
+        <div ref={wrapRef} className="idv2-pin-wrap" style={{ height: '320vh' }}>
+          <div className="idv2-pin">
+            <video ref={videoRef} data-scrub muted playsInline preload="auto" poster={FILM.poster} src={FILM.desktop} aria-label="Art Deco bathroom film - one continuous take from the doorway to dusk" />
+            <div className="idv2-pin-scrim" />
+            <div className="bx-film-copy" data-late={late}>
+              <h2 className="idv2-pinseq-head">{late ? <>Motion makes you <span className="idv2-grad">experience it.</span></> : 'A still image shows the design.'}</h2>
+              <div className="idv-mono-label" style={{ color: 'rgba(245,245,240,.65)' }}>SCROLL — ONE CONTINUOUS TAKE · DOORWAY TO DUSK · STUDIO CONCEPT, AI-GENERATED</div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 const DIRECTIONS = [
   { key: 'artdeco', label: 'ART DECO', id: '43_bh_dir_artdeco', line: 'Emerald lacquer, brass, colorful stone — the world this page lives in.' },
   { key: 'organic', label: 'ORGANIC MODERN', id: '40_bh_dir_organic', line: 'Travertine, pale oak, zellige and linen — soft and warm.' },
@@ -275,6 +346,7 @@ export default function InteriorBathrooms() {
       <MaterialRoom />
       <TypesBath />
       <CompareBath />
+      <FilmBath />
       <DirectionsBath />
     </InteriorShell>
   );

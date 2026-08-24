@@ -1170,6 +1170,322 @@
   "prompt": "A styled home office corner as a premium editorial interior photograph: a solid oak writing desk with a tan leather task chair, an organic sculpted walnut bookcase with ceramics and books, a brass desk lamp glowing, warm ivory plaster walls, oak floor, soft daylight from a tall window at the left. Photoreal, sophisticated, no people, no text."
  },
  {
+  "id": "30_fd_hero",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "hero",
+  "type": "text",
+  "sources": [],
+  "size": "2048x1024",
+  "project": "CONCEPT",
+  "alt": "The atelier room - colorful ultra-luxury living room: emerald seating, blush chairs, mustard accent, walnut, brass, colorful art; studio concept",
+  "prompt": "A breathtaking bright colorful ultra-luxury living room, wide hero composition: cream architectural shell with tall windows and strong daylight, a deep emerald-teal velvet sofa, two blush-pink lounge chairs, a mustard accent armchair, warm walnut joinery and side tables, champagne-brass floor lamp and details, one large colorful abstract artwork, a layered patterned rug in rust/teal/cream, books, fresh flowers, plants, sculptural ceramics. Colorful luxury palette used with discipline: cream architectural shell, emerald and teal seating, blush chairs, mustard accent, warm walnut and natural oak, champagne brass, colorful large-scale artwork, layered patterned rug, books, flowers, plants, sculptural objects. Bright, alive, sophisticated - never dark, never moody, never beige-only, never childish. Hyper-realistic, premium editorial interior photography for a luxury design studio, natural daylight, correct perspective, high material realism, no people, no text, no logos."
+ },
+ {
+  "id": "31_fd_empty",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same room as an empty architectural shell - finished floors and walls, no furniture",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Remove ALL furniture, the rug, lamps, artwork, plants, objects and curtains - a completely empty but finished room: bare oak floor, clean cream walls, daylight through the same windows. Realistic photograph, no people, no text.",
+  "world": false
+ },
+ {
+  "id": "32_fd_plan",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same room as a furnished top-down 3D plan",
+  "prompt": "Render this EXACT living room as a photoreal top-down furnished 3D floor-plan cutaway: walls cut at door height, the emerald sofa, blush chairs, mustard armchair, rug, walnut tables and plants exactly where they stand in the source, same windows and openings, soft studio daylight, warm off-white background, no text, no labels, no people.",
+  "world": false
+ },
+ {
+  "id": "33_fd_layout_social",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "Layout A - social: seating turned into one conversation circle",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Rearrange ONLY the furniture into a SOCIAL layout: sofa and all chairs pulled into one close conversation circle around a central coffee table, rug centered under the group. Same pieces, same materials. Hyper-realistic, premium editorial interior photography for a luxury design studio, natural daylight, correct perspective, high material realism, no people, no text, no logos."
+ },
+ {
+  "id": "34_fd_layout_open",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "Layout B - open: furniture pulled to the edges, open centre",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Rearrange ONLY the furniture into an OPEN layout: sofa against the wall, chairs at the window, generous open floor in the centre of the room, rug along the sofa. Same pieces, same materials. Hyper-realistic, premium editorial interior photography for a luxury design studio, natural daylight, correct perspective, high material realism, no people, no text, no logos."
+ },
+ {
+  "id": "35_fd_layout_sculptural",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "Layout C - sculptural: pieces placed as freestanding objects",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Rearrange ONLY the furniture into a SCULPTURAL layout: the sofa floating diagonally in the room, single chair isolated as an object near the window, artwork leaning on the floor, asymmetric composition with intentional negative space. Same pieces, same materials. Hyper-realistic, premium editorial interior photography for a luxury design studio, natural daylight, correct perspective, high material realism, no people, no text, no logos."
+ },
+ {
+  "id": "36_fd_style_artdeco",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same room styled Art Deco",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Restyle ALL furniture, rug, artwork and lighting to ART DECO: emerald and black lacquer, fluted walnut, brass inlays, geometric rug, stepped brass lighting, velvet seating, bold geometric art. Bright daylight, colorful, luxurious. No people, no text."
+ },
+ {
+  "id": "37_fd_style_organic",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same room styled Organic Modern",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Restyle ALL furniture, rug, artwork and lighting to ORGANIC MODERN: curved cream boucle sofa, travertine and pale oak, handwoven wool rug, ceramics, linen, sculptural paper lantern, olive greens and sand tones, one terracotta accent. Bright daylight. No people, no text."
+ },
+ {
+  "id": "38_fd_style_midcentury",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same room styled Mid-Century",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Restyle ALL furniture, rug, artwork and lighting to MID-CENTURY MODERN: teak lounge chairs with tan leather, low walnut sideboard, mustard sofa, geometric wool rug, sputnik brass lamp, abstract mid-century art, warm colorful palette. Bright daylight. No people, no text."
+ },
+ {
+  "id": "39_fd_style_colorful",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same room styled Colorful Contemporary",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Restyle ALL furniture, rug, artwork and lighting to COLORFUL CONTEMPORARY: cobalt-blue sofa, coral chair, striped bold rug, colorful glass side tables, oversized vivid artwork, playful sculptural lighting - disciplined, gallery-like, not childish. Bright daylight. No people, no text."
+ },
+ {
+  "id": "40_fd_reference",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Reference board - travel photograph, palette, fabric and material references pinned together; studio concept",
+  "prompt": "A designer reference board photographed straight-on: a large pinned travel photograph of a sunlit Mediterranean interior, torn magazine pages, fabric swatches in emerald velvet and blush boucle, a brass sample, a walnut veneer piece, a hand-painted color palette card - arranged loosely on a warm cream board with natural shadows. Photoreal, no readable text, no people."
+ },
+ {
+  "id": "41_fd_palette",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/40_fd_reference.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The palette extracted from the reference - large painted swatches with material chips",
+  "prompt": "Turn this reference board into a clean PALETTE BOARD: six large painted color fields (cream, emerald, blush, mustard, walnut brown, brass gold) with the matching fabric and material chips resting on them, photographed straight-on in daylight on the same cream board. Photoreal, no readable text, no people.",
+  "world": false
+ },
+ {
+  "id": "42_fd_composition",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The atelier room as a working 3D composition - clay model with the furniture blocked in",
+  "prompt": "Render this EXACT living room as a white clay 3D working model with the furniture blocked in as simple massing volumes in their exact positions: matte white, soft ambient occlusion, thin dark edge lines like a CAD viewport, plain warm grey backdrop. Same camera. No materials, no colors, no people, no text.",
+  "world": false
+ },
+ {
+  "id": "43_fd_mat_velvet",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Emerald velvet - large tactile crop",
+  "prompt": "Extreme macro photograph of deep emerald-green velvet upholstery, directional daylight raking across the pile, luxurious and tactile. No text, no people."
+ },
+ {
+  "id": "44_fd_mat_boucle",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Blush boucle - large tactile crop",
+  "prompt": "Extreme macro photograph of blush-pink boucle fabric, looped wool texture catching soft daylight. No text, no people."
+ },
+ {
+  "id": "45_fd_mat_walnut_brass",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Walnut and brass - large tactile crop",
+  "prompt": "Extreme macro photograph of oiled walnut wood grain meeting a brushed champagne-brass edge detail, warm daylight. No text, no people."
+ },
+ {
+  "id": "46_fd_mat_rug",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Patterned rug - large tactile crop",
+  "prompt": "Extreme macro photograph of a hand-knotted rug with a bold rust, teal and cream abstract pattern, wool texture visible, daylight. No text, no people."
+ },
+ {
+  "id": "47_fd_room_velvet",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The room with emerald velvet leading",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Let EMERALD VELVET lead: the sofa grows bolder in emerald velvet, an emerald velvet armchair joins, emerald cushions; everything else recedes slightly. Subtle believable change, same camera. No people, no text."
+ },
+ {
+  "id": "48_fd_room_boucle",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The room with blush boucle leading",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Let BLUSH BOUCLE lead: the lounge chairs become blush boucle, a boucle ottoman appears, blush textiles; everything else recedes slightly. Subtle believable change, same camera. No people, no text."
+ },
+ {
+  "id": "49_fd_room_walnut",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The room with walnut and brass leading",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Let WALNUT AND BRASS lead: a full walnut shelving wall appears behind the sofa, brass lamp and brass-edged tables catch the light; everything else recedes slightly. Subtle believable change, same camera. No people, no text."
+ },
+ {
+  "id": "50_fd_room_rug",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The room with the patterned rug leading",
+  "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Let the PATTERNED RUG lead: a larger bolder rust-teal-cream rug anchors the whole seating group, colors of the room echo it; everything else recedes slightly. Subtle believable change, same camera. No people, no text."
+ },
+ {
+  "id": "51_fd_shot_detail",
+  "page": "furniture-decor",
+  "section": "sections",
+  "cls": "wide",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "Film frame - close across the emerald sofa to the artwork",
+  "prompt": "Same room, new camera: a low close cinematic 16:9 frame across the emerald sofa arm and a brass lamp toward the colorful artwork, shallow depth of field, daylight. No people, no text."
+ },
+ {
   "id": "04_apartment_3d_plan",
   "page": "apartments",
   "slot": "04_apartment_3d_plan",
@@ -1387,6 +1703,130 @@
   "lock": false,
   "mobile": null,
   "focus": 0.5
+ },
+ {
+  "id": "60_ap_plan_unfurnished",
+  "page": "apartments",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/apartments/04_apartment_3d_plan.png"
+  ],
+  "size": "auto",
+  "project": "CANAL",
+  "alt": "Canal Apartment - unfurnished 3D floor plan, the architecture alone",
+  "prompt": "Render this EXACT furnished apartment 3D floor plan as the UNFURNISHED version: identical walls, openings, windows, balcony and camera, but remove all furniture - clean empty floors, white-model surfaces with the same warm daylight. No text, no people.",
+  "world": false
+ },
+ {
+  "id": "61_ap_dir_artdeco",
+  "page": "apartments",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
+  ],
+  "size": "auto",
+  "project": "CANAL",
+  "alt": "The Canal living room in an Art Deco direction",
+  "prompt": "Keep this EXACT living room architecture: same camera, window wall, walnut media wall position, floor. Restyle furniture and decor to ART DECO: emerald velvet sofa, fluted walnut, brass inlays, geometric rug, stepped lighting. Bright daylight, colorful. No people, no text."
+ },
+ {
+  "id": "62_ap_dir_organic",
+  "page": "apartments",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
+  ],
+  "size": "auto",
+  "project": "CANAL",
+  "alt": "The Canal living room in an Organic Modern direction",
+  "prompt": "Keep this EXACT living room architecture: same camera, window wall, media wall position, floor. Restyle furniture and decor to ORGANIC MODERN: curved cream boucle sofa, travertine, pale oak, wool rug, ceramics, linen, olive tones. Bright daylight. No people, no text."
+ },
+ {
+  "id": "63_ap_dir_colorful",
+  "page": "apartments",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
+  ],
+  "size": "auto",
+  "project": "CANAL",
+  "alt": "The Canal living room in a Colorful Contemporary direction",
+  "prompt": "Keep this EXACT living room architecture: same camera, window wall, media wall position, floor. Restyle furniture and decor to COLORFUL CONTEMPORARY: cobalt sofa, coral chair, bold striped rug, colorful glass, vivid oversized art - disciplined, not childish. Bright daylight. No people, no text."
+ },
+ {
+  "id": "64_ap_dir_miami",
+  "page": "apartments",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
+  ],
+  "size": "auto",
+  "project": "CANAL",
+  "alt": "The Canal living room in a Miami Modern direction",
+  "prompt": "Keep this EXACT living room architecture: same camera, window wall, media wall position, floor. Restyle furniture and decor to MIAMI MODERN: white and blush curved seating, seafoam and flamingo accents, terrazzo coffee table, palm in a planter, light woods, breezy linen. Bright daylight. No people, no text."
+ },
+ {
+  "id": "65_ap_plan_studio",
+  "page": "apartments",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Studio apartment - furnished 3D plan, showcase diagram",
+  "prompt": "Photoreal top-down furnished 3D floor-plan cutaway of a compact STUDIO apartment: one room holding sleeping alcove, sofa zone, compact kitchen run, dining for two, work desk and bathroom; smart storage walls, warm oak and cream with emerald and blush accents, clear circulation. Warm off-white background, no text, no people."
+ },
+ {
+  "id": "66_ap_plan_1br",
+  "page": "apartments",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "One-bedroom apartment - furnished 3D plan, showcase diagram",
+  "prompt": "Photoreal top-down furnished 3D floor-plan cutaway of a ONE-BEDROOM apartment: living-dining with kitchen run, separate bedroom, bathroom, entry storage and a work corner; warm oak and cream with emerald and blush accents, same rendering style as a matching set. Warm off-white background, no text, no people."
+ },
+ {
+  "id": "67_ap_plan_2br",
+  "page": "apartments",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Two-bedroom apartment - furnished 3D plan, showcase diagram",
+  "prompt": "Photoreal top-down furnished 3D floor-plan cutaway of a TWO-BEDROOM family apartment: living-dining, kitchen, two bedrooms, bathroom and en-suite, hallway storage; warm oak and cream with emerald and blush accents, same rendering style as a matching set. Warm off-white background, no text, no people."
+ },
+ {
+  "id": "68_ap_plan_penthouse",
+  "page": "apartments",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Penthouse - furnished 3D plan, showcase diagram",
+  "prompt": "Photoreal top-down furnished 3D floor-plan cutaway of a PENTHOUSE: generous living with double seating groups, open kitchen with island, dining for eight, primary suite with dressing, guest room, two bathrooms, wraparound terrace; warm oak and cream with emerald and blush accents, same rendering style as a matching set. Warm off-white background, no text, no people."
  },
  {
   "id": "01_home_hero",
@@ -1623,6 +2063,187 @@
   "lock": true,
   "mobile": null,
   "focus": 0.5
+ },
+ {
+  "id": "70_hm_exploded",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/homes/04_home_whole_house.png"
+  ],
+  "size": "auto",
+  "project": "VILLA",
+  "alt": "The villa as an exploded axonometric - roof, upper floor, ground floor, site",
+  "prompt": "Turn this EXACT house cutaway into an EXPLODED AXONOMETRIC: the roof lifted highest, upper floor with its rooms below it, ground floor with pool terrace below that, and the site slab at the bottom - four layers vertically separated with clean air between them, same architecture and furniture, photoreal model style on a deep charcoal background with faint gold technical lines. No text, no people.",
+  "world": false
+ },
+ {
+  "id": "71_hm_arrival",
+  "page": "homes",
+  "section": "sections",
+  "cls": "wide",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/02_exterior_front_day.webp"
+  ],
+  "size": "auto",
+  "project": "VILLA",
+  "alt": "Arrival - the villa from the street at golden hour, driveway leading in",
+  "prompt": "Same house, new camera: standing across the street at golden hour - the driveway leads past landscaping to the open garage and the entrance, warm interior light glowing through the glass, long shadows. Cinematic 16:9, ultra-realistic. No people, no text."
+ },
+ {
+  "id": "73_hm_dir_artdeco",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/05_living_master.webp"
+  ],
+  "size": "auto",
+  "project": "VILLA",
+  "alt": "The villa living room in an Art Deco direction",
+  "prompt": "Keep this EXACT living room architecture: same camera, walls, windows, fireplace wall, floor. Restyle furniture and decor to ART DECO: emerald and burgundy velvet, fluted walnut, brass, geometric rug and lighting. Bright daylight, colorful. No people, no text."
+ },
+ {
+  "id": "74_hm_dir_organic",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/05_living_master.webp"
+  ],
+  "size": "auto",
+  "project": "VILLA",
+  "alt": "The villa living room in an Organic Modern direction",
+  "prompt": "Keep this EXACT living room architecture: same camera, walls, windows, fireplace wall, floor. Restyle furniture and decor to ORGANIC MODERN: curved boucle, travertine, pale oak, wool, ceramics, olive and sand with one terracotta accent. Bright daylight. No people, no text."
+ },
+ {
+  "id": "75_hm_dir_colorful",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/05_living_master.webp"
+  ],
+  "size": "auto",
+  "project": "VILLA",
+  "alt": "The villa living room in a Colorful Contemporary direction",
+  "prompt": "Keep this EXACT living room architecture: same camera, walls, windows, fireplace wall, floor. Restyle furniture and decor to COLORFUL CONTEMPORARY: cobalt and coral seating, bold rug, colorful glass and vivid art - disciplined, not childish. Bright daylight. No people, no text."
+ },
+ {
+  "id": "76_hm_web_mockup",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp"
+  ],
+  "size": "auto",
+  "project": "VILLA",
+  "alt": "The villa as a premium interactive property website - floor selector, rooms, model, film",
+  "prompt": "A premium interactive property-website interface displayed on a large screen mockup, dark elegant UI: a large hero of THIS exact house, a floor selector (ground/upper), room thumbnails, a small 3D model viewport and a play button for the film, refined typography blocks (no readable words - suggest text with soft grey bars). The house imagery matches the source exactly. No people, no readable text."
+ },
+ {
+  "id": "77_hm_light_day",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp"
+  ],
+  "size": "auto",
+  "project": "VILLA",
+  "alt": "The villa at midday - same view as the sunset master",
+  "prompt": "Relight this EXACT view to bright MIDDAY: same camera, architecture, pool and landscaping; clear blue sky, crisp daylight, interiors visible and colorful. Ultra-realistic. No people, no text."
+ },
+ {
+  "id": "78_hm_light_evening",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp"
+  ],
+  "size": "auto",
+  "project": "VILLA",
+  "alt": "The villa in the evening - same view, interiors glowing richly",
+  "prompt": "Relight this EXACT view to EVENING: same camera, architecture, pool and landscaping; deep blue night sky, but every interior glowing warm and colorful through the glass, pool lit turquoise, path lights on. Interiors stay bright and rich - not a dark moody shot. Ultra-realistic. No people, no text."
+ },
+ {
+  "id": "80_hm_office",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/11_office_guest.webp"
+  ],
+  "project": "VILLA",
+  "alt": "Office and guest room - warm oak desk wall and daybed - Poolside Villa"
+ },
+ {
+  "id": "81_hm_family_lounge",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/13_family_lounge.webp"
+  ],
+  "project": "VILLA",
+  "alt": "Family lounge - built-ins, window seat and soft seating - Poolside Villa"
+ },
+ {
+  "id": "82_hm_foyer",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/04_foyer.webp"
+  ],
+  "project": "VILLA",
+  "alt": "Entry foyer - double-height arrival with stair - Poolside Villa"
+ },
+ {
+  "id": "83_hm_outdoor_lounge",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/25_outdoor_lounge.webp"
+  ],
+  "project": "VILLA",
+  "alt": "Outdoor lounge by the pool - Poolside Villa"
+ },
+ {
+  "id": "84_hm_outdoor_kitchen",
+  "page": "homes",
+  "section": "sections",
+  "cls": "card",
+  "type": "existing",
+  "sources": [
+   "public/interior-design/projects/poolside-villa/renders/26_outdoor_kitchen.webp"
+  ],
+  "project": "VILLA",
+  "alt": "Outdoor kitchen and dining terrace - Poolside Villa"
  },
  {
   "id": "02_building_full_exterior",
