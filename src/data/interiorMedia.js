@@ -229,10 +229,12 @@ export const MODELS = {
     { key: 'plan-study', scale: '05', name: 'Floor-plan study', file: '/interior-design/models/plan-study.glb', weight: '4.4 MB', lite: '/interior-design/models/plan-study-lite.glb', liteWeight: '3.4 MB', credit: 'SHOWCASE MODEL', line: 'The layout as an object: rooms, walls, and circulation in the round.' },
   ],
   objects: [
-    { key: 'kitchen-island', scale: '06', name: 'Kitchen island', file: '/interior-design/models/kitchen-island.glb', weight: '0.9 MB', lite: '/interior-design/models/kitchen-island-lite.glb', liteWeight: '0.4 MB', credit: 'SHOWCASE MODEL', line: 'Where the plan meets daily life.' },
+    { key: 'kitchen-island', scale: '06', name: 'Kitchen island', file: '/interior-design/models/kitchen-island.glb', weight: '1.2 MB', lite: '/interior-design/models/kitchen-island-lite.glb', liteWeight: '0.5 MB', credit: 'SHOWCASE MODEL', line: 'Where the plan meets daily life.' },
     { key: 'office-desk', scale: '07', name: 'Office desk', file: '/interior-design/models/office-desk.glb', weight: '0.0 MB', lite: '/interior-design/models/office-desk-lite.glb', liteWeight: '0.0 MB', credit: 'SHOWCASE MODEL', line: 'Furniture at true scale.' },
     { key: 'bookcase', scale: '08', name: 'Organic bookcase', file: '/interior-design/models/bookcase.glb', weight: '1.1 MB', lite: '/interior-design/models/bookcase-lite.glb', liteWeight: '0.7 MB', credit: 'SHOWCASE MODEL', line: 'A statement piece, inspectable from every side.' },
     { key: 'sinks', scale: '09', name: 'Sinks and faucets', file: '/interior-design/models/sinks.glb', weight: '1.6 MB', lite: '/interior-design/models/sinks-lite.glb', liteWeight: '0.9 MB', credit: 'SHOWCASE MODEL', line: 'Down to the fixture the client will touch every day.' },
+    { key: 'kitchen-2', scale: '10', name: 'Kitchen concept 02', file: '/interior-design/models/kitchen-2.glb', weight: '1.9 MB', lite: '/interior-design/models/kitchen-2-lite.glb', liteWeight: '0.8 MB', credit: 'SHOWCASE MODEL' },
+    { key: 'kitchen-3', scale: '11', name: 'Kitchen concept 03', file: '/interior-design/models/kitchen-3.glb', weight: '5.3 MB', lite: '/interior-design/models/kitchen-3-lite.glb', liteWeight: '3.9 MB', credit: 'SHOWCASE MODEL' },
   ],
 };
 

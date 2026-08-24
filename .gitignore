@@ -74,3 +74,6 @@ source-assets/models/villa-*.glb
 
 # gpt-image-2 masters for the Interior Design library (regenerable; web files live in public/)
 source-assets/interior-generated/
+# new kitchen showcase sources stay local (kitchen-3 is 217 MB, over GitHub's limit)
+source-assets/models/kitchen-2.glb
+source-assets/models/kitchen-3.glb

@@ -193,14 +193,60 @@ function ChapterSplit({ c, M, dark }) {
 
 function ChapterFull({ c, M }) {
   const m = M(c.media);
+  const ref = React.useRef(null);
+  const onMove = (e) => {
+    const el = ref.current; if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', `${((e.clientX - r.left) / r.width * 100).toFixed(2)}%`);
+    el.style.setProperty('--my', `${((e.clientY - r.top) / r.height * 100).toFixed(2)}%`);
+  };
   return (
-    <section className="idv2-full idsp-full">
+    <section ref={ref} className="idv2-full idsp-full" onPointerMove={onMove}>
       <Pic m={m} className="idsp-full-bg" />
+      <div className="idsp-full-light" aria-hidden="true" />
       <div className="idv2-full-scrim idsp-full-scrim" />
       <div className="idv2-inner idsp-full-copy">
         <Eyebrow>{c.eyebrow}</Eyebrow>
-        <Headline className="idv2-display idsp-full-h" lines={c.title} gradient={c.gradient || []} />
+        <Headline className="idv2-display idsp-full-h idsp-full-h--wide" lines={c.title} gradient={c.gradient || []} />
         {m ? <div className="idv-mono-label" style={{ color: 'rgba(245,245,240,.7)' }}>{m.alt}{m.project ? ` · ${m.project}` : ''}</div> : null}
+      </div>
+    </section>
+  );
+}
+
+/* Elastic gallery (adapted from the owner-supplied 21st component to plain CSS): flex columns,
+   the hovered/clicked panel expands, inactive panels dim with vertical labels. */
+function ChapterElastic({ c, M }) {
+  const items = c.options.map((o) => ({ ...o, m: M(o.media) })).filter((o) => o.m);
+  const [active, setActive] = useState(items[Math.floor((items.length - 1) / 2)]?.media);
+  return (
+    <section className={`idv2-section ${c.dark ? `idv2-spatial idv2-bgc idv2-bgc-${c.bgc}` : 'idv2-gradient-soft'}`}>
+      <div className="idv2-inner" style={{ display: 'grid', gap: 'clamp(28px, 4vw, 48px)' }}>
+        <ChapterHead c={c} />
+        <div className="idsp-elastic idv2-reveal" role="group" aria-label={c.ariaLabel || 'Gallery'}>
+          {items.map((o, i) => (
+            <button
+              key={o.media}
+              type="button"
+              className="idsp-el-item"
+              data-active={active === o.media}
+              aria-pressed={active === o.media}
+              aria-label={`${o.label} — ${o.m.alt}`}
+              onMouseEnter={() => setActive(o.media)}
+              onFocus={() => setActive(o.media)}
+              onClick={() => setActive(o.media)}
+            >
+              <img src={o.m.file} alt="" loading="lazy" decoding="async" />
+              <span className="idsp-el-shade" aria-hidden="true" />
+              <span className="idsp-el-vert" aria-hidden="true">{o.label}</span>
+              <span className="idsp-el-info">
+                <span className="idsp-el-num">{`0${i + 1}`}</span>
+                <span className="idsp-el-title">{o.label}</span>
+                {o.line ? <span className="idsp-el-line">{o.line}</span> : null}
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -327,6 +373,7 @@ export default function SpacePage({ cfg }) {
         const key = `${c.kind}-${i}`;
         if (c.kind === 'split') return <ChapterSplit key={key} c={c} M={M} dark={c.dark} />;
         if (c.kind === 'full') return <ChapterFull key={key} c={c} M={M} />;
+        if (c.kind === 'elastic') return <ChapterElastic key={key} c={c} M={M} />;
         if (c.kind === 'compare') return <ChapterCompare key={key} c={c} M={M} />;
         if (c.kind === 'gallery') return <ChapterGallery key={key} c={c} M={M} />;
         if (c.kind === 'switcher') return <ChapterSwitcher key={key} c={c} M={M} />;
