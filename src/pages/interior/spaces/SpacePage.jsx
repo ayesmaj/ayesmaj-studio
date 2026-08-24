@@ -57,7 +57,7 @@ function Caption({ m, tag }) {
 }
 
 /* ── Spaces rail: Overview · Spaces · Property types ─────────────────────── */
-function SpacesRail({ path }) {
+export function SpacesRail({ path }) {
   const items = [INTERIOR_MENU.overview, ...INTERIOR_MENU.groups.flatMap((g) => g.items)];
   return (
     <nav className="idv2-rail" aria-label="Interior design spaces and property types">

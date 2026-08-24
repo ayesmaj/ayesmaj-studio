@@ -318,6 +318,7 @@ export function PinSeq({ stages, height = '350vh', accentClass = '', ariaLabel =
         ))}
         <div className="idv2-pin-scrim" />
         <div style={{ position: 'absolute', left: 'var(--idv-pad)', right: 'var(--idv-pad)', bottom: 'clamp(50px, 8vh, 110px)', display: 'grid', gap: 14, color: '#F5F5F0' }}>
+          {active.head ? <h2 className="idv2-pinseq-head" aria-live="polite">{active.head}</h2> : null}
           <div className="idv2-pinseq-stagebar">
             {stages.map((s, i) => <span key={s.label} data-active={i === idx}>{'0' + (i + 1) + ' ' + s.label}</span>)}
           </div>

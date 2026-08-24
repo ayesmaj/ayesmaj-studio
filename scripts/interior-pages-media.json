@@ -469,6 +469,348 @@
   "focus": 0.5
  },
  {
+  "id": "20_bh_hero",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "hero",
+  "type": "text",
+  "sources": [],
+  "size": "2048x1024",
+  "project": "CONCEPT",
+  "alt": "Art Deco bathroom - emerald lacquer, colorful stone, brass, blush and ivory; studio concept",
+  "prompt": "A breathtaking bright Art Deco bathroom interior, wide hero shot from a three-quarter view: a freestanding sculptural bathtub in ivory stone on a podium of green-and-rust veined marble, a fluted emerald-green lacquered vanity wall with champagne-brass details and a large round brass-framed mirror, blush velvet stool, geometric Art Deco floor in ivory and burgundy stone, fluted glass shower screen with brass frame, tall window with sheer curtain letting in warm daylight, fresh flowers. Palette: warm ivory plaster, emerald-green lacquer, blush-pink textile, deep burgundy accents, warm walnut, champagne brass, colorful veined stone (green and rust marble with ivory), soft daylight. Bright, colorful, luxurious - NOT a beige minimal bathroom. Hyper-realistic, cinematic, premium editorial photography for a luxury design studio, correct perspective, high material realism, no people, no text, no logos.",
+  "mobile": "crop",
+  "focus": 0.62
+ },
+ {
+  "id": "25_bh_wet_room",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Wet room - tub and rain shower behind fluted glass in one stone composition; studio concept",
+  "prompt": "A luxurious wet room: freestanding stone bathtub and a large rain shower together in one open zone behind a floor-to-ceiling fluted-glass and champagne-brass partition, walls and floor in warm travertine with an emerald marble feature band, recessed warm lighting, wooden stool with towels. Palette: warm ivory plaster, emerald-green lacquer, blush-pink textile, deep burgundy accents, warm walnut, champagne brass, colorful veined stone (green and rust marble with ivory), soft daylight. Bright, colorful, luxurious - NOT a beige minimal bathroom. Hyper-realistic, cinematic, premium editorial photography for a luxury design studio, correct perspective, high material realism, no people, no text, no logos."
+ },
+ {
+  "id": "30_bh_mat_travertine",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Travertine - macro material study",
+  "prompt": "Extreme macro photograph of warm ivory travertine stone, natural pores and layered veining, raking warm daylight across the surface, shallow depth of field. Premium material study, no text, no people."
+ },
+ {
+  "id": "31_bh_mat_emerald",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Emerald lacquer - macro material study",
+  "prompt": "Extreme macro photograph of a high-gloss emerald-green lacquered fluted panel, light reflecting along the flutes, deep rich color. Premium material study, no text, no people."
+ },
+ {
+  "id": "32_bh_mat_brass",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Brushed brass - macro material study",
+  "prompt": "Extreme macro photograph of brushed champagne brass metal, fine linear grain, soft warm reflections. Premium material study, no text, no people."
+ },
+ {
+  "id": "33_bh_mat_calacatta",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Calacatta - macro material study",
+  "prompt": "Extreme macro photograph of Calacatta marble with bold gold and grey veining on white, polished surface with soft window reflection. Premium material study, no text, no people."
+ },
+ {
+  "id": "34_bh_mat_fluted_glass",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Fluted glass - macro material study",
+  "prompt": "Extreme macro photograph of fluted reeded glass with warm light refracting through the ridges, hints of brass at the edge. Premium material study, no text, no people."
+ },
+ {
+  "id": "35_bh_mat_velvet",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "text",
+  "sources": [],
+  "size": "1536x1024",
+  "project": "CONCEPT",
+  "alt": "Blush velvet - macro material study",
+  "prompt": "Extreme macro photograph of blush-pink velvet textile, soft pile catching directional light, gentle folds. Premium material study, no text, no people."
+ },
+ {
+  "id": "21_bh_plan",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same bathroom as a clean architectural floor plan",
+  "prompt": "Draw this EXACT bathroom as a clean top-down 2D architectural floor plan: correct positions of the bathtub on its podium, vanity wall, shower behind the fluted screen, window, door and circulation, thin precise black linework on warm white paper, furniture symbols, subtle wall poche, no dimensions, no text labels, no people.",
+  "world": false
+ },
+ {
+  "id": "22_bh_sketch",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/21_bh_plan.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same plan as a rough notebook sketch",
+  "prompt": "Redraw this EXACT floor plan as a rough hand-drawn pencil sketch in a designer's notebook: loose confident pencil lines on warm sketchbook paper, slightly wobbly walls, quick hatching, a couple of scribbled arrows, the same layout unmistakably recognizable, no readable text, no people.",
+  "world": false
+ },
+ {
+  "id": "23_bh_clay",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same bathroom as a white clay 3D model",
+  "prompt": "Render this EXACT bathroom as a matte white clay 3D model: identical camera, walls, window, podium, bathtub, vanity and shower positions, all geometry kept but every surface plain matte white with soft ambient occlusion, thin dark edge lines like a CAD viewport, plain warm grey background outside the window, no materials, no colors, no people, no text.",
+  "world": false
+ },
+ {
+  "id": "24_bh_material3d",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/23_bh_clay.png",
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same bathroom as a materialized 3D visualization",
+  "prompt": "Render this EXACT white clay bathroom model as a furnished, materialized 3D visualization: identical camera and geometry; apply the materials of the second reference image (emerald lacquer vanity, veined marble podium, brass, blush velvet, Art Deco stone floor) with slightly flat CGI-viewport lighting - clearly a 3D visualization, one step before photorealism. No people, no text."
+ },
+ {
+  "id": "26_bh_plan3d",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same bathroom as a furnished top-down 3D plan",
+  "prompt": "Render this EXACT bathroom as a photoreal top-down furnished 3D floor-plan cutaway: walls cut at door height, the bathtub on its marble podium, emerald vanity wall, shower behind fluted glass, window and door exactly where they are in the source, soft studio daylight, no text, no people."
+ },
+ {
+  "id": "27_bh_doorway",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same bathroom seen from the doorway",
+  "prompt": "Show this EXACT bathroom from a different camera: standing in the doorway looking in - the emerald fluted vanity on one side, the sculptural tub on its veined-marble podium beyond it, the window with sheer curtain ahead, same materials, same architecture, warm daylight. Hyper-realistic, cinematic, premium editorial photography for a luxury design studio, correct perspective, high material realism, no people, no text, no logos."
+ },
+ {
+  "id": "40_bh_dir_organic",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same bathroom in an Organic Modern direction",
+  "prompt": "Restyle this EXACT bathroom to ORGANIC MODERN: identical camera, walls, window, tub, vanity and shower positions. Materials become warm ivory microcement, travertine, pale oak slatted vanity, cream boucle stool, handmade zellige in sand tones, linen, greenery in a stone pot, soft organic curves, matte black-bronze taps. No people, no text."
+ },
+ {
+  "id": "41_bh_dir_minimal",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same bathroom in a Minimal Luxury direction",
+  "prompt": "Restyle this EXACT bathroom to MINIMAL LUXURY: identical camera and architecture. One stone only - large-format honed Calacatta on walls and podium, a monolithic stone tub, flush minimal white-oak vanity with integrated pulls, frameless clear glass shower, concealed warm lighting coves, almost empty styling, quiet perfection. No people, no text."
+ },
+ {
+  "id": "42_bh_dir_mediterranean",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same bathroom in a Mediterranean direction",
+  "prompt": "Restyle this EXACT bathroom to MEDITERRANEAN: identical camera and architecture. Sun-washed lime-plaster walls in warm white, terracotta floor, arched niche detail painted sea-blue, carved natural stone basin and tub, olive branch in a clay vase, woven baskets, aged brass, strong warm sunlight with sharp shadows. No people, no text."
+ },
+ {
+  "id": "50_bh_room_travertine",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The bathroom with travertine leading",
+  "prompt": "Adjust this EXACT bathroom, same camera and architecture: let warm ivory TRAVERTINE take the lead - the podium, floor and walls become travertine, other materials stay but recede. Subtle, believable change. No people, no text."
+ },
+ {
+  "id": "51_bh_room_emerald",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The bathroom with emerald lacquer leading",
+  "prompt": "Adjust this EXACT bathroom, same camera and architecture: let the EMERALD LACQUER take the lead - the vanity wall extends, an emerald lacquered ceiling band appears, emerald towels; other materials recede. Subtle, believable change. No people, no text."
+ },
+ {
+  "id": "52_bh_room_brass",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The bathroom with brass leading",
+  "prompt": "Adjust this EXACT bathroom, same camera and architecture: let BRUSHED BRASS take the lead - brass mirror wall panels, brass tub filler and fittings, brass-edged shelves catching the light; other materials recede. Subtle, believable change. No people, no text."
+ },
+ {
+  "id": "53_bh_room_calacatta",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The bathroom with Calacatta leading",
+  "prompt": "Adjust this EXACT bathroom, same camera and architecture: let CALACATTA MARBLE take the lead - the podium and back wall become bold-veined Calacatta, a Calacatta vanity top; other materials recede. Subtle, believable change. No people, no text."
+ },
+ {
+  "id": "54_bh_room_fluted",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The bathroom with fluted glass leading",
+  "prompt": "Adjust this EXACT bathroom, same camera and architecture: let FLUTED GLASS take the lead - the shower partition grows to a full fluted-glass wall with brass frame, a fluted glass pendant; other materials recede. Subtle, believable change. No people, no text."
+ },
+ {
+  "id": "55_bh_room_velvet",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The bathroom with blush velvet leading",
+  "prompt": "Adjust this EXACT bathroom, same camera and architecture: let BLUSH VELVET take the lead - a larger blush velvet bench, a blush velvet curtain beside the window, blush towels; other materials recede. Subtle, believable change. No people, no text."
+ },
+ {
+  "id": "43_bh_dir_artdeco",
+  "page": "bathrooms",
+  "section": "sections",
+  "cls": "card",
+  "type": "edit",
+  "lock": true,
+  "sources": [
+   "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+  ],
+  "size": "auto",
+  "project": "CONCEPT",
+  "alt": "The same bathroom in the Art Deco direction - dusk, candles and lamps lit",
+  "prompt": "Show this EXACT Art Deco bathroom at DUSK: identical camera, architecture and materials; the brass wall lights and a candle by the tub now lit, warm pools of light on the emerald lacquer and veined marble, deep blue evening light in the window. Hyper-realistic, cinematic, no people, no text."
+ },
+ {
   "id": "01_furniture_decor_hero",
   "page": "furniture-decor",
   "slot": "01_furniture_decor_hero",
