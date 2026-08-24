@@ -47,7 +47,7 @@
 .bx-types { background: #070607; color: #F5F5F0; padding: clamp(56px, 8vw, 120px) 0; }
 .bx-types-track { display: flex; gap: clamp(14px, 1.6vw, 24px); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 0 var(--idv-pad, clamp(20px, 4vw, 64px)) 18px; scrollbar-width: thin; }
 .bx-type { position: relative; margin: 0; flex: 0 0 min(76vw, 1080px); scroll-snap-align: center; border-radius: 22px; overflow: hidden; }
-.bx-type img { width: 100%; height: clamp(380px, 66vh, 640px); object-fit: cover; display: block; }
+.bx-type img { width: 100%; height: clamp(360px, 58vh, 600px); object-fit: cover; display: block; }
 .bx-type figcaption { position: absolute; left: 22px; bottom: 20px; right: 22px; display: grid; gap: 4px; z-index: 2; }
 .bx-type figcaption::before { content: ''; position: absolute; inset: -22px -22px -20px; background: linear-gradient(180deg, transparent, rgba(5, 5, 6, 0.72)); z-index: -1; }
 .bx-type-title { font-family: var(--idv-font-display, 'Archivo Expanded', 'Archivo', sans-serif); font-weight: 800; font-size: clamp(26px, 3vw, 46px); text-transform: uppercase; line-height: 0.95; }
@@ -60,7 +60,7 @@
 
 /* ── Directions ── */
 .bx-dir { margin: 0; }
-.bx-dir img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 22px; display: block; }
+.bx-dir img { width: 100%; height: min(62vh, 700px); object-fit: cover; border-radius: 22px; display: block; }
 
 /* ── Responsive ── */
 @media (max-width: 1023px) {

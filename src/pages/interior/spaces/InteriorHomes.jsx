@@ -70,7 +70,7 @@ function FloorsHm() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Choose a floor" value={key} onChange={setKey} options={items.map((f) => ({ key: f.key, label: f.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(66vh, 740px)', objectFit: 'contain', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>POOLSIDE VILLA — CLIENT PROJECT</span></figcaption>
           </figure>
         </div>
@@ -90,7 +90,7 @@ function ExplodedHm() {
         </div>
         {exploded ? (
           <figure className="idv2-reveal" style={{ margin: 0 }}>
-            <img src={exploded.file} alt={exploded.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: '86vh', objectFit: 'contain', borderRadius: 20, display: 'block' }} />
+            <img src={exploded.file} alt={exploded.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(64vh, 720px)', objectFit: 'contain', borderRadius: 20, display: 'block' }} />
             <figcaption className="idsp-cap"><span>EXPLODED AXONOMETRIC — GENERATED FROM THE HOUSE CUTAWAY</span><span>POOLSIDE VILLA — CLIENT PROJECT</span></figcaption>
           </figure>
         ) : null}
@@ -197,7 +197,7 @@ function LightHm() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Time of day" value={key} onChange={setKey} options={items.map((l) => ({ key: l.key, label: l.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '16 / 8', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME CAMERA · DAY AND EVENING RELIT FROM THE MASTER</span></figcaption>
           </figure>
         </div>
@@ -228,7 +228,7 @@ function DirectionsHm() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Design direction" value={key} onChange={setKey} options={items.map((d) => ({ key: d.key, label: d.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '16 / 9', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>{active.key === 'modern' ? 'CLIENT PROJECT — AS DESIGNED' : 'SAME ARCHITECTURE, RESTYLED AS A STUDY'}</span></figcaption>
           </figure>
         </div>

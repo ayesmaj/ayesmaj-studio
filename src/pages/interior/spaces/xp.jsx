@@ -82,9 +82,18 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
   const simple = useSimple();
   const [progress, setProgress] = useState(0);
   const [dead, setDead] = useState(false); // the film may not be rendered yet - collapse instead of a broken player
+  const [near, setNear] = useState(false); // keep the network idle until the section approaches
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    if (simple || reduced) return undefined;
+    const el = sectionRef.current; if (!el) return undefined;
+    const io = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) { setNear(true); io.disconnect(); } }, { rootMargin: '150% 0px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (simple || reduced || !near) return undefined;
     const wrap = wrapRef.current; const video = videoRef.current;
     if (!wrap || !video) return undefined;
     let raf = 0;
@@ -103,25 +112,29 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
     video.addEventListener('loadedmetadata', update);
     update();
     return () => { window.removeEventListener('scroll', onScroll); video.removeEventListener('loadedmetadata', update); if (raf) cancelAnimationFrame(raf); };
-  }, [simple, reduced]);
+  }, [simple, reduced, near]);
 
   if (dead) return null;
   const flat = simple || reduced;
   const stage = stages.reduce((acc, s) => (progress >= s.at ? s : acc), stages[0]);
   return (
-    <section className="xp-film" aria-label={credit}>
+    <section ref={sectionRef} className="xp-film" aria-label={credit}>
       {flat ? (
         <div className="xp-film-flat">
-          <video autoPlay muted loop playsInline preload="metadata" poster={film.poster} aria-label={credit} onError={() => setDead(true)}>
-            {film.mobile ? <source src={film.mobile} media="(max-width: 767px)" type="video/mp4" /> : null}
-            <source src={film.desktop} type="video/mp4" />
-          </video>
+          {near ? (
+            <video autoPlay muted loop playsInline preload="metadata" poster={film.poster} aria-label={credit} onError={() => setDead(true)}>
+              {film.mobile ? <source src={film.mobile} media="(max-width: 767px)" type="video/mp4" /> : null}
+              <source src={film.desktop} type="video/mp4" />
+            </video>
+          ) : (
+            <img src={film.poster} alt="" aria-hidden="true" style={{ width: '100%', height: '72svh', objectFit: 'cover', display: 'block' }} onError={() => setDead(true)} />
+          )}
           <div className="xp-film-copy"><h2 className="idv2-pinseq-head">{stages[stages.length - 1].node}</h2></div>
         </div>
       ) : (
         <div ref={wrapRef} className="idv2-pin-wrap" style={{ height }}>
           <div className="idv2-pin">
-            <video ref={videoRef} data-scrub muted playsInline preload="auto" poster={film.poster} src={film.desktop} aria-label={credit} onError={() => setDead(true)} />
+            <video ref={videoRef} data-scrub muted playsInline preload={near ? 'auto' : 'none'} poster={film.poster} src={near ? film.desktop : undefined} aria-label={credit} onError={() => setDead(true)} />
             <div className="idv2-pin-scrim" />
             <div className="xp-film-copy">
               <h2 className="idv2-pinseq-head" aria-live="polite">{stage.node}</h2>

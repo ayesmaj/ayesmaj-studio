@@ -146,7 +146,7 @@ function DirectionsAp() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Design direction" value={key} onChange={setKey} options={items.map((d) => ({ key: d.key, label: d.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '16 / 9', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME ARCHITECTURE, SAME CAMERA · CLIENT PROJECT, RESTYLED AS A STUDY</span></figcaption>
           </figure>
         </div>
@@ -178,7 +178,7 @@ function CompactAp() {
           <MethodSwitcher ariaLabel="Apartment typology" value={key} onChange={setKey} options={items.map((t) => ({ key: t.key, label: t.label }))} />
           <div className="ap-typo idv2-reveal">
             <figure style={{ margin: 0 }}>
-              <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', borderRadius: 20, display: 'block' }} />
+              <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(58vh, 660px)', objectFit: 'contain', borderRadius: 20, display: 'block' }} />
               <figcaption className="idsp-cap"><span>{active.label} — FURNISHED PLAN</span><span>SHOWCASE DIAGRAM</span></figcaption>
             </figure>
             <ul className="idsp-list">

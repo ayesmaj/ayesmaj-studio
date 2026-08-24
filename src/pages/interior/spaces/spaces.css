@@ -51,7 +51,7 @@
 .idsp-split figure { margin: 0; }
 .idsp-split-main picture img, .idsp-split-side picture img { border-radius: 18px; }
 .idsp-split-side { display: grid; gap: 18px; align-content: start; }
-.idsp-split-side picture img { height: auto !important; } /* Pic sets height:100% inline; inside a stretched grid column that resolves against the row and pushes the caption out of the figure */
+.idsp-split-side picture img { height: auto !important; max-height: 36vh; object-fit: cover; } /* Pic sets height:100% inline; inside a stretched grid column that resolves against the row and pushes the caption out of the figure */
 .idsp-list { list-style: none; margin: 0; padding: 0; display: grid; }
 .idsp-list li { display: grid; gap: 4px; padding: 14px 0; border-top: 1px solid rgba(255,255,255,.14); font-size: 15px; }
 .idv2-bright .idsp-list li, .idv2-gradient-soft .idsp-list li { border-top-color: rgba(20,18,16,.14); }
@@ -104,7 +104,7 @@
 /* switcher */
 .idsp-switcher { display: grid; grid-template-columns: minmax(320px, 0.8fr) 1.4fr; gap: clamp(24px, 3.5vw, 56px); align-items: center; }
 .idsp-switcher-media { margin: 0; }
-.idsp-switcher-media picture img { border-radius: 18px; }
+.idsp-switcher-media picture img { border-radius: 18px; max-height: min(64vh, 720px); width: 100%; object-fit: cover; }
 
 /* film */
 .idsp-film-frame { margin: 0; }
