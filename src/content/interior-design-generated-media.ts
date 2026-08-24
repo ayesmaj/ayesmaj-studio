@@ -830,7 +830,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "width": 1200,
     "height": 600,
     "aspectRatio": "2:1",
-    "prompt": "Restyle this EXACT bathroom to MEDITERRANEAN: identical camera and architecture. Sun-washed lime-plaster walls in warm white, terracotta floor, arched niche detail painted sea-blue, carved natural stone basin and tub, olive branch in a clay vase, woven baskets, aged brass, strong warm sunlight with sharp shadows. No people, no text.",
+    "prompt": "Completely restyle this bathroom to a true MEDITERRANEAN bathroom, keeping ONLY the camera angle, room dimensions, window position and the positions of tub, vanity and shower. REMOVE every Art Deco element: no emerald lacquer, no fluted green panels, no round brass mirror, no velvet pouf, no geometric marble floor. Instead: sun-washed white lime-plaster walls with soft rounded corners, a carved natural stone trough basin on a whitewashed rustic wood or masonry vanity, a simple rectangular mirror in aged wood, an arched niche painted sea-blue with clay pots, a rough-hewn natural stone tub on low whitewashed masonry steps, terracotta tile floor, an arched opening to the shower with a linen curtain instead of glass, olive branches in a clay vase, woven baskets, aged bronze taps, strong warm Greek-island sunlight with sharp shadows through the window. Rustic, sun-baked, honest materials - unmistakably Mediterranean. No people, no text.",
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -964,6 +964,63 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Show this EXACT Art Deco bathroom at DUSK: identical camera, architecture and materials; the brass wall lights and a candle by the tub now lit, warm pools of light on the emerald lacquer and veined marble, deep blue evening light in the window. Hyper-realistic, cinematic, no people, no text.",
+    "sourceReferences": [
+      "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+    ],
+    "generatedAt": "2026-08-23",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "CONCEPT"
+  },
+  {
+    "id": "60_bh_shot_vanity",
+    "page": "bathrooms",
+    "section": "sections",
+    "file": "/interior-design/generated/bathrooms/sections/60_bh_shot_vanity.webp",
+    "mobileFile": null,
+    "alt": "Film frame - close on the emerald vanity and brass mirror",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": "1.78:1",
+    "prompt": "Same Art Deco bathroom as the source image - same materials (emerald fluted lacquer, champagne brass, ivory stone tub, green-and-rust veined marble podium, blush velvet, Art Deco floor), same architecture and light. New camera: close three-quarter view of the emerald fluted vanity with the round brass mirror, marble top with flowers and brass taps, wall light glowing softly. Cinematic 16:9 film frame, shallow depth of field, no people, no text.",
+    "sourceReferences": [
+      "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+    ],
+    "generatedAt": "2026-08-23",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "CONCEPT"
+  },
+  {
+    "id": "61_bh_shot_tub",
+    "page": "bathrooms",
+    "section": "sections",
+    "file": "/interior-design/generated/bathrooms/sections/61_bh_shot_tub.webp",
+    "mobileFile": null,
+    "alt": "Film frame - close on the stone tub and veined marble podium",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": "1.78:1",
+    "prompt": "Same Art Deco bathroom as the source image - same materials (emerald fluted lacquer, champagne brass, ivory stone tub, green-and-rust veined marble podium, blush velvet, Art Deco floor), same architecture and light. New camera: low close view across the rim of the ivory stone bathtub, the green-and-rust veined marble podium steps in the foreground, brass floor filler beside it, window light raking across the stone. Cinematic 16:9 film frame, shallow depth of field, no people, no text.",
+    "sourceReferences": [
+      "source-assets/interior-generated/bathrooms/20_bh_hero.png"
+    ],
+    "generatedAt": "2026-08-23",
+    "status": "approved",
+    "architectureLocked": true,
+    "project": "CONCEPT"
+  },
+  {
+    "id": "62_bh_shot_shower",
+    "page": "bathrooms",
+    "section": "sections",
+    "file": "/interior-design/generated/bathrooms/sections/62_bh_shot_shower.webp",
+    "mobileFile": null,
+    "alt": "Film frame - facing the fluted glass shower",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": "1.78:1",
+    "prompt": "Same Art Deco bathroom as the source image - same materials (emerald fluted lacquer, champagne brass, ivory stone tub, green-and-rust veined marble podium, blush velvet, Art Deco floor), same architecture and light. New camera: facing the fluted glass and brass shower partition, warm light and a hint of steam behind the reeded glass, a blush towel on the brass rail. Cinematic 16:9 film frame, no people, no text.",
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
