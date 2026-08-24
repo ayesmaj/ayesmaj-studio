@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion
 import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher, PinSeq } from '@/components/interior/kit';
 import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
-import { media } from '@/content/interior-design-generated-media';
+import { media, imgProps, smallFile } from '@/content/interior-design-generated-media';
 import { SpacesRail } from './SpacePage.jsx';
 import { FilmScrub } from './xp.jsx';
 import './spaces.css';
@@ -15,6 +15,7 @@ import './bathrooms-x.css';
    bright material room → dark types → dark massive compare → bright directions → footer. */
 
 const M = (id) => media('bathrooms', id);
+const SW_FIG = '(max-width: 1023px) 100vw, 1280px';
 
 function HeroBath() {
   const ref = useRef(null);
@@ -32,7 +33,7 @@ function HeroBath() {
   ].map(([id, label]) => ({ m: M(id), label })).filter((s) => s.m);
   return (
     <section ref={ref} className="bx-hero" aria-label="Bathroom visualization hero">
-      {hero ? <motion.img src={hero.file} alt={hero.alt} className="bx-hero-bg" style={{ y, scale }} fetchpriority="high" /> : null}
+      {hero ? <motion.img {...imgProps(hero, '100vw')} alt={hero.alt} className="bx-hero-bg" style={{ y, scale }} fetchpriority="high" /> : null}
       <div className="bx-hero-scrim" aria-hidden="true" />
       <div className="idv2-inner bx-hero-copy">
         <Eyebrow>AYESMAJ STUDIOS / BATHROOM VISUALIZATION</Eyebrow>
@@ -160,7 +161,7 @@ function MaterialRoom() {
         <div className="bx-mat-grid">
           <figure className="bx-mat-room idv2-reveal">
             {items.map((mt) => (
-              <img key={mt.key} src={mt.roomM.file} alt={active === mt.key ? mt.roomM.alt : ''} loading="lazy" decoding="async" data-active={active === mt.key} />
+              <img key={mt.key} {...imgProps(mt.roomM, '(max-width: 1023px) 100vw, 62vw')} alt={active === mt.key ? mt.roomM.alt : ''} loading="lazy" decoding="async" data-active={active === mt.key} />
             ))}
             <figcaption className="idsp-cap"><span>{current.label} LEADS THE ROOM</span><span>STUDIO CONCEPT · SAME ARCHITECTURE</span></figcaption>
           </figure>
@@ -175,7 +176,7 @@ function MaterialRoom() {
                 onFocus={() => setActive(mt.key)}
                 onClick={() => setActive(mt.key)}
               >
-                <img src={mt.macroM.file} alt={mt.macroM.alt} loading="lazy" decoding="async" />
+                <img src={smallFile(mt.macroM)} alt={mt.macroM.alt} loading="lazy" decoding="async" />
                 <span>{mt.label}</span>
               </button>
             ))}
@@ -204,7 +205,7 @@ function TypesBath() {
       <div className="bx-types-track" tabIndex={0} role="group" aria-label="Scroll the bathroom types">
         {items.map((t, i) => (
           <figure key={t.id} className="bx-type">
-            <img src={t.m.file} alt={t.m.alt} loading="lazy" decoding="async" />
+            <img {...imgProps(t.m, '(max-width: 767px) 86vw, 76vw')} alt={t.m.alt} loading="lazy" decoding="async" />
             <figcaption>
               <span className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{`0${i + 1}`}</span>
               <span className="bx-type-title">{t.label}</span>
@@ -238,7 +239,7 @@ function CompareBath() {
 const FILM = {
   desktop: '/interior-design/generated/bathrooms/film/bathroom-film.mp4',
   mobile: '/interior-design/generated/bathrooms/film/bathroom-film-mobile.mp4',
-  poster: '/interior-design/generated/bathrooms/film/bathroom-film-poster.png',
+  poster: '/interior-design/generated/bathrooms/film/bathroom-film-poster.webp',
 };
 
 function FilmBath() {
@@ -276,7 +277,7 @@ function DirectionsBath() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Design direction" value={key} onChange={setKey} options={items.map((d) => ({ key: d.key, label: d.label }))} />
           <figure className="bx-dir idv2-reveal">
-            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME ROOM, SAME CAMERA · STUDIO CONCEPT</span></figcaption>
           </figure>
         </div>

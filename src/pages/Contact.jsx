@@ -83,15 +83,7 @@ export default function Contact() {
       });
       const data = await res.json();
       if (res.ok && data.success) {
-        // WhatsApp notification via Callmebot (no-cors to bypass browser CORS block)
-        try {
-          const waExtra = `\nCompany: ${form.company || 'Not provided'}\nWebsite: ${form.website || 'Not provided'}\nService: ${form.service}\nBudget: ${form.budget || 'Not provided'}\nTimeline: ${form.timeline || 'Not provided'}\nProject type: ${form.projectType || 'Not provided'}`;
-          const waText = encodeURIComponent(
-            `🔔 New inquiry!\nFrom: ${form.name}\nEmail: ${form.email}${form.phone ? `\nPhone: ${form.phone}` : ''}\nSubject: ${form.subject || 'No subject'}\nMessage: ${form.message.slice(0, 300)}${form.message.length > 300 ? '…' : ''}`
-            + waExtra
-          );
-          await fetch(`https://api.callmebot.com/whatsapp.php?phone=15093197999&text=${waText}&apikey=8010280`, { mode: 'no-cors' });
-        } catch (_) { /* silent — email already delivered */ }
+// WhatsApp notification now happens server-side in api/project-intake.js
 
         setStatus('success');
         setForm(emptyContactForm());

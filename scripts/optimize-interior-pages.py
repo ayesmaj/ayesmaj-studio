@@ -43,12 +43,18 @@ for e in entries:
     if e['page'] == 'navigation':
         out = f"{ROOT}/navigation/{e['id']}.webp"
         save_webp(crop_to(im, 16 / 10, e.get('focus', 0.5)).resize((800, 500), Image.LANCZOS), out, 80)
-        web, mobile = out, None
+        web, mobile, widths = out, None, []
     else:
         section = e['section'] or 'sections'
         web = f"{ROOT}/{e['page']}/{section}/{e['id']}.webp"
         w = min(im.width, MAXW.get(e['cls'], 1800))
         save_webp(im.resize((w, round(im.height * w / im.width)), Image.LANCZOS) if w != im.width else im, web)
+        # responsive variants: phones and mid layouts get far fewer pixels
+        widths = [w]
+        for vw in (1200, 800):
+            if w > vw + 80:
+                save_webp(im.resize((vw, round(im.height * vw / im.width)), Image.LANCZOS), web.replace('.webp', f'-w{vw}.webp'), 80)
+                widths.append(vw)
         mobile = None
         if e.get('mobile') == 'crop':
             mobile = f"{ROOT}/{e['page']}/mobile/{e['id']}.webp"
@@ -60,6 +66,7 @@ for e in entries:
         'id': e['id'], 'page': e['page'], 'section': e['section'] or ('navigation' if e['page'] == 'navigation' else 'sections'),
         'file': '/' + web.replace('public/', '', 1), 'mobileFile': ('/' + mobile.replace('public/', '', 1)) if mobile else None,
         'alt': e['alt'], 'width': W, 'height': H, 'aspectRatio': ar, 'prompt': e.get('prompt', ''),
+        'widths': sorted(widths) if e['page'] != 'navigation' else None,
         'sourceReferences': e['sources'], 'generatedAt': today, 'status': gen_status if gen else 'existing',
         'architectureLocked': bool(e.get('lock')), 'project': e.get('project'),
     })

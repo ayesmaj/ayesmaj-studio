@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher, PinSeq } from '@/components/interior/kit';
 import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
-import { media } from '@/content/interior-design-generated-media';
+import { media, imgProps, smallFile } from '@/content/interior-design-generated-media';
 import { SpacesRail } from './SpacePage.jsx';
 import { SpotFigure, Legend, FilmScrub, ZoomFinale } from './xp.jsx';
 import './spaces.css';
@@ -12,6 +12,7 @@ import './xp.css';
    project) carries the whole narrative — scan → plan → 3D → interior → film. */
 
 const M = (id) => media('apartments', id);
+const SW_FIG = '(max-width: 1023px) 100vw, 1280px';
 
 function HeroAp() {
   const ref = useRef(null);
@@ -22,7 +23,7 @@ function HeroAp() {
   const plan = M('04_apartment_3d_plan'); const living = M('05_apartment_living');
   return (
     <section ref={ref} className="xp-hero" aria-label="Apartment visualization hero">
-      {plan ? <motion.img src={plan.file} alt={plan.alt} className="xp-hero-bg" style={{ y, scale, objectPosition: '75% 40%' }} fetchpriority="high" /> : null}
+      {plan ? <motion.img {...imgProps(plan, '100vw')} alt={plan.alt} className="xp-hero-bg" style={{ y, scale, objectPosition: '75% 40%' }} fetchpriority="high" /> : null}
       {living ? <div className="ap-hero-inside" aria-hidden="true"><img src={living.file} alt="" /></div> : null}
       <div className="xp-hero-scrim" aria-hidden="true" />
       <div className="idv2-inner xp-hero-copy">
@@ -86,7 +87,7 @@ function MapAp() {
             <Legend items={ROOMS} active={active} setActive={setActive} ariaLabel="Rooms" />
             {preview ? (
               <a className="ap-map-preview" href={`#room-${current.key}`}>
-                <img key={current.key} src={preview.file} alt={preview.alt} loading="lazy" decoding="async" />
+                <img key={current.key} src={smallFile(preview)} alt={preview.alt} loading="lazy" decoding="async" />
                 <span className="idv-mono-label">{current.label.toUpperCase()} — {current.line} · GO TO ROOM ↓</span>
               </a>
             ) : (
@@ -116,7 +117,7 @@ function JourneyAp() {
               <p className="idv-lede" style={{ color: 'rgba(245,245,240,.8)' }}>{r.line}</p>
               <span className="idv-mono-label" style={{ color: 'rgba(245,245,240,.5)' }}>CANAL APARTMENT — CLIENT PROJECT</span>
             </div>
-            <figure className="xp-chapter-media"><img src={r.m.file} alt={r.m.alt} loading="lazy" decoding="async" /></figure>
+            <figure className="xp-chapter-media"><img {...imgProps(r.m, '(max-width: 1023px) 100vw, 62vw')} alt={r.m.alt} loading="lazy" decoding="async" /></figure>
           </div>
         </div>
       ))}
@@ -146,7 +147,7 @@ function DirectionsAp() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Design direction" value={key} onChange={setKey} options={items.map((d) => ({ key: d.key, label: d.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME ARCHITECTURE, SAME CAMERA · CLIENT PROJECT, RESTYLED AS A STUDY</span></figcaption>
           </figure>
         </div>
@@ -178,7 +179,7 @@ function CompactAp() {
           <MethodSwitcher ariaLabel="Apartment typology" value={key} onChange={setKey} options={items.map((t) => ({ key: t.key, label: t.label }))} />
           <div className="ap-typo idv2-reveal">
             <figure style={{ margin: 0 }}>
-              <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(58vh, 660px)', objectFit: 'contain', borderRadius: 20, display: 'block' }} />
+              <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(58vh, 660px)', objectFit: 'contain', borderRadius: 20, display: 'block' }} />
               <figcaption className="idsp-cap"><span>{active.label} — FURNISHED PLAN</span><span>SHOWCASE DIAGRAM</span></figcaption>
             </figure>
             <ul className="idsp-list">
@@ -213,7 +214,7 @@ function CompareAp() {
 const AP_FILM = {
   desktop: '/interior-design/generated/apartments/film/apartment-film.mp4',
   mobile: '/interior-design/generated/apartments/film/apartment-film-mobile.mp4',
-  poster: '/interior-design/generated/apartments/film/apartment-film-poster.png',
+  poster: '/interior-design/generated/apartments/film/apartment-film-poster.webp',
 };
 
 function FilmAp() {
@@ -235,7 +236,7 @@ function PresentationAp() {
   const items = ['03_apartment_clean_plan', '04_apartment_3d_plan', '05_apartment_living', '06_apartment_kitchen', '07_apartment_bedroom', '08_apartment_bathroom', '09_apartment_balcony', '10_apartment_film_frame']
     .map(M).filter(Boolean)
     .map((m, i) => ({
-      src: m.file, alt: m.alt,
+      src: smallFile(m), alt: m.alt,
       w: ['26vw', '18vw', '22vw', '16vw', '18vw', '14vw', '16vw', '12vw'][i],
       h: ['17vw', '12vw', '14vw', '11vw', '12vw', '9vw', '11vw', '8vw'][i],
       top: ['0vh', '-26vh', '22vh', '-8vh', '26vh', '-28vh', '4vh', '30vh'][i],

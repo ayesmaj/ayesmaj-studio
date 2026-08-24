@@ -99,3 +99,7 @@
   .ap-hero-inside { display: none; }
   .ap-map, .ap-typo { grid-template-columns: 1fr; }
 }
+
+/* Render skipping: sections far off-screen cost ~nothing until approached.
+   Pinned/scroll wrappers are excluded - they need live geometry. */
+.idv2-section:not(:has(.idv2-pin-wrap)):not(:has(.xp-zoom-wrap)):not(:has(.xp-story)), .bx-types:not(:has(.xp-story)) { content-visibility: auto; contain-intrinsic-size: auto 860px; }

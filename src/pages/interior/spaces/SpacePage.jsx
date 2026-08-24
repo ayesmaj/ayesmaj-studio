@@ -20,7 +20,7 @@ import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
 import ModelViewer from '@/components/interior/ModelViewer';
 import InteriorDesignHero from '@/features/interior-design/hero/InteriorDesignHero.jsx';
 import { INTERIOR_MENU } from '@/data/siteConfig';
-import { media as getMedia } from '@/content/interior-design-generated-media';
+import { media as getMedia, imgProps } from '@/content/interior-design-generated-media';
 import './spaces.css';
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -46,7 +46,7 @@ function Pic({ m, className = '', style, eager = false, cover = true }) {
   return (
     <picture className={className} style={style}>
       {m.mobileFile ? <source media="(max-width: 767px)" srcSet={m.mobileFile} /> : null}
-      <img src={m.file} alt={m.alt} width={m.width} height={m.height} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : undefined} style={cover ? { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } : { width: '100%', height: 'auto', display: 'block' }} />
+      <img {...imgProps(m, '(max-width: 1023px) 100vw, 1280px')} alt={m.alt} width={m.width} height={m.height} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : undefined} style={cover ? { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } : { width: '100%', height: 'auto', display: 'block' }} />
     </picture>
   );
 }

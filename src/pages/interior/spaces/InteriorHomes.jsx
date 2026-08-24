@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { InteriorShell, Eyebrow, IdvButton, MethodSwitcher } from '@/components/interior/kit';
 import ModelViewer from '@/components/interior/ModelViewer';
-import { media } from '@/content/interior-design-generated-media';
+import { media, imgProps, smallFile } from '@/content/interior-design-generated-media';
 import { VILLA, MODELS } from '@/data/interiorMedia';
 import { SpacesRail } from './SpacePage.jsx';
 import { StickyStory, FilmScrub, ZoomFinale } from './xp.jsx';
@@ -14,6 +14,7 @@ import './xp.css';
    directions, the real 35 s film, the complete system, the interactive-web upsell. */
 
 const M = (id) => media('homes', id);
+const SW_FIG = '(max-width: 1023px) 100vw, 1280px';
 
 function HeroHm() {
   const ref = useRef(null);
@@ -26,7 +27,7 @@ function HeroHm() {
     .map(([id, label]) => ({ m: M(id), label })).filter((l) => l.m);
   return (
     <section ref={ref} className="xp-hero" aria-label="Home visualization hero">
-      {hero ? <motion.img src={hero.file} alt={hero.alt} className="xp-hero-bg" style={{ y, scale }} fetchpriority="high" /> : null}
+      {hero ? <motion.img {...imgProps(hero, '100vw')} alt={hero.alt} className="xp-hero-bg" style={{ y, scale }} fetchpriority="high" /> : null}
       <div className="xp-hero-scrim" aria-hidden="true" />
       <div className="idv2-inner xp-hero-copy">
         <Eyebrow>AYESMAJ STUDIOS / HOME VISUALIZATION</Eyebrow>
@@ -40,7 +41,7 @@ function HeroHm() {
       <div className="xp-hero-layers" aria-label="The visual system">
         {LAYERS.map((l) => (
           <figure key={l.label} className="xp-hero-layer">
-            <img src={l.m.file} alt={l.m.alt} loading="lazy" decoding="async" />
+            <img src={smallFile(l.m)} alt={l.m.alt} loading="lazy" decoding="async" />
             <figcaption>{l.label}</figcaption>
           </figure>
         ))}
@@ -70,7 +71,7 @@ function FloorsHm() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Choose a floor" value={key} onChange={setKey} options={items.map((f) => ({ key: f.key, label: f.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(66vh, 740px)', objectFit: 'contain', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', maxHeight: 'min(66vh, 740px)', objectFit: 'contain', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>POOLSIDE VILLA — CLIENT PROJECT</span></figcaption>
           </figure>
         </div>
@@ -119,7 +120,7 @@ function InsideHm() {
       <div className="bx-types-track" tabIndex={0} role="group" aria-label="Rooms">
         {items.map((r, i) => (
           <figure key={r.label} className="bx-type">
-            <img src={r.m.file} alt={r.m.alt} loading="lazy" decoding="async" />
+            <img {...imgProps(r.m, '(max-width: 767px) 86vw, 76vw')} alt={r.m.alt} loading="lazy" decoding="async" />
             <figcaption>
               <span className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>{`0${i + 1}`}</span>
               <span className="bx-type-title">{r.label}</span>
@@ -143,7 +144,7 @@ function OutdoorHm() {
   return (
     <section ref={ref} className="idv2-full idsp-full" aria-label="Indoor outdoor">
       <motion.div className="idsp-full-bg" style={{ y, scale: 1.14 }}>
-        <img src={pool.file} alt={pool.alt} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <img {...imgProps(pool, '100vw')} alt={pool.alt} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </motion.div>
       <div className="idv2-full-scrim idsp-full-scrim" />
       <div className="idv2-inner idsp-full-copy">
@@ -197,7 +198,7 @@ function LightHm() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Time of day" value={key} onChange={setKey} options={items.map((l) => ({ key: l.key, label: l.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME CAMERA · DAY AND EVENING RELIT FROM THE MASTER</span></figcaption>
           </figure>
         </div>
@@ -228,7 +229,7 @@ function DirectionsHm() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Design direction" value={key} onChange={setKey} options={items.map((d) => ({ key: d.key, label: d.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} src={active.m.file} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>{active.key === 'modern' ? 'CLIENT PROJECT — AS DESIGNED' : 'SAME ARCHITECTURE, RESTYLED AS A STUDY'}</span></figcaption>
           </figure>
         </div>
@@ -257,7 +258,7 @@ function SystemHm() {
   const items = ['02_home_ground_floor', '03_home_upper_floor', '04_home_whole_house', '06_home_kitchen', '07_home_primary_bedroom', '13_home_blue_hour', '12_home_cinematic_frame', '84_hm_outdoor_kitchen']
     .map(M).filter(Boolean)
     .map((m, i) => ({
-      src: m.file, alt: m.alt,
+      src: smallFile(m), alt: m.alt,
       w: ['24vw', '18vw', '26vw', '16vw', '18vw', '20vw', '16vw', '14vw'][i],
       h: ['16vw', '12vw', '17vw', '11vw', '12vw', '13vw', '11vw', '9vw'][i],
       top: ['0vh', '-27vh', '24vh', '-10vh', '27vh', '-26vh', '2vh', '30vh'][i],
@@ -288,7 +289,7 @@ function WebUpsellHm() {
             <IdvButton to="/interior-design/complete-visual-presentation">Explore interactive web</IdvButton>
           </div>
         </div>
-        <figure className="xp-chapter-media idv2-reveal"><img src={mock.file} alt={mock.alt} loading="lazy" decoding="async" /></figure>
+        <figure className="xp-chapter-media idv2-reveal"><img {...imgProps(mock, '(max-width: 1023px) 100vw, 62vw')} alt={mock.alt} loading="lazy" decoding="async" /></figure>
       </div>
     </section>
   );

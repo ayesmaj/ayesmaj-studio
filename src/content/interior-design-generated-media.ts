@@ -25,7 +25,9 @@ export interface GeneratedMedia {
   sourceReferences: string[]; // images the generation was chained from (or the real asset's project path)
   generatedAt: string;     // ISO date
   status: 'approved' | 'review' | 'existing';
-  architectureLocked: boolean; // true when the generation had to preserve a real plan/model/screenshot
+  architectureLocked: boolean;
+  /** widths available as -w{n}.webp variants beside the base file (largest = the base). */
+  widths?: number[] | null; // true when the generation had to preserve a real plan/model/screenshot
   project?: string;        // honest provenance label shown in captions
 }
 
@@ -42,6 +44,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/09_kitchen_master.webp"
     ],
@@ -61,6 +68,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a one-wall kitchen: a single run of cabinets and appliances along one wall, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -78,6 +89,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a galley kitchen: two parallel runs of cabinets with a walkway between, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -95,6 +110,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of an L-shaped kitchen: cabinets along two adjacent walls meeting in a corner, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -112,6 +131,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a U-shaped kitchen: cabinets along three walls, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -129,6 +152,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a kitchen with a single central island and one run of wall cabinets, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -146,6 +173,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Top-down 3D cutaway diagram of a kitchen with two parallel islands and a run of wall cabinets, seen from directly above at a slight angle, white-model walls cut at counter height, pale oak cabinetry, stone worktops, appliances in place, clear circulation space, warm studio light, plain pale background, no text, no labels, no dimensions, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -163,6 +194,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/gallery/kitchen-island.webp"
     ],
@@ -182,6 +218,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/details/calacatta.webp"
     ],
@@ -201,6 +241,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Show this exact room as an EMPTY CONSTRUCTION SHELL before the kitchen is installed: identical camera, walls, ceiling height, windows, door openings and floor outline. Remove ALL cabinetry, the island, appliances, lighting fixtures, stools and styling. Bare skim-coated plaster walls with patch marks, unfinished grey concrete screed floor, capped plumbing and electrical points visible on the wall, a single bare work light, dusty daylight through the same windows, no furniture, no people, no text. Realistic construction-site photograph of the shell.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/kitchens/06_kitchen_after.png"
     ],
@@ -220,6 +265,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Render this exact kitchen as the finished, fully designed room at early evening: the same camera, walls, windows, ceiling and openings; the same island and cabinetry positions. Upgrade every material to the premium finish — natural oak cabinetry, honed limestone island with a waterfall edge, integrated appliances, warm under-cabinet and pendant light, bar stools, a styled counter with a bowl of fruit and a ceramic vase, a glimpse of the garden and pool through the glass. Ultra-realistic, premium editorial photography, no people, no text.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/10_kitchen_island_detail.webp"
     ],
@@ -239,6 +289,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Redraw this kitchen as an isometric 3D floor-plan cutaway of the kitchen only: counters, island and appliances exactly where they are, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/plans/kitchen.webp",
       "public/interior-design/projects/canal-apartment/pairs/kitchen-raw.webp"
@@ -259,6 +313,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "2:1",
     "prompt": "The same kitchen at dusk: pendants and under-cabinet lighting on, a low warm sun outside, slight atmospheric haze, cinematic 2.39 framing and grade, everything in the room exactly as it is.",
+    "widths": [
+      800,
+      1200,
+      2048
+    ],
     "sourceReferences": [
       "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/09_kitchen_master.png"
     ],
@@ -278,6 +337,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/kitchen/kitchen-detail.webp"
     ],
@@ -297,6 +360,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Keep this EXACT kitchen 3D floor-plan cutaway: identical camera angle, walls, window and door openings, the island position, the run of the cabinetry and appliances, the table and chairs - the layout must not change at all. Restyle ONLY cabinetry fronts, worktop and splashback materials, fixtures, lighting, flooring, chairs and decor to the named period style. Photoreal axonometric cutaway, clean off-white background, no text, no labels, no people. Style: Vintage 1950s-60s kitchen: painted sage-green and cream shaker cabinetry with chrome pulls, checkerboard tile floor, a retro cream fridge, enamel range, butcher-block and white tile worktops, warm pendant glass lights, wooden bistro chairs.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/kitchens/07_kitchen_3d_floor_plan.png"
     ],
@@ -316,6 +384,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Keep this EXACT kitchen 3D floor-plan cutaway: identical camera angle, walls, window and door openings, the island position, the run of the cabinetry and appliances, the table and chairs - the layout must not change at all. Restyle ONLY cabinetry fronts, worktop and splashback materials, fixtures, lighting, flooring, chairs and decor to the named period style. Photoreal axonometric cutaway, clean off-white background, no text, no labels, no people. Style: Art Deco kitchen: high-gloss black and walnut cabinetry with brass inlays and fluted fronts, black-and-gold marble worktops and splashback, geometric chevron parquet floor, stepped brass pendant lights, velvet chairs, mirrored details.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/kitchens/07_kitchen_3d_floor_plan.png"
     ],
@@ -335,6 +408,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Keep this EXACT kitchen 3D floor-plan cutaway: identical camera angle, walls, window and door openings, the island position, the run of the cabinetry and appliances, the table and chairs - the layout must not change at all. Restyle ONLY cabinetry fronts, worktop and splashback materials, fixtures, lighting, flooring, chairs and decor to the named period style. Photoreal axonometric cutaway, clean off-white background, no text, no labels, no people. Style: Italian Renaissance kitchen: carved walnut cabinetry with classical mouldings and corbels, Carrara marble worktops, a terracotta tile floor, copper pots and a stone hood over the range, wrought-iron pendant lanterns, carved wooden chairs, a painted frieze under the ceiling.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/kitchens/07_kitchen_3d_floor_plan.png"
     ],
@@ -354,6 +432,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/after/bath-restored.webp"
     ],
@@ -373,6 +456,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Redraw this bathroom as a true top-down 3D cutaway: vanity, toilet, shower, tub and storage exactly where they are, circulation clear, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/plans/bath.webp"
     ],
@@ -392,6 +479,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/17_primary_bath_master.webp"
     ],
@@ -411,6 +503,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/21_secondary_bath.webp"
     ],
@@ -430,6 +526,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1536,
     "aspectRatio": "2:3",
     "prompt": "A premium compact powder room: wall-hung basin on a limestone slab, a brass wall tap, dark warm plaster walls, a single bronze pendant, a tall mirror with soft edge lighting, oak door, photographed from the doorway, calm and realistic, no text, no people.",
+    "widths": [
+      800,
+      1024
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -447,6 +547,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/details/limestone.webp"
     ],
@@ -466,6 +570,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Show this exact room as an EMPTY CONSTRUCTION SHELL before the bathroom is fitted: identical camera, walls, ceiling, window and door openings. Remove the vanity, bath, shower screen, taps, mirrors, lighting and all styling. Bare skim-coated plaster walls with patch marks, unfinished grey concrete screed floor, capped water and waste pipes sticking out of the wall and floor where the fittings will go, a single bare work light, dusty daylight from the same window, no furniture, no people, no text. Realistic construction-site photograph of the shell.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/08_bathroom_after.png"
     ],
@@ -485,6 +594,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Render this exact bathroom as the finished, fully designed room at early evening: same camera, walls, window, ceiling and openings, same vanity and bath positions. Premium finishes - honed limestone floor and walls, an oak vanity with a stone top, bronze wall-mounted taps, a freestanding stone bath, warm concealed lighting, low-iron glass shower screen, linen towels and a single olive branch in a vase. Ultra-realistic, premium editorial photography, no people, no text.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/18_primary_bath_detail.webp"
     ],
@@ -504,6 +618,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1536,
     "aspectRatio": "2:3",
     "prompt": "",
+    "widths": [
+      800,
+      1024
+    ],
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/gallery/bath-detail.webp"
     ],
@@ -523,6 +641,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "2:1",
     "prompt": "The same primary bathroom at blue hour: the tub lit by the window, a trace of steam, warm vanity light against a deep blue exterior, cinematic 2.39 framing and grade, nothing moved.",
+    "widths": [
+      800,
+      1200,
+      2048
+    ],
     "sourceReferences": [
       "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/17_primary_bath_master.png"
     ],
@@ -542,6 +665,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "2:1",
     "prompt": "A breathtaking bright Art Deco bathroom interior, wide hero shot from a three-quarter view: a freestanding sculptural bathtub in ivory stone on a podium of green-and-rust veined marble, a fluted emerald-green lacquered vanity wall with champagne-brass details and a large round brass-framed mirror, blush velvet stool, geometric Art Deco floor in ivory and burgundy stone, fluted glass shower screen with brass frame, tall window with sheer curtain letting in warm daylight, fresh flowers. Palette: warm ivory plaster, emerald-green lacquer, blush-pink textile, deep burgundy accents, warm walnut, champagne brass, colorful veined stone (green and rust marble with ivory), soft daylight. Bright, colorful, luxurious - NOT a beige minimal bathroom. Hyper-realistic, cinematic, premium editorial photography for a luxury design studio, correct perspective, high material realism, no people, no text, no logos.",
+    "widths": [
+      800,
+      1200,
+      2048
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -559,6 +687,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "A luxurious wet room: freestanding stone bathtub and a large rain shower together in one open zone behind a floor-to-ceiling fluted-glass and champagne-brass partition, walls and floor in warm travertine with an emerald marble feature band, recessed warm lighting, wooden stool with towels. Palette: warm ivory plaster, emerald-green lacquer, blush-pink textile, deep burgundy accents, warm walnut, champagne brass, colorful veined stone (green and rust marble with ivory), soft daylight. Bright, colorful, luxurious - NOT a beige minimal bathroom. Hyper-realistic, cinematic, premium editorial photography for a luxury design studio, correct perspective, high material realism, no people, no text, no logos.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -576,6 +708,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of warm ivory travertine stone, natural pores and layered veining, raking warm daylight across the surface, shallow depth of field. Premium material study, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -593,6 +729,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of a high-gloss emerald-green lacquered fluted panel, light reflecting along the flutes, deep rich color. Premium material study, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -610,6 +750,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of brushed champagne brass metal, fine linear grain, soft warm reflections. Premium material study, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -627,6 +771,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of Calacatta marble with bold gold and grey veining on white, polished surface with soft window reflection. Premium material study, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -644,6 +792,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of fluted reeded glass with warm light refracting through the ridges, hints of brass at the edge. Premium material study, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -661,6 +813,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of blush-pink velvet textile, soft pile catching directional light, gentle folds. Premium material study, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -678,6 +834,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Draw this EXACT bathroom as a clean top-down 2D architectural floor plan: correct positions of the bathtub on its podium, vanity wall, shower behind the fluted screen, window, door and circulation, thin precise black linework on warm white paper, furniture symbols, subtle wall poche, no dimensions, no text labels, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -697,6 +857,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Redraw this EXACT floor plan as a rough hand-drawn pencil sketch in a designer's notebook: loose confident pencil lines on warm sketchbook paper, slightly wobbly walls, quick hatching, a couple of scribbled arrows, the same layout unmistakably recognizable, no readable text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/21_bh_plan.png"
     ],
@@ -716,6 +880,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Render this EXACT bathroom as a matte white clay 3D model: identical camera, walls, window, podium, bathtub, vanity and shower positions, all geometry kept but every surface plain matte white with soft ambient occlusion, thin dark edge lines like a CAD viewport, plain warm grey background outside the window, no materials, no colors, no people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -735,6 +903,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Render this EXACT white clay bathroom model as a furnished, materialized 3D visualization: identical camera and geometry; apply the materials of the second reference image (emerald lacquer vanity, veined marble podium, brass, blush velvet, Art Deco stone floor) with slightly flat CGI-viewport lighting - clearly a 3D visualization, one step before photorealism. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/23_bh_clay.png",
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
@@ -755,6 +927,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Render this EXACT bathroom as a photoreal top-down furnished 3D floor-plan cutaway: walls cut at door height, the bathtub on its marble podium, emerald vanity wall, shower behind fluted glass, window and door exactly where they are in the source, soft studio daylight, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -774,6 +950,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Show this EXACT bathroom from a different camera: standing in the doorway looking in - the emerald fluted vanity on one side, the sculptural tub on its veined-marble podium beyond it, the window with sheer curtain ahead, same materials, same architecture, warm daylight. Hyper-realistic, cinematic, premium editorial photography for a luxury design studio, correct perspective, high material realism, no people, no text, no logos.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -793,6 +973,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Restyle this EXACT bathroom to ORGANIC MODERN: identical camera, walls, window, tub, vanity and shower positions. Materials become warm ivory microcement, travertine, pale oak slatted vanity, cream boucle stool, handmade zellige in sand tones, linen, greenery in a stone pot, soft organic curves, matte black-bronze taps. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -812,6 +996,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Restyle this EXACT bathroom to MINIMAL LUXURY: identical camera and architecture. One stone only - large-format honed Calacatta on walls and podium, a monolithic stone tub, flush minimal white-oak vanity with integrated pulls, frameless clear glass shower, concealed warm lighting coves, almost empty styling, quiet perfection. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -831,6 +1019,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Completely restyle this bathroom to a true MEDITERRANEAN bathroom, keeping ONLY the camera angle, room dimensions, window position and the positions of tub, vanity and shower. REMOVE every Art Deco element: no emerald lacquer, no fluted green panels, no round brass mirror, no velvet pouf, no geometric marble floor. Instead: sun-washed white lime-plaster walls with soft rounded corners, a carved natural stone trough basin on a whitewashed rustic wood or masonry vanity, a simple rectangular mirror in aged wood, an arched niche painted sea-blue with clay pots, a rough-hewn natural stone tub on low whitewashed masonry steps, terracotta tile floor, an arched opening to the shower with a linen curtain instead of glass, olive branches in a clay vase, woven baskets, aged bronze taps, strong warm Greek-island sunlight with sharp shadows through the window. Rustic, sun-baked, honest materials - unmistakably Mediterranean. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -850,6 +1042,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Adjust this EXACT bathroom, same camera and architecture: let warm ivory TRAVERTINE take the lead - the podium, floor and walls become travertine, other materials stay but recede. Subtle, believable change. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -869,6 +1065,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Adjust this EXACT bathroom, same camera and architecture: let the EMERALD LACQUER take the lead - the vanity wall extends, an emerald lacquered ceiling band appears, emerald towels; other materials recede. Subtle, believable change. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -888,6 +1088,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Adjust this EXACT bathroom, same camera and architecture: let BRUSHED BRASS take the lead - brass mirror wall panels, brass tub filler and fittings, brass-edged shelves catching the light; other materials recede. Subtle, believable change. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -907,6 +1111,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Adjust this EXACT bathroom, same camera and architecture: let CALACATTA MARBLE take the lead - the podium and back wall become bold-veined Calacatta, a Calacatta vanity top; other materials recede. Subtle, believable change. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -926,6 +1134,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Adjust this EXACT bathroom, same camera and architecture: let FLUTED GLASS take the lead - the shower partition grows to a full fluted-glass wall with brass frame, a fluted glass pendant; other materials recede. Subtle, believable change. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -945,6 +1157,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Adjust this EXACT bathroom, same camera and architecture: let BLUSH VELVET take the lead - a larger blush velvet bench, a blush velvet curtain beside the window, blush towels; other materials recede. Subtle, believable change. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -964,6 +1180,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Show this EXACT Art Deco bathroom at DUSK: identical camera, architecture and materials; the brass wall lights and a candle by the tub now lit, warm pools of light on the emerald lacquer and veined marble, deep blue evening light in the window. Hyper-realistic, cinematic, no people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -983,6 +1203,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 941,
     "aspectRatio": "1.78:1",
     "prompt": "Same Art Deco bathroom as the source image - same materials (emerald fluted lacquer, champagne brass, ivory stone tub, green-and-rust veined marble podium, blush velvet, Art Deco floor), same architecture and light. New camera: close three-quarter view of the emerald fluted vanity with the round brass mirror, marble top with flowers and brass taps, wall light glowing softly. Cinematic 16:9 film frame, shallow depth of field, no people, no text.",
+    "widths": [
+      800,
+      1200,
+      1672
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -1002,6 +1227,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 941,
     "aspectRatio": "1.78:1",
     "prompt": "Same Art Deco bathroom as the source image - same materials (emerald fluted lacquer, champagne brass, ivory stone tub, green-and-rust veined marble podium, blush velvet, Art Deco floor), same architecture and light. New camera: low close view across the rim of the ivory stone bathtub, the green-and-rust veined marble podium steps in the foreground, brass floor filler beside it, window light raking across the stone. Cinematic 16:9 film frame, shallow depth of field, no people, no text.",
+    "widths": [
+      800,
+      1200,
+      1672
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -1021,6 +1251,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 941,
     "aspectRatio": "1.78:1",
     "prompt": "Same Art Deco bathroom as the source image - same materials (emerald fluted lacquer, champagne brass, ivory stone tub, green-and-rust veined marble podium, blush velvet, Art Deco floor), same architecture and light. New camera: facing the fluted glass and brass shower partition, warm light and a hint of steam behind the reeded glass, a blush towel on the brass rail. Cinematic 16:9 film frame, no people, no text.",
+    "widths": [
+      800,
+      1200,
+      1672
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/bathrooms/20_bh_hero.png"
     ],
@@ -1040,6 +1275,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 997,
     "aspectRatio": "1.58:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1577
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
     ],
@@ -1059,6 +1299,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Show this exact room COMPLETELY EMPTY: identical camera, walls, windows, ceiling, floor finish and built-in joinery, same daylight. Remove every piece of loose furniture, the rug, lamps, curtains, artwork, plants, cushions and all decor - nothing on the floor, nothing on the walls. A clean, finished but unfurnished room, realistic photograph, no people, no text.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/03_furnished_room.png"
     ],
@@ -1078,6 +1323,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Render this exact lounge as the fully furnished, styled room at late afternoon: same camera, walls, windows, ceiling, floor and built-ins. A deep olive boucle sofa and two leather armchairs on a hand-knotted wool rug, a travertine coffee table with books and a ceramic bowl, floor and table lamps glowing, linen curtains, a large abstract artwork, plants, cushions and throws - one consistent material language. Ultra-realistic, premium editorial photography, no people, no text.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/13_family_lounge.webp"
     ],
@@ -1097,6 +1347,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Redraw this living room as a top-down furnished plan: sofa, rug, coffee table, lounge chairs and media wall exactly where they are, circulation routes clear, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/plans/living.webp"
     ],
@@ -1116,6 +1370,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "An editorial flat-lay moodboard photographed from above on a pale plaster ground: swatches of natural linen and olive boucle, a slab of travertine, a block of oiled walnut and one of white oak, a brushed bronze sample, a ceramic vessel, a folded wool throw; soft north daylight; no text, no labels, no logos.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1133,6 +1391,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/07_living_detail.webp"
     ],
@@ -1152,6 +1414,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 758,
     "aspectRatio": "1.58:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/primary-editorial-v2.webp"
     ],
@@ -1171,6 +1437,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 758,
     "aspectRatio": "1.58:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/dining-editorial-v2.webp"
     ],
@@ -1190,6 +1460,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/details/chandelier.webp"
     ],
@@ -1209,6 +1483,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/maison-valmont/details/wool-linen.webp"
     ],
@@ -1228,6 +1506,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 941,
     "aspectRatio": "1.78:1",
     "prompt": "Render this exact living room as a single CINEMATIC FILM FRAME: same camera position, walls, windows and furniture layout, at dusk with the lamps and concealed lighting on and the pool glowing outside. Anamorphic widescreen feel, shallow depth of field on the foreground sofa arm, warm highlights and deep shadows, subtle haze in the light, film-like colour grading. Ultra-realistic, no people, no text.",
+    "widths": [
+      800,
+      1200,
+      1672
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/05_living_master.webp"
     ],
@@ -1247,6 +1530,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Single decor piece as a premium studio product photograph for a luxury interior design studio: the object alone on a seamless warm off-white plaster backdrop with a soft limestone floor plane, soft directional daylight from the left, gentle shadow, 4:3 framing with air around the object, photoreal materials, no text, no people, no props other than the named piece. The piece: a deep olive-green boucle three-seat sofa with a low oak plinth base and loose back cushions.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1264,6 +1551,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Single decor piece as a premium studio product photograph for a luxury interior design studio: the object alone on a seamless warm off-white plaster backdrop with a soft limestone floor plane, soft directional daylight from the left, gentle shadow, 4:3 framing with air around the object, photoreal materials, no text, no people, no props other than the named piece. The piece: a tan saddle-leather lounge chair with a sculpted solid oak frame.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1281,6 +1572,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Single decor piece as a premium studio product photograph for a luxury interior design studio: the object alone on a seamless warm off-white plaster backdrop with a soft limestone floor plane, soft directional daylight from the left, gentle shadow, 4:3 framing with air around the object, photoreal materials, no text, no people, no props other than the named piece. The piece: a tall patinated-bronze floor lamp with a pleated ivory linen shade, switched on with a warm glow.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1298,6 +1593,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Single decor piece as a premium studio product photograph for a luxury interior design studio: the object alone on a seamless warm off-white plaster backdrop with a soft limestone floor plane, soft directional daylight from the left, gentle shadow, 4:3 framing with air around the object, photoreal materials, no text, no people, no props other than the named piece. The piece: a large hand-finished ivory plaster dome pendant light with a brushed brass stem, hanging from the top of frame.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1315,6 +1614,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Single decor piece as a premium studio product photograph for a luxury interior design studio: the object alone on a seamless warm off-white plaster backdrop with a soft limestone floor plane, soft directional daylight from the left, gentle shadow, 4:3 framing with air around the object, photoreal materials, no text, no people, no props other than the named piece. The piece: a hand-knotted wool rug in sand and charcoal with a subtle abstract pattern, shown half-rolled on the floor.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1332,6 +1635,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Single decor piece as a premium studio product photograph for a luxury interior design studio: the object alone on a seamless warm off-white plaster backdrop with a soft limestone floor plane, soft directional daylight from the left, gentle shadow, 4:3 framing with air around the object, photoreal materials, no text, no people, no props other than the named piece. The piece: a cylindrical honed travertine side table with a single ceramic cup on top.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1349,6 +1656,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Single decor piece as a premium studio product photograph for a luxury interior design studio: the object alone on a seamless warm off-white plaster backdrop with a soft limestone floor plane, soft directional daylight from the left, gentle shadow, 4:3 framing with air around the object, photoreal materials, no text, no people, no props other than the named piece. The piece: a set of five hand-thrown stoneware vases and bowls in cream, sand and charcoal glazes arranged on an oak shelf.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1366,6 +1677,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Single decor piece as a premium studio product photograph for a luxury interior design studio: the object alone on a seamless warm off-white plaster backdrop with a soft limestone floor plane, soft directional daylight from the left, gentle shadow, 4:3 framing with air around the object, photoreal materials, no text, no people, no props other than the named piece. The piece: a large abstract painting in warm ochre, ivory and charcoal in a thin oak frame, leaning against the wall.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1383,6 +1698,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Single decor piece as a premium studio product photograph for a luxury interior design studio: the object alone on a seamless warm off-white plaster backdrop with a soft limestone floor plane, soft directional daylight from the left, gentle shadow, 4:3 framing with air around the object, photoreal materials, no text, no people, no props other than the named piece. The piece: a stack of linen cushions and a folded wool throw in olive, oatmeal and rust, on a low oak bench.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1400,6 +1719,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "A styled home office corner as a premium editorial interior photograph: a solid oak writing desk with a tan leather task chair, an organic sculpted walnut bookcase with ceramics and books, a brass desk lamp glowing, warm ivory plaster walls, oak floor, soft daylight from a tall window at the left. Photoreal, sophisticated, no people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1417,6 +1740,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "2:1",
     "prompt": "A breathtaking bright colorful ultra-luxury living room, wide hero composition: cream architectural shell with tall windows and strong daylight, a deep emerald-teal velvet sofa, two blush-pink lounge chairs, a mustard accent armchair, warm walnut joinery and side tables, champagne-brass floor lamp and details, one large colorful abstract artwork, a layered patterned rug in rust/teal/cream, books, fresh flowers, plants, sculptural ceramics. Colorful luxury palette used with discipline: cream architectural shell, emerald and teal seating, blush chairs, mustard accent, warm walnut and natural oak, champagne brass, colorful large-scale artwork, layered patterned rug, books, flowers, plants, sculptural objects. Bright, alive, sophisticated - never dark, never moody, never beige-only, never childish. Hyper-realistic, premium editorial interior photography for a luxury design studio, natural daylight, correct perspective, high material realism, no people, no text, no logos.",
+    "widths": [
+      800,
+      1200,
+      2048
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1434,6 +1762,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Remove ALL furniture, the rug, lamps, artwork, plants, objects and curtains - a completely empty but finished room: bare oak floor, clean cream walls, daylight through the same windows. Realistic photograph, no people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1453,6 +1785,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Render this EXACT living room as a photoreal top-down furnished 3D floor-plan cutaway: walls cut at door height, the emerald sofa, blush chairs, mustard armchair, rug, walnut tables and plants exactly where they stand in the source, same windows and openings, soft studio daylight, warm off-white background, no text, no labels, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1472,6 +1808,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Rearrange ONLY the furniture into a SOCIAL layout: sofa and all chairs pulled into one close conversation circle around a central coffee table, rug centered under the group. Same pieces, same materials. Hyper-realistic, premium editorial interior photography for a luxury design studio, natural daylight, correct perspective, high material realism, no people, no text, no logos.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1491,6 +1831,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Rearrange ONLY the furniture into an OPEN layout: sofa against the wall, chairs at the window, generous open floor in the centre of the room, rug along the sofa. Same pieces, same materials. Hyper-realistic, premium editorial interior photography for a luxury design studio, natural daylight, correct perspective, high material realism, no people, no text, no logos.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1510,6 +1854,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Rearrange ONLY the furniture into a SCULPTURAL layout: the sofa floating diagonally in the room, single chair isolated as an object near the window, artwork leaning on the floor, asymmetric composition with intentional negative space. Same pieces, same materials. Hyper-realistic, premium editorial interior photography for a luxury design studio, natural daylight, correct perspective, high material realism, no people, no text, no logos.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1529,6 +1877,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Restyle ALL furniture, rug, artwork and lighting to ART DECO: emerald and black lacquer, fluted walnut, brass inlays, geometric rug, stepped brass lighting, velvet seating, bold geometric art. Bright daylight, colorful, luxurious. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1548,6 +1900,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Restyle ALL furniture, rug, artwork and lighting to ORGANIC MODERN: curved cream boucle sofa, travertine and pale oak, handwoven wool rug, ceramics, linen, sculptural paper lantern, olive greens and sand tones, one terracotta accent. Bright daylight. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1567,6 +1923,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Restyle ALL furniture, rug, artwork and lighting to MID-CENTURY MODERN: teak lounge chairs with tan leather, low walnut sideboard, mustard sofa, geometric wool rug, sputnik brass lamp, abstract mid-century art, warm colorful palette. Bright daylight. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1586,6 +1946,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Restyle ALL furniture, rug, artwork and lighting to COLORFUL CONTEMPORARY: cobalt-blue sofa, coral chair, striped bold rug, colorful glass side tables, oversized vivid artwork, playful sculptural lighting - disciplined, gallery-like, not childish. Bright daylight. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1605,6 +1969,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "A designer reference board photographed straight-on: a large pinned travel photograph of a sunlit Mediterranean interior, torn magazine pages, fabric swatches in emerald velvet and blush boucle, a brass sample, a walnut veneer piece, a hand-painted color palette card - arranged loosely on a warm cream board with natural shadows. Photoreal, no readable text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1622,6 +1990,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Turn this reference board into a clean PALETTE BOARD: six large painted color fields (cream, emerald, blush, mustard, walnut brown, brass gold) with the matching fabric and material chips resting on them, photographed straight-on in daylight on the same cream board. Photoreal, no readable text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/40_fd_reference.png"
     ],
@@ -1641,6 +2013,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Render this EXACT living room as a white clay 3D working model with the furniture blocked in as simple massing volumes in their exact positions: matte white, soft ambient occlusion, thin dark edge lines like a CAD viewport, plain warm grey backdrop. Same camera. No materials, no colors, no people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1660,6 +2036,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of deep emerald-green velvet upholstery, directional daylight raking across the pile, luxurious and tactile. No text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1677,6 +2057,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of blush-pink boucle fabric, looped wool texture catching soft daylight. No text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1694,6 +2078,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of oiled walnut wood grain meeting a brushed champagne-brass edge detail, warm daylight. No text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1711,6 +2099,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Extreme macro photograph of a hand-knotted rug with a bold rust, teal and cream abstract pattern, wool texture visible, daylight. No text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -1728,6 +2120,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Let EMERALD VELVET lead: the sofa grows bolder in emerald velvet, an emerald velvet armchair joins, emerald cushions; everything else recedes slightly. Subtle believable change, same camera. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1747,6 +2143,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Let BLUSH BOUCLE lead: the lounge chairs become blush boucle, a boucle ottoman appears, blush textiles; everything else recedes slightly. Subtle believable change, same camera. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1766,6 +2166,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Let WALNUT AND BRASS lead: a full walnut shelving wall appears behind the sofa, brass lamp and brass-edged tables catch the light; everything else recedes slightly. Subtle believable change, same camera. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1785,6 +2189,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Keep this EXACT living room: identical camera, walls, tall windows, ceiling, floor and architectural shell. Let the PATTERNED RUG lead: a larger bolder rust-teal-cream rug anchors the whole seating group, colors of the room echo it; everything else recedes slightly. Subtle believable change, same camera. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1804,6 +2212,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 941,
     "aspectRatio": "1.78:1",
     "prompt": "Same room, new camera: a low close cinematic 16:9 frame across the emerald sofa arm and a brass lamp toward the colorful artwork, shallow depth of field, daylight. No people, no text.",
+    "widths": [
+      800,
+      1200,
+      1672
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/furniture-decor/30_fd_hero.png"
     ],
@@ -1823,6 +2236,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "2:1",
     "prompt": "Redraw this whole apartment as a furnished 3D floor-plan axonometric cutaway seen from 45 degrees above: every room, wall and window exactly as in the source, the waterfront side toward the bottom, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "widths": [
+      800,
+      1200,
+      2048
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/plans/overview.webp",
       "public/interior-design/projects/canal-apartment/pairs/canal-raw.webp"
@@ -1843,6 +2261,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "2:1",
     "prompt": "The same furnished 3D floor-plan axonometric, camera 30 degrees lower and closer so the living room and the waterfront edge dominate, evening light, warm lamps inside the rooms, the canal reflecting beyond; nothing in the plan changes.",
+    "widths": [
+      800,
+      1200,
+      2048
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/apartments/04_apartment_3d_plan.png",
       "public/interior-design/projects/canal-apartment/pairs/canal-editorial-v2.webp"
@@ -1863,6 +2286,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 758,
     "aspectRatio": "1.58:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/canal-raw.webp"
     ],
@@ -1882,6 +2309,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Redraw this apartment as a clean professional 2D architectural floor plan: black line work on white, correct wall thickness, door swings, window openings and fixed furniture footprints exactly as in the source, no text, no dimensions, no labels.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/plans/overview.webp"
     ],
@@ -1901,6 +2332,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 997,
     "aspectRatio": "1.58:1",
     "prompt": "Render this exact living room as the finished, fully designed room at dusk: identical camera, walls, window wall, ceiling, floor and the built-in media wall; same sofa and table positions. Match the materials and furniture identity of the second reference image (walnut media wall with lit niches, olive velvet sofa, travertine and walnut tables, wool rug). Lamps and concealed niche lighting on, the last light over the water outside, books and ceramics styled on the tables, linen curtains half drawn. Ultra-realistic, cinematic, premium editorial photography, no people, no text.",
+    "widths": [
+      800,
+      1200,
+      1578
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-raw.webp",
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
@@ -1921,6 +2357,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 760,
     "aspectRatio": "30:19",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/kitchen-editorial-v2.webp"
     ],
@@ -1940,6 +2380,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 758,
     "aspectRatio": "1.58:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/primary-editorial-v2.webp"
     ],
@@ -1959,6 +2403,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 801,
     "aspectRatio": "1.50:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/bath-editorial-v2.webp"
     ],
@@ -1978,6 +2426,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 759,
     "aspectRatio": "1.58:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/terrace-editorial-v2.webp"
     ],
@@ -1997,6 +2449,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "2:1",
     "prompt": "The same room at dusk: interior lamps on, the canal outside turning blue, cinematic 2.39 framing and grade, slight haze in the light; nothing moved.",
+    "widths": [
+      800,
+      1200,
+      2048
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/canal-editorial-v2.webp"
     ],
@@ -2016,6 +2473,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1137,
     "aspectRatio": "1.58:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1800
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/lounge-raw.webp"
     ],
@@ -2035,6 +2497,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 997,
     "aspectRatio": "1.58:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1577
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/lounge-editorial-v2.webp"
     ],
@@ -2054,6 +2521,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 600,
     "aspectRatio": "2:1",
     "prompt": "Render this EXACT furnished apartment 3D floor plan as the UNFURNISHED version: identical walls, openings, windows, balcony and camera, but remove all furniture - clean empty floors, white-model surfaces with the same warm daylight. No text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/apartments/04_apartment_3d_plan.png"
     ],
@@ -2073,6 +2544,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 759,
     "aspectRatio": "1.58:1",
     "prompt": "Keep this EXACT living room architecture: same camera, window wall, walnut media wall position, floor. Restyle furniture and decor to ART DECO: emerald velvet sofa, fluted walnut, brass inlays, geometric rug, stepped lighting. Bright daylight, colorful. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
     ],
@@ -2092,6 +2567,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 763,
     "aspectRatio": "1.57:1",
     "prompt": "Keep this EXACT living room architecture: same camera, window wall, media wall position, floor. Restyle furniture and decor to ORGANIC MODERN: curved cream boucle sofa, travertine, pale oak, wool rug, ceramics, linen, olive tones. Bright daylight. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
     ],
@@ -2111,6 +2590,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 760,
     "aspectRatio": "30:19",
     "prompt": "Keep this EXACT living room architecture: same camera, window wall, media wall position, floor. Restyle furniture and decor to COLORFUL CONTEMPORARY: cobalt sofa, coral chair, bold striped rug, colorful glass, vivid oversized art - disciplined, not childish. Bright daylight. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
     ],
@@ -2130,6 +2613,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 759,
     "aspectRatio": "1.58:1",
     "prompt": "Keep this EXACT living room architecture: same camera, window wall, media wall position, floor. Restyle furniture and decor to MIAMI MODERN: white and blush curved seating, seafoam and flamingo accents, terrazzo coffee table, palm in a planter, light woods, breezy linen. Bright daylight. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/living-editorial-v2.webp"
     ],
@@ -2149,6 +2636,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Photoreal top-down furnished 3D floor-plan cutaway of a compact STUDIO apartment: one room holding sleeping alcove, sofa zone, compact kitchen run, dining for two, work desk and bathroom; smart storage walls, warm oak and cream with emerald and blush accents, clear circulation. Warm off-white background, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -2166,6 +2657,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Photoreal top-down furnished 3D floor-plan cutaway of a ONE-BEDROOM apartment: living-dining with kitchen run, separate bedroom, bathroom, entry storage and a work corner; warm oak and cream with emerald and blush accents, same rendering style as a matching set. Warm off-white background, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -2183,6 +2678,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Photoreal top-down furnished 3D floor-plan cutaway of a TWO-BEDROOM family apartment: living-dining, kitchen, two bedrooms, bathroom and en-suite, hallway storage; warm oak and cream with emerald and blush accents, same rendering style as a matching set. Warm off-white background, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -2200,6 +2699,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Photoreal top-down furnished 3D floor-plan cutaway of a PENTHOUSE: generous living with double seating groups, open kitchen with island, dining for eight, primary suite with dressing, guest room, two bathrooms, wraparound terrace; warm oak and cream with emerald and blush accents, same rendering style as a matching set. Warm off-white background, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -2217,6 +2720,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1080,
     "aspectRatio": "16:9",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1920
+    ],
     "sourceReferences": [
       "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/03_exterior_pool_master.png"
     ],
@@ -2236,6 +2744,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Render this ground floor as a photorealistic 3D floor-plan axonometric: every wall, opening and piece of furniture exactly as in the source, pool terrace and garage included, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/00_ground_floor_plan.webp"
     ],
@@ -2255,6 +2768,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "Render this upper floor as a photorealistic 3D floor-plan axonometric: every wall, opening and piece of furniture exactly as in the source, balcony included, clean white-model axonometric cutaway at 45 degrees, walls cut at door-head height, every room furnished as in the source, soft studio daylight, pale oak floors, neutral materials, no text, no labels, no people. This is the UPPER level: NO swimming pool on this floor (the pool is on the ground floor below) — show balconies and a terrace overlooking the garden instead; bedrooms, bathrooms, stair landing.",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/01_upper_floor_plan.webp"
     ],
@@ -2274,6 +2792,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "2:1",
     "prompt": "A section cutaway of this exact two-storey house: the pool-side wall removed so both furnished floors read at once, pool in the foreground, the architecture, pool, garage and landscape exactly as in the first image, room layouts as in the plans, late afternoon light.",
+    "widths": [
+      800,
+      1200,
+      2048
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp",
       "public/interior-design/projects/poolside-villa/renders/00_ground_floor_plan.webp",
@@ -2295,6 +2818,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1536
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/06_living_pool_view.webp"
     ],
@@ -2314,6 +2842,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/10_kitchen_island_detail.webp"
     ],
@@ -2333,6 +2865,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/14_primary_bedroom_master.webp"
     ],
@@ -2352,6 +2888,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/18_primary_bath_detail.webp"
     ],
@@ -2371,6 +2911,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/27_pool_hero.webp"
     ],
@@ -2390,6 +2934,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/23_garage.webp"
     ],
@@ -2409,6 +2957,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/02_exterior_front_day.webp"
     ],
@@ -2428,6 +2980,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1080,
     "aspectRatio": "16:9",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1920
+    ],
     "sourceReferences": [
       "C:/Users/smadj/Documents/inetrior design/public/generated/vellora-house-film/frames/26_outdoor_kitchen.png"
     ],
@@ -2447,6 +3004,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1024,
     "aspectRatio": "2:1",
     "prompt": "The same pool terrace and house at blue hour: deep blue sky, underwater pool lights on, warm light glowing from every window, nothing moved or added.",
+    "widths": [
+      800,
+      1200,
+      2048
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/27_pool_hero.webp"
     ],
@@ -2466,6 +3028,9 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1821,
     "aspectRatio": "0.47:1",
     "prompt": "Turn this EXACT house cutaway into an EXPLODED AXONOMETRIC: the roof lifted highest, upper floor with its rooms below it, ground floor with pool terrace below that, and the site slab at the bottom - four layers vertically separated with clean air between them, same architecture and furniture, photoreal model style on a deep charcoal background with faint gold technical lines. No text, no people.",
+    "widths": [
+      864
+    ],
     "sourceReferences": [
       "source-assets/interior-generated/homes/04_home_whole_house.png"
     ],
@@ -2485,6 +3050,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 941,
     "aspectRatio": "1.78:1",
     "prompt": "Same house, new camera: standing across the street at golden hour - the driveway leads past landscaping to the open garage and the entrance, warm interior light glowing through the glass, long shadows. Cinematic 16:9, ultra-realistic. No people, no text.",
+    "widths": [
+      800,
+      1200,
+      1672
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/02_exterior_front_day.webp"
     ],
@@ -2504,6 +3074,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Keep this EXACT living room architecture: same camera, walls, windows, fireplace wall, floor. Restyle furniture and decor to ART DECO: emerald and burgundy velvet, fluted walnut, brass, geometric rug and lighting. Bright daylight, colorful. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/05_living_master.webp"
     ],
@@ -2523,6 +3097,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Keep this EXACT living room architecture: same camera, walls, windows, fireplace wall, floor. Restyle furniture and decor to ORGANIC MODERN: curved boucle, travertine, pale oak, wool, ceramics, olive and sand with one terracotta accent. Bright daylight. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/05_living_master.webp"
     ],
@@ -2542,6 +3120,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Keep this EXACT living room architecture: same camera, walls, windows, fireplace wall, floor. Restyle furniture and decor to COLORFUL CONTEMPORARY: cobalt and coral seating, bold rug, colorful glass and vivid art - disciplined, not childish. Bright daylight. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/05_living_master.webp"
     ],
@@ -2561,6 +3143,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "A premium interactive property-website interface displayed on a large screen mockup, dark elegant UI: a large hero of THIS exact house, a floor selector (ground/upper), room thumbnails, a small 3D model viewport and a play button for the film, refined typography blocks (no readable words - suggest text with soft grey bars). The house imagery matches the source exactly. No people, no readable text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp"
     ],
@@ -2580,6 +3166,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Relight this EXACT view to bright MIDDAY: same camera, architecture, pool and landscaping; clear blue sky, crisp daylight, interiors visible and colorful. Ultra-realistic. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp"
     ],
@@ -2599,6 +3189,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "Relight this EXACT view to EVENING: same camera, architecture, pool and landscaping; deep blue night sky, but every interior glowing warm and colorful through the glass, pool lit turquoise, path lights on. Interiors stay bright and rich - not a dark moody shot. Ultra-realistic. No people, no text.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/03_exterior_pool_master.webp"
     ],
@@ -2618,6 +3212,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/11_office_guest.webp"
     ],
@@ -2637,6 +3235,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/13_family_lounge.webp"
     ],
@@ -2656,6 +3258,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/04_foyer.webp"
     ],
@@ -2675,6 +3281,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/25_outdoor_lounge.webp"
     ],
@@ -2694,6 +3304,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/26_outdoor_kitchen.webp"
     ],
@@ -2713,6 +3327,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 941,
     "aspectRatio": "1.78:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1672
+    ],
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-hero-realistic-v2.webp"
     ],
@@ -2732,6 +3351,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1536,
     "aspectRatio": "2:3",
     "prompt": "The same tower drawn as an exploded axonometric: the floor plates separated vertically with equal gaps, the facade geometry, fins and crown unchanged, white architectural model with subtle shadows, plain pale background, no text.",
+    "widths": [
+      800,
+      1024
+    ],
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-architecture-single.webp"
     ],
@@ -2751,6 +3374,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 941,
     "aspectRatio": "1.78:1",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1672
+    ],
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-hero-single.webp"
     ],
@@ -2770,6 +3398,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 675,
     "aspectRatio": "16:9",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/the-patel/residence-1802/floorplan.webp"
     ],
@@ -2789,6 +3421,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "A double-height residential tower lobby in Miami: travertine floor, a fluted oak feature wall, a brass reception desk, full-height glass with palms and warm sunset light outside, a single sculptural pendant, restrained luxury, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -2806,6 +3442,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "A resident lounge beside an indoor pool deck with an ocean view through full-height glass: travertine and oak, bronze details, low lounge seating, warm evening light, Miami skyline faint outside, no text, no people.",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [],
     "generatedAt": "2026-08-23",
     "status": "approved",
@@ -2823,6 +3463,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 800,
     "aspectRatio": "3:2",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-rooftop-single-v2.webp"
     ],
@@ -2842,6 +3486,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 900,
     "aspectRatio": "16:9",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      1600
+    ],
     "sourceReferences": [
       "public/interior-design/projects/the-patel/residence-1802/living.webp"
     ],
@@ -2861,6 +3510,11 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 1350,
     "aspectRatio": "16:9",
     "prompt": "",
+    "widths": [
+      800,
+      1200,
+      2400
+    ],
     "sourceReferences": [
       "C:/Users/smadj/Documents/the patel - appartments/website/public/media/patel/patel-hero-poster-v2.webp"
     ],
@@ -2880,6 +3534,10 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 675,
     "aspectRatio": "16:9",
     "prompt": "",
+    "widths": [
+      800,
+      1200
+    ],
     "sourceReferences": [
       "public/interior-design/projects/the-patel/brand/patel-breakout-hero.webp"
     ],
@@ -2899,6 +3557,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 500,
     "aspectRatio": "8:5",
     "prompt": "",
+    "widths": null,
     "sourceReferences": [
       "public/interior-design/projects/the-patel/brand/patel-breakout-hero.webp"
     ],
@@ -2918,6 +3577,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 500,
     "aspectRatio": "8:5",
     "prompt": "",
+    "widths": null,
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/10_kitchen_island_detail.webp"
     ],
@@ -2937,6 +3597,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 500,
     "aspectRatio": "8:5",
     "prompt": "",
+    "widths": null,
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/18_primary_bath_detail.webp"
     ],
@@ -2956,6 +3617,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 500,
     "aspectRatio": "8:5",
     "prompt": "",
+    "widths": null,
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/dining-editorial.webp"
     ],
@@ -2975,6 +3637,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 500,
     "aspectRatio": "8:5",
     "prompt": "",
+    "widths": null,
     "sourceReferences": [
       "public/interior-design/projects/canal-apartment/pairs/terrace-editorial-v2.webp"
     ],
@@ -2994,6 +3657,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 500,
     "aspectRatio": "8:5",
     "prompt": "",
+    "widths": null,
     "sourceReferences": [
       "public/interior-design/projects/poolside-villa/renders/28_pool_water_level.webp"
     ],
@@ -3013,6 +3677,7 @@ export const GENERATED_MEDIA: GeneratedMedia[] = [
     "height": 500,
     "aspectRatio": "8:5",
     "prompt": "",
+    "widths": null,
     "sourceReferences": [
       "public/interior-design/projects/the-patel/renders/patel-rooftop-single-v2.webp"
     ],
@@ -3027,3 +3692,20 @@ export const media = (page: MediaPage, id: string): GeneratedMedia | undefined =
   GENERATED_MEDIA.find((m) => m.page === page && m.id === id);
 
 export const pageMedia = (page: MediaPage): GeneratedMedia[] => GENERATED_MEDIA.filter((m) => m.page === page);
+
+/** srcset/sizes props for an entry: browsers pick the smallest file that fills the slot. */
+export function imgProps(m: GeneratedMedia | undefined | null, sizes: string) {
+  if (!m) return {};
+  const widths = (m.widths || []).filter(Boolean);
+  if (widths.length < 2) return { src: m.file, sizes };
+  const srcSet = widths
+    .map((w) => `${w === Math.max(...widths) ? m.file : m.file.replace(/\.webp$/, `-w${w}.webp`)} ${w}w`)
+    .join(', ');
+  return { src: m.file, srcSet, sizes };
+}
+
+/** The 800px variant when it exists - for thumbnails, tiles and zoom items. */
+export function smallFile(m: GeneratedMedia | undefined | null): string | undefined {
+  if (!m) return undefined;
+  return (m.widths || []).includes(800) ? m.file.replace(/\.webp$/, '-w800.webp') : m.file;
+}
