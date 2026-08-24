@@ -118,7 +118,7 @@ function LayoutsFd() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Furniture layout" value={key} onChange={setKey} options={items.map((l) => ({ key: l.key, label: l.label }))} />
           <figure className="bx-dir idv2-reveal" style={{ margin: 0 }}>
-            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, calc(100svh - 460px))', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME ROOM, SAME PIECES · STUDIO CONCEPT</span></figcaption>
           </figure>
         </div>
@@ -244,7 +244,7 @@ function StylesFd() {
         <div style={{ display: 'grid', gap: 16 }}>
           <MethodSwitcher ariaLabel="Style direction" value={key} onChange={setKey} options={items.map((d) => ({ key: d.key, label: d.label }))} />
           <figure style={{ margin: 0 }} className="idv2-reveal">
-            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, 700px)', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
+            <img key={active.key} {...imgProps(active.m, SW_FIG)} alt={active.m.alt} loading="lazy" decoding="async" style={{ width: '100%', height: 'min(62vh, calc(100svh - 460px))', objectFit: 'cover', borderRadius: 22, display: 'block' }} />
             <figcaption className="idsp-cap"><span>{active.line}</span><span>SAME ARCHITECTURE, SAME CAMERA · STUDIO CONCEPT</span></figcaption>
           </figure>
         </div>
@@ -276,6 +276,7 @@ function FilmFd() {
 export default function InteriorFurnitureDecor() {
   return (
     <InteriorShell path="/interior-design/furniture-decor">
+      <div className="idsp-scope">
       <SpacesRail path="/interior-design/furniture-decor" />
       <HeroFd />
       <EmptyAlive />
@@ -286,6 +287,7 @@ export default function InteriorFurnitureDecor() {
       <DecorFd />
       <StylesFd />
       <FilmFd />
+      </div>
     </InteriorShell>
   );
 }

@@ -15,11 +15,11 @@
 .xp-hero-layer figcaption { font-family: var(--idv-mono, 'DM Mono', ui-monospace, monospace); font-size: 8.5px; letter-spacing: 0.22em; color: rgba(245, 245, 240, 0.75); }
 
 /* ── Massive compare ── */
-.xp-compare [role='slider'] { aspect-ratio: auto !important; height: min(82vh, 860px); }
+.xp-compare [role='slider'] { aspect-ratio: auto !important; height: min(74vh, calc(100svh - 430px)); }
 
 /* ── Spot overlays (plan relationships / room map) ── */
 .xp-spot-fig { position: relative; margin: 0; }
-.xp-spot-fig > img { width: 100%; border-radius: 20px; display: block; }
+.xp-spot-fig > img { width: 100%; max-height: calc(100svh - 440px); object-fit: cover; border-radius: 20px; display: block; }
 .xp-spot { position: absolute; width: 14px; height: 14px; border-radius: 50%; transform: translate(-50%, -50%); background: rgba(216, 183, 90, 0.35); border: 2px solid rgba(216, 183, 90, 0.9); transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; }
 .xp-spot[data-active='true'] { transform: translate(-50%, -50%) scale(1.9); background: rgba(216, 183, 90, 0.9); box-shadow: 0 0 26px 6px rgba(216, 183, 90, 0.5); }
 .xp-legend { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -38,7 +38,7 @@
 /* ── Horizontal editorial strip ── */
 .xp-strip { display: flex; gap: clamp(12px, 1.4vw, 20px); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 0 var(--idv-pad, clamp(20px, 4vw, 64px)) 16px; scrollbar-width: thin; }
 .xp-strip figure { position: relative; margin: 0; flex: 0 0 clamp(260px, 30vw, 460px); scroll-snap-align: start; border-radius: 18px; overflow: hidden; }
-.xp-strip img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.xp-strip img { width: 100%; aspect-ratio: 4 / 5; max-height: calc(100svh - 420px); object-fit: cover; display: block; transition: transform 0.6s ease; }
 .xp-strip figure:hover img { transform: scale(1.05); }
 .xp-strip figcaption { position: absolute; left: 14px; bottom: 12px; right: 14px; font-family: var(--idv-mono, 'DM Mono', ui-monospace, monospace); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #F5F5F0; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.75); }
 
@@ -47,7 +47,7 @@
 .xp-chapter--flip { grid-template-columns: 1.6fr 0.9fr; }
 .xp-chapter--flip .xp-chapter-copy { order: 2; }
 .xp-chapter-media { margin: 0; border-radius: 22px; overflow: hidden; }
-.xp-chapter-media img { width: 100%; height: clamp(380px, 62vh, 640px); object-fit: cover; display: block; }
+.xp-chapter-media img { width: 100%; height: min(clamp(380px, 62vh, 640px), calc(100svh - 320px)); object-fit: cover; display: block; }
 .xp-chapter-copy { display: grid; gap: 12px; }
 
 /* ── Zoom finale (adapted from 21st “Immersive Scroll Gallery”) ── */

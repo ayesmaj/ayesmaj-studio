@@ -363,6 +363,7 @@ export default function SpacePage({ cfg }) {
   const Hero = cfg.hero.variant === 'bright' ? HeroBright : cfg.hero.variant === 'full' ? HeroFull : HeroDark;
   return (
     <InteriorShell path={cfg.path}>
+      <div className="idsp-scope">
       {cfg.hero.variant === 'breakout' ? (
         <>
           <InteriorDesignHero copy={cfg.hero.copy} />
@@ -383,6 +384,7 @@ export default function SpacePage({ cfg }) {
       })}
       <NextSpace next={cfg.next} M={M} />
       <CtaBand eyebrow={cfg.cta.eyebrow} headline={cfg.cta.headline} copy={cfg.cta.copy} primary={cfg.cta.primary} secondary={cfg.cta.secondary} />
+      </div>
     </InteriorShell>
   );
 }

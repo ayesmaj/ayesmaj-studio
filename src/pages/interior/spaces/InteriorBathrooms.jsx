@@ -289,6 +289,7 @@ function DirectionsBath() {
 export default function InteriorBathrooms() {
   return (
     <InteriorShell path="/interior-design/bathrooms">
+      <div className="idsp-scope">
       <SpacesRail path="/interior-design/bathrooms" />
       <HeroBath />
       <TransformBath />
@@ -298,6 +299,7 @@ export default function InteriorBathrooms() {
       <CompareBath />
       <FilmBath />
       <DirectionsBath />
+      </div>
     </InteriorShell>
   );
 }
