@@ -1,0 +1,101 @@
+/* Shared experience-page system for Furniture & Decor / Apartments / Homes
+   (owner brief 2026-08-23). Extends the AYESMAJ interior system; class prefix xp-. */
+
+/* ── Full-bleed hero ── */
+.xp-hero { position: relative; min-height: 100svh; display: grid; align-items: end; overflow: clip; color: #F5F5F0; background: #0B0B0D; }
+.xp-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform; }
+.xp-hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8, 6, 6, 0.82) 0%, rgba(8, 6, 6, 0.46) 40%, rgba(8, 6, 6, 0.05) 72%), linear-gradient(180deg, rgba(8, 6, 6, 0.3), transparent 34%, rgba(8, 6, 6, 0.55) 100%); }
+.xp-hero-copy { position: relative; z-index: 2; display: grid; gap: clamp(16px, 2vw, 26px); padding-bottom: clamp(56px, 8vh, 120px); max-width: 880px; }
+.xp-h1 { font-size: clamp(54px, 7.6vw, 132px); line-height: 0.86; }
+.xp-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.xp-hero-credit { color: rgba(245, 245, 240, 0.6); }
+.xp-hero-layers { position: absolute; right: clamp(14px, 2.4vw, 44px); bottom: clamp(56px, 9vh, 130px); z-index: 2; display: grid; gap: 10px; }
+.xp-hero-layer { margin: 0; display: grid; gap: 4px; justify-items: start; }
+.xp-hero-layer img { width: clamp(120px, 11vw, 180px); aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; border: 1px solid rgba(245, 245, 240, 0.35); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); }
+.xp-hero-layer figcaption { font-family: var(--idv-mono, 'DM Mono', ui-monospace, monospace); font-size: 8.5px; letter-spacing: 0.22em; color: rgba(245, 245, 240, 0.75); }
+
+/* ── Massive compare ── */
+.xp-compare [role='slider'] { aspect-ratio: auto !important; height: min(82vh, 860px); }
+
+/* ── Spot overlays (plan relationships / room map) ── */
+.xp-spot-fig { position: relative; margin: 0; }
+.xp-spot-fig > img { width: 100%; border-radius: 20px; display: block; }
+.xp-spot { position: absolute; width: 14px; height: 14px; border-radius: 50%; transform: translate(-50%, -50%); background: rgba(216, 183, 90, 0.35); border: 2px solid rgba(216, 183, 90, 0.9); transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; }
+.xp-spot[data-active='true'] { transform: translate(-50%, -50%) scale(1.9); background: rgba(216, 183, 90, 0.9); box-shadow: 0 0 26px 6px rgba(216, 183, 90, 0.5); }
+.xp-legend { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ── Sticky story (adapted from 21st “Scroll 01” into the AYESMAJ system) ── */
+.xp-story { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(24px, 3.4vw, 56px); align-items: start; }
+.xp-story-media { position: sticky; top: 110px; height: min(72vh, 720px); border-radius: 20px; overflow: hidden; background: #0B0B0D; }
+.xp-story-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.35s ease; }
+.xp-story-media img[data-active='true'] { opacity: 1; }
+.xp-story-steps { display: grid; gap: 34vh; padding: 22vh 0 26vh; }
+.xp-story-step { display: grid; gap: 10px; }
+.xp-story-step .idv-mono-label { color: var(--idv-champagne); }
+.xp-story-step h3 { font-family: var(--idv-font-display, 'Archivo Expanded', 'Archivo', sans-serif); font-weight: 800; text-transform: uppercase; font-size: clamp(24px, 2.6vw, 40px); line-height: 0.95; margin: 0; }
+.xp-story-step p { margin: 0; font-size: 15px; line-height: 1.6; }
+
+/* ── Horizontal editorial strip ── */
+.xp-strip { display: flex; gap: clamp(12px, 1.4vw, 20px); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 0 var(--idv-pad, clamp(20px, 4vw, 64px)) 16px; scrollbar-width: thin; }
+.xp-strip figure { position: relative; margin: 0; flex: 0 0 clamp(260px, 30vw, 460px); scroll-snap-align: start; border-radius: 18px; overflow: hidden; }
+.xp-strip img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.xp-strip figure:hover img { transform: scale(1.05); }
+.xp-strip figcaption { position: absolute; left: 14px; bottom: 12px; right: 14px; font-family: var(--idv-mono, 'DM Mono', ui-monospace, monospace); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #F5F5F0; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.75); }
+
+/* ── Room chapters (huge alternating media) ── */
+.xp-chapter { display: grid; grid-template-columns: 0.9fr 1.6fr; gap: clamp(20px, 3vw, 48px); align-items: center; }
+.xp-chapter--flip { grid-template-columns: 1.6fr 0.9fr; }
+.xp-chapter--flip .xp-chapter-copy { order: 2; }
+.xp-chapter-media { margin: 0; border-radius: 22px; overflow: hidden; }
+.xp-chapter-media img { width: 100%; height: clamp(380px, 62vh, 640px); object-fit: cover; display: block; }
+.xp-chapter-copy { display: grid; gap: 12px; }
+
+/* ── Zoom finale (adapted from 21st “Immersive Scroll Gallery”) ── */
+.xp-zoom-wrap { position: relative; }
+.xp-zoom-pin { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; }
+.xp-zoom-item { position: absolute; inset: 0; display: grid; place-items: center; will-change: transform; }
+.xp-zoom-item img { object-fit: cover; border-radius: 14px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35); }
+.xp-zoom-copy { position: relative; z-index: 3; text-align: center; display: grid; gap: 12px; justify-items: center; padding: 0 var(--idv-pad, 24px); }
+
+/* ── Film scrub chapter (shared with bathrooms pattern) ── */
+.xp-film { background: #050505; color: #F5F5F0; }
+.xp-film .idv2-pin video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.xp-film-copy { position: absolute; left: var(--idv-pad, clamp(20px, 4vw, 64px)); right: var(--idv-pad, clamp(20px, 4vw, 64px)); bottom: clamp(48px, 8vh, 110px); display: grid; gap: 12px; z-index: 2; }
+.xp-film-flat { position: relative; }
+.xp-film-flat video { width: 100%; height: 72svh; object-fit: cover; display: block; }
+.xp-film-flat .xp-film-copy { position: absolute; }
+
+/* ── Responsive ── */
+@media (max-width: 1023px) {
+  .xp-story { grid-template-columns: 1fr; }
+  .xp-story-media { position: relative; top: 0; height: 46vh; }
+  .xp-story-steps { gap: 12vh; padding: 8vh 0; }
+  .xp-chapter, .xp-chapter--flip { grid-template-columns: 1fr; }
+  .xp-chapter--flip .xp-chapter-copy { order: 0; }
+  .xp-hero-layers { display: none; }
+}
+@media (max-width: 767px) {
+  .xp-h1 { font-size: clamp(46px, 13.5vw, 76px); }
+  .xp-compare [role='slider'] { height: 58vh; }
+  .xp-chapter-media img { height: 52vh; }
+  .xp-strip figure { flex-basis: 74vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .xp-strip img, .xp-story-media img { transition: none; }
+}
+
+/* ── Apartments specifics ── */
+.ap-hero-inside { position: absolute; right: 0; top: 0; bottom: 0; width: 34%; z-index: 1; overflow: hidden; }
+.ap-hero-inside img { width: 100%; height: 100%; object-fit: cover; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 45%); mask-image: linear-gradient(90deg, transparent 0%, #000 45%); }
+.ap-map { display: grid; grid-template-columns: 1.7fr 1fr; gap: clamp(18px, 2.4vw, 36px); align-items: start; }
+.ap-map-fig { transition: filter 0.4s ease; }
+.ap-map-fig[data-dim='true'] { filter: brightness(0.92); }
+.ap-map-side { display: grid; gap: 16px; align-content: start; }
+.ap-map-preview { display: grid; gap: 8px; text-decoration: none; color: inherit; border-radius: 16px; }
+.ap-map-preview img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 16px; display: block; }
+.ap-map-preview:focus-visible { outline: 2px solid var(--idv-champagne); outline-offset: 3px; }
+.ap-typo { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(18px, 2.4vw, 36px); align-items: start; }
+@media (max-width: 1023px) {
+  .ap-hero-inside { display: none; }
+  .ap-map, .ap-typo { grid-template-columns: 1fr; }
+}

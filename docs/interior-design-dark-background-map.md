@@ -103,8 +103,8 @@ Six pages under `/interior-design/*` rendered by `src/pages/interior/spaces/Spac
 | Page | Hero | Chapter backgrounds | Footer | Uniqueness |
 |---|---|---|---|---|
 | /interior-design/kitchens | bright | 06 concrete, 05 silk, 08 topographic, 01 cosmic | 03 stone & bronze | OK |
-| /interior-design/bathrooms | dark · 07 light leak | 06 concrete, 01 cosmic | 03 stone & bronze | OK |
-| /interior-design/furniture-decor | dark · 05 silk | 08 topographic, 06 concrete, 01 cosmic | 03 stone & bronze | OK |
-| /interior-design/apartments | dark · 02 architectural grid | 06 concrete, 01 cosmic | 03 stone & bronze | OK |
-| /interior-design/homes | full | 04 facets, 01 cosmic | 03 stone & bronze | OK |
+| /interior-design/bathrooms | image hero (Art Deco concept) | 02 architectural grid (decisions), 06 concrete (compare) | 03 stone & bronze | OK |
+| /interior-design/furniture-decor | image hero (atelier room) | 06 concrete (compare), 08 topographic (reference story) | 03 stone & bronze | OK |
+| /interior-design/apartments | image hero (3D plan → interior) | 02 architectural grid (compact), 06 concrete (compare) | 03 stone & bronze | OK |
+| /interior-design/homes | image hero (villa master) | 04 facets (exploded), 07 light leak (arrival), 01 cosmic (web upsell) | 03 stone & bronze | OK |
 | /interior-design/buildings | breakout | 04 facets, 01 cosmic | 03 stone & bronze | OK |

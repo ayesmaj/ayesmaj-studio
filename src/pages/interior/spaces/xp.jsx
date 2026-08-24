@@ -1,0 +1,171 @@
+/* Shared interactive sections for the Furniture / Apartments / Homes experience pages.
+   StickyStory + ZoomFinale are rewrites of 21st catalog patterns ("Scroll 01",
+   "Immersive Scroll Gallery") into the AYESMAJ plain-CSS + framer-motion system. */
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform, useMotionValueEvent, useReducedMotion } from 'framer-motion';
+import './xp.css';
+import './bathrooms-x.css'; // shared bx-* patterns (material room, dark strip) reused by the experience pages
+
+export function useSimple(maxWidth = 860) {
+  const [simple, setSimple] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${maxWidth}px)`);
+    const set = () => setSimple(mq.matches);
+    set();
+    mq.addEventListener('change', set);
+    return () => mq.removeEventListener('change', set);
+  }, [maxWidth]);
+  return simple;
+}
+
+function StoryStep({ step, index, setActive }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 85%', 'end 20%'] });
+  const isActive = useTransform(scrollYProgress, (v) => v > 0.35 && v < 0.75);
+  useMotionValueEvent(isActive, 'change', (v) => { if (v) setActive((prev) => (prev === index ? prev : index)); });
+  return (
+    <div ref={ref} className="xp-story-step idv2-reveal">
+      <span className="idv-mono-label">{`0${index + 1} — ${step.tag}`}</span>
+      <h3>{step.title}</h3>
+      {step.line ? <p>{step.line}</p> : null}
+    </div>
+  );
+}
+
+/** Sticky media panel + scrolling steps; the visible image follows the step in view. */
+export function StickyStory({ steps, ariaLabel = 'Story' }) {
+  const [active, setActive] = useState(0);
+  return (
+    <div className="xp-story" role="group" aria-label={ariaLabel}>
+      <div className="xp-story-media" aria-hidden="true">
+        {steps.map((s, i) => (
+          <img key={s.tag} src={s.src} alt="" data-active={active === i} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+        ))}
+      </div>
+      <div className="xp-story-steps">
+        {steps.map((s, i) => <StoryStep key={s.tag} step={s} index={i} setActive={setActive} />)}
+      </div>
+    </div>
+  );
+}
+
+/** Figure with % hotspots activated by an external legend. */
+export function SpotFigure({ src, alt, spots, active, caption }) {
+  return (
+    <figure className="xp-spot-fig">
+      <img src={src} alt={alt} loading="lazy" decoding="async" />
+      {spots.map((s) => <span key={s.key} className="xp-spot" data-active={active === s.key} style={{ left: `${s.at[0]}%`, top: `${s.at[1]}%` }} aria-hidden="true" />)}
+      {caption ? <figcaption className="idsp-cap"><span>{caption[0]}</span><span>{caption[1]}</span></figcaption> : null}
+    </figure>
+  );
+}
+
+export function Legend({ items, active, setActive, ariaLabel }) {
+  return (
+    <div className="xp-legend" role="group" aria-label={ariaLabel}>
+      {items.map((h) => (
+        <button key={h.key} type="button" className="idv2-chip" aria-pressed={active === h.key}
+          onMouseEnter={() => setActive(h.key)} onFocus={() => setActive(h.key)}
+          onMouseLeave={() => setActive(null)} onClick={() => setActive(active === h.key ? null : h.key)}>
+          {h.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** Scroll-scrubbed full-screen film with staged headlines; plain playback on mobile/reduced-motion. */
+export function FilmScrub({ film, stages, credit, height = '320vh' }) {
+  const wrapRef = useRef(null);
+  const videoRef = useRef(null);
+  const reduced = useReducedMotion();
+  const simple = useSimple();
+  const [progress, setProgress] = useState(0);
+  const [dead, setDead] = useState(false); // the film may not be rendered yet - collapse instead of a broken player
+
+  useEffect(() => {
+    if (simple || reduced) return undefined;
+    const wrap = wrapRef.current; const video = videoRef.current;
+    if (!wrap || !video) return undefined;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      if (!Number.isFinite(video.duration) || video.duration === 0) return;
+      const rect = wrap.getBoundingClientRect();
+      const range = rect.height - window.innerHeight;
+      if (range <= 0) return;
+      const p = Math.max(0, Math.min(1, -rect.top / range));
+      setProgress(p);
+      video.currentTime = Math.min(p * video.duration, video.duration - 1 / 30);
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    video.addEventListener('loadedmetadata', update);
+    update();
+    return () => { window.removeEventListener('scroll', onScroll); video.removeEventListener('loadedmetadata', update); if (raf) cancelAnimationFrame(raf); };
+  }, [simple, reduced]);
+
+  if (dead) return null;
+  const flat = simple || reduced;
+  const stage = stages.reduce((acc, s) => (progress >= s.at ? s : acc), stages[0]);
+  return (
+    <section className="xp-film" aria-label={credit}>
+      {flat ? (
+        <div className="xp-film-flat">
+          <video autoPlay muted loop playsInline preload="metadata" poster={film.poster} aria-label={credit} onError={() => setDead(true)}>
+            {film.mobile ? <source src={film.mobile} media="(max-width: 767px)" type="video/mp4" /> : null}
+            <source src={film.desktop} type="video/mp4" />
+          </video>
+          <div className="xp-film-copy"><h2 className="idv2-pinseq-head">{stages[stages.length - 1].node}</h2></div>
+        </div>
+      ) : (
+        <div ref={wrapRef} className="idv2-pin-wrap" style={{ height }}>
+          <div className="idv2-pin">
+            <video ref={videoRef} data-scrub muted playsInline preload="auto" poster={film.poster} src={film.desktop} aria-label={credit} onError={() => setDead(true)} />
+            <div className="idv2-pin-scrim" />
+            <div className="xp-film-copy">
+              <h2 className="idv2-pinseq-head" aria-live="polite">{stage.node}</h2>
+              <div className="idv-mono-label" style={{ color: 'rgba(245,245,240,.65)' }}>{credit}</div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+/** Pinned multi-rate zoom of layered deliverables ending on a statement. */
+export function ZoomFinale({ items, children, height = '220vh' }) {
+  const ref = useRef(null);
+  const reduced = useReducedMotion();
+  const simple = useSimple();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
+  const rates = [3.2, 4.2, 5.2, 4.6, 5.8, 6.6, 7.4, 8.2];
+  const scales = rates.map((r) => useTransform(scrollYProgress, [0, 1], [1, r])); // eslint-disable-line react-hooks/rules-of-hooks
+  const fade = useTransform(scrollYProgress, [0.55, 0.85], [1, 0]);
+  const copyIn = useTransform(scrollYProgress, [0.6, 0.85], [0, 1]);
+  if (simple || reduced) {
+    return (
+      <div style={{ display: 'grid', gap: 14 }}>
+        <div className="idsp-gallery idsp-gallery--3" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
+          {items.slice(0, 6).map((it) => <img key={it.src} src={it.src} alt={it.alt} loading="lazy" decoding="async" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 14 }} />)}
+        </div>
+        <div style={{ display: 'grid', gap: 12, justifyItems: 'start' }}>{children}</div>
+      </div>
+    );
+  }
+  return (
+    <div ref={ref} className="xp-zoom-wrap" style={{ height }}>
+      <div className="xp-zoom-pin">
+        {items.map((it, i) => (
+          <motion.div key={it.src} className="xp-zoom-item" style={{ scale: scales[i % rates.length], opacity: fade }} aria-hidden="true">
+            <div style={{ position: 'relative', width: it.w, height: it.h, top: it.top, left: it.left }}>
+              <img src={it.src} alt="" style={{ width: '100%', height: '100%' }} loading="lazy" decoding="async" />
+            </div>
+          </motion.div>
+        ))}
+        <motion.div className="xp-zoom-copy" style={{ opacity: copyIn }}>{children}</motion.div>
+      </div>
+    </div>
+  );
+}
