@@ -143,16 +143,21 @@
   position: sticky;
   top: 0;
   z-index: 60;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  /* Opaque dark at ALL times, never transparent. .idv-page sets a cream ground
+     (--idv-porcelain #F5F0E9) and this bar sits in normal flow above the hero
+     rather than over it, so a transparent state puts near-white nav text on
+     cream and it disappears. interior.css already forces the site's own nav
+     dark on these pages for the same reason:
+       .idv-page .ayes-nav-root { background: rgba(8,9,8,0.95) !important; } */
+  background: rgba(8, 9, 8, 0.95);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(216, 183, 90, 0.28);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
-/* Transparent over the hero, dark glass once the page moves - the same
-   behaviour as the English site's nav. */
+/* Scrolling only deepens it; it never becomes see-through. */
 .he-nav[data-scrolled='true'] {
-  background: rgba(8, 9, 8, 0.86);
-  backdrop-filter: blur(16px);
-  border-bottom-color: rgba(216, 183, 90, 0.28);
+  background: rgba(6, 7, 6, 0.98);
+  border-bottom-color: rgba(216, 183, 90, 0.42);
 }
 .he-nav-bar {
   display: flex;
@@ -224,11 +229,12 @@
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  border: 1px solid rgba(245, 245, 240, 0.22);
-  background: rgba(8, 9, 8, 0.5);
+  border: 1px solid rgba(245, 245, 240, 0.28);
+  background: transparent;
   color: #F5F5F0;
   cursor: pointer;
 }
+.he-burger:hover { background: rgba(245, 245, 240, 0.1); }
 
 /* ── Interior mega menu ──
    Anchored with inset-inline-start so it opens from the trigger's leading edge
@@ -348,7 +354,9 @@
 @media (max-width: 1023px) {
   .he-nav-links { display: none; }
   .he-burger { display: inline-flex; }
-  .he-nav-cta { display: none; }
+}
+@media (max-width: 640px) {
+  .he-nav-bar > .he-nav-right > .he-nav-cta { display: none; }
   .he-drawer .he-nav-cta { display: block; }
 }
 @media (min-width: 1024px) {
