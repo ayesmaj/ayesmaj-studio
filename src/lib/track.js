@@ -21,7 +21,7 @@ const ADS_ID = 'AW-18408920292';
 
 /** Paste the label that follows the slash in the Ads snippet, e.g. 'AbC-D_efGhIjKlM'. */
 export const ADS_LABELS = {
-  lead: '',        // contact form submitted
+  lead: 'mEKRCPj9qeccEOSph8pE',  // "Submit lead form" conversion action
   phoneClick: '',  // tapped the phone number
 };
 
