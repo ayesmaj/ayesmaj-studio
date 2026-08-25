@@ -178,3 +178,23 @@
     color: #22D3EE;
   }
 }
+
+/* ── Light-hero pages ───────────────────────────────────────────────────────
+   AyesmajNav is position:fixed and paints no background until you scroll, so
+   whatever the page renders in its first ~80px is what the nav text sits on.
+   Its links are light (#AAA39A, and #F6F3ED for the active item), which is
+   correct over the dark heroes almost every page uses - but on a page whose
+   first section is cream the active item measured 1.00:1 contrast against it,
+   i.e. exactly the same colour, and the rest measured 2.26:1 against a 4.5
+   minimum.
+
+   interior.css already solves this for its own family of pages with
+   `.idv-page .ayes-nav-root`. This is the same fix as a reusable class: put
+   `light-hero-page` on the page's root wrapper whenever the first section
+   under the nav is light. */
+.light-hero-page .ayes-nav-root {
+  background: rgba(8, 9, 8, 0.95) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09) !important;
+}

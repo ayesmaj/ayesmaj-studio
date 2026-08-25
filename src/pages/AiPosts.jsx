@@ -45,7 +45,7 @@ export default function AiPosts() {
   const section = { maxWidth: 1320, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' };
 
   return (
-    <div style={{ background: '#0D0F0E', minHeight: '100vh', overflowX: 'clip', position: 'relative' }}>
+    <div className="light-hero-page" style={{ background: '#0D0F0E', minHeight: '100vh', overflowX: 'clip', position: 'relative' }}>
       <Seo
         title="AI Posts | AYESMAJ Studios"
         description="AI-generated social content and brand imagery by AYESMAJ Studios — scroll-stopping posts produced at scale."
