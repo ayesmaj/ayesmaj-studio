@@ -21,3 +21,18 @@ window.addEventListener('vite:preloadError', (event) => {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <App />
 )
+
+/* Dismiss the boot screen (index.html) only once React has committed a frame
+   AND the webfonts have settled - otherwise the page is revealed mid-reflow and
+   the visitor watches the type jump, which is the thing the screen exists to
+   hide. Two rAFs: the first fires before paint, the second after it.
+   index.html owns the failsafe timeout, so a hang here cannot strand anyone. */
+const revealApp = () => {
+  if (typeof window.__ayesBootDone === 'function') window.__ayesBootDone()
+}
+const afterPaint = () => requestAnimationFrame(() => requestAnimationFrame(revealApp))
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(afterPaint).catch(afterPaint)
+} else {
+  afterPaint()
+}

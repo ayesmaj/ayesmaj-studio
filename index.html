@@ -2,6 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Boot screen. Inline on purpose: the prerendered HTML paints before the
+         stylesheet and the JS bundle arrive, which is the unstyled flash of
+         footer links visitors were seeing on refresh. Nothing here loads over
+         the network - the A mark is the logo's own silhouette as a data-URI
+         mask, so it draws on the first byte. -->
+    <style id="ayes-boot-style">
+      #ayes-boot{position:fixed;inset:0;z-index:2147483647;background:#0A0B0A;
+        display:flex;align-items:center;justify-content:center;
+        opacity:1;transition:opacity .55s ease}
+      #ayes-boot[data-done="1"]{opacity:0;pointer-events:none}
+      .ayes-boot-in{display:flex;flex-direction:column;align-items:center;gap:22px}
+      /* The mark is a gradient painted through the logo's silhouette, so the
+         light genuinely travels inside the letterform rather than over it. */
+      .ayes-boot-mark{width:clamp(74px,10vw,112px);aspect-ratio:1.1765;
+        --ayes-mark:url("data:image/png;base64,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");
+        -webkit-mask:var(--ayes-mark) center/contain no-repeat;
+        mask:var(--ayes-mark) center/contain no-repeat;
+        background:linear-gradient(115deg,#6E4CC4 0%,#A45FDB 16%,#EDE7DA 34%,
+          #FFFFFF 46%,#EDE7DA 58%,#D8B75A 78%,#C88B58 100%);
+        background-size:300% 100%;
+        animation:ayes-sweep 2.1s linear infinite}
+      @keyframes ayes-sweep{from{background-position:160% 0}to{background-position:-60% 0}}
+      .ayes-boot-word{font-family:'Outfit','DM Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+        font-size:11px;font-weight:700;letter-spacing:.42em;text-indent:.42em;
+        color:rgba(245,240,230,.62);text-transform:uppercase}
+      .ayes-boot-bar{width:124px;height:2px;border-radius:2px;overflow:hidden;
+        background:rgba(245,240,230,.13)}
+      .ayes-boot-bar i{display:block;height:100%;width:38%;border-radius:2px;
+        background:linear-gradient(90deg,#D8B75A,#A45FDB);
+        animation:ayes-bar 1.15s cubic-bezier(.65,.05,.36,1) infinite}
+      @keyframes ayes-bar{from{transform:translateX(-115%)}to{transform:translateX(380%)}}
+      @media (prefers-reduced-motion:reduce){
+        .ayes-boot-mark{animation:none;background-position:46% 0}
+        .ayes-boot-bar i{animation:none;width:100%}
+        #ayes-boot{transition:none}
+      }
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18408920292"></script>
     <script>
@@ -68,7 +105,50 @@
     </script>
   </head>
   <body>
+    <div id="ayes-boot" role="status" aria-live="polite" aria-label="Loading AYESMAJ Studios">
+      <div class="ayes-boot-in">
+        <div class="ayes-boot-mark"></div>
+        <div class="ayes-boot-word">AYESMAJ Studios</div>
+        <div class="ayes-boot-bar"><i></i></div>
+      </div>
+    </div>
+    <noscript><style>#ayes-boot{display:none}</style></noscript>
     <div id="root"></div>
+    <script>
+      /* The boot screen hides when the app says it has painted (see main.jsx).
+         Two guarantees matter more than the animation:
+           - it is never dismissed so fast that it reads as a glitch (MIN_MS)
+           - it can never strand a visitor behind an overlay, whatever fails
+             downstream, hence the timeout and the script-error listener. */
+      (function () {
+        var el = document.getElementById('ayes-boot');
+        if (!el) return;
+        var start = Date.now(), MIN_MS = 420, FAILSAFE_MS = 7000, done = false;
+        /* The prerendered SEO block gives the page real height, so without this
+           the visitor can scroll the hidden content behind the overlay and be
+           revealed part-way down the page. */
+        var htmlEl = document.documentElement, prevOverflow = htmlEl.style.overflow;
+        htmlEl.style.overflow = 'hidden';
+        function drop() {
+          if (done) return;
+          done = true;
+          htmlEl.style.overflow = prevOverflow;
+          el.setAttribute('data-done', '1');
+          setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 650);
+        }
+        function hide() {
+          var waited = Date.now() - start;
+          if (waited < MIN_MS) { setTimeout(drop, MIN_MS - waited); return; }
+          drop();
+        }
+        window.__ayesBootDone = hide;
+        setTimeout(hide, FAILSAFE_MS);
+        window.addEventListener('error', function (e) {
+          if (e && e.target && e.target.tagName === 'SCRIPT') hide();
+        }, true);
+      })();
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
