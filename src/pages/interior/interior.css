@@ -221,6 +221,11 @@
 /* ── Method switcher — mockup: light bar, ink active pill ────────────────── */
 .idv-switch {
   display: inline-flex;
+  /* wrap so the switcher's min-content is one button, not the whole row: as a
+     grid item its automatic minimum is that min-content, and a nowrap row of
+     4-8 buttons inflated the whole .idv2-inner column past the viewport,
+     clipping the last button on phones. */
+  flex-wrap: wrap;
   gap: 4px;
   padding: 5px;
   border: 1px solid var(--idv-stone);
@@ -417,6 +422,12 @@
 @media (max-width: 860px) {
   .idv-grid-2, .idv-grid-3, .idv-grid-4 { grid-template-columns: 1fr; }
   .idv-grid-4 { grid-template-columns: 1fr 1fr; }
+  /* Stack the two-column section grids. Several pages set these inline
+     (minmax(340px, 1fr) 1.05fr and friends), so !important is what reaches
+     them; minmax(0, 1fr) rather than 1fr because a bare fr track keeps an
+     auto minimum and would still be inflated past the viewport by any wide
+     child's min-content. */
+  .idv2-inner { grid-template-columns: minmax(0, 1fr) !important; }
   .idv-journey-step { grid-template-columns: 48px 1fr; }
   .idv-journey-step > :last-child { grid-column: 2; }
   .idv-display { font-size: clamp(40px, 11vw, 60px); }

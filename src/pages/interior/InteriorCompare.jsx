@@ -159,7 +159,7 @@ function MethodExplorer() {
             onChange={setActive}
           />
         </div>
-        <div aria-live="polite" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) 1.15fr', gap: 'clamp(24px, 3.5vw, 56px)', alignItems: 'start' }}>
+        <div aria-live="polite" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(24px, 3.5vw, 56px)', alignItems: 'start' }}>
           <MediaFigure src={media.src} alt={media.alt} caption={media.caption} tag={media.tag} ratio="45" />
           <div style={{ display: 'grid', gap: 18 }}>
             <div className="idv-mono-label" style={{ color: 'var(--idv-champagne)' }}>ANSWERS: {m.question.toUpperCase()}</div>
