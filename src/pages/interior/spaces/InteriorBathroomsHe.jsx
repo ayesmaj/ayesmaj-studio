@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { Eyebrow, IdvButton, MethodSwitcher, PinSeq } from '@/components/interior/kit';
 import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
@@ -34,17 +36,197 @@ const SW_FIG = '(max-width: 1023px) 100vw, 1280px';
 /** Latin inside Hebrew needs bidi isolation or the punctuation flips sides. */
 const Ltr = ({ children }) => <span className="ltr">{children}</span>;
 
-function HeNav() {
+/* Header adapted from the 21st catalogue's "Header 3" (scroll-blur, body-scroll
+   lock, portal-style drawer under the bar, title+description dropdown rows).
+   That component is shadcn/Radix/Tailwind, none of which this project uses, so
+   the patterns are re-implemented in the AYESMAJ plain-CSS system and made
+   RTL-aware. Thumbnails are the site's real navigation previews, not icons. */
+
+const HERE = '/he/interior-design/bathrooms';
+
+const INTERIOR_GROUPS = [
+  {
+    title: T.navGroupSpaces,
+    items: [
+      { label: T.navKitchens, line: T.navKitchensLine, to: '/interior-design/kitchens', img: 'kitchens' },
+      { label: T.navBathrooms, line: T.navBathroomsLine, to: HERE, img: 'bathrooms' },
+      { label: T.navFurniture, line: T.navFurnitureLine, to: '/interior-design/furniture-decor', img: 'furniture-decor' },
+    ],
+  },
+  {
+    title: T.navGroupTypes,
+    items: [
+      { label: T.navApartments, line: T.navApartmentsLine, to: '/interior-design/apartments', img: 'apartments' },
+      { label: T.navHomes, line: T.navHomesLine, to: '/interior-design/homes', img: 'homes' },
+      { label: T.navBuildings, line: T.navBuildingsLine, to: '/interior-design/buildings', img: 'buildings' },
+    ],
+  },
+];
+
+const NAV_ITEMS = [
+  { label: T.navProjects, to: '/Work' },
+  { label: T.navServices, to: '/Services' },
+  { label: T.navInterior, to: '/interior-design', mega: true },
+  { label: T.navStudio, to: '/Studio' },
+  { label: T.navAbout, to: '/About' },
+  { label: T.navContact, to: '/Contact' },
+];
+
+function MenuCard({ item, onNavigate }) {
+  const here = item.to === HERE;
   return (
-    <nav className="he-nav" aria-label={T.navAria}>
-      <Link to="/" className="he-nav-brand"><Ltr>AYESMAJ STUDIOS</Ltr></Link>
-      <div className="he-nav-links">
-        <Link to="/Work">{T.navProjects}</Link>
-        <Link to="/Services">{T.navServices}</Link>
-        <Link to="/interior-design/bathrooms">{T.langNote}</Link>
-        <Link to="/Contact" className="he-nav-cta">{T.navCta}</Link>
+    <Link to={item.to} className="he-menu-card" aria-current={here ? 'page' : undefined} onClick={onNavigate}>
+      <img src={'/interior-design/generated/navigation/' + item.img + '.webp'} alt="" loading="lazy" decoding="async" />
+      <span className="he-menu-card-body">
+        <span className="he-menu-card-title">
+          {item.label}
+          {here ? <em className="he-menu-here">{T.navHereNote}</em> : null}
+        </span>
+        <span className="he-menu-card-line">{item.line}</span>
+      </span>
+    </Link>
+  );
+}
+
+function HeNav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mega, setMega] = useState(false);
+  const [drawer, setDrawer] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  /* Escape closes whatever is open. */
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') { setMega(false); setDrawer(false); } };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  /* The drawer covers the page, so the page behind it must not scroll. */
+  useEffect(() => {
+    document.body.style.overflow = drawer ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [drawer]);
+
+  const closeAll = () => { setMega(false); setDrawer(false); };
+
+  return (
+    <header className="he-nav" data-scrolled={scrolled}>
+      <div className="he-nav-bar">
+        <Link to="/" className="he-nav-brand" onClick={closeAll}>
+          <img src="/assets/ayesmaj/logo-transparent.webp" alt="" width="34" height="34" />
+          <span className="ltr">AYESMAJ STUDIOS</span>
+        </Link>
+
+        <nav className="he-nav-links" aria-label={T.navAria}>
+          {NAV_ITEMS.map((item) => (
+            item.mega ? (
+              <div
+                key={item.label}
+                className="he-nav-mega-wrap"
+                onMouseEnter={() => setMega(true)}
+                onMouseLeave={() => setMega(false)}
+              >
+                <button
+                  type="button"
+                  className="he-nav-link he-nav-trigger"
+                  aria-expanded={mega}
+                  aria-haspopup="true"
+                  onClick={() => setMega((v) => !v)}
+                >
+                  {item.label}
+                  <ChevronDown
+                    size={14}
+                    aria-hidden="true"
+                    style={{ transform: mega ? 'rotate(180deg)' : 'none', transition: 'transform .25s ease' }}
+                  />
+                </button>
+                <AnimatePresence>
+                  {mega && (
+                    <motion.div
+                      className="he-mega"
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <Link to="/interior-design" className="he-mega-overview" onClick={closeAll}>
+                        {T.navOverview}
+                      </Link>
+                      <div className="he-mega-groups">
+                        {INTERIOR_GROUPS.map((g) => (
+                          <div key={g.title} className="he-mega-group">
+                            <div className="he-mega-group-title">{g.title}</div>
+                            {g.items.map((it) => <MenuCard key={it.label} item={it} onNavigate={closeAll} />)}
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
+              <Link key={item.label} to={item.to} className="he-nav-link">{item.label}</Link>
+            )
+          ))}
+        </nav>
+
+        <div className="he-nav-right">
+          <Link to="/Contact" className="he-nav-cta">{T.navCta}</Link>
+          <Link to="/interior-design/bathrooms" className="he-nav-lang">
+            <span className="ltr">{T.langNote}</span>
+          </Link>
+          <button
+            type="button"
+            className="he-burger"
+            aria-label={drawer ? T.navCloseMenu : T.navOpenMenu}
+            aria-expanded={drawer}
+            onClick={() => setDrawer((v) => !v)}
+          >
+            {drawer ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+          </button>
+        </div>
       </div>
-    </nav>
+
+      {/* Portalled to <body>: the app wraps every route in an animated
+          motion.div, and a transformed ancestor becomes the containing block
+          for position:fixed descendants. Rendered in place, this panel resolved
+          against the whole 7000px page instead of the viewport, so it opened
+          off-screen once the visitor had scrolled. */}
+      {createPortal(
+      <AnimatePresence>
+        {drawer && (
+          <motion.div
+            className="he-drawer"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <nav aria-label={T.navAria}>
+              {NAV_ITEMS.map((item) => (
+                <Link key={item.label} to={item.to} className="he-drawer-link" onClick={closeAll}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            {INTERIOR_GROUPS.map((g) => (
+              <div key={g.title} className="he-drawer-group">
+                <div className="he-mega-group-title">{g.title}</div>
+                {g.items.map((it) => <MenuCard key={it.label} item={it} onNavigate={closeAll} />)}
+              </div>
+            ))}
+            <Link to="/Contact" className="he-nav-cta he-drawer-cta" onClick={closeAll}>{T.navCta}</Link>
+          </motion.div>
+        )}
+      </AnimatePresence>,
+      document.body)}
+    </header>
   );
 }
 
