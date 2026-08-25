@@ -76,6 +76,29 @@ Add at account level (Ads → Assets), they attach to all campaigns:
 **Structured snippet** — header **Services**: `3D Floor Plans, Interior Rendering,
 Architectural Visualization, Product CGI, Brand Films, Web Experiences, Brand Identity`
 
+## If you build the campaigns in the web UI instead of Editor
+
+`web-ui-paste-sheet.md` has the exact same content laid out for the ads.google.com screens:
+per ad group, one keyword block, 15 headlines and 4 descriptions to paste, plus the negative
+keyword list per campaign. Nothing else changes — the settings and checklist below still apply.
+
+## Why not Performance Max (yet)
+
+Google's web flow pushes Performance Max hard, and it is the wrong first campaign for this account:
+
+- **PMax optimizes toward conversions it can measure.** This account has zero conversion history and
+  the two conversion actions are not created yet, so there is nothing for it to learn from. It will
+  spend while it guesses.
+- **It spends across Display, YouTube, Gmail and Discover**, not just Search. For a high-ticket B2B
+  service those placements produce cheap impressions and soft "conversions", not briefs.
+- **You lose the controls that make a small budget work**: no keyword targeting, no per-keyword bids,
+  and a search terms report that hides most of what it actually bought.
+- **Auto-generated assets write their own copy from the site.** Every claim in the Search ads here was
+  checked against what the site can actually back up; PMax will not do that check.
+
+Run Search first. Once ~30 real conversions are recorded, a PMax campaign has something to optimize
+against and is worth testing alongside — not instead of — Search.
+
 ## Launch checklist
 
 - [ ] Import CSV in Editor, review, Post
