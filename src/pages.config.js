@@ -82,6 +82,7 @@ const Faq = lazy(() => import('./pages/Faq'));
 const InteriorDesign = lazy(() => import('./pages/interior/InteriorDesign'));
 const InteriorKitchens = lazy(() => import('./pages/interior/spaces/InteriorKitchens'));
 const InteriorBathrooms = lazy(() => import('./pages/interior/spaces/InteriorBathrooms'));
+const InteriorBathroomsHe = lazy(() => import('./pages/interior/spaces/InteriorBathroomsHe'));
 const InteriorFurnitureDecor = lazy(() => import('./pages/interior/spaces/InteriorFurnitureDecor'));
 const InteriorApartments = lazy(() => import('./pages/interior/spaces/InteriorApartments'));
 const InteriorHomes = lazy(() => import('./pages/interior/spaces/InteriorHomes'));
@@ -135,6 +136,7 @@ export const PAGES = {
     "InteriorDesign": InteriorDesign,
     "InteriorKitchens": InteriorKitchens,
     "InteriorBathrooms": InteriorBathrooms,
+    "InteriorBathroomsHe": InteriorBathroomsHe,
     "InteriorFurnitureDecor": InteriorFurnitureDecor,
     "InteriorApartments": InteriorApartments,
     "InteriorHomes": InteriorHomes,

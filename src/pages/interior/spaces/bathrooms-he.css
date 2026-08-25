@@ -1,0 +1,213 @@
+/* Hebrew / RTL layer for the bathrooms demo page (/he/interior-design/bathrooms).
+   Everything is scoped under .he-scope, and this file is only imported by the
+   Hebrew page component — which is a lazy route — so the English site never
+   loads these fonts and never sees these rules.
+
+   Owner brief 2026-08-24: a Hebrew duplicate to show Israeli clients that the
+   studio builds right-to-left sites. The English page is not touched. */
+
+/* Latin faces on the site (Anton, DM Sans, Outfit, IBM Plex Mono) carry no
+   Hebrew glyphs. Three Hebrew families, mapped onto the three existing roles:
+     Heebo 900            -> display, the Hebrew answer to Anton's poster weight
+     Assistant            -> body
+     IBM Plex Sans Hebrew -> the small caption/eyebrow voice, sibling of the
+                             IBM Plex Mono used in English.
+   ponytail: @import costs one serial request. Acceptable on a single demo
+   route; if this becomes a real locale, move the <link> into index.html behind
+   a route check. */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&family=Assistant:wght@400;600;700&family=IBM+Plex+Sans+Hebrew:wght@400;500;600&display=swap');
+
+.he-scope {
+  direction: rtl;
+  text-align: start;
+  font-family: 'Assistant', 'Heebo', system-ui, sans-serif;
+
+  /* Re-point the design tokens the shared components already read. */
+  --idv-display: 'Heebo', 'Assistant', system-ui, sans-serif;
+  --idv-font-display: 'Heebo', 'Assistant', system-ui, sans-serif;
+  --idv-mono: 'IBM Plex Sans Hebrew', 'Assistant', system-ui, sans-serif;
+  --idv-font-mono: 'IBM Plex Sans Hebrew', 'Assistant', system-ui, sans-serif;
+}
+
+.he-scope p,
+.he-scope .idv-lede,
+.he-scope button,
+.he-scope a { font-family: 'Assistant', system-ui, sans-serif; }
+
+/* ── Hebrew typography ──────────────────────────────────────────────────────
+   Hebrew has no letter case, so every text-transform: uppercase in the shared
+   system is a no-op that only signals the page was never really localised.
+   Wide tracking is worse than a no-op: Hebrew words read as a connected block,
+   and 0.22em tracking pulls them apart. Both are reset here.
+   Anton is a single-weight face used at 400; Heebo needs 800-900 to carry the
+   same visual weight, and Hebrew's boxy, ascender-less glyphs need more
+   line-height than Latin display type, not less. */
+.he-scope .idv2-display,
+.he-scope .idv2-h2,
+.he-scope .idv2-pinseq-head,
+.he-scope .bx-type-title,
+.he-scope .bx-h1,
+.he-scope .idsp-h2 {
+  text-transform: none;
+  font-weight: 900;
+  /* Negative tracking collides Hebrew's final forms (ם ן ך ף ץ) - keep it at 0. */
+  letter-spacing: 0;
+  /* Hebrew has uniform cap height and five descenders; below ~1.15 they clip
+     and consecutive display lines overlap. Latin display ran at 0.88. */
+  line-height: 1.18;
+  /* Hebrew reads slightly denser than Latin at the same size, but these
+     headings size from a clamp() and `em` here would REPLACE that clamp
+     rather than scale it - collapsing a 140px headline to 15px. Left alone. */
+  overflow: visible;
+  hyphens: none;
+}
+
+.he-scope .idv-eyebrow,
+.he-scope .idv-mono-label,
+.he-scope .idsp-cap,
+.he-scope .idv2-chip,
+.he-scope .bx-sample figcaption,
+.he-scope .bx-mat-tile span,
+.he-scope .bx-type-tag {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+.he-scope .idv-lede,
+.he-scope .bx-type-line { line-height: 1.7; }
+.he-scope .idv-lede { max-width: 540px; }
+
+/* Latin runs inside Hebrew (AYESMAJ STUDIOS, 3D, AI) need bidi isolation or
+   the punctuation around them lands on the wrong side of the string. */
+.he-scope .ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+  /* Give the brand back the Latin tracking the Hebrew reset above removed. */
+  letter-spacing: 0.14em;
+}
+
+/* ── Directional flips ──────────────────────────────────────────────────────
+   Only physical offsets need flipping. The hotspot overlays deliberately do
+   NOT flip: .bx-spot uses physical `left`/`top` percentages that map to
+   positions inside an image, so RTL must leave them exactly where they are. */
+.he-scope .bx-samples {
+  right: auto;
+  left: clamp(14px, 2.4vw, 44px);
+}
+
+.he-scope .bx-mat-tile { text-align: right; }
+.he-scope .bx-mat-tile span { left: auto; right: 10px; }
+
+/* The hero scrim darkens the side the copy sits on. Copy moved right, so the
+   gradient has to move with it. */
+.he-scope .bx-hero-scrim {
+  background:
+    linear-gradient(270deg, rgba(8, 6, 6, 0.78) 0%, rgba(8, 6, 6, 0.42) 42%, rgba(8, 6, 6, 0.06) 75%),
+    linear-gradient(180deg, rgba(8, 6, 6, 0.3), transparent 34%, rgba(8, 6, 6, 0.55) 100%);
+}
+
+/* BeforeAfterSlider computes from clientX - rect.left, i.e. physical
+   coordinates, so it already behaves correctly under RTL and must NOT be forced
+   to direction: ltr. Only its three label pills are positioned physically:
+   swap them so "raw space" starts at the right edge, where a Hebrew reader
+   starts, and suppress the component's hardcoded English "Drag to compare"
+   (the shared component is used by the English page and is not ours to edit -
+   the Hebrew hint is rendered by the page instead). */
+.he-scope .bx-compare > div > span:nth-last-child(3) { left: auto !important; right: 14px !important; }
+.he-scope .bx-compare > div > span:nth-last-child(2) { right: auto !important; left: 14px !important; }
+.he-scope .bx-compare > div > span:nth-last-child(1) { display: none !important; }
+.he-scope .bx-compare { position: relative; }
+.he-cmp-hint {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14px;
+  z-index: 3;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(8, 9, 8, 0.72);
+  border: 1px solid rgba(245, 245, 240, 0.22);
+  color: #F5F5F0;
+  font-size: 11px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* ── Hebrew page chrome ─────────────────────────────────────────────────── */
+.he-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px clamp(20px, 4vw, 64px);
+  background: rgba(8, 9, 8, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(216, 183, 90, 0.28);
+}
+.he-nav-brand {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: #F5F5F0;
+  text-decoration: none;
+}
+.he-nav-links { display: flex; align-items: center; gap: clamp(14px, 2vw, 30px); }
+.he-nav-links a {
+  color: rgba(245, 245, 240, 0.78);
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.he-nav-links a:hover, .he-nav-links a:focus-visible { color: var(--idv-champagne, #D8B75A); }
+.he-nav-cta {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(216, 183, 90, 0.65);
+  color: #F5F5F0 !important;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.he-nav-cta:hover { background: rgba(216, 183, 90, 0.16); }
+
+.he-foot {
+  background: #0B0B0D;
+  color: rgba(245, 245, 240, 0.7);
+  padding: clamp(38px, 5vw, 66px) clamp(20px, 4vw, 64px);
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid rgba(216, 183, 90, 0.22);
+}
+.he-foot-brand { font-family: 'Heebo', sans-serif; font-weight: 900; font-size: 20px; color: #F5F5F0; }
+.he-foot-row { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
+.he-foot a { color: var(--idv-champagne, #D8B75A); text-decoration: none; font-weight: 600; }
+.he-foot a:hover { text-decoration: underline; }
+
+@media (max-width: 700px) {
+  .he-nav-links a:not(.he-nav-cta) { display: none; }
+}
+
+/* ── Narrow-screen containment ──────────────────────────────────────────────
+   .idv2-inner is a grid, and grid items default to min-width:auto, so a wide
+   child (the direction switcher, a long unbroken headline) sizes to max-content
+   and escapes the container. On the English page that excess spills to the
+   right and is simply clipped. In RTL it spills to the LEFT, off the start edge,
+   where it is not merely clipped but genuinely unreachable.
+   Scoped to .he-scope: the English page keeps the behaviour it has today. */
+.he-scope .idv2-inner > *,
+.he-scope .idsp-head > * { min-width: 0; max-width: 100%; }
+.he-scope .idv-switch { flex-wrap: wrap; }
+/* Hebrew words must stay whole - no break-word, no hyphens, no break-all. */
+.he-scope { hyphens: none; }
+
+/* spaces.css sets `.idsp-h2 { line-height: 0.9 !important }`, tuned for Anton,
+   whose Latin caps have no descenders. Hebrew's final forms (ק ן ך ף ץ) drop
+   below the baseline, so 0.9 clips them on the two-line headings. Matching the
+   !important is the only way past it; still scoped to .he-scope. */
+.he-scope .idsp-h2 { line-height: 1.15 !important; }

@@ -57,6 +57,7 @@ function AnimatedRoutes() {
             ["/interior-design", "InteriorDesign"],
             ["/interior-design/kitchens", "InteriorKitchens"],
             ["/interior-design/bathrooms", "InteriorBathrooms"],
+            ["/he/interior-design/bathrooms", "InteriorBathroomsHe"],
             ["/interior-design/furniture-decor", "InteriorFurnitureDecor"],
             ["/interior-design/apartments", "InteriorApartments"],
             ["/interior-design/homes", "InteriorHomes"],
