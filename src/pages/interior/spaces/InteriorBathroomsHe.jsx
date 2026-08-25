@@ -8,6 +8,7 @@ import DarkSectionBackground from '@/components/interior/DarkSectionBackground';
 import BeforeAfterSlider from '@/components/ayesmaj/BeforeAfterSlider';
 import Seo from '@/components/ayesmaj/Seo';
 import { media, imgProps, smallFile } from '@/content/interior-design-generated-media';
+import { VILLA } from '@/data/interiorMedia';
 import { FilmScrub } from './xp.jsx';
 import { T } from './bathrooms-he-strings.js';
 import '@/pages/interior/interior.css';
@@ -516,6 +517,28 @@ function DirectionsBath() {
   );
 }
 
+/* The whole-house villa film, mirrored from the English /interior-design/homes
+   page at the owner's request. It closes the page rather than sitting beside
+   the bathroom film, so the page still ends on the studio's largest cinematic
+   asset. FilmScrub keeps it poster-only until the visitor approaches, so the
+   13.5 MB desktop encode costs nothing to anyone who never scrolls this far,
+   and it self-hides if the file is ever missing. */
+function FilmVilla() {
+  return (
+    <FilmScrub
+      film={{ desktop: VILLA.film.desktop, mobile: VILLA.film.mobile, poster: VILLA.film.poster }}
+      credit={T.villaFilmCredit}
+      height="360vh"
+      stages={[
+        { at: 0, node: T.villaStage1 },
+        { at: 0.25, node: T.villaStage2 },
+        { at: 0.55, node: T.villaStage3 },
+        { at: 0.8, node: <>{T.villaStage4a} <span className="idv2-grad">{T.villaStage4b}</span></> },
+      ]}
+    />
+  );
+}
+
 export default function InteriorBathroomsHe() {
   /* dir/lang live on the wrapper below, never on <html>. Mutating the document
      element would leak RTL onto an English page whenever this component's
@@ -543,6 +566,7 @@ export default function InteriorBathroomsHe() {
         <CompareBath />
         <FilmBath />
         <DirectionsBath />
+        <FilmVilla />
       </main>
       <HeFooter />
     </div>

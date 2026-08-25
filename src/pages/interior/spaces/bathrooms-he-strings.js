@@ -106,6 +106,18 @@ export const T = {
   filmStage2a: 'התנועה הופכת אותו',
   filmStage2b: 'לחוויה.',
 
+  /* ── Villa film (the whole-house closer) ──
+     Same impersonal-plural voice as the rest of the page: רואים / נכנסים /
+     עוברים / זוכרים. "וילה עם בריכה" matches the provenance label used in the
+     types strip, and the AI wording matches the bathroom film's credit. */
+  villaStage1: 'רואים את הבית.',
+  villaStage2: 'נכנסים פנימה.',
+  villaStage3: 'עוברים דרך החוויה.',
+  villaStage4a: 'זוכרים את',
+  villaStage4b: 'הפרויקט.',
+  villaFilmCredit: 'וילה עם בריכה · 35 שניות · טייק אחד רציף, מהתוכנית אל הבריכה · נוצר בעזרת בינה מלאכותית מתוך הפריימים הראשיים',
+  villaFilmAria: 'סרט הווילה',
+
   /* ── Directions ── */
   dirEyebrow: 'כיווני עיצוב',
   dirH2a: 'חדר רחצה אחד.',
