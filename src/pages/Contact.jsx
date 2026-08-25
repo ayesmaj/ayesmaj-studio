@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { trackLead } from '@/lib/track';
 import Seo from '@/components/ayesmaj/Seo';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Loader2, CheckCircle, Mail, MapPin, Clock, Phone } from 'lucide-react';
@@ -84,6 +85,9 @@ export default function Contact() {
       const data = await res.json();
       if (res.ok && data.success) {
 // WhatsApp notification now happens server-side in api/project-intake.js
+        // Fire the lead conversion only after the server confirmed delivery, so the number
+        // in Ads/GA4 matches the inquiries that actually reached the inbox.
+        trackLead({ service: form.service, budget: form.budget, projectType: form.projectType });
 
         setStatus('success');
         setForm(emptyContactForm());

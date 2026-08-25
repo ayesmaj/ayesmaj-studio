@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { trackPhoneClick } from '@/lib/track';
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import CinematicButton from "./CinematicButton";
@@ -307,7 +308,7 @@ export default function AyesmajFooter() {
                   <Mail size={15} aria-hidden="true" style={{ color: GOLD, flexShrink: 0 }} />
                   <span className="ayes-umail-text">{email}</span>
                 </a>
-                <a href={SITE.phoneHref} className="ayes-ulink" style={{ ...ULINK, display: "inline-flex", alignItems: "center", gap: 10 }}>
+                <a href={SITE.phoneHref} onClick={() => trackPhoneClick("footer")} className="ayes-ulink" style={{ ...ULINK, display: "inline-flex", alignItems: "center", gap: 10 }}>
                   <Phone size={15} aria-hidden="true" style={{ color: GOLD, flexShrink: 0 }} />
                   {SITE.phone}
                 </a>

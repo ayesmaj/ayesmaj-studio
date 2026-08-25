@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { trackPhoneClick } from '@/lib/track';
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
@@ -557,6 +558,7 @@ export default function AyesmajNav() {
               </a>
               <a
                 href={SITE.phoneHref}
+                onClick={() => trackPhoneClick("nav")}
                 style={{ display: "inline-flex", alignItems: "center", gap: 12, fontFamily: FONTS.ui, fontSize: 15, color: "#AAA39A", textDecoration: "none", padding: "12px 0", minHeight: 48 }}
               >
                 <Phone size={16} aria-hidden style={{ color: "#D8B75A" }} /> {SITE.phone}
