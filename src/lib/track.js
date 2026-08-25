@@ -3,13 +3,13 @@
  *
  * Two systems listen:
  *   GA4 (G-R044ZFNS4V)        — works immediately, no setup needed.
- *   Google Ads (AW-10883427183) — needs a conversion action created in the Ads UI first.
+ *   Google Ads (AW-18408920292) — needs a conversion action created in the Ads UI first.
  *
  * TO FINISH THE ADS SIDE (5 minutes, once):
  *   Google Ads -> Goals -> Conversions -> New conversion action -> Website ->
  *   enter ayesmajstudios.com -> "Add a conversion action manually":
  *      Category: Submit lead form   Name: Contact form submit   Value: use a value (see below)
- *   Then "Use Google tag" -> it shows a snippet containing send_to: 'AW-10883427183/XXXXXXXX'.
+ *   Then "Use Google tag" -> it shows a snippet containing send_to: 'AW-18408920292/XXXXXXXX'.
  *   Copy the part after the slash into ADS_LABELS.lead below. Repeat for a "Phone call" action
  *   (Category: Contact) and paste that label into ADS_LABELS.phoneClick.
  *
@@ -17,7 +17,7 @@
  * so nothing here can break the site or report a conversion that did not happen.
  */
 
-const ADS_ID = 'AW-10883427183';
+const ADS_ID = 'AW-18408920292';
 
 /** Paste the label that follows the slash in the Ads snippet, e.g. 'AbC-D_efGhIjKlM'. */
 export const ADS_LABELS = {

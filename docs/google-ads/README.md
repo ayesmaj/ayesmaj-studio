@@ -1,6 +1,6 @@
 # AYESMAJ Studios — Google Ads launch kit
 
-Built 2026-08-24. Account: the one holding tag **AW-10883427183**. Targeting: **United States**.
+Built 2026-08-24. Account: the one holding tag **AW-18408920292**. Targeting: **United States**.
 Everything imports **PAUSED** — nothing spends until you review and enable it.
 
 ## What's in the import file
@@ -54,7 +54,7 @@ them today. For Google Ads to see them:
 1. Google Ads → **Goals → Conversions → New conversion action → Website** → scan ayesmajstudios.com
    → **Add a conversion action manually**:
    - Category **Submit lead form**, name **Contact form submit**, value: use 100 (edit later), count **One**.
-2. It shows a snippet containing `send_to: 'AW-10883427183/SOMELABEL'`. Copy the part after the slash.
+2. It shows a snippet containing `send_to: 'AW-18408920292/SOMELABEL'`. Copy the part after the slash.
 3. Paste it into `src/lib/track.js` → `ADS_LABELS.lead` and tell Claude to deploy (or edit + push yourself).
 4. Repeat for a **Phone call → clicks on your number** action → paste into `ADS_LABELS.phoneClick`.
 

@@ -26,7 +26,7 @@ guessing. Right now your account records zero, because the conversion actions do
 | Contact form submit | Submit lead form | 100 | One |
 | Phone number click | Phone call lead | 40 | One |
 
-4. Each one shows a snippet containing `send_to: 'AW-10883427183/SOMELABEL'`.
+4. Each one shows a snippet containing `send_to: 'AW-18408920292/SOMELABEL'`.
    **Copy the part after the slash** for both and send them to me — I paste them into the site
    and deploy. Until then Ads sees nothing.
 
