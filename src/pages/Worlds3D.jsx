@@ -85,7 +85,6 @@ export default function Worlds3D() {
         description="Cinematic product CGI, immersive 3D environments, characters, and interactive brand worlds by AYESMAJ Studios."
         path="/Worlds3D"
       />
-      <div className="service-nav-backdrop" aria-hidden="true" />
       <AyesmajNav />
 
       <main>

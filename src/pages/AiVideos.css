@@ -15,16 +15,6 @@
 .motion-page h1, .motion-page h2, .motion-page h3, .motion-page p, .motion-page figure { margin-top: 0; }
 .motion-page em { font-style: normal; }
 
-.motion-nav-backdrop {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 900;
-  height: 80px;
-  pointer-events: none;
-  background: rgba(20, 22, 19, .96);
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
-  backdrop-filter: blur(18px);
-}
 
 .motion-kicker {
   display: inline-flex;
@@ -368,7 +358,6 @@
 
 @media (max-width: 720px) {
   .motion-page main { padding-top: 72px; }
-  .motion-nav-backdrop { height: 72px; }
   .motion-hero { min-height: auto; padding-top: 72px; gap: 54px; }
   .motion-hero h1 { font-size: clamp(66px, 20vw, 94px); }
   .motion-hero__lede { font-size: 16px; }

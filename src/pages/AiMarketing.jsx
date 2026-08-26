@@ -118,7 +118,6 @@ export default function AiMarketing() {
         description="AI-directed campaign films, product imagery, and scalable content systems built by AYESMAJ Studios."
         path="/AiMarketing"
       />
-      <div className="service-nav-backdrop" aria-hidden="true" />
       <AyesmajNav />
 
       <main>

@@ -115,7 +115,6 @@ export default function AiVideos() {
         description="Cinematic brand films, commercials, product animation, visual effects, and AI-powered motion production by AYESMAJ Studios."
         path="/AiVideos"
       />
-      <div className="motion-nav-backdrop" aria-hidden="true" />
       <AyesmajNav />
 
       <main>

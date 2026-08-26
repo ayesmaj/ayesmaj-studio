@@ -380,7 +380,6 @@ export default function BrandDetail() {
           '--case-body-font': identityDirection.bodyStack,
         }}
       >
-        <div className="case-nav-backdrop" aria-hidden="true" />
         <AyesmajNav />
 
         <main>

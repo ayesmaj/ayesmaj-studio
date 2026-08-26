@@ -56,12 +56,80 @@ export default function AyesmajNav() {
   const [interiorPreview, setInteriorPreview] = useState(null); // hovered item in the Interior Design mega menu
   const [drawer, setDrawer] = useState(false);
 
+  const [lightGround, setLightGround] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  /* Does the page paint something light directly under the unscrolled nav?
+     The bar is transparent until you scroll, so the page's own top 80px is what
+     the links sit on. Five page families each patched this by hand with an
+     !important override, and the five that forgot - /Services, /AiMarketing,
+     /Worlds3D, /AiVideos, /Branding - rendered every nav item at ~1:1 contrast.
+     Measuring the ground retires the opt-in: a page cannot forget to declare
+     itself, and a page added later inherits the right behaviour for free.
+
+     Deliberately conservative. It only reacts to an *opaque* background-colour
+     it can actually read; a hero image or video leaves the bar transparent, as
+     today. Every confirmed failure was a flat CSS colour, and staying put on
+     media means this can darken a cinematic hero it misread. */
+  useEffect(() => {
+    if (typeof document === "undefined" || !document.elementsFromPoint) return undefined;
+
+    const channel = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+    const luminance = (r, g, b) => 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b);
+    // The dimmer of the two link colours, #AAA39A. If that clears 4.5:1 the
+    // brighter active item does too, so it is the only one worth testing.
+    const LINK_LUMINANCE = luminance(170, 163, 154);
+
+    const measure = () => {
+      const nav = document.querySelector(".ayes-nav-root");
+      let worst = Infinity;
+      for (const frac of [0.2, 0.5, 0.8]) {
+        const stack = document.elementsFromPoint(Math.round(window.innerWidth * frac), 40);
+        for (const el of stack) {
+          if (nav && (el === nav || nav.contains(el))) continue;
+          const cs = getComputedStyle(el);
+          if (cs.visibility === "hidden" || parseFloat(cs.opacity) < 0.9) continue;
+          const parts = (cs.backgroundColor.match(/[\d.]+/g) || []).map(Number);
+          if (parts.length < 3) continue;
+          const alpha = parts[3] === undefined ? 1 : parts[3];
+          if (alpha < 0.9) continue; // translucent: whatever is under it still shows
+          const bg = luminance(parts[0], parts[1], parts[2]);
+          const [hi, lo] = [LINK_LUMINANCE, bg].sort((a, b) => b - a);
+          worst = Math.min(worst, (hi + 0.05) / (lo + 0.05));
+          break; // first opaque layer is the one that gets painted
+        }
+      }
+      setLightGround(worst < 4.5);
+    };
+
+    /* One sample is not enough: every page is a lazy route chunk, so on a cold
+       direct load the nav mounts before the hero paints - /Services and
+       /AiVideos both did exactly that and stayed transparent over cream.
+
+       Poll for a bounded window rather than debouncing a MutationObserver. The
+       observer was tried first and never fired: this tree mutates continuously
+       (framer-motion mounting and unmounting nodes), so every mutation reset the
+       debounce and it was starved indefinitely. A fixed poll cannot be starved,
+       and 20 hit-tests spread over 4s costs nothing. Re-measuring is idempotent -
+       an unchanged boolean makes React bail out. */
+    const raf = requestAnimationFrame(measure);
+    const poll = setInterval(measure, 120);
+    const stopPolling = setTimeout(() => clearInterval(poll), 4000);
+
+    window.addEventListener("resize", measure);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearInterval(poll);
+      clearTimeout(stopPolling);
+      window.removeEventListener("resize", measure);
+    };
+  }, [pathname]);
 
   // Escape closes any open menu / the drawer
   useEffect(() => {
@@ -79,6 +147,13 @@ export default function AyesmajNav() {
   }, [drawer]);
 
   const closeMenus = () => { setOpenMenu(null); setDrawer(false); };
+
+  /* Two reasons to paint a surface, and they need different strengths. Scrolled
+     over a dark page, 0.72 is enough and keeps the glassy look. Over a cream
+     page 0.72 only reaches 3.6:1 - which is why every hand-written override on
+     this site uses 0.95. Measured: 0.95 over #F7F3ED gives 7.6:1. */
+  const solid = scrolled || lightGround;
+  const surface = lightGround ? "rgba(8,9,8,0.95)" : "rgba(5,5,5,0.72)";
 
   const linkStyle = (active) => ({
     position: "relative",
@@ -115,10 +190,12 @@ export default function AyesmajNav() {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 clamp(20px, 4vw, 48px)",
-          background: scrolled ? "rgba(5,5,5,0.72)" : "transparent",
-          backdropFilter: scrolled ? "blur(18px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(255,255,255,0.09)" : "1px solid transparent",
+          /* `solid` covers both reasons the bar needs a surface: the reader has
+             scrolled, or the page under it is too light to read light type on. */
+          background: solid ? surface : "transparent",
+          backdropFilter: solid ? "blur(18px)" : "none",
+          WebkitBackdropFilter: solid ? "blur(18px)" : "none",
+          borderBottom: solid ? "1px solid rgba(255,255,255,0.09)" : "1px solid transparent",
           transition: "background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease",
         }}
       >

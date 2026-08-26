@@ -183,7 +183,6 @@ export default function Services() {
   return (
     <div className="services-shell">
       <Seo title="Creative Services | Branding, Web Design, AI Content & 3D | AYESMAJ Studios" description="Explore AYESMAJ Studios services including brand identity, premium web design, AI content and video, 3D CGI, motion, storyboards, packaging, and campaign art direction." path="/Services" image="/assets/ayesmaj/generated/capabilities/capability-01-brand-strategy.webp" jsonLd={jsonLd} />
-      <div className="services-nav-surface" aria-hidden="true" />
       <AyesmajNav />
 
       <main className="services-page">

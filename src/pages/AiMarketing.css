@@ -11,16 +11,6 @@
   overflow-x: clip;
 }
 
-.service-nav-backdrop {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 999;
-  height: 80px;
-  background: rgba(5, 5, 5, 0.94);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-}
-
 .ai-page main { padding-top: 80px; }
 .ai-page h1, .ai-page h2, .ai-page h3, .ai-page p { margin-top: 0; }
 .ai-page em { color: var(--ai-orange); font-style: normal; }

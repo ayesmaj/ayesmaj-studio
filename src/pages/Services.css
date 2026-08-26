@@ -13,16 +13,6 @@
   background: var(--paper);
 }
 
-.services-shell > .services-nav-surface {
-  position: fixed;
-  inset: 0 0 auto;
-  height: 80px;
-  z-index: 999;
-  pointer-events: none;
-  background: rgba(5, 5, 5, .93);
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
-}
-
 .services-page *, .services-page *::before, .services-page *::after { box-sizing: border-box; }
 .services-page h1, .services-page h2, .services-page h3, .services-page p, .services-page figure { margin-top: 0; }
 .services-page img, .services-page video { display: block; max-width: 100%; }
