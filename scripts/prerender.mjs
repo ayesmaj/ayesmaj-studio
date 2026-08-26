@@ -200,11 +200,24 @@ function render(shell, route, meta) {
   return html;
 }
 
-function sitemapRoutes() {
-  const xml = fs.readFileSync(path.join(ROOT, 'public', 'sitemap.xml'), 'utf8');
-  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) =>
-    m[1].replace(SITE.url, '').replace(/\/$/, '') || '/',
-  );
+/* Prerendered and crawlable but deliberately held out of the sitemap until the
+   owner calls the page ready. Being generated from SEO_ROUTES, the sitemap can
+   no longer drift from the prerender - parity holds by construction. */
+const SITEMAP_EXCLUDE = new Set(['/Insights']);
+
+/** The sitemap is generated, not maintained: every URL is prerendered and
+    self-canonical because it comes from SEO_ROUTES. No changefreq/priority
+    (Google ignores both) and no lastmod (a build timestamp would be a lie;
+    only meaningful change dates belong there). */
+function writeSitemap() {
+  const routes = Object.keys(SEO_ROUTES).filter((r) => !SITEMAP_EXCLUDE.has(r));
+  const xml =
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    routes.map((r) => `  <url><loc>${SITE.url}${r === '/' ? '/' : r}</loc></url>`).join('\n') +
+    `\n</urlset>\n`;
+  fs.writeFileSync(path.join(DIST, 'sitemap.xml'), xml);
+  return routes.length;
 }
 
 function main() {
@@ -216,12 +229,7 @@ function main() {
 
   // Build check: a sitemap URL with no metadata would ship as a duplicate of
   // the homepage, which is the exact bug this script exists to remove.
-  const missing = sitemapRoutes().filter((r) => !SEO_ROUTES[r]);
-  if (missing.length) {
-    throw new Error(
-      `prerender: sitemap routes missing from src/data/seoMeta.js: ${missing.join(', ')}`,
-    );
-  }
+  const sitemapCount = writeSitemap();
 
   const unknownService = Object.keys(SERVICE_ROUTES).filter(
     (r) => !SEO_ROUTES[r],
@@ -272,7 +280,7 @@ function main() {
     );
   }
   console.log(
-    `prerender: ${count} routes, ${titles.size} unique titles, ` +
+    `prerender: ${sitemapCount} sitemap urls, ${count} routes, ${titles.size} unique titles, ` +
       `${count - 1} breadcrumbs, ${services} service schemas`,
   );
 }
