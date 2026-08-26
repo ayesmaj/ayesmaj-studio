@@ -19,7 +19,8 @@
     "portfolio:build": "C:\\Users\\smadj\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe portfolio/scripts/build_portfolio.py",
     "portfolio:export": "C:\\Users\\smadj\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe portfolio/scripts/export_pdfs.mjs",
     "portfolio:review": "C:\\Users\\smadj\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe portfolio/scripts/review_pdfs.py",
-    "portfolio:compress": "C:\\Users\\smadj\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe portfolio/scripts/build_compact_assets.py && C:\\Users\\smadj\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe portfolio/scripts/export_pdfs.mjs --compact"
+    "portfolio:compress": "C:\\Users\\smadj\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe portfolio/scripts/build_compact_assets.py && C:\\Users\\smadj\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe portfolio/scripts/export_pdfs.mjs --compact",
+    "seo:audit": "node scripts/seo-audit.mjs"
   },
   "dependencies": {
     "@base44/sdk": "^0.8.0",
