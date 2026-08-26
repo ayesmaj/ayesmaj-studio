@@ -87,6 +87,14 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
   const [dead, setDead] = useState(false); // the film may not be rendered yet - collapse instead of a broken player
   const [near, setNear] = useState(false); // keep the network idle until the section approaches
   const [painted, setPainted] = useState(false); // has the decoder produced ANY frame yet
+  /* Two rounds of Safari-specific fixes did not stop an iPhone rendering these
+     sections black (owner, 2026-08-26). Rather than keep guessing at a browser
+     I cannot test here, the component now PROVES it is painting: if no real
+     video frame reaches the compositor shortly after the first seek, scrubbing
+     is declared broken on this device and the section falls back to the plain
+     playing film - the presentation phones had before scrubbing was enabled,
+     which the owner confirmed worked. Wrong-but-watchable beats black. */
+  const [scrubBroken, setScrubBroken] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -115,12 +123,31 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
     if (video.readyState >= 2) prime();
     else video.addEventListener('loadeddata', prime, { once: true });
 
-    /* Once the decoder has produced a frame the element keeps showing it, so
-       the poster only has to cover the window before the FIRST frame. */
-    const markPainted = () => { if (video.readyState >= 2) setPainted(true); };
-    video.addEventListener('loadeddata', markPainted);
-    video.addEventListener('seeked', markPainted);
-    markPainted();
+    /* requestVideoFrameCallback fires only when a frame is actually handed to
+       the compositor, which is the one signal that means "this element is
+       really showing video". readyState and seeked both lie here: on iOS they
+       report success while nothing is painted, which is why the previous fix
+       hid the poster and revealed black underneath. */
+    const hasRVFC = typeof video.requestVideoFrameCallback === 'function';
+    let framePresented = false;
+    let watchdog = 0;
+    const onFrame = () => { framePresented = true; setPainted(true); };
+    if (hasRVFC) video.requestVideoFrameCallback(onFrame);
+    const markPainted = () => { if (video.readyState >= 2) { framePresented = true; setPainted(true); } };
+    if (!hasRVFC) {
+      // No frame-level signal available: fall back to the older heuristic.
+      video.addEventListener('loadeddata', markPainted);
+      video.addEventListener('seeked', markPainted);
+      markPainted();
+    }
+    /* Armed on the first seek attempt. If nothing has painted by then the
+       device cannot scrub - hand the section to the plain player instead. */
+    const armWatchdog = () => {
+      if (watchdog || framePresented) return;
+      watchdog = setTimeout(() => {
+        if (!framePresented) setScrubBroken(true);
+      }, 3500);
+    };
 
     const update = () => {
       raf = 0;
@@ -143,11 +170,13 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       // seeks snap to the 0.25s keyframe grid so the decoder never walks a GOP
       const target = Math.min(Math.round(p * video.duration * 4) / 4, video.duration - 1 / 30);
       if (Math.abs(target - video.currentTime) >= 0.2) {
+        armWatchdog();
         // fastSeek lands on the nearest keyframe without decoding forward -
         // with a keyframe every 0.25s that IS the target, and Safari treats it
         // far more reliably than assigning currentTime mid-scroll.
         if (typeof video.fastSeek === 'function') video.fastSeek(target);
         else video.currentTime = target;
+        if (hasRVFC && !framePresented) video.requestVideoFrameCallback(onFrame);
       }
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
@@ -164,18 +193,19 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       video.removeEventListener('loadeddata', markPainted);
       video.removeEventListener('seeked', markPainted);
       if (raf) cancelAnimationFrame(raf);
+      if (watchdog) clearTimeout(watchdog);
     };
   }, [simple, reduced, near]);
 
   if (dead) return null;
-  const flat = reduced;
+  const flat = reduced || scrubBroken;
   const stage = stages.reduce((acc, s) => (progress >= s.at ? s : acc), stages[0]);
   return (
     <section ref={sectionRef} className="xp-film" aria-label={credit}>
       {flat ? (
         <div className="xp-film-flat">
           {near ? (
-            <video autoPlay muted loop playsInline preload="metadata" poster={film.poster} aria-label={credit} onError={() => setDead(true)}>
+            <video autoPlay muted loop playsInline preload="metadata" poster={film.poster} style={{ backgroundImage: `url(${film.poster})`, backgroundSize: 'cover', backgroundPosition: 'center' }} aria-label={credit} onError={() => setDead(true)}>
               {film.mobile ? <source src={film.mobile} media="(max-width: 767px)" type="video/mp4" /> : null}
               <source src={film.desktop} type="video/mp4" />
             </video>
