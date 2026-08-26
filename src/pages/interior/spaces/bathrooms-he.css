@@ -408,3 +408,19 @@
    below the baseline, so 0.9 clips them on the two-line headings. Matching the
    !important is the only way past it; still scoped to .he-scope. */
 .he-scope .idsp-h2 { line-height: 1.15 !important; }
+
+/* ── Film sections play at full clarity ─────────────────────────────────────
+   .idv2-pin-scrim lays a 90deg gradient from rgba(5,5,5,0.82) over the frame so
+   the caption is guaranteed readable. The owner wants the footage itself
+   untouched - original, no dark or opacity layer - so the scrim is removed here
+   and the caption earns its own contrast from a shadow instead. A shadow costs
+   the video nothing; dimming the whole frame to serve two lines of type was the
+   wrong trade for a page whose entire point is showing the film.
+   Scoped to .he-scope, so the English pages keep their scrim. */
+.he-scope .xp-film .idv2-pin-scrim { display: none; }
+.he-scope .xp-film .xp-film-copy {
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.95),
+    0 2px 10px rgba(0, 0, 0, 0.85),
+    0 6px 34px rgba(0, 0, 0, 0.7);
+}
