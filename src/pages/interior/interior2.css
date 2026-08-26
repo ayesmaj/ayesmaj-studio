@@ -167,7 +167,13 @@
 
 /* ── Pinned scroll stages (problem + film) ───────────────────────────────── */
 .idv2-pin-wrap { position: relative; }
-.idv2-pin { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+/* svh is the SMALL viewport height - the height while the browser's URL bar is
+   showing. The moment you scroll on a phone the bar retracts, the visible
+   viewport grows to lvh, and a sticky pin locked at svh no longer reaches the
+   bottom: the strip it leaves behind exposes the section's own near-black
+   background, so a black bar appears under the film exactly while scrolling.
+   dvh tracks the viewport as it changes. svh stays first as the fallback. */
+.idv2-pin { position: sticky; top: 0; height: 100svh; height: 100dvh; overflow: hidden; }
 .idv2-pin img, .idv2-pin video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .idv2-pin .idv2-pin-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 5, 5, 0.82) 0%, rgba(5, 5, 5, 0.4) 50%, rgba(5, 5, 5, 0.15) 100%); }
 
