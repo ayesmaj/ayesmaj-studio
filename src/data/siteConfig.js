@@ -20,10 +20,12 @@ export const SITE = {
   jurisdiction: "Arizona, USA", // [REVIEW] governing law for Terms
   founder: "Rafael Smadja",
   social: {
-    // [REVIEW] add/confirm live profiles; only verified links are listed
-    instagram: "",
+    // Profiles the owner published in their own email signature (2026-08-24).
+    // youtube/behance stay empty until the owner confirms the profile URLs.
+    instagram: "https://www.instagram.com/ayesmajstudios",
+    facebook: "https://www.facebook.com/ayesmajstudios",
+    linkedin: "https://www.linkedin.com/in/rafael-smadja",
     youtube: "",
-    linkedin: "",
     behance: "",
   },
   defaultOgImage: "/assets/ayesmaj/hero/hero-composite.webp",
