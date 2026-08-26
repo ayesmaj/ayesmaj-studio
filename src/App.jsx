@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import { pagesConfig } from './pages.config'
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -22,6 +22,40 @@ const pageVariants = {
   exit:    { opacity: 0, y: -8,
     transition: { duration: 0.35, ease: [0.4, 0, 1, 1] } },
 };
+
+/* Unknown URLs are served the prerendered HOMEPAGE shell by the vercel.json
+   catch-all rewrite, so their raw HTML arrives with the homepage canonical and
+   index,follow - a soft 404 that Search Console surfaced as "Duplicate without
+   user-selected canonical". A real 404 status is not possible behind the SPA
+   rewrite without breaking client-only routes, so this applies the minimum
+   Google honours at render time: a real title, noindex, and no inherited
+   canonical. Removing the canonical is safe - Seo recreates it on the next
+   page (its upsert creates the link element when missing). */
+function NotFound() {
+  useEffect(() => {
+    document.title = 'Page not found | AYESMAJ Studios';
+    document.head.querySelector('link[rel="canonical"]')?.remove();
+    let robots = document.head.querySelector('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement('meta');
+      robots.setAttribute('name', 'robots');
+      document.head.appendChild(robots);
+    }
+    robots.setAttribute('content', 'noindex,nofollow');
+  }, []);
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',
+      height: '100vh', color: '#fff', background: '#0B0F0C' }}>
+      <div style={{ textAlign: 'center' }}>
+        <p style={{ fontSize: 80, lineHeight: 1 }}>404</p>
+        <p style={{ color: 'rgba(255,255,255,0.4)' }}>Page not found</p>
+        <a href="/" style={{ color: '#D8B75A', textDecoration: 'none', fontWeight: 600 }}>
+          Back to the homepage
+        </a>
+      </div>
+    </div>
+  );
+}
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -99,15 +133,7 @@ function AnimatedRoutes() {
               }
             />
           ))}
-          <Route path="*" element={
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',
-              height: '100vh', color: '#fff', background: '#0B0F0C' }}>
-              <div style={{ textAlign: 'center' }}>
-                <p style={{ fontSize: 80, lineHeight: 1 }}>404</p>
-                <p style={{ color: 'rgba(255,255,255,0.4)' }}>Page not found</p>
-              </div>
-            </div>
-          } />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         </Suspense>
       </motion.div>
