@@ -279,23 +279,18 @@ export function NextPortal({ methodKey, image }) {
 export function PinSeq({ stages, height = '350vh', accentClass = '', ariaLabel = 'Transformation sequence' }) {
   const ref = useRef(null);
   const reduced = useReducedMotion();
-  const [simple, setSimple] = useState(false);
   const [idx, setIdx] = useState(0);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 860px)');
-    const set = () => setSimple(mq.matches);
-    set();
-    mq.addEventListener('change', set);
-    return () => mq.removeEventListener('change', set);
-  }, []);
 
   useEffect(() => scrollYProgress.on('change', (p) => {
     setIdx(Math.min(stages.length - 1, Math.floor(p * stages.length)));
   }), [scrollYProgress, stages.length]);
 
-  const flat = simple || reduced;
+  /* Pinned on every viewport (owner request 2026-08-26 - phones get the same
+     experience as desktop). The stacked-figures fallback that phones used to
+     get dropped the giant stage verbs entirely; it remains only for visitors
+     who ask for reduced motion, where a pinned crossfade is the wrong answer. */
+  const flat = reduced;
   if (flat) {
     return (
       <div className={accentClass} style={{ display: 'grid', gap: 18 }} aria-label={ariaLabel}>

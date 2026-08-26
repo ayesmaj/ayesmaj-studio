@@ -17,6 +17,13 @@ const FILMS = [
   'public/interior-design/generated/furniture-decor/film/furniture-film.mp4',
   'public/interior-design/projects/poolside-villa/film/house-film-desktop.mp4',
   'public/interior-design/projects/the-patel/film/patel-hero-film-desktop.mp4',
+  // Mobile variants joined once FilmScrub started scrubbing on phones too
+  // (owner request 2026-08-26); they shipped with ~10 s GOPs, i.e. one
+  // keyframe in 120 frames, which is unscrubbable.
+  'public/interior-design/generated/bathrooms/film/bathroom-film-mobile.mp4',
+  'public/interior-design/generated/apartments/film/apartment-film-mobile.mp4',
+  'public/interior-design/generated/furniture-decor/film/furniture-film-mobile.mp4',
+  'public/interior-design/projects/poolside-villa/film/house-film-mobile.mp4',
 ];
 
 const mb = (p) => (statSync(p).size / 1048576).toFixed(1);

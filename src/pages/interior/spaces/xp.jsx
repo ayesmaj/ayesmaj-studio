@@ -74,7 +74,10 @@ export function Legend({ items, active, setActive, ariaLabel }) {
   );
 }
 
-/** Scroll-scrubbed full-screen film with staged headlines; plain playback on mobile/reduced-motion. */
+/** Scroll-scrubbed full-screen film with staged headlines.
+    Scrubs on every viewport (owner request 2026-08-26) - phones get the
+    lighter -mobile encode, re-encoded to the same 0.25 s keyframe grid so
+    seeks stay instant. Plain playback remains only for reduced motion. */
 export function FilmScrub({ film, stages, credit, height = '320vh' }) {
   const wrapRef = useRef(null);
   const videoRef = useRef(null);
@@ -93,7 +96,7 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
   }, []);
 
   useEffect(() => {
-    if (simple || reduced || !near) return undefined;
+    if (reduced || !near) return undefined;
     const wrap = wrapRef.current; const video = videoRef.current;
     if (!wrap || !video) return undefined;
     let raf = 0;
@@ -117,7 +120,7 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
   }, [simple, reduced, near]);
 
   if (dead) return null;
-  const flat = simple || reduced;
+  const flat = reduced;
   const stage = stages.reduce((acc, s) => (progress >= s.at ? s : acc), stages[0]);
   return (
     <section ref={sectionRef} className="xp-film" aria-label={credit}>
@@ -136,7 +139,7 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       ) : (
         <div ref={wrapRef} className="idv2-pin-wrap" style={{ height }}>
           <div className="idv2-pin">
-            <video ref={videoRef} data-scrub muted playsInline preload={near ? 'auto' : 'none'} poster={film.poster} src={near ? film.desktop : undefined} aria-label={credit} onError={() => setDead(true)} />
+            <video ref={videoRef} data-scrub muted playsInline preload={near ? 'auto' : 'none'} poster={film.poster} src={near ? (simple && film.mobile ? film.mobile : film.desktop) : undefined} aria-label={credit} onError={() => setDead(true)} />
             <div className="idv2-pin-scrim" />
             <div className="xp-film-copy">
               <h2 className="idv2-pinseq-head" aria-live="polite">{stage.node}</h2>

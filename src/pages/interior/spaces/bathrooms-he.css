@@ -100,12 +100,20 @@
 .he-scope .bx-mat-tile { text-align: right; }
 .he-scope .bx-mat-tile span { left: auto; right: 10px; }
 
-/* The hero scrim darkens the side the copy sits on. Copy moved right, so the
-   gradient has to move with it. */
-.he-scope .bx-hero-scrim {
-  background:
-    linear-gradient(270deg, rgba(8, 6, 6, 0.78) 0%, rgba(8, 6, 6, 0.42) 42%, rgba(8, 6, 6, 0.06) 75%),
-    linear-gradient(180deg, rgba(8, 6, 6, 0.3), transparent 34%, rgba(8, 6, 6, 0.55) 100%);
+/* The hero scrim was removed at the owner's request (2026-08-26): the page now
+   opens with the villa film, so the hero no longer carries the first-contact
+   contrast burden. The copy's own text-shadow does the remaining work. */
+.he-scope .bx-hero .idv-eyebrow,
+.he-scope .bx-hero-credit {
+  color: #F5F5F0;
+  text-shadow: 0 1px 4px rgba(5, 5, 6, 0.9), 0 2px 18px rgba(5, 5, 6, 0.75);
+}
+.he-scope .bx-h1 { text-shadow: 0 2px 26px rgba(5, 5, 6, 0.45); }
+@media (max-width: 560px) {
+  /* Two wrapped pills at different x positions read as misalignment; stacked
+     full-width buttons read as a decision. */
+  .he-scope .bx-hero-actions { flex-direction: column; align-items: stretch; }
+  .he-scope .bx-hero-actions .idv-btn { justify-content: center; }
 }
 
 /* BeforeAfterSlider computes from clientX - rect.left, i.e. physical

@@ -261,7 +261,6 @@ function HeroBath() {
   return (
     <section ref={ref} className="bx-hero" aria-label={T.heroAria}>
       {hero ? <motion.img {...imgProps(hero, '100vw')} alt={hero.alt} className="bx-hero-bg" style={{ y, scale }} fetchpriority="high" /> : null}
-      <div className="bx-hero-scrim" aria-hidden="true" />
       <div className="idv2-inner bx-hero-copy">
         <Eyebrow><Ltr>AYESMAJ STUDIOS</Ltr> / {T.heroEyebrow}</Eyebrow>
         <h1 className="idv2-display bx-h1">
@@ -518,11 +517,11 @@ function DirectionsBath() {
 }
 
 /* The whole-house villa film, mirrored from the English /interior-design/homes
-   page at the owner's request. It closes the page rather than sitting beside
-   the bathroom film, so the page still ends on the studio's largest cinematic
-   asset. FilmScrub keeps it poster-only until the visitor approaches, so the
-   13.5 MB desktop encode costs nothing to anyone who never scrolls this far,
-   and it self-hides if the file is ever missing. */
+   page. Owner request 2026-08-26: it OPENS the page - the visitor lands
+   straight in the scroll-scrubbed film and the bathroom story begins beneath
+   it. Being first, its poster paints immediately and the film starts loading
+   on arrival; phones receive the lighter -mobile encode. It self-hides if the
+   file is ever missing. */
 function FilmVilla() {
   return (
     <FilmScrub
@@ -558,6 +557,7 @@ export default function InteriorBathroomsHe() {
       />
       <HeNav />
       <main className="he-scope idsp-scope">
+        <FilmVilla />
         <HeroBath />
         <TransformBath />
         <DecisionsBath />
@@ -566,7 +566,6 @@ export default function InteriorBathroomsHe() {
         <CompareBath />
         <FilmBath />
         <DirectionsBath />
-        <FilmVilla />
       </main>
       <HeFooter />
     </div>
