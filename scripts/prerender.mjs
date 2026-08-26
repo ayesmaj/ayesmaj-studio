@@ -20,7 +20,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { SEO_ROUTES, SERVICE_ROUTES } from '../src/data/seoMeta.js';
-import { SITE, NAV, FOOTER_WORK, LEGAL_LINKS } from '../src/data/siteConfig.js';
+import { SITE } from '../src/data/siteConfig.js';
 
 /** Open Graph and Twitter truncate around here; search titles may run longer. */
 const OG_TITLE_MAX = 60;
@@ -107,11 +107,51 @@ function jsonLdFor(route, meta) {
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 }
 
-/** One crawlable paragraph plus the internal links the shell never had. */
+/**
+ * Every route we prerender, i.e. every URL that returns its own title, its own
+ * description and a self-referencing canonical. Built from SEO_ROUTES rather
+ * than from NAV/FOOTER_WORK, which is what this block used to use and which
+ * caused two indexing problems in Search Console:
+ *
+ *   - NAV links to `/services` (lowercase). vercel.json 308s that to
+ *     `/Services`, so the only crawlable link to that page pointed at a
+ *     redirect -> "Page with redirect".
+ *   - FOOTER_WORK links to `/Branding` and `/Reel`, which are NOT prerendered.
+ *     They serve the SPA shell, whose canonical is the homepage, so Google saw
+ *     them as copies of `/` -> "Duplicate without user-selected canonical".
+ *
+ * Sourcing from SEO_ROUTES makes both impossible by construction: a link can
+ * only be emitted for a URL that is prerendered and self-canonical.
+ */
+const CRAWLABLE = Object.keys(SEO_ROUTES);
+const INTERIOR = CRAWLABLE.filter((r) => r.startsWith('/interior-design'));
+const TOP_LEVEL = CRAWLABLE.filter((r) => !r.startsWith('/interior-design/'));
+
+/** Human anchor text: the service name where we have one, else the page h1. */
+function labelFor(route) {
+  return SERVICE_ROUTES[route] || SEO_ROUTES[route]?.h1 || route;
+}
+
+/**
+ * One crawlable paragraph plus the internal links the shell never had.
+ *
+ * The 21 /interior-design/* pages previously had ZERO crawlable internal links
+ * - they existed only in sitemap.xml. Sitemap-only URLs are the lowest crawl
+ * priority Google has, which is why they sat in "Discovered - currently not
+ * indexed" while the 18 pages this block did link to were all indexed.
+ *
+ * Interior pages are linked from the hub and from each other, so the whole
+ * section is one hop from `/interior-design` (which every page links) and two
+ * from anywhere. That is ordinary site architecture, not a link dump on every
+ * page.
+ */
 function bodyFor(route, meta) {
-  const links = [...NAV, ...FOOTER_WORK, ...LEGAL_LINKS]
-    .filter((l) => l.to !== route)
-    .map((l) => `<li><a href="${esc(l.to)}">${esc(l.label)}</a></li>`)
+  const targets = route.startsWith('/interior-design')
+    ? [...TOP_LEVEL, ...INTERIOR]
+    : TOP_LEVEL;
+  const links = targets
+    .filter((to) => to !== route)
+    .map((to) => `<li><a href="${esc(to)}">${esc(labelFor(to))}</a></li>`)
     .join('');
   return (
     `<div id="prerendered-seo">` +
