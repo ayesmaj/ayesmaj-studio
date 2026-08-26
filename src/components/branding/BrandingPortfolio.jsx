@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, MotionConfig, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Play, ExternalLink, ArrowDown } from 'lucide-react';
-import { FONTS } from '@/components/ayesmaj/theme';
+import { Play, ExternalLink } from 'lucide-react';
+import BrandingHero from './BrandingHero';
 import {
   BRANDS as CENTRAL_BRANDS,
   BRAND_NAV_GROUPS,
@@ -377,102 +377,23 @@ function BrandSection({ brand, index }) {
   );
 }
 
-/* ─── Portfolio Hero ─────────────────────────────────────────── */
-function PortfolioHero() {
-  return (
-    <section className="relative pt-40 pb-24 px-6 overflow-hidden">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(70% 75% at 78% 12%, rgba(122,72,255,0.11), transparent 65%), radial-gradient(55% 60% at 20% 45%, rgba(216,183,90,0.08), transparent 70%)' }}
-      />
-      <motion.div
-        className="relative max-w-[1380px] mx-auto"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <p className="text-xs tracking-[0.5em] uppercase mb-6" style={{ color: '#D8B75A' }}>
-          Branding &amp; Identity
-        </p>
-        <h1
-          className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none mb-6"
-          style={{ letterSpacing: '-0.04em' }}
-        >
-          Brand Worlds Built{' '}
-          <span
-            className="block"
-            style={{
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundImage: 'linear-gradient(135deg, #C8922A 0%, #FFD700 50%, #C8922A 100%)',
-              backgroundClip: 'text',
-            }}
-          >
-            to Be Remembered.
-          </span>
-        </h1>
-        <p className="max-w-2xl text-base leading-relaxed" style={{ color: '#AAA39A' }}>
-          Cinematic 3D · AI Video · Full Brand Identity — We don't create content, we build visual power.
-        </p>
-
-        {/* Stats row */}
-        <div className="flex items-center gap-12 mt-16 flex-wrap">
-          {[[`${PORTFOLIO_BRANDS.length}`,'Brand Worlds'],['Identity + Digital','Connected Systems'],['3D + AI','Production Stack']].map(([val, lbl]) => (
-            <div key={lbl}>
-              <p className="text-3xl font-black text-white" style={{ letterSpacing: '-0.03em' }}>{val}</p>
-              <p className="text-xs tracking-widest uppercase mt-1" style={{ color: 'rgba(255,255,255,0.3)' }}>{lbl}</p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
-      <motion.nav
-        initial={{ opacity: 0, y: 22 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.25 }}
-        aria-label="Jump to a brand"
-        className="relative max-w-[1380px] mx-auto mt-12 flex flex-wrap gap-2"
-      >
-        {PORTFOLIO_BRANDS.map((brand) => (
-          <a
-            key={brand.id}
-            href={`#brand-${brand.id}`}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full px-4 py-2 transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D8B75A]"
-            style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.025)', color: '#CFC9C0', fontFamily: FONTS.ui, fontSize: 11, fontWeight: 650, letterSpacing: '0.12em', textTransform: 'uppercase' }}
-          >
-            <span aria-hidden="true" style={{ width: 6, height: 6, borderRadius: 99, background: brand.accent }} />
-            {brand.name}
-          </a>
-        ))}
-      </motion.nav>
-
-      <a
-        href={`#brand-${PORTFOLIO_BRANDS[0]?.id}`}
-        className="relative max-w-[1380px] mx-auto mt-10 min-h-11 flex items-center gap-2 text-xs uppercase tracking-[0.2em]"
-        style={{ color: '#AAA39A', fontFamily: FONTS.ui }}
-      >
-        Explore the brand worlds <ArrowDown size={15} aria-hidden="true" />
-      </a>
-
-      {/* Decorative gradient line */}
-      <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-24"
-        style={{ background: 'linear-gradient(to bottom, transparent, rgba(216,183,90,0.34))' }}
-      />
-    </section>
-  );
-}
-
 /* ─── Main Export ────────────────────────────────────────────── */
 export default function BrandingPortfolio() {
   return (
     <MotionConfig reducedMotion="user">
       <div style={{ background: '#0D0F0E', color: '#F6F3ED' }}>
-        <PortfolioHero />
-        {PORTFOLIO_BRANDS.map((brand, i) => (
-          <BrandSection key={brand.id} brand={brand} index={i} />
-        ))}
+        <BrandingHero />
+        {/* Soft ivory-to-dark handoff so the hero flows into the gallery
+            instead of ending on a hard horizontal cut. */}
+        <div
+          aria-hidden="true"
+          style={{ height: 'clamp(64px, 9vw, 132px)', background: 'linear-gradient(180deg, #F6F2EA 0%, #EEE8FA 38%, #0D0F0E 100%)' }}
+        />
+        <div id="brand-worlds">
+          {PORTFOLIO_BRANDS.map((brand, i) => (
+            <BrandSection key={brand.id} brand={brand} index={i} />
+          ))}
+        </div>
       </div>
     </MotionConfig>
   );

@@ -1,0 +1,284 @@
+/* /Branding hero — bright cinematic brand exhibition (owner brief 2026-08-26).
+   Absolute rule from the brief: no black or near-black background anywhere in
+   this section. Dark ink is for text only. Depth comes from warm daylight,
+   pearl surfaces and real shadows, never from darkness. */
+
+.bh {
+  --bh-ivory: #F6F2EA;
+  --bh-pearl: #FFFDF8;
+  --bh-champagne: #EBDDBF;
+  --bh-lavender: #EEE8FA;
+  --bh-ink: #18161D;
+  --bh-ink-2: #68636D;
+  --bh-gold: #D1A540;
+  /* Text-safe gold. #D1A540 and #9A7B22 both read as clearly darker than the
+     ivory ground but measure 1.9:1 and 3.6:1 - gold's luminance is carried by
+     its green channel, which is 71.5% of the contrast formula. This one is
+     4.7:1 on ivory, so eyebrow-sized type clears AA. */
+  --bh-gold-ink: #856819;
+  --bh-violet: #7448D8;
+  --bh-border: rgba(30, 24, 38, 0.10);
+  --bh-shadow: 0 32px 90px rgba(68, 48, 88, 0.14);
+
+  position: relative;
+  isolation: isolate;
+  background: var(--bh-ivory);
+  color: var(--bh-ink);
+  padding: clamp(104px, 12vh, 148px) clamp(20px, 5vw, 96px) clamp(40px, 6vh, 72px);
+  overflow: clip;
+}
+
+/* ── Daylight ── */
+.bh-light { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.bh-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(52% 46% at 8% 4%, rgba(235, 221, 191, 0.72), transparent 62%),
+    radial-gradient(46% 50% at 96% 88%, rgba(238, 232, 250, 0.6), transparent 66%);
+}
+.bh-light-accent { position: absolute; inset: 0; }
+/* Film grain, 1.5% — enough to kill banding in the gradients, not enough to see. */
+.bh-light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.bh-inner {
+  position: relative;
+  max-width: 1440px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(40px, 5vw, 88px);
+  align-items: center;
+}
+
+/* ── Left column ── */
+.bh-eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-family: var(--idv-font-mono, 'DM Mono', ui-monospace, monospace);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bh-gold-ink);
+}
+
+.bh-title {
+  margin: 0 0 clamp(18px, 2.2vw, 28px);
+  font-family: 'Outfit', 'DM Sans', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(42px, 5.4vw, 102px);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  text-transform: none;
+  color: var(--bh-ink);
+}
+.bh-title-grad {
+  background: linear-gradient(96deg, var(--bh-gold) 0%, #C88B58 34%, var(--bh-violet) 78%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bh-lede {
+  margin: 0 0 clamp(26px, 3vw, 38px);
+  max-width: 540px;
+  font-size: clamp(16px, 1.15vw, 19px);
+  line-height: 1.55;
+  color: var(--bh-ink-2);
+}
+
+.bh-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.bh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 26px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.bh-btn--primary {
+  color: #FFFDF8;
+  background: linear-gradient(96deg, var(--bh-gold) 0%, #C88B58 38%, var(--bh-violet) 100%);
+  box-shadow: 0 14px 34px rgba(116, 72, 216, 0.26);
+}
+.bh-btn--ghost {
+  color: var(--bh-ink);
+  background: var(--bh-pearl);
+  border: 1px solid rgba(30, 24, 38, 0.18);
+}
+.bh-btn:hover { transform: translateY(-2px); }
+.bh-btn--primary:hover { box-shadow: 0 18px 42px rgba(116, 72, 216, 0.34); }
+.bh-btn--ghost:hover { background: #fff; border-color: rgba(30, 24, 38, 0.3); }
+.bh-btn:focus-visible { outline: 2px solid var(--bh-violet); outline-offset: 3px; }
+
+/* ── Right column: the brand world ── */
+.bh-visual { position: relative; min-height: clamp(420px, 52vw, 620px); }
+.bh-stage { position: relative; width: 100%; height: 100%; min-height: inherit; }
+.bh-frame { position: absolute; inset: 0; }
+.bh-stage-inner { position: absolute; inset: 0; }
+
+/* Soft stage the composition sits on, so the cards feel placed, not pasted. */
+.bh-stage::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  width: 76%;
+  height: 24%;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(68, 48, 88, 0.16), transparent 70%);
+  filter: blur(6px);
+}
+
+.bh-card {
+  position: absolute;
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--bh-pearl);
+  border: 1px solid var(--bh-border);
+  box-shadow: var(--bh-shadow);
+}
+.bh-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.bh-card figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.86);
+  backdrop-filter: blur(8px);
+  font-family: var(--idv-font-mono, 'DM Mono', ui-monospace, monospace);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bh-ink-2);
+}
+
+/* An art-directed arrangement rather than a grid: one dominant object, a tall
+   card behind it, a wide digital card offset, and two smaller supporting cards. */
+.bh-card--world    { top: 2%;  left: 4%;  width: 40%; height: 46%; z-index: 1; }
+.bh-card--digital  { top: 8%;  right: 0;  width: 46%; height: 40%; z-index: 2; }
+.bh-card--campaign { bottom: 4%; right: 6%; width: 40%; height: 44%; z-index: 3; }
+.bh-card--product  { bottom: 0;  left: 12%; width: 42%; height: 56%; z-index: 4; }
+.bh-card--identity { top: 40%; left: 0;   width: 26%; height: 26%; z-index: 5; }
+
+/* ── Project plate ── */
+.bh-plate {
+  position: absolute;
+  left: 0;
+  bottom: -4%;
+  z-index: 6;
+  display: grid;
+  gap: 4px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(255, 253, 248, 0.94);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--bh-border);
+  box-shadow: var(--bh-shadow);
+  max-width: 300px;
+}
+.bh-plate-eyebrow {
+  font-family: var(--idv-font-mono, 'DM Mono', ui-monospace, monospace);
+  font-size: 9.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bh-gold-ink);
+}
+.bh-plate-name { font-family: 'Outfit', 'DM Sans', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+.bh-plate-tags { font-size: 12px; color: var(--bh-ink-2); line-height: 1.4; }
+.bh-plate-link {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 4px;
+  font-size: 12px; font-weight: 700; color: var(--bh-violet); text-decoration: none;
+}
+.bh-plate-link:hover { text-decoration: underline; }
+
+/* ── Selector ── */
+.bh-selector-wrap { position: relative; max-width: 1440px; margin: clamp(34px, 4.5vw, 64px) auto 0; }
+.bh-selector-hint {
+  margin: 0 0 12px;
+  text-align: center;
+  font-family: var(--idv-font-mono, 'DM Mono', ui-monospace, monospace);
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bh-ink-2);
+}
+.bh-selector { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.bh-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 14px;
+  border: 1px solid var(--bh-border);
+  background: rgba(255, 253, 248, 0.6);
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Outfit', 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--bh-ink-2);
+  transition: color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+}
+.bh-chip:hover { transform: translateY(-2px); color: var(--bh-ink); }
+.bh-chip[data-active='true'] { color: var(--bh-ink); }
+.bh-chip:focus-visible { outline: 2px solid var(--bh-violet); outline-offset: 3px; }
+.bh-chip-surface {
+  position: absolute; inset: 0; border-radius: 14px;
+  overflow: hidden;
+  background: var(--bh-pearl);
+  border: 1px solid;
+  box-shadow: 0 10px 26px rgba(68, 48, 88, 0.12);
+}
+/* Autoplay timer. transform-only so the 5s sweep never touches layout. */
+.bh-chip-progress {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  transform-origin: left center;
+  opacity: 0.55;
+}
+.bh-chip-label { position: relative; z-index: 1; }
+.bh-chip--all { color: var(--bh-violet); }
+
+/* ── Responsive ── */
+@media (max-width: 1023px) {
+  .bh-inner { grid-template-columns: 1fr; gap: clamp(28px, 6vw, 48px); }
+  /* Composition above, plate below, both in flow. The frame carries the height
+     the absolute cards need; .bh-visual stops dictating it. */
+  .bh-visual { min-height: 0; }
+  .bh-stage { display: flex; flex-direction: column; gap: 14px; height: auto; min-height: 0; }
+  .bh-frame { position: relative; inset: auto; height: clamp(330px, 76vw, 480px); }
+  .bh-plate { position: relative; bottom: auto; max-width: none; }
+  /* The ground shadow belongs under the cards, not under the whole column. */
+  .bh-stage::before { bottom: auto; top: clamp(300px, 68vw, 430px); }
+}
+@media (max-width: 767px) {
+  .bh { padding-top: clamp(88px, 14vh, 120px); }
+  .bh-title { font-size: clamp(38px, 11.5vw, 58px); }
+  .bh-actions .bh-btn { flex: 1 1 100%; justify-content: center; }
+  /* Only the dominant object plus two supporting cards survive on a phone. */
+  .bh-card--world, .bh-card--identity { display: none; }
+  .bh-card--product { left: 0; width: 58%; height: 62%; }
+  .bh-card--digital { right: 0; width: 52%; height: 38%; }
+  .bh-card--campaign { right: 2%; bottom: 2%; width: 46%; height: 40%; }
+  /* Back to flex-start: in a scroll container, centred overflow puts the first
+     chips before the scroll origin, where they cannot be reached. */
+  .bh-selector { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: thin; }
+  .bh-chip { flex: 0 0 auto; scroll-snap-align: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bh-btn, .bh-chip { transition: none; }
+}

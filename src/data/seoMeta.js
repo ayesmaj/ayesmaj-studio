@@ -151,7 +151,7 @@ export const SEO_ROUTES = {
        any brand-name query. */
     description:
       "Brand identity, packaging and product campaign work by AYESMAJ Studios for LaCroix, Boom Chicka Pop, ASHÉ, Blenday and Noam.",
-    h1: "Brand Worlds Built to Be Remembered.",
+    h1: "We build brand worlds people remember.",
     blurb:
       "Brand identity, packaging and product campaign work for LaCroix, Boom Chicka Pop, ASHÉ Ritual Roast, Blenday and Noam — logo systems, 3D product visualization, character design and complete brand worlds.",
   },
