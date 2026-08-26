@@ -100,6 +100,19 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
     const wrap = wrapRef.current; const video = videoRef.current;
     if (!wrap || !video) return undefined;
     let raf = 0;
+    /* iOS Safari will not paint frames for a muted inline video that has never
+       entered playback: currentTime seeks "succeed" while the element stays
+       black (owner report from an iPhone, 2026-08-26). One play() immediately
+       paused once data exists unlocks the decoder - legal without a gesture
+       because the video is muted+playsInline. Low Power Mode can still reject
+       play(), which is why the poster also backs the element as a CSS
+       background: an unpaintable frame shows the poster, never black. */
+    const prime = () => {
+      const p = video.play();
+      if (p && typeof p.then === 'function') p.then(() => video.pause()).catch(() => {});
+    };
+    if (video.readyState >= 2) prime();
+    else video.addEventListener('loadeddata', prime, { once: true });
     const update = () => {
       raf = 0;
       if (!Number.isFinite(video.duration) || video.duration === 0) return;
@@ -110,13 +123,19 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       setProgress(p);
       // seeks snap to the 0.25s keyframe grid so the decoder never walks a GOP
       const target = Math.min(Math.round(p * video.duration * 4) / 4, video.duration - 1 / 30);
-      if (Math.abs(target - video.currentTime) >= 0.2) video.currentTime = target;
+      if (Math.abs(target - video.currentTime) >= 0.2) {
+        // fastSeek lands on the nearest keyframe without decoding forward -
+        // with a keyframe every 0.25s that IS the target, and Safari treats it
+        // far more reliably than assigning currentTime mid-scroll.
+        if (typeof video.fastSeek === 'function') video.fastSeek(target);
+        else video.currentTime = target;
+      }
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     window.addEventListener('scroll', onScroll, { passive: true });
     video.addEventListener('loadedmetadata', update);
     update();
-    return () => { window.removeEventListener('scroll', onScroll); video.removeEventListener('loadedmetadata', update); if (raf) cancelAnimationFrame(raf); };
+    return () => { window.removeEventListener('scroll', onScroll); video.removeEventListener('loadedmetadata', update); video.removeEventListener('loadeddata', prime); if (raf) cancelAnimationFrame(raf); };
   }, [simple, reduced, near]);
 
   if (dead) return null;
@@ -139,7 +158,7 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       ) : (
         <div ref={wrapRef} className="idv2-pin-wrap" style={{ height }}>
           <div className="idv2-pin">
-            <video ref={videoRef} data-scrub muted playsInline preload={near ? 'auto' : 'none'} poster={film.poster} src={near ? (simple && film.mobile ? film.mobile : film.desktop) : undefined} aria-label={credit} onError={() => setDead(true)} />
+            <video ref={videoRef} data-scrub muted playsInline preload={near ? 'auto' : 'none'} poster={film.poster} src={near ? (simple && film.mobile ? film.mobile : film.desktop) : undefined} style={{ backgroundImage: `url(${film.poster})`, backgroundSize: 'cover', backgroundPosition: 'center' }} aria-label={credit} onError={() => setDead(true)} />
             <div className="idv2-pin-scrim" />
             <div className="xp-film-copy">
               <h2 className="idv2-pinseq-head" aria-live="polite">{stage.node}</h2>
