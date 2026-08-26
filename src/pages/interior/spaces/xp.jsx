@@ -109,13 +109,14 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
     const wrap = wrapRef.current; const video = videoRef.current;
     if (!wrap || !video) return undefined;
     let raf = 0;
-    /* iOS Safari will not paint frames for a muted inline video that has never
-       entered playback: currentTime seeks "succeed" while the element stays
-       black (owner report from an iPhone, 2026-08-26). One play() immediately
-       paused once data exists unlocks the decoder - legal without a gesture
-       because the video is muted+playsInline. Low Power Mode can still reject
-       play(), which is why the poster also backs the element as a CSS
-       background: an unpaintable frame shows the poster, never black. */
+    /* iOS will not decode frames for a video that has never played inside a
+       real user gesture: seeks report success while the element paints nothing
+       (owner's iPhone, 2026-08-26 - first black, then a frozen poster, then the
+       fallback player). Calling play() on load does NOT count - page load is
+       not a gesture, and neither is a scroll event.
+       The touch that BEGINS a scroll is one, so priming is attached to
+       touchstart/pointerdown. play() is issued synchronously inside that
+       handler, which is what unlocks the decoder for every later seek. */
     const prime = () => {
       const p = video.play();
       if (p && typeof p.then === 'function') p.then(() => video.pause()).catch(() => {});
@@ -149,6 +150,22 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       }, 3500);
     };
 
+    const touchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    let gesturePrimed = false;
+    const primeOnGesture = () => {
+      if (gesturePrimed) return;
+      gesturePrimed = true;
+      prime();
+      if (hasRVFC && !framePresented) video.requestVideoFrameCallback(onFrame);
+      // Only start judging once the device has had its one real chance.
+      armWatchdog();
+    };
+    if (touchDevice) {
+      document.addEventListener('touchstart', primeOnGesture, { passive: true });
+      document.addEventListener('pointerdown', primeOnGesture, { passive: true });
+    }
+
+
     const update = () => {
       raf = 0;
       if (!Number.isFinite(video.duration) || video.duration === 0) return;
@@ -170,7 +187,7 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       // seeks snap to the 0.25s keyframe grid so the decoder never walks a GOP
       const target = Math.min(Math.round(p * video.duration * 4) / 4, video.duration - 1 / 30);
       if (Math.abs(target - video.currentTime) >= 0.2) {
-        armWatchdog();
+        if (!touchDevice) armWatchdog();
         // fastSeek lands on the nearest keyframe without decoding forward -
         // with a keyframe every 0.25s that IS the target, and Safari treats it
         // far more reliably than assigning currentTime mid-scroll.
@@ -190,6 +207,8 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       video.removeEventListener('loadedmetadata', update);
       video.removeEventListener('seeked', onScroll);
       video.removeEventListener('loadeddata', prime);
+      document.removeEventListener('touchstart', primeOnGesture);
+      document.removeEventListener('pointerdown', primeOnGesture);
       video.removeEventListener('loadeddata', markPainted);
       video.removeEventListener('seeked', markPainted);
       if (raf) cancelAnimationFrame(raf);
