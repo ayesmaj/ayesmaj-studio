@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/seo-audit.mjs",
     "generate:concept-lab": "node scripts/generate-concept-lab.mjs",
     "brand-world:audit": "python scripts/brand-world-audit.py --write",
     "brand-world:generate": "python scripts/brand-world-generate.py",

@@ -415,6 +415,12 @@ export const SEO_ROUTES = {
  * Deliberately not schema'd: FAQPage (rich results restricted to government
  * and healthcare sites since Aug 2023) and HowTo (deprecated Sep 2023).
  */
+/** Prerendered but deliberately invisible: excluded from BOTH the sitemap and
+    the crawlable link block until the owner calls the page ready. Shared by
+    scripts/prerender.mjs and scripts/seo-audit.mjs so the two can never
+    disagree about what "the indexable set" means. */
+export const SITEMAP_EXCLUDE = new Set(['/Insights']);
+
 export const SERVICE_ROUTES = {
   "/ServiceBranding": "Brand identity design",
   "/WebExperiences": "Web design and development",

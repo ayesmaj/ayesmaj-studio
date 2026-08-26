@@ -168,7 +168,7 @@ export default function Services() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://ayesmajstudios.com/" }, { "@type": "ListItem", position: 2, name: "Services", item: "https://ayesmajstudios.com/services" }] },
+      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://ayesmajstudios.com/" }, { "@type": "ListItem", position: 2, name: "Services", item: "https://ayesmajstudios.com/Services" }] },
       { "@type": "ItemList", name: "AYESMAJ Studios creative services", itemListElement: CAPABILITIES.map((item, index) => ({ "@type": "Service", position: index + 1, name: item.title, description: item.text, provider: { "@type": "Organization", name: "AYESMAJ Studios" } })) },
       { "@type": "FAQPage", mainEntity: FAQS.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
     ],
@@ -182,7 +182,7 @@ export default function Services() {
 
   return (
     <div className="services-shell">
-      <Seo title="Creative Services | Branding, Web Design, AI Content & 3D | AYESMAJ Studios" description="Explore AYESMAJ Studios services including brand identity, premium web design, AI content and video, 3D CGI, motion, storyboards, packaging, and campaign art direction." path="/services" image="/assets/ayesmaj/generated/capabilities/capability-01-brand-strategy.webp" jsonLd={jsonLd} />
+      <Seo title="Creative Services | Branding, Web Design, AI Content & 3D | AYESMAJ Studios" description="Explore AYESMAJ Studios services including brand identity, premium web design, AI content and video, 3D CGI, motion, storyboards, packaging, and campaign art direction." path="/Services" image="/assets/ayesmaj/generated/capabilities/capability-01-brand-strategy.webp" jsonLd={jsonLd} />
       <div className="services-nav-surface" aria-hidden="true" />
       <AyesmajNav />
 

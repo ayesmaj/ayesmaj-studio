@@ -42,6 +42,12 @@ function NotFound() {
       document.head.appendChild(robots);
     }
     robots.setAttribute('content', 'noindex,nofollow');
+    /* Cleanup matters: ~15 routed pages (About, Studio, Branding, Reel, the
+       legal pages...) set only document.title and never render <Seo>, so
+       without this a 404 -> SPA-navigate leaves them noindex for the whole
+       session. AnimatePresence mode="wait" unmounts this before the next
+       page's Seo effect runs, so pages that DO manage robots still win. */
+    return () => { robots.setAttribute('content', 'index,follow'); };
   }, []);
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',

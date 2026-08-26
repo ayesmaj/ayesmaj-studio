@@ -20,7 +20,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { SEO_ROUTES } from '../src/data/seoMeta.js';
+import { SEO_ROUTES, SITEMAP_EXCLUDE } from '../src/data/seoMeta.js';
 import { SITE } from '../src/data/siteConfig.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -40,6 +40,14 @@ const redirectSources = new Set(
 
 const routes = Object.keys(SEO_ROUTES);
 const get = (html, re) => html.match(re)?.[1] ?? null;
+
+/** Mirror of prerender's esc() so h1 text can be compared against metadata. */
+const esc = (t) =>
+  String(t)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
 
 const titles = new Map();
 const descriptions = new Map();
@@ -61,6 +69,11 @@ for (const route of routes) {
   if (!title) flag(`${route}: missing <title>`);
   if (!desc) flag(`${route}: missing meta description`);
   if (h1s !== 1) flag(`${route}: expected exactly 1 <h1>, found ${h1s}`);
+  // Not just "an h1" - THIS route's h1. A stale-shell prerender once stamped
+  // the homepage h1 onto every page while the count check passed.
+  if (!html.includes(`<h1>${esc(SEO_ROUTES[route].h1)}</h1>`)) {
+    flag(`${route}: prerendered h1 does not match SEO_ROUTES h1 ("${SEO_ROUTES[route].h1}")`);
+  }
   if (robots && /noindex/i.test(robots)) flag(`${route}: prerendered page carries noindex`);
 
   const expected = SITE.url + (route === '/' ? '/' : route);
@@ -88,6 +101,7 @@ for (const route of routes) {
     if (redirectSources.has(href)) flag(`${route}: crawlable link to redirect ${href}`);
     else if (href.startsWith('/he/')) flag(`${route}: crawlable link to noindexed ${href}`);
     else if (!SEO_ROUTES[href]) flag(`${route}: crawlable link to non-prerendered ${href}`);
+    else if (SITEMAP_EXCLUDE.has(href)) flag(`${route}: crawlable link to sitemap-excluded ${href}`);
   }
 }
 
@@ -108,6 +122,17 @@ if (!fs.existsSync(smPath)) {
   }
   if (sm.includes('changefreq') || sm.includes('priority')) {
     flag('sitemap: contains changefreq/priority (Google ignores both; keep it clean)');
+  }
+
+  // Reverse direction: every indexable route must actually BE in the sitemap.
+  // Mutation-tested: an empty <urlset/> previously passed this audit clean.
+  const expected = routes.filter((r) => !SITEMAP_EXCLUDE.has(r));
+  const present = new Set(smRoutes);
+  for (const r of expected) {
+    if (!present.has(r)) flag(`sitemap: indexable route ${r} is missing`);
+  }
+  for (const r of smRoutes) {
+    if (SITEMAP_EXCLUDE.has(r)) flag(`sitemap: excluded route ${r} must not be listed`);
   }
 
   // Orphan check: every sitemap URL needs >=1 crawlable inbound link.

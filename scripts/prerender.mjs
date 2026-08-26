@@ -19,7 +19,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { SEO_ROUTES, SERVICE_ROUTES } from '../src/data/seoMeta.js';
+import { SEO_ROUTES, SERVICE_ROUTES, SITEMAP_EXCLUDE } from '../src/data/seoMeta.js';
 import { SITE } from '../src/data/siteConfig.js';
 
 /** Open Graph and Twitter truncate around here; search titles may run longer. */
@@ -123,7 +123,7 @@ function jsonLdFor(route, meta) {
  * Sourcing from SEO_ROUTES makes both impossible by construction: a link can
  * only be emitted for a URL that is prerendered and self-canonical.
  */
-const CRAWLABLE = Object.keys(SEO_ROUTES);
+const CRAWLABLE = Object.keys(SEO_ROUTES).filter((r) => !SITEMAP_EXCLUDE.has(r));
 const INTERIOR = CRAWLABLE.filter((r) => r.startsWith('/interior-design'));
 const TOP_LEVEL = CRAWLABLE.filter((r) => !r.startsWith('/interior-design/'));
 
@@ -200,10 +200,6 @@ function render(shell, route, meta) {
   return html;
 }
 
-/* Prerendered and crawlable but deliberately held out of the sitemap until the
-   owner calls the page ready. Being generated from SEO_ROUTES, the sitemap can
-   no longer drift from the prerender - parity holds by construction. */
-const SITEMAP_EXCLUDE = new Set(['/Insights']);
 
 /** The sitemap is generated, not maintained: every URL is prerendered and
     self-canonical because it comes from SEO_ROUTES. No changefreq/priority
@@ -214,7 +210,7 @@ function writeSitemap() {
   const xml =
     `<?xml version="1.0" encoding="UTF-8"?>\n` +
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-    routes.map((r) => `  <url><loc>${SITE.url}${r === '/' ? '/' : r}</loc></url>`).join('\n') +
+    routes.map((r) => `  <url><loc>${esc(SITE.url + (r === '/' ? '/' : r))}</loc></url>`).join('\n') +
     `\n</urlset>\n`;
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'), xml);
   return routes.length;
@@ -226,6 +222,11 @@ function main() {
     throw new Error('prerender: dist/index.html missing — run after vite build');
   }
   const shell = fs.readFileSync(shellPath, 'utf8');
+  if (shell.includes('id="prerendered-seo"')) {
+    throw new Error(
+      'prerender: dist/index.html is already prerendered - a second pass would stamp the homepage body onto every route. Run vite build first.',
+    );
+  }
 
   // Build check: a sitemap URL with no metadata would ship as a duplicate of
   // the homepage, which is the exact bug this script exists to remove.

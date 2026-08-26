@@ -20,8 +20,7 @@ if (fs.existsSync(envPath)) {
   }
 }
 const KEY = process.env.OPENAI_API_KEY;
-const MODEL = process.env.OPENAI_IMAGE_MODEL && process.env.OPENAI_IMAGE_MODEL !== "gpt-image-2"
-  ? process.env.OPENAI_IMAGE_MODEL : "gpt-image-1"; // gpt-image-2 not a real model id
+const MODEL = process.env.OPENAI_IMAGE_MODEL || "gpt-image-2";
 const FORCE = process.argv.includes("--force");
 
 const OUT = path.join(ROOT, "public", "assets", "ayesmaj", "web-experiences");
