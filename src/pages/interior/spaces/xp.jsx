@@ -184,12 +184,18 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
          One seek at a time: skip while seeking and the next rAF picks up the
          then-current scroll position, which is the one that matters anyway. */
       if (video.seeking) return;
-      // seeks snap to the 0.25s keyframe grid so the decoder never walks a GOP
-      const target = Math.min(Math.round(p * video.duration * 4) / 4, video.duration - 1 / 30);
-      if (Math.abs(target - video.currentTime) >= 0.2) {
+      /* The films are encoded all-intra at 12fps, so every frame is a keyframe
+         and any 1/12s boundary is a valid instant seek. Snapping to that grid
+         gives 425 distinct positions across the villa film where the old 0.25s
+         grid gave 142 - three times the resolution, which is what made the
+         scrub feel stepped rather than continuous. */
+      const target = Math.min(Math.round(p * video.duration * 12) / 12, video.duration - 1 / 12);
+      // Half a frame: any movement of one frame or more issues a seek. The
+      // `seeking` guard above still enforces one in flight at a time.
+      if (Math.abs(target - video.currentTime) >= 1 / 24) {
         if (!touchDevice) armWatchdog();
         // fastSeek lands on the nearest keyframe without decoding forward -
-        // with a keyframe every 0.25s that IS the target, and Safari treats it
+        // with every frame a keyframe that IS the target, and Safari treats it
         // far more reliably than assigning currentTime mid-scroll.
         if (typeof video.fastSeek === 'function') video.fastSeek(target);
         else video.currentTime = target;
