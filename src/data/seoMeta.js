@@ -145,19 +145,23 @@ export const SEO_ROUTES = {
      renders, so the prerendered and rendered DOM agree. */
   "/Branding": {
     title: "Branding & Visual Campaigns | AYESMAJ Studios",
+    /* Client names confirmed by the owner 2026-08-25. They matter here beyond
+       trust: the portfolio renders them client-side, so before this the brands
+       existed nowhere in the crawlable HTML and the page could not surface for
+       any brand-name query. */
     description:
-      "Brand identity and campaign work by AYESMAJ Studios — logo systems, packaging, character design and complete brand worlds.",
+      "Brand identity, packaging and product campaign work by AYESMAJ Studios for LaCroix, Boom Chicka Pop, ASHÉ, Blenday and Noam.",
     h1: "Brand Worlds Built to Be Remembered.",
     blurb:
-      "Logo systems, packaging, character design and complete brand worlds — the full branding portfolio.",
+      "Brand identity, packaging and product campaign work for LaCroix, Boom Chicka Pop, ASHÉ Ritual Roast, Blenday and Noam — logo systems, 3D product visualization, character design and complete brand worlds.",
   },
   "/Reel": {
     title: "Showreel & Brand Films | AYESMAJ Studios",
     description:
-      "Cinematic brand films, product reveals and campaign reels from AYESMAJ Studios — watch the showreel and selected video work.",
+      "Cinematic brand films, product reveals and campaign reels from AYESMAJ Studios — the showreel plus work for Boom Chicka Pop and ASHÉ.",
     h1: "Watch Our Work",
     blurb:
-      "Cinematic brand films, product reveals and campaign reels — built to move people.",
+      "Cinematic brand films, product reveals and campaign reels — including the AYESMAJ logo reveal and product work for Boom Chicka Pop and ASHÉ Ritual Roast.",
   },
   "/ServiceBranding": {
     title: "Brand Strategy & Identity | AYESMAJ Studios",

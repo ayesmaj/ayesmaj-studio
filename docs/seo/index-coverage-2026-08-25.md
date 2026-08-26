@@ -67,19 +67,29 @@ it does not force a re-crawl. Do these:
    "Discovered – currently not indexed".
 4. Re-check in **2–4 weeks**. Expect movement in that window, not in days.
 
-## Open item — needs your decision
+## Resolved — /Branding and /Reel are now indexable
 
-`/Branding` and `/Reel` return 200 and are linked from the live React footer, but
-they are not in `SEO_ROUTES`, so they are not prerendered, not in the sitemap, and
-serve the homepage canonical. Google therefore treats them as duplicates of `/`.
+The two routes were the wrong way round. `/Brands` held the SEO metadata and the
+sitemap entry, but it is a client-side `<Navigate>` stub; its own comment says the
+canonical portfolio lives at `/Branding`. Google was handed a 200 page that bounces
+away, while the real portfolio had no metadata and served the homepage canonical —
+which is what produced *Duplicate without user-selected canonical*.
 
-Two ways to close it, and it is a content call rather than a technical one:
+- `/Branding` and `/Reel` now have their own titles, descriptions and
+  self-referencing canonicals, and 43 inbound crawlable links each.
+- Each `h1` matches what the page actually renders, so the prerendered and rendered
+  DOM agree.
+- `/Brands` is out of the sitemap and is now a server-side 308 to `/Branding`.
+  `/brands` previously chained through it; it now goes straight to the canonical page.
+- Sitemap: 42 → 43 URLs.
 
-- **Keep them** — give each a title, description, h1 and blurb in `seoMeta.js` and add
-  them to the sitemap. They become real indexable pages.
-- **Retire them** — remove them from the footer so nothing links to a shell page.
-
-I did not invent SEO copy for pages I have not reviewed with you.
+**Client names are now in the crawlable HTML for the first time.** The portfolio
+renders LaCroix, Boom Chicka Pop, ASHÉ Ritual Roast, Blenday and Noam client-side
+only, so those brands existed nowhere a crawler could read them — the page could not
+surface for any brand-name query despite being the studio's strongest trust signal.
+They now appear in the meta description and in the prerendered paragraph on
+`/Branding`, and on `/Reel` for the film work. Only the five real client entries are
+named; CHARACTER DESIGN, INTERIOR DESIGN and BRAND IDENTITIES are category tiles.
 
 ## Honest expectation
 
