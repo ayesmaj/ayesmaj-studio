@@ -418,9 +418,31 @@
    wrong trade for a page whose entire point is showing the film.
    Scoped to .he-scope, so the English pages keep their scrim. */
 .he-scope .xp-film .idv2-pin-scrim { display: none; }
+
+/* The caption has to survive the whole scrub, not one frame. This film runs from
+   a near-black poolside shot to a bedroom of white bedding in full daylight, so
+   there is no text colour that works against both - which is what the scrim was
+   really for. Layered zero-offset blurs build a halo that hugs the glyphs
+   instead: invisible on the dark frames, and the only thing holding the type
+   together on the bright ones. It darkens the pixels immediately around the
+   letters and nothing else, so the frame itself stays untouched. */
 .he-scope .xp-film .xp-film-copy {
   text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.95),
-    0 2px 10px rgba(0, 0, 0, 0.85),
-    0 6px 34px rgba(0, 0, 0, 0.7);
+    0 0 2px rgba(0, 0, 0, 0.95),
+    0 0 6px rgba(0, 0, 0, 0.88),
+    0 0 16px rgba(0, 0, 0, 0.8),
+    0 0 42px rgba(0, 0, 0, 0.62),
+    0 2px 5px rgba(0, 0, 0, 0.92);
+}
+/* paint-order puts the stroke behind the fill, so the letterforms keep their
+   real weight and only gain a defined edge - not a comic-book outline. */
+.he-scope .xp-film .idv2-pinseq-head {
+  paint-order: stroke fill;
+  -webkit-text-stroke: 2.5px rgba(0, 0, 0, 0.42);
+}
+/* The credit is set to 65% white inline in xp.jsx, which was fine reading off a
+   scrim and is not against sunlit bedding. !important is the only way past an
+   inline style; still scoped to .he-scope. */
+.he-scope .xp-film .xp-film-copy .idv-mono-label {
+  color: rgba(245, 245, 240, 0.94) !important;
 }
