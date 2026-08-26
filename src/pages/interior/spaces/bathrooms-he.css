@@ -426,19 +426,19 @@
    instead: invisible on the dark frames, and the only thing holding the type
    together on the bright ones. It darkens the pixels immediately around the
    letters and nothing else, so the frame itself stays untouched. */
+/* drop-shadow, NOT text-shadow. The last stage wraps its second line in
+   .idv2-grad, which fills the glyphs with a gradient via background-clip:text
+   and color:transparent. A text-shadow paints BEHIND that transparent fill and
+   shows straight through the letterforms - which turned the gold-to-violet line
+   solid black. filter works from the composited alpha instead, so the halo
+   lands outside the glyphs and the gradient stays exactly as designed.
+   No text-stroke either: on transparent-filled text it draws black over the
+   very gradient it is meant to protect. */
 .he-scope .xp-film .xp-film-copy {
-  text-shadow:
-    0 0 2px rgba(0, 0, 0, 0.95),
-    0 0 6px rgba(0, 0, 0, 0.88),
-    0 0 16px rgba(0, 0, 0, 0.8),
-    0 0 42px rgba(0, 0, 0, 0.62),
-    0 2px 5px rgba(0, 0, 0, 0.92);
-}
-/* paint-order puts the stroke behind the fill, so the letterforms keep their
-   real weight and only gain a defined edge - not a comic-book outline. */
-.he-scope .xp-film .idv2-pinseq-head {
-  paint-order: stroke fill;
-  -webkit-text-stroke: 2.5px rgba(0, 0, 0, 0.42);
+  filter:
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8))
+    drop-shadow(0 2px 9px rgba(0, 0, 0, 0.68))
+    drop-shadow(0 0 24px rgba(0, 0, 0, 0.5));
 }
 /* The credit is set to 65% white inline in xp.jsx, which was fine reading off a
    scrim and is not against sunlit bedding. !important is the only way past an
