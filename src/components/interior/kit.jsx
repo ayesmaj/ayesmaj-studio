@@ -312,7 +312,9 @@ export function PinSeq({ stages, height = '350vh', accentClass = '', ariaLabel =
             style={{ opacity: i === idx ? 1 : 0, transition: 'opacity 0.45s ease' }} />
         ))}
         <div className="idv2-pin-scrim" />
-        <div style={{ position: 'absolute', left: 'var(--idv-pad)', right: 'var(--idv-pad)', bottom: 'clamp(50px, 8vh, 110px)', display: 'grid', gap: 14, color: '#F5F5F0' }}>
+        {/* --pin-gap keeps this above the fold when the pin runs taller than the
+            visible viewport - see .idv2-pin in interior2.css. 0 on desktop. */}
+        <div style={{ position: 'absolute', left: 'var(--idv-pad)', right: 'var(--idv-pad)', bottom: 'calc(var(--pin-gap, 0px) + clamp(50px, 8vh, 110px))', display: 'grid', gap: 14, color: '#F5F5F0' }}>
           {active.head ? <h2 className="idv2-pinseq-head" aria-live="polite">{active.head}</h2> : null}
           <div className="idv2-pinseq-stagebar">
             {stages.map((s, i) => <span key={s.label} data-active={i === idx}>{'0' + (i + 1) + ' ' + s.label}</span>)}
