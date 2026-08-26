@@ -32,7 +32,7 @@ export const SITE = {
 // Canonical navigation (top-level)
 export const NAV = [
   { label: "Work", to: "/Work" },
-  { label: "Services", to: "/services", mega: "services" },
+  { label: "Services", to: "/Services", mega: "services" },
   { label: "Interior Design", to: "/interior-design", mega: "interior" },
   { label: "Studio", to: "/Studio" },
   { label: "About", to: "/About" },
@@ -58,13 +58,17 @@ export const INTERIOR_MENU = {
 };
 
 // Services mega-menu items (each links to a full service page)
+/* Internal links go straight to the canonical route. The lowercase
+   /services/* aliases still exist as permanent redirects in vercel.json for
+   external and historical links, but linking them internally sent every click
+   and every rendered-crawl hop through a 308 for no benefit. */
 export const SERVICES_MENU = [
-  { label: "Brand Strategy & Identity", to: "/services/branding", line: "Positioning, logo systems, and visual language." },
-  { label: "Premium Websites", to: "/services/web-design", line: "Cinematic sites engineered to convert." },
-  { label: "AI Content Production", to: "/services/ai-content", line: "AI images, posts, and campaigns at scale." },
-  { label: "3D & CGI", to: "/services/3d-cgi", line: "Product modeling, environments, photoreal renders." },
-  { label: "Motion, Film & VFX", to: "/services/motion-vfx", line: "Commercials, brand films, launch reels." },
-  { label: "Storyboards & Direction", to: "/services/storyboards", line: "See the film before it exists." },
+  { label: "Brand Strategy & Identity", to: "/ServiceBranding", line: "Positioning, logo systems, and visual language." },
+  { label: "Premium Websites", to: "/WebExperiences", line: "Cinematic sites engineered to convert." },
+  { label: "AI Content Production", to: "/AiMarketing", line: "AI images, posts, and campaigns at scale." },
+  { label: "3D & CGI", to: "/Worlds3D", line: "Product modeling, environments, photoreal renders." },
+  { label: "Motion, Film & VFX", to: "/AiVideos", line: "Commercials, brand films, launch reels." },
+  { label: "Storyboards & Direction", to: "/Storyboards", line: "See the film before it exists." },
   { label: "Interior Design Visualization", to: "/interior-design", line: "Scans, 3D plans, AI film and client presentations for spatial projects." },
   { label: "AI Brand System", to: "/System", line: "Turn a brief into a connected brand and content direction." },
 ];

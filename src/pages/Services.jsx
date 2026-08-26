@@ -40,7 +40,7 @@ const CORE_WORLDS = [
     number: "01",
     title: "Web Experiences",
     subtitle: "Digital experiences built to sell, explain, and impress.",
-    route: "/services/web-design",
+    route: "/WebExperiences",
     accent: "lime",
     icon: Code2,
     media: SITE_DEMOS[4],
@@ -49,7 +49,7 @@ const CORE_WORLDS = [
     number: "02",
     title: "AI Content & Marketing",
     subtitle: "Cinematic images, videos, campaigns, and scalable content.",
-    route: "/services/ai-content",
+    route: "/AiMarketing",
     accent: "amber",
     icon: Sparkles,
     media: { src: "/brands/blenday/7.webm", poster: "/assets/ayesmaj/generated/capabilities/capability-02-ai-content.webp" },
@@ -58,7 +58,7 @@ const CORE_WORLDS = [
     number: "03",
     title: "3D Worlds & CGI",
     subtitle: "Products, environments, animation, and immersive visual experiences.",
-    route: "/services/3d-cgi",
+    route: "/Worlds3D",
     accent: "violet",
     icon: Box,
     media: { src: ANIMATIONS[2].src, poster: "/assets/ayesmaj/service-worlds/worlds3d-hero.webp" },
@@ -66,16 +66,16 @@ const CORE_WORLDS = [
 ];
 
 const CAPABILITIES = [
-  { number: "01", title: "Brand Strategy & Identity", text: "Positioning, identity, logo systems, typography, and brand language.", tags: ["Strategy", "Identity", "Guidelines"], route: "/services/branding", icon: Compass, media: "/assets/ayesmaj/generated/capabilities/capability-01-brand-strategy.webp" },
-  { number: "02", title: "Packaging & Label Design", text: "Packaging, labels, boxes, product systems, and retail presentation.", tags: ["Packaging", "Labels", "Retail"], route: "/services/branding", icon: Package, media: "/generated/projects/ashe/cover.webp" },
-  { number: "03", title: "Web Design & Development", text: "Premium websites, landing pages, responsive systems, and interaction.", tags: ["UX / UI", "Development", "Web"], route: "/services/web-design", icon: Code2, media: "/assets/ayesmaj/generated/capabilities/capability-03-web-design.webp" },
-  { number: "04", title: "AI Image Production", text: "Campaign images, social content, advertising visuals, and product worlds.", tags: ["Campaigns", "Social", "AI Images"], route: "/services/ai-content", icon: Sparkles, media: "/assets/ayesmaj/service-worlds/ai-fashion-campaign.webp" },
-  { number: "05", title: "AI Video Production", text: "Commercials, social videos, cinematic campaigns, and brand films.", tags: ["AI Film", "Commercials", "Content"], route: "/services/ai-content", icon: Film, media: "/assets/ayesmaj/generated/capabilities/capability-02-ai-content.webp", video: AI_VIDEOS[1] },
-  { number: "06", title: "3D Modeling & CGI", text: "Products, characters, environments, architecture, and branded worlds.", tags: ["Modeling", "CGI", "Environments"], route: "/services/3d-cgi", icon: Box, media: "/assets/ayesmaj/generated/capabilities/capability-04-3d-cgi.webp", video: { src: ANIMATIONS[6].src } },
-  { number: "07", title: "Motion, Film & VFX", text: "Animation, editing, compositing, visual effects, and product films.", tags: ["Motion", "Film", "VFX"], route: "/services/motion-vfx", icon: Clapperboard, media: "/assets/ayesmaj/generated/capabilities/capability-05-motion-film.webp", video: SHOWREEL_FILMS[0] },
-  { number: "08", title: "Storyboards & Direction", text: "Concept development, shot planning, campaign direction, and visual storytelling.", tags: ["Concept", "Shots", "Direction"], route: "/services/storyboards", icon: PenTool, media: "/storyboards-10/05-syntropic-one-computer-does-the-work-of-ten.webp" },
-  { number: "09", title: "Campaign Art Direction", text: "Launch campaigns, advertising systems, key visuals, and social rollouts.", tags: ["Concept", "Launch", "Campaign"], route: "/services/ai-content", icon: Palette, media: "/assets/ayesmaj/generated/capabilities/capability-06-art-direction.webp" },
-  { number: "10", title: "Brand Applications", text: "Vehicles, signage, print, merchandise, uniforms, and physical touchpoints.", tags: ["Applications", "Print", "Physical"], route: "/services/branding", icon: Layers3, media: "/brands/arizona%20chimney%20pros/generated/master/brand-world-master.webp" },
+  { number: "01", title: "Brand Strategy & Identity", text: "Positioning, identity, logo systems, typography, and brand language.", tags: ["Strategy", "Identity", "Guidelines"], route: "/ServiceBranding", icon: Compass, media: "/assets/ayesmaj/generated/capabilities/capability-01-brand-strategy.webp" },
+  { number: "02", title: "Packaging & Label Design", text: "Packaging, labels, boxes, product systems, and retail presentation.", tags: ["Packaging", "Labels", "Retail"], route: "/ServiceBranding", icon: Package, media: "/generated/projects/ashe/cover.webp" },
+  { number: "03", title: "Web Design & Development", text: "Premium websites, landing pages, responsive systems, and interaction.", tags: ["UX / UI", "Development", "Web"], route: "/WebExperiences", icon: Code2, media: "/assets/ayesmaj/generated/capabilities/capability-03-web-design.webp" },
+  { number: "04", title: "AI Image Production", text: "Campaign images, social content, advertising visuals, and product worlds.", tags: ["Campaigns", "Social", "AI Images"], route: "/AiMarketing", icon: Sparkles, media: "/assets/ayesmaj/service-worlds/ai-fashion-campaign.webp" },
+  { number: "05", title: "AI Video Production", text: "Commercials, social videos, cinematic campaigns, and brand films.", tags: ["AI Film", "Commercials", "Content"], route: "/AiMarketing", icon: Film, media: "/assets/ayesmaj/generated/capabilities/capability-02-ai-content.webp", video: AI_VIDEOS[1] },
+  { number: "06", title: "3D Modeling & CGI", text: "Products, characters, environments, architecture, and branded worlds.", tags: ["Modeling", "CGI", "Environments"], route: "/Worlds3D", icon: Box, media: "/assets/ayesmaj/generated/capabilities/capability-04-3d-cgi.webp", video: { src: ANIMATIONS[6].src } },
+  { number: "07", title: "Motion, Film & VFX", text: "Animation, editing, compositing, visual effects, and product films.", tags: ["Motion", "Film", "VFX"], route: "/AiVideos", icon: Clapperboard, media: "/assets/ayesmaj/generated/capabilities/capability-05-motion-film.webp", video: SHOWREEL_FILMS[0] },
+  { number: "08", title: "Storyboards & Direction", text: "Concept development, shot planning, campaign direction, and visual storytelling.", tags: ["Concept", "Shots", "Direction"], route: "/Storyboards", icon: PenTool, media: "/storyboards-10/05-syntropic-one-computer-does-the-work-of-ten.webp" },
+  { number: "09", title: "Campaign Art Direction", text: "Launch campaigns, advertising systems, key visuals, and social rollouts.", tags: ["Concept", "Launch", "Campaign"], route: "/AiMarketing", icon: Palette, media: "/assets/ayesmaj/generated/capabilities/capability-06-art-direction.webp" },
+  { number: "10", title: "Brand Applications", text: "Vehicles, signage, print, merchandise, uniforms, and physical touchpoints.", tags: ["Applications", "Print", "Physical"], route: "/ServiceBranding", icon: Layers3, media: "/brands/arizona%20chimney%20pros/generated/master/brand-world-master.webp" },
 ];
 
 const SELECTOR = [
@@ -255,36 +255,36 @@ export default function Services() {
         </section>
 
         <section className="svc-feature svc-feature--branding section-paper">
-          <motion.div className="svc-feature__copy" {...reveal()}><p className="svc-kicker">Branding & identity</p><h2>Build the language<br />before you build the noise.</h2><p>We create the visual system that everything else grows from.</p><div className="svc-tags">Strategy · Visual identity · Logo systems · Typography · Packaging · Guidelines</div><Link className="svc-button svc-button--ink" to="/services/branding">Explore branding <ArrowRight /></Link></motion.div>
+          <motion.div className="svc-feature__copy" {...reveal()}><p className="svc-kicker">Branding & identity</p><h2>Build the language<br />before you build the noise.</h2><p>We create the visual system that everything else grows from.</p><div className="svc-tags">Strategy · Visual identity · Logo systems · Typography · Packaging · Guidelines</div><Link className="svc-button svc-button--ink" to="/ServiceBranding">Explore branding <ArrowRight /></Link></motion.div>
           <motion.div className="svc-feature__brand-board" {...reveal(0.08)}><img src={local("/brands/ashe/generated/master/brand-world-master.webp")} alt="ASHÉ identity system with logo, palette, typography, packaging, and applications" loading="lazy" /><img src={local("/brands/blenday/generated/packaging/packaging-lineup.webp")} alt="Blenday packaging system" loading="lazy" /><img src={local("/generated/projects/paranormal/cover.webp")} alt="Paranormal campaign poster" loading="lazy" /></motion.div>
         </section>
 
         <section className="svc-feature svc-feature--web section-glass">
-          <motion.div className="svc-feature__copy" {...reveal()}><p className="svc-kicker">Web experiences</p><h2>Websites that feel<br />like premium products.</h2><p>Responsive digital showrooms built to explain, impress, and convert.</p><div className="svc-tags">UX / UI · Landing pages · Interactive websites · AI integration · Development</div><Link className="svc-button svc-button--ink" to="/services/web-design">Explore web experiences <ArrowRight /></Link></motion.div>
+          <motion.div className="svc-feature__copy" {...reveal()}><p className="svc-kicker">Web experiences</p><h2>Websites that feel<br />like premium products.</h2><p>Responsive digital showrooms built to explain, impress, and convert.</p><div className="svc-tags">UX / UI · Landing pages · Interactive websites · AI integration · Development</div><Link className="svc-button svc-button--ink" to="/WebExperiences">Explore web experiences <ArrowRight /></Link></motion.div>
           <motion.div className="svc-feature__web-stack" {...reveal(0.08)}><Video media={SITE_DEMOS[1]} label="PODOS AI website" /><Video media={SITE_DEMOS[2]} label="Rebound premium website" /><Video media={SITE_DEMOS[5]} label="Electric Fuel America website" /></motion.div>
         </section>
 
         <section className="svc-feature svc-feature--ai section-campaign">
-          <motion.div className="svc-feature__copy" {...reveal()}><p className="svc-kicker">AI content & marketing</p><h2>Content built<br />at the speed of culture.</h2><p>Campaign frames, product content, social systems, and films made to stay visible.</p><div className="svc-tags">AI images · AI video · Social content · Campaign visuals · Product content</div><Link className="svc-button svc-button--gold" to="/services/ai-content">Explore AI content <ArrowRight /></Link></motion.div>
+          <motion.div className="svc-feature__copy" {...reveal()}><p className="svc-kicker">AI content & marketing</p><h2>Content built<br />at the speed of culture.</h2><p>Campaign frames, product content, social systems, and films made to stay visible.</p><div className="svc-tags">AI images · AI video · Social content · Campaign visuals · Product content</div><Link className="svc-button svc-button--gold" to="/AiMarketing">Explore AI content <ArrowRight /></Link></motion.div>
           <div className="svc-media-wall">{AI_VIDEOS.map((video) => <Video key={video.id} media={video} label={video.title} />)}<img src={local("/assets/ayesmaj/service-worlds/ai-hero-campaign.webp")} alt="AYESMAJ AI hero campaign" loading="lazy" /><img src={local("/assets/ayesmaj/service-worlds/ai-product-launch.webp")} alt="AYESMAJ AI product launch" loading="lazy" /></div>
         </section>
 
         <section className="svc-cgi section-cgi">
           <motion.header className="svc-section-head svc-section-head--center" {...reveal()}><p className="svc-kicker">3D & CGI</p><h2>If it doesn’t exist,<br /><span>we can build it.</span></h2></motion.header>
           <div className="svc-cgi__stages">{[["Sketch", "/generated/before-after/product-before.webp"], ["Wireframe", "/assets/ayesmaj/generated/capabilities/capability-04-3d-cgi.webp"], ["Material", "/assets/ayesmaj/service-worlds/worlds3d-product.webp"], ["Final CGI", "/assets/ayesmaj/service-worlds/worlds3d-hero.webp"]].map(([label, image], index) => <motion.figure key={label} {...reveal(index * .05)}><img src={local(image)} alt={`${label} stage of AYESMAJ 3D production`} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, "0")}</span>{label}</figcaption></motion.figure>)}</div>
-          <div className="svc-cgi__reel"><Video media={{ src: ANIMATIONS[10].src, poster: "/assets/ayesmaj/service-worlds/worlds3d-environment.webp" }} label="AYESMAJ 3D environment animation" /><div><p>Modeling · Product visualization · Environments · Characters · Animation · Simulation</p><Link className="svc-button svc-button--glass" to="/services/3d-cgi">Explore 3D & CGI <ArrowRight /></Link></div></div>
+          <div className="svc-cgi__reel"><Video media={{ src: ANIMATIONS[10].src, poster: "/assets/ayesmaj/service-worlds/worlds3d-environment.webp" }} label="AYESMAJ 3D environment animation" /><div><p>Modeling · Product visualization · Environments · Characters · Animation · Simulation</p><Link className="svc-button svc-button--glass" to="/Worlds3D">Explore 3D & CGI <ArrowRight /></Link></div></div>
         </section>
 
         <section className="svc-motion section-film idv2-bgc idv2-bgc-01">
           <motion.header className="svc-section-head" {...reveal()}><p className="svc-kicker">Motion, film & VFX</p><h2>Make it move.<br /><span>Make it stay with them.</span></h2></motion.header>
           <div className="svc-motion__strip">{SHOWREEL_FILMS.map((film, index) => <motion.article key={film.id} {...reveal(index * .06)}><Video media={film} label={film.title} /><div><Play aria-hidden="true" /><span>{film.title}</span><small>{film.category}</small></div></motion.article>)}</div>
-          <Link className="svc-button svc-button--gold" to="/services/motion-vfx">Explore motion <ArrowRight /></Link>
+          <Link className="svc-button svc-button--gold" to="/AiVideos">Explore motion <ArrowRight /></Link>
         </section>
 
         <section className="svc-story section-story">
           <motion.header className="svc-section-head" {...reveal()}><p className="svc-kicker">Storyboards & creative direction</p><h2>Every strong frame<br /><span>starts with a plan.</span></h2></motion.header>
           <div className="svc-story__grid">{STORYBOARD_FRAMES.map(([number, title, image], index) => <motion.figure key={number} {...reveal(index * .03)}><img src={local(image)} alt={`${number} ${title} storyboard frame`} loading="lazy" /><figcaption><span>{number}</span>{title}</figcaption></motion.figure>)}</div>
-          <Link className="svc-button svc-button--ink" to="/services/storyboards">Explore storyboards <ArrowRight /></Link>
+          <Link className="svc-button svc-button--ink" to="/Storyboards">Explore storyboards <ArrowRight /></Link>
         </section>
 
         <section className="svc-applications section-paper">
