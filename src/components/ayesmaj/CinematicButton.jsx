@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { FONTS } from "./theme";
+
+const MotionLink = motion(Link);
 
 /**
  * CinematicButton — pill button with magnetic hover + accent glow.
@@ -10,6 +13,8 @@ import { FONTS } from "./theme";
  *   label    : string
  *   accent   : hex color (currentColor for border/glow)
  *   onClick  : fn
+ *   to       : route path — renders a real <a href> (react-router Link) so the
+ *              CTA is followable/middle-clickable; omit for action buttons
  *   variant  : "outline" (default) | "solid"
  *   size     : "md" (default) | "lg"
  */
@@ -17,6 +22,7 @@ export default function CinematicButton({
   label = "ENTER WORLD",
   accent = "#FFB000",
   onClick,
+  to,
   variant = "outline",
   size = "md",
 }) {
@@ -36,8 +42,10 @@ export default function CinematicButton({
 
   const isLg = size === "lg";
 
+  const Root = to ? MotionLink : motion.button;
   return (
-    <motion.button
+    <Root
+      {...(to ? { to } : {})}
       ref={ref}
       onClick={onClick}
       onMouseMove={handleMove}
@@ -64,6 +72,7 @@ export default function CinematicButton({
         fontWeight: 700,
         letterSpacing: "0.2em",
         textTransform: "uppercase",
+        textDecoration: "none",
         cursor: "pointer",
         transition: "background 0.35s ease, box-shadow 0.35s ease, color 0.35s ease",
       }}
@@ -88,6 +97,6 @@ export default function CinematicButton({
         }}
         className="ayes-cta-arrow"
       />
-    </motion.button>
+    </Root>
   );
 }

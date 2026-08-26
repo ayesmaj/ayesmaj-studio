@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { trackPhoneClick } from '@/lib/track';
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   Menu, X, ChevronDown,
   Hexagon, Globe, Sparkles, Box, Clapperboard, PenTool,
@@ -13,6 +13,14 @@ import { COLORS, FONTS } from "./theme";
 import { SITE, NAV, SERVICES_MENU, WORK_MENU, INTERIOR_MENU } from "../../data/siteConfig";
 
 const GRADIENT = "linear-gradient(90deg,#D8B75A 0%,#C88B58 30%,#A45FDB 70%,#7A48FF 100%)";
+
+/* Every navigational control in this file used to be a <button onClick={go(to)}>.
+   That rendered a chrome with ZERO real links: crawlers had nothing to follow,
+   middle-click/ctrl-click did nothing, and screen readers announced buttons.
+   Links now render real <a href> elements; react-router still intercepts plain
+   left-clicks for SPA navigation and lets modified clicks reach the browser.
+   MotionLink keeps the drawer's staggered entrance on a real anchor. */
+const MotionLink = motion(Link);
 const SERVICE_ICONS = [Hexagon, Globe, Sparkles, Box, Clapperboard, PenTool];
 
 // Which top-level NAV item is active for the current pathname
@@ -42,7 +50,6 @@ const panelStyle = {
  * Work dropdown, active-route gradient underline, full-screen mobile drawer.
  */
 export default function AyesmajNav() {
-  const navigate = useNavigate();
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState(null); // "services" | "work" | "interior" | null
@@ -71,7 +78,7 @@ export default function AyesmajNav() {
     return () => { document.body.style.overflow = ""; };
   }, [drawer]);
 
-  const go = (to) => { setOpenMenu(null); setDrawer(false); navigate(to); };
+  const closeMenus = () => { setOpenMenu(null); setDrawer(false); };
 
   const linkStyle = (active) => ({
     position: "relative",
@@ -87,6 +94,7 @@ export default function AyesmajNav() {
     fontWeight: 500,
     letterSpacing: "0.2em",
     textTransform: "uppercase",
+    textDecoration: "none",
     color: active ? "#F6F3ED" : "#AAA39A",
     transition: "color 0.25s ease",
   });
@@ -115,13 +123,14 @@ export default function AyesmajNav() {
         }}
       >
         {/* Logo */}
-        <button
-          onClick={() => go("/")}
+        <Link
+          to="/"
+          onClick={closeMenus}
           aria-label="AYESMAJ Studios home"
-          style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+          style={{ display: "inline-flex", textDecoration: "none", padding: 0 }}
         >
           <LogoMark size={40} />
-        </button>
+        </Link>
 
         {/* Center links (desktop) */}
         <nav className="ayes-nav-links" aria-label="Primary" style={{ display: "flex", gap: 34, alignItems: "center" }}>
@@ -129,8 +138,9 @@ export default function AyesmajNav() {
             const active = isActive(item, pathname);
             const menuKey = item.mega === "services" ? "services" : item.mega === "interior" ? "interior" : item.label === "Work" ? "work" : null;
             const trigger = (
-              <button
-                onClick={() => go(item.to)}
+              <Link
+                to={item.to}
+                onClick={closeMenus}
                 onFocus={menuKey ? () => setOpenMenu(menuKey) : undefined}
                 onMouseEnter={(e) => { e.currentTarget.style.color = "#F6F3ED"; }}
                 onMouseLeave={(e) => { if (!active) e.currentTarget.style.color = "#AAA39A"; }}
@@ -161,7 +171,7 @@ export default function AyesmajNav() {
                     }}
                   />
                 )}
-              </button>
+              </Link>
             );
 
             if (!menuKey) return <React.Fragment key={item.label}>{trigger}</React.Fragment>;
@@ -202,19 +212,18 @@ export default function AyesmajNav() {
                       {SERVICES_MENU.map((s, i) => {
                         const Icon = SERVICE_ICONS[i] || Hexagon;
                         return (
-                          <button
+                          <Link
                             key={s.to}
+                            to={s.to}
                             role="menuitem"
                             className="ayes-mega-item"
-                            onClick={() => go(s.to)}
+                            onClick={closeMenus}
                             style={{
                               display: "flex",
                               alignItems: "flex-start",
                               gap: 14,
                               textAlign: "left",
-                              background: "none",
-                              border: "none",
-                              cursor: "pointer",
+                              textDecoration: "none",
                               padding: "14px 16px",
                               borderRadius: 14,
                               transition: "background 0.25s ease, transform 0.25s ease",
@@ -244,7 +253,7 @@ export default function AyesmajNav() {
                                 {s.line}
                               </span>
                             </span>
-                          </button>
+                          </Link>
                         );
                       })}
                     </motion.div>
@@ -257,18 +266,19 @@ export default function AyesmajNav() {
                     const all = [INTERIOR_MENU.overview, ...INTERIOR_MENU.groups.flatMap((g) => g.items)];
                     const current = interiorPreview || all.find((i) => pathname.startsWith(i.to) && i.to !== "/interior-design") || INTERIOR_MENU.overview;
                     const itemBtn = (it) => (
-                      <button
+                      <Link
                         key={it.to}
+                        to={it.to}
                         role="menuitem"
                         className="ayes-mega-item"
-                        onClick={() => go(it.to)}
+                        onClick={closeMenus}
                         onMouseEnter={() => setInteriorPreview(it)}
                         onFocus={() => setInteriorPreview(it)}
-                        style={{ display: "flex", flexDirection: "column", gap: 3, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "10px 14px", borderRadius: 12, transition: "background 0.25s ease, transform 0.25s ease", width: "100%" }}
+                        style={{ display: "flex", flexDirection: "column", gap: 3, textAlign: "left", textDecoration: "none", padding: "10px 14px", borderRadius: 12, transition: "background 0.25s ease, transform 0.25s ease", width: "100%" }}
                       >
                         <span style={{ fontFamily: FONTS.display, fontSize: 19, letterSpacing: "0.04em", textTransform: "uppercase", color: current.to === it.to ? "#D8B75A" : "#F6F3ED", lineHeight: 1 }}>{it.label}</span>
                         <span style={{ fontFamily: FONTS.ui, fontSize: 12, color: "#AAA39A", lineHeight: 1.4 }}>{it.line}</span>
-                      </button>
+                      </Link>
                     );
                     return (
                       <motion.div
@@ -329,18 +339,17 @@ export default function AyesmajNav() {
                       style={{ ...panelStyle, width: 230, padding: 10, borderRadius: 20 }}
                     >
                       {WORK_MENU.map((w) => (
-                        <button
+                        <Link
                           key={w.to}
+                          to={w.to}
                           role="menuitem"
                           className="ayes-mega-item"
-                          onClick={() => go(w.to)}
+                          onClick={closeMenus}
                           style={{
                             display: "block",
                             width: "100%",
                             textAlign: "left",
-                            background: "none",
-                            border: "none",
-                            cursor: "pointer",
+                            textDecoration: "none",
                             padding: "11px 14px",
                             borderRadius: 12,
                             fontFamily: FONTS.ui,
@@ -351,7 +360,7 @@ export default function AyesmajNav() {
                           }}
                         >
                           {w.label}
-                        </button>
+                        </Link>
                       ))}
                     </motion.div>
                   )}
@@ -364,7 +373,7 @@ export default function AyesmajNav() {
         {/* Right: CTA (desktop) + burger (mobile) */}
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div className="ayes-nav-cta">
-            <CinematicButton label="Start a Project" accent="#D8B75A" onClick={() => go("/Contact")} />
+            <CinematicButton label="Start a Project" accent="#D8B75A" to="/Contact" onClick={closeMenus} />
           </div>
           <button
             className="ayes-nav-burger"
@@ -413,13 +422,14 @@ export default function AyesmajNav() {
             }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <button
-                onClick={() => go("/")}
+              <Link
+                to="/"
+                onClick={closeMenus}
                 aria-label="AYESMAJ Studios home"
-                style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                style={{ display: "inline-flex", textDecoration: "none", padding: 0 }}
               >
                 <LogoMark size={36} />
-              </button>
+              </Link>
               <button
                 onClick={() => setDrawer(false)}
                 aria-label="Close menu"
@@ -444,16 +454,17 @@ export default function AyesmajNav() {
               {NAV.map((item, i) => {
                 const active = isActive(item, pathname);
                 return (
-                  <motion.button
+                  <MotionLink
                     key={item.label}
+                    to={item.to}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.05 * i, duration: 0.4 }}
-                    onClick={() => go(item.to)}
+                    onClick={closeMenus}
                     style={{
-                      border: "none",
+                      display: "block",
                       textAlign: "left",
-                      cursor: "pointer",
+                      textDecoration: "none",
                       fontFamily: FONTS.display,
                       fontSize: "clamp(34px, 9vw, 52px)",
                       textTransform: "uppercase",
@@ -467,7 +478,7 @@ export default function AyesmajNav() {
                     }}
                   >
                     {item.label}
-                  </motion.button>
+                  </MotionLink>
                 );
               })}
             </nav>
@@ -478,16 +489,15 @@ export default function AyesmajNav() {
                 Services
               </div>
               {SERVICES_MENU.map((s) => (
-                <button
+                <Link
                   key={s.to}
-                  onClick={() => go(s.to)}
+                  to={s.to}
+                  onClick={closeMenus}
                   style={{
                     display: "block",
                     width: "100%",
                     textAlign: "left",
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
+                    textDecoration: "none",
                     fontFamily: FONTS.ui,
                     fontSize: 16,
                     fontWeight: 500,
@@ -498,7 +508,7 @@ export default function AyesmajNav() {
                   }}
                 >
                   {s.label}
-                </button>
+                </Link>
               ))}
             </div>
 
@@ -508,13 +518,14 @@ export default function AyesmajNav() {
                 Interior Design
               </div>
               {[INTERIOR_MENU.overview, ...INTERIOR_MENU.groups.flatMap((g) => g.items)].map((it) => (
-                <button
+                <Link
                   key={it.to}
-                  onClick={() => go(it.to)}
-                  style={{ display: "block", width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", fontFamily: FONTS.ui, fontSize: 16, fontWeight: 500, color: pathname === it.to ? "#D8B75A" : "#D7D1C8", padding: "13px 0", minHeight: 48, borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+                  to={it.to}
+                  onClick={closeMenus}
+                  style={{ display: "block", width: "100%", textAlign: "left", textDecoration: "none", fontFamily: FONTS.ui, fontSize: 16, fontWeight: 500, color: pathname === it.to ? "#D8B75A" : "#D7D1C8", padding: "13px 0", minHeight: 48, borderBottom: "1px solid rgba(255,255,255,0.06)" }}
                 >
                   {it.label}
-                </button>
+                </Link>
               ))}
             </div>
 
@@ -524,16 +535,15 @@ export default function AyesmajNav() {
                 Work
               </div>
               {WORK_MENU.map((w) => (
-                <button
+                <Link
                   key={w.to}
-                  onClick={() => go(w.to)}
+                  to={w.to}
+                  onClick={closeMenus}
                   style={{
                     display: "block",
                     width: "100%",
                     textAlign: "left",
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
+                    textDecoration: "none",
                     fontFamily: FONTS.ui,
                     fontSize: 16,
                     fontWeight: 500,
@@ -544,7 +554,7 @@ export default function AyesmajNav() {
                   }}
                 >
                   {w.label}
-                </button>
+                </Link>
               ))}
             </div>
 
@@ -563,12 +573,13 @@ export default function AyesmajNav() {
               >
                 <Phone size={16} aria-hidden style={{ color: "#D8B75A" }} /> {SITE.phone}
               </a>
-              <button
-                onClick={() => go("/Contact")}
-                style={{ display: "inline-flex", alignItems: "center", gap: 12, background: "none", border: "none", cursor: "pointer", textAlign: "left", fontFamily: FONTS.ui, fontSize: 15, color: "#AAA39A", padding: "12px 0", minHeight: 48 }}
+              <Link
+                to="/Contact"
+                onClick={closeMenus}
+                style={{ display: "inline-flex", alignItems: "center", gap: 12, textDecoration: "none", textAlign: "left", fontFamily: FONTS.ui, fontSize: 15, color: "#AAA39A", padding: "12px 0", minHeight: 48 }}
               >
                 <MapPin size={16} aria-hidden style={{ color: "#D8B75A" }} /> {SITE.location}
-              </button>
+              </Link>
             </div>
 
             <div style={{ marginTop: 28 }}>
@@ -576,7 +587,8 @@ export default function AyesmajNav() {
                 label="Start a Project"
                 accent="#D8B75A"
                 size="lg"
-                onClick={() => go("/Contact")}
+                to="/Contact"
+                onClick={closeMenus}
               />
             </div>
           </motion.div>
@@ -606,6 +618,7 @@ export default function AyesmajNav() {
         }
         .ayes-mega-item:hover::before, .ayes-mega-item:focus-visible::before { opacity: 1; }
         .ayes-nav-root button:focus-visible,
+        .ayes-nav-root a:focus-visible,
         [role="dialog"] button:focus-visible,
         [role="dialog"] a:focus-visible {
           outline: 2px solid #D8B75A;

@@ -16,10 +16,9 @@ masquerade as the homepage, the sitemap can no longer drift from the pages, the
 Organization entity now has its public profiles, and a deterministic audit gate
 (`npm run seo:audit`) makes the shipped guarantees permanent.
 
-The single biggest remaining technical defect is that **the site header renders no
-real links at all** — every nav item is a `<button>` calling `navigate()`. The
-crawlable `#prerendered-seo` block is currently the site's only real link graph.
-A conversion task has been filed (see P1).
+The biggest technical defect found — **the site header rendered no real links at
+all** (every nav item a `<button>` calling `navigate()`) — was converted to real
+router links the same day at the owner's request (see P1).
 
 The biggest *non*-technical gaps are the ones no code can fill: external links,
 case-study proof, and the technology-vertical positioning — all owner decisions.
@@ -51,15 +50,20 @@ client-only routes (`/he/*`, detail pages); the render-time noindex is the
 Google-honoured minimum, and the static-404 alternative is documented below as a
 proposal, not silently attempted.
 
-## P1 — filed, not done in this batch
+## P1 — resolved same day (owner-approved follow-up)
 
-**Header navigation renders zero `<a>` elements.** Verified in the built site:
-`document.querySelectorAll('.ayes-nav-root a')` → 0. Everything is a button calling
-`navigate()`. Consequences: no followable links in the rendered chrome, no
-middle-click/new-tab, button semantics for screen readers. Converting the 621-line
-nav to router `<Link>`s while preserving mega menus/drawer behaviour is its own
-tested change — a task chip has been created for it. The footer is mostly fine
-(7 real links, 2 buttons to convert).
+**Header navigation rendered zero `<a>` elements** — every nav item was a button
+calling `navigate()`, so the rendered chrome had no followable links, no
+middle-click/new-tab, and button semantics for screen readers. Converted the same
+day: every navigational control in the header, both mega menus, the Work dropdown
+and the mobile drawer is now a real router `<Link>` (anchors with canonical hrefs),
+and `CinematicButton` gained a `to` prop so the four CTAs render anchors too.
+Browser-verified after conversion: 8 anchors in the header and 32 internal anchors
+in the drawer (previously 0 combined), zero redirect-alias hrefs, SPA navigation
+preserved (no full reloads), mega menus open on hover/focus with `aria-expanded`,
+drawer scroll-lock and close-on-navigate intact. The only remaining header buttons
+are the burger and the drawer close — correctly buttons, since they perform actions
+rather than navigate.
 
 ## The external brief, phase by phase
 

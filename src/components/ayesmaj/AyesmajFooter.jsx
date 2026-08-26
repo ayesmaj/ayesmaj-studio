@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { trackPhoneClick } from '@/lib/track';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import CinematicButton from "./CinematicButton";
 import LogoMark from "./LogoMark";
@@ -134,7 +134,6 @@ function usePhoenixTime() {
 const SELECTED_WORK = BRANDS.slice(0, 4); // curated portfolio order, real projects only
 
 export default function AyesmajFooter() {
-  const navigate = useNavigate();
   const strip = [...BRANDS, ...BRANDS]; // duplicated for seamless loop
   const mobile = useIsMobile();
   const phx = usePhoenixTime();
@@ -220,13 +219,13 @@ export default function AyesmajFooter() {
               accent={GOLD}
               variant="solid"
               size="lg"
-              onClick={() => navigate("/Contact")}
+              to="/Contact"
             />
             <CinematicButton
               label="View Our Work"
               accent={IVORY}
               size="lg"
-              onClick={() => navigate("/Work")}
+              to="/Work"
             />
           </motion.div>
         </div>
