@@ -87,7 +87,12 @@
     },
     {
       "source": "/brands",
-      "destination": "/Brands",
+      "destination": "/Branding",
+      "permanent": true
+    },
+    {
+      "source": "/Brands",
+      "destination": "/Branding",
       "permanent": true
     },
     {
@@ -143,6 +148,16 @@
     {
       "source": "/services/storyboards",
       "destination": "/Storyboards",
+      "permanent": true
+    },
+    {
+      "source": "/reel",
+      "destination": "/Reel",
+      "permanent": true
+    },
+    {
+      "source": "/branding",
+      "destination": "/Branding",
       "permanent": true
     }
   ],

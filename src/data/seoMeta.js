@@ -138,13 +138,26 @@ export const SEO_ROUTES = {
     blurb:
       "3D animations and motion work: cinematic loops, product animations, and brand films.",
   },
-  "/Brands": {
-    title: "Brand Identity Portfolio | AYESMAJ Studios",
+  /* /Brands used to hold this entry, but that route is a client-side redirect
+     stub - the real portfolio has always rendered at /Branding. /Brands is now
+     a server-side 308 in vercel.json and is deliberately absent here, so it is
+     neither prerendered nor in the sitemap. h1 matches what the page actually
+     renders, so the prerendered and rendered DOM agree. */
+  "/Branding": {
+    title: "Branding & Visual Campaigns | AYESMAJ Studios",
     description:
-      "Brand identity work by AYESMAJ Studios — logo systems, visual language, and complete brand worlds built for modern companies.",
-    h1: "Brand Identity Portfolio",
+      "Brand identity and campaign work by AYESMAJ Studios — logo systems, packaging, character design and complete brand worlds.",
+    h1: "Brand Worlds Built to Be Remembered.",
     blurb:
-      "Logo systems, visual language, and complete brand worlds built for modern companies.",
+      "Logo systems, packaging, character design and complete brand worlds — the full branding portfolio.",
+  },
+  "/Reel": {
+    title: "Showreel & Brand Films | AYESMAJ Studios",
+    description:
+      "Cinematic brand films, product reveals and campaign reels from AYESMAJ Studios — watch the showreel and selected video work.",
+    h1: "Watch Our Work",
+    blurb:
+      "Cinematic brand films, product reveals and campaign reels — built to move people.",
   },
   "/ServiceBranding": {
     title: "Brand Strategy & Identity | AYESMAJ Studios",
