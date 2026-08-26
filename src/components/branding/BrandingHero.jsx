@@ -123,11 +123,12 @@ export default function BrandingHero() {
   const [autoplay, setAutoplay] = useState(true);
   const [paused, setPaused] = useState(false);
   const [inView, setInView] = useState(true);
+  const [visible, setVisible] = useState(true);
   const reduced = useReducedMotion();
   const tabsRef = useRef(null);
   const sectionRef = useRef(null);
   const brand = FEATURED_BRAND_WORLDS.find((b) => b.id === activeId) || FEATURED_BRAND_WORLDS[0];
-  const rotating = autoplay && !paused && inView && !reduced;
+  const rotating = autoplay && !paused && inView && visible && !reduced;
 
   const pick = useCallback((id) => { setActiveId(id); setAutoplay(false); }, []);
 
@@ -156,6 +157,16 @@ export default function BrandingHero() {
     }, AUTOPLAY_MS);
     return () => clearInterval(id);
   }, [rotating]);
+
+  /* A hidden tab still reports its elements as intersecting, so the observer
+     below does not cover this case. It matters because rAF is throttled when
+     hidden: exit animations never finish, AnimatePresence cannot drop the old
+     cards, and each tick would leave another generation stacked in the DOM. */
+  useEffect(() => {
+    const onChange = () => setVisible(document.visibilityState === 'visible');
+    document.addEventListener('visibilitychange', onChange);
+    return () => document.removeEventListener('visibilitychange', onChange);
+  }, []);
 
   useEffect(() => {
     const el = sectionRef.current;
