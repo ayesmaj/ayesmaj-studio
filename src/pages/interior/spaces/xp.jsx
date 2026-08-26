@@ -86,6 +86,7 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
   const [progress, setProgress] = useState(0);
   const [dead, setDead] = useState(false); // the film may not be rendered yet - collapse instead of a broken player
   const [near, setNear] = useState(false); // keep the network idle until the section approaches
+  const [painted, setPainted] = useState(false); // has the decoder produced ANY frame yet
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -113,6 +114,14 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
     };
     if (video.readyState >= 2) prime();
     else video.addEventListener('loadeddata', prime, { once: true });
+
+    /* Once the decoder has produced a frame the element keeps showing it, so
+       the poster only has to cover the window before the FIRST frame. */
+    const markPainted = () => { if (video.readyState >= 2) setPainted(true); };
+    video.addEventListener('loadeddata', markPainted);
+    video.addEventListener('seeked', markPainted);
+    markPainted();
+
     const update = () => {
       raf = 0;
       if (!Number.isFinite(video.duration) || video.duration === 0) return;
@@ -121,6 +130,16 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       if (range <= 0) return;
       const p = Math.max(0, Math.min(1, -rect.top / range));
       setProgress(p);
+      /* THE mobile bug (owner report 2026-08-26, black film while scrolling):
+         a scroll fires this every frame, and issuing a new seek while the last
+         one is still in flight cancels it. Under a finger-flick the decoder is
+         restarted continuously and never completes ANY seek, so the element sits
+         in HAVE_METADATA - no frame - which paints black. Measured on the live
+         page: readyState 1, seeking true, for as long as the scroll continued.
+         Desktop hid this because the file was already fully buffered.
+         One seek at a time: skip while seeking and the next rAF picks up the
+         then-current scroll position, which is the one that matters anyway. */
+      if (video.seeking) return;
       // seeks snap to the 0.25s keyframe grid so the decoder never walks a GOP
       const target = Math.min(Math.round(p * video.duration * 4) / 4, video.duration - 1 / 30);
       if (Math.abs(target - video.currentTime) >= 0.2) {
@@ -134,8 +153,18 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     window.addEventListener('scroll', onScroll, { passive: true });
     video.addEventListener('loadedmetadata', update);
+    // A finished seek may have landed on a stale target; re-run once it lands.
+    video.addEventListener('seeked', onScroll);
     update();
-    return () => { window.removeEventListener('scroll', onScroll); video.removeEventListener('loadedmetadata', update); video.removeEventListener('loadeddata', prime); if (raf) cancelAnimationFrame(raf); };
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      video.removeEventListener('loadedmetadata', update);
+      video.removeEventListener('seeked', onScroll);
+      video.removeEventListener('loadeddata', prime);
+      video.removeEventListener('loadeddata', markPainted);
+      video.removeEventListener('seeked', markPainted);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, [simple, reduced, near]);
 
   if (dead) return null;
@@ -158,7 +187,12 @@ export function FilmScrub({ film, stages, credit, height = '320vh' }) {
       ) : (
         <div ref={wrapRef} className="idv2-pin-wrap" style={{ height }}>
           <div className="idv2-pin">
-            <video ref={videoRef} data-scrub muted playsInline preload={near ? 'auto' : 'none'} poster={film.poster} src={near ? (simple && film.mobile ? film.mobile : film.desktop) : undefined} style={{ backgroundImage: `url(${film.poster})`, backgroundSize: 'cover', backgroundPosition: 'center' }} aria-label={credit} onError={() => setDead(true)} />
+            <video ref={videoRef} data-scrub muted playsInline preload={near ? 'auto' : 'none'} poster={film.poster} src={near ? (simple && film.mobile ? film.mobile : film.desktop) : undefined} aria-label={credit} onError={() => setDead(true)} />
+            {/* A <video> with no decoded frame paints opaque black, so a CSS
+                background behind it is useless - the cover has to sit ON TOP.
+                It fades out on the first decoded frame and is not brought back:
+                from then on the element always holds the last frame. */}
+            <img className="xp-film-poster" src={film.poster} alt="" aria-hidden="true" data-painted={painted} />
             <div className="idv2-pin-scrim" />
             <div className="xp-film-copy">
               <h2 className="idv2-pinseq-head" aria-live="polite">{stage.node}</h2>
