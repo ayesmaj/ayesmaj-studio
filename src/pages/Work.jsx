@@ -10,6 +10,8 @@ import SectionHeader from '@/components/ayesmaj/SectionHeader';
 import { FONTS } from '@/components/ayesmaj/theme';
 import { BRANDS, getBrandAssetPath } from '@/data/brands';
 import { SITE_DEMOS, AI_VIDEOS, AI_POSTS } from '@/data/media';
+import WorkArchive from '@/components/work/WorkArchive';
+import { WORK_ARCHIVE } from '@/data/workArchive';
 
 const GRADIENT = 'linear-gradient(90deg,#D8B75A 0%,#C58B57 28%,#A35BDA 72%,#7A48FF 100%)';
 const GOLD = '#D8B75A';
@@ -294,6 +296,21 @@ export default function Work() {
             </div>
           </section>
           </div>
+
+          {/* THE COMPLETE ARCHIVE — every asset in the project, manifest-generated */}
+          <section style={{ ...section, paddingBottom: 'clamp(64px,8vw,120px)' }}>
+            <div style={{ paddingBottom: 'clamp(28px,3.5vw,44px)' }}>
+              <SectionHeader
+                align="left"
+                max={980}
+                eyebrow="THE COMPLETE ARCHIVE"
+                title={<>{WORK_ARCHIVE.length.toLocaleString()}{' '}<span style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>PIECES</span>{' '}AND COUNTING</>}
+                subtitle="Every frame we have shipped — brand systems, interiors, characters, films, logos, AI campaigns. Unfiltered."
+                accent={GOLD}
+              />
+            </div>
+            <WorkArchive />
+          </section>
 
           {/* CTA */}
           <div className="idv2-bgc idv2-bgc-07 idv2-bgc--fade-top">

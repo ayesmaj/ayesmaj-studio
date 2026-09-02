@@ -1,0 +1,198 @@
+/**
+ * Build the /Work archive: scan every media asset in public/, classify it,
+ * generate a grid thumbnail for each, and write src/data/workArchive.js.
+ *
+ *   node scripts/work-archive.mjs
+ *
+ * Why this exists: public/ holds 6.4GB of media - 4.1GB of video - so the
+ * archive page can never reference originals in its grid. Every tile uses a
+ * generated ~480px webp thumb (~20KB); the full asset loads only when a
+ * visitor opens it. And like branding-featured.mjs, the manifest is generated
+ * from the filesystem, so the page cannot reference a missing file and new
+ * work appears by re-running this script.
+ *
+ * Thumbs are COMMITTED, not built in CI: Vercel's build has no ffmpeg, and
+ * video posters need it. Re-run locally after adding assets.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const PUB = path.join(ROOT, 'public');
+const THUMBS = path.join(PUB, 'work-thumbs');
+const OUT = path.join(ROOT, 'src/data/workArchive.js');
+
+const IMG = new Set(['.webp', '.png', '.jpg', '.jpeg', '.avif']);
+const VID = new Set(['.mp4', '.webm']);
+
+/* ── What is NOT work ──────────────────────────────────────────────────────
+   Infrastructure, duplicates and derivatives. Each rule states why. */
+const EXCLUDE_DIRS = new Set([
+  'work-thumbs',            // our own output
+  'email', 'footer',        // site chrome assets
+]);
+const EXCLUDE_RE = [
+  /-w\d{3,4}\.(webp|png|jpe?g)$/i,  // responsive duplicates of a base image
+  /poster\.(webp|png|jpe?g)$/i,     // film posters: stills of videos already shown
+  /contact-sheet/i,                  // film contact sheets: derivative strips
+  /storyboard-ref\./i,               // internal reference material
+  /wordmark|favicon|og-image|logo-a\.|logo-full\.|logo-transparent\./i, // identity chrome
+  /\/logos?\.(webp|png)$/i,          // top-level site logo files
+  /keyframes\.webp$/i,               // film keyframe strips, derivative
+];
+
+/* png/webp twins: prefer the webp, drop the png. */
+const preferWebp = (files) => {
+  const stems = new Set(files.filter(f => f.endsWith('.webp')).map(f => f.slice(0, -5)));
+  return files.filter(f => {
+    const ext = path.extname(f).toLowerCase();
+    if (ext === '.png' || ext === '.jpg' || ext === '.jpeg') {
+      return !stems.has(f.slice(0, -ext.length));
+    }
+    return true;
+  });
+};
+
+/* ── Classification: the folder structure IS the taxonomy ── */
+const pretty = (s) => s.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+  .replace(/\bAi\b/g, 'AI').replace(/\b3d\b/gi, '3D').trim();
+
+function classify(rel) {
+  const p = rel.replace(/\\/g, '/');
+  const seg = p.split('/');
+  const isVid = VID.has(path.extname(p).toLowerCase());
+
+  if (seg[0] === 'brands') {
+    const b = seg[1];
+    if (b === 'characters') return { cat: 'Characters', group: 'Characters' };
+    if (b === 'logos') return { cat: 'Logos', group: 'Logo Design' };
+    if (b === 'general') return { cat: 'Branding', group: 'Studio' };
+    if (b === 'interior-design') return { cat: 'Interior', group: 'Interior Design' };
+    return { cat: 'Branding', group: pretty(b) };
+  }
+  if (seg[0] === 'interior-design') {
+    if (seg[1] === 'projects') return { cat: 'Interior', group: pretty(seg[2] || 'Projects') };
+    return { cat: 'Interior', group: 'Interior Design' };
+  }
+  if (seg[0] === 'characters') return { cat: 'Characters', group: 'Characters' };
+  if (seg[0] === 'logos') return { cat: 'Logos', group: 'Logo Design' };
+  if (seg[0] === 'storyboards-10') return { cat: 'Storyboards', group: 'Storyboards' };
+  if (seg[0] === 'concepts') return { cat: 'Concepts', group: 'Concepts' };
+  if (seg[0] === 'videos') {
+    const d = (seg[1] || '').toLowerCase();
+    if (d.includes('3d')) return { cat: '3D & CGI', group: '3D Animation' };
+    if (d.includes('ai post')) return { cat: 'AI Posts', group: 'AI Posts' };
+    if (d.includes('ai video')) return { cat: 'AI Video', group: 'AI Video' };
+    if (d.includes('website')) return { cat: 'Web', group: 'Web Experiences' };
+    if (d.includes('stroyboard') || d.includes('storyboard')) return { cat: 'Storyboards', group: 'Storyboards' };
+    return { cat: 'AI Video', group: 'Films' };
+  }
+  if (seg[0] === 'assets') {
+    const sub = p;
+    if (sub.includes('ai-posts')) return { cat: 'AI Posts', group: 'AI Posts' };
+    if (sub.includes('motion-posters')) return { cat: 'AI Video', group: 'Motion Posters' };
+    if (sub.includes('showreel')) return { cat: 'AI Video', group: 'Showreel' };
+    if (sub.includes('web-experiences')) return { cat: 'Web', group: 'Web Experiences' };
+    return { cat: 'Studio', group: 'Studio Visuals' };
+  }
+  if (seg[0] === 'generated' || seg[0] === 'images') return { cat: 'Studio', group: 'Studio Visuals' };
+  if (isVid) return { cat: 'AI Video', group: 'Films' };
+  return { cat: 'Studio', group: 'Studio Visuals' };
+}
+
+/* ── Scan ── */
+function walk(dir, out = []) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (e.isDirectory()) {
+      if (EXCLUDE_DIRS.has(e.name.toLowerCase())) continue;
+      walk(path.join(dir, e.name), out);
+    } else {
+      const ext = path.extname(e.name).toLowerCase();
+      if (IMG.has(ext) || VID.has(ext)) out.push(path.relative(PUB, path.join(dir, e.name)));
+    }
+  }
+  return out;
+}
+
+let files = walk(PUB).map(f => f.replace(/\\/g, '/'));
+const before = files.length;
+files = preferWebp(files).filter(f => !EXCLUDE_RE.some(re => re.test('/' + f)));
+files = files.filter(f => { try { return fs.statSync(path.join(PUB, f)).size > 6 * 1024; } catch { return false; } });
+console.log(`scan: ${before} media files, ${files.length} after exclusions`);
+
+fs.mkdirSync(THUMBS, { recursive: true });
+
+const ffprobe = (abs, args) => execFileSync('ffprobe', ['-v', 'error', ...args, abs], { encoding: 'utf8' }).trim();
+
+const items = [];
+let made = 0, kept = 0, failed = 0;
+for (const rel of files) {
+  const abs = path.join(PUB, rel);
+  const ext = path.extname(rel).toLowerCase();
+  const isVid = VID.has(ext);
+  const id = crypto.createHash('sha1').update(rel).digest('hex').slice(0, 12);
+  const thumbRel = `work-thumbs/${id}.webp`;
+  const thumbAbs = path.join(PUB, thumbRel);
+
+  try {
+    let w, h, dur;
+    if (isVid) {
+      const probe = ffprobe(abs, ['-select_streams', 'v:0', '-show_entries', 'stream=width,height:format=duration', '-of', 'csv=p=0']);
+      const nums = probe.split(/[,\n]/).map(Number).filter(Number.isFinite);
+      [w, h] = nums; dur = Math.round(nums[2] || 0);
+      if (!fs.existsSync(thumbAbs)) {
+        // frame from 20% in - past any black lead-in, before any outro card
+        const at = Math.max(0.5, (dur || 5) * 0.2);
+        const tmp = thumbAbs + '.png';
+        execFileSync('ffmpeg', ['-nostdin', '-v', 'error', '-y', '-ss', String(at), '-i', abs, '-frames:v', '1', tmp]);
+        await sharp(tmp).resize({ width: 480 }).webp({ quality: 68 }).toFile(thumbAbs);
+        fs.unlinkSync(tmp);
+        made++;
+      } else kept++;
+    } else {
+      const meta = await sharp(abs).metadata();
+      w = meta.width; h = meta.height;
+      if (!fs.existsSync(thumbAbs)) {
+        await sharp(abs).resize({ width: 480, withoutEnlargement: true }).webp({ quality: 68 }).toFile(thumbAbs);
+        made++;
+      } else kept++;
+    }
+    if (!w || !h) throw new Error('no dimensions');
+    const { cat, group } = classify(rel);
+    const item = { src: '/' + rel, thumb: '/' + thumbRel, w, h, cat, group };
+    if (isVid) { item.video = true; item.dur = dur || 0; }
+    items.push(item);
+  } catch (e) {
+    failed++;
+    console.warn(`skip (unreadable): ${rel} - ${String(e.message || e).slice(0, 80)}`);
+  }
+}
+
+/* Stable pseudo-shuffle so "All" interleaves categories instead of showing 300
+   near-identical frames in a row. Hash-ordered = deterministic across runs. */
+items.sort((a, b) => (crypto.createHash('sha1').update(a.src).digest('hex') < crypto.createHash('sha1').update(b.src).digest('hex') ? -1 : 1));
+
+const counts = {};
+for (const it of items) counts[it.cat] = (counts[it.cat] || 0) + 1;
+
+const file =
+  `/* GENERATED by scripts/work-archive.mjs - do not edit by hand.\n` +
+  `   ${items.length} assets, every path verified on disk when generated.\n` +
+  `   Re-run after adding work: node scripts/work-archive.mjs */\n\n` +
+  `export const WORK_ARCHIVE = ${JSON.stringify(items)};\n\n` +
+  `export const WORK_COUNTS = ${JSON.stringify(counts, null, 2)};\n`;
+fs.writeFileSync(OUT, file);
+
+console.log(`thumbs: ${made} generated, ${kept} reused, ${failed} unreadable`);
+console.log('counts:', counts);
+console.log(`wrote src/data/workArchive.js (${items.length} items)`);
+
+/* Orphan sweep: delete thumbs whose source no longer exists. */
+const live = new Set(items.map(i => path.basename(i.thumb)));
+let pruned = 0;
+for (const f of fs.readdirSync(THUMBS)) if (!live.has(f)) { fs.unlinkSync(path.join(THUMBS, f)); pruned++; }
+if (pruned) console.log(`pruned ${pruned} orphaned thumbs`);
