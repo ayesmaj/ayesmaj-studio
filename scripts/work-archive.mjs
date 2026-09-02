@@ -20,6 +20,11 @@ import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+import { BRANDS } from '../src/data/brands.js';
+
+/* Brand folders that have a real case-study page. Only these get a slug, so
+   the lightbox can never link to a detail page that does not exist. */
+const BRAND_IDS = new Set(BRANDS.map((b) => b.id));
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUB = path.join(ROOT, 'public');
@@ -72,7 +77,9 @@ function classify(rel) {
     if (b === 'logos') return { cat: 'Logos', group: 'Logo Design' };
     if (b === 'general') return { cat: 'Branding', group: 'Studio' };
     if (b === 'interior-design') return { cat: 'Interior', group: 'Interior Design' };
-    return { cat: 'Branding', group: pretty(b) };
+    const out = { cat: 'Branding', group: pretty(b) };
+    if (BRAND_IDS.has(b)) out.slug = b;
+    return out;
   }
   if (seg[0] === 'interior-design') {
     if (seg[1] === 'projects') return { cat: 'Interior', group: pretty(seg[2] || 'Projects') };
@@ -162,8 +169,9 @@ for (const rel of files) {
       } else kept++;
     }
     if (!w || !h) throw new Error('no dimensions');
-    const { cat, group } = classify(rel);
+    const { cat, group, slug } = classify(rel);
     const item = { src: '/' + rel, thumb: '/' + thumbRel, w, h, cat, group };
+    if (slug) item.slug = slug;
     if (isVid) { item.video = true; item.dur = dur || 0; }
     items.push(item);
   } catch (e) {

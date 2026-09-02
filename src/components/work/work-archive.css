@@ -127,6 +127,13 @@
 }
 .wa-lightbox-tag { color: #D8B75A; font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; }
 .wa-lightbox-name { color: #F6F3ED; font-size: 15px; font-weight: 700; }
+.wa-lightbox-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  color: #D8B75A; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none;
+}
+.wa-lightbox-link:hover { text-decoration: underline; }
+.wa-lightbox-link:focus-visible { outline: 2px solid #D8B75A; outline-offset: 3px; border-radius: 4px; }
 .wa-lightbox-count { margin-inline-start: auto; color: #8F897F; font-size: 12px; font-variant-numeric: tabular-nums; }
 
 .wa-lightbox-btn {

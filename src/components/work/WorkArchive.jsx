@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { X, ChevronLeft, ChevronRight, Play, ArrowUpRight } from 'lucide-react';
 import { WORK_ARCHIVE, WORK_COUNTS } from '@/data/workArchive';
 import './work-archive.css';
 
@@ -21,6 +22,18 @@ const BATCH = 60;
 
 const CATS = ['All', ...Object.keys(WORK_COUNTS).sort((a, b) => WORK_COUNTS[b] - WORK_COUNTS[a])];
 const TOTAL = WORK_ARCHIVE.length;
+
+/* The retired curated feed used its own filter names in ?f= links (nav, footer,
+   old shares). Honour them here so those links land on the right category. */
+const LEGACY_F = {
+  'Websites': 'Web',
+  'AI Posts': 'AI Posts',
+  'AI Videos': 'AI Video',
+  '3D Animation': '3D & CGI',
+  'CGI & Motion': '3D & CGI',
+  'Campaigns': 'Branding',
+  'Packaging & Labels': 'Branding',
+};
 
 function useColumns() {
   const get = () => {
@@ -128,6 +141,14 @@ function Lightbox({ items, index, onClose, onStep, reduced }) {
         <div className="wa-lightbox-meta">
           <span className="wa-lightbox-tag">{item.cat}</span>
           <span className="wa-lightbox-name">{item.group}</span>
+          {/* The retired curated feed's brand cards were doors to case studies;
+              that door lives here now. slug exists only for brands whose detail
+              page is real - the generator validates it against BRANDS. */}
+          {item.slug && (
+            <Link className="wa-lightbox-link" to={`/BrandDetail?slug=${item.slug}`}>
+              View case study <ArrowUpRight size={13} aria-hidden="true" />
+            </Link>
+          )}
           <span className="wa-lightbox-count">{index + 1} / {items.length}</span>
         </div>
         <button className="wa-lightbox-btn wa-lightbox-close" aria-label="Close" onClick={onClose}><X size={18} /></button>
@@ -141,7 +162,9 @@ function Lightbox({ items, index, onClose, onStep, reduced }) {
 
 export default function WorkArchive() {
   const [cat, setCat] = useState(() => {
-    const a = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('a');
+    if (typeof window === 'undefined') return 'All';
+    const q = new URLSearchParams(window.location.search);
+    const a = q.get('a') || LEGACY_F[q.get('f')];
     return a && CATS.includes(a) ? a : 'All';
   });
   const [visible, setVisible] = useState(BATCH * 2);
