@@ -212,6 +212,27 @@ console.log(`thumbs: ${made} generated, ${kept} reused, ${failed} unreadable; ${
 console.log('counts:', counts);
 console.log(`wrote src/data/workArchive.js (${items.length} items)`);
 
+const NL = String.fromCharCode(10);
+/* Guard: every generated file must be committable. A blanket `*.mp4` in
+   .gitignore once swallowed all 83 preview loops - `git add` reported nothing,
+   the thumbs committed fine, and production served the SPA fallback for every
+   preview. Fail loudly here instead of shipping a page of stills. */
+try {
+  const ignored = execFileSync('git', ['check-ignore', '--no-index', '--stdin'],
+    { cwd: ROOT, input: items.flatMap(i => [i.thumb, i.preview].filter(Boolean).map(f => 'public' + f)).join(NL), encoding: 'utf8' });
+  const list = ignored.split(NL).filter(Boolean);
+  if (list.length) {
+    console.error(`
+ERROR: ${list.length} generated files are gitignored and would not deploy:`);
+    for (const f of list.slice(0, 5)) console.error('  ' + f);
+    console.error('Add a negation to .gitignore (e.g. !public/work-thumbs/*.mp4).');
+    process.exitCode = 1;
+  }
+} catch (e) {
+  // git check-ignore exits 1 when nothing matches - that is the good case.
+  if (typeof e.status === 'number' && e.status !== 1) console.warn('gitignore check skipped:', e.message.slice(0, 60));
+}
+
 /* Orphan sweep: delete thumbs whose source no longer exists. */
 const live = new Set(items.flatMap(i => [path.basename(i.thumb), i.preview && path.basename(i.preview)].filter(Boolean)));
 let pruned = 0;
