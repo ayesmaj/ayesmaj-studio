@@ -136,7 +136,7 @@ fs.mkdirSync(THUMBS, { recursive: true });
 const ffprobe = (abs, args) => execFileSync('ffprobe', ['-v', 'error', ...args, abs], { encoding: 'utf8' }).trim();
 
 const items = [];
-let made = 0, kept = 0, failed = 0;
+let made = 0, kept = 0, failed = 0, previews = 0;
 for (const rel of files) {
   const abs = path.join(PUB, rel);
   const ext = path.extname(rel).toLowerCase();
@@ -144,6 +144,8 @@ for (const rel of files) {
   const id = crypto.createHash('sha1').update(rel).digest('hex').slice(0, 12);
   const thumbRel = `work-thumbs/${id}.webp`;
   const thumbAbs = path.join(PUB, thumbRel);
+  const previewRel = `work-thumbs/${id}-p.mp4`;
+  const previewAbs = path.join(PUB, previewRel);
 
   try {
     let w, h, dur;
@@ -151,15 +153,26 @@ for (const rel of files) {
       const probe = ffprobe(abs, ['-select_streams', 'v:0', '-show_entries', 'stream=width,height:format=duration', '-of', 'csv=p=0']);
       const nums = probe.split(/[,\n]/).map(Number).filter(Number.isFinite);
       [w, h] = nums; dur = Math.round(nums[2] || 0);
+      // Poster frame from 20% in - past any black lead-in, before any outro card.
+      const at = Math.max(0.5, (dur || 5) * 0.2);
       if (!fs.existsSync(thumbAbs)) {
-        // frame from 20% in - past any black lead-in, before any outro card
-        const at = Math.max(0.5, (dur || 5) * 0.2);
         const tmp = thumbAbs + '.png';
         execFileSync('ffmpeg', ['-nostdin', '-v', 'error', '-y', '-ss', String(at), '-i', abs, '-frames:v', '1', tmp]);
         await sharp(tmp).resize({ width: 480 }).webp({ quality: 68 }).toFile(thumbAbs);
         fs.unlinkSync(tmp);
         made++;
       } else kept++;
+      /* Silent preview loop for grid autoplay. The originals total 5.3GB and
+         one is 600MB - autoplaying those as tiles would be absurd, so each
+         video gets a 3s 480px cut starting at the same frame as its poster.
+         The full asset still plays in the lightbox. */
+      if (!fs.existsSync(previewAbs)) {
+        execFileSync('ffmpeg', ['-nostdin', '-v', 'error', '-y',
+          '-ss', String(at), '-t', '3', '-i', abs, '-an',
+          '-vf', 'scale=480:-2', '-c:v', 'libx264', '-crf', '30', '-preset', 'veryfast',
+          '-pix_fmt', 'yuv420p', '-movflags', '+faststart', previewAbs]);
+        previews++;
+      }
     } else {
       const meta = await sharp(abs).metadata();
       w = meta.width; h = meta.height;
@@ -172,7 +185,7 @@ for (const rel of files) {
     const { cat, group, slug } = classify(rel);
     const item = { src: '/' + rel, thumb: '/' + thumbRel, w, h, cat, group };
     if (slug) item.slug = slug;
-    if (isVid) { item.video = true; item.dur = dur || 0; }
+    if (isVid) { item.video = true; item.dur = dur || 0; item.preview = '/' + previewRel; }
     items.push(item);
   } catch (e) {
     failed++;
@@ -195,12 +208,12 @@ const file =
   `export const WORK_COUNTS = ${JSON.stringify(counts, null, 2)};\n`;
 fs.writeFileSync(OUT, file);
 
-console.log(`thumbs: ${made} generated, ${kept} reused, ${failed} unreadable`);
+console.log(`thumbs: ${made} generated, ${kept} reused, ${failed} unreadable; ${previews} preview loops`);
 console.log('counts:', counts);
 console.log(`wrote src/data/workArchive.js (${items.length} items)`);
 
 /* Orphan sweep: delete thumbs whose source no longer exists. */
-const live = new Set(items.map(i => path.basename(i.thumb)));
+const live = new Set(items.flatMap(i => [path.basename(i.thumb), i.preview && path.basename(i.preview)].filter(Boolean)));
 let pruned = 0;
 for (const f of fs.readdirSync(THUMBS)) if (!live.has(f)) { fs.unlinkSync(path.join(THUMBS, f)); pruned++; }
 if (pruned) console.log(`pruned ${pruned} orphaned thumbs`);
