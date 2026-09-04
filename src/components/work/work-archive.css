@@ -163,10 +163,30 @@
 
 /* ── Category groups ── */
 .wa-group {
+  position: relative;
   /* clears the 80px fixed nav when a chip jumps here */
   scroll-margin-top: 104px;
   padding-top: clamp(40px, 5vw, 68px);
 }
+/* The wash. Sampled from the brand gradient at this group's position in the
+   page and alternated left/right, so the archive reads as a lit corridor
+   instead of a flat black field. Kept under 8% and behind the tiles - it is
+   atmosphere, never a competing subject. */
+.wa-group::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -4% -14% auto;
+  height: min(70%, 780px);
+  pointer-events: none;
+  background:
+    radial-gradient(60% 62% at var(--wa-x, 22%) 8%,
+      rgba(var(--wa-accent, 216, 183, 90), 0.14), transparent 72%);
+}
+/* A hairline that picks up the same hue, so the group divider belongs to the
+   light rather than being a generic grey rule. */
+.wa-group-head { border-bottom-color: rgba(var(--wa-accent, 255, 255, 255), 0.22) !important; }
+.wa-group-count { color: rgb(var(--wa-accent, 216, 183, 90)); }
 .wa-group:first-of-type { padding-top: 0; }
 .wa-group-head {
   display: flex; align-items: baseline; gap: 12px;
@@ -187,3 +207,29 @@
   font-variant-numeric: tabular-nums;
 }
 @media (prefers-reduced-motion: reduce) { .wa-group { scroll-behavior: auto; } }
+
+/* ── The page ground ────────────────────────────────────────────────────────
+   Was a flat #0D0F0E field behind everything (owner: "just flat black"). The
+   replacement is a layered ink: a warm top that cools as it descends, matching
+   the direction the group washes travel, so the whole page reads as one lit
+   space rather than a void with pictures on it. Still dark enough that the work
+   is the brightest thing on screen - the tiles are the subject. */
+.work-page {
+  background:
+    radial-gradient(120% 55% at 12% 0%, rgba(216, 183, 90, 0.09), transparent 62%),
+    radial-gradient(100% 60% at 92% 32%, rgba(163, 91, 218, 0.075), transparent 66%),
+    radial-gradient(120% 50% at 50% 100%, rgba(122, 72, 255, 0.1), transparent 62%),
+    linear-gradient(178deg, #1B1712 0%, #15181C 44%, #101426 100%);
+  background-attachment: fixed;
+}
+.work-grain {
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none; opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* The closing panel keeps a deeper floor so the CTA reads as the end of the
+   corridor rather than another gallery bay. */
+.work-cta {
+  position: relative;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 8, 12, 0.75) 55%, rgba(6, 6, 10, 0.95) 100%);
+}

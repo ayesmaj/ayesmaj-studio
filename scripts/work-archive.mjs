@@ -48,6 +48,7 @@ const EXCLUDE_RE = [
   /wordmark|favicon|og-image|logo-a\.|logo-full\.|logo-transparent\./i, // identity chrome
   /\/logos?\.(webp|png)$/i,          // top-level site logo files
   /keyframes\.webp$/i,               // film keyframe strips, derivative
+  /\/_rejected\//i,                  // superseded takes kept for reference, not work
 ];
 
 /* png/webp twins: prefer the webp, drop the png. */
@@ -133,6 +134,18 @@ console.log(`scan: ${before} media files, ${files.length} after exclusions`);
 
 fs.mkdirSync(THUMBS, { recursive: true });
 
+/* Perceptual hash of the generated 480px thumb, not the original: two copies of
+   the same picture produce the same thumb, so this catches byte-identical files
+   AND re-encoded or resized variants, at a fraction of the cost of hashing
+   full-size originals. 8x8 horizontal-gradient dHash. */
+const dhash = async (abs) => {
+  const buf = await sharp(abs).greyscale().resize(9, 8, { fit: "fill" }).raw().toBuffer();
+  let bits = "";
+  for (let y = 0; y < 8; y++) for (let x = 0; x < 8; x++)
+    bits += buf[y * 9 + x] < buf[y * 9 + x + 1] ? "1" : "0";
+  return bits;
+};
+
 const ffprobe = (abs, args) => execFileSync('ffprobe', ['-v', 'error', ...args, abs], { encoding: 'utf8' }).trim();
 
 const items = [];
@@ -182,8 +195,9 @@ for (const rel of files) {
       } else kept++;
     }
     if (!w || !h) throw new Error('no dimensions');
+    const hash = await dhash(thumbAbs);
     const { cat, group, slug } = classify(rel);
-    const item = { src: '/' + rel, thumb: '/' + thumbRel, w, h, cat, group };
+    const item = { src: '/' + rel, thumb: '/' + thumbRel, w, h, cat, group, hash, _dur: isVid ? (dur || 0) : null };
     if (slug) item.slug = slug;
     if (isVid) { item.video = true; item.dur = dur || 0; item.preview = '/' + previewRel; }
     items.push(item);
@@ -192,6 +206,43 @@ for (const rel of files) {
     console.warn(`skip (unreadable): ${rel} - ${String(e.message || e).slice(0, 80)}`);
   }
 }
+
+/* ── Deduplicate ────────────────────────────────────────────────────────────
+   public/ mirrors whole folders: /logos/ duplicates /brands/logos/, /characters/
+   duplicates /brands/characters/, and so on - 115 copies of pictures already in
+   the archive. Showing the same piece twice makes the body of work look padded.
+   Keep the best copy: largest pixel area, then webp over png/jpg, then the
+   shortest path as a stable tiebreak. A video only counts as a duplicate of
+   another video with the same poster AND the same duration. */
+/* Exact hash buckets are not enough: the same render saved at two sizes gets
+   re-encoded, which flips a few bits. Compare by Hamming distance instead -
+   4 bits out of 64 catches re-encodes and rescales while staying far away from
+   genuinely different pictures. 889 items is ~400k comparisons, which is free.
+   A video only duplicates another video with the same poster AND duration. */
+const NEAR = 4;
+const toBig = (bits) => BigInt("0b" + bits);
+const popcount = (x) => { let n = 0; while (x) { n += Number(x & 1n); x >>= 1n; } return n; };
+const better = (a, b) => {
+  const area = (x) => x.w * x.h;
+  if (area(a) !== area(b)) return area(a) > area(b) ? a : b;
+  const webp = (x) => (x.src.endsWith(".webp") ? 1 : 0);
+  if (webp(a) !== webp(b)) return webp(a) > webp(b) ? a : b;
+  return a.src.length <= b.src.length ? a : b;
+};
+const survivors = [];
+let dropped = 0;
+for (const it of items) {
+  const bits = toBig(it.hash);
+  const hit = survivors.find((k) => k._dur === it._dur && popcount(toBig(k.hash) ^ bits) <= NEAR);
+  if (!hit) { survivors.push(it); continue; }
+  dropped++;
+  const win = better(hit, it);
+  if (win !== hit) survivors[survivors.indexOf(hit)] = win;
+}
+items.length = 0;
+items.push(...survivors);
+for (const it of items) { delete it.hash; delete it._dur; }
+console.log(`dedupe: dropped ${dropped} duplicate copies`);
 
 /* Stable pseudo-shuffle so "All" interleaves categories instead of showing 300
    near-identical frames in a row. Hash-ordered = deterministic across runs. */

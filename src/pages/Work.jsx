@@ -43,15 +43,16 @@ export default function Work() {
   const section = { maxWidth: 1380, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' };
 
   return (
-    <div style={{ background: '#0D0F0E', minHeight: '100vh', overflowX: 'clip', position: 'relative', color: '#F6F3ED' }}>
+    <div className="work-page" style={{ minHeight: '100vh', overflowX: 'clip', position: 'relative', color: '#F6F3ED' }}>
       <Seo
         title="Selected Work | AYESMAJ Studios"
         description="The complete AYESMAJ Studios archive — brand identities, cinematic websites, AI campaigns, interiors, characters and 3D worlds, from concept to launch."
         path="/Work"
       />
 
-      {/* soft vignette */}
-      <div aria-hidden style={{ position: 'fixed', inset: 0, pointerEvents: 'none', background: 'radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 45%), radial-gradient(90% 70% at 50% 110%, rgba(122,72,255,0.05) 0%, transparent 55%)' }} />
+      {/* Film grain over the whole page. 1.8% - enough to stop the large dark
+          gradients banding on wide displays, not enough to notice. */}
+      <div aria-hidden className="work-grain" />
 
       <div style={{ position: 'relative', zIndex: 1 }}>
         <AyesmajNav />
@@ -70,15 +71,16 @@ export default function Work() {
             />
           </section>
 
-          {/* THE ARCHIVE — the one gallery */}
-          <div className="idv2-bgc idv2-bgc-04 idv2-bgc--fade-top" style={{ '--bgc-fade': '#0D0F0E' }}>
-            <section style={{ ...section, paddingBottom: 'clamp(64px,8vw,120px)' }}>
-              <WorkArchive />
-            </section>
-          </div>
+          {/* THE ARCHIVE — the one gallery. No .idv2-bgc wrapper: that class
+              forces background-color #08080A !important under a heavily darkened
+              photo, which is what made the page read as flat black. The ground
+              is now the page's own layered field plus each group's own wash. */}
+          <section style={{ ...section, paddingBottom: 'clamp(64px,8vw,120px)' }}>
+            <WorkArchive />
+          </section>
 
           {/* CTA */}
-          <div className="idv2-bgc idv2-bgc-07 idv2-bgc--fade-top">
+          <div className="work-cta">
             <section style={{ ...section, paddingBottom: 'clamp(80px,10vw,140px)', textAlign: 'center' }}>
               <motion.div {...fade(0.1)}>
                 <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(30px,4.6vw,64px)', fontWeight: 800, textTransform: 'uppercase', lineHeight: 0.98, color: '#F6F3ED', margin: '0 0 28px' }}>

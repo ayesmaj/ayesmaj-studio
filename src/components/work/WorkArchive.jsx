@@ -41,6 +41,19 @@ const BY_CAT = CATS.reduce((acc, c) => {
   return acc;
 }, {});
 
+/* The archive is lit like a corridor rather than dropped on a flat void: each
+   group carries a soft wash whose hue is sampled from the brand gradient at its
+   position in the page, so scrolling the archive travels gold -> copper ->
+   violet -> indigo. The colour is brand-owned, not decorative: these are the
+   exact stops used by the site gradient. */
+const GRAD_STOPS = [[216, 183, 90], [197, 139, 87], [163, 91, 218], [122, 72, 255]];
+const accentAt = (t) => {
+  const x = t * (GRAD_STOPS.length - 1);
+  const i = Math.min(Math.floor(x), GRAD_STOPS.length - 2);
+  const f = x - i;
+  return GRAD_STOPS[i].map((c, k) => Math.round(c + (GRAD_STOPS[i + 1][k] - c) * f)).join(", ");
+};
+
 const FIRST_SHOWN = 16;
 
 function useReducedMotionLive() {
@@ -206,7 +219,7 @@ function Lightbox({ items, index, onClose, onStep, reduced }) {
   );
 }
 
-function Group({ cat, cols, reduced, onOpen }) {
+function Group({ cat, cols, reduced, onOpen, accent, side }) {
   const all = BY_CAT[cat];
   const [shown, setShown] = useState(FIRST_SHOWN);
   const list = useMemo(() => all.slice(0, shown), [all, shown]);
@@ -224,7 +237,12 @@ function Group({ cat, cols, reduced, onOpen }) {
   }, [list, cols]);
 
   return (
-    <section className="wa-group" id={anchorId(cat)} aria-labelledby={`${anchorId(cat)}-h`}>
+    <section
+      className="wa-group"
+      id={anchorId(cat)}
+      aria-labelledby={`${anchorId(cat)}-h`}
+      style={{ "--wa-accent": accent, "--wa-x": side ? "78%" : "22%" }}
+    >
       <header className="wa-group-head">
         <h3 className="wa-group-title" id={`${anchorId(cat)}-h`}>{cat}</h3>
         <span className="wa-group-count">{all.length}</span>
@@ -317,8 +335,16 @@ export default function WorkArchive() {
         ))}
       </nav>
 
-      {CATS.map((c) => (
-        <Group key={c} cat={c} cols={cols} reduced={reduced} onOpen={onOpen} />
+      {CATS.map((c, i) => (
+        <Group
+          key={c}
+          cat={c}
+          cols={cols}
+          reduced={reduced}
+          onOpen={onOpen}
+          accent={accentAt(CATS.length > 1 ? i / (CATS.length - 1) : 0)}
+          side={i % 2}
+        />
       ))}
 
       {open && (
