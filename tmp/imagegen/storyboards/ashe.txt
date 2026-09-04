@@ -1,8 +1,0 @@
-Use case: illustration-story
-Asset type: premium commercial storyboard presentation sheet
-Primary request: Using Images 1–4 as strict ASHÉ Coffee logo, package, palette, and campaign references, create one professional six-panel cinematic storyboard sheet in a clean 3-by-2 grid for “From Origin to Ritual.” Preserve the real ASHÉ logo and packaging. Do not redesign the brand.
-Sequence: SHOT 01 wide sunrise over a misty coffee farm with branches and cherries foregrounded; SHOT 02 macro of a hand selecting one ripe cherry with shallow depth of field; SHOT 03 match cut from circular cherry to roasted beans falling in slow motion; SHOT 04 close-up of fresh grounds entering a premium brewer; SHOT 05 espresso flows into a ceramic cup as warm morning light crosses the steam; SHOT 06 tabletop hero with the real ASHÉ package, cup, scattered beans, and logo.
-Style/medium: sophisticated hand-drawn advertising storyboard, warm grayscale pencil and marker with restrained brown, cream, copper, and deep green accents; not polished final photographs.
-Composition: clear continuity through match cuts, changing scale, and directional movement. Add camera arrows, lens suggestions, framing notes, shot numbers, and one simple action caption per panel.
-Text: label exactly “SHOT 01” through “SHOT 06”; keep annotations small and legible.
-Constraints: exact brand identity and package form from references; realistic coffee process; connected narrative; no packaging redesign, no generic substitute logo, no watermark.

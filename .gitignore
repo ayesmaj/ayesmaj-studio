@@ -88,3 +88,15 @@ __pycache__/
 # tile falls back to a still. The blanket *.mp4 above skipped them silently and
 # they shipped missing once.
 !public/work-thumbs/*.mp4
+
+# Local working directories - scratch renders, PDF builds, source masters and
+# scratch exports. A `git add -A` swept ~1,200 of these into a commit once;
+# they are working files, not site assets, and nothing under src/ imports them.
+/portfolio/
+/tmp/
+/output/
+/branding/
+/ACTION-PLAN.md
+/AGENTS.md
+/FULL-AUDIT-REPORT.md
+/media-refs.json

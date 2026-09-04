@@ -1,7 +1,0 @@
-Create a premium responsive-device presentation for a bespoke BLENDAY ecommerce website using the supplied references as the exact brand source. Reference 1 is the exact BLENDAY logo. References 2 through 5 establish the four flavor worlds, pouch architecture, smoothie cups, fruit imagery, and bright cinematic product lighting.
-
-Show one desktop monitor, one tablet, and one phone on a bright cream studio table with subtle purple translucent accents. All devices must clearly belong to the same BLENDAY digital ecosystem. The desktop shows a generous berry-purple homepage hero with the recognizable pouch and smoothie cup, an exact BLENDAY logo in the navigation, simple flavor-color navigation chips, and large clean reserved headline space. The tablet shows a four-flavor product-family grid. The phone shows a minimal product detail with a pouch, cup, flavor swatches, and a rounded action button. Use real UI hierarchy, crisp grids, rounded geometric components, generous whitespace, purple/yellow/coral/amber flavor accents, and premium responsive web-design presentation.
-
-Critical constraints: no generic dashboard, no unrelated analytics charts, no fabricated paragraphs, no fake prices, no misspelled BLENDAY, no redesigned packaging, no dark black screens, no random sci-fi UI. Keep non-logo text as simple abstract short lines so exact readable copy can be added in code later.
-
-Output: one 3:2 landscape device-family portfolio image.

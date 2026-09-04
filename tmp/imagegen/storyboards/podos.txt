@@ -1,8 +1,0 @@
-Use case: illustration-story
-Asset type: industrial technology-film storyboard sheet
-Primary request: Using Images 1–4 as strict PODOS AI references, create one professional six-panel cinematic storyboard sheet in a clean 3-by-2 grid for “Infrastructure Arrives.” Preserve the exact modular compute pod design, proportions, matte materials, solar roof, PODOS logo, and technical language. Never turn it into generic science fiction.
-Sequence: SHOT 01 extremely wide aerial of an empty remote landscape at sunrise; SHOT 02 long-lens view of a PODOS compute pod transported on a specialized trailer; SHOT 03 low-angle close shot as the exact pod passes camera, emphasizing scale and engineered body; SHOT 04 crane lowers the pod logically onto a prepared foundation; SHOT 05 exterior panels illuminate as energy, cooling, and data systems activate in sequence; SHOT 06 ultra-wide reveal of multiple operating PODOS units forming a modular AI campus.
-Style/medium: clean industrial hand-drawn storyboard with graphite and marker shading, restrained electric blue and gold technical accents; visibly planning art, not a finished render.
-Composition: believable logistics, scale, crane movement, lens changes, and camera paths. Machines and actions must be physically logical.
-Text: label exactly “SHOT 01” through “SHOT 06”; include concise movement notes, lens/camera notes, and one short action caption per panel.
-Constraints: preserve exact pod and logo; no invented vehicle, no generic server box, no fantastical machinery, no brand redesign, no watermark.

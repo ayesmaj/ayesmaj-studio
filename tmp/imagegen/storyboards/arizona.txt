@@ -1,8 +1,0 @@
-Use case: illustration-story
-Asset type: architectural remodeling-commercial storyboard sheet
-Primary request: Using Images 1–3 as strict Arizona Chimney Pros logo, real fireplace before/after work, brand colors, materials, and construction references, create one professional six-panel remodeling storyboard sheet in a clean 3-by-2 grid for “From Outdated to Centerpiece.” Preserve the real project design.
-Sequence: SHOT 01 wide establishing view of outdated fireplace in a lived-in Arizona home; SHOT 02 homeowner points out concerns while consultant inspects and measures; SHOT 03 safe controlled demolition montage—old surround removed, firebox protected, wall opened; SHOT 04 framing, gas components, masonry, mantel, and finishes installed through logical visual layers; SHOT 05 dust clears as camera slowly pushes toward completed fireplace; SHOT 06 final wide lifestyle view of remodeled fireplace operating as the room’s centerpiece.
-Style/medium: clean architectural-commercial storyboard with grayscale marker shading and restrained Arizona desert gold, charcoal, and warm fire-orange accents; not a finished advertising image.
-Composition: accurate safe construction process, clear before/after continuity, camera arrows, material notes, and staging.
-Text: label exactly “SHOT 01” through “SHOT 06”; one concise action caption and camera note per panel.
-Constraints: use actual fireplace design and branding; do not invent impossible construction, unsafe work, brand redesign, or watermark.

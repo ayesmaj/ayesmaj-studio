@@ -1,8 +1,0 @@
-Use case: illustration-story
-Asset type: dynamic energy-drink commercial storyboard sheet
-Primary request: Use Images 1–4 as strict Vudu Energy logo, can, packaging, colors, and campaign references. Create one professional six-panel 16:9 storyboard sheet in a clean 3-by-2 grid titled conceptually “Activate the Night.” Preserve the exact real can design and Vudu identity without changing them.
-Sequence: SHOT 01 exhausted creator alone in a dark studio with dim screens and unfinished work; SHOT 02 extreme macro of a cold Vudu can landing on the desk with condensation bursting from impact; SHOT 03 finger opens the can and a sharp energy pulse expands; SHOT 04 pulse travels through the studio activating monitors, lights, speakers, and creative tools; SHOT 05 fast camera orbit around the energized creator working across 3D, music, design, and motion screens; SHOT 06 product hero with the real can floating inside a controlled energy vortex and Vudu logo behind it.
-Style/medium: bold professional storyboard linework, graphite and marker, cinematic shadow, selective brand-color highlights; readable production storyboard, not a finished neon poster.
-Composition: speed, rhythm, impact frames, whip pans, and clear transitions. Add arrows for camera orbit, pulse direction, and object movement.
-Text: label exactly “SHOT 01” through “SHOT 06”; one short action line under every panel and concise camera note.
-Constraints: preserve the real logo, can shape, label, and flavor color language; no redesign, no generic can, no watermark, no polished final advertising render.

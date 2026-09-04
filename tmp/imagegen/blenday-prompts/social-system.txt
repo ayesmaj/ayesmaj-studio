@@ -1,7 +1,0 @@
-Create a cohesive BLENDAY social campaign system using the supplied references as the only brand source. The four references establish berry purple, banana yellow, strawberry-lime coral, and mango-coconut amber flavor worlds, plus the exact pouch-and-cup product architecture and high-speed fruit/liquid language.
-
-Present a premium nine-tile social feed with an adjacent vertical story preview on a bright warm-white editorial background. The grid must feel like one campaign: hero product tiles, macro ingredient tiles, liquid-motion tiles, a four-flavor family tile, and minimal graphic tiles using the fruit-drop motif. Alternate the established flavor colors in a controlled rhythm. Use consistent lighting, rounded geometry, strong crops, tactile fruit realism, and short clean reserved text areas. Include the exact BLENDAY wordmark only where it can remain correct; otherwise leave clean brand-color areas for code-based typography.
-
-Critical constraints: no invented flavors, no fake slogans, no misspelled name, no generic influencer photos, no unrelated lifestyle imagery, no repeated identical tile, no dark background, no clutter.
-
-Output: one 3:2 landscape social-system presentation.
