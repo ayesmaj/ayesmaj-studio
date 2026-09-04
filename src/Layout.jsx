@@ -20,6 +20,17 @@ export default function Layout({ children, currentPageName }) {
   return (
     <div ref={layoutRef} style={{ background: '#030303', minHeight: '100vh', overflow: 'visible', position: 'relative', WebkitOverflowScrolling: 'touch' }}>
       <style>{`
+        /* The floating Call Now button lives at z-index 9998, above every
+           overlay on the site. In the full-screen work viewer that put it
+           directly on top of the video's own scrubber and play/mute controls
+           (owner report 2026-09-03). Hide it whenever a modal dialog is open -
+           the work viewer, the mobile nav drawer, anything else that opens
+           modally. Someone looking at a full-screen film is not dialling.
+           :has() means no component has to know this button exists. */
+        body:has([role="dialog"][aria-modal="true"]) .ayes-floating-call {
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
       `}</style>
       {/* ── Floating Call Now button (fixed bottom-right) ── */}
       <AnimatePresence>
