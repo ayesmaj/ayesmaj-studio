@@ -179,9 +179,13 @@ function Lightbox({ items, index, onClose, onStep, reduced }) {
         onClick={(e) => e.stopPropagation()}
       >
         {item.video ? (
+          /* The web encode, never the master. Most masters were never deployed
+             (blocked by .gitignore), nine are HEVC that no browser decodes, and
+             the largest is 600MB. item.web is h264, capped at 1280 wide and
+             faststart, so it plays everywhere and starts immediately. */
           <video
-            key={item.src}
-            src={item.src}
+            key={item.web || item.src}
+            src={item.web || item.src}
             poster={item.thumb}
             controls
             autoPlay={!reduced}
