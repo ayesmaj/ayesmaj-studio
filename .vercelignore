@@ -1,0 +1,16 @@
+# Local dependencies and build artifacts
+node_modules/
+dist/
+.git/
+.vercel/
+
+# Original/source media. Production video is served from the existing R2 CDN.
+**/*.mp4
+**/*.MP4
+**/*.mov
+**/*.MOV
+videos websites/
+
+# Local working exports not used by the application build.
+tmp/
+logs/

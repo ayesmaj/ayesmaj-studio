@@ -1,0 +1,8 @@
+Use case: illustration-story
+Asset type: premium technology-film storyboard sheet
+Primary request: Using Images 1–3 as exact Electric Fuel America battery, logo, facility, and campaign references, create one professional six-panel cinematic storyboard sheet in a clean 3-by-2 grid titled conceptually “Power Across Every Domain.” Preserve the real battery form and identity.
+Sequence: SHOT 01 extreme macro traveling across the real battery surface as an electric-blue energy pulse activates; SHOT 02 match cut to the battery installed inside a heavy land vehicle moving through difficult terrain; SHOT 03 the same energy trail transitions upward into a drone flying through clouds; SHOT 04 camera follows blue energy underwater into a marine system moving through the deep ocean; SHOT 05 energy rises from Earth into a satellite above the atmosphere; SHOT 06 studio hero of the real battery surrounded by four restrained symbols for land, air, sea, and space.
+Style/medium: premium film-production storyboard, graphite and marker shading with selective electric-blue energy and small warm-gold highlights; no finished photorealistic render.
+Composition: logical match cuts, cinematic scale changes, physically believable technology, strong camera direction and movement arrows.
+Text: label exactly “SHOT 01” through “SHOT 06”; include camera notes and one concise action description per panel.
+Constraints: exact product and logo from references; no combat, explosions, fantasy machinery, redesign, or watermark.

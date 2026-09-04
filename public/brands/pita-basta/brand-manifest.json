@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "slug": "pita-basta",
+  "assetDirectory": "pita-basta",
+  "name": "PITA BASTA",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 11,
+    "exactDuplicates": [],
+    "nearDuplicates": [
+      {
+        "files": [
+          "2.png",
+          "3.png"
+        ],
+        "hashDistance": 3
+      },
+      {
+        "files": [
+          "2.png",
+          "4.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "2.png",
+          "5.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "2.png",
+          "8.png"
+        ],
+        "hashDistance": 1
+      },
+      {
+        "files": [
+          "2.png",
+          "9.png"
+        ],
+        "hashDistance": 3
+      },
+      {
+        "files": [
+          "3.png",
+          "4.png"
+        ],
+        "hashDistance": 3
+      },
+      {
+        "files": [
+          "3.png",
+          "5.png"
+        ],
+        "hashDistance": 1
+      },
+      {
+        "files": [
+          "3.png",
+          "8.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "3.png",
+          "9.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "4.png",
+          "5.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "4.png",
+          "8.png"
+        ],
+        "hashDistance": 3
+      },
+      {
+        "files": [
+          "4.png",
+          "9.png"
+        ],
+        "hashDistance": 3
+      },
+      {
+        "files": [
+          "5.png",
+          "8.png"
+        ],
+        "hashDistance": 1
+      },
+      {
+        "files": [
+          "5.png",
+          "9.png"
+        ],
+        "hashDistance": 3
+      },
+      {
+        "files": [
+          "8.png",
+          "9.png"
+        ],
+        "hashDistance": 4
+      }
+    ],
+    "highestResolutionReferences": [
+      "11.png",
+      "10.png",
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png"
+    ],
+    "assets": [
+      {
+        "filename": "1.png",
+        "extension": ".png",
+        "bytes": 558119,
+        "sha256": "886aca6211213d13c41ca2c3ce1aa7cefc9b03363f445057d102da796efb5f71",
+        "source": "existing",
+        "width": 2027,
+        "height": 2027,
+        "mode": "RGB",
+        "averageHash": "c7996a42427efdc3",
+        "palette": [
+          "#FFFFFF",
+          "#2E2A2B",
+          "#FEFEFE",
+          "#D5D4D4",
+          "#FEFFFF"
+        ],
+        "type": "identity"
+      },
+      {
+        "filename": "10.png",
+        "extension": ".png",
+        "bytes": 628876,
+        "sha256": "1878ac04cbb1889d049ba81ec4abe8915185ea82309b41a3c9958b994324dbae",
+        "source": "existing",
+        "width": 4620,
+        "height": 3925,
+        "mode": "RGBA",
+        "averageHash": "ffff9888888898ff",
+        "palette": [
+          "#FFFFFF",
+          "#086250",
+          "#F5F5F5",
+          "#075C4A",
+          "#267364"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "11.png",
+        "extension": ".png",
+        "bytes": 639078,
+        "sha256": "aab7aeb99d9838e609db20de0657f46c578dd3da265730f2c9354d0159362d90",
+        "source": "existing",
+        "width": 4727,
+        "height": 4060,
+        "mode": "RGBA",
+        "averageHash": "00007f7f7f7f2700",
+        "palette": [
+          "#FFFFFF",
+          "#0A5F4D",
+          "#FEFEFE",
+          "#74A49B",
+          "#FFFEFD"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "2.png",
+        "extension": ".png",
+        "bytes": 3443877,
+        "sha256": "98fdceffe64d7002fe44124fbcadc1931b27b3666c971ec19d35a45462ffa7f2",
+        "source": "existing",
+        "width": 2000,
+        "height": 2000,
+        "mode": "RGBA",
+        "averageHash": "000000fe7f3c0000",
+        "palette": [
+          "#1D1D1D",
+          "#5B7D76",
+          "#171717",
+          "#141415",
+          "#111111"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "3.png",
+        "extension": ".png",
+        "bytes": 3636729,
+        "sha256": "846b6fce9bc5c8561503a0dac7b6a44e9d8a1ff9e431b39979cd58afdee64a85",
+        "source": "existing",
+        "width": 2000,
+        "height": 2000,
+        "mode": "RGBA",
+        "averageHash": "0000007fff3c0000",
+        "palette": [
+          "#191919",
+          "#121212",
+          "#0B0B0B",
+          "#92B2AC",
+          "#1D423B"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "4.png",
+        "extension": ".png",
+        "bytes": 3059699,
+        "sha256": "69c89078c6726f4c579d6c000bb9343514a9a22f64ef5794a3dbd584bfa7dc28",
+        "source": "existing",
+        "width": 2000,
+        "height": 2000,
+        "mode": "RGBA",
+        "averageHash": "000000ff7f1c0000",
+        "palette": [
+          "#191919",
+          "#131313",
+          "#0C0C0C",
+          "#A5B6B2",
+          "#214B42"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "5.png",
+        "extension": ".png",
+        "bytes": 3941412,
+        "sha256": "1a6ad70d9da0d51dab3b3133d59a12cf3f9ccbbee30bfec99d91fe1cb4f79e2c",
+        "source": "existing",
+        "width": 2000,
+        "height": 2000,
+        "mode": "RGBA",
+        "averageHash": "0000007f7f3c0000",
+        "palette": [
+          "#1D1D1D",
+          "#171717",
+          "#111111",
+          "#9AB0AB",
+          "#29463F"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "6.png",
+        "extension": ".png",
+        "bytes": 2713363,
+        "sha256": "48655552ee77d7f2aaa8e593e62ca9a2cf4e5fdc3ca20e3d83ace86658537548",
+        "source": "existing",
+        "width": 2000,
+        "height": 2000,
+        "mode": "RGBA",
+        "averageHash": "00007efcc6ff3800",
+        "palette": [
+          "#1A1A1A",
+          "#161616",
+          "#142B26",
+          "#C1C2C2",
+          "#327365"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "7.png",
+        "extension": ".png",
+        "bytes": 2751816,
+        "sha256": "97fcb60476f2962d5aa2054775647b175f6d7e34a1f3651cfe1ceea6ce943aab",
+        "source": "existing",
+        "width": 2000,
+        "height": 2000,
+        "mode": "RGBA",
+        "averageHash": "00001cffffe04000",
+        "palette": [
+          "#1B1B1B",
+          "#A5ADAB",
+          "#191919",
+          "#1D3E36",
+          "#161616"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "8.png",
+        "extension": ".png",
+        "bytes": 3375767,
+        "sha256": "69d65791beeac7304d041ef54613c4c18c2789e2c901700c0ecdda554bc17077",
+        "source": "existing",
+        "width": 2000,
+        "height": 2000,
+        "mode": "RGBA",
+        "averageHash": "0000007e7f3c0000",
+        "palette": [
+          "#1C1C1C",
+          "#151515",
+          "#101010",
+          "#84B2A9",
+          "#394945"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "9.png",
+        "extension": ".png",
+        "bytes": 3406235,
+        "sha256": "d679dee02518226bc70f4f50b9a76381eb85ebd10ddc52fab8432d2d2dd31e70",
+        "source": "existing",
+        "width": 2000,
+        "height": 2000,
+        "mode": "RGBA",
+        "averageHash": "000000ffff380000",
+        "palette": [
+          "#1C1C1C",
+          "#6D807B",
+          "#111111",
+          "#181818",
+          "#151515"
+        ],
+        "type": "packaging"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Brand Identity & Packaging",
+    "primaryColors": [
+      "#FFFFFF",
+      "#191919",
+      "#FEFEFE"
+    ],
+    "secondaryColors": [
+      "#1D1D1D",
+      "#171717",
+      "#111111",
+      "#1C1C1C"
+    ],
+    "visualMood": "A bold Middle-Eastern street food brand elevated through contemporary design — vibrant identity, packaging system and collateral.",
+    "lightingStyle": "clean commercial studio light with emerald and white contrast",
+    "compositionStyle": "bold geometric takeaway-packaging compositions and lively food culture",
+    "materials": [
+      "coated card",
+      "foil print",
+      "kraft paper",
+      "fresh food texture"
+    ],
+    "keywords": [
+      "Brand Identity",
+      "Packaging",
+      "Food"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "identity": [
+      "1.png"
+    ],
+    "packaging": [
+      "10.png",
+      "11.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png",
+      "9.png"
+    ]
+  },
+  "missingAssets": [
+    "website-responsive",
+    "social-system",
+    "campaign-system",
+    "storyboard",
+    "brand-world-master"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "1.png",
+        "10.png",
+        "11.png",
+        "2.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "website-responsive",
+      "filename": "generated/web/website-responsive.webp",
+      "source": "generated",
+      "references": [
+        "10.png",
+        "1.png",
+        "11.png",
+        "2.png"
+      ],
+      "preparedReferences": [
+        "pita-basta/ref-1.jpg",
+        "pita-basta/ref-2.jpg",
+        "pita-basta/ref-3.jpg",
+        "pita-basta/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: website-responsive for an AYESMAJ portfolio case study\nPrimary request: Create a bespoke responsive website presentation for this exact brand across laptop, tablet, and phone. Screens must inherit the reference imagery, palette, product, and composition language and feel like one real premium website system.\nBrand: PITA BASTA\nCategory: Brand Identity & Packaging\nBrand character: A bold Middle-Eastern street food brand elevated through contemporary design — vibrant identity, packaging system and collateral.\nInput images: Image 1: source-of-truth brand reference (10.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (11.png); Image 4: source-of-truth brand reference (2.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 device-family studio scene with a clearly visible desktop hero, supporting mobile screens, and elegant depth; underlying brand composition language: bold geometric takeaway-packaging compositions and lively food culture\nLighting/mood: clean commercial studio light with emerald and white contrast\nColor palette: #FFFFFF, #191919, #FEFEFE, #1D1D1D, #171717, #111111, #1C1C1C\nMaterials/textures: coated card, foil print, kraft paper, fresh food texture\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "10.png",
+        "1.png",
+        "11.png",
+        "2.png"
+      ],
+      "preparedReferences": [
+        "pita-basta/ref-1.jpg",
+        "pita-basta/ref-2.jpg",
+        "pita-basta/ref-3.jpg",
+        "pita-basta/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: PITA BASTA\nCategory: Brand Identity & Packaging\nBrand character: A bold Middle-Eastern street food brand elevated through contemporary design — vibrant identity, packaging system and collateral.\nInput images: Image 1: source-of-truth brand reference (10.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (11.png); Image 4: source-of-truth brand reference (2.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: bold geometric takeaway-packaging compositions and lively food culture\nLighting/mood: clean commercial studio light with emerald and white contrast\nColor palette: #FFFFFF, #191919, #FEFEFE, #1D1D1D, #171717, #111111, #1C1C1C\nMaterials/textures: coated card, foil print, kraft paper, fresh food texture\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "campaign-system",
+      "filename": "generated/campaign/campaign-system.webp",
+      "source": "generated",
+      "references": [
+        "10.png",
+        "1.png",
+        "11.png",
+        "2.png"
+      ],
+      "preparedReferences": [
+        "pita-basta/ref-1.jpg",
+        "pita-basta/ref-2.jpg",
+        "pita-basta/ref-3.jpg",
+        "pita-basta/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: campaign-system for an AYESMAJ portfolio case study\nPrimary request: Create a unified campaign family showing a hero advertising visual, a vertical poster, a digital display, and a secondary detail composition. Keep one clear campaign idea across every application.\nBrand: PITA BASTA\nCategory: Brand Identity & Packaging\nBrand character: A bold Middle-Eastern street food brand elevated through contemporary design — vibrant identity, packaging system and collateral.\nInput images: Image 1: source-of-truth brand reference (10.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (11.png); Image 4: source-of-truth brand reference (2.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 campaign presentation board with four deliberately different but related applications; underlying brand composition language: bold geometric takeaway-packaging compositions and lively food culture\nLighting/mood: clean commercial studio light with emerald and white contrast\nColor palette: #FFFFFF, #191919, #FEFEFE, #1D1D1D, #171717, #111111, #1C1C1C\nMaterials/textures: coated card, foil print, kraft paper, fresh food texture\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "10.png",
+        "1.png",
+        "11.png",
+        "2.png"
+      ],
+      "preparedReferences": [
+        "pita-basta/ref-1.jpg",
+        "pita-basta/ref-2.jpg",
+        "pita-basta/ref-3.jpg",
+        "pita-basta/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: PITA BASTA\nCategory: Brand Identity & Packaging\nBrand character: A bold Middle-Eastern street food brand elevated through contemporary design — vibrant identity, packaging system and collateral.\nInput images: Image 1: source-of-truth brand reference (10.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (11.png); Image 4: source-of-truth brand reference (2.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: bold geometric takeaway-packaging compositions and lively food culture\nLighting/mood: clean commercial studio light with emerald and white contrast\nColor palette: #FFFFFF, #191919, #FEFEFE, #1D1D1D, #171717, #111111, #1C1C1C\nMaterials/textures: coated card, foil print, kraft paper, fresh food texture\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "10.png",
+        "1.png",
+        "11.png",
+        "2.png"
+      ],
+      "preparedReferences": [
+        "pita-basta/ref-1.jpg",
+        "pita-basta/ref-2.jpg",
+        "pita-basta/ref-3.jpg",
+        "pita-basta/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: PITA BASTA\nCategory: Brand Identity & Packaging\nBrand character: A bold Middle-Eastern street food brand elevated through contemporary design — vibrant identity, packaging system and collateral.\nInput images: Image 1: source-of-truth brand reference (10.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (11.png); Image 4: source-of-truth brand reference (2.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: bold geometric takeaway-packaging compositions and lively food culture\nLighting/mood: clean commercial studio light with emerald and white contrast\nColor palette: #FFFFFF, #191919, #FEFEFE, #1D1D1D, #171717, #111111, #1C1C1C\nMaterials/textures: coated card, foil print, kraft paper, fresh food texture\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "10.png",
+        "11.png",
+        "2.png"
+      ],
+      "preparedReferences": [
+        "pita-basta/ref-1.jpg",
+        "pita-basta/ref-2.jpg",
+        "pita-basta/ref-3.jpg",
+        "pita-basta/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: PITA BASTA\nCategory: Brand Identity & Packaging\nBrand character: A bold Middle-Eastern street food brand elevated through contemporary design — vibrant identity, packaging system and collateral.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (10.png); Image 3: source-of-truth brand reference (11.png); Image 4: source-of-truth brand reference (2.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: bold geometric takeaway-packaging compositions and lively food culture\nLighting/mood: clean commercial studio light with emerald and white contrast\nColor palette: #FFFFFF, #191919, #FEFEFE, #1D1D1D, #171717, #111111, #1C1C1C\nMaterials/textures: coated card, foil print, kraft paper, fresh food texture\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "website-responsive",
+    "social-system",
+    "campaign-system",
+    "storyboard",
+    "brand-world-master"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 5,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/pita-basta.jpg"
+  }
+}

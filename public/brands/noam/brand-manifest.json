@@ -1,0 +1,966 @@
+{
+  "schemaVersion": 1,
+  "slug": "noam",
+  "assetDirectory": "noam",
+  "name": "NOAM",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 26,
+    "exactDuplicates": [],
+    "nearDuplicates": [
+      {
+        "files": [
+          "1.png",
+          "2.png"
+        ],
+        "hashDistance": 0
+      },
+      {
+        "files": [
+          "1.png",
+          "3.png"
+        ],
+        "hashDistance": 3
+      },
+      {
+        "files": [
+          "10.png",
+          "6.png"
+        ],
+        "hashDistance": 0
+      },
+      {
+        "files": [
+          "10.png",
+          "7.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "10.png",
+          "8.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "10.png",
+          "9.png"
+        ],
+        "hashDistance": 0
+      },
+      {
+        "files": [
+          "12.jpg",
+          "14.jpg"
+        ],
+        "hashDistance": 1
+      },
+      {
+        "files": [
+          "13.png",
+          "15.png"
+        ],
+        "hashDistance": 1
+      },
+      {
+        "files": [
+          "2.png",
+          "3.png"
+        ],
+        "hashDistance": 3
+      },
+      {
+        "files": [
+          "4.png",
+          "5.png"
+        ],
+        "hashDistance": 1
+      },
+      {
+        "files": [
+          "6.png",
+          "7.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "6.png",
+          "8.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "6.png",
+          "9.png"
+        ],
+        "hashDistance": 0
+      },
+      {
+        "files": [
+          "7.png",
+          "8.png"
+        ],
+        "hashDistance": 0
+      },
+      {
+        "files": [
+          "7.png",
+          "9.png"
+        ],
+        "hashDistance": 2
+      },
+      {
+        "files": [
+          "8.png",
+          "9.png"
+        ],
+        "hashDistance": 2
+      }
+    ],
+    "highestResolutionReferences": [
+      "12.jpg",
+      "13.png",
+      "14.jpg",
+      "15.png",
+      "1.png",
+      "10.png",
+      "11.png",
+      "2.png"
+    ],
+    "assets": [
+      {
+        "filename": "1.png",
+        "extension": ".png",
+        "bytes": 4549583,
+        "sha256": "8aaad5f918270eb566f2f75cdf6577476fc2abe60384e82915b5b06687ebad0f",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "c7c3c3c3c3c3e7ff",
+        "palette": [
+          "#FFFFFF",
+          "#1F1F1E",
+          "#515150",
+          "#FFFFFE",
+          "#CCCCCC"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "10.png",
+        "extension": ".png",
+        "bytes": 13194193,
+        "sha256": "74a9aebd18c67127fd6ad6663e50bd675e52189bfbd94897925f9dea38362260",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "ffff81818181dbff",
+        "palette": [
+          "#FFFFFF",
+          "#1C1F1B",
+          "#334634",
+          "#94BD9A",
+          "#B7FFC5"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "11.png",
+        "extension": ".png",
+        "bytes": 10970958,
+        "sha256": "9b7a063fac540a9040665c93fe0e4ad091a0a2d4d7248487e89d8dbd256a1310",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "00181c3e7e3c0000",
+        "palette": [
+          "#FFFFFF",
+          "#DCDCDC",
+          "#A6A5A5",
+          "#FFFFFE",
+          "#FEFFFF"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "12.jpg",
+        "extension": ".jpg",
+        "bytes": 22755430,
+        "sha256": "3e9f678ab17a26eff287999d6a3cc6e04afa551b5004cbccc52ed3be9aae1825",
+        "source": "existing",
+        "width": 8000,
+        "height": 8000,
+        "mode": "RGB",
+        "averageHash": "00183c1e7e3c0000",
+        "palette": [
+          "#0E0F10",
+          "#050506",
+          "#070707",
+          "#394152",
+          "#040404"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "13.png",
+        "extension": ".png",
+        "bytes": 41157190,
+        "sha256": "735c7f2f498860caa06fdeef6af4136945b34ca148d83732a845527b070b8588",
+        "source": "existing",
+        "width": 8000,
+        "height": 8000,
+        "mode": "RGBA",
+        "averageHash": "ffe7c3818181e3ff",
+        "palette": [
+          "#FFFFFF",
+          "#151A25",
+          "#4A5873",
+          "#FFFFFE",
+          "#C4CAD8"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "14.jpg",
+        "extension": ".jpg",
+        "bytes": 21874574,
+        "sha256": "dab6ea48b30f375cc3e1d55f49aff4d23d9a83f1157e89d0553d9519b38d01d8",
+        "source": "existing",
+        "width": 8000,
+        "height": 8000,
+        "mode": "RGB",
+        "averageHash": "00183c0e7e3c0000",
+        "palette": [
+          "#070707",
+          "#040404",
+          "#0E0F0E",
+          "#1B1E1B",
+          "#537457"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "15.png",
+        "extension": ".png",
+        "bytes": 40923371,
+        "sha256": "011023e4939bf39c0bfa5c6f986d9fcd5892bb94abafb4c6c41d2380bd3660f3",
+        "source": "existing",
+        "width": 8000,
+        "height": 8000,
+        "mode": "RGBA",
+        "averageHash": "ffe7c3818981e3ff",
+        "palette": [
+          "#FFFFFF",
+          "#1A2019",
+          "#51684F",
+          "#ADD8A9",
+          "#AFFFAC"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "16.mp4",
+        "extension": ".mp4",
+        "bytes": 176455157,
+        "sha256": "c7007d4dbe1a9e24fc2f1812088e075af30ae64c0c083c59ce67f0c6c960e964",
+        "source": "existing",
+        "width": 3840,
+        "height": 2160,
+        "codec": "h264",
+        "duration": 92.12,
+        "palette": [
+          "#010101",
+          "#040300",
+          "#0A0805",
+          "#020200",
+          "#29272C"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "16.webm",
+        "extension": ".webm",
+        "bytes": 6286916,
+        "sha256": "3d3a20c6662de9f73f3b5ba4435421fff7bac572f6d3c3057ae38504f28a4f1f",
+        "source": "existing",
+        "width": 1280,
+        "height": 720,
+        "codec": "vp9",
+        "duration": 92.12,
+        "palette": [
+          "#020200",
+          "#050401",
+          "#0C0A07",
+          "#010102",
+          "#2B292F"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "17.mp4",
+        "extension": ".mp4",
+        "bytes": 173683128,
+        "sha256": "dea9055d20f06cd8c4b68450eab765bf76f3ec490fee69181ca2e95cfbdda6c6",
+        "source": "existing",
+        "width": 3840,
+        "height": 2160,
+        "codec": "h264",
+        "duration": 61.5,
+        "palette": [
+          "#810007",
+          "#AE4B55",
+          "#620004",
+          "#B50F21",
+          "#9B000D"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "17.webm",
+        "extension": ".webm",
+        "bytes": 9825094,
+        "sha256": "9586344d3181dea3b279a2e2ba6f660c1fa18878cbef130ef8363e8e38252d7d",
+        "source": "existing",
+        "width": 1280,
+        "height": 720,
+        "codec": "vp9",
+        "duration": 61.517,
+        "palette": [
+          "#810007",
+          "#AF4B55",
+          "#630005",
+          "#B50F21",
+          "#9D000D"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "18.mp4",
+        "extension": ".mp4",
+        "bytes": 183111810,
+        "sha256": "d45da9ddec2d8e620d66df70432badda27f94c5b24d9cffb874af6877442afea",
+        "source": "existing",
+        "width": 3840,
+        "height": 2160,
+        "codec": "h264",
+        "duration": 94.8,
+        "palette": [
+          "#030303",
+          "#070708",
+          "#3C4147",
+          "#020202",
+          "#020118"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "18.webm",
+        "extension": ".webm",
+        "bytes": 6679647,
+        "sha256": "95cc32a566a6e4ba1d2319a32ccccb89b52f7ddc34896e325824aa928b57009b",
+        "source": "existing",
+        "width": 1280,
+        "height": 720,
+        "codec": "vp9",
+        "duration": 94.8,
+        "palette": [
+          "#070707",
+          "#030304",
+          "#020401",
+          "#393F44",
+          "#020302"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "19.mp4",
+        "extension": ".mp4",
+        "bytes": 150916012,
+        "sha256": "7bc512f025328a1a4b40d9a2e34f36541b684d0931aee7f45063e181c792b41d",
+        "source": "existing",
+        "width": 1920,
+        "height": 1080,
+        "codec": "h264",
+        "duration": 76.667,
+        "palette": [
+          "#080D13",
+          "#02070B",
+          "#AAA9B0",
+          "#887B82",
+          "#15161D"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "19.webm",
+        "extension": ".webm",
+        "bytes": 8368012,
+        "sha256": "0bbae393b947de350b88b7bb68896fd00f2677ee43702718c310877de9c92e74",
+        "source": "existing",
+        "width": 1280,
+        "height": 720,
+        "codec": "vp9",
+        "duration": 76.666,
+        "palette": [
+          "#080D13",
+          "#02070B",
+          "#A9A8B0",
+          "#877A80",
+          "#14161C"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "2.png",
+        "extension": ".png",
+        "bytes": 4630046,
+        "sha256": "e7d3c33c861444107b51e821cd4c6a4bb934fa8d197ff11bee09d0ec1222b6a1",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "c7c3c3c3c3c3e7ff",
+        "palette": [
+          "#FFFFFF",
+          "#1C1919",
+          "#524848",
+          "#D4C8C8",
+          "#FCFFFF"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "20.mp4",
+        "extension": ".mp4",
+        "bytes": 169593929,
+        "sha256": "1266a76927e405e24a78e65899d3f21273a8663668303ded63196b4a1396e345",
+        "source": "existing",
+        "width": 1920,
+        "height": 1080,
+        "codec": "h264",
+        "duration": 89.567,
+        "palette": [
+          "#9EAAB3",
+          "#848892",
+          "#98A2AB",
+          "#3F3D44",
+          "#B0ADB6"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "20.webm",
+        "extension": ".webm",
+        "bytes": 7925326,
+        "sha256": "babe5df5246774d70be4984cc93ed00531b8fc1a2ba8bb760f3d022b7e498ff6",
+        "source": "existing",
+        "width": 1280,
+        "height": 720,
+        "codec": "vp9",
+        "duration": 89.566,
+        "palette": [
+          "#9EAAB3",
+          "#848891",
+          "#98A2AB",
+          "#3F3D44",
+          "#AFADB5"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "3.png",
+        "extension": ".png",
+        "bytes": 4759401,
+        "sha256": "8e1af0ae23c40db9ae6e059b6a6792ccbe237b83e3577895968f36672efbed56",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "cbc3c3c3c3c3e3ff",
+        "palette": [
+          "#FFFFFF",
+          "#9C8F8E",
+          "#CFCDCD",
+          "#EDECEC",
+          "#FEFFFF"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "4.png",
+        "extension": ".png",
+        "bytes": 8242500,
+        "sha256": "15ad0aeb6b00f6216c875f987bd5b6412e65c9b9b5a2055884e192302342c3ed",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "ff00000000ffffff",
+        "palette": [
+          "#FFFFFF",
+          "#161D2D",
+          "#3A559F",
+          "#C0CFFA",
+          "#FEFFFF"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "5.png",
+        "extension": ".png",
+        "bytes": 7859835,
+        "sha256": "ce798c5f885386bb8fda4c070766b9acb759a148e4ebd9fe7f37bb71f5700f65",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "ff00040000ffffff",
+        "palette": [
+          "#FFFFFF",
+          "#1B231D",
+          "#396E3D",
+          "#9FEEA4",
+          "#C8FFCC"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "6.png",
+        "extension": ".png",
+        "bytes": 14070848,
+        "sha256": "5f185a3b61ddef5d80d1d987003eb462fa4ba637d53b012c8126d3ca3163bd4e",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "ffff81818181dbff",
+        "palette": [
+          "#FFFFFF",
+          "#181921",
+          "#272C4D",
+          "#090F2C",
+          "#9A9DB2"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "7.png",
+        "extension": ".png",
+        "bytes": 14492358,
+        "sha256": "32c9e24e8e8150933afc7b9aa986ed9bc5045d7ba8d57fc91313778763e9ce68",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "ffff81818181ffff",
+        "palette": [
+          "#FFFFFF",
+          "#1B1B24",
+          "#292E4F",
+          "#0A1133",
+          "#9A9EB2"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "8.png",
+        "extension": ".png",
+        "bytes": 14671553,
+        "sha256": "e868ec3e7106972bbf15b3e76066e8170ddb1a783ae6088a09478f52520fb07c",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "ffff81818181ffff",
+        "palette": [
+          "#FFFFFF",
+          "#191A22",
+          "#292E50",
+          "#080F2C",
+          "#A0A3B5"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "9.png",
+        "extension": ".png",
+        "bytes": 12786428,
+        "sha256": "acb119b1bccdff1555075a2b072d73b7200a46ad7e8224afac595013b1839308",
+        "source": "existing",
+        "width": 4000,
+        "height": 4000,
+        "mode": "RGBA",
+        "averageHash": "ffff81818181dbff",
+        "palette": [
+          "#FFFFFF",
+          "#181B18",
+          "#314132",
+          "#92B998",
+          "#B9FFC6"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "logo.png",
+        "extension": ".png",
+        "bytes": 187212,
+        "sha256": "97a9a9299691e47d09f0bf3282071860a7f87af0bec161429d2fd64856a35f2b",
+        "source": "existing",
+        "width": 4500,
+        "height": 1820,
+        "mode": "RGBA",
+        "averageHash": "81303038383010ff",
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#6C0909",
+          "#FEFEFE",
+          "#C6C0C0"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Product CGI & Motion",
+    "primaryColors": [
+      "#FFFFFF",
+      "#070707",
+      "#810007"
+    ],
+    "secondaryColors": [
+      "#080D13",
+      "#02070B",
+      "#9EAAB3",
+      "#98A2AB"
+    ],
+    "visualMood": "A rugged portable speaker visualized from multiple design angles through high-resolution modeling, lighting studies, color variants, and cinematic motion frames.",
+    "lightingStyle": "dark technical studio light with blue, green, and red LED accents",
+    "compositionStyle": "product turntables, exploded engineering views, and rugged motion frames",
+    "materials": [
+      "anodized metal",
+      "speaker mesh",
+      "LED light",
+      "molded polymer"
+    ],
+    "keywords": [
+      "Product Visualization",
+      "CGI",
+      "Motion",
+      "3D Render"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "film": [
+      "16.mp4",
+      "16.webm",
+      "17.mp4",
+      "17.webm",
+      "18.mp4",
+      "18.webm",
+      "19.mp4",
+      "19.webm",
+      "20.mp4",
+      "20.webm"
+    ],
+    "logo": [
+      "logo.png"
+    ],
+    "packaging": [
+      "1.png",
+      "10.png",
+      "11.png",
+      "12.jpg",
+      "13.png",
+      "14.jpg",
+      "15.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png",
+      "9.png"
+    ]
+  },
+  "missingAssets": [
+    "website-responsive",
+    "social-system",
+    "campaign-system",
+    "storyboard",
+    "brand-world-master",
+    "cgi-hero"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "logo.png",
+        "1.png",
+        "12.jpg",
+        "13.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "logo.png",
+        "12.jpg",
+        "13.png"
+      ],
+      "preparedReferences": [
+        "noam/ref-1.jpg",
+        "noam/ref-2.jpg",
+        "noam/ref-3.jpg",
+        "noam/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: NOAM\nCategory: Product CGI & Motion\nBrand character: A rugged portable speaker visualized from multiple design angles through high-resolution modeling, lighting studies, color variants, and cinematic motion frames.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (logo.png); Image 3: source-of-truth brand reference (12.jpg); Image 4: source-of-truth brand reference (13.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: product turntables, exploded engineering views, and rugged motion frames\nLighting/mood: dark technical studio light with blue, green, and red LED accents\nColor palette: #FFFFFF, #070707, #810007, #080D13, #02070B, #9EAAB3, #98A2AB\nMaterials/textures: anodized metal, speaker mesh, LED light, molded polymer\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "website-responsive",
+      "filename": "generated/web/website-responsive.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "logo.png",
+        "12.jpg",
+        "13.png"
+      ],
+      "preparedReferences": [
+        "noam/ref-1.jpg",
+        "noam/ref-2.jpg",
+        "noam/ref-3.jpg",
+        "noam/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: website-responsive for an AYESMAJ portfolio case study\nPrimary request: Create a bespoke responsive website presentation for this exact brand across laptop, tablet, and phone. Screens must inherit the reference imagery, palette, product, and composition language and feel like one real premium website system.\nBrand: NOAM\nCategory: Product CGI & Motion\nBrand character: A rugged portable speaker visualized from multiple design angles through high-resolution modeling, lighting studies, color variants, and cinematic motion frames.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (logo.png); Image 3: source-of-truth brand reference (12.jpg); Image 4: source-of-truth brand reference (13.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 device-family studio scene with a clearly visible desktop hero, supporting mobile screens, and elegant depth; underlying brand composition language: product turntables, exploded engineering views, and rugged motion frames\nLighting/mood: dark technical studio light with blue, green, and red LED accents\nColor palette: #FFFFFF, #070707, #810007, #080D13, #02070B, #9EAAB3, #98A2AB\nMaterials/textures: anodized metal, speaker mesh, LED light, molded polymer\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "campaign-system",
+      "filename": "generated/campaign/campaign-system.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "logo.png",
+        "12.jpg",
+        "13.png"
+      ],
+      "preparedReferences": [
+        "noam/ref-1.jpg",
+        "noam/ref-2.jpg",
+        "noam/ref-3.jpg",
+        "noam/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: campaign-system for an AYESMAJ portfolio case study\nPrimary request: Create a unified campaign family showing a hero advertising visual, a vertical poster, a digital display, and a secondary detail composition. Keep one clear campaign idea across every application.\nBrand: NOAM\nCategory: Product CGI & Motion\nBrand character: A rugged portable speaker visualized from multiple design angles through high-resolution modeling, lighting studies, color variants, and cinematic motion frames.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (logo.png); Image 3: source-of-truth brand reference (12.jpg); Image 4: source-of-truth brand reference (13.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 campaign presentation board with four deliberately different but related applications; underlying brand composition language: product turntables, exploded engineering views, and rugged motion frames\nLighting/mood: dark technical studio light with blue, green, and red LED accents\nColor palette: #FFFFFF, #070707, #810007, #080D13, #02070B, #9EAAB3, #98A2AB\nMaterials/textures: anodized metal, speaker mesh, LED light, molded polymer\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "cgi-hero",
+      "filename": "generated/cgi/cgi-hero.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "logo.png",
+        "12.jpg",
+        "13.png"
+      ],
+      "preparedReferences": [
+        "noam/ref-1.jpg",
+        "noam/ref-2.jpg",
+        "noam/ref-3.jpg",
+        "noam/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: cgi-hero for an AYESMAJ portfolio case study\nPrimary request: Create a high-end CGI hero scene for the exact subject in the references, preserving its proportions and design while using premium materials, controlled energy, and a believable environment that explains the product or world.\nBrand: NOAM\nCategory: Product CGI & Motion\nBrand character: A rugged portable speaker visualized from multiple design angles through high-resolution modeling, lighting studies, color variants, and cinematic motion frames.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (logo.png); Image 3: source-of-truth brand reference (12.jpg); Image 4: source-of-truth brand reference (13.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 cinematic CGI frame with accurate geometry, strong scale cues, polished lighting, and one hero focal point; underlying brand composition language: product turntables, exploded engineering views, and rugged motion frames\nLighting/mood: dark technical studio light with blue, green, and red LED accents\nColor palette: #FFFFFF, #070707, #810007, #080D13, #02070B, #9EAAB3, #98A2AB\nMaterials/textures: anodized metal, speaker mesh, LED light, molded polymer\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "logo.png",
+        "12.jpg",
+        "13.png"
+      ],
+      "preparedReferences": [
+        "noam/ref-1.jpg",
+        "noam/ref-2.jpg",
+        "noam/ref-3.jpg",
+        "noam/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: NOAM\nCategory: Product CGI & Motion\nBrand character: A rugged portable speaker visualized from multiple design angles through high-resolution modeling, lighting studies, color variants, and cinematic motion frames.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (logo.png); Image 3: source-of-truth brand reference (12.jpg); Image 4: source-of-truth brand reference (13.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: product turntables, exploded engineering views, and rugged motion frames\nLighting/mood: dark technical studio light with blue, green, and red LED accents\nColor palette: #FFFFFF, #070707, #810007, #080D13, #02070B, #9EAAB3, #98A2AB\nMaterials/textures: anodized metal, speaker mesh, LED light, molded polymer\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "logo.png",
+        "12.jpg",
+        "13.png"
+      ],
+      "preparedReferences": [
+        "noam/ref-1.jpg",
+        "noam/ref-2.jpg",
+        "noam/ref-3.jpg",
+        "noam/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: NOAM\nCategory: Product CGI & Motion\nBrand character: A rugged portable speaker visualized from multiple design angles through high-resolution modeling, lighting studies, color variants, and cinematic motion frames.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (logo.png); Image 3: source-of-truth brand reference (12.jpg); Image 4: source-of-truth brand reference (13.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: product turntables, exploded engineering views, and rugged motion frames\nLighting/mood: dark technical studio light with blue, green, and red LED accents\nColor palette: #FFFFFF, #070707, #810007, #080D13, #02070B, #9EAAB3, #98A2AB\nMaterials/textures: anodized metal, speaker mesh, LED light, molded polymer\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "logo.png",
+        "1.png",
+        "12.jpg",
+        "13.png"
+      ],
+      "preparedReferences": [
+        "noam/ref-1.jpg",
+        "noam/ref-2.jpg",
+        "noam/ref-3.jpg",
+        "noam/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: NOAM\nCategory: Product CGI & Motion\nBrand character: A rugged portable speaker visualized from multiple design angles through high-resolution modeling, lighting studies, color variants, and cinematic motion frames.\nInput images: Image 1: source-of-truth brand reference (logo.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (12.jpg); Image 4: source-of-truth brand reference (13.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: product turntables, exploded engineering views, and rugged motion frames\nLighting/mood: dark technical studio light with blue, green, and red LED accents\nColor palette: #FFFFFF, #070707, #810007, #080D13, #02070B, #9EAAB3, #98A2AB\nMaterials/textures: anodized metal, speaker mesh, LED light, molded polymer\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "social-system",
+    "website-responsive",
+    "campaign-system",
+    "cgi-hero",
+    "brand-world-master",
+    "storyboard"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 6,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/noam.jpg"
+  }
+}

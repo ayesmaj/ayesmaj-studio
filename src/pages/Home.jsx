@@ -8,8 +8,7 @@ import FutureOfBranding from '@/components/ayesmaj/sections/FutureOfBranding';
 import CapabilitiesShowcase from '@/components/ayesmaj/sections/CapabilitiesShowcase';
 import WebExpPreview from '@/components/ayesmaj/sections/WebExpPreview';
 import Commercials from '@/components/ayesmaj/sections/Commercials';
-import SelectedWorlds from '@/components/ayesmaj/sections/SelectedWorlds';
-import ConceptLab from '@/components/ayesmaj/sections/ConceptLab';
+import RealBrands from '@/components/ayesmaj/sections/RealBrands';
 import PerceptionPrice from '@/components/ayesmaj/sections/PerceptionPrice';
 import CreativeSystem from '@/components/ayesmaj/sections/CreativeSystem';
 import StudioAbout from '@/components/ayesmaj/sections/StudioAbout';
@@ -50,10 +49,9 @@ export default function Home() {
         <Commercials />
 
         {/* Portfolio showcase */}
-        <SelectedWorlds />
+        <RealBrands />
 
         {/* Self-initiated work and visual experiments */}
-        <ConceptLab />
 
         {/* Perception / value argument */}
         <PerceptionPrice />

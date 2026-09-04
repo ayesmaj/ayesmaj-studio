@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "slug": "kolie",
+  "assetDirectory": "kolie",
+  "name": "KOLIE",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 11,
+    "exactDuplicates": [],
+    "nearDuplicates": [],
+    "highestResolutionReferences": [
+      "ChatGPT Image Jul 15, 2026, 03_55_35 PM.png",
+      "ChatGPT Image Jun 28, 2026, 08_11_40 PM.png",
+      "ChatGPT Image Jun 28, 2026, 08_11_46 PM.png",
+      "ChatGPT Image Jul 1, 2026, 02_01_25 PM.png",
+      "ChatGPT Image Jul 15, 2026, 10_34_22 PM.png",
+      "ChatGPT Image Jul 14, 2026, 08_44_58 PM.png",
+      "ChatGPT Image Jul 14, 2026, 08_46_26 PM.png",
+      "ChatGPT Image Jul 15, 2026, 06_11_15 PM.png"
+    ],
+    "assets": [
+      {
+        "filename": "ChatGPT Image Jul 1, 2026, 02_01_25 PM.png",
+        "extension": ".png",
+        "bytes": 1611332,
+        "sha256": "9a8a99db568e5d3de3d96b8ccdc53da88277a373a55aeb428496e3188d23c633",
+        "source": "existing",
+        "width": 1122,
+        "height": 1402,
+        "mode": "RGB",
+        "averageHash": "ff018181ff0f0fff",
+        "palette": [
+          "#EFF4FD",
+          "#273863",
+          "#F4F7FD",
+          "#D4DCED",
+          "#FAFCFE"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "ChatGPT Image Jul 14, 2026, 08_44_58 PM.png",
+        "extension": ".png",
+        "bytes": 1209381,
+        "sha256": "38d3f00f92d0c6d93e3a891243892339d3163e72d165bb45b183ab0949887f1f",
+        "source": "existing",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGB",
+        "averageHash": "ffffdf8183efffff",
+        "palette": [
+          "#FBFBFD",
+          "#FDFDFE",
+          "#F8F9FD",
+          "#FCFCFE",
+          "#B6BCC9"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jul 14, 2026, 08_46_26 PM.png",
+        "extension": ".png",
+        "bytes": 1515959,
+        "sha256": "4606ebdb4e01c0b105aa91ee9311f94ddaa2607b577582d20aac819641120e59",
+        "source": "existing",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGB",
+        "averageHash": "fff9f9f1f1f18b81",
+        "palette": [
+          "#F6F7FD",
+          "#22315C",
+          "#FBFBFD",
+          "#CED5EB",
+          "#FDFEFE"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jul 15, 2026, 03_55_35 PM.png",
+        "extension": ".png",
+        "bytes": 1456114,
+        "sha256": "d213dd4672079e605c93980881b49931739c3f278870120ba8eecb20e0347160",
+        "source": "existing",
+        "width": 941,
+        "height": 1672,
+        "mode": "RGB",
+        "averageHash": "fffff8f0f0f8ff81",
+        "palette": [
+          "#ECF1FC",
+          "#324173",
+          "#C4CFE8",
+          "#F4F7FD",
+          "#FCFDFE"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "ChatGPT Image Jul 15, 2026, 06_11_15 PM.png",
+        "extension": ".png",
+        "bytes": 1596240,
+        "sha256": "e6e3f9769a8386af67a38fa2c65b8b7109d07640082aade432743eaba4d8af8a",
+        "source": "existing",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGB",
+        "averageHash": "ff3f7880b0b88f8f",
+        "palette": [
+          "#D1D4ED",
+          "#F3F3F9",
+          "#ECEDF6",
+          "#F7F7FB",
+          "#7E85B7"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jul 15, 2026, 10_34_22 PM.png",
+        "extension": ".png",
+        "bytes": 1453798,
+        "sha256": "1249826a392214be4c2afca7b8c202b5d3759b6432978a3d96c7f618b606a1d4",
+        "source": "existing",
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "fc7c7cfcfcfcfcfc",
+        "palette": [
+          "#F9FBFD",
+          "#F1F3F7",
+          "#FEFEFE",
+          "#FDFCFD",
+          "#525E80"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jul 20, 2026, 08_57_08 PM.png",
+        "extension": ".png",
+        "bytes": 1613821,
+        "sha256": "f3379a09ad49a692fb4c360ce35c743b564e996d1a107c54566893f71973f917",
+        "source": "existing",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGB",
+        "averageHash": "ffd9f8f80387ff00",
+        "palette": [
+          "#102A6F",
+          "#EFF2FC",
+          "#8FA7DF",
+          "#E0E6F8",
+          "#FAFBFD"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jun 28, 2026, 06_59_41 PM.png",
+        "extension": ".png",
+        "bytes": 941029,
+        "sha256": "3eb5743dd0ca499f2f970d411aa08a40b8b14161f5ba7b47dfd6d1d2d22639be",
+        "source": "existing",
+        "width": 1254,
+        "height": 1254,
+        "mode": "RGB",
+        "averageHash": "ffdf91dfffe0a0e0",
+        "palette": [
+          "#FCFBFD",
+          "#FBFBFD",
+          "#0A1840",
+          "#FEFEFE",
+          "#D7DAE4"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jun 28, 2026, 08_11_40 PM.png",
+        "extension": ".png",
+        "bytes": 1364844,
+        "sha256": "d3e6237d2d7869e1d26b53077776c6c0350880318f649450f52e5dc13e125906",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "d7c3e7ffc1818100",
+        "palette": [
+          "#EBEFFC",
+          "#F7F8FE",
+          "#FAFBFE",
+          "#CED4EE",
+          "#FDFDFE"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "ChatGPT Image Jun 28, 2026, 08_11_46 PM.png",
+        "extension": ".png",
+        "bytes": 1479103,
+        "sha256": "7188e497bda9233160ece26cfbe74cd74c49a291554e739288c22231436cf842",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "ff0000000000e1ff",
+        "palette": [
+          "#E9EDF7",
+          "#000D2D",
+          "#0F1F47",
+          "#2E4A7F",
+          "#04153B"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "logo kolie.png",
+        "extension": ".png",
+        "bytes": 275630,
+        "sha256": "3c136a4f5c210624e1a5d24b651beb9438eabfebbfc8dc4ea1aa8689843f575c",
+        "source": "existing",
+        "width": 1043,
+        "height": 551,
+        "mode": "RGBA",
+        "averageHash": "ff9f9f8190b99fff",
+        "palette": [
+          "#FFFFFF",
+          "#22315D",
+          "#FCFCFD",
+          "#CACDD9",
+          "#FEFFFF"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "AI Brand Identity & Product",
+    "primaryColors": [
+      "#FBFBFD",
+      "#EFF4FD",
+      "#273863"
+    ],
+    "secondaryColors": [
+      "#F4F7FD",
+      "#FDFDFE",
+      "#F8F9FD",
+      "#F6F7FD"
+    ],
+    "visualMood": "A friendly AI phone-agent brand combining an approachable bot character with a rigorous blue product system for calls, scheduling, and customer operations.",
+    "lightingStyle": "bright white studio light with cobalt and violet UI glow",
+    "compositionStyle": "friendly SaaS-product clarity, approachable bot character, and clean dashboards",
+    "materials": [
+      "glass UI",
+      "white polymer",
+      "cobalt screen glow",
+      "soft gradients"
+    ],
+    "keywords": [
+      "Brand Identity",
+      "AI Product",
+      "Campaign",
+      "Web Design"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "campaign": [
+      "ChatGPT Image Jul 1, 2026, 02_01_25 PM.png",
+      "ChatGPT Image Jul 15, 2026, 03_55_35 PM.png",
+      "ChatGPT Image Jun 28, 2026, 08_11_40 PM.png",
+      "ChatGPT Image Jun 28, 2026, 08_11_46 PM.png"
+    ],
+    "logo": [
+      "logo kolie.png"
+    ],
+    "packaging": [
+      "ChatGPT Image Jul 14, 2026, 08_44_58 PM.png",
+      "ChatGPT Image Jul 14, 2026, 08_46_26 PM.png",
+      "ChatGPT Image Jul 15, 2026, 06_11_15 PM.png",
+      "ChatGPT Image Jul 15, 2026, 10_34_22 PM.png",
+      "ChatGPT Image Jul 20, 2026, 08_57_08 PM.png",
+      "ChatGPT Image Jun 28, 2026, 06_59_41 PM.png"
+    ]
+  },
+  "missingAssets": [
+    "website-responsive",
+    "social-system",
+    "storyboard",
+    "brand-world-master"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "logo kolie.png",
+        "ChatGPT Image Jul 1, 2026, 02_01_25 PM.png",
+        "ChatGPT Image Jul 14, 2026, 08_44_58 PM.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "website-responsive",
+      "filename": "generated/web/website-responsive.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image Jul 1, 2026, 02_01_25 PM.png",
+        "ChatGPT Image Jul 14, 2026, 08_44_58 PM.png",
+        "logo kolie.png"
+      ],
+      "preparedReferences": [
+        "kolie/ref-1.jpg",
+        "kolie/ref-2.jpg",
+        "kolie/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: website-responsive for an AYESMAJ portfolio case study\nPrimary request: Create a bespoke responsive website presentation for this exact brand across laptop, tablet, and phone. Screens must inherit the reference imagery, palette, product, and composition language and feel like one real premium website system.\nBrand: KOLIE\nCategory: AI Brand Identity & Product\nBrand character: A friendly AI phone-agent brand combining an approachable bot character with a rigorous blue product system for calls, scheduling, and customer operations.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image Jul 1, 2026, 02_01_25 PM.png); Image 2: source-of-truth brand reference (ChatGPT Image Jul 14, 2026, 08_44_58 PM.png); Image 3: source-of-truth brand reference (logo kolie.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 device-family studio scene with a clearly visible desktop hero, supporting mobile screens, and elegant depth; underlying brand composition language: friendly SaaS-product clarity, approachable bot character, and clean dashboards\nLighting/mood: bright white studio light with cobalt and violet UI glow\nColor palette: #FBFBFD, #EFF4FD, #273863, #F4F7FD, #FDFDFE, #F8F9FD, #F6F7FD\nMaterials/textures: glass UI, white polymer, cobalt screen glow, soft gradients\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image Jul 1, 2026, 02_01_25 PM.png",
+        "ChatGPT Image Jul 14, 2026, 08_44_58 PM.png",
+        "logo kolie.png"
+      ],
+      "preparedReferences": [
+        "kolie/ref-1.jpg",
+        "kolie/ref-2.jpg",
+        "kolie/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: KOLIE\nCategory: AI Brand Identity & Product\nBrand character: A friendly AI phone-agent brand combining an approachable bot character with a rigorous blue product system for calls, scheduling, and customer operations.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image Jul 1, 2026, 02_01_25 PM.png); Image 2: source-of-truth brand reference (ChatGPT Image Jul 14, 2026, 08_44_58 PM.png); Image 3: source-of-truth brand reference (logo kolie.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: friendly SaaS-product clarity, approachable bot character, and clean dashboards\nLighting/mood: bright white studio light with cobalt and violet UI glow\nColor palette: #FBFBFD, #EFF4FD, #273863, #F4F7FD, #FDFDFE, #F8F9FD, #F6F7FD\nMaterials/textures: glass UI, white polymer, cobalt screen glow, soft gradients\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image Jul 1, 2026, 02_01_25 PM.png",
+        "ChatGPT Image Jul 14, 2026, 08_44_58 PM.png",
+        "logo kolie.png"
+      ],
+      "preparedReferences": [
+        "kolie/ref-1.jpg",
+        "kolie/ref-2.jpg",
+        "kolie/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: KOLIE\nCategory: AI Brand Identity & Product\nBrand character: A friendly AI phone-agent brand combining an approachable bot character with a rigorous blue product system for calls, scheduling, and customer operations.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image Jul 1, 2026, 02_01_25 PM.png); Image 2: source-of-truth brand reference (ChatGPT Image Jul 14, 2026, 08_44_58 PM.png); Image 3: source-of-truth brand reference (logo kolie.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: friendly SaaS-product clarity, approachable bot character, and clean dashboards\nLighting/mood: bright white studio light with cobalt and violet UI glow\nColor palette: #FBFBFD, #EFF4FD, #273863, #F4F7FD, #FDFDFE, #F8F9FD, #F6F7FD\nMaterials/textures: glass UI, white polymer, cobalt screen glow, soft gradients\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image Jul 1, 2026, 02_01_25 PM.png",
+        "ChatGPT Image Jul 14, 2026, 08_44_58 PM.png",
+        "logo kolie.png"
+      ],
+      "preparedReferences": [
+        "kolie/ref-1.jpg",
+        "kolie/ref-2.jpg",
+        "kolie/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: KOLIE\nCategory: AI Brand Identity & Product\nBrand character: A friendly AI phone-agent brand combining an approachable bot character with a rigorous blue product system for calls, scheduling, and customer operations.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image Jul 1, 2026, 02_01_25 PM.png); Image 2: source-of-truth brand reference (ChatGPT Image Jul 14, 2026, 08_44_58 PM.png); Image 3: source-of-truth brand reference (logo kolie.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: friendly SaaS-product clarity, approachable bot character, and clean dashboards\nLighting/mood: bright white studio light with cobalt and violet UI glow\nColor palette: #FBFBFD, #EFF4FD, #273863, #F4F7FD, #FDFDFE, #F8F9FD, #F6F7FD\nMaterials/textures: glass UI, white polymer, cobalt screen glow, soft gradients\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "logo kolie.png",
+        "ChatGPT Image Jul 1, 2026, 02_01_25 PM.png",
+        "ChatGPT Image Jul 14, 2026, 08_44_58 PM.png"
+      ],
+      "preparedReferences": [
+        "kolie/ref-1.jpg",
+        "kolie/ref-2.jpg",
+        "kolie/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: KOLIE\nCategory: AI Brand Identity & Product\nBrand character: A friendly AI phone-agent brand combining an approachable bot character with a rigorous blue product system for calls, scheduling, and customer operations.\nInput images: Image 1: source-of-truth brand reference (logo kolie.png); Image 2: source-of-truth brand reference (ChatGPT Image Jul 1, 2026, 02_01_25 PM.png); Image 3: source-of-truth brand reference (ChatGPT Image Jul 14, 2026, 08_44_58 PM.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: friendly SaaS-product clarity, approachable bot character, and clean dashboards\nLighting/mood: bright white studio light with cobalt and violet UI glow\nColor palette: #FBFBFD, #EFF4FD, #273863, #F4F7FD, #FDFDFE, #F8F9FD, #F6F7FD\nMaterials/textures: glass UI, white polymer, cobalt screen glow, soft gradients\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "website-responsive",
+    "storyboard",
+    "social-system",
+    "brand-world-master"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 4,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/kolie.jpg"
+  }
+}

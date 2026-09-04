@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "slug": "happy-jack-whiskey",
+  "assetDirectory": "happy jack - whiskey",
+  "name": "HAPPY JACK DISTILLERS",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 5,
+    "exactDuplicates": [],
+    "nearDuplicates": [
+      {
+        "files": [
+          "Happy Jack Distillers (2).png",
+          "happy-jack-logo-transparent.png"
+        ],
+        "hashDistance": 1
+      }
+    ],
+    "highestResolutionReferences": [
+      "Happy Jack Distillers (3).png",
+      "Happy Jack Distillers (1).png",
+      "Happy Jack Distillers (2).png",
+      "happy-jack-bottle.webp",
+      "happy-jack-logo-transparent.png"
+    ],
+    "assets": [
+      {
+        "filename": "Happy Jack Distillers (1).png",
+        "extension": ".png",
+        "bytes": 2389630,
+        "sha256": "a6b0d1ba373b30da75d1b4f148784196cb585061bdfc96db436274518eaca68f",
+        "source": "existing",
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "ffe0e0e2e0c0f0f0",
+        "palette": [
+          "#967D64",
+          "#4B3522",
+          "#EEE7DB",
+          "#F5F0E5",
+          "#DACEBE"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "Happy Jack Distillers (2).png",
+        "extension": ".png",
+        "bytes": 1149730,
+        "sha256": "6998cf247fa8c4617b3fa931f148236bbaacf3c51953e1d01d5eea56671c1947",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "00003c7eff3c0000",
+        "palette": [
+          "#000000",
+          "#110C07",
+          "#675942",
+          "#010000",
+          "#000001"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "Happy Jack Distillers (3).png",
+        "extension": ".png",
+        "bytes": 1983845,
+        "sha256": "052ce55340969ba633dc86a9bd287efa6266f21ee2d1892b80e7b247d6738b53",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "000018000000ffff",
+        "palette": [
+          "#070A0B",
+          "#19120F",
+          "#38322E",
+          "#F5ECE0",
+          "#A39E96"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "happy-jack-bottle.webp",
+        "extension": ".webp",
+        "bytes": 118880,
+        "sha256": "fb11653e2e285a4655bd90f2cb398b94e266d77f807f296451c26acb658e7e16",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "averageHash": "10183c3c3c343c3c",
+        "palette": [
+          "#FFFFFF",
+          "#94562C",
+          "#16120B",
+          "#5F2F15",
+          "#D5C0AF"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "happy-jack-logo-transparent.png",
+        "extension": ".png",
+        "bytes": 704259,
+        "sha256": "9f6b09ccbdd03f5add76ba996fcfb90b65c038844f688483d13aabc2dbb221e3",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGBA",
+        "averageHash": "00003c7eff1c0000",
+        "palette": [
+          "#FFFFFF",
+          "#E1D4BF",
+          "#F4EFE8",
+          "#FCFBF9",
+          "#FFFFFE"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Brand Identity & Packaging",
+    "primaryColors": [
+      "#FFFFFF",
+      "#967D64",
+      "#4B3522"
+    ],
+    "secondaryColors": [
+      "#EEE7DB",
+      "#000000",
+      "#110C07",
+      "#675942"
+    ],
+    "visualMood": "A high-country whiskey identity shaped by Arizona landscape, handcrafted detail, and a restrained copper-and-black visual language with cinematic warmth.",
+    "lightingStyle": "high-country golden hour, cabin firelight, and amber bottle glow",
+    "compositionStyle": "rugged premium bottle storytelling with landscape scale",
+    "materials": [
+      "amber glass",
+      "copper",
+      "leather",
+      "timber",
+      "stone"
+    ],
+    "keywords": [
+      "Brand Identity",
+      "Packaging",
+      "Product",
+      "Art Direction",
+      "Web Design"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "logo": [
+      "happy-jack-logo-transparent.png"
+    ],
+    "packaging": [
+      "Happy Jack Distillers (2).png"
+    ],
+    "website": [
+      "Happy Jack Distillers (1).png",
+      "Happy Jack Distillers (3).png",
+      "happy-jack-bottle.webp"
+    ]
+  },
+  "missingAssets": [
+    "social-system",
+    "campaign-system",
+    "storyboard",
+    "brand-world-master"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "Happy Jack Distillers (1).png",
+        "happy-jack-logo-transparent.png",
+        "Happy Jack Distillers (2).png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "campaign-system",
+      "filename": "generated/campaign/campaign-system.webp",
+      "source": "generated",
+      "references": [
+        "Happy Jack Distillers (2).png",
+        "Happy Jack Distillers (1).png",
+        "happy-jack-logo-transparent.png"
+      ],
+      "preparedReferences": [
+        "happy-jack---whiskey/ref-1.jpg",
+        "happy-jack---whiskey/ref-2.jpg",
+        "happy-jack---whiskey/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: campaign-system for an AYESMAJ portfolio case study\nPrimary request: Create a unified campaign family showing a hero advertising visual, a vertical poster, a digital display, and a secondary detail composition. Keep one clear campaign idea across every application.\nBrand: HAPPY JACK DISTILLERS\nCategory: Brand Identity & Packaging\nBrand character: A high-country whiskey identity shaped by Arizona landscape, handcrafted detail, and a restrained copper-and-black visual language with cinematic warmth.\nInput images: Image 1: source-of-truth brand reference (Happy Jack Distillers (2).png); Image 2: source-of-truth brand reference (Happy Jack Distillers (1).png); Image 3: source-of-truth brand reference (happy-jack-logo-transparent.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 campaign presentation board with four deliberately different but related applications; underlying brand composition language: rugged premium bottle storytelling with landscape scale\nLighting/mood: high-country golden hour, cabin firelight, and amber bottle glow\nColor palette: #FFFFFF, #967D64, #4B3522, #EEE7DB, #000000, #110C07, #675942\nMaterials/textures: amber glass, copper, leather, timber, stone\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "Happy Jack Distillers (2).png",
+        "Happy Jack Distillers (1).png",
+        "happy-jack-logo-transparent.png"
+      ],
+      "preparedReferences": [
+        "happy-jack---whiskey/ref-1.jpg",
+        "happy-jack---whiskey/ref-2.jpg",
+        "happy-jack---whiskey/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: HAPPY JACK DISTILLERS\nCategory: Brand Identity & Packaging\nBrand character: A high-country whiskey identity shaped by Arizona landscape, handcrafted detail, and a restrained copper-and-black visual language with cinematic warmth.\nInput images: Image 1: source-of-truth brand reference (Happy Jack Distillers (2).png); Image 2: source-of-truth brand reference (Happy Jack Distillers (1).png); Image 3: source-of-truth brand reference (happy-jack-logo-transparent.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: rugged premium bottle storytelling with landscape scale\nLighting/mood: high-country golden hour, cabin firelight, and amber bottle glow\nColor palette: #FFFFFF, #967D64, #4B3522, #EEE7DB, #000000, #110C07, #675942\nMaterials/textures: amber glass, copper, leather, timber, stone\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "Happy Jack Distillers (2).png",
+        "Happy Jack Distillers (1).png",
+        "happy-jack-logo-transparent.png"
+      ],
+      "preparedReferences": [
+        "happy-jack---whiskey/ref-1.jpg",
+        "happy-jack---whiskey/ref-2.jpg",
+        "happy-jack---whiskey/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: HAPPY JACK DISTILLERS\nCategory: Brand Identity & Packaging\nBrand character: A high-country whiskey identity shaped by Arizona landscape, handcrafted detail, and a restrained copper-and-black visual language with cinematic warmth.\nInput images: Image 1: source-of-truth brand reference (Happy Jack Distillers (2).png); Image 2: source-of-truth brand reference (Happy Jack Distillers (1).png); Image 3: source-of-truth brand reference (happy-jack-logo-transparent.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: rugged premium bottle storytelling with landscape scale\nLighting/mood: high-country golden hour, cabin firelight, and amber bottle glow\nColor palette: #FFFFFF, #967D64, #4B3522, #EEE7DB, #000000, #110C07, #675942\nMaterials/textures: amber glass, copper, leather, timber, stone\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "Happy Jack Distillers (1).png",
+        "Happy Jack Distillers (2).png",
+        "happy-jack-logo-transparent.png"
+      ],
+      "preparedReferences": [
+        "happy-jack---whiskey/ref-1.jpg",
+        "happy-jack---whiskey/ref-2.jpg",
+        "happy-jack---whiskey/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: HAPPY JACK DISTILLERS\nCategory: Brand Identity & Packaging\nBrand character: A high-country whiskey identity shaped by Arizona landscape, handcrafted detail, and a restrained copper-and-black visual language with cinematic warmth.\nInput images: Image 1: source-of-truth brand reference (Happy Jack Distillers (1).png); Image 2: source-of-truth brand reference (Happy Jack Distillers (2).png); Image 3: source-of-truth brand reference (happy-jack-logo-transparent.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: rugged premium bottle storytelling with landscape scale\nLighting/mood: high-country golden hour, cabin firelight, and amber bottle glow\nColor palette: #FFFFFF, #967D64, #4B3522, #EEE7DB, #000000, #110C07, #675942\nMaterials/textures: amber glass, copper, leather, timber, stone\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "Happy Jack Distillers (1).png",
+        "happy-jack-logo-transparent.png",
+        "Happy Jack Distillers (2).png"
+      ],
+      "preparedReferences": [
+        "happy-jack---whiskey/ref-1.jpg",
+        "happy-jack---whiskey/ref-2.jpg",
+        "happy-jack---whiskey/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: HAPPY JACK DISTILLERS\nCategory: Brand Identity & Packaging\nBrand character: A high-country whiskey identity shaped by Arizona landscape, handcrafted detail, and a restrained copper-and-black visual language with cinematic warmth.\nInput images: Image 1: source-of-truth brand reference (Happy Jack Distillers (1).png); Image 2: source-of-truth brand reference (happy-jack-logo-transparent.png); Image 3: source-of-truth brand reference (Happy Jack Distillers (2).png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: rugged premium bottle storytelling with landscape scale\nLighting/mood: high-country golden hour, cabin firelight, and amber bottle glow\nColor palette: #FFFFFF, #967D64, #4B3522, #EEE7DB, #000000, #110C07, #675942\nMaterials/textures: amber glass, copper, leather, timber, stone\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "campaign-system",
+    "storyboard",
+    "social-system",
+    "brand-world-master"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 4,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/happy jack - whiskey.jpg"
+  }
+}

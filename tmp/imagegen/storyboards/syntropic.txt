@@ -1,0 +1,8 @@
+Use case: illustration-story
+Asset type: technical explainer-film storyboard sheet
+Primary request: Using Images 1–3 as strict Syntropic logo, brand, deck, website, typography, and light purple-blue-gold references, create one professional six-panel storyboard sheet in a clean 3-by-2 grid explaining “One Computer Does the Work of Ten.” Preserve the Syntropic identity; do not redesign it.
+Sequence: SHOT 01 wide view of ten overloaded computers processing repeated copies of the same AI data; SHOT 02 macro inside memory where identical blocks accumulate until the system turns red; SHOT 03 clean violet-and-gold Syntropic signal enters and identifies duplicates; SHOT 04 repeated blocks collapse into one shared master copy with small individual data notes orbiting; SHOT 05 camera pulls out to one calm system handling the same workload efficiently; SHOT 06 minimal centered result: one illuminated computer while nine unnecessary systems fade away.
+Style/medium: elegant technical cinematic storyboard sketches, clean perspective and depth, mostly grayscale with selective violet, electric blue, and restrained gold; not polished pitch-deck graphics.
+Composition: immediate logical before-and-after communication; clear transformation arrows, camera arrows, and visual continuity.
+Text: label exactly “SHOT 01” through “SHOT 06”; one short action caption and concise camera note per panel.
+Constraints: sophisticated and readable, not messy or overly futuristic; no generic neon poster, no logo redesign, no watermark.

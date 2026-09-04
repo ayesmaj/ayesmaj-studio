@@ -1,0 +1,32 @@
+[
+ {
+  "capability": "Brand Strategy & Identity",
+  "brandId": "baron-herzog",
+  "image": "/brands/baron-herzog/generated/packaging/packaging-lineup.webp"
+ },
+ {
+  "capability": "AI Content Production",
+  "brandId": "ashe",
+  "image": "/brands/ashe/5.webp"
+ },
+ {
+  "capability": "Web Design & Development",
+  "brandId": "syntropic",
+  "image": "/brands/syntropic/generated/web/website-responsive.webp"
+ },
+ {
+  "capability": "3D & CGI",
+  "brandId": "noam",
+  "image": "/brands/noam/generated/cgi/cgi-hero.webp"
+ },
+ {
+  "capability": "Motion & Film",
+  "brandId": "happy-jack-whiskey",
+  "image": "/brands/happy%20jack%20-%20whiskey/generated/web/homepage-hero.webp"
+ },
+ {
+  "capability": "Art Direction",
+  "brandId": "rebound",
+  "image": "/brands/rebound/ChatGPT%20Image%20Jun%208,%202026,%2010_10_29%20PM.webp"
+ }
+]

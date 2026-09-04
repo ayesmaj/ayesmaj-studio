@@ -1,0 +1,679 @@
+{
+  "summary": {
+    "Rafael_Smadja_CV_and_Portfolio_2026_Premium.pdf": {
+      "file": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\output\\Rafael_Smadja_CV_and_Portfolio_2026_Premium.pdf",
+      "bytes": 46019475,
+      "megabytes": 43.888,
+      "pages": 53,
+      "page_size_points": [
+        594.96,
+        841.92
+      ],
+      "link_annotations": 30,
+      "blank_pages": [],
+      "rendered_pages": [
+        {
+          "page": 1,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-001.png",
+          "variance": 7720.03,
+          "text_characters": 3522
+        },
+        {
+          "page": 2,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-002.png",
+          "variance": 8551.68,
+          "text_characters": 3529
+        },
+        {
+          "page": 3,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-003.png",
+          "variance": 1446.85,
+          "text_characters": 511
+        },
+        {
+          "page": 4,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-004.png",
+          "variance": 1299.23,
+          "text_characters": 3010
+        },
+        {
+          "page": 5,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-005.png",
+          "variance": 2167.55,
+          "text_characters": 963
+        },
+        {
+          "page": 6,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-006.png",
+          "variance": 8064.52,
+          "text_characters": 571
+        },
+        {
+          "page": 7,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-007.png",
+          "variance": 1909.29,
+          "text_characters": 1011
+        },
+        {
+          "page": 8,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-008.png",
+          "variance": 8664.56,
+          "text_characters": 594
+        },
+        {
+          "page": 9,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-009.png",
+          "variance": 9624.7,
+          "text_characters": 1005
+        },
+        {
+          "page": 10,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-010.png",
+          "variance": 5446.82,
+          "text_characters": 533
+        },
+        {
+          "page": 11,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-011.png",
+          "variance": 2720.35,
+          "text_characters": 972
+        },
+        {
+          "page": 12,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-012.png",
+          "variance": 8444.61,
+          "text_characters": 594
+        },
+        {
+          "page": 13,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-013.png",
+          "variance": 1619.12,
+          "text_characters": 975
+        },
+        {
+          "page": 14,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-014.png",
+          "variance": 6552.27,
+          "text_characters": 548
+        },
+        {
+          "page": 15,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-015.png",
+          "variance": 2269.19,
+          "text_characters": 935
+        },
+        {
+          "page": 16,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-016.png",
+          "variance": 1758.94,
+          "text_characters": 548
+        },
+        {
+          "page": 17,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-017.png",
+          "variance": 3059.73,
+          "text_characters": 974
+        },
+        {
+          "page": 18,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-018.png",
+          "variance": 1807.15,
+          "text_characters": 586
+        },
+        {
+          "page": 19,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-019.png",
+          "variance": 7079.01,
+          "text_characters": 943
+        },
+        {
+          "page": 20,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-020.png",
+          "variance": 6164.18,
+          "text_characters": 551
+        },
+        {
+          "page": 21,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-021.png",
+          "variance": 1325.81,
+          "text_characters": 845
+        },
+        {
+          "page": 22,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-022.png",
+          "variance": 10492.05,
+          "text_characters": 582
+        },
+        {
+          "page": 23,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-023.png",
+          "variance": 10133.89,
+          "text_characters": 926
+        },
+        {
+          "page": 24,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-024.png",
+          "variance": 4691.02,
+          "text_characters": 548
+        },
+        {
+          "page": 25,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-025.png",
+          "variance": 8936.18,
+          "text_characters": 1003
+        },
+        {
+          "page": 26,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-026.png",
+          "variance": 8054.4,
+          "text_characters": 959
+        },
+        {
+          "page": 27,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-027.png",
+          "variance": 9708.78,
+          "text_characters": 891
+        },
+        {
+          "page": 28,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-028.png",
+          "variance": 6891.98,
+          "text_characters": 546
+        },
+        {
+          "page": 29,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-029.png",
+          "variance": 3454.04,
+          "text_characters": 917
+        },
+        {
+          "page": 30,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-030.png",
+          "variance": 2949.15,
+          "text_characters": 510
+        },
+        {
+          "page": 31,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-031.png",
+          "variance": 4598.47,
+          "text_characters": 1004
+        },
+        {
+          "page": 32,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-032.png",
+          "variance": 3830.07,
+          "text_characters": 888
+        },
+        {
+          "page": 33,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-033.png",
+          "variance": 2003.87,
+          "text_characters": 892
+        },
+        {
+          "page": 34,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-034.png",
+          "variance": 8638.44,
+          "text_characters": 900
+        },
+        {
+          "page": 35,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-035.png",
+          "variance": 1245.8,
+          "text_characters": 985
+        },
+        {
+          "page": 36,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-036.png",
+          "variance": 11066.1,
+          "text_characters": 522
+        },
+        {
+          "page": 37,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-037.png",
+          "variance": 8644.17,
+          "text_characters": 882
+        },
+        {
+          "page": 38,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-038.png",
+          "variance": 5782.54,
+          "text_characters": 1010
+        },
+        {
+          "page": 39,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-039.png",
+          "variance": 9226.64,
+          "text_characters": 1010
+        },
+        {
+          "page": 40,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-040.png",
+          "variance": 6539.6,
+          "text_characters": 770
+        },
+        {
+          "page": 41,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-041.png",
+          "variance": 8973.97,
+          "text_characters": 663
+        },
+        {
+          "page": 42,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-042.png",
+          "variance": 9449.65,
+          "text_characters": 823
+        },
+        {
+          "page": 43,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-043.png",
+          "variance": 4966.65,
+          "text_characters": 703
+        },
+        {
+          "page": 44,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-044.png",
+          "variance": 4882.1,
+          "text_characters": 691
+        },
+        {
+          "page": 45,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-045.png",
+          "variance": 10726.81,
+          "text_characters": 724
+        },
+        {
+          "page": 46,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-046.png",
+          "variance": 8149.84,
+          "text_characters": 689
+        },
+        {
+          "page": 47,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-047.png",
+          "variance": 5203.94,
+          "text_characters": 626
+        },
+        {
+          "page": 48,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-048.png",
+          "variance": 3232.34,
+          "text_characters": 592
+        },
+        {
+          "page": 49,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-049.png",
+          "variance": 3891.5,
+          "text_characters": 648
+        },
+        {
+          "page": 50,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-050.png",
+          "variance": 5628.65,
+          "text_characters": 659
+        },
+        {
+          "page": 51,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-051.png",
+          "variance": 9517.4,
+          "text_characters": 722
+        },
+        {
+          "page": 52,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-052.png",
+          "variance": 6862.96,
+          "text_characters": 809
+        },
+        {
+          "page": 53,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium\\page-053.png",
+          "variance": 832.11,
+          "text_characters": 665
+        }
+      ]
+    },
+    "Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB.pdf": {
+      "file": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\output\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB.pdf",
+      "bytes": 4979426,
+      "megabytes": 4.749,
+      "pages": 53,
+      "page_size_points": [
+        594.96,
+        841.92
+      ],
+      "link_annotations": 30,
+      "blank_pages": [],
+      "rendered_pages": [
+        {
+          "page": 1,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-001.png",
+          "variance": 7719.22,
+          "text_characters": 3522
+        },
+        {
+          "page": 2,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-002.png",
+          "variance": 8549.51,
+          "text_characters": 3529
+        },
+        {
+          "page": 3,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-003.png",
+          "variance": 1391.4,
+          "text_characters": 511
+        },
+        {
+          "page": 4,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-004.png",
+          "variance": 1299.23,
+          "text_characters": 3010
+        },
+        {
+          "page": 5,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-005.png",
+          "variance": 2147.57,
+          "text_characters": 963
+        },
+        {
+          "page": 6,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-006.png",
+          "variance": 7959.02,
+          "text_characters": 571
+        },
+        {
+          "page": 7,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-007.png",
+          "variance": 1889.86,
+          "text_characters": 1011
+        },
+        {
+          "page": 8,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-008.png",
+          "variance": 8589.71,
+          "text_characters": 594
+        },
+        {
+          "page": 9,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-009.png",
+          "variance": 9595.54,
+          "text_characters": 1005
+        },
+        {
+          "page": 10,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-010.png",
+          "variance": 5426.35,
+          "text_characters": 533
+        },
+        {
+          "page": 11,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-011.png",
+          "variance": 2700.98,
+          "text_characters": 972
+        },
+        {
+          "page": 12,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-012.png",
+          "variance": 8319.6,
+          "text_characters": 594
+        },
+        {
+          "page": 13,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-013.png",
+          "variance": 1599.23,
+          "text_characters": 975
+        },
+        {
+          "page": 14,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-014.png",
+          "variance": 6518.71,
+          "text_characters": 548
+        },
+        {
+          "page": 15,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-015.png",
+          "variance": 2241.32,
+          "text_characters": 935
+        },
+        {
+          "page": 16,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-016.png",
+          "variance": 1742.74,
+          "text_characters": 548
+        },
+        {
+          "page": 17,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-017.png",
+          "variance": 3032.91,
+          "text_characters": 974
+        },
+        {
+          "page": 18,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-018.png",
+          "variance": 1799.27,
+          "text_characters": 586
+        },
+        {
+          "page": 19,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-019.png",
+          "variance": 7000.76,
+          "text_characters": 943
+        },
+        {
+          "page": 20,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-020.png",
+          "variance": 6066.64,
+          "text_characters": 551
+        },
+        {
+          "page": 21,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-021.png",
+          "variance": 1315.37,
+          "text_characters": 845
+        },
+        {
+          "page": 22,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-022.png",
+          "variance": 10444.8,
+          "text_characters": 582
+        },
+        {
+          "page": 23,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-023.png",
+          "variance": 10062.62,
+          "text_characters": 926
+        },
+        {
+          "page": 24,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-024.png",
+          "variance": 4643.68,
+          "text_characters": 548
+        },
+        {
+          "page": 25,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-025.png",
+          "variance": 8886.59,
+          "text_characters": 1003
+        },
+        {
+          "page": 26,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-026.png",
+          "variance": 8035.56,
+          "text_characters": 959
+        },
+        {
+          "page": 27,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-027.png",
+          "variance": 9648.35,
+          "text_characters": 891
+        },
+        {
+          "page": 28,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-028.png",
+          "variance": 6840.74,
+          "text_characters": 546
+        },
+        {
+          "page": 29,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-029.png",
+          "variance": 3436.32,
+          "text_characters": 917
+        },
+        {
+          "page": 30,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-030.png",
+          "variance": 2930.83,
+          "text_characters": 510
+        },
+        {
+          "page": 31,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-031.png",
+          "variance": 4553.46,
+          "text_characters": 1004
+        },
+        {
+          "page": 32,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-032.png",
+          "variance": 3795.29,
+          "text_characters": 888
+        },
+        {
+          "page": 33,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-033.png",
+          "variance": 1983.03,
+          "text_characters": 892
+        },
+        {
+          "page": 34,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-034.png",
+          "variance": 8614.28,
+          "text_characters": 900
+        },
+        {
+          "page": 35,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-035.png",
+          "variance": 1239.0,
+          "text_characters": 985
+        },
+        {
+          "page": 36,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-036.png",
+          "variance": 11119.32,
+          "text_characters": 522
+        },
+        {
+          "page": 37,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-037.png",
+          "variance": 8603.14,
+          "text_characters": 882
+        },
+        {
+          "page": 38,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-038.png",
+          "variance": 5751.14,
+          "text_characters": 1010
+        },
+        {
+          "page": 39,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-039.png",
+          "variance": 9154.09,
+          "text_characters": 1010
+        },
+        {
+          "page": 40,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-040.png",
+          "variance": 6509.85,
+          "text_characters": 770
+        },
+        {
+          "page": 41,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-041.png",
+          "variance": 8966.99,
+          "text_characters": 663
+        },
+        {
+          "page": 42,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-042.png",
+          "variance": 9399.35,
+          "text_characters": 823
+        },
+        {
+          "page": 43,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-043.png",
+          "variance": 4997.22,
+          "text_characters": 703
+        },
+        {
+          "page": 44,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-044.png",
+          "variance": 4918.55,
+          "text_characters": 691
+        },
+        {
+          "page": 45,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-045.png",
+          "variance": 10695.25,
+          "text_characters": 724
+        },
+        {
+          "page": 46,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-046.png",
+          "variance": 8134.86,
+          "text_characters": 689
+        },
+        {
+          "page": 47,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-047.png",
+          "variance": 5160.54,
+          "text_characters": 626
+        },
+        {
+          "page": 48,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-048.png",
+          "variance": 3204.9,
+          "text_characters": 592
+        },
+        {
+          "page": 49,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-049.png",
+          "variance": 3862.87,
+          "text_characters": 648
+        },
+        {
+          "page": 50,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-050.png",
+          "variance": 5629.82,
+          "text_characters": 659
+        },
+        {
+          "page": 51,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-051.png",
+          "variance": 9523.58,
+          "text_characters": 722
+        },
+        {
+          "page": 52,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-052.png",
+          "variance": 6803.81,
+          "text_characters": 809
+        },
+        {
+          "page": 53,
+          "render": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\review\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB\\page-053.png",
+          "variance": 830.68,
+          "text_characters": 665
+        }
+      ]
+    }
+  },
+  "contact_sheets": {
+    "Rafael_Smadja_CV_and_Portfolio_2026_Premium.pdf": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\output\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Contact_Sheet.jpg",
+    "Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB.pdf": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\output\\Rafael_Smadja_CV_and_Portfolio_2026_Premium_Under_5MB_Contact_Sheet.jpg"
+  },
+  "verified": {
+    "all_pages_a4_portrait": true,
+    "all_pages_rendered": true,
+    "no_blank_pages_detected": true,
+    "compact_under_5mb": true,
+    "resume_first": true
+  }
+}

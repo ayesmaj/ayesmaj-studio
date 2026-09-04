@@ -1,0 +1,8 @@
+Use case: illustration-story
+Asset type: AI phone-agent commercial storyboard sheet
+Primary request: Using Images 1–3 as strict Kolie logo, Israeli AI phone-agent interface, website, and advertising references, create one professional six-panel commercial storyboard sheet in a clean 3-by-2 grid for “The Call You Almost Missed.” Preserve the real Kolie identity and right-to-left Hebrew interface direction.
+Sequence: SHOT 01 busy small-business owner working with both hands as phone rings behind him; SHOT 02 close-up of unanswered call while owner looks toward it but cannot stop; SHOT 03 phone sound wave transitions into Kolie’s clean AI interface; SHOT 04 Dana, the AI agent, answers naturally while appointment details appear; SHOT 05 owner later checks phone and sees a confirmed appointment instead of a missed call; SHOT 06 clean final frame with Kolie interface, sound-wave identity, and 24/7 availability idea.
+Style/medium: professional commercial storyboard linework in grayscale with selective violet, purple, blue, and gold accents; not polished UI mockups or finished ads.
+Composition: understandable without large text; clear expressions, screen direction, over-the-shoulder views, camera arrows, and timing notes.
+Text: label exactly “SHOT 01” through “SHOT 06”; one short action caption per panel. Any interface writing must follow Hebrew right-to-left layout without invented long copy.
+Constraints: preserve logo and interface identity; no redesign, no generic call-center UI, no watermark.

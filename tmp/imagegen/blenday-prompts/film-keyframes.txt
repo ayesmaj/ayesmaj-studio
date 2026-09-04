@@ -1,0 +1,13 @@
+Create a connected four-frame cinematic keyframe sheet for a finished BLENDAY brand film using the supplied real campaign references as the exact visual source. References 1 and 2 establish the final purple berry and warm mango-coconut product worlds. References 3 through 6 are real frames from the existing motion pieces and establish the product, liquid motion, camera energy, and lighting.
+
+Arrange four wide cinematic frames in one clean 2-by-2 landscape sheet with very slim warm-white gutters and tiny numbers only:
+01 Macro frozen blueberry and condensation travelling toward a purple-lit pouch seal.
+02 High-speed berry fruit and purple smoothie forming a controlled curved arc above the clear cup.
+03 Match cut into mango and coconut suspended in a warm amber smoothie sheet around the same cup architecture.
+04 Bright final four-flavor product-family hero on cream, with generous clean space reserved for the real BLENDAY logo.
+
+Make all four look like connected frames from one premium commercial: consistent lens language, realistic materials, precise splash physics, strong product focus, polished final-render quality, no sketch treatment.
+
+Critical constraints: no new package shape, no fake label copy, no misspelled name, no extra flavors, no dark generic CGI, no repeated objects, no random particles, no people.
+
+Output: one 3:2 landscape keyframe sheet.

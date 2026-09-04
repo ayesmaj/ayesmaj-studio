@@ -13,6 +13,10 @@ import {
 import SectionHeader from "../SectionHeader";
 import { COLORS, FONTS } from "../theme";
 
+/* Each card shows REAL client work rather than generated abstract artwork
+   (owner request 2026-09-03), and a different brand per card so the six read
+   as a body of work instead of one project. Paths verified on disk by
+   scripts/real-brands.mjs. */
 const CAPABILITIES = [
   {
     index: "01",
@@ -20,7 +24,8 @@ const CAPABILITIES = [
     description: "Positioning, visual identity, logo systems, packaging, and creative direction that makes a brand feel complete.",
     skills: ["Strategy", "Identity", "Packaging"],
     icon: Compass,
-    image: "/assets/ayesmaj/generated/capabilities/capability-01-brand-strategy.webp",
+    image: "/brands/baron-herzog/generated/packaging/packaging-lineup.webp",
+    credit: "BARON HERZOG",
     accent: "#FFC84B",
     rgb: "255,200,75",
   },
@@ -30,7 +35,8 @@ const CAPABILITIES = [
     description: "Cinematic campaigns, product visuals, commercials, and scalable content systems powered by advanced AI.",
     skills: ["AI Film", "Campaigns", "Content Systems"],
     icon: Sparkles,
-    image: "/assets/ayesmaj/generated/capabilities/capability-02-ai-content.webp",
+    image: "/brands/ashe/5.webp",
+    credit: "ASHÉ",
     accent: "#FF8A3D",
     rgb: "255,138,61",
   },
@@ -40,7 +46,8 @@ const CAPABILITIES = [
     description: "Premium websites, landing pages, responsive systems, and digital experiences built to convert.",
     skills: ["UX/UI", "Development", "Interaction"],
     icon: Code2,
-    image: "/assets/ayesmaj/generated/capabilities/capability-03-web-design.webp",
+    image: "/brands/syntropic/generated/web/website-responsive.webp",
+    credit: "SYNTROPIC",
     accent: "#B3FF3F",
     rgb: "179,255,63",
   },
@@ -50,7 +57,8 @@ const CAPABILITIES = [
     description: "Product renders, environments, characters, models, and cinematic CGI built from the ground up.",
     skills: ["Modeling", "CGI", "Environments"],
     icon: Box,
-    image: "/assets/ayesmaj/generated/capabilities/capability-04-3d-cgi.webp",
+    image: "/brands/noam/generated/cgi/cgi-hero.webp",
+    credit: "NOAM",
     accent: "#B985FF",
     rgb: "185,133,255",
   },
@@ -60,7 +68,8 @@ const CAPABILITIES = [
     description: "Brand films, product animation, editing, motion design, and visual effects created for impact.",
     skills: ["Animation", "Film", "VFX"],
     icon: Clapperboard,
-    image: "/assets/ayesmaj/generated/capabilities/capability-05-motion-film.webp",
+    image: "/brands/happy%20jack%20-%20whiskey/generated/web/homepage-hero.webp",
+    credit: "HAPPY JACK",
     accent: "#61E7FF",
     rgb: "97,231,255",
   },
@@ -70,7 +79,8 @@ const CAPABILITIES = [
     description: "Big campaign ideas translated into visual concepts, advertising systems, and launch-ready assets.",
     skills: ["Concept", "Art Direction", "Launch"],
     icon: Palette,
-    image: "/assets/ayesmaj/generated/capabilities/capability-06-art-direction.webp",
+    image: "/brands/rebound/ChatGPT%20Image%20Jun%208,%202026,%2010_10_29%20PM.webp",
+    credit: "REBOUND",
     accent: "#FF6FAE",
     rgb: "255,111,174",
   },
@@ -147,11 +157,34 @@ export default function CapabilitiesShowcase() {
                 <div className="ayes-capability-card__visual">
                   <img
                     src={capability.image}
-                    alt={`${capability.title} represented as cinematic black-glass studio artwork`}
+                    alt={`${capability.credit} — real ${capability.title.toLowerCase()} work by AYESMAJ Studios`}
                     loading="lazy"
                     decoding="async"
                   />
                   <div className="ayes-capability-card__visual-shade" aria-hidden="true" />
+                  {/* Name the client. An unattributed image is decoration; a
+                      credited one is proof the studio did the work. */}
+                  <span
+                    style={{
+                      position: "absolute",
+                      right: 14,
+                      top: 16,
+                      zIndex: 2,
+                      padding: "5px 11px",
+                      borderRadius: 999,
+                      fontFamily: FONTS.ui,
+                      fontSize: 9.5,
+                      fontWeight: 700,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: capability.accent,
+                      background: "rgba(3,6,3,0.72)",
+                      border: `1px solid rgba(${capability.rgb},0.4)`,
+                      backdropFilter: "blur(10px)",
+                    }}
+                  >
+                    {capability.credit}
+                  </span>
                   <div className="ayes-capability-card__topline">
                     <div
                       style={{

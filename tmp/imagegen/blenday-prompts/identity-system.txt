@@ -1,0 +1,15 @@
+Create a premium landscape brand identity presentation for BLENDAY using the supplied references as the only source of truth.
+
+Reference roles:
+- Reference 1 is the exact BLENDAY fruit-drop logo and wordmark. Preserve its geometry, proportions, purple color, and the readable spelling BLENDAY. Do not invent or alter the mark.
+- Reference 2 establishes the primary berry-purple packaging, smoothie cup, fruit, liquid-splash language, and glossy studio lighting.
+- Reference 3 establishes the banana-yellow flavor world and the consistent pouch architecture.
+- Reference 4 establishes the warm mango-coconut flavor world and the same product architecture.
+
+Build one sophisticated horizontal identity board on a bright warm-white editorial background. The composition should feel like a premium design-studio case-study image, not a generic moodboard. Include: a generous exact-logo presentation area; a secondary fruit-drop mark study; a material-led palette using berry purple, cream white, banana yellow, strawberry coral, blueberry blue, mango amber, coconut white, and fresh green; abstract typography hierarchy samples made only from non-readable geometric letterform shapes; a close product application featuring the recognizable resealable pouch and smoothie cup; small tactile samples of matte pouch film, glossy print, clear cup plastic, condensation, and liquid.
+
+Use clean alignment, strong whitespace, soft daylight, precise shadows, rounded forms, controlled premium depth, and energetic accents derived from fruit and liquid. Keep the identity playful, fresh, cinematic, and commercially credible.
+
+Critical constraints: no new logo, no misspelled brand name, no fake paragraphs, no nutritional or legal copy, no random sci-fi elements, no unrelated objects, no clutter, no dark black background. If exact brand text cannot be preserved, leave the area clean so the real logo can be composited afterward.
+
+Output: single 3:2 landscape portfolio image, polished high-end advertising and brand-design quality.

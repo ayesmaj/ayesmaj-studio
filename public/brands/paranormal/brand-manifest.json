@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "slug": "paranormal",
+  "assetDirectory": "paranormal",
+  "name": "PARANORMAL",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 7,
+    "exactDuplicates": [],
+    "nearDuplicates": [],
+    "highestResolutionReferences": [
+      "3.jpg",
+      "5.jpg",
+      "6.jpg",
+      "2.jpeg",
+      "4.jpg",
+      "1.jpeg",
+      "logo-generated.png"
+    ],
+    "assets": [
+      {
+        "filename": "1.jpeg",
+        "extension": ".jpeg",
+        "bytes": 297854,
+        "sha256": "881188daa67bbff352d5cf112e6f357cae37e5e7314615f0b02c2b6d82420c99",
+        "source": "existing",
+        "width": 864,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "00183c3c18181b1f",
+        "palette": [
+          "#060A14",
+          "#091523",
+          "#19313D",
+          "#3D5660",
+          "#92A1A9"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "2.jpeg",
+        "extension": ".jpeg",
+        "bytes": 504006,
+        "sha256": "0acfab64344a5e696c16b2078333bd9b6f6a97fe0a46889ad212d85cd5ef9979",
+        "source": "existing",
+        "width": 1536,
+        "height": 1312,
+        "mode": "RGB",
+        "averageHash": "0008383c3c1e7e00",
+        "palette": [
+          "#112A35",
+          "#1D3D41",
+          "#091C2A",
+          "#385552",
+          "#ADAE9D"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "3.jpg",
+        "extension": ".jpg",
+        "bytes": 25878794,
+        "sha256": "37294ffa7b31fef431e3c6dd085fc4125b8e183494ad3436af35cced728bc0ed",
+        "source": "existing",
+        "width": 8192,
+        "height": 8192,
+        "mode": "RGB",
+        "averageHash": "001c3c3e3c3c0000",
+        "palette": [
+          "#172829",
+          "#666246",
+          "#040F18",
+          "#0D191F",
+          "#06131C"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "4.jpg",
+        "extension": ".jpg",
+        "bytes": 1366546,
+        "sha256": "f4e54e912eaea257dd26e80119396db5a942a9400c8b439719c7a4461a397b7d",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "001b7b9b1c186300",
+        "palette": [
+          "#201E16",
+          "#0E1112",
+          "#44422D",
+          "#141614",
+          "#14110D"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "5.jpg",
+        "extension": ".jpg",
+        "bytes": 8048413,
+        "sha256": "b9bdf731ccdf02eb1061415e54804d03ddf37cf88860879c722496cc9d40e4bf",
+        "source": "existing",
+        "width": 4000,
+        "height": 5452,
+        "mode": "RGB",
+        "averageHash": "00387c3c3c001f1e",
+        "palette": [
+          "#0C121B",
+          "#060910",
+          "#20444E",
+          "#122733",
+          "#6C868C"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "6.jpg",
+        "extension": ".jpg",
+        "bytes": 12066912,
+        "sha256": "ef8a8cc69a01a1243d6ddbb720acbf7ca356ce22b22822e1dbdcc6264b18e4bf",
+        "source": "existing",
+        "width": 4000,
+        "height": 5452,
+        "mode": "RGB",
+        "averageHash": "767e3e3e36061808",
+        "palette": [
+          "#040B17",
+          "#B0B8BB",
+          "#4A5550",
+          "#0E2630",
+          "#2D2E29"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "logo-generated.png",
+        "extension": ".png",
+        "bytes": 1004145,
+        "sha256": "314e085b9338f03889db72cd29b33ee91f28f52ba21c86b0f9e7811f6c36f1d9",
+        "source": "existing",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "fff7e7c3e381ffff",
+        "palette": [
+          "#FBF7F2",
+          "#FBF8F3",
+          "#B4B8A5",
+          "#FBF7F1",
+          "#FAF7F2"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Premium Spirits Identity & Packaging",
+    "primaryColors": [
+      "#060A14",
+      "#091523",
+      "#19313D"
+    ],
+    "secondaryColors": [
+      "#112A35",
+      "#1D3D41",
+      "#091C2A",
+      "#172829"
+    ],
+    "visualMood": "A horror-meets-fine-art creative campaign. Eerie atmosphere, unsettling beauty and avant-garde visual storytelling.",
+    "lightingStyle": "midnight blue museum light with jewel and gold highlights",
+    "compositionStyle": "ornate symmetrical luxury, surreal fine-art detail, and restrained mystery",
+    "materials": [
+      "etched glass",
+      "filigree metal",
+      "feathers",
+      "gemstones",
+      "velvet"
+    ],
+    "keywords": [
+      "Brand Identity",
+      "Packaging",
+      "Campaign",
+      "Art Direction"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "campaign": [
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "6.jpg"
+    ],
+    "logo": [
+      "logo-generated.png"
+    ],
+    "packaging": [
+      "1.jpeg",
+      "2.jpeg"
+    ]
+  },
+  "missingAssets": [
+    "website-responsive",
+    "social-system",
+    "storyboard",
+    "brand-world-master"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "logo-generated.png",
+        "3.jpg",
+        "1.jpeg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "website-responsive",
+      "filename": "generated/web/website-responsive.webp",
+      "source": "generated",
+      "references": [
+        "3.jpg",
+        "1.jpeg",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "paranormal/ref-1.jpg",
+        "paranormal/ref-2.jpg",
+        "paranormal/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: website-responsive for an AYESMAJ portfolio case study\nPrimary request: Create a bespoke responsive website presentation for this exact brand across laptop, tablet, and phone. Screens must inherit the reference imagery, palette, product, and composition language and feel like one real premium website system.\nBrand: PARANORMAL\nCategory: Premium Spirits Identity & Packaging\nBrand character: A horror-meets-fine-art creative campaign. Eerie atmosphere, unsettling beauty and avant-garde visual storytelling.\nInput images: Image 1: source-of-truth brand reference (3.jpg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 device-family studio scene with a clearly visible desktop hero, supporting mobile screens, and elegant depth; underlying brand composition language: ornate symmetrical luxury, surreal fine-art detail, and restrained mystery\nLighting/mood: midnight blue museum light with jewel and gold highlights\nColor palette: #060A14, #091523, #19313D, #112A35, #1D3D41, #091C2A, #172829\nMaterials/textures: etched glass, filigree metal, feathers, gemstones, velvet\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "3.jpg",
+        "1.jpeg",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "paranormal/ref-1.jpg",
+        "paranormal/ref-2.jpg",
+        "paranormal/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: PARANORMAL\nCategory: Premium Spirits Identity & Packaging\nBrand character: A horror-meets-fine-art creative campaign. Eerie atmosphere, unsettling beauty and avant-garde visual storytelling.\nInput images: Image 1: source-of-truth brand reference (3.jpg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: ornate symmetrical luxury, surreal fine-art detail, and restrained mystery\nLighting/mood: midnight blue museum light with jewel and gold highlights\nColor palette: #060A14, #091523, #19313D, #112A35, #1D3D41, #091C2A, #172829\nMaterials/textures: etched glass, filigree metal, feathers, gemstones, velvet\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "3.jpg",
+        "1.jpeg",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "paranormal/ref-1.jpg",
+        "paranormal/ref-2.jpg",
+        "paranormal/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: PARANORMAL\nCategory: Premium Spirits Identity & Packaging\nBrand character: A horror-meets-fine-art creative campaign. Eerie atmosphere, unsettling beauty and avant-garde visual storytelling.\nInput images: Image 1: source-of-truth brand reference (3.jpg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: ornate symmetrical luxury, surreal fine-art detail, and restrained mystery\nLighting/mood: midnight blue museum light with jewel and gold highlights\nColor palette: #060A14, #091523, #19313D, #112A35, #1D3D41, #091C2A, #172829\nMaterials/textures: etched glass, filigree metal, feathers, gemstones, velvet\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "3.jpg",
+        "1.jpeg",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "paranormal/ref-1.jpg",
+        "paranormal/ref-2.jpg",
+        "paranormal/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: PARANORMAL\nCategory: Premium Spirits Identity & Packaging\nBrand character: A horror-meets-fine-art creative campaign. Eerie atmosphere, unsettling beauty and avant-garde visual storytelling.\nInput images: Image 1: source-of-truth brand reference (3.jpg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: ornate symmetrical luxury, surreal fine-art detail, and restrained mystery\nLighting/mood: midnight blue museum light with jewel and gold highlights\nColor palette: #060A14, #091523, #19313D, #112A35, #1D3D41, #091C2A, #172829\nMaterials/textures: etched glass, filigree metal, feathers, gemstones, velvet\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "logo-generated.png",
+        "3.jpg",
+        "1.jpeg"
+      ],
+      "preparedReferences": [
+        "paranormal/ref-1.jpg",
+        "paranormal/ref-2.jpg",
+        "paranormal/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: PARANORMAL\nCategory: Premium Spirits Identity & Packaging\nBrand character: A horror-meets-fine-art creative campaign. Eerie atmosphere, unsettling beauty and avant-garde visual storytelling.\nInput images: Image 1: source-of-truth brand reference (logo-generated.png); Image 2: source-of-truth brand reference (3.jpg); Image 3: source-of-truth brand reference (1.jpeg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: ornate symmetrical luxury, surreal fine-art detail, and restrained mystery\nLighting/mood: midnight blue museum light with jewel and gold highlights\nColor palette: #060A14, #091523, #19313D, #112A35, #1D3D41, #091C2A, #172829\nMaterials/textures: etched glass, filigree metal, feathers, gemstones, velvet\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "website-responsive",
+    "storyboard",
+    "social-system",
+    "brand-world-master"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 4,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/paranormal.jpg"
+  }
+}

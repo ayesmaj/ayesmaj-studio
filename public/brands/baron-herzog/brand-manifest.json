@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "slug": "baron-herzog",
+  "assetDirectory": "baron-herzog",
+  "name": "BARON HERZOG",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 3,
+    "exactDuplicates": [],
+    "nearDuplicates": [],
+    "highestResolutionReferences": [
+      "Gemini_Generated_Image_das3i5sas3i5sas3i.png",
+      "1.png",
+      "logo-generated.png"
+    ],
+    "assets": [
+      {
+        "filename": "1.png",
+        "extension": ".png",
+        "bytes": 2290985,
+        "sha256": "3a339e31e4f9f851448a5a563e36a24064c4479bd2ca503c83161c6d57311502",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "08003e3c7c780000",
+        "palette": [
+          "#200606",
+          "#590E0A",
+          "#76261E",
+          "#CEC0B7",
+          "#976D60"
+        ],
+        "type": "identity"
+      },
+      {
+        "filename": "Gemini_Generated_Image_das3i5sas3i5sas3i.png",
+        "extension": ".png",
+        "bytes": 7932518,
+        "sha256": "3db73b0b9937ee10b08c5a3ef722399c9f7ab7420879e5624c406c8ba4c29388",
+        "source": "existing",
+        "width": 1712,
+        "height": 2048,
+        "mode": "RGBA",
+        "averageHash": "fce5e7c3c1ffffe7",
+        "palette": [
+          "#EFEFEE",
+          "#E9E8E7",
+          "#F1F1F0",
+          "#F6F6F5",
+          "#B6ABA9"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "logo-generated.png",
+        "extension": ".png",
+        "bytes": 964751,
+        "sha256": "113d2473fe14efd30c105c90ef2475a0880e62d59dae2a648e84d58c3029139a",
+        "source": "existing",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "ffe7e7e78381ffff",
+        "palette": [
+          "#FCF7EE",
+          "#FCF7EF",
+          "#B19985",
+          "#FCF7EC",
+          "#FDFBF4"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Luxury Brand Identity",
+    "primaryColors": [
+      "#200606",
+      "#590E0A",
+      "#76261E"
+    ],
+    "secondaryColors": [
+      "#EFEFEE",
+      "#E9E8E7",
+      "#F1F1F0",
+      "#FCF7EE"
+    ],
+    "visualMood": "A prestige kosher wine label reimagined — heritage meets modern luxury through refined typography, gold foil concepts and cellar-to-table storytelling.",
+    "lightingStyle": "warm cellar light with restrained crimson and gold highlights",
+    "compositionStyle": "centered luxury wine still life and refined heritage editorial",
+    "materials": [
+      "wine glass",
+      "burgundy liquid",
+      "cream paper",
+      "gold foil",
+      "oak"
+    ],
+    "keywords": [
+      "Luxury",
+      "Brand Identity",
+      "Wine"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "campaign": [
+      "Gemini_Generated_Image_das3i5sas3i5sas3i.png"
+    ],
+    "identity": [
+      "1.png"
+    ],
+    "logo": [
+      "logo-generated.png"
+    ]
+  },
+  "missingAssets": [
+    "website-responsive",
+    "social-system",
+    "storyboard",
+    "brand-world-master",
+    "packaging-lineup",
+    "packaging-detail"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "1.png",
+        "logo-generated.png",
+        "Gemini_Generated_Image_das3i5sas3i5sas3i.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "website-responsive",
+      "filename": "generated/web/website-responsive.webp",
+      "source": "generated",
+      "references": [
+        "Gemini_Generated_Image_das3i5sas3i5sas3i.png",
+        "1.png",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "baron-herzog/ref-1.jpg",
+        "baron-herzog/ref-2.jpg",
+        "baron-herzog/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: website-responsive for an AYESMAJ portfolio case study\nPrimary request: Create a bespoke responsive website presentation for this exact brand across laptop, tablet, and phone. Screens must inherit the reference imagery, palette, product, and composition language and feel like one real premium website system.\nBrand: BARON HERZOG\nCategory: Luxury Brand Identity\nBrand character: A prestige kosher wine label reimagined — heritage meets modern luxury through refined typography, gold foil concepts and cellar-to-table storytelling.\nInput images: Image 1: source-of-truth brand reference (Gemini_Generated_Image_das3i5sas3i5sas3i.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 device-family studio scene with a clearly visible desktop hero, supporting mobile screens, and elegant depth; underlying brand composition language: centered luxury wine still life and refined heritage editorial\nLighting/mood: warm cellar light with restrained crimson and gold highlights\nColor palette: #200606, #590E0A, #76261E, #EFEFEE, #E9E8E7, #F1F1F0, #FCF7EE\nMaterials/textures: wine glass, burgundy liquid, cream paper, gold foil, oak\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "Gemini_Generated_Image_das3i5sas3i5sas3i.png",
+        "1.png",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "baron-herzog/ref-1.jpg",
+        "baron-herzog/ref-2.jpg",
+        "baron-herzog/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: BARON HERZOG\nCategory: Luxury Brand Identity\nBrand character: A prestige kosher wine label reimagined — heritage meets modern luxury through refined typography, gold foil concepts and cellar-to-table storytelling.\nInput images: Image 1: source-of-truth brand reference (Gemini_Generated_Image_das3i5sas3i5sas3i.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: centered luxury wine still life and refined heritage editorial\nLighting/mood: warm cellar light with restrained crimson and gold highlights\nColor palette: #200606, #590E0A, #76261E, #EFEFEE, #E9E8E7, #F1F1F0, #FCF7EE\nMaterials/textures: wine glass, burgundy liquid, cream paper, gold foil, oak\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "Gemini_Generated_Image_das3i5sas3i5sas3i.png",
+        "1.png",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "baron-herzog/ref-1.jpg",
+        "baron-herzog/ref-2.jpg",
+        "baron-herzog/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: BARON HERZOG\nCategory: Luxury Brand Identity\nBrand character: A prestige kosher wine label reimagined — heritage meets modern luxury through refined typography, gold foil concepts and cellar-to-table storytelling.\nInput images: Image 1: source-of-truth brand reference (Gemini_Generated_Image_das3i5sas3i5sas3i.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: centered luxury wine still life and refined heritage editorial\nLighting/mood: warm cellar light with restrained crimson and gold highlights\nColor palette: #200606, #590E0A, #76261E, #EFEFEE, #E9E8E7, #F1F1F0, #FCF7EE\nMaterials/textures: wine glass, burgundy liquid, cream paper, gold foil, oak\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "Gemini_Generated_Image_das3i5sas3i5sas3i.png",
+        "1.png",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "baron-herzog/ref-1.jpg",
+        "baron-herzog/ref-2.jpg",
+        "baron-herzog/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: BARON HERZOG\nCategory: Luxury Brand Identity\nBrand character: A prestige kosher wine label reimagined — heritage meets modern luxury through refined typography, gold foil concepts and cellar-to-table storytelling.\nInput images: Image 1: source-of-truth brand reference (Gemini_Generated_Image_das3i5sas3i5sas3i.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: centered luxury wine still life and refined heritage editorial\nLighting/mood: warm cellar light with restrained crimson and gold highlights\nColor palette: #200606, #590E0A, #76261E, #EFEFEE, #E9E8E7, #F1F1F0, #FCF7EE\nMaterials/textures: wine glass, burgundy liquid, cream paper, gold foil, oak\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "packaging-detail",
+      "filename": "generated/packaging/packaging-detail.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "logo-generated.png",
+        "Gemini_Generated_Image_das3i5sas3i5sas3i.png"
+      ],
+      "preparedReferences": [
+        "baron-herzog/ref-1.jpg",
+        "baron-herzog/ref-2.jpg",
+        "baron-herzog/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: product-mockup\nAsset type: packaging-detail for an AYESMAJ portfolio case study\nPrimary request: Create an art-directed macro packaging detail that celebrates the reference materials, print finish, label structure, surface texture, and product craftsmanship without inventing regulatory or nutritional copy.\nBrand: BARON HERZOG\nCategory: Luxury Brand Identity\nBrand character: A prestige kosher wine label reimagined — heritage meets modern luxury through refined typography, gold foil concepts and cellar-to-table storytelling.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (logo-generated.png); Image 3: source-of-truth brand reference (Gemini_Generated_Image_das3i5sas3i5sas3i.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 macro editorial crop with shallow depth, tactile lighting, and one unmistakable material focal point; underlying brand composition language: centered luxury wine still life and refined heritage editorial\nLighting/mood: warm cellar light with restrained crimson and gold highlights\nColor palette: #200606, #590E0A, #76261E, #EFEFEE, #E9E8E7, #F1F1F0, #FCF7EE\nMaterials/textures: wine glass, burgundy liquid, cream paper, gold foil, oak\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "packaging-lineup",
+      "filename": "generated/packaging/packaging-lineup.webp",
+      "source": "generated",
+      "references": [
+        "Gemini_Generated_Image_das3i5sas3i5sas3i.png",
+        "1.png",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "baron-herzog/ref-1.jpg",
+        "baron-herzog/ref-2.jpg",
+        "baron-herzog/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: product-mockup\nAsset type: packaging-lineup for an AYESMAJ portfolio case study\nPrimary request: Create a premium product-family lineup using only packaging architecture and variants supported by the references. Preserve the real product category, silhouettes, proportions, palette logic, and label placement.\nBrand: BARON HERZOG\nCategory: Luxury Brand Identity\nBrand character: A prestige kosher wine label reimagined — heritage meets modern luxury through refined typography, gold foil concepts and cellar-to-table storytelling.\nInput images: Image 1: source-of-truth brand reference (Gemini_Generated_Image_das3i5sas3i5sas3i.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 studio lineup with clean spacing, a strong hero item, secondary items, and refined material reflections; underlying brand composition language: centered luxury wine still life and refined heritage editorial\nLighting/mood: warm cellar light with restrained crimson and gold highlights\nColor palette: #200606, #590E0A, #76261E, #EFEFEE, #E9E8E7, #F1F1F0, #FCF7EE\nMaterials/textures: wine glass, burgundy liquid, cream paper, gold foil, oak\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "logo-generated.png",
+        "Gemini_Generated_Image_das3i5sas3i5sas3i.png"
+      ],
+      "preparedReferences": [
+        "baron-herzog/ref-1.jpg",
+        "baron-herzog/ref-2.jpg",
+        "baron-herzog/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: BARON HERZOG\nCategory: Luxury Brand Identity\nBrand character: A prestige kosher wine label reimagined — heritage meets modern luxury through refined typography, gold foil concepts and cellar-to-table storytelling.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (logo-generated.png); Image 3: source-of-truth brand reference (Gemini_Generated_Image_das3i5sas3i5sas3i.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: centered luxury wine still life and refined heritage editorial\nLighting/mood: warm cellar light with restrained crimson and gold highlights\nColor palette: #200606, #590E0A, #76261E, #EFEFEE, #E9E8E7, #F1F1F0, #FCF7EE\nMaterials/textures: wine glass, burgundy liquid, cream paper, gold foil, oak\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "website-responsive",
+    "social-system",
+    "storyboard",
+    "brand-world-master",
+    "packaging-detail",
+    "packaging-lineup"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 6,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/baron-herzog.jpg"
+  }
+}

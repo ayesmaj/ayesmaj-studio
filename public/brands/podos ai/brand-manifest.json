@@ -1,0 +1,612 @@
+{
+  "schemaVersion": 1,
+  "slug": "podos-ai",
+  "assetDirectory": "podos ai",
+  "name": "PODOS AI",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 14,
+    "exactDuplicates": [],
+    "nearDuplicates": [],
+    "highestResolutionReferences": [
+      "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+      "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png",
+      "ChatGPT Image May 17, 2026, 03_29_19 PM (4).png",
+      "ChatGPT Image May 17, 2026, 03_29_21 PM (10).png",
+      "ChatGPT Image May 17, 2026, 03_46_21 PM.png",
+      "ChatGPT Image May 17, 2026, 03_49_15 PM.png",
+      "ChatGPT Image May 31, 2026, 07_01_02 PM.png",
+      "ChatGPT Image May 7, 2026, 02_54_05 PM.png"
+    ],
+    "assets": [
+      {
+        "filename": "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+        "extension": ".png",
+        "bytes": 1429398,
+        "sha256": "93adef9b7a5d9299c3c5973833e24bcd0ee47ab68552748f6b48069a58385ed8",
+        "source": "existing",
+        "width": 1474,
+        "height": 1067,
+        "mode": "RGB",
+        "averageHash": "0000007e7e000000",
+        "palette": [
+          "#000815",
+          "#010A18",
+          "#09182D",
+          "#000612",
+          "#29527C"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+        "extension": ".png",
+        "bytes": 2008773,
+        "sha256": "be38f35929c2acf236ae60db5e59e121bbe732fc84ecb60063b3094be45afcb5",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "ff8181fff98181b1",
+        "palette": [
+          "#232730",
+          "#686D77",
+          "#A1A6AD",
+          "#B7BCC3",
+          "#C8CCD2"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png",
+        "extension": ".png",
+        "bytes": 2204167,
+        "sha256": "d91c1dd56cb4151fdc6e3d0ce0871835a8a355840164a158fdcac27b729df446",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "bfbfffe747000000",
+        "palette": [
+          "#D8CAB7",
+          "#938F8B",
+          "#2E241C",
+          "#4B3B2F",
+          "#6C503B"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 17, 2026, 03_29_19 PM (4).png",
+        "extension": ".png",
+        "bytes": 1647561,
+        "sha256": "18fc226c7961baeb6778952c1b7f0c93415ec15b255c9315b7fa56656f28cab4",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "7efff9818181f9ff",
+        "palette": [
+          "#222223",
+          "#A2A1A3",
+          "#C4C3C5",
+          "#88888A",
+          "#505153"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 17, 2026, 03_29_21 PM (10).png",
+        "extension": ".png",
+        "bytes": 1786547,
+        "sha256": "98f292d85ab53619a0a491d7c45e1b3849b07572c24cc442dd97974c1d45b2ec",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "ffffff9100000e00",
+        "palette": [
+          "#836F5A",
+          "#76A9D4",
+          "#36322E",
+          "#99B5CF",
+          "#7F93AA"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 17, 2026, 03_46_21 PM.png",
+        "extension": ".png",
+        "bytes": 2183451,
+        "sha256": "30e5d2fcdc9bb750aee114231a8196cd72fd6865b0dd38ca116ae85e85f2e038",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "36f8f83c7c380030",
+        "palette": [
+          "#1C1F26",
+          "#0A0C0F",
+          "#38404C",
+          "#5A7494",
+          "#779DC4"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 17, 2026, 03_49_15 PM.png",
+        "extension": ".png",
+        "bytes": 2005043,
+        "sha256": "77a6634c7534eca5bf80b0bb8db8ab11908eb76b14ee9c1f8fb948da8278011d",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "ffff8000000081ff",
+        "palette": [
+          "#1C1D20",
+          "#6A707A",
+          "#3E4149",
+          "#868B94",
+          "#ADB2BA"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 31, 2026, 07_01_02 PM.png",
+        "extension": ".png",
+        "bytes": 2310252,
+        "sha256": "351b48330129022226c17761e384605925b1a841b60691a4a80d7c10747129c6",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "ffffbf0100103c3f",
+        "palette": [
+          "#323338",
+          "#A6ACB5",
+          "#A8C3DD",
+          "#847E7B",
+          "#C5D9E9"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 6, 2026, 06_53_12 PM.png",
+        "extension": ".png",
+        "bytes": 870212,
+        "sha256": "ed77be57a845007408021477c53d4ded6213596369859e8e2acf8ea3d582c5e4",
+        "source": "existing",
+        "width": 1448,
+        "height": 1086,
+        "mode": "RGB",
+        "averageHash": "ffffff0000ffffff",
+        "palette": [
+          "#FEFEFE",
+          "#5C5C5D",
+          "#FDFEFD",
+          "#FFFFFF",
+          "#FFFEFE"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 7, 2026, 02_54_05 PM.png",
+        "extension": ".png",
+        "bytes": 1442778,
+        "sha256": "a9eb2f459fa092a6e1b08de52da2ca335d94545b6f8b9d5b1395e4ac5a8cb31e",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "3c7e7ec18181ffc3",
+        "palette": [
+          "#2C3138",
+          "#D1D6E1",
+          "#8893A6",
+          "#BEC5D3",
+          "#DEE2EB"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 7, 2026, 02_56_48 PM.png",
+        "extension": ".png",
+        "bytes": 1677185,
+        "sha256": "0f48e46be38f46dbce65d0d2778252414ba7693f168553bafccb8ede7f197efe",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "ffff9181803881ff",
+        "palette": [
+          "#D0D5DD",
+          "#E1E4EA",
+          "#EAECF1",
+          "#68707A",
+          "#F5F6FA"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image May 7, 2026, 03_31_52 PM.png",
+        "extension": ".png",
+        "bytes": 1764088,
+        "sha256": "aa00f83406f5aa421abde2ee8bbf0b9fcb1d4dc84796716da5a6fe09bda975da",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "ffffc7c381c3ffff",
+        "palette": [
+          "#EFF4FB",
+          "#F4F6FB",
+          "#E2EBF8",
+          "#616D81",
+          "#F9FAFD"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "hero_dense_01.jpg",
+        "extension": ".jpg",
+        "bytes": 42588,
+        "sha256": "657948dfbe0271f893b8d60ef925063b80ae53a4998404cc09e0c9d26b7fc15e",
+        "source": "existing",
+        "width": 1280,
+        "height": 720,
+        "mode": "RGB",
+        "averageHash": "0000007e7e187e60",
+        "palette": [
+          "#000206",
+          "#01081F",
+          "#00030E",
+          "#051C52",
+          "#4577AF"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "podos logo.png",
+        "extension": ".png",
+        "bytes": 137689,
+        "sha256": "1f47a04a7b224676f76e4975135aa2c184e0837df28a56b071712aacd8fc2aae",
+        "source": "existing",
+        "width": 1078,
+        "height": 370,
+        "mode": "RGBA",
+        "averageHash": "ff001f00171f1fff",
+        "palette": [
+          "#FFFFFF",
+          "#697D86",
+          "#D2EAEF",
+          "#FCFCFC",
+          "#F3FFFF"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "AI Product Visualization & Brand",
+    "primaryColors": [
+      "#000815",
+      "#010A18",
+      "#09182D"
+    ],
+    "secondaryColors": [
+      "#232730",
+      "#686D77",
+      "#A1A6AD",
+      "#D8CAB7"
+    ],
+    "visualMood": "A product-led visual world for modular AI infrastructure, combining engineered precision, scale cues, technical cutaways, and launch-ready investor storytelling.",
+    "lightingStyle": "clinical white and steel-blue light balanced with deep technical navy",
+    "compositionStyle": "engineered product cutaways, industrial scale, and investor-grade clarity",
+    "materials": [
+      "anodized black metal",
+      "technical glass",
+      "blue LEDs",
+      "structural steel"
+    ],
+    "keywords": [
+      "Brand Identity",
+      "Product Visualization",
+      "CGI",
+      "Campaign",
+      "Web Design"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "logo": [
+      "podos logo.png"
+    ],
+    "packaging": [
+      "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+      "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+      "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png",
+      "ChatGPT Image May 17, 2026, 03_29_19 PM (4).png",
+      "ChatGPT Image May 17, 2026, 03_29_21 PM (10).png",
+      "ChatGPT Image May 17, 2026, 03_46_21 PM.png",
+      "ChatGPT Image May 17, 2026, 03_49_15 PM.png",
+      "ChatGPT Image May 31, 2026, 07_01_02 PM.png",
+      "ChatGPT Image May 6, 2026, 06_53_12 PM.png",
+      "ChatGPT Image May 7, 2026, 02_54_05 PM.png",
+      "ChatGPT Image May 7, 2026, 02_56_48 PM.png",
+      "ChatGPT Image May 7, 2026, 03_31_52 PM.png",
+      "hero_dense_01.jpg"
+    ]
+  },
+  "missingAssets": [
+    "website-responsive",
+    "social-system",
+    "campaign-system",
+    "storyboard",
+    "brand-world-master",
+    "cgi-hero"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "podos logo.png",
+        "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+        "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+        "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "website-responsive",
+      "filename": "generated/web/website-responsive.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+        "podos logo.png",
+        "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+        "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png"
+      ],
+      "preparedReferences": [
+        "podos-ai/ref-1.jpg",
+        "podos-ai/ref-2.jpg",
+        "podos-ai/ref-3.jpg",
+        "podos-ai/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: website-responsive for an AYESMAJ portfolio case study\nPrimary request: Create a bespoke responsive website presentation for this exact brand across laptop, tablet, and phone. Screens must inherit the reference imagery, palette, product, and composition language and feel like one real premium website system.\nBrand: PODOS AI\nCategory: AI Product Visualization & Brand\nBrand character: A product-led visual world for modular AI infrastructure, combining engineered precision, scale cues, technical cutaways, and launch-ready investor storytelling.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 13, 2026, 12_30_47 AM.png); Image 2: source-of-truth brand reference (podos logo.png); Image 3: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_38_48 PM (5).png); Image 4: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_42_32 PM (8).png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 device-family studio scene with a clearly visible desktop hero, supporting mobile screens, and elegant depth; underlying brand composition language: engineered product cutaways, industrial scale, and investor-grade clarity\nLighting/mood: clinical white and steel-blue light balanced with deep technical navy\nColor palette: #000815, #010A18, #09182D, #232730, #686D77, #A1A6AD, #D8CAB7\nMaterials/textures: anodized black metal, technical glass, blue LEDs, structural steel\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+        "podos logo.png",
+        "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+        "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png"
+      ],
+      "preparedReferences": [
+        "podos-ai/ref-1.jpg",
+        "podos-ai/ref-2.jpg",
+        "podos-ai/ref-3.jpg",
+        "podos-ai/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: PODOS AI\nCategory: AI Product Visualization & Brand\nBrand character: A product-led visual world for modular AI infrastructure, combining engineered precision, scale cues, technical cutaways, and launch-ready investor storytelling.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 13, 2026, 12_30_47 AM.png); Image 2: source-of-truth brand reference (podos logo.png); Image 3: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_38_48 PM (5).png); Image 4: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_42_32 PM (8).png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: engineered product cutaways, industrial scale, and investor-grade clarity\nLighting/mood: clinical white and steel-blue light balanced with deep technical navy\nColor palette: #000815, #010A18, #09182D, #232730, #686D77, #A1A6AD, #D8CAB7\nMaterials/textures: anodized black metal, technical glass, blue LEDs, structural steel\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "campaign-system",
+      "filename": "generated/campaign/campaign-system.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+        "podos logo.png",
+        "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+        "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png"
+      ],
+      "preparedReferences": [
+        "podos-ai/ref-1.jpg",
+        "podos-ai/ref-2.jpg",
+        "podos-ai/ref-3.jpg",
+        "podos-ai/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: campaign-system for an AYESMAJ portfolio case study\nPrimary request: Create a unified campaign family showing a hero advertising visual, a vertical poster, a digital display, and a secondary detail composition. Keep one clear campaign idea across every application.\nBrand: PODOS AI\nCategory: AI Product Visualization & Brand\nBrand character: A product-led visual world for modular AI infrastructure, combining engineered precision, scale cues, technical cutaways, and launch-ready investor storytelling.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 13, 2026, 12_30_47 AM.png); Image 2: source-of-truth brand reference (podos logo.png); Image 3: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_38_48 PM (5).png); Image 4: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_42_32 PM (8).png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 campaign presentation board with four deliberately different but related applications; underlying brand composition language: engineered product cutaways, industrial scale, and investor-grade clarity\nLighting/mood: clinical white and steel-blue light balanced with deep technical navy\nColor palette: #000815, #010A18, #09182D, #232730, #686D77, #A1A6AD, #D8CAB7\nMaterials/textures: anodized black metal, technical glass, blue LEDs, structural steel\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+        "podos logo.png",
+        "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+        "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png"
+      ],
+      "preparedReferences": [
+        "podos-ai/ref-1.jpg",
+        "podos-ai/ref-2.jpg",
+        "podos-ai/ref-3.jpg",
+        "podos-ai/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: PODOS AI\nCategory: AI Product Visualization & Brand\nBrand character: A product-led visual world for modular AI infrastructure, combining engineered precision, scale cues, technical cutaways, and launch-ready investor storytelling.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 13, 2026, 12_30_47 AM.png); Image 2: source-of-truth brand reference (podos logo.png); Image 3: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_38_48 PM (5).png); Image 4: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_42_32 PM (8).png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: engineered product cutaways, industrial scale, and investor-grade clarity\nLighting/mood: clinical white and steel-blue light balanced with deep technical navy\nColor palette: #000815, #010A18, #09182D, #232730, #686D77, #A1A6AD, #D8CAB7\nMaterials/textures: anodized black metal, technical glass, blue LEDs, structural steel\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+        "podos logo.png",
+        "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+        "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png"
+      ],
+      "preparedReferences": [
+        "podos-ai/ref-1.jpg",
+        "podos-ai/ref-2.jpg",
+        "podos-ai/ref-3.jpg",
+        "podos-ai/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: PODOS AI\nCategory: AI Product Visualization & Brand\nBrand character: A product-led visual world for modular AI infrastructure, combining engineered precision, scale cues, technical cutaways, and launch-ready investor storytelling.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 13, 2026, 12_30_47 AM.png); Image 2: source-of-truth brand reference (podos logo.png); Image 3: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_38_48 PM (5).png); Image 4: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_42_32 PM (8).png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: engineered product cutaways, industrial scale, and investor-grade clarity\nLighting/mood: clinical white and steel-blue light balanced with deep technical navy\nColor palette: #000815, #010A18, #09182D, #232730, #686D77, #A1A6AD, #D8CAB7\nMaterials/textures: anodized black metal, technical glass, blue LEDs, structural steel\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "cgi-hero",
+      "filename": "generated/cgi/cgi-hero.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+        "podos logo.png",
+        "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+        "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png"
+      ],
+      "preparedReferences": [
+        "podos-ai/ref-1.jpg",
+        "podos-ai/ref-2.jpg",
+        "podos-ai/ref-3.jpg",
+        "podos-ai/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: cgi-hero for an AYESMAJ portfolio case study\nPrimary request: Create a high-end CGI hero scene for the exact subject in the references, preserving its proportions and design while using premium materials, controlled energy, and a believable environment that explains the product or world.\nBrand: PODOS AI\nCategory: AI Product Visualization & Brand\nBrand character: A product-led visual world for modular AI infrastructure, combining engineered precision, scale cues, technical cutaways, and launch-ready investor storytelling.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 13, 2026, 12_30_47 AM.png); Image 2: source-of-truth brand reference (podos logo.png); Image 3: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_38_48 PM (5).png); Image 4: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_42_32 PM (8).png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 cinematic CGI frame with accurate geometry, strong scale cues, polished lighting, and one hero focal point; underlying brand composition language: engineered product cutaways, industrial scale, and investor-grade clarity\nLighting/mood: clinical white and steel-blue light balanced with deep technical navy\nColor palette: #000815, #010A18, #09182D, #232730, #686D77, #A1A6AD, #D8CAB7\nMaterials/textures: anodized black metal, technical glass, blue LEDs, structural steel\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "podos logo.png",
+        "ChatGPT Image May 13, 2026, 12_30_47 AM.png",
+        "ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+        "ChatGPT Image May 17, 2026, 02_42_32 PM (8).png"
+      ],
+      "preparedReferences": [
+        "podos-ai/ref-1.jpg",
+        "podos-ai/ref-2.jpg",
+        "podos-ai/ref-3.jpg",
+        "podos-ai/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: PODOS AI\nCategory: AI Product Visualization & Brand\nBrand character: A product-led visual world for modular AI infrastructure, combining engineered precision, scale cues, technical cutaways, and launch-ready investor storytelling.\nInput images: Image 1: source-of-truth brand reference (podos logo.png); Image 2: source-of-truth brand reference (ChatGPT Image May 13, 2026, 12_30_47 AM.png); Image 3: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_38_48 PM (5).png); Image 4: source-of-truth brand reference (ChatGPT Image May 17, 2026, 02_42_32 PM (8).png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: engineered product cutaways, industrial scale, and investor-grade clarity\nLighting/mood: clinical white and steel-blue light balanced with deep technical navy\nColor palette: #000815, #010A18, #09182D, #232730, #686D77, #A1A6AD, #D8CAB7\nMaterials/textures: anodized black metal, technical glass, blue LEDs, structural steel\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "website-responsive",
+    "social-system",
+    "campaign-system",
+    "brand-world-master",
+    "storyboard",
+    "cgi-hero"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 6,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/podos ai.jpg"
+  }
+}

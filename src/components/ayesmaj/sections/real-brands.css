@@ -1,0 +1,106 @@
+/* Real brand showcase on the homepage. Dark cinematic language of the site:
+   near-black surfaces, gold #FFC84B accent, DM Sans UI type. */
+
+.rb-filters {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 9px;
+  margin: 38px 0 44px;
+}
+.rb-filter {
+  min-height: 44px; padding: 0 17px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #9A948B;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.rb-filter:hover { color: #F6F3ED; border-color: rgba(255, 255, 255, 0.22); }
+.rb-filter[data-active='true'] { color: #07100C; background: #FFC84B; border-color: #FFC84B; }
+.rb-filter:focus-visible { outline: 2px solid #FFC84B; outline-offset: 3px; }
+.rb-filter-n { opacity: 0.6; }
+
+.rb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 268px), 1fr));
+  gap: clamp(14px, 1.6vw, 22px);
+}
+
+.rb-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  background: #0F1310;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.rb-card:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--rb-accent, #FFC84B) 55%, transparent);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+}
+.rb-card:focus-visible { outline: 2px solid #FFC84B; outline-offset: 3px; }
+
+.rb-shot {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.rb-card:hover .rb-shot { transform: scale(1.05); }
+
+.rb-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(4, 8, 6, 0.94) 0%, rgba(4, 8, 6, 0.38) 42%, rgba(4, 8, 6, 0.08) 70%, transparent 100%);
+}
+
+/* The logo plate. data-plate is written by scripts/real-brands.mjs from the
+   measured luminance of each logo's own ink - a light chip for dark-ink and
+   opaque-on-white marks, a dark chip for the four light-ink cut-outs. Without
+   this, eight of the twenty render as white rectangles and six vanish. */
+.rb-logo {
+  position: absolute; top: 12px; left: 12px;
+  display: flex; align-items: center; justify-content: center;
+  width: 62px; height: 62px;
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 7px;
+  backdrop-filter: blur(6px);
+}
+.rb-logo[data-plate='light'] { background: rgba(255, 253, 248, 0.94); border: 1px solid rgba(0, 0, 0, 0.08); }
+.rb-logo[data-plate='dark'] { background: rgba(8, 10, 9, 0.86); border: 1px solid rgba(255, 255, 255, 0.16); }
+.rb-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+.rb-meta {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  display: grid; gap: 4px;
+  padding: 16px 16px 15px;
+}
+.rb-name {
+  font-family: 'Anton', 'Bebas Neue', system-ui, sans-serif;
+  font-size: 21px; line-height: 1; letter-spacing: 0.01em; text-transform: uppercase;
+  color: #F6F3ED;
+}
+.rb-cat {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 11.5px; line-height: 1.35; color: #ADA79D;
+}
+
+.rb-go {
+  position: absolute; top: 14px; right: 14px;
+  width: 34px; height: 34px; border-radius: 999px;
+  display: flex; align-items: center; justify-content: center;
+  color: #07100C;
+  background: var(--rb-accent, #FFC84B);
+  opacity: 0; transform: translateY(5px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.rb-card:hover .rb-go, .rb-card:focus-visible .rb-go { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-card, .rb-shot, .rb-go, .rb-filter { transition: none; }
+  .rb-card:hover { transform: none; }
+  .rb-card:hover .rb-shot { transform: none; }
+}

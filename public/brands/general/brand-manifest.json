@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "slug": "general",
+  "assetDirectory": "general",
+  "name": "GENERAL WORK",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 6,
+    "exactDuplicates": [],
+    "nearDuplicates": [],
+    "highestResolutionReferences": [
+      "4.jpeg",
+      "5.png",
+      "6.jpeg",
+      "1.jpg",
+      "2.png",
+      "3.png"
+    ],
+    "assets": [
+      {
+        "filename": "1.jpg",
+        "extension": ".jpg",
+        "bytes": 1317847,
+        "sha256": "3c3ad1b59ef0334b6701aeea608dc56c7eb9abceeba9f2eea1181257a8bc7ad2",
+        "source": "existing",
+        "width": 1507,
+        "height": 2261,
+        "mode": "RGB",
+        "averageHash": "00223e7e3e3c0400",
+        "palette": [
+          "#000000",
+          "#120000",
+          "#230301",
+          "#4A1106",
+          "#89543E"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "2.png",
+        "extension": ".png",
+        "bytes": 2517839,
+        "sha256": "c3afb7987fdadf94bafa0d81759664258f1dca1765d455edc122c2c4ecfa534c",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "81fef7e77f081000",
+        "palette": [
+          "#12191B",
+          "#385468",
+          "#5F95B7",
+          "#A5B0C4",
+          "#BECCDF"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "3.png",
+        "extension": ".png",
+        "bytes": 2167265,
+        "sha256": "39eff1d8dbaf996c23eeecfc5da967f4e055126334e807fd4aa4842772a8566b",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "00361e1f1f1c160f",
+        "palette": [
+          "#070000",
+          "#190100",
+          "#250601",
+          "#3F1002",
+          "#773A16"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "4.jpeg",
+        "extension": ".jpeg",
+        "bytes": 18321154,
+        "sha256": "dbc7fda4c706d250b71d06878a8cd5ac99a5616deb1dbd0cd6394471d8c8ea08",
+        "source": "existing",
+        "width": 6000,
+        "height": 7000,
+        "mode": "RGB",
+        "averageHash": "58703a7efa1c1e36",
+        "palette": [
+          "#574432",
+          "#BBA980",
+          "#0C0C0C",
+          "#0F0F0F",
+          "#221514"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "5.png",
+        "extension": ".png",
+        "bytes": 26352696,
+        "sha256": "f77fe65cae1b97f918e62b07161d3c392f7ba97234ee9e0e78dae4be8c22654f",
+        "source": "existing",
+        "width": 6000,
+        "height": 6000,
+        "mode": "RGBA",
+        "averageHash": "0000183c3c1c7eff",
+        "palette": [
+          "#292A2A",
+          "#1E1E1E",
+          "#373A3B",
+          "#4D5357",
+          "#4A89A5"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "6.jpeg",
+        "extension": ".jpeg",
+        "bytes": 5736401,
+        "sha256": "3bcd0a13ffdaaf4eb6c081988d683f3f7f6bcbc955f5451686f818dff48ca11a",
+        "source": "existing",
+        "width": 3000,
+        "height": 4000,
+        "mode": "RGB",
+        "averageHash": "3e7e7e7ee6400000",
+        "palette": [
+          "#9B9989",
+          "#D2DAD7",
+          "#312922",
+          "#565450",
+          "#7D6C4E"
+        ],
+        "type": "website"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Mixed Media",
+    "primaryColors": [
+      "#000000",
+      "#120000",
+      "#230301"
+    ],
+    "secondaryColors": [
+      "#12191B",
+      "#385468",
+      "#5F95B7",
+      "#070000"
+    ],
+    "visualMood": "A selection of creative work spanning photography, digital art, and experimental visuals that don't fit neatly into a single category.",
+    "lightingStyle": "polished studio light adapted to each featured artwork",
+    "compositionStyle": "curated AYESMAJ experimental-gallery rhythm with intentional contrast",
+    "materials": [
+      "glass",
+      "gloss packaging",
+      "cinematic print",
+      "CGI surfaces"
+    ],
+    "keywords": [
+      "Photography",
+      "Digital Art",
+      "Experimental"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "campaign": [
+      "3.png",
+      "4.jpeg"
+    ],
+    "packaging": [
+      "1.jpg",
+      "2.png"
+    ],
+    "website": [
+      "5.png",
+      "6.jpeg"
+    ]
+  },
+  "missingAssets": [
+    "identity-system",
+    "social-system",
+    "storyboard",
+    "brand-world-master"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "5.png",
+        "3.png",
+        "2.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "3.png",
+        "2.png",
+        "5.png"
+      ],
+      "preparedReferences": [
+        "general/ref-1.jpg",
+        "general/ref-2.jpg",
+        "general/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: GENERAL WORK\nCategory: Mixed Media\nBrand character: A selection of creative work spanning photography, digital art, and experimental visuals that don't fit neatly into a single category.\nInput images: Image 1: source-of-truth brand reference (3.png); Image 2: source-of-truth brand reference (2.png); Image 3: source-of-truth brand reference (5.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: curated AYESMAJ experimental-gallery rhythm with intentional contrast\nLighting/mood: polished studio light adapted to each featured artwork\nColor palette: #000000, #120000, #230301, #12191B, #385468, #5F95B7, #070000\nMaterials/textures: glass, gloss packaging, cinematic print, CGI surfaces\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "3.png",
+        "2.png",
+        "5.png"
+      ],
+      "preparedReferences": [
+        "general/ref-1.jpg",
+        "general/ref-2.jpg",
+        "general/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: GENERAL WORK\nCategory: Mixed Media\nBrand character: A selection of creative work spanning photography, digital art, and experimental visuals that don't fit neatly into a single category.\nInput images: Image 1: source-of-truth brand reference (3.png); Image 2: source-of-truth brand reference (2.png); Image 3: source-of-truth brand reference (5.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: curated AYESMAJ experimental-gallery rhythm with intentional contrast\nLighting/mood: polished studio light adapted to each featured artwork\nColor palette: #000000, #120000, #230301, #12191B, #385468, #5F95B7, #070000\nMaterials/textures: glass, gloss packaging, cinematic print, CGI surfaces\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "identity-system",
+      "filename": "generated/identity/identity-system.webp",
+      "source": "composited-from-originals",
+      "references": [
+        "2.png",
+        "3.png",
+        "5.png",
+        "6.jpeg"
+      ],
+      "model": null,
+      "quality": "deterministic-original-media",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": null,
+      "status": "approved",
+      "operation": "safe-archive-composition",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "composited-from-originals",
+      "references": [
+        "2.png",
+        "3.png",
+        "5.png",
+        "6.jpeg"
+      ],
+      "model": null,
+      "quality": "deterministic-original-media",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": null,
+      "status": "approved",
+      "operation": "safe-archive-composition",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "5.png",
+        "3.png",
+        "2.png"
+      ],
+      "preparedReferences": [
+        "general/ref-1.jpg",
+        "general/ref-2.jpg",
+        "general/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: GENERAL WORK\nCategory: Mixed Media\nBrand character: A selection of creative work spanning photography, digital art, and experimental visuals that don't fit neatly into a single category.\nInput images: Image 1: source-of-truth brand reference (5.png); Image 2: source-of-truth brand reference (3.png); Image 3: source-of-truth brand reference (2.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: curated AYESMAJ experimental-gallery rhythm with intentional contrast\nLighting/mood: polished studio light adapted to each featured artwork\nColor palette: #000000, #120000, #230301, #12191B, #385468, #5F95B7, #070000\nMaterials/textures: glass, gloss packaging, cinematic print, CGI surfaces\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "social-system",
+    "storyboard",
+    "identity-system",
+    "brand-world-master"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 4,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/general.jpg"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "slug": "interior-design",
+  "prompt": "Ultra-premium cinematic portfolio cover for the \"INTERIOR DESIGN\" project (Architectural Visualisation). CRITICAL: keep the product, packaging shape, label text and logo EXACTLY as they appear in the reference image — do not redraw, invent or alter ANY text, logo or label. Elevate everything around it: dramatic cinematic campaign lighting, richer premium environment, stronger depth and composition, refined color grading true to the brand's own palette. One clear focal point, gallery-grade, real campaign-cover energy. 4:5 portrait. No added text, no watermark.",
+  "reference": "brands/interior-design/1.jpeg",
+  "model": "gpt-image-2",
+  "size": "1024x1536",
+  "usage": "portfolio cover",
+  "generated": "2026-08-06T02:00:49.975Z"
+}

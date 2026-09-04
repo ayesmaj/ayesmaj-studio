@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "slug": "ashe",
+  "assetDirectory": "ashe",
+  "name": "ASHÉ",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 10,
+    "exactDuplicates": [],
+    "nearDuplicates": [],
+    "highestResolutionReferences": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "assets": [
+      {
+        "filename": "1.png",
+        "extension": ".png",
+        "bytes": 2605408,
+        "sha256": "409e76cf2d09c4cb63c3f1da14dcc033fef3a984871a8381fca1f0319c155930",
+        "source": "existing",
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "047c7e6647667e00",
+        "palette": [
+          "#2C1A16",
+          "#3C241D",
+          "#160F0E",
+          "#4E2E24",
+          "#6D4534"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "2.png",
+        "extension": ".png",
+        "bytes": 2330084,
+        "sha256": "7858b99c8dea892e2957dc6400d93160d472dfc700c16a6f2e076a16048114fd",
+        "source": "existing",
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "047effdffb600000",
+        "palette": [
+          "#1B120F",
+          "#0C0A0A",
+          "#2D1C15",
+          "#3B251C",
+          "#583A29"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "3.png",
+        "extension": ".png",
+        "bytes": 2710061,
+        "sha256": "6024dfd1135b51fa168dacef27d186d07c58907d4ff19abf58a199ec3afc8792",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "27272f3727272e18",
+        "palette": [
+          "#110F0F",
+          "#171515",
+          "#0A0A0A",
+          "#201C1B",
+          "#3F3127"
+        ],
+        "type": "identity"
+      },
+      {
+        "filename": "4.png",
+        "extension": ".png",
+        "bytes": 2507988,
+        "sha256": "b6f9f3a07129f2ec30ada0cf57143b195e836980d3ff934ecea639dc539cbd7f",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "7eee0030f9006762",
+        "palette": [
+          "#221411",
+          "#100C0C",
+          "#301E18",
+          "#44281F",
+          "#673E2C"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "5.png",
+        "extension": ".png",
+        "bytes": 2695854,
+        "sha256": "30e356e1c79a6a5f4b86b1188776448aee606fe6a2a541917b8935f1974fca93",
+        "source": "existing",
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "0c3e9e7bfb060600",
+        "palette": [
+          "#221411",
+          "#120B0B",
+          "#321E19",
+          "#452A21",
+          "#694330"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "6.png",
+        "extension": ".png",
+        "bytes": 2456815,
+        "sha256": "ca76ccc2df2d2303f5d11a7f8127fd5e88b679a3a0706a73680e6443800e5f7a",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "0c3e7778b0d87e04",
+        "palette": [
+          "#391A11",
+          "#21110E",
+          "#482418",
+          "#582E1E",
+          "#874A2B"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "7.png",
+        "extension": ".png",
+        "bytes": 1855857,
+        "sha256": "d86be596231d6cb1323cb6637d5edb726166e571aa085b3cc31ab14fec695500",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "002430fefafe0c03",
+        "palette": [
+          "#030101",
+          "#130603",
+          "#2A120A",
+          "#4D2212",
+          "#92502E"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "8.png",
+        "extension": ".png",
+        "bytes": 2082400,
+        "sha256": "0d6ecc202d26299e364914cea7e85f3efd7a6818f7e13c308874911ed4d38078",
+        "source": "existing",
+        "width": 1024,
+        "height": 1536,
+        "mode": "RGB",
+        "averageHash": "0018feef47c0fe1c",
+        "palette": [
+          "#251914",
+          "#080504",
+          "#100B09",
+          "#4E372C",
+          "#190F0B"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "9.png",
+        "extension": ".png",
+        "bytes": 1321949,
+        "sha256": "34fc27e8dac07ce0944da727f10ea24a9af2d7f9ea4f850394bb4a54f3920ea7",
+        "source": "existing",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "003c1c1c4cc2c307",
+        "palette": [
+          "#121212",
+          "#010101",
+          "#333029",
+          "#060606",
+          "#030202"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "logo ashe.png",
+        "extension": ".png",
+        "bytes": 1775620,
+        "sha256": "531ef60d9aa68f3e6a3f911ad09f4a47f176925685db802a75ab008f59b95371",
+        "source": "existing",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "3f3f3f1e3c1c0000",
+        "palette": [
+          "#0D0D0D",
+          "#050505",
+          "#181818",
+          "#272626",
+          "#62543A"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Brand Identity & Campaign",
+    "primaryColors": [
+      "#221411",
+      "#2C1A16",
+      "#3C241D"
+    ],
+    "secondaryColors": [
+      "#160F0E",
+      "#1B120F",
+      "#0C0A0A",
+      "#2D1C15"
+    ],
+    "visualMood": "A dark, ritual-inspired coffee brand fusing spiritual depth with artisan roasting culture. Full visual identity, packaging, and campaign direction.",
+    "lightingStyle": "low-key amber firelight with ember rim lighting",
+    "compositionStyle": "ritual still life, centered coffee packaging, dramatic earth-and-smoke depth",
+    "materials": [
+      "black paper",
+      "gold foil",
+      "roasted coffee",
+      "smoke",
+      "charred earth"
+    ],
+    "keywords": [
+      "Brand Identity",
+      "Packaging",
+      "Campaign"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "campaign": [
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png"
+    ],
+    "identity": [
+      "3.png"
+    ],
+    "logo": [
+      "logo ashe.png"
+    ],
+    "packaging": [
+      "8.png",
+      "9.png"
+    ],
+    "website": [
+      "1.png",
+      "2.png"
+    ]
+  },
+  "missingAssets": [
+    "social-system",
+    "storyboard",
+    "brand-world-master"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "1.png",
+        "3.png",
+        "logo ashe.png",
+        "4.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "4.png",
+        "8.png",
+        "1.png",
+        "3.png"
+      ],
+      "preparedReferences": [
+        "ashe/ref-1.jpg",
+        "ashe/ref-2.jpg",
+        "ashe/ref-3.jpg",
+        "ashe/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: ASHÉ\nCategory: Brand Identity & Campaign\nBrand character: A dark, ritual-inspired coffee brand fusing spiritual depth with artisan roasting culture. Full visual identity, packaging, and campaign direction.\nInput images: Image 1: source-of-truth brand reference (4.png); Image 2: source-of-truth brand reference (8.png); Image 3: source-of-truth brand reference (1.png); Image 4: source-of-truth brand reference (3.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: ritual still life, centered coffee packaging, dramatic earth-and-smoke depth\nLighting/mood: low-key amber firelight with ember rim lighting\nColor palette: #221411, #2C1A16, #3C241D, #160F0E, #1B120F, #0C0A0A, #2D1C15\nMaterials/textures: black paper, gold foil, roasted coffee, smoke, charred earth\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "4.png",
+        "1.png",
+        "8.png",
+        "3.png"
+      ],
+      "preparedReferences": [
+        "ashe/ref-1.jpg",
+        "ashe/ref-2.jpg",
+        "ashe/ref-3.jpg",
+        "ashe/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: ASHÉ\nCategory: Brand Identity & Campaign\nBrand character: A dark, ritual-inspired coffee brand fusing spiritual depth with artisan roasting culture. Full visual identity, packaging, and campaign direction.\nInput images: Image 1: source-of-truth brand reference (4.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (8.png); Image 4: source-of-truth brand reference (3.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: ritual still life, centered coffee packaging, dramatic earth-and-smoke depth\nLighting/mood: low-key amber firelight with ember rim lighting\nColor palette: #221411, #2C1A16, #3C241D, #160F0E, #1B120F, #0C0A0A, #2D1C15\nMaterials/textures: black paper, gold foil, roasted coffee, smoke, charred earth\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "4.png",
+        "8.png",
+        "1.png",
+        "3.png"
+      ],
+      "preparedReferences": [
+        "ashe/ref-1.jpg",
+        "ashe/ref-2.jpg",
+        "ashe/ref-3.jpg",
+        "ashe/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: ASHÉ\nCategory: Brand Identity & Campaign\nBrand character: A dark, ritual-inspired coffee brand fusing spiritual depth with artisan roasting culture. Full visual identity, packaging, and campaign direction.\nInput images: Image 1: source-of-truth brand reference (4.png); Image 2: source-of-truth brand reference (8.png); Image 3: source-of-truth brand reference (1.png); Image 4: source-of-truth brand reference (3.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: ritual still life, centered coffee packaging, dramatic earth-and-smoke depth\nLighting/mood: low-key amber firelight with ember rim lighting\nColor palette: #221411, #2C1A16, #3C241D, #160F0E, #1B120F, #0C0A0A, #2D1C15\nMaterials/textures: black paper, gold foil, roasted coffee, smoke, charred earth\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "1.png",
+        "3.png",
+        "logo ashe.png",
+        "4.png"
+      ],
+      "preparedReferences": [
+        "ashe/ref-1.jpg",
+        "ashe/ref-2.jpg",
+        "ashe/ref-3.jpg",
+        "ashe/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: ASHÉ\nCategory: Brand Identity & Campaign\nBrand character: A dark, ritual-inspired coffee brand fusing spiritual depth with artisan roasting culture. Full visual identity, packaging, and campaign direction.\nInput images: Image 1: source-of-truth brand reference (1.png); Image 2: source-of-truth brand reference (3.png); Image 3: source-of-truth brand reference (logo ashe.png); Image 4: source-of-truth brand reference (4.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: ritual still life, centered coffee packaging, dramatic earth-and-smoke depth\nLighting/mood: low-key amber firelight with ember rim lighting\nColor palette: #221411, #2C1A16, #3C241D, #160F0E, #1B120F, #0C0A0A, #2D1C15\nMaterials/textures: black paper, gold foil, roasted coffee, smoke, charred earth\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "social-system",
+    "brand-world-master",
+    "storyboard"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 3,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/ashe.jpg"
+  }
+}

@@ -1,0 +1,740 @@
+{
+  "schemaVersion": 1,
+  "slug": "interior-design",
+  "assetDirectory": "interior-design",
+  "name": "INTERIOR DESIGN",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 18,
+    "exactDuplicates": [],
+    "nearDuplicates": [
+      {
+        "files": [
+          "17.jpeg",
+          "3.jpeg"
+        ],
+        "hashDistance": 3
+      }
+    ],
+    "highestResolutionReferences": [
+      "7.jpeg",
+      "1.jpeg",
+      "16.jpeg",
+      "4.jpeg",
+      "6.jpeg",
+      "9.jpeg",
+      "15.jpeg",
+      "17.jpeg"
+    ],
+    "assets": [
+      {
+        "filename": "1.jpeg",
+        "extension": ".jpeg",
+        "bytes": 179223,
+        "sha256": "2cf9decfbc75899f2d7cd5f8a88e0f56f50a9bc6f8f340497a0c480639b3d725",
+        "source": "existing",
+        "width": 1142,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "3c3c3c003fffff00",
+        "palette": [
+          "#AAAFAF",
+          "#282B2E",
+          "#6E7373",
+          "#C7CAC7",
+          "#E0E2DD"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "10.jpeg",
+        "extension": ".jpeg",
+        "bytes": 234759,
+        "sha256": "276018f8d53aa83fe79005600b5e2a506cf55c31673096056a4972329584b9f6",
+        "source": "existing",
+        "width": 933,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "01017dffdf0000ff",
+        "palette": [
+          "#383C3F",
+          "#27262C",
+          "#A6937E",
+          "#7B6E63",
+          "#CEC9BA"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "11.jpeg",
+        "extension": ".jpeg",
+        "bytes": 262966,
+        "sha256": "40b5c104528b79b03696916ea2b0a0cf5c94e586f7735e8bab929e9a0fbda9ed",
+        "source": "existing",
+        "width": 933,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "0700c3664cffffff",
+        "palette": [
+          "#5F5E59",
+          "#1D1B17",
+          "#4A473F",
+          "#6C6A65",
+          "#908E87"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "12.jpeg",
+        "extension": ".jpeg",
+        "bytes": 318492,
+        "sha256": "336f9d4ffd9ff3041d41eca9e612cd522178c21b9aa03f329080ffa35d2b5b29",
+        "source": "existing",
+        "width": 933,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "0091817f2701ff3f",
+        "palette": [
+          "#5A5956",
+          "#8F8E8A",
+          "#181816",
+          "#2A2927",
+          "#3F3E3B"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "13.jpeg",
+        "extension": ".jpeg",
+        "bytes": 255520,
+        "sha256": "15174ae8847c11de13b69e65df0149585bf5d39e20bc668672f6da492958e540",
+        "source": "existing",
+        "width": 933,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "81a1bdffffff0000",
+        "palette": [
+          "#3D3A3A",
+          "#848383",
+          "#272626",
+          "#625E5A",
+          "#A3A99C"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "14.jpeg",
+        "extension": ".jpeg",
+        "bytes": 257775,
+        "sha256": "3a92438c2fc021db429de4be57643623653bff2fc630debe42ca9839084af807",
+        "source": "existing",
+        "width": 933,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "81813c7effff183c",
+        "palette": [
+          "#706F6E",
+          "#2E2E2E",
+          "#4B4B4A",
+          "#999796",
+          "#5F5959"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "15.jpeg",
+        "extension": ".jpeg",
+        "bytes": 205130,
+        "sha256": "3d5d3c496556cff56af1fcb2c36a9a3d024c408e5eea30f6e0f91f9577f283e9",
+        "source": "existing",
+        "width": 1141,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "ff7e3e3e3fff8180",
+        "palette": [
+          "#D7D6D6",
+          "#CAC9C8",
+          "#988366",
+          "#E4E4E4",
+          "#DFDFDF"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "16.jpeg",
+        "extension": ".jpeg",
+        "bytes": 297461,
+        "sha256": "084cb88eb10dda9bf83741acf81b9743192140f9b5f8dfe46bc401ca31041104",
+        "source": "existing",
+        "width": 1142,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "c3c3c3fff7e3c300",
+        "palette": [
+          "#BEB1A1",
+          "#755E4B",
+          "#9C8D7B",
+          "#E8E7E5",
+          "#D4CBBF"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "17.jpeg",
+        "extension": ".jpeg",
+        "bytes": 266508,
+        "sha256": "a4b34c7b1014b5c7a07bc22ca75e700f46711867f6e714a134b67da8643d9f8f",
+        "source": "existing",
+        "width": 1141,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "7f7f7f3f07000000",
+        "palette": [
+          "#76716B",
+          "#524E49",
+          "#C8C6C3",
+          "#A49F97",
+          "#E6E6E4"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "18.jpeg",
+        "extension": ".jpeg",
+        "bytes": 161282,
+        "sha256": "4a44816ba8644764b72a5fe9778f0f2141a7a59cbca5f54332bb093ea03aceba",
+        "source": "existing",
+        "width": 933,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "c7c7c78303010101",
+        "palette": [
+          "#2E2A25",
+          "#1C1916",
+          "#474139",
+          "#6D6559",
+          "#B1AA9D"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "2.jpeg",
+        "extension": ".jpeg",
+        "bytes": 45793,
+        "sha256": "504453b9ed75148b94564c591d0311253f4d2044e75dab7b0de7a9b5fed23739",
+        "source": "existing",
+        "width": 568,
+        "height": 768,
+        "mode": "RGB",
+        "averageHash": "c3c3ff3c20e0e1ff",
+        "palette": [
+          "#C7C4B8",
+          "#CECCC1",
+          "#D3D0C5",
+          "#A5A194",
+          "#D9D7CE"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "3.jpeg",
+        "extension": ".jpeg",
+        "bytes": 203204,
+        "sha256": "e866671de1b98a25832e71fdd4eb2c2ad51d64fb5204eac87acc57def25ec1e0",
+        "source": "existing",
+        "width": 1141,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "7f7fff3f07030000",
+        "palette": [
+          "#EAE8E6",
+          "#C8AF9F",
+          "#654A3B",
+          "#8A6D5D",
+          "#A3897A"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "4.jpeg",
+        "extension": ".jpeg",
+        "bytes": 251833,
+        "sha256": "0161b9673ed8cddddd8026ba62d29908933877ecc6edf115bc16895c40dcd534",
+        "source": "existing",
+        "width": 1142,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "d2c000fefffff000",
+        "palette": [
+          "#473C31",
+          "#685745",
+          "#1F1B17",
+          "#7B6550",
+          "#8B7863"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "5.jpeg",
+        "extension": ".jpeg",
+        "bytes": 173867,
+        "sha256": "491c3351f0d2897d72c1fd584f902824d6b67a13edb7d42e66fff4967081a8cb",
+        "source": "existing",
+        "width": 933,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "0001007fffffff7f",
+        "palette": [
+          "#BBBAB3",
+          "#565234",
+          "#9D9E8A",
+          "#CFCFCA",
+          "#E9E9E7"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "6.jpeg",
+        "extension": ".jpeg",
+        "bytes": 272072,
+        "sha256": "b22a7bc3e53af95eb5ba9350b15ea9b9d8dad315d7403fc973dfae3796b04d2d",
+        "source": "existing",
+        "width": 1142,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "001000c38181ffff",
+        "palette": [
+          "#181510",
+          "#5C5349",
+          "#2E2922",
+          "#80766A",
+          "#A2988B"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "7.jpeg",
+        "extension": ".jpeg",
+        "bytes": 139764,
+        "sha256": "eace193da2c62c8715b9a622ec79118875ccecbb45b1bf21359b2a72c3dbb2b9",
+        "source": "existing",
+        "width": 1143,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "81a100ffffffffff",
+        "palette": [
+          "#E1E0DE",
+          "#E9E8E7",
+          "#E7E6E4",
+          "#C5B6AF",
+          "#EEEDEC"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "8.jpeg",
+        "extension": ".jpeg",
+        "bytes": 176905,
+        "sha256": "a64f12437b130dce787f80263db4cf6d05863bf7773496ed0198603b9c2a1d31",
+        "source": "existing",
+        "width": 1141,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "ffffff0303030300",
+        "palette": [
+          "#262420",
+          "#45423C",
+          "#82807A",
+          "#B8B7B4",
+          "#DEDCD9"
+        ],
+        "type": "other"
+      },
+      {
+        "filename": "9.jpeg",
+        "extension": ".jpeg",
+        "bytes": 270776,
+        "sha256": "ddb8bc5f6ecb710de1c665aff84a413674129dda782357887522c975c27bad25",
+        "source": "existing",
+        "width": 1142,
+        "height": 1600,
+        "mode": "RGB",
+        "averageHash": "ffffff0101000000",
+        "palette": [
+          "#4C433B",
+          "#2B2521",
+          "#BABAB9",
+          "#DCDCDB",
+          "#837C73"
+        ],
+        "type": "other"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Architectural Visualisation",
+    "primaryColors": [
+      "#AAAFAF",
+      "#282B2E",
+      "#6E7373"
+    ],
+    "secondaryColors": [
+      "#383C3F",
+      "#27262C",
+      "#A6937E",
+      "#5F5E59"
+    ],
+    "visualMood": "Photoreal architectural visualization of bespoke interiors, balancing warm materials, precise staging, rich ambient light, and commercial spatial storytelling.",
+    "lightingStyle": "warm architectural daylight with refined ambient pools",
+    "compositionStyle": "wide staged interiors, clean geometry, and tactile close details",
+    "materials": [
+      "timber",
+      "stone",
+      "brass",
+      "linen",
+      "woven textiles"
+    ],
+    "keywords": [
+      "Architectural Visualization",
+      "3D Render",
+      "Interior",
+      "CGI"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "other": [
+      "1.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg",
+      "13.jpeg",
+      "14.jpeg",
+      "15.jpeg",
+      "16.jpeg",
+      "17.jpeg",
+      "18.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg"
+    ]
+  },
+  "missingAssets": [
+    "identity-system",
+    "website-responsive",
+    "social-system",
+    "campaign-system",
+    "storyboard",
+    "brand-world-master",
+    "cgi-hero"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "7.jpeg",
+        "1.jpeg",
+        "16.jpeg",
+        "4.jpeg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "7.jpeg",
+        "1.jpeg",
+        "16.jpeg",
+        "4.jpeg"
+      ],
+      "preparedReferences": [
+        "interior-design/ref-1.jpg",
+        "interior-design/ref-2.jpg",
+        "interior-design/ref-3.jpg",
+        "interior-design/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: INTERIOR DESIGN\nCategory: Architectural Visualisation\nBrand character: Photoreal architectural visualization of bespoke interiors, balancing warm materials, precise staging, rich ambient light, and commercial spatial storytelling.\nInput images: Image 1: source-of-truth brand reference (7.jpeg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (16.jpeg); Image 4: source-of-truth brand reference (4.jpeg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: wide staged interiors, clean geometry, and tactile close details\nLighting/mood: warm architectural daylight with refined ambient pools\nColor palette: #AAAFAF, #282B2E, #6E7373, #383C3F, #27262C, #A6937E, #5F5E59\nMaterials/textures: timber, stone, brass, linen, woven textiles\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "identity-system",
+      "filename": "generated/identity/identity-system.webp",
+      "source": "generated",
+      "references": [
+        "7.jpeg",
+        "1.jpeg",
+        "16.jpeg",
+        "4.jpeg"
+      ],
+      "preparedReferences": [
+        "interior-design/ref-1.jpg",
+        "interior-design/ref-2.jpg",
+        "interior-design/ref-3.jpg",
+        "interior-design/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: identity-system for an AYESMAJ portfolio case study\nPrimary request: Create a premium landscape identity-system presentation: the existing mark as the anchor, tactile color and material swatches, typographic rhythm represented without fake readable paragraphs, graphic motifs, and one restrained real-world application.\nBrand: INTERIOR DESIGN\nCategory: Architectural Visualisation\nBrand character: Photoreal architectural visualization of bespoke interiors, balancing warm materials, precise staging, rich ambient light, and commercial spatial storytelling.\nInput images: Image 1: source-of-truth brand reference (7.jpeg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (16.jpeg); Image 4: source-of-truth brand reference (4.jpeg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 editorial identity board with generous spacing, exact visual hierarchy, and a bright or atmospheric brand-appropriate surface; underlying brand composition language: wide staged interiors, clean geometry, and tactile close details\nLighting/mood: warm architectural daylight with refined ambient pools\nColor palette: #AAAFAF, #282B2E, #6E7373, #383C3F, #27262C, #A6937E, #5F5E59\nMaterials/textures: timber, stone, brass, linen, woven textiles\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "website-responsive",
+      "filename": "generated/web/website-responsive.webp",
+      "source": "generated",
+      "references": [
+        "7.jpeg",
+        "1.jpeg",
+        "16.jpeg",
+        "4.jpeg"
+      ],
+      "preparedReferences": [
+        "interior-design/ref-1.jpg",
+        "interior-design/ref-2.jpg",
+        "interior-design/ref-3.jpg",
+        "interior-design/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: website-responsive for an AYESMAJ portfolio case study\nPrimary request: Create a bespoke responsive website presentation for this exact brand across laptop, tablet, and phone. Screens must inherit the reference imagery, palette, product, and composition language and feel like one real premium website system.\nBrand: INTERIOR DESIGN\nCategory: Architectural Visualisation\nBrand character: Photoreal architectural visualization of bespoke interiors, balancing warm materials, precise staging, rich ambient light, and commercial spatial storytelling.\nInput images: Image 1: source-of-truth brand reference (7.jpeg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (16.jpeg); Image 4: source-of-truth brand reference (4.jpeg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 device-family studio scene with a clearly visible desktop hero, supporting mobile screens, and elegant depth; underlying brand composition language: wide staged interiors, clean geometry, and tactile close details\nLighting/mood: warm architectural daylight with refined ambient pools\nColor palette: #AAAFAF, #282B2E, #6E7373, #383C3F, #27262C, #A6937E, #5F5E59\nMaterials/textures: timber, stone, brass, linen, woven textiles\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "campaign-system",
+      "filename": "generated/campaign/campaign-system.webp",
+      "source": "generated",
+      "references": [
+        "7.jpeg",
+        "1.jpeg",
+        "16.jpeg",
+        "4.jpeg"
+      ],
+      "preparedReferences": [
+        "interior-design/ref-1.jpg",
+        "interior-design/ref-2.jpg",
+        "interior-design/ref-3.jpg",
+        "interior-design/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: campaign-system for an AYESMAJ portfolio case study\nPrimary request: Create a unified campaign family showing a hero advertising visual, a vertical poster, a digital display, and a secondary detail composition. Keep one clear campaign idea across every application.\nBrand: INTERIOR DESIGN\nCategory: Architectural Visualisation\nBrand character: Photoreal architectural visualization of bespoke interiors, balancing warm materials, precise staging, rich ambient light, and commercial spatial storytelling.\nInput images: Image 1: source-of-truth brand reference (7.jpeg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (16.jpeg); Image 4: source-of-truth brand reference (4.jpeg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 campaign presentation board with four deliberately different but related applications; underlying brand composition language: wide staged interiors, clean geometry, and tactile close details\nLighting/mood: warm architectural daylight with refined ambient pools\nColor palette: #AAAFAF, #282B2E, #6E7373, #383C3F, #27262C, #A6937E, #5F5E59\nMaterials/textures: timber, stone, brass, linen, woven textiles\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "7.jpeg",
+        "1.jpeg",
+        "16.jpeg",
+        "4.jpeg"
+      ],
+      "preparedReferences": [
+        "interior-design/ref-1.jpg",
+        "interior-design/ref-2.jpg",
+        "interior-design/ref-3.jpg",
+        "interior-design/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: INTERIOR DESIGN\nCategory: Architectural Visualisation\nBrand character: Photoreal architectural visualization of bespoke interiors, balancing warm materials, precise staging, rich ambient light, and commercial spatial storytelling.\nInput images: Image 1: source-of-truth brand reference (7.jpeg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (16.jpeg); Image 4: source-of-truth brand reference (4.jpeg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: wide staged interiors, clean geometry, and tactile close details\nLighting/mood: warm architectural daylight with refined ambient pools\nColor palette: #AAAFAF, #282B2E, #6E7373, #383C3F, #27262C, #A6937E, #5F5E59\nMaterials/textures: timber, stone, brass, linen, woven textiles\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "7.jpeg",
+        "1.jpeg",
+        "16.jpeg",
+        "4.jpeg"
+      ],
+      "preparedReferences": [
+        "interior-design/ref-1.jpg",
+        "interior-design/ref-2.jpg",
+        "interior-design/ref-3.jpg",
+        "interior-design/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: INTERIOR DESIGN\nCategory: Architectural Visualisation\nBrand character: Photoreal architectural visualization of bespoke interiors, balancing warm materials, precise staging, rich ambient light, and commercial spatial storytelling.\nInput images: Image 1: source-of-truth brand reference (7.jpeg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (16.jpeg); Image 4: source-of-truth brand reference (4.jpeg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: wide staged interiors, clean geometry, and tactile close details\nLighting/mood: warm architectural daylight with refined ambient pools\nColor palette: #AAAFAF, #282B2E, #6E7373, #383C3F, #27262C, #A6937E, #5F5E59\nMaterials/textures: timber, stone, brass, linen, woven textiles\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "cgi-hero",
+      "filename": "generated/cgi/cgi-hero.webp",
+      "source": "generated",
+      "references": [
+        "7.jpeg",
+        "1.jpeg",
+        "16.jpeg",
+        "4.jpeg"
+      ],
+      "preparedReferences": [
+        "interior-design/ref-1.jpg",
+        "interior-design/ref-2.jpg",
+        "interior-design/ref-3.jpg",
+        "interior-design/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: cgi-hero for an AYESMAJ portfolio case study\nPrimary request: Create a high-end CGI hero scene for the exact subject in the references, preserving its proportions and design while using premium materials, controlled energy, and a believable environment that explains the product or world.\nBrand: INTERIOR DESIGN\nCategory: Architectural Visualisation\nBrand character: Photoreal architectural visualization of bespoke interiors, balancing warm materials, precise staging, rich ambient light, and commercial spatial storytelling.\nInput images: Image 1: source-of-truth brand reference (7.jpeg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (16.jpeg); Image 4: source-of-truth brand reference (4.jpeg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 cinematic CGI frame with accurate geometry, strong scale cues, polished lighting, and one hero focal point; underlying brand composition language: wide staged interiors, clean geometry, and tactile close details\nLighting/mood: warm architectural daylight with refined ambient pools\nColor palette: #AAAFAF, #282B2E, #6E7373, #383C3F, #27262C, #A6937E, #5F5E59\nMaterials/textures: timber, stone, brass, linen, woven textiles\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "operation": "adopted-existing-output",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "7.jpeg",
+        "1.jpeg",
+        "16.jpeg",
+        "4.jpeg"
+      ],
+      "preparedReferences": [
+        "interior-design/ref-1.jpg",
+        "interior-design/ref-2.jpg",
+        "interior-design/ref-3.jpg",
+        "interior-design/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: INTERIOR DESIGN\nCategory: Architectural Visualisation\nBrand character: Photoreal architectural visualization of bespoke interiors, balancing warm materials, precise staging, rich ambient light, and commercial spatial storytelling.\nInput images: Image 1: source-of-truth brand reference (7.jpeg); Image 2: source-of-truth brand reference (1.jpeg); Image 3: source-of-truth brand reference (16.jpeg); Image 4: source-of-truth brand reference (4.jpeg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: wide staged interiors, clean geometry, and tactile close details\nLighting/mood: warm architectural daylight with refined ambient pools\nColor palette: #AAAFAF, #282B2E, #6E7373, #383C3F, #27262C, #A6937E, #5F5E59\nMaterials/textures: timber, stone, brass, linen, woven textiles\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "social-system",
+    "identity-system",
+    "website-responsive",
+    "campaign-system",
+    "brand-world-master",
+    "storyboard",
+    "cgi-hero"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 7,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/interior-design.jpg"
+  }
+}

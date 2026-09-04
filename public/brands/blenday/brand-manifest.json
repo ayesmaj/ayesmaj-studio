@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "blenday",
+  "name": "BLENDAY",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "completedAt": "2026-08-07",
+    "duplicates": [],
+    "highestResolutionReferences": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.webm",
+      "7.webm",
+      "logo-generated.png"
+    ],
+    "notes": [
+      "All still references are unique 1024x1536 campaign/product compositions.",
+      "6.webm is the berry campaign motion source at 1080x1920.",
+      "7.webm is the mango-coconut campaign motion source at 1080x1920.",
+      "The original MP4 files are retained, while the site uses optimized WebM copies."
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Premium frozen-fruit smoothie mix",
+    "audience": "Health-conscious, convenience-led customers who respond to vivid flavor, freshness, and energetic visual storytelling.",
+    "primaryColors": [
+      "deep violet",
+      "berry purple",
+      "cream white"
+    ],
+    "secondaryColors": [
+      "banana yellow",
+      "strawberry coral",
+      "blueberry blue",
+      "mango amber",
+      "coconut white",
+      "fresh leaf green"
+    ],
+    "visualMood": "Energetic, playful, fresh, tactile, premium, and cinematic.",
+    "lightingStyle": "High-contrast studio lighting with saturated color washes, bright product rim light, cold condensation highlights, and glossy liquid speculars.",
+    "compositionStyle": "Centered product-stage compositions with a pouch and smoothie cup, suspended fruit, high-speed liquid arcs, controlled depth, and strong vertical hierarchy.",
+    "materials": [
+      "soft-touch resealable pouch",
+      "glossy printed packaging",
+      "clear smoothie cup",
+      "frozen fruit",
+      "creamy liquid",
+      "ice and condensation"
+    ],
+    "logo": "Rounded uppercase BLENDAY wordmark paired with a smiling fruit-drop mark and the tagline Blend the Day.",
+    "packaging": "Resealable stand-up pouch with a white upper field, flavor-color top seal, product image system, and a transparent smoothie cup as the secondary hero object.",
+    "keyMotifs": [
+      "B-shaped liquid splash",
+      "suspended fruit",
+      "frozen freshness",
+      "flavor-specific monochromatic worlds",
+      "pouch-and-cup hero pairing"
+    ],
+    "typographyFeeling": "Bold rounded geometric sans for the wordmark and direct modern sans typography for campaign communication.",
+    "lockedInvariants": [
+      "Do not redesign the fruit-drop logo.",
+      "Do not alter the pouch silhouette or major white/color-block packaging architecture.",
+      "Do not publish generated spelling or fabricated label copy.",
+      "Keep each flavor world aligned to the established purple, yellow, coral, or amber systems.",
+      "Maintain photographic fruit realism and premium studio polish."
+    ]
+  },
+  "existingAssets": {
+    "logo": [
+      "logo-generated.png"
+    ],
+    "packaging": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png"
+    ],
+    "campaign": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png"
+    ],
+    "film": [
+      "6.webm",
+      "7.webm"
+    ],
+    "originalFilmMasters": [
+      "6.mp4",
+      "7.mp4"
+    ]
+  },
+  "missingAssets": [],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "logo-generated.png",
+        "1.png",
+        "2.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "filename": "generated/master/brand-world-master.webp",
+      "type": "brand-world-master",
+      "source": "generated",
+      "references": [
+        "logo-generated.png",
+        "1.png",
+        "2.png",
+        "3.png",
+        "4.png",
+        "generated/packaging/packaging-lineup.webp",
+        "generated/web/website-responsive.webp",
+        "generated/social/social-system.webp"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "purpose": "portfolio hero and brand-world summary",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      },
+      "approved": true,
+      "rejectedPredecessor": "generated/_rejected/brand-world-master-v1-unsupported-copy.webp",
+      "status": "approved"
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "logo-generated.png",
+        "1.png",
+        "2.png"
+      ],
+      "preparedReferences": [
+        "blenday/ref-1.jpg",
+        "blenday/ref-2.jpg",
+        "blenday/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: BLENDAY\nCategory: Premium frozen-fruit smoothie mix\nBrand character: Energetic, playful, fresh, tactile, premium, and cinematic.\nInput images: Image 1: source-of-truth brand reference (logo-generated.png); Image 2: source-of-truth brand reference (1.png); Image 3: source-of-truth brand reference (2.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: Centered product-stage compositions with a pouch and smoothie cup, suspended fruit, high-speed liquid arcs, controlled depth, and strong vertical hierarchy.\nLighting/mood: High-contrast studio lighting with saturated color washes, bright product rim light, cold condensation highlights, and glossy liquid speculars.\nColor palette: deep violet, berry purple, cream white, banana yellow, strawberry coral, blueberry blue, mango amber, coconut white, fresh leaf green\nMaterials/textures: soft-touch resealable pouch, glossy printed packaging, clear smoothie cup, frozen fruit, creamy liquid, ice and condensation\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 11,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/blenday.jpg"
+  }
+}

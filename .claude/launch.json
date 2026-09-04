@@ -1,1 +1,31 @@
-{"version":"0.0.1","configurations":[{"name":"ayesmaj","runtimeExecutable":"npm","runtimeArgs":["run","dev"],"port":5173}]}
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ayesmaj",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "autoPort": true
+    },
+    {
+      "name": "ayesmaj-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview"],
+      "port": 4173,
+      "autoPort": true
+    },
+    {
+      "name": "ayesmaj-estimator",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:\\Users\\smadj\\Documents\\ayesmaj-estimator", "run", "dev", "--", "-p", "3210"],
+      "port": 3210
+    },
+    {
+      "name": "house-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:\\Users\\smadj\\Downloads\\house-site", "run", "dev"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

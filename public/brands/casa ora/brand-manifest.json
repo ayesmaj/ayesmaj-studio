@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 1,
+  "slug": "casa-ora",
+  "assetDirectory": "casa ora",
+  "name": "CASA ORA",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 8,
+    "exactDuplicates": [],
+    "nearDuplicates": [],
+    "highestResolutionReferences": [
+      "ChatGPT Image May 25, 2026, 01_53_30 PM.png",
+      "ChatGPT Image May 25, 2026, 09_17_19 PM.png",
+      "ChatGPT Image May 25, 2026, 0s1_56_06 PM.png",
+      "ChatGPT Image May 25, 2026, 01_42_17 PM.png",
+      "ChatGPT Image May 25, 2026, 02_11_32 PM.png",
+      "logo casa ora shape.png",
+      "logo casa ora shape and text.png",
+      "casa ora logo.png"
+    ],
+    "assets": [
+      {
+        "filename": "casa ora logo.png",
+        "extension": ".png",
+        "bytes": 175062,
+        "sha256": "70afdcdf9529003a321e6655aed40a8d30eba58302b3b6cc52ea0cbf9397cc0d",
+        "source": "existing",
+        "width": 1365,
+        "height": 225,
+        "mode": "RGBA",
+        "averageHash": "7bcf9dc98d0d8e8e",
+        "palette": [
+          "#FFFFFF",
+          "#FEFEFE",
+          "#ADA290",
+          "#F7F5F2",
+          "#FFFFFE"
+        ],
+        "type": "logo"
+      },
+      {
+        "filename": "ChatGPT Image May 25, 2026, 01_42_17 PM.png",
+        "extension": ".png",
+        "bytes": 1272841,
+        "sha256": "8ff5ec43492cfc59b604ffc876abf6439a4849157f130d4753209f53f64d9441",
+        "source": "existing",
+        "width": 1536,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "3e0f2d7f6d4d386e",
+        "palette": [
+          "#FEFEFE",
+          "#F8F8FB",
+          "#DCE0E8",
+          "#FBFCFD",
+          "#FEFDFD"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "ChatGPT Image May 25, 2026, 01_53_30 PM.png",
+        "extension": ".png",
+        "bytes": 2136739,
+        "sha256": "e57225e4950e0493a6da4e2531a70ab3b776b80794e84aba3aa9e8f22b539e6c",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "ff7f3a10107f7ea1",
+        "palette": [
+          "#C8BFB2",
+          "#D6DADB",
+          "#8F7D5C",
+          "#F6F5F4",
+          "#E7EAEC"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "ChatGPT Image May 25, 2026, 02_11_32 PM.png",
+        "extension": ".png",
+        "bytes": 2419829,
+        "sha256": "0c3864628cc798b6a9e1614b95f2df20279554db409545a37e9cbae20eaacf5a",
+        "source": "existing",
+        "width": 1448,
+        "height": 1086,
+        "mode": "RGB",
+        "averageHash": "1f3f3f2f0b3f0700",
+        "palette": [
+          "#DCD4CA",
+          "#EAE4DB",
+          "#E5DED5",
+          "#C3B9AD",
+          "#EDE8E0"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "ChatGPT Image May 25, 2026, 09_17_19 PM.png",
+        "extension": ".png",
+        "bytes": 1384149,
+        "sha256": "f4e924793027829cfe11d8c674561e594c30c6bb00d644b8f08ee17b6e7b210a",
+        "source": "existing",
+        "width": 941,
+        "height": 1672,
+        "mode": "RGB",
+        "averageHash": "f88ffff0f0ffbfff",
+        "palette": [
+          "#FBFBFC",
+          "#FEFEFE",
+          "#F7F7F6",
+          "#989BA0",
+          "#FDFCFA"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "ChatGPT Image May 25, 2026, 0s1_56_06 PM.png",
+        "extension": ".png",
+        "bytes": 1821904,
+        "sha256": "fac658ae1bb3fe1eca0ca4189ba712ae163657a47fa45c46c2cdb5be80979a00",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "fffbfbf9f1b9d0c0",
+        "palette": [
+          "#D8D9DA",
+          "#B7B9B7",
+          "#353940",
+          "#E4E5E7",
+          "#EFEFF0"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "logo casa ora shape and text.png",
+        "extension": ".png",
+        "bytes": 394388,
+        "sha256": "8ee28ff8a15c3b5eb44bc1f99d7d05e9d794ded262687078c9919c47c256610d",
+        "source": "existing",
+        "width": 1408,
+        "height": 724,
+        "mode": "RGBA",
+        "averageHash": "ef9f9f87c7c78084",
+        "palette": [
+          "#FFFFFF",
+          "#F8F5F1",
+          "#CFC3B1",
+          "#FEFEFD",
+          "#FFFFFE"
+        ],
+        "type": "logo"
+      },
+      {
+        "filename": "logo casa ora shape.png",
+        "extension": ".png",
+        "bytes": 102915,
+        "sha256": "fe01d7ecc6136f686fc3d6adcd72c297923a307509adb24883aa1fb529aeaab1",
+        "source": "existing",
+        "width": 1448,
+        "height": 1086,
+        "mode": "RGBA",
+        "averageHash": "c3c3c3c3c3c3c3c3",
+        "palette": [
+          "#FFFFFF",
+          "#D5BA93",
+          "#F5EEE5",
+          "#FEFEFD",
+          "#FFFFFE"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Brand Identity & Digital Experience",
+    "primaryColors": [
+      "#FFFFFF",
+      "#FEFEFE",
+      "#ADA290"
+    ],
+    "secondaryColors": [
+      "#F8F8FB",
+      "#DCE0E8",
+      "#C8BFB2",
+      "#D6DADB"
+    ],
+    "visualMood": "A calm digital service brand that balances high-end residential taste with operational clarity across homeowner, contractor, and guest experiences.",
+    "lightingStyle": "airy residential daylight with soft golden-hour warmth",
+    "compositionStyle": "calm luxury-home editorial and precise product-dashboard clarity",
+    "materials": [
+      "limestone",
+      "linen",
+      "brass",
+      "glass",
+      "sun-washed plaster"
+    ],
+    "keywords": [
+      "Brand Identity",
+      "UI/UX",
+      "Digital Product",
+      "Web Design"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "campaign": [
+      "ChatGPT Image May 25, 2026, 09_17_19 PM.png"
+    ],
+    "logo": [
+      "casa ora logo.png",
+      "logo casa ora shape and text.png",
+      "logo casa ora shape.png"
+    ],
+    "website": [
+      "ChatGPT Image May 25, 2026, 01_42_17 PM.png",
+      "ChatGPT Image May 25, 2026, 01_53_30 PM.png",
+      "ChatGPT Image May 25, 2026, 02_11_32 PM.png",
+      "ChatGPT Image May 25, 2026, 0s1_56_06 PM.png"
+    ]
+  },
+  "missingAssets": [
+    "social-system",
+    "storyboard",
+    "brand-world-master",
+    "packaging-lineup",
+    "packaging-detail"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "ChatGPT Image May 25, 2026, 01_42_17 PM.png",
+        "casa ora logo.png",
+        "ChatGPT Image May 25, 2026, 09_17_19 PM.png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 25, 2026, 09_17_19 PM.png",
+        "ChatGPT Image May 25, 2026, 01_42_17 PM.png",
+        "casa ora logo.png"
+      ],
+      "preparedReferences": [
+        "casa-ora/ref-1.jpg",
+        "casa-ora/ref-2.jpg",
+        "casa-ora/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: CASA ORA\nCategory: Brand Identity & Digital Experience\nBrand character: A calm digital service brand that balances high-end residential taste with operational clarity across homeowner, contractor, and guest experiences.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 25, 2026, 09_17_19 PM.png); Image 2: source-of-truth brand reference (ChatGPT Image May 25, 2026, 01_42_17 PM.png); Image 3: source-of-truth brand reference (casa ora logo.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: calm luxury-home editorial and precise product-dashboard clarity\nLighting/mood: airy residential daylight with soft golden-hour warmth\nColor palette: #FFFFFF, #FEFEFE, #ADA290, #F8F8FB, #DCE0E8, #C8BFB2, #D6DADB\nMaterials/textures: limestone, linen, brass, glass, sun-washed plaster\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 25, 2026, 09_17_19 PM.png",
+        "ChatGPT Image May 25, 2026, 01_42_17 PM.png",
+        "casa ora logo.png"
+      ],
+      "preparedReferences": [
+        "casa-ora/ref-1.jpg",
+        "casa-ora/ref-2.jpg",
+        "casa-ora/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: CASA ORA\nCategory: Brand Identity & Digital Experience\nBrand character: A calm digital service brand that balances high-end residential taste with operational clarity across homeowner, contractor, and guest experiences.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 25, 2026, 09_17_19 PM.png); Image 2: source-of-truth brand reference (ChatGPT Image May 25, 2026, 01_42_17 PM.png); Image 3: source-of-truth brand reference (casa ora logo.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: calm luxury-home editorial and precise product-dashboard clarity\nLighting/mood: airy residential daylight with soft golden-hour warmth\nColor palette: #FFFFFF, #FEFEFE, #ADA290, #F8F8FB, #DCE0E8, #C8BFB2, #D6DADB\nMaterials/textures: limestone, linen, brass, glass, sun-washed plaster\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 25, 2026, 09_17_19 PM.png",
+        "ChatGPT Image May 25, 2026, 01_42_17 PM.png",
+        "casa ora logo.png"
+      ],
+      "preparedReferences": [
+        "casa-ora/ref-1.jpg",
+        "casa-ora/ref-2.jpg",
+        "casa-ora/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: CASA ORA\nCategory: Brand Identity & Digital Experience\nBrand character: A calm digital service brand that balances high-end residential taste with operational clarity across homeowner, contractor, and guest experiences.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 25, 2026, 09_17_19 PM.png); Image 2: source-of-truth brand reference (ChatGPT Image May 25, 2026, 01_42_17 PM.png); Image 3: source-of-truth brand reference (casa ora logo.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: calm luxury-home editorial and precise product-dashboard clarity\nLighting/mood: airy residential daylight with soft golden-hour warmth\nColor palette: #FFFFFF, #FEFEFE, #ADA290, #F8F8FB, #DCE0E8, #C8BFB2, #D6DADB\nMaterials/textures: limestone, linen, brass, glass, sun-washed plaster\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "packaging-detail",
+      "filename": "generated/packaging/packaging-detail.webp",
+      "source": "generated",
+      "references": [
+        "casa ora logo.png",
+        "ChatGPT Image May 25, 2026, 09_17_19 PM.png",
+        "ChatGPT Image May 25, 2026, 01_53_30 PM.png",
+        "ChatGPT Image May 25, 2026, 0s1_56_06 PM.png"
+      ],
+      "preparedReferences": [
+        "casa-ora/ref-1.jpg",
+        "casa-ora/ref-2.jpg",
+        "casa-ora/ref-3.jpg",
+        "casa-ora/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: product-mockup\nAsset type: packaging-detail for an AYESMAJ portfolio case study\nPrimary request: Create an art-directed macro packaging detail that celebrates the reference materials, print finish, label structure, surface texture, and product craftsmanship without inventing regulatory or nutritional copy.\nBrand: CASA ORA\nCategory: Brand Identity & Digital Experience\nBrand character: A calm digital service brand that balances high-end residential taste with operational clarity across homeowner, contractor, and guest experiences.\nInput images: Image 1: source-of-truth brand reference (casa ora logo.png); Image 2: source-of-truth brand reference (ChatGPT Image May 25, 2026, 09_17_19 PM.png); Image 3: source-of-truth brand reference (ChatGPT Image May 25, 2026, 01_53_30 PM.png); Image 4: source-of-truth brand reference (ChatGPT Image May 25, 2026, 0s1_56_06 PM.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 macro editorial crop with shallow depth, tactile lighting, and one unmistakable material focal point; underlying brand composition language: calm luxury-home editorial and precise product-dashboard clarity\nLighting/mood: airy residential daylight with soft golden-hour warmth\nColor palette: #FFFFFF, #FEFEFE, #ADA290, #F8F8FB, #DCE0E8, #C8BFB2, #D6DADB\nMaterials/textures: limestone, linen, brass, glass, sun-washed plaster\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "packaging-lineup",
+      "filename": "generated/packaging/packaging-lineup.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 25, 2026, 09_17_19 PM.png",
+        "casa ora logo.png",
+        "ChatGPT Image May 25, 2026, 01_53_30 PM.png",
+        "ChatGPT Image May 25, 2026, 0s1_56_06 PM.png"
+      ],
+      "preparedReferences": [
+        "casa-ora/ref-1.jpg",
+        "casa-ora/ref-2.jpg",
+        "casa-ora/ref-3.jpg",
+        "casa-ora/ref-4.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: product-mockup\nAsset type: packaging-lineup for an AYESMAJ portfolio case study\nPrimary request: Create a premium product-family lineup using only packaging architecture and variants supported by the references. Preserve the real product category, silhouettes, proportions, palette logic, and label placement.\nBrand: CASA ORA\nCategory: Brand Identity & Digital Experience\nBrand character: A calm digital service brand that balances high-end residential taste with operational clarity across homeowner, contractor, and guest experiences.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 25, 2026, 09_17_19 PM.png); Image 2: source-of-truth brand reference (casa ora logo.png); Image 3: source-of-truth brand reference (ChatGPT Image May 25, 2026, 01_53_30 PM.png); Image 4: source-of-truth brand reference (ChatGPT Image May 25, 2026, 0s1_56_06 PM.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 studio lineup with clean spacing, a strong hero item, secondary items, and refined material reflections; underlying brand composition language: calm luxury-home editorial and precise product-dashboard clarity\nLighting/mood: airy residential daylight with soft golden-hour warmth\nColor palette: #FFFFFF, #FEFEFE, #ADA290, #F8F8FB, #DCE0E8, #C8BFB2, #D6DADB\nMaterials/textures: limestone, linen, brass, glass, sun-washed plaster\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image May 25, 2026, 01_42_17 PM.png",
+        "casa ora logo.png",
+        "ChatGPT Image May 25, 2026, 09_17_19 PM.png"
+      ],
+      "preparedReferences": [
+        "casa-ora/ref-1.jpg",
+        "casa-ora/ref-2.jpg",
+        "casa-ora/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: CASA ORA\nCategory: Brand Identity & Digital Experience\nBrand character: A calm digital service brand that balances high-end residential taste with operational clarity across homeowner, contractor, and guest experiences.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image May 25, 2026, 01_42_17 PM.png); Image 2: source-of-truth brand reference (casa ora logo.png); Image 3: source-of-truth brand reference (ChatGPT Image May 25, 2026, 09_17_19 PM.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: calm luxury-home editorial and precise product-dashboard clarity\nLighting/mood: airy residential daylight with soft golden-hour warmth\nColor palette: #FFFFFF, #FEFEFE, #ADA290, #F8F8FB, #DCE0E8, #C8BFB2, #D6DADB\nMaterials/textures: limestone, linen, brass, glass, sun-washed plaster\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "storyboard",
+    "brand-world-master",
+    "social-system",
+    "packaging-detail",
+    "packaging-lineup"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 5,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/casa ora.jpg"
+  }
+}

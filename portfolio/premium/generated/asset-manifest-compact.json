@@ -1,0 +1,1382 @@
+[
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\generated\\cv-portrait.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\cv-portrait-22aee2cdfb12.jpg",
+    "label": "Portrait of Rafael Smadja",
+    "bytes": 17458
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\electric fuel america\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-1b1ff5ae4218.jpg",
+    "label": "Complete brand world",
+    "bytes": 16489
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\happy jack - whiskey\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-a211fb04d25b.jpg",
+    "label": "Complete brand world",
+    "bytes": 20103
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\podos ai\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-b8c6029cdb60.jpg",
+    "label": "Complete brand world",
+    "bytes": 16676
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ayesmaj studios\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-1866b6c3da83.jpg",
+    "label": "AYESMAJ Studios complete creative world",
+    "bytes": 18629
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ayesmaj studios\\logo ayesmaj color.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-ayesmaj-color-eb90560bec1e.jpg",
+    "label": "AYESMAJ Studios logo",
+    "bytes": 7734
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ayesmaj studios\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-257665802183.jpg",
+    "label": "AYESMAJ Studios - Responsive digital experience",
+    "bytes": 12886
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ayesmaj studios\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-380d62c1805b.jpg",
+    "label": "AYESMAJ Studios - Storyboard / film direction",
+    "bytes": 17654
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ayesmaj studios\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-30ffeda148dc.jpg",
+    "label": "AYESMAJ Studios - Social system",
+    "bytes": 16548
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ayesmaj studios\\ChatGPT Image Aug 4, 2026, 06_53_51 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-aug-4-2026-06-53-51-pm-2e08e260da96.jpg",
+    "label": "AYESMAJ Studios - Original application",
+    "bytes": 18611
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ayesmaj studios\\ChatGPT Image Aug 5, 2026, 12_02_52 AM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-aug-5-2026-12-02-52-am-6a5eb40bb9b5.jpg",
+    "label": "AYESMAJ Studios - Original application",
+    "bytes": 17166
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ayesmaj studios\\ChatGPT Image Jun 24, 2026, 05_18_25 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jun-24-2026-05-18-25-pm-dbcca6ce7304.jpg",
+    "label": "AYESMAJ Studios - Original application",
+    "bytes": 8622
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\electric fuel america\\electric-fuel-america-logo.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\electric-fuel-america-logo-90e8719b44ba.jpg",
+    "label": "Electric Fuel America logo",
+    "bytes": 7704
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\electric fuel america\\generated\\campaign\\campaign-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\campaign-system-947ae65805b9.jpg",
+    "label": "Electric Fuel America - Campaign system",
+    "bytes": 15816
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\electric fuel america\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-4a864a8a5ac0.jpg",
+    "label": "Electric Fuel America - Storyboard / film direction",
+    "bytes": 16714
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\electric fuel america\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-48de479f176b.jpg",
+    "label": "Electric Fuel America - Social system",
+    "bytes": 15652
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\electric fuel america\\ChatGPT Image Jul 31, 2026, 06_18_22 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jul-31-2026-06-18-22-pm-12a8cc378855.jpg",
+    "label": "Electric Fuel America - Original application",
+    "bytes": 14522
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\electric fuel america\\ChatGPT Image Aug 3, 2026, 05_37_16 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-aug-3-2026-05-37-16-pm-75510bca12a1.jpg",
+    "label": "Electric Fuel America - Original application",
+    "bytes": 15493
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\electric fuel america\\ChatGPT Image Jul 31, 2026, 05_51_57 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jul-31-2026-05-51-57-pm-9e2110559ea4.jpg",
+    "label": "Electric Fuel America - Original application",
+    "bytes": 23300
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\electric fuel america\\ChatGPT Image Aug 4, 2026, 06_54_49 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-aug-4-2026-06-54-49-pm-399901b7a9d7.jpg",
+    "label": "Electric Fuel America - Original application",
+    "bytes": 32641
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\podos ai\\podos logo.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\podos-logo-9ac856be0ab2.jpg",
+    "label": "PODOS AI logo",
+    "bytes": 8011
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\podos ai\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-cc305626ddb3.jpg",
+    "label": "PODOS AI - Responsive digital experience",
+    "bytes": 14245
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\podos ai\\generated\\campaign\\campaign-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\campaign-system-41d4e7a6ad3f.jpg",
+    "label": "PODOS AI - Campaign system",
+    "bytes": 16278
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\podos ai\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-137e4707ea02.jpg",
+    "label": "PODOS AI - Storyboard / film direction",
+    "bytes": 18763
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\podos ai\\generated\\cgi\\cgi-hero.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\cgi-hero-689e7352db21.jpg",
+    "label": "PODOS AI - CGI product hero",
+    "bytes": 18569
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\podos ai\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-436f4c070856.jpg",
+    "label": "PODOS AI - Social system",
+    "bytes": 16707
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\podos ai\\ChatGPT Image May 17, 2026, 03_29_19 PM (4).png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-may-17-2026-03-29-19-pm-4-8faf2f61caea.jpg",
+    "label": "PODOS AI - Original application",
+    "bytes": 7364
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\podos ai\\ChatGPT Image May 17, 2026, 02_38_48 PM (5).png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-may-17-2026-02-38-48-pm-5-fe4ea6544270.jpg",
+    "label": "PODOS AI - Original application",
+    "bytes": 14833
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\happy jack - whiskey\\happy-jack-logo-transparent.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\happy-jack-logo-transparent-df78b09b2864.jpg",
+    "label": "Happy Jack Distillers logo",
+    "bytes": 12271
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\happy jack - whiskey\\generated\\campaign\\campaign-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\campaign-system-a9a514e81d28.jpg",
+    "label": "Happy Jack Distillers - Campaign system",
+    "bytes": 19584
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\happy jack - whiskey\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-ca813ab1a6f7.jpg",
+    "label": "Happy Jack Distillers - Storyboard / film direction",
+    "bytes": 18506
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\happy jack - whiskey\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-049edbb75d6b.jpg",
+    "label": "Happy Jack Distillers - Social system",
+    "bytes": 18300
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\happy jack - whiskey\\Happy Jack Distillers (3).png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\happy-jack-distillers-3-a46e8190a7cb.jpg",
+    "label": "Happy Jack Distillers - Original application",
+    "bytes": 17020
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\happy jack - whiskey\\Happy Jack Distillers (1).png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\happy-jack-distillers-1-c3840f200c46.jpg",
+    "label": "Happy Jack Distillers - Original application",
+    "bytes": 20057
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\happy jack - whiskey\\Happy Jack Distillers (2).png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\happy-jack-distillers-2-2f2ed508de2f.jpg",
+    "label": "Happy Jack Distillers - Original application",
+    "bytes": 16125
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\happy jack - whiskey\\happy-jack-bottle.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\happy-jack-bottle-5e5cf3df4292.jpg",
+    "label": "Happy Jack Distillers - Original application",
+    "bytes": 15391
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\syntropic\\syntropic-logo.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\syntropic-logo-be40ca62bc9a.jpg",
+    "label": "Syntropic logo",
+    "bytes": 20931
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\syntropic\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-32e4d198b28c.jpg",
+    "label": "Syntropic - Responsive digital experience",
+    "bytes": 17790
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\syntropic\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-4141ae9e296d.jpg",
+    "label": "Syntropic - Storyboard / film direction",
+    "bytes": 17974
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\syntropic\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-742c4229a695.jpg",
+    "label": "Syntropic - Social system",
+    "bytes": 19786
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\syntropic\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-1204613f5f1e.jpg",
+    "label": "Syntropic - Complete brand world",
+    "bytes": 16034
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\syntropic\\generated\\film\\film-keyframes.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\film-keyframes-51057efa4cf2.jpg",
+    "label": "Syntropic - Film keyframes",
+    "bytes": 19281
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\syntropic\\ChatGPT Image May 11, 2026, 06_19_50 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-may-11-2026-06-19-50-pm-9a5290a30347.jpg",
+    "label": "Syntropic - Original application",
+    "bytes": 16224
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\syntropic\\ChatGPT Image May 18, 2026, 09_14_33 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-may-18-2026-09-14-33-pm-84713d2aefdb.jpg",
+    "label": "Syntropic - Original application",
+    "bytes": 15743
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\syntropic\\ChatGPT Image May 19, 2026, 03_55_37 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-may-19-2026-03-55-37-pm-e03903fb9c24.jpg",
+    "label": "Syntropic - Original application",
+    "bytes": 16576
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\casa ora\\casa ora logo.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\casa-ora-logo-a31d005abf9b.jpg",
+    "label": "Casa Ora logo",
+    "bytes": 4531
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\casa ora\\generated\\packaging\\packaging-lineup.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\packaging-lineup-dbb268491565.jpg",
+    "label": "Casa Ora - Packaging family",
+    "bytes": 14359
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\casa ora\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-744fb7c5f01b.jpg",
+    "label": "Casa Ora - Storyboard / film direction",
+    "bytes": 19303
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\casa ora\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-b11c979de240.jpg",
+    "label": "Casa Ora - Social system",
+    "bytes": 19494
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\casa ora\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-f56f3f17e3c1.jpg",
+    "label": "Casa Ora - Complete brand world",
+    "bytes": 17392
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\casa ora\\generated\\packaging\\packaging-detail.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\packaging-detail-0c770438b8f2.jpg",
+    "label": "Casa Ora - Packaging detail",
+    "bytes": 13661
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\casa ora\\ChatGPT Image May 25, 2026, 01_53_30 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-may-25-2026-01-53-30-pm-d9e9da410040.jpg",
+    "label": "Casa Ora - Original application",
+    "bytes": 17967
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\casa ora\\ChatGPT Image May 25, 2026, 01_42_17 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-may-25-2026-01-42-17-pm-a8ef5fe3bed0.jpg",
+    "label": "Casa Ora - Original application",
+    "bytes": 12749
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\casa ora\\ChatGPT Image May 25, 2026, 09_17_19 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-may-25-2026-09-17-19-pm-570cf3dc393b.jpg",
+    "label": "Casa Ora - Original application",
+    "bytes": 14177
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\rebound\\generated\\campaign\\campaign-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\campaign-system-9b01e7bfca6a.jpg",
+    "label": "Rebound Aesthetics - Campaign system",
+    "bytes": 18970
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\rebound\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-1f8155e2b75a.jpg",
+    "label": "Rebound Aesthetics - Storyboard / film direction",
+    "bytes": 17422
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\rebound\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-2f5cf9c85ba6.jpg",
+    "label": "Rebound Aesthetics - Social system",
+    "bytes": 19892
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\rebound\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-5a9f022f45e0.jpg",
+    "label": "Rebound Aesthetics - Complete brand world",
+    "bytes": 17404
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\rebound\\ChatGPT Image Jun 8, 2026, 08_17_45 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jun-8-2026-08-17-45-pm-18c7ccb4bf84.jpg",
+    "label": "Rebound Aesthetics - Original application",
+    "bytes": 12638
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\rebound\\ChatGPT Image Jun 8, 2026, 09_10_36 PM (2).png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jun-8-2026-09-10-36-pm-2-f4785117f5e6.jpg",
+    "label": "Rebound Aesthetics - Original application",
+    "bytes": 9569
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\rebound\\ChatGPT Image Jun 8, 2026, 09_10_36 PM (4).png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jun-8-2026-09-10-36-pm-4-e88f9dfe539e.jpg",
+    "label": "Rebound Aesthetics - Original application",
+    "bytes": 8050
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\rebound\\ChatGPT Image Jun 8, 2026, 09_10_37 PM (6).png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jun-8-2026-09-10-37-pm-6-e9aadda9028f.jpg",
+    "label": "Rebound Aesthetics - Original application",
+    "bytes": 9374
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\vudu - energy drink\\vudu logo.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\vudu-logo-61b8f34679d7.jpg",
+    "label": "VuDu Energy logo",
+    "bytes": 9912
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\vudu - energy drink\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-8b77c3523f34.jpg",
+    "label": "VuDu Energy - Responsive digital experience",
+    "bytes": 18759
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\vudu - energy drink\\generated\\campaign\\campaign-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\campaign-system-3484bd058cc6.jpg",
+    "label": "VuDu Energy - Campaign system",
+    "bytes": 29510
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\vudu - energy drink\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-383e82ae724a.jpg",
+    "label": "VuDu Energy - Storyboard / film direction",
+    "bytes": 29338
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\vudu - energy drink\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-f0d904909dd1.jpg",
+    "label": "VuDu Energy - Complete brand world",
+    "bytes": 29071
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\vudu - energy drink\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-2beeae229657.jpg",
+    "label": "VuDu Energy - Social system",
+    "bytes": 31208
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\vudu - energy drink\\ChatGPT Image Mar 20, 2026, 06_45_45 PM-gigapixel-art-scale-2_00x.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-mar-20-2026-06-45-45-pm-gigapixel-art-sc-6a2624f384cf.jpg",
+    "label": "VuDu Energy - Original application",
+    "bytes": 25555
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\vudu - energy drink\\ChatGPT Image Mar 20, 2026, 06_52_43 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-mar-20-2026-06-52-43-pm-d14018fcc315.jpg",
+    "label": "VuDu Energy - Original application",
+    "bytes": 31923
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\vudu - energy drink\\ChatGPT Image Mar 20, 2026, 05_32_11 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-mar-20-2026-05-32-11-pm-33067c7a8da9.jpg",
+    "label": "VuDu Energy - Original application",
+    "bytes": 29302
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ashe\\logo ashe.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-ashe-981c174ca472.jpg",
+    "label": "ASHE Ritual Roast logo",
+    "bytes": 9155
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ashe\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-de39e11615c4.jpg",
+    "label": "ASHE Ritual Roast - Storyboard / film direction",
+    "bytes": 17178
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ashe\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-cab5c7e15e98.jpg",
+    "label": "ASHE Ritual Roast - Social system",
+    "bytes": 15651
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ashe\\1.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\1-1ce2bc1a54d7.jpg",
+    "label": "ASHE Ritual Roast - Original application",
+    "bytes": 14037
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ashe\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-9e1f97ce0ef5.jpg",
+    "label": "ASHE Ritual Roast - Complete brand world",
+    "bytes": 15627
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ashe\\2.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\2-cef38dc85681.jpg",
+    "label": "ASHE Ritual Roast - Original application",
+    "bytes": 13085
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ashe\\10.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\10-ba8e24c66039.jpg",
+    "label": "ASHE Ritual Roast - Original application",
+    "bytes": 9155
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ashe\\5.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\5-783b7fea318f.jpg",
+    "label": "ASHE Ritual Roast - Original application",
+    "bytes": 16397
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\ashe\\8.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\8-e2895b53e5ca.jpg",
+    "label": "ASHE Ritual Roast - Original application",
+    "bytes": 13107
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\kolie\\logo kolie.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-kolie-f5496fc5e6e5.jpg",
+    "label": "Kolie logo",
+    "bytes": 7514
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\kolie\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-09f107795b47.jpg",
+    "label": "Kolie - Responsive digital experience",
+    "bytes": 16610
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\kolie\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-f6656d1ac250.jpg",
+    "label": "Kolie - Storyboard / film direction",
+    "bytes": 20453
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\kolie\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-6526d2a94cbe.jpg",
+    "label": "Kolie - Social system",
+    "bytes": 15394
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\kolie\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-cd0bd61f38f0.jpg",
+    "label": "Kolie - Complete brand world",
+    "bytes": 18424
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\kolie\\ChatGPT Image Jun 28, 2026, 08_11_46 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jun-28-2026-08-11-46-pm-69b44c76d389.jpg",
+    "label": "Kolie - Original application",
+    "bytes": 15987
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\kolie\\ChatGPT Image Jul 15, 2026, 10_34_22 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jul-15-2026-10-34-22-pm-1e515cf38c8b.jpg",
+    "label": "Kolie - Original application",
+    "bytes": 14667
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\kolie\\ChatGPT Image Jul 20, 2026, 08_57_08 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jul-20-2026-08-57-08-pm-50661019ea8b.jpg",
+    "label": "Kolie - Original application",
+    "bytes": 33967
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\kolie\\ChatGPT Image Jul 15, 2026, 06_11_15 PM.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\chatgpt-image-jul-15-2026-06-11-15-pm-a27312a82d2c.jpg",
+    "label": "Kolie - Original application",
+    "bytes": 13572
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\arizona chimney pros\\logo on white 2.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-on-white-2-7a45b2ae7521.jpg",
+    "label": "Arizona Chimney Pros logo",
+    "bytes": 9804
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\arizona chimney pros\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-b59d20f1f928.jpg",
+    "label": "Arizona Chimney Pros - Responsive digital experience",
+    "bytes": 17580
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\arizona chimney pros\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-aa5f72d34fe1.jpg",
+    "label": "Arizona Chimney Pros - Storyboard / film direction",
+    "bytes": 20910
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\arizona chimney pros\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-1a8a6cb64217.jpg",
+    "label": "Arizona Chimney Pros - Social system",
+    "bytes": 19080
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\arizona chimney pros\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-7bda253bdc41.jpg",
+    "label": "Arizona Chimney Pros - Complete brand world",
+    "bytes": 17763
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\pita-basta\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-9d494521554f.jpg",
+    "label": "Pita Basta - Responsive digital experience",
+    "bytes": 16404
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\pita-basta\\generated\\campaign\\campaign-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\campaign-system-43faadc39087.jpg",
+    "label": "Pita Basta - Campaign system",
+    "bytes": 23085
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\pita-basta\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-2d08eba6e1df.jpg",
+    "label": "Pita Basta - Storyboard / film direction",
+    "bytes": 19866
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\pita-basta\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-bb74acf5ddd4.jpg",
+    "label": "Pita Basta - Complete brand world",
+    "bytes": 21849
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\baron-herzog\\logo-generated.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-generated-3da4cd75a7ee.jpg",
+    "label": "Baron Herzog logo",
+    "bytes": 11745
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\baron-herzog\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-079536c11b8b.jpg",
+    "label": "Baron Herzog - Responsive digital experience",
+    "bytes": 16716
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\baron-herzog\\generated\\packaging\\packaging-lineup.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\packaging-lineup-5d57c90b8d4e.jpg",
+    "label": "Baron Herzog - Packaging family",
+    "bytes": 16284
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\baron-herzog\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-b53cb8506c9f.jpg",
+    "label": "Baron Herzog - Storyboard / film direction",
+    "bytes": 16842
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\baron-herzog\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-9a66809afc42.jpg",
+    "label": "Baron Herzog - Complete brand world",
+    "bytes": 16400
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\baron-herzog\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-c5f8253a0e55.jpg",
+    "label": "Baron Herzog - Social system",
+    "bytes": 19830
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\baron-herzog\\generated\\packaging\\packaging-detail.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\packaging-detail-e5083fa00472.jpg",
+    "label": "Baron Herzog - Packaging detail",
+    "bytes": 14105
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\baron-herzog\\Gemini_Generated_Image_das3i5sas3i5sas3i.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\gemini-generated-image-das3i5sas3i5sas3i-9ace4592f221.jpg",
+    "label": "Baron Herzog - Original application",
+    "bytes": 22574
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\baron-herzog\\1.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\1-9fa69c84b39e.jpg",
+    "label": "Baron Herzog - Original application",
+    "bytes": 21497
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\blenday\\logo-generated.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-generated-327e97035d2b.jpg",
+    "label": "Blenday logo",
+    "bytes": 6685
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\blenday\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-18fd6358d5dd.jpg",
+    "label": "Blenday - Responsive digital experience",
+    "bytes": 19319
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\blenday\\generated\\packaging\\packaging-lineup.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\packaging-lineup-44553669a4c4.jpg",
+    "label": "Blenday - Packaging family",
+    "bytes": 20049
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\blenday\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-ac0042921667.jpg",
+    "label": "Blenday - Storyboard / film direction",
+    "bytes": 27076
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\blenday\\1.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\1-f18fbe3eae93.jpg",
+    "label": "Blenday - Original application",
+    "bytes": 18344
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\blenday\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-0569b2739c46.jpg",
+    "label": "Blenday - Social system",
+    "bytes": 22934
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\blenday\\generated\\identity\\identity-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\identity-system-1b9087cfd118.jpg",
+    "label": "Blenday - Identity system",
+    "bytes": 21904
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\blenday\\generated\\packaging\\packaging-detail.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\packaging-detail-4af1c5e0dff8.jpg",
+    "label": "Blenday - Packaging detail",
+    "bytes": 17042
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\blenday\\generated\\film\\film-keyframes.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\film-keyframes-b6905226263a.jpg",
+    "label": "Blenday - Film keyframes",
+    "bytes": 22935
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\boom-chica\\logo-generated.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-generated-6d5b488ac665.jpg",
+    "label": "Boom Chicka Pop logo",
+    "bytes": 14151
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\boom-chica\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-85790db2aa4e.jpg",
+    "label": "Boom Chicka Pop - Responsive digital experience",
+    "bytes": 21641
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\boom-chica\\generated\\packaging\\packaging-lineup.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\packaging-lineup-db3f43c2ef0b.jpg",
+    "label": "Boom Chicka Pop - Packaging family",
+    "bytes": 15884
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\boom-chica\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-4eb195cc790e.jpg",
+    "label": "Boom Chicka Pop - Storyboard / film direction",
+    "bytes": 25863
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\boom-chica\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-ff83344f2e89.jpg",
+    "label": "Boom Chicka Pop - Complete brand world",
+    "bytes": 22463
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\lacroix\\logo-generated.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-generated-f0332d95b171.jpg",
+    "label": "LaCroix logo",
+    "bytes": 12676
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\lacroix\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-89a9ef0bec83.jpg",
+    "label": "LaCroix - Responsive digital experience",
+    "bytes": 21921
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\lacroix\\generated\\packaging\\packaging-lineup.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\packaging-lineup-0ea217ae79a5.jpg",
+    "label": "LaCroix - Packaging family",
+    "bytes": 21606
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\lacroix\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-dc8635c75a95.jpg",
+    "label": "LaCroix - Storyboard / film direction",
+    "bytes": 25726
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\lacroix\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-1a2422987cb2.jpg",
+    "label": "LaCroix - Complete brand world",
+    "bytes": 25036
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\paranormal\\logo-generated.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-generated-49b42e271e93.jpg",
+    "label": "Paranormal logo",
+    "bytes": 12480
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\paranormal\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-0fb8f9616ac3.jpg",
+    "label": "Paranormal - Responsive digital experience",
+    "bytes": 13402
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\paranormal\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-06319687ffc1.jpg",
+    "label": "Paranormal - Storyboard / film direction",
+    "bytes": 16295
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\paranormal\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-06c6c88d7fac.jpg",
+    "label": "Paranormal - Social system",
+    "bytes": 17418
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\paranormal\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-442b68889810.jpg",
+    "label": "Paranormal - Complete brand world",
+    "bytes": 21594
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\butterfly\\logo-generated.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-generated-47da074749a3.jpg",
+    "label": "Butterfly logo",
+    "bytes": 9326
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\butterfly\\generated\\campaign\\campaign-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\campaign-system-4824102b10c0.jpg",
+    "label": "Butterfly - Campaign system",
+    "bytes": 16921
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\butterfly\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-71acab3509f7.jpg",
+    "label": "Butterfly - Storyboard / film direction",
+    "bytes": 15160
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\butterfly\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-548a89fc0b98.jpg",
+    "label": "Butterfly - Social system",
+    "bytes": 17210
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\butterfly\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-6dd1ea97ae7b.jpg",
+    "label": "Butterfly - Complete brand world",
+    "bytes": 15941
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\noam\\logo.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-a736dcb7da6f.jpg",
+    "label": "Noam logo",
+    "bytes": 9878
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\noam\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-6f2641c73141.jpg",
+    "label": "Noam - Responsive digital experience",
+    "bytes": 11009
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\noam\\generated\\campaign\\campaign-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\campaign-system-2a1c0b888b06.jpg",
+    "label": "Noam - Campaign system",
+    "bytes": 14165
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\noam\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-3907ecbbb0b0.jpg",
+    "label": "Noam - Storyboard / film direction",
+    "bytes": 12860
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\noam\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-03aa45b182b3.jpg",
+    "label": "Noam - Complete brand world",
+    "bytes": 14319
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\noam\\generated\\cgi\\cgi-hero.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\cgi-hero-9b55d0869a02.jpg",
+    "label": "Noam - CGI product hero",
+    "bytes": 12585
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\noam\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-bab0f1e520d6.jpg",
+    "label": "Noam - Social system",
+    "bytes": 14344
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\noam\\12.jpg",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\12-07e1510b4259.jpg",
+    "label": "Noam - Original application",
+    "bytes": 11152
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\noam\\14.jpg",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\14-31788d6899f0.jpg",
+    "label": "Noam - Original application",
+    "bytes": 11131
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\honey\\logo-generated.png",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\logo-generated-46d430296399.jpg",
+    "label": "Honey logo",
+    "bytes": 9003
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\honey\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-a446e98689b3.jpg",
+    "label": "Honey - Responsive digital experience",
+    "bytes": 17999
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\honey\\generated\\packaging\\packaging-lineup.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\packaging-lineup-6a3ca6cbdb42.jpg",
+    "label": "Honey - Packaging family",
+    "bytes": 18720
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\honey\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-32c09115e071.jpg",
+    "label": "Honey - Storyboard / film direction",
+    "bytes": 19615
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\honey\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-cd819480dd32.jpg",
+    "label": "Honey - Complete brand world",
+    "bytes": 22355
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\interior-design\\generated\\web\\website-responsive.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\website-responsive-0fc7f61c7ee2.jpg",
+    "label": "VIA Interior Design - Responsive digital experience",
+    "bytes": 17384
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\interior-design\\generated\\campaign\\campaign-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\campaign-system-b040250f3c99.jpg",
+    "label": "VIA Interior Design - Campaign system",
+    "bytes": 17918
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\interior-design\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-df84598466b7.jpg",
+    "label": "VIA Interior Design - Storyboard / film direction",
+    "bytes": 17749
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\interior-design\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-de3646a41f29.jpg",
+    "label": "VIA Interior Design - Complete brand world",
+    "bytes": 18406
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\general\\generated\\storyboard\\storyboard.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\storyboard-8086a5732891.jpg",
+    "label": "Selected CGI and Campaigns - Storyboard / film direction",
+    "bytes": 18764
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\general\\generated\\social\\social-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\social-system-3ab55d5b7cef.jpg",
+    "label": "Selected CGI and Campaigns - Social system",
+    "bytes": 18224
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\general\\generated\\identity\\identity-system.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\identity-system-60fcc86c5b4a.jpg",
+    "label": "Selected CGI and Campaigns - Identity system",
+    "bytes": 22661
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\brands\\general\\generated\\master\\brand-world-master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-world-master-94012f48281c.jpg",
+    "label": "Selected CGI and Campaigns - Complete brand world",
+    "bytes": 19459
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\motion-posters\\factory.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\factory-90184bf51efa.jpg",
+    "label": "Factory / Film frame",
+    "bytes": 8526
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\motion-posters\\kolie-ad.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\kolie-ad-bc32a8a7003e.jpg",
+    "label": "Kolie / Launch advertisement",
+    "bytes": 7592
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\motion-posters\\optimus.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\optimus-1d6ca1f62c45.jpg",
+    "label": "Optimus / Identity animation",
+    "bytes": 12389
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\motion-posters\\syntropic-3d.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\syntropic-3d-56b53c44c998.jpg",
+    "label": "Syntropic / 3D product film",
+    "bytes": 10842
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\motion-posters\\syntropic-53.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\syntropic-53-a80b23242188.jpg",
+    "label": "Syntropic / Product story",
+    "bytes": 12127
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\motion-posters\\yafora.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\yafora-e971007b0514.jpg",
+    "label": "Yafora / Product CGI",
+    "bytes": 24796
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\1.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\1-e511ae575ce6.jpg",
+    "label": "Character study 01",
+    "bytes": 8405
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\4.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\4-4ae11c081483.jpg",
+    "label": "Character study 04",
+    "bytes": 19146
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\5.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\5-d6c9e63f729b.jpg",
+    "label": "Character study 05",
+    "bytes": 21015
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\6.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\6-2f2a7ced43c7.jpg",
+    "label": "Character study 06",
+    "bytes": 27452
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\7.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\7-fb8da3f39f46.jpg",
+    "label": "Character study 07",
+    "bytes": 19279
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\8.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\8-0c9cf2afa6b0.jpg",
+    "label": "Character study 08",
+    "bytes": 13057
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\11.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\11-c8787b813e4a.jpg",
+    "label": "Character study 11",
+    "bytes": 21805
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\13.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\13-b58ee63e7f0c.jpg",
+    "label": "Character study 13",
+    "bytes": 11459
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\18.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\18-fd23bf4d44c4.jpg",
+    "label": "Character study 18",
+    "bytes": 15153
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\19.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\19-15ea5047e069.jpg",
+    "label": "Character study 19",
+    "bytes": 12402
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\20.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\20-be24ab8e6d38.jpg",
+    "label": "Character study 20",
+    "bytes": 13508
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\22.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\22-e80f3cf416de.jpg",
+    "label": "Character study 22",
+    "bytes": 18627
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\24.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\24-91bc71e3efc3.jpg",
+    "label": "Character study 24",
+    "bytes": 16610
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\25.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\25-18f1a598bfba.jpg",
+    "label": "Character study 25",
+    "bytes": 16064
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\28.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\28-23aca4f05c49.jpg",
+    "label": "Character study 28",
+    "bytes": 9431
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\29.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\29-3d7f1a1d31b6.jpg",
+    "label": "Character study 29",
+    "bytes": 10581
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\31.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\31-26dde11644ef.jpg",
+    "label": "Character study 31",
+    "bytes": 14880
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\characters\\32.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\32-db697a2a9707.jpg",
+    "label": "Character study 32",
+    "bytes": 12399
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\1.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\1-e43c6096d020.jpg",
+    "label": "Identity study 01",
+    "bytes": 9165
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\2.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\2-450d23021945.jpg",
+    "label": "Identity study 02",
+    "bytes": 12531
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\3.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\3-1d6a99b2828f.jpg",
+    "label": "Identity study 03",
+    "bytes": 18055
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\4.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\4-2a2aaf5f65d7.jpg",
+    "label": "Identity study 04",
+    "bytes": 16645
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\5.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\5-67c20623e08f.jpg",
+    "label": "Identity study 05",
+    "bytes": 18849
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\6.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\6-5204df863756.jpg",
+    "label": "Identity study 06",
+    "bytes": 36231
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\7.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\7-4a68d430ca9d.jpg",
+    "label": "Identity study 07",
+    "bytes": 21843
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\8.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\8-d4c5a91d0a36.jpg",
+    "label": "Identity study 08",
+    "bytes": 13216
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\9.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\9-cccf20d8e018.jpg",
+    "label": "Identity study 09",
+    "bytes": 21149
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\10.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\10-2ea75dec744b.jpg",
+    "label": "Identity study 10",
+    "bytes": 19937
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\11.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\11-9cb89156217e.jpg",
+    "label": "Identity study 11",
+    "bytes": 22659
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\12.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\12-643298f88634.jpg",
+    "label": "Identity study 12",
+    "bytes": 14480
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\13.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\13-845da7125a27.jpg",
+    "label": "Identity study 13",
+    "bytes": 16268
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\14.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\14-ecb5fee08be0.jpg",
+    "label": "Identity study 14",
+    "bytes": 9162
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\15.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\15-39dfdc9ba94b.jpg",
+    "label": "Identity study 15",
+    "bytes": 25679
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\16.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\16-6c5b70e85da9.jpg",
+    "label": "Identity study 16",
+    "bytes": 6648
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\17.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\17-ef7362bd9c8d.jpg",
+    "label": "Identity study 17",
+    "bytes": 14305
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\logos\\18.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\18-33e228d6e1a4.jpg",
+    "label": "Identity study 18",
+    "bytes": 15698
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\poolside-villa\\renders\\03_exterior_pool_master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\03-exterior-pool-master-603eec8e88ec.jpg",
+    "label": "Exterior / Arrival",
+    "bytes": 20391
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\poolside-villa\\renders\\05_living_master.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\05-living-master-3775f43d7e4c.jpg",
+    "label": "Living space / Material direction",
+    "bytes": 19570
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\poolside-villa\\renders\\00_ground_floor_plan.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\00-ground-floor-plan-bfaebde29d8c.jpg",
+    "label": "Ground floor / Spatial plan",
+    "bytes": 18256
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\poolside-villa\\renders\\27_pool_hero.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\27-pool-hero-e01766c02034.jpg",
+    "label": "Poolside Villa / Complete spatial world",
+    "bytes": 21672
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\maison-valmont\\before\\dining-existing.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\dining-existing-9e6c9917bbf8.jpg",
+    "label": "Existing condition",
+    "bytes": 13304
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\maison-valmont\\after\\dining-restored.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\dining-restored-71a11bebcea0.jpg",
+    "label": "Restored interior",
+    "bytes": 15755
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\maison-valmont\\process\\stage-structure.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\stage-structure-e20eb1f5d602.jpg",
+    "label": "Process / Reveal",
+    "bytes": 18482
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\maison-valmont\\after\\bath-restored.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\bath-restored-5fbfc7b37ebf.jpg",
+    "label": "Maison Valmont / Restored salon",
+    "bytes": 15165
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\the-patel\\renders\\patel-hero-realistic-v2.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\patel-hero-realistic-v2-0ddf81f7392e.jpg",
+    "label": "Tower / Exterior visualization",
+    "bytes": 11397
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\the-patel\\renders\\patel-rooftop-single-v2.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\patel-rooftop-single-v2-1f041140863a.jpg",
+    "label": "Rooftop / Amenity experience",
+    "bytes": 17101
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\the-patel\\residence-1802\\floorplan.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\floorplan-db32f8960b0b.jpg",
+    "label": "Residence 1802 / Floor plan",
+    "bytes": 10316
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\the-patel\\brand\\patel-breakout-hero.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\patel-breakout-hero-b8b82b054e7f.jpg",
+    "label": "The Patel / Branded property world",
+    "bytes": 13072
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\canal-apartment\\pairs\\bath-raw.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\bath-raw-e51712feb2f6.jpg",
+    "label": "Canal Apartment / Direction 02",
+    "bytes": 7572
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\canal-apartment\\pairs\\canal-editorial-v2.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\canal-editorial-v2-966296cae668.jpg",
+    "label": "Canal Apartment / Direction 03",
+    "bytes": 13011
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\canal-apartment\\pairs\\canal-raw.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\canal-raw-c35b01f4de9b.jpg",
+    "label": "Canal Apartment / Direction 04",
+    "bytes": 11146
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\interior-design\\projects\\canal-apartment\\pairs\\bath-editorial-v2.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\bath-editorial-v2-4e42edbf411f.jpg",
+    "label": "Canal Apartment / Direction 01",
+    "bytes": 10100
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\generated\\before-after\\web-before.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\web-before-08d0580dc92a.jpg",
+    "label": "Digital experience before",
+    "bytes": 7077
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\generated\\before-after\\web-after.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\web-after-f6cac218ff64.jpg",
+    "label": "Digital experience after",
+    "bytes": 10655
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\generated\\before-after\\product-before.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\product-before-71e102d3a999.jpg",
+    "label": "Product presentation before",
+    "bytes": 12330
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\generated\\before-after\\product-after.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\product-after-ea0b5528be71.jpg",
+    "label": "Product presentation after",
+    "bytes": 12174
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\generated\\before-after\\space-before.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\space-before-45c468fa7d68.jpg",
+    "label": "Spatial presentation before",
+    "bytes": 16731
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\generated\\before-after\\space-after.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\space-after-879cdfcc480b.jpg",
+    "label": "Spatial presentation after",
+    "bytes": 17994
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\generated\\before-after\\brand-before.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-before-0ac7ebca72f3.jpg",
+    "label": "Brand system before",
+    "bytes": 14960
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\generated\\before-after\\brand-after.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\brand-after-b96183174e53.jpg",
+    "label": "Brand system after",
+    "bytes": 7343
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\ai-posts\\post-1.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\post-1-9a87fb6a65d6.jpg",
+    "label": "Kama Kama / Self-initiated brand world",
+    "bytes": 37877
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\ai-posts\\post-2.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\post-2-13e3e5dea93e.jpg",
+    "label": "Self-initiated concept 02",
+    "bytes": 15836
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\ai-posts\\post-3.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\post-3-3b01869089ff.jpg",
+    "label": "Kolie / Campaign exploration",
+    "bytes": 25720
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\ai-posts\\post-4.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\post-4-7e2d339ffa65.jpg",
+    "label": "Self-initiated concept 04",
+    "bytes": 32434
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\ai-posts\\post-5.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\post-5-05b102241e27.jpg",
+    "label": "Self-initiated concept 05",
+    "bytes": 29382
+  },
+  {
+    "source": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\generated\\projects\\general\\cover.webp",
+    "output": "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\portfolio\\premium\\generated\\compact\\cover-701b385db397.jpg",
+    "label": "Experimental CGI / Selected study",
+    "bytes": 18527
+  }
+]

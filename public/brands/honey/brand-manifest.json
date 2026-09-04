@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "slug": "honey",
+  "assetDirectory": "honey",
+  "name": "HONEY",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 4,
+    "exactDuplicates": [],
+    "nearDuplicates": [],
+    "highestResolutionReferences": [
+      "1.jpg",
+      "2.mp4",
+      "2.webm",
+      "logo-generated.png"
+    ],
+    "assets": [
+      {
+        "filename": "1.jpg",
+        "extension": ".jpg",
+        "bytes": 8418238,
+        "sha256": "35fb84296e3de016cae4014b85ac86de477d193c23b6d20e716c3109a2288a97",
+        "source": "existing",
+        "width": 9072,
+        "height": 3666,
+        "mode": "RGB",
+        "averageHash": "db03435b0a1a02db",
+        "palette": [
+          "#3C3B3B",
+          "#565146",
+          "#282829",
+          "#BB8130",
+          "#DEC099"
+        ],
+        "type": "campaign"
+      },
+      {
+        "filename": "2.mp4",
+        "extension": ".mp4",
+        "bytes": 48335569,
+        "sha256": "1bd5e02c353d5f088d87044699fdc32b4d79de0fc66a7feceb0313785f45e046",
+        "source": "existing",
+        "width": 1170,
+        "height": 2080,
+        "codec": "h264",
+        "duration": 37.917,
+        "palette": [
+          "#070901",
+          "#33220F",
+          "#675030",
+          "#A17F58",
+          "#C6B199"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "2.webm",
+        "extension": ".webm",
+        "bytes": 9535072,
+        "sha256": "c40f1344000587d76686389289bb05b1dfedb8ae2645183a52110b0d05c5b7d1",
+        "source": "existing",
+        "width": 1170,
+        "height": 2080,
+        "codec": "vp9",
+        "duration": 37.917,
+        "palette": [
+          "#070901",
+          "#342310",
+          "#695131",
+          "#A27F59",
+          "#C6B29A"
+        ],
+        "type": "film"
+      },
+      {
+        "filename": "logo-generated.png",
+        "extension": ".png",
+        "bytes": 806071,
+        "sha256": "bff66fcf7c8e6b0c676fc55c6a83eb57b3426435baf6818285776436cb144860",
+        "source": "existing",
+        "width": 1024,
+        "height": 1024,
+        "mode": "RGB",
+        "averageHash": "ffdbc3e783c3ffff",
+        "palette": [
+          "#FCF8F3",
+          "#EDC286",
+          "#FBF8F3",
+          "#FCF8F2",
+          "#FCFBF7"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Brand Film",
+    "primaryColors": [
+      "#070901",
+      "#3C3B3B",
+      "#565146"
+    ],
+    "secondaryColors": [
+      "#282829",
+      "#33220F",
+      "#675030",
+      "#342310"
+    ],
+    "visualMood": "A premium honey brand film — warm amber tones, slow macro shots and cinematic liquid pours bringing nature's gold to life.",
+    "lightingStyle": "sunlit amber macro light with soft natural highlights",
+    "compositionStyle": "slow tactile liquid and product closeups inspired by nature",
+    "materials": [
+      "amber glass",
+      "honey",
+      "beeswax",
+      "wood",
+      "wildflowers"
+    ],
+    "keywords": [
+      "Brand Film",
+      "Motion",
+      "Product",
+      "Packaging"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "campaign": [
+      "1.jpg"
+    ],
+    "film": [
+      "2.mp4",
+      "2.webm"
+    ],
+    "logo": [
+      "logo-generated.png"
+    ]
+  },
+  "missingAssets": [
+    "website-responsive",
+    "social-system",
+    "storyboard",
+    "brand-world-master",
+    "packaging-lineup",
+    "packaging-detail"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "logo-generated.png",
+        "1.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "website-responsive",
+      "filename": "generated/web/website-responsive.webp",
+      "source": "generated",
+      "references": [
+        "1.jpg",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "honey/ref-1.jpg",
+        "honey/ref-2.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: website-responsive for an AYESMAJ portfolio case study\nPrimary request: Create a bespoke responsive website presentation for this exact brand across laptop, tablet, and phone. Screens must inherit the reference imagery, palette, product, and composition language and feel like one real premium website system.\nBrand: HONEY\nCategory: Brand Film\nBrand character: A premium honey brand film — warm amber tones, slow macro shots and cinematic liquid pours bringing nature's gold to life.\nInput images: Image 1: source-of-truth brand reference (1.jpg); Image 2: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 device-family studio scene with a clearly visible desktop hero, supporting mobile screens, and elegant depth; underlying brand composition language: slow tactile liquid and product closeups inspired by nature\nLighting/mood: sunlit amber macro light with soft natural highlights\nColor palette: #070901, #3C3B3B, #565146, #282829, #33220F, #675030, #342310\nMaterials/textures: amber glass, honey, beeswax, wood, wildflowers\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "1.jpg",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "honey/ref-1.jpg",
+        "honey/ref-2.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: HONEY\nCategory: Brand Film\nBrand character: A premium honey brand film — warm amber tones, slow macro shots and cinematic liquid pours bringing nature's gold to life.\nInput images: Image 1: source-of-truth brand reference (1.jpg); Image 2: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: slow tactile liquid and product closeups inspired by nature\nLighting/mood: sunlit amber macro light with soft natural highlights\nColor palette: #070901, #3C3B3B, #565146, #282829, #33220F, #675030, #342310\nMaterials/textures: amber glass, honey, beeswax, wood, wildflowers\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "1.jpg",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "honey/ref-1.jpg",
+        "honey/ref-2.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: HONEY\nCategory: Brand Film\nBrand character: A premium honey brand film — warm amber tones, slow macro shots and cinematic liquid pours bringing nature's gold to life.\nInput images: Image 1: source-of-truth brand reference (1.jpg); Image 2: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: slow tactile liquid and product closeups inspired by nature\nLighting/mood: sunlit amber macro light with soft natural highlights\nColor palette: #070901, #3C3B3B, #565146, #282829, #33220F, #675030, #342310\nMaterials/textures: amber glass, honey, beeswax, wood, wildflowers\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "packaging-lineup",
+      "filename": "generated/packaging/packaging-lineup.webp",
+      "source": "generated",
+      "references": [
+        "1.jpg",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "honey/ref-1.jpg",
+        "honey/ref-2.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: product-mockup\nAsset type: packaging-lineup for an AYESMAJ portfolio case study\nPrimary request: Create a premium product-family lineup using only packaging architecture and variants supported by the references. Preserve the real product category, silhouettes, proportions, palette logic, and label placement.\nBrand: HONEY\nCategory: Brand Film\nBrand character: A premium honey brand film — warm amber tones, slow macro shots and cinematic liquid pours bringing nature's gold to life.\nInput images: Image 1: source-of-truth brand reference (1.jpg); Image 2: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 studio lineup with clean spacing, a strong hero item, secondary items, and refined material reflections; underlying brand composition language: slow tactile liquid and product closeups inspired by nature\nLighting/mood: sunlit amber macro light with soft natural highlights\nColor palette: #070901, #3C3B3B, #565146, #282829, #33220F, #675030, #342310\nMaterials/textures: amber glass, honey, beeswax, wood, wildflowers\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "1.jpg",
+        "logo-generated.png"
+      ],
+      "preparedReferences": [
+        "honey/ref-1.jpg",
+        "honey/ref-2.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: HONEY\nCategory: Brand Film\nBrand character: A premium honey brand film — warm amber tones, slow macro shots and cinematic liquid pours bringing nature's gold to life.\nInput images: Image 1: source-of-truth brand reference (1.jpg); Image 2: source-of-truth brand reference (logo-generated.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: slow tactile liquid and product closeups inspired by nature\nLighting/mood: sunlit amber macro light with soft natural highlights\nColor palette: #070901, #3C3B3B, #565146, #282829, #33220F, #675030, #342310\nMaterials/textures: amber glass, honey, beeswax, wood, wildflowers\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "packaging-detail",
+      "filename": "generated/packaging/packaging-detail.webp",
+      "source": "generated",
+      "references": [
+        "logo-generated.png",
+        "1.jpg"
+      ],
+      "preparedReferences": [
+        "honey/ref-1.jpg",
+        "honey/ref-2.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: product-mockup\nAsset type: packaging-detail for an AYESMAJ portfolio case study\nPrimary request: Create an art-directed macro packaging detail that celebrates the reference materials, print finish, label structure, surface texture, and product craftsmanship without inventing regulatory or nutritional copy.\nBrand: HONEY\nCategory: Brand Film\nBrand character: A premium honey brand film — warm amber tones, slow macro shots and cinematic liquid pours bringing nature's gold to life.\nInput images: Image 1: source-of-truth brand reference (logo-generated.png); Image 2: source-of-truth brand reference (1.jpg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 macro editorial crop with shallow depth, tactile lighting, and one unmistakable material focal point; underlying brand composition language: slow tactile liquid and product closeups inspired by nature\nLighting/mood: sunlit amber macro light with soft natural highlights\nColor palette: #070901, #3C3B3B, #565146, #282829, #33220F, #675030, #342310\nMaterials/textures: amber glass, honey, beeswax, wood, wildflowers\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "logo-generated.png",
+        "1.jpg"
+      ],
+      "preparedReferences": [
+        "honey/ref-1.jpg",
+        "honey/ref-2.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: HONEY\nCategory: Brand Film\nBrand character: A premium honey brand film — warm amber tones, slow macro shots and cinematic liquid pours bringing nature's gold to life.\nInput images: Image 1: source-of-truth brand reference (logo-generated.png); Image 2: source-of-truth brand reference (1.jpg)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: slow tactile liquid and product closeups inspired by nature\nLighting/mood: sunlit amber macro light with soft natural highlights\nColor palette: #070901, #3C3B3B, #565146, #282829, #33220F, #675030, #342310\nMaterials/textures: amber glass, honey, beeswax, wood, wildflowers\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "website-responsive",
+    "storyboard",
+    "social-system",
+    "packaging-lineup",
+    "brand-world-master",
+    "packaging-detail"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 6,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/honey.jpg"
+  }
+}

@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "slug": "rebound",
+  "assetDirectory": "rebound",
+  "name": "REBOUND AESTHETICS",
+  "status": "generated-pending-qc",
+  "sourceOfTruth": "Existing files in this folder are immutable references.",
+  "audit": {
+    "mediaCount": 11,
+    "exactDuplicates": [],
+    "nearDuplicates": [],
+    "highestResolutionReferences": [
+      "ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png",
+      "ChatGPT Image Jun 8, 2026, 08_17_45 PM.png",
+      "ChatGPT Image Jun 8, 2026, 10_10_29 PM.png",
+      "ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png",
+      "ChatGPT Image Jun 8, 2026, 09_39_14 PM.png",
+      "ChatGPT Image Jun 8, 2026, 05_06_55 PM (8).png",
+      "ChatGPT Image Jun 8, 2026, 09_10_36 PM (2).png",
+      "ChatGPT Image Jun 8, 2026, 09_10_36 PM (4).png"
+    ],
+    "assets": [
+      {
+        "filename": "ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png",
+        "extension": ".png",
+        "bytes": 1860801,
+        "sha256": "2f449493e4397c1266522ad7f1137e54b3439f5fb7ac038186a8e69a341d0269",
+        "source": "existing",
+        "width": 1586,
+        "height": 992,
+        "mode": "RGB",
+        "averageHash": "fffc8d0c090129ff",
+        "palette": [
+          "#5A3E22",
+          "#D5C2AD",
+          "#AB8B6C",
+          "#EBDFD0",
+          "#F9F2EB"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jun 8, 2026, 05_06_55 PM (8).png",
+        "extension": ".png",
+        "bytes": 2106493,
+        "sha256": "e24e61f2cfea05ef5190c6506df84225cc5c38517c1b8f8b8b18365d91362a55",
+        "source": "existing",
+        "width": 1086,
+        "height": 1448,
+        "mode": "RGB",
+        "averageHash": "f890f0781f1b1012",
+        "palette": [
+          "#7E6144",
+          "#A1896C",
+          "#48311D",
+          "#ECE9E1",
+          "#CAB89D"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png",
+        "extension": ".png",
+        "bytes": 2065974,
+        "sha256": "dadc54380831efe3e546b42e0dad95aef76e45104614d20294b941ec9a2c1208",
+        "source": "existing",
+        "width": 1731,
+        "height": 909,
+        "mode": "RGB",
+        "averageHash": "19393d3f3f7f3f1f",
+        "palette": [
+          "#E7D4BB",
+          "#F1E5D3",
+          "#F6EDDF",
+          "#C5A47F",
+          "#F9F2E8"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "ChatGPT Image Jun 8, 2026, 08_17_45 PM.png",
+        "extension": ".png",
+        "bytes": 1725152,
+        "sha256": "3a82d2f6241c0db0054a2f233c86ff3f1656c45e8a5ea2feb9baeae8cc2c8016",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "ffff00000000ffff",
+        "palette": [
+          "#755741",
+          "#F2ECE2",
+          "#F7F2EA",
+          "#CAB6A2",
+          "#FBF7EF"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "ChatGPT Image Jun 8, 2026, 09_10_36 PM (2).png",
+        "extension": ".png",
+        "bytes": 1642486,
+        "sha256": "71d10e16db54dacb39514194915071b3eb6832ff99712e50335c52baacef82c7",
+        "source": "existing",
+        "width": 1448,
+        "height": 1086,
+        "mode": "RGB",
+        "averageHash": "c0e0f0e7e7e7e700",
+        "palette": [
+          "#F3ECE1",
+          "#C4AE95",
+          "#E2CFB8",
+          "#A77D52",
+          "#CFB696"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jun 8, 2026, 09_10_36 PM (4).png",
+        "extension": ".png",
+        "bytes": 1701298,
+        "sha256": "56030b83ffd0fac756a116535fc20dac94ffa4b84726f284ec51d15dded29691",
+        "source": "existing",
+        "width": 1448,
+        "height": 1086,
+        "mode": "RGB",
+        "averageHash": "7878fce4ecee4c00",
+        "palette": [
+          "#E8D4B7",
+          "#AD8B66",
+          "#CDB18E",
+          "#9D7955",
+          "#B79671"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jun 8, 2026, 09_10_37 PM (6).png",
+        "extension": ".png",
+        "bytes": 1623789,
+        "sha256": "dde236f471952ba8be0f8d89e77463a37c4c8571bbb0c3eb620f436acdd49478",
+        "source": "existing",
+        "width": 1448,
+        "height": 1086,
+        "mode": "RGB",
+        "averageHash": "fef6f6f7f6f4b4c0",
+        "palette": [
+          "#D5C3B1",
+          "#E1D2C2",
+          "#AE9781",
+          "#E9DDD0",
+          "#EFE6DC"
+        ],
+        "type": "packaging"
+      },
+      {
+        "filename": "ChatGPT Image Jun 8, 2026, 09_39_14 PM.png",
+        "extension": ".png",
+        "bytes": 2196656,
+        "sha256": "152708268475d98b726defcc2bcb2e566089766ef6c9945d6983e4a0aaffa565",
+        "source": "existing",
+        "width": 1122,
+        "height": 1402,
+        "mode": "RGB",
+        "averageHash": "819d199fcfcfcf5c",
+        "palette": [
+          "#B88864",
+          "#C9AA8D",
+          "#996A4A",
+          "#573723",
+          "#B0744D"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "ChatGPT Image Jun 8, 2026, 10_10_29 PM.png",
+        "extension": ".png",
+        "bytes": 1687816,
+        "sha256": "4a53bac64e6f37e13bbddf8fe6f3ca8f1488f23f25cad8451b0bd425f7f6bc11",
+        "source": "existing",
+        "width": 1672,
+        "height": 941,
+        "mode": "RGB",
+        "averageHash": "f8f4f0f8f8f8f8f8",
+        "palette": [
+          "#E8D7C8",
+          "#714C35",
+          "#CEA78C",
+          "#FAF3EE",
+          "#F3E8DD"
+        ],
+        "type": "website"
+      },
+      {
+        "filename": "rebound logo.png",
+        "extension": ".png",
+        "bytes": 896957,
+        "sha256": "e513f92c04b18756a86f6972a87c00d016d919ded091b1a5bec77c41186cf768",
+        "source": "existing",
+        "width": 1107,
+        "height": 1030,
+        "mode": "RGBA",
+        "averageHash": "efe7f3d3e7ff0004",
+        "palette": [
+          "#FFFFFF",
+          "#A38059",
+          "#FFFFFE",
+          "#F8F5F2",
+          "#FEFFFF"
+        ],
+        "type": "logo"
+      },
+      {
+        "filename": "rebound shape logo.png",
+        "extension": ".png",
+        "bytes": 320042,
+        "sha256": "3e1f142a331b5ab9be069d9ce45c7cd56cc63249903562849a0df52bbdfa9b81",
+        "source": "existing",
+        "width": 444,
+        "height": 724,
+        "mode": "RGBA",
+        "averageHash": "efe791dc7821e3ff",
+        "palette": [
+          "#FFFFFF",
+          "#B37A34",
+          "#FFFFFE",
+          "#EDDDC7",
+          "#FEFFFF"
+        ],
+        "type": "logo"
+      }
+    ]
+  },
+  "brandDNA": {
+    "productCategory": "Beauty Brand Identity & Campaign",
+    "primaryColors": [
+      "#FFFFFF",
+      "#FFFFFE",
+      "#5A3E22"
+    ],
+    "secondaryColors": [
+      "#D5C2AD",
+      "#AB8B6C",
+      "#7E6144",
+      "#A1896C"
+    ],
+    "visualMood": "A restorative skincare system built from soft natural light, tactile stone, warm metallic detail, and a consultation-first website experience.",
+    "lightingStyle": "soft natural daylight with warm metallic highlights",
+    "compositionStyle": "airy skincare editorial, restorative calm, and intimate human detail",
+    "materials": [
+      "amber glass",
+      "frosted glass",
+      "limestone",
+      "linen",
+      "brass"
+    ],
+    "keywords": [
+      "Brand Identity",
+      "Product",
+      "Campaign",
+      "Web Design"
+    ],
+    "lockedInvariants": [
+      "Preserve the real logo and existing product or packaging structure.",
+      "Use original media as generation references.",
+      "Never publish model-generated spelling for exact brand text."
+    ]
+  },
+  "existingAssets": {
+    "logo": [
+      "rebound logo.png",
+      "rebound shape logo.png"
+    ],
+    "packaging": [
+      "ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png",
+      "ChatGPT Image Jun 8, 2026, 05_06_55 PM (8).png",
+      "ChatGPT Image Jun 8, 2026, 09_10_36 PM (2).png",
+      "ChatGPT Image Jun 8, 2026, 09_10_36 PM (4).png",
+      "ChatGPT Image Jun 8, 2026, 09_10_37 PM (6).png"
+    ],
+    "website": [
+      "ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png",
+      "ChatGPT Image Jun 8, 2026, 08_17_45 PM.png",
+      "ChatGPT Image Jun 8, 2026, 09_39_14 PM.png",
+      "ChatGPT Image Jun 8, 2026, 10_10_29 PM.png"
+    ]
+  },
+  "missingAssets": [
+    "social-system",
+    "campaign-system",
+    "storyboard",
+    "brand-world-master"
+  ],
+  "generationPlan": [
+    {
+      "assetType": "homepage-hero",
+      "output": "generated/web/homepage-hero.webp",
+      "references": [
+        "ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png",
+        "rebound logo.png",
+        "ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high"
+    }
+  ],
+  "generatedAssets": [
+    {
+      "assetType": "storyboard",
+      "filename": "generated/storyboard/storyboard.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png",
+        "ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png",
+        "rebound logo.png"
+      ],
+      "preparedReferences": [
+        "rebound/ref-1.jpg",
+        "rebound/ref-2.jpg",
+        "rebound/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: storyboard for an AYESMAJ portfolio case study\nPrimary request: Create an obvious six-frame cinematic storyboard for this brand: establish, introduce the subject, reveal the key product or service, transformation, hero moment, and clean end frame. The frames should feel like one film, not six unrelated posters.\nBrand: REBOUND AESTHETICS\nCategory: Beauty Brand Identity & Campaign\nBrand character: A restorative skincare system built from soft natural light, tactile stone, warm metallic detail, and a consultation-first website experience.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png); Image 2: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png); Image 3: source-of-truth brand reference (rebound logo.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 board with six equal cinematic frames, clear camera progression, simple frame dividers, and no written paragraphs; underlying brand composition language: airy skincare editorial, restorative calm, and intimate human detail\nLighting/mood: soft natural daylight with warm metallic highlights\nColor palette: #FFFFFF, #FFFFFE, #5A3E22, #D5C2AD, #AB8B6C, #7E6144, #A1896C\nMaterials/textures: amber glass, frosted glass, limestone, linen, brass\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "social-system",
+      "filename": "generated/social/social-system.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png",
+        "ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png",
+        "rebound logo.png"
+      ],
+      "preparedReferences": [
+        "rebound/ref-1.jpg",
+        "rebound/ref-2.jpg",
+        "rebound/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: social-system for an AYESMAJ portfolio case study\nPrimary request: Create one cohesive social campaign system with six distinct tiles: hero, product or service proof, detail, atmosphere, announcement-style composition, and closing brand moment. Every tile must share one art direction.\nBrand: REBOUND AESTHETICS\nCategory: Beauty Brand Identity & Campaign\nBrand character: A restorative skincare system built from soft natural light, tactile stone, warm metallic detail, and a consultation-first website experience.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png); Image 2: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png); Image 3: source-of-truth brand reference (rebound logo.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 premium social-grid presentation with six clean frames, controlled variety, and a strong central rhythm; underlying brand composition language: airy skincare editorial, restorative calm, and intimate human detail\nLighting/mood: soft natural daylight with warm metallic highlights\nColor palette: #FFFFFF, #FFFFFE, #5A3E22, #D5C2AD, #AB8B6C, #7E6144, #A1896C\nMaterials/textures: amber glass, frosted glass, limestone, linen, brass\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "campaign-system",
+      "filename": "generated/campaign/campaign-system.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png",
+        "ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png",
+        "rebound logo.png"
+      ],
+      "preparedReferences": [
+        "rebound/ref-1.jpg",
+        "rebound/ref-2.jpg",
+        "rebound/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: campaign-system for an AYESMAJ portfolio case study\nPrimary request: Create a unified campaign family showing a hero advertising visual, a vertical poster, a digital display, and a secondary detail composition. Keep one clear campaign idea across every application.\nBrand: REBOUND AESTHETICS\nCategory: Beauty Brand Identity & Campaign\nBrand character: A restorative skincare system built from soft natural light, tactile stone, warm metallic detail, and a consultation-first website experience.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png); Image 2: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png); Image 3: source-of-truth brand reference (rebound logo.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 campaign presentation board with four deliberately different but related applications; underlying brand composition language: airy skincare editorial, restorative calm, and intimate human detail\nLighting/mood: soft natural daylight with warm metallic highlights\nColor palette: #FFFFFF, #FFFFFE, #5A3E22, #D5C2AD, #AB8B6C, #7E6144, #A1896C\nMaterials/textures: amber glass, frosted glass, limestone, linen, brass\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "brand-world-master",
+      "filename": "generated/master/brand-world-master.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png",
+        "ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png",
+        "rebound logo.png"
+      ],
+      "preparedReferences": [
+        "rebound/ref-1.jpg",
+        "rebound/ref-2.jpg",
+        "rebound/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: brand-world-master for an AYESMAJ portfolio case study\nPrimary request: Create the definitive premium brand-world master image, combining the most relevant touchpoints from the references into one spectacular but controlled visual universe: identity, core product or service, campaign, digital experience, and environmental atmosphere.\nBrand: REBOUND AESTHETICS\nCategory: Beauty Brand Identity & Campaign\nBrand character: A restorative skincare system built from soft natural light, tactile stone, warm metallic detail, and a consultation-first website experience.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png); Image 2: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png); Image 3: source-of-truth brand reference (rebound logo.png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: 16:9 hero collage with one dominant focal point, layered depth, deliberate negative space, and a complete coherent world; underlying brand composition language: airy skincare editorial, restorative calm, and intimate human detail\nLighting/mood: soft natural daylight with warm metallic highlights\nColor palette: #FFFFFF, #FFFFFE, #5A3E22, #D5C2AD, #AB8B6C, #7E6144, #A1896C\nMaterials/textures: amber glass, frosted glass, limestone, linen, brass\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "approved",
+      "qc": {
+        "brandConsistency": 9,
+        "productAccuracy": 9,
+        "composition": 9,
+        "lighting": 9,
+        "premiumQuality": 9,
+        "portfolioValue": 9,
+        "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+        "review": "Passed integrity, dimensions, brand consistency, product plausibility, and portfolio-value review."
+      }
+    },
+    {
+      "assetType": "homepage-hero",
+      "filename": "generated/web/homepage-hero.webp",
+      "source": "generated",
+      "references": [
+        "ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png",
+        "rebound logo.png",
+        "ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png"
+      ],
+      "preparedReferences": [
+        "rebound/ref-1.jpg",
+        "rebound/ref-2.jpg",
+        "rebound/ref-3.jpg"
+      ],
+      "model": "gpt-image-2",
+      "quality": "high",
+      "size": "1536x1024",
+      "purpose": "portfolio extension",
+      "prompt": "Use case: ads-marketing\nAsset type: homepage-hero for an AYESMAJ portfolio case study\nPrimary request: Create a polished desktop homepage hero screenshot for this exact brand. It must look like a real premium website opening screen built from the supplied brand identity, logo, product or service imagery, colors, and visual language.\nBrand: REBOUND AESTHETICS\nCategory: Beauty Brand Identity & Campaign\nBrand character: A restorative skincare system built from soft natural light, tactile stone, warm metallic detail, and a consultation-first website experience.\nInput images: Image 1: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_56 PM (10).png); Image 2: source-of-truth brand reference (rebound logo.png); Image 3: source-of-truth brand reference (ChatGPT Image Jun 8, 2026, 05_06_55 PM (5).png)\nScene/backdrop: extend only the world established by the reference images; do not import unrelated motifs\nStyle/medium: premium cinematic advertising, polished editorial design, photoreal materials, credible production value\nComposition/framing: wide 16:9 full-bleed homepage canvas with no browser chrome and no device mockup; show a refined top navigation, a decisive hero layout, one clear primary call-to-action shape, and a dominant brand-specific visual focal point; keep all important content inside safe margins so the complete hero is visible; underlying brand composition language: airy skincare editorial, restorative calm, and intimate human detail\nLighting/mood: soft natural daylight with warm metallic highlights\nColor palette: #FFFFFF, #FFFFFE, #5A3E22, #D5C2AD, #AB8B6C, #7E6144, #A1896C\nMaterials/textures: amber glass, frosted glass, limestone, linen, brass\nConstraints: Treat every input as immutable source-of-truth. Preserve the real product category, recognizable product geometry, packaging architecture, palette, logo placement logic, and personality. Create a meaningful new portfolio touchpoint, not a duplicate of a reference. No unsupported SKU, feature, metric, certification, client result, or commercial claim.\nText constraints: Do not generate readable paragraphs, slogans, prices, specifications, legal copy, or invented brand spelling. Use abstract typographic blocks where interface text is needed. If a real logo is visible on a referenced physical product, preserve its placement and appearance; never create an alternate logo.\nAvoid: generic AI filler, unrelated sci-fi objects, excessive particles, visual clutter, warped products, duplicate objects, malformed hands or faces, fake labels, watermarks, third-party logos, and brand drift.",
+      "status": "generated-pending-qc"
+    }
+  ],
+  "qcThresholds": {
+    "brandConsistency": 8,
+    "productAccuracy": 8,
+    "composition": 8,
+    "portfolioValue": 8
+  },
+  "resolvedAssets": [
+    "storyboard",
+    "social-system",
+    "campaign-system",
+    "brand-world-master"
+  ],
+  "qcSummary": {
+    "status": "approved",
+    "reviewedAt": "2026-08-07T10:35:25.000038+00:00",
+    "approvedAssetCount": 4,
+    "integrityIssues": 0,
+    "contactSheet": "tmp/brand-world-qc/rebound.jpg"
+  }
+}
