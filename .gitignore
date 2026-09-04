@@ -100,3 +100,10 @@ __pycache__/
 /AGENTS.md
 /FULL-AUDIT-REPORT.md
 /media-refs.json
+
+# .vercelignore must stay OUT of the repo. Vercel honours it on Git builds, and
+# it strips **/*.mp4 - which silently removed every video on the site: the
+# interior scrub films, the homepage commercials and the whole /Work archive all
+# fell back to index.html. Its premise ("video is served from the existing R2
+# CDN") is not true; there is no such rewrite in vercel.json.
+/.vercelignore
