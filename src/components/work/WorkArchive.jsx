@@ -189,7 +189,6 @@ function Lightbox({ items, index, onClose, onStep, reduced }) {
             loop
             playsInline
             className="wa-lightbox-media"
-            style={{ aspectRatio: `${item.w} / ${item.h}` }}
           />
         ) : (
           <img
@@ -197,7 +196,6 @@ function Lightbox({ items, index, onClose, onStep, reduced }) {
             src={item.src}
             alt={`${item.group} — ${item.cat}`}
             className="wa-lightbox-media"
-            style={{ aspectRatio: `${item.w} / ${item.h}` }}
           />
         )}
         <div className="wa-lightbox-meta">
