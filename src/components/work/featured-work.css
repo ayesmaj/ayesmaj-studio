@@ -1,0 +1,99 @@
+/* Featured spotlight. Asymmetric on purpose: one lead piece carries the section
+   and the rest step down, so the eye has an order instead of six equal cards. */
+
+.wf { position: relative; padding: clamp(56px, 7vw, 104px) clamp(20px, 5vw, 80px) clamp(40px, 5vw, 72px); }
+.wf-inner { max-width: 1380px; margin-inline: auto; }
+
+.wf-head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  padding-bottom: clamp(18px, 2.2vw, 28px);
+  margin-bottom: clamp(22px, 2.6vw, 34px);
+  border-bottom: 1px solid var(--wk-line);
+}
+.wf-title {
+  margin: 0;
+  font-family: var(--wk-display); font-weight: 400;
+  font-size: clamp(28px, 4vw, 58px); line-height: 0.95;
+  text-transform: uppercase; color: var(--wk-text);
+}
+.wf-all {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px;
+  font-family: var(--wk-ui); font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--wk-gold); text-decoration: none;
+}
+.wf-all:hover { text-decoration: underline; text-underline-offset: 4px; }
+.wf-all:focus-visible { outline: 2px solid var(--wk-gold); outline-offset: 3px; border-radius: 4px; }
+
+/* ── Layout. Mobile is a single column; the span map only starts at 900. ── */
+.wf-grid { display: grid; grid-template-columns: 1fr; gap: clamp(14px, 1.6vw, 22px); }
+
+@media (min-width: 900px) {
+  .wf-grid { grid-template-columns: repeat(12, 1fr); grid-auto-rows: minmax(0, auto); }
+  .wf-cell { grid-column: span 4; }
+  .wf-cell[data-size='lead'] { grid-column: span 8; grid-row: span 2; }
+  .wf-cell[data-size='tall'] { grid-column: span 4; grid-row: span 2; }
+  .wf-cell[data-size='wide'] { grid-column: span 7; }
+  .wf-cell[data-size='std'] { grid-column: span 5; }
+  .wf-cell { min-height: 0; }
+  .wf-cell > .wf-card { height: 100%; }
+}
+
+/* Aspect is pinned per size rather than left to the image, so a tall render and
+   a wide packshot cannot knock the row heights out of alignment. */
+.wf-card { position: relative; display: flex; flex-direction: column; overflow: hidden; text-decoration: none;
+  border: 1px solid var(--wk-line); border-radius: var(--wk-radius); background: var(--wk-surface-2);
+  transition: transform var(--wk-fast) var(--wk-ease), border-color var(--wk-fast) var(--wk-ease), box-shadow var(--wk-fast) var(--wk-ease); }
+.wf-shot-wrap { display: block; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; flex: 1 1 auto; min-height: 0; }
+.wf-cell[data-size='lead'] .wf-shot-wrap { aspect-ratio: 16 / 11; }
+.wf-cell[data-size='tall'] .wf-shot-wrap { aspect-ratio: 3 / 4; }
+@media (min-width: 900px) {
+  .wf-cell[data-size='lead'] .wf-shot-wrap,
+  .wf-cell[data-size='tall'] .wf-shot-wrap { aspect-ratio: auto; }
+}
+.wf-shot { width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform var(--wk-slow) var(--wk-ease); }
+
+.wf-body {
+  position: relative;
+  display: grid; gap: 5px;
+  flex: 0 0 auto;
+  padding: clamp(15px, 1.6vw, 24px);
+  background: linear-gradient(180deg, rgba(20, 23, 21, 0.96) 0%, var(--wk-surface-2) 100%);
+  border-top: 1px solid var(--wk-line);
+}
+/* A hairline of the piece's own accent ties the caption to the image above it
+   without tinting the artwork itself. */
+.wf-body::before {
+  content: ''; position: absolute; top: -1px; left: 0; width: clamp(38px, 5vw, 74px); height: 2px;
+  background: var(--wf-accent, var(--wk-gold));
+}
+.wf-cat { font-family: var(--wk-ui); font-size: 9.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--wf-accent, var(--wk-gold)); }
+.wf-name { font-family: var(--wk-display); font-size: clamp(20px, 2.2vw, 38px); line-height: 1; text-transform: uppercase; color: var(--wk-text); }
+.wf-cell[data-size='lead'] .wf-name { font-size: clamp(26px, 3.4vw, 54px); }
+.wf-tag { font-family: var(--wk-ui); font-size: 12.5px; line-height: 1.4; color: var(--wk-text-2); }
+.wf-go {
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 8px;
+  font-family: var(--wk-ui); font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--wk-text);
+}
+.wf-go svg { transition: transform var(--wk-fast) var(--wk-ease); }
+
+/* Hover and focus are twins. The source animated on :hover only, which left a
+   keyboard user with no feedback at all. */
+.wf-card:hover, .wf-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--wf-accent, #D8B75A) 55%, transparent);
+  box-shadow: var(--wk-shadow);
+}
+.wf-card:hover .wf-shot, .wf-card:focus-visible .wf-shot { transform: scale(1.045); }
+.wf-card:hover .wf-go svg, .wf-card:focus-visible .wf-go svg { transform: translateX(4px); }
+.wf-card:focus-visible { outline: 2px solid var(--wk-gold); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wf-card, .wf-shot, .wf-go svg { transition: none; }
+  .wf-card:hover, .wf-card:focus-visible { transform: none; }
+  .wf-card:hover .wf-shot, .wf-card:focus-visible .wf-shot { transform: none; }
+  .wf-card:hover .wf-go svg, .wf-card:focus-visible .wf-go svg { transform: none; }
+}

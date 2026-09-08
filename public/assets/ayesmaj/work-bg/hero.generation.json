@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-09-08T21:44:05.325Z",
+  "model": "gpt-image-2",
+  "prompt": "A premium cinematic abstract background for a luxury creative studio website hero. Deep charcoal and near-black base, warm bronze and amber light blooming from the lower left, deep violet and indigo atmosphere drifting across the upper right. Soft blurred light trails and elegant volumetric haze, layered depth like a darkened film studio with practical lights just out of frame, very fine film grain, subtle vignette. Restrained and expensive, editorial, modern, artistic. Absolutely no text, no letters, no logos, no objects, no people, no user interface elements. Pure atmospheric background only, with a calm uncluttered area across the left half where headline type will sit.",
+  "prompt_source": "C:\\Users\\smadj\\AppData\\Local\\Temp\\claude\\C--Users-smadj-Documents-ayesmaj-studio\\48789f4d-9ebb-4084-9daf-761f0899a76f\\scratchpad\\bg\\hero.txt",
+  "request": {
+    "size": "1536x1024",
+    "quality": "high",
+    "format": "webp",
+    "background": "opaque",
+    "compression": 88,
+    "n": 1
+  },
+  "outputs": [
+    "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\work-bg\\hero.webp"
+  ],
+  "usage": {
+    "input_tokens": 138,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 138
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+      "image_tokens": 5488,
+      "text_tokens": 0
+    },
+    "total_tokens": 5626
+  },
+  "revised_prompts": [
+    null
+  ]
+}

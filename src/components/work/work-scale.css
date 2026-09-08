@@ -1,0 +1,82 @@
+/* The bright band. The page is dark either side of this, so this section has to
+   carry real daylight rather than a slightly lighter grey - that contrast is
+   what gives the page rhythm instead of one continuous night. */
+
+.ws {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding: clamp(64px, 8vw, 118px) clamp(20px, 5vw, 80px);
+  color: var(--wk-ivory-ink);
+}
+.ws::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  background: url('/assets/ayesmaj/work-bg/bright.webp') center / cover no-repeat, var(--wk-ivory);
+}
+/* Softens the generated gold corner so the figures keep their contrast. */
+.ws::after {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(100deg, rgba(244, 239, 230, 0.86) 0%, rgba(244, 239, 230, 0.5) 46%, rgba(244, 239, 230, 0.18) 100%);
+}
+
+.ws-inner { max-width: 1380px; margin-inline: auto; }
+.ws-head { max-width: 900px; margin-bottom: clamp(34px, 4vw, 58px); }
+.ws-eyebrow {
+  margin: 0 0 14px;
+  font-family: var(--wk-ui);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+  color: #8A6A16;
+}
+.ws-title {
+  margin: 0;
+  font-family: var(--wk-display); font-weight: 400;
+  font-size: clamp(28px, 4.2vw, 62px); line-height: 0.98;
+  text-transform: uppercase;
+  color: var(--wk-ivory-ink);
+  text-wrap: balance;
+}
+
+.ws-figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: clamp(20px, 2.6vw, 40px);
+  margin: 0 0 clamp(34px, 4vw, 54px);
+}
+.ws-figure {
+  display: grid; gap: 8px;
+  padding-inline-start: clamp(16px, 1.8vw, 24px);
+  border-inline-start: 1px solid rgba(23, 20, 15, 0.16);
+}
+.ws-figure:first-child { padding-inline-start: 0; border-inline-start: 0; }
+.ws-value {
+  font-family: var(--wk-display);
+  font-size: clamp(38px, 5vw, 74px); line-height: 0.9;
+  color: var(--wk-ivory-ink);
+  font-variant-numeric: tabular-nums;
+}
+.ws-label { margin: 0; display: grid; gap: 3px; }
+.ws-label-main { font-family: var(--wk-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #3A322A; }
+.ws-label-note { font-family: var(--wk-ui); font-size: 12.5px; line-height: 1.45; color: #6C6459; }
+
+.ws-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 54px; padding: 0 30px;
+  border-radius: var(--wk-radius-pill);
+  background: #17140F; color: #F6F1E6;
+  font-family: var(--wk-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none;
+  transition: transform var(--wk-fast) var(--wk-ease), background var(--wk-fast) var(--wk-ease);
+}
+.ws-cta:hover { transform: translateY(-2px); background: #241F17; }
+.ws-cta:focus-visible { outline: 2px solid #8A6A16; outline-offset: 3px; }
+
+@media (max-width: 640px) {
+  .ws-figure { padding-inline-start: 0; border-inline-start: 0; }
+  .ws-cta { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ws-cta { transition: none; }
+  .ws-cta:hover { transform: none; }
+}

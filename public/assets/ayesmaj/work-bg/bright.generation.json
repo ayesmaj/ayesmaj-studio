@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-09-08T21:45:37.643Z",
+  "model": "gpt-image-2",
+  "prompt": "A premium bright editorial background for a luxury design studio website section. Soft ivory, warm bone and cream base, a pale gold haze washing in from one edge, the faintest lavender undertone in the opposite corner. Elegant soft gradients, gentle paper-like texture, refined diffuse studio lighting, sophisticated and calm. High-end print campaign feeling, minimal and rich. Absolutely no text, no letters, no logos, no objects, no people, no user interface elements. Pure background only.",
+  "prompt_source": "C:\\Users\\smadj\\AppData\\Local\\Temp\\claude\\C--Users-smadj-Documents-ayesmaj-studio\\48789f4d-9ebb-4084-9daf-761f0899a76f\\scratchpad\\bg\\bright.txt",
+  "request": {
+    "size": "1536x1024",
+    "quality": "high",
+    "format": "webp",
+    "background": "opaque",
+    "compression": 88,
+    "n": 1
+  },
+  "outputs": [
+    "C:\\Users\\smadj\\Documents\\ayesmaj-studio\\public\\assets\\ayesmaj\\work-bg\\bright.webp"
+  ],
+  "usage": {
+    "input_tokens": 102,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 102
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+      "image_tokens": 5488,
+      "text_tokens": 0
+    },
+    "total_tokens": 5590
+  },
+  "revised_prompts": [
+    null
+  ]
+}

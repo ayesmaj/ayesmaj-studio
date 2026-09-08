@@ -1,0 +1,184 @@
+/* /Work hero. Layered ground, oversized display type, and a cluster of six real
+   pieces that stands in for the single stock portrait a template would use. */
+
+.wk-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding: clamp(132px, 15vw, 190px) clamp(20px, 5vw, 80px) clamp(52px, 6vw, 88px);
+}
+
+/* ── Ground ─────────────────────────────────────────────────────────────────
+   Four layers, in order: generated atmosphere, the active piece, a hue grade in
+   that piece's own accent, then a wash that pulls the whole thing back so type
+   stays the brightest object. The page's .work-grain sits above all of it. */
+.wk-hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.wk-hero-bg-plate {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(27, 23, 18, 0.2) 0%, transparent 40%),
+    url('/assets/ayesmaj/work-bg/hero.webp') center / cover no-repeat,
+    var(--wk-ink-warm);
+}
+.wk-hero-bg-shot {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 32%;
+  filter: blur(38px) saturate(1.15);
+  will-change: transform, opacity;
+}
+/* mix-blend-mode: color takes the hue and leaves the luminance, so the ground
+   changes temperature with the active piece without going flat or muddy. */
+.wk-hero-bg-grade { position: absolute; inset: 0; mix-blend-mode: color; opacity: 0.28; }
+.wk-hero-bg-wash {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(72% 60% at 14% 36%, rgba(11, 12, 12, 0.94) 0%, rgba(11, 12, 12, 0.7) 44%, transparent 76%),
+    linear-gradient(180deg, rgba(11, 12, 12, 0.62) 0%, rgba(11, 12, 12, 0.22) 32%, rgba(11, 12, 12, 0.9) 100%);
+}
+
+.wk-hero-inner {
+  position: relative;
+  max-width: 1380px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 4.5vw, 74px);
+}
+
+/* ── Copy ── */
+.wk-hero-title {
+  margin: 0 0 clamp(16px, 1.9vw, 24px);
+  font-family: var(--wk-display);
+  font-weight: 400;
+  /* Capped at 104px, not 118px: the copy column is ~660px on a wide desktop and
+     "DIGITAL WORLDS" measures 703px at 118px, so the top line wrapped and the
+     headline broke into four ragged lines. All three lines are hard-broken in
+     the markup and sized to fit, so the shape is identical at every width -
+     text-wrap: balance was only ever guessing at a break we already know. */
+  font-size: clamp(40px, 6.1vw, 104px);
+  line-height: 0.86;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--wk-text);
+}
+.wk-hero-lede {
+  margin: 0 0 clamp(26px, 3vw, 38px);
+  max-width: 46ch;
+  font-family: var(--wk-ui);
+  font-size: clamp(15px, 1.1vw, 18px);
+  line-height: 1.6;
+  color: var(--wk-text-2);
+}
+
+.wk-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: clamp(30px, 3.6vw, 46px); }
+.wk-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 52px; padding: 0 26px;
+  border-radius: var(--wk-radius-pill);
+  border: 1px solid transparent;
+  font-family: var(--wk-ui);
+  font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+  transition: transform var(--wk-fast) var(--wk-ease), box-shadow var(--wk-fast) var(--wk-ease), background var(--wk-fast) var(--wk-ease), border-color var(--wk-fast) var(--wk-ease);
+}
+.wk-btn--primary {
+  color: #14110A;
+  background: linear-gradient(96deg, #E8CE7E 0%, #D8B75A 46%, #C58B57 100%);
+  box-shadow: 0 16px 38px rgba(var(--wk-gold-rgb), 0.24);
+}
+.wk-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 20px 46px rgba(var(--wk-gold-rgb), 0.34); }
+.wk-btn--ghost { color: var(--wk-text); background: rgba(255, 255, 255, 0.05); border-color: var(--wk-line-strong); }
+.wk-btn--ghost:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.09); border-color: rgba(var(--wk-gold-rgb), 0.5); }
+.wk-btn:focus-visible { outline: 2px solid var(--wk-gold); outline-offset: 3px; }
+
+.wk-hero-stats { display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 46px); margin: 0; }
+.wk-hero-stats > div { display: grid; gap: 3px; padding-inline-start: clamp(12px, 1.4vw, 18px); border-inline-start: 1px solid var(--wk-line); }
+.wk-hero-stats > div:first-child { padding-inline-start: 0; border-inline-start: 0; }
+.wk-hero-stats dt {
+  font-family: var(--wk-display);
+  font-size: clamp(24px, 2.6vw, 38px); line-height: 1;
+  color: var(--wk-text);
+  font-variant-numeric: tabular-nums;
+}
+.wk-hero-stats dd {
+  margin: 0;
+  font-family: var(--wk-ui);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--wk-text-3);
+}
+
+/* ── The cluster ── */
+.wk-hero-stage { position: relative; min-height: clamp(300px, 42vw, 500px); display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.wk-hero-rail { display: flex; align-items: flex-start; gap: clamp(7px, 0.8vw, 12px); min-width: 0; }
+
+.wk-hero-card {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid var(--wk-line);
+  border-radius: var(--wk-radius-sm);
+  overflow: hidden;
+  background: var(--wk-surface);
+  cursor: pointer;
+  box-shadow: var(--wk-shadow);
+  transition: border-color var(--wk-fast) var(--wk-ease);
+}
+.wk-hero-card[aria-current='true'] { border-color: color-mix(in srgb, var(--wk-card-accent, #D8B75A) 62%, transparent); }
+.wk-hero-card:focus-visible { outline: 2px solid var(--wk-gold); outline-offset: 3px; }
+.wk-hero-card img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 26%;
+  display: block;
+  transition: transform var(--wk-slow) var(--wk-ease);
+}
+.wk-hero-card[aria-current='true'] img { transform: scale(1.03); }
+.wk-hero-card-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(5, 7, 6, 0.9) 0%, rgba(5, 7, 6, 0.18) 46%, transparent 72%);
+}
+.wk-hero-card-meta { position: absolute; left: 0; right: 0; bottom: 0; display: grid; gap: 2px; padding: 10px 10px 9px; text-align: start; }
+.wk-hero-card-cat {
+  font-family: var(--wk-ui); font-size: 8.5px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--wk-card-accent, var(--wk-gold));
+  opacity: 0; transition: opacity var(--wk-fast) var(--wk-ease);
+}
+.wk-hero-card-name {
+  font-family: var(--wk-display); font-size: clamp(11px, 1vw, 15px); line-height: 1;
+  text-transform: uppercase; color: var(--wk-text);
+  opacity: 0; transition: opacity var(--wk-fast) var(--wk-ease);
+}
+.wk-hero-card[aria-current='true'] .wk-hero-card-cat,
+.wk-hero-card[aria-current='true'] .wk-hero-card-name { opacity: 1; }
+
+.wk-hero-caption { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 0; font-family: var(--wk-ui); }
+.wk-hero-caption-name { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--wk-text); }
+.wk-hero-caption-tag { font-size: 12.5px; color: var(--wk-text-3); }
+
+/* ── Responsive ─────────────────────────────────────────────────────────────
+   Below 1024 the cluster moves under the copy rather than being squeezed into a
+   column too narrow to read; the rail scrolls instead of shrinking further. */
+@media (max-width: 1023px) {
+  /* minmax(0, …), never a bare 1fr: a bare 1fr floors the column at the rail's
+     min-content (six cards ~563px), which drags the copy off-screen on phones. */
+  .wk-hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .wk-hero-stage { min-width: 0; min-height: clamp(240px, 56vw, 340px); }
+  .wk-hero-rail { overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; scroll-snap-type: x proximity; }
+  .wk-hero-rail::-webkit-scrollbar { display: none; }
+  .wk-hero-card { scroll-snap-align: center; }
+}
+@media (max-width: 640px) {
+  .wk-hero { padding-top: clamp(104px, 22vw, 140px); }
+  .wk-hero-actions .wk-btn { flex: 1 1 100%; justify-content: center; }
+  .wk-hero-stats { gap: 16px; }
+  .wk-hero-stats > div { padding-inline-start: 0; border-inline-start: 0; flex: 1 1 40%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wk-hero-bg-shot { filter: blur(38px); }
+  .wk-hero-card, .wk-hero-card img, .wk-btn, .wk-hero-card-cat, .wk-hero-card-name { transition: none; }
+  .wk-hero-card[aria-current='true'] img { transform: none; }
+  .wk-btn:hover { transform: none; }
+}

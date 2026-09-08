@@ -1,0 +1,74 @@
+/* /Work design tokens.
+   The palette for this page previously lived as literals in three places, and a
+   fourth copy used a different gold (#FFC84B in real-brands.css vs #D8B75A
+   here). Three new components would have made a fifth. Everything on the page
+   now reads from this block, scoped to .work-page so it cannot leak. */
+
+.work-page {
+  /* ── Grounds. The page warms at the top and cools as it descends. ── */
+  --wk-ink: #0D0F0E;
+  --wk-ink-warm: #1B1712;
+  --wk-ink-cool: #101426;
+  --wk-surface: #141715;
+  --wk-surface-2: #0F1310;
+
+  /* ── Type ── */
+  --wk-text: #F6F3ED;
+  --wk-text-2: #ADA79D;
+  --wk-text-3: #7E786F;
+  --wk-ivory: #F4EFE6;
+  --wk-ivory-ink: #17140F;
+
+  /* ── Accent. One gold for the whole page. ── */
+  --wk-gold: #D8B75A;
+  --wk-gold-rgb: 216, 183, 90;
+  --wk-copper: #C58B57;
+  --wk-violet: #A35BDA;
+  --wk-indigo: #7A48FF;
+  --wk-grad: linear-gradient(96deg, #D8B75A 0%, #C58B57 28%, #A35BDA 72%, #7A48FF 100%);
+
+  /* ── Material ── */
+  --wk-line: rgba(255, 255, 255, 0.08);
+  --wk-line-strong: rgba(255, 255, 255, 0.18);
+  --wk-radius: 18px;
+  --wk-radius-sm: 12px;
+  --wk-radius-pill: 999px;
+  --wk-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+
+  /* ── Motion. One easing for the page, matching work-archive.css. ── */
+  --wk-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --wk-fast: 0.25s;
+  --wk-slow: 0.6s;
+
+  /* ── Type roles ── */
+  --wk-display: 'Anton', 'Bebas Neue', system-ui, sans-serif;
+  --wk-ui: 'DM Sans', 'Inter', system-ui, sans-serif;
+}
+
+/* Shared eyebrow, used by every section label on the page. */
+.wk-eyebrow {
+  margin: 0 0 clamp(14px, 1.6vw, 20px);
+  font-family: var(--wk-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--wk-gold);
+}
+
+/* The page's only two gradient-text moments live on this class. Used more than
+   twice it stops reading as emphasis and starts reading as decoration. */
+.wk-grad-text {
+  background-image: var(--wk-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hairline divider with a gold falloff - used between major bands. */
+.wk-rule {
+  height: 1px;
+  border: 0;
+  margin: 0;
+  background: linear-gradient(90deg, transparent, rgba(var(--wk-gold-rgb), 0.35) 22%, rgba(var(--wk-gold-rgb), 0.12) 60%, transparent);
+}

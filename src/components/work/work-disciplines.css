@@ -1,0 +1,151 @@
+/* Discipline spotlight — the page's close.
+   Ground is work-bg/transition.webp, this page's third and last generated
+   background (hero.webp opens, bright.webp lights the scale strip). */
+
+.wd {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding: clamp(76px, 9vw, 130px) clamp(20px, 5vw, 80px) clamp(88px, 10vw, 148px);
+}
+.wd::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: url('/assets/ayesmaj/work-bg/transition.webp') center / cover no-repeat, var(--wk-ink-cool);
+}
+/* Darkest under the copy column, opening up on the right so the tiles keep
+   their own light. */
+.wd::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(78% 82% at 18% 44%, rgba(9, 9, 13, 0.93) 0%, rgba(9, 9, 13, 0.72) 44%, rgba(8, 8, 12, 0.5) 78%),
+    linear-gradient(180deg, rgba(8, 8, 12, 0.72) 0%, rgba(8, 8, 12, 0.4) 40%, rgba(8, 8, 12, 0.82) 100%);
+}
+
+.wd-inner {
+  position: relative;
+  max-width: 1380px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(34px, 5vw, 78px);
+}
+
+.wd-title {
+  margin: 0 0 clamp(14px, 1.6vw, 22px);
+  font-family: var(--wk-display); font-weight: 400;
+  font-size: clamp(38px, 5.4vw, 84px); line-height: 0.9;
+  text-transform: uppercase; color: var(--wk-text);
+}
+.wd-lede {
+  margin: 0;
+  max-width: 46ch;
+  font-family: var(--wk-ui);
+  font-size: clamp(14.5px, 1.05vw, 17px); line-height: 1.62;
+  color: var(--wk-text-2);
+}
+
+/* ── The offset grid ─────────────────────────────────────────────────────────
+   Two columns over five alternating short/tall tracks. Each tile spans two
+   tracks starting on a different row, so all four are the same height but none
+   of them line up — the interlock is what stops this reading as a contact
+   sheet. Geometry adapted from 21st 1960. */
+.wd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows:
+    clamp(34px, 4vw, 54px) clamp(116px, 14vw, 186px)
+    clamp(34px, 4vw, 54px) clamp(116px, 14vw, 186px)
+    clamp(34px, 4vw, 54px);
+  gap: clamp(10px, 1.2vw, 18px);
+}
+.wd-tile:nth-child(1) { grid-column: 2 / 3; grid-row: 1 / 3; }
+.wd-tile:nth-child(2) { grid-column: 1 / 2; grid-row: 2 / 4; }
+.wd-tile:nth-child(3) { grid-column: 1 / 2; grid-row: 4 / 6; }
+.wd-tile:nth-child(4) { grid-column: 2 / 3; grid-row: 3 / 5; }
+
+.wd-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--wk-line);
+  border-radius: var(--wk-radius-sm);
+  background: var(--wk-surface);
+  box-shadow: var(--wk-shadow);
+  text-decoration: none;
+  transition: transform var(--wk-fast) var(--wk-ease), border-color var(--wk-fast) var(--wk-ease);
+}
+.wd-tile img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 42%;
+  transition: transform var(--wk-slow, 0.6s) var(--wk-ease);
+}
+.wd-tile-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(5, 6, 9, 0.94) 0%, rgba(5, 6, 9, 0.6) 38%, rgba(5, 6, 9, 0.12) 70%, transparent 100%);
+}
+.wd-tile-meta {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  display: grid; gap: 3px;
+  padding: clamp(12px, 1.3vw, 18px);
+}
+.wd-tile-count {
+  font-family: var(--wk-ui); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--wk-gold);
+  font-variant-numeric: tabular-nums;
+}
+.wd-tile-name {
+  display: flex; align-items: center; gap: 7px;
+  font-family: var(--wk-display); font-size: clamp(18px, 1.8vw, 27px); line-height: 1;
+  text-transform: uppercase; color: var(--wk-text);
+}
+.wd-tile-name svg { transition: transform var(--wk-fast) var(--wk-ease); }
+/* The note is the hover reward: the tile reads as name + count at rest, and
+   explains itself when you reach for it. Kept out of the resting composition so
+   four tiles do not become four paragraphs. */
+.wd-tile-note {
+  max-width: 30ch;
+  font-family: var(--wk-ui); font-size: 12.5px; line-height: 1.45;
+  color: var(--wk-text-2);
+  opacity: 0; max-height: 0;
+  transition: opacity var(--wk-fast) var(--wk-ease), max-height var(--wk-fast) var(--wk-ease);
+}
+
+.wd-tile:hover, .wd-tile:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(var(--wk-gold-rgb), 0.5);
+}
+.wd-tile:hover img, .wd-tile:focus-visible img { transform: scale(1.05); }
+.wd-tile:hover .wd-tile-name svg, .wd-tile:focus-visible .wd-tile-name svg { transform: translate(2px, -2px); }
+.wd-tile:hover .wd-tile-note, .wd-tile:focus-visible .wd-tile-note { opacity: 1; max-height: 4em; }
+.wd-tile:focus-visible { outline: 2px solid var(--wk-gold); outline-offset: 3px; }
+
+/* ── Responsive ──
+   The five-track interlock needs two real columns to read. Below 900 the grid
+   becomes plain auto rows and the offset comes from a nudge instead, which
+   survives a 390px phone where a 2x5 track map would collapse to slivers. */
+@media (max-width: 899px) {
+  .wd-inner { grid-template-columns: minmax(0, 1fr); }
+  .wd-grid {
+    /* none, not auto: `auto` still declares one explicit content-sized row, and
+       every child of a tile is absolutely positioned, so that row collapsed to
+       1px and ate the first two tiles. `none` makes all rows implicit so
+       grid-auto-rows actually governs them. */
+    grid-template-rows: none;
+    grid-auto-rows: clamp(150px, 34vw, 210px);
+  }
+  .wd-tile:nth-child(n) { grid-column: auto; grid-row: auto; }
+  .wd-tile:nth-child(2n) { transform: translateY(clamp(12px, 3vw, 26px)); }
+  .wd-tile:nth-child(2n):hover, .wd-tile:nth-child(2n):focus-visible { transform: translateY(calc(clamp(12px, 3vw, 26px) - 3px)); }
+  /* No hover on touch: show the note in the resting state instead of hiding it
+     behind an interaction a finger cannot perform. */
+  .wd-tile-note { opacity: 1; max-height: 4em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wd-tile, .wd-tile img, .wd-tile-name svg, .wd-tile-note { transition: none; }
+  .wd-tile:hover, .wd-tile:focus-visible { transform: none; }
+  .wd-tile:hover img, .wd-tile:focus-visible img { transform: none; }
+}

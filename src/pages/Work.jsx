@@ -1,56 +1,51 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import Seo from '@/components/ayesmaj/Seo';
-import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import AyesmajNav from '@/components/ayesmaj/AyesmajNav';
 import AyesmajFooter from '@/components/ayesmaj/AyesmajFooter';
-import CinematicButton from '@/components/ayesmaj/CinematicButton';
-import SectionHeader from '@/components/ayesmaj/SectionHeader';
-import { FONTS } from '@/components/ayesmaj/theme';
+import WorkHero from '@/components/work/WorkHero';
+import FeaturedWork from '@/components/work/FeaturedWork';
+import WorkScale from '@/components/work/WorkScale';
 import WorkArchive from '@/components/work/WorkArchive';
-import { WORK_ARCHIVE } from '@/data/workArchive';
+import WorkDisciplines from '@/components/work/WorkDisciplines';
+import '@/components/work/work-tokens.css';
 
-const GRADIENT = 'linear-gradient(90deg,#D8B75A 0%,#C58B57 28%,#A35BDA 72%,#7A48FF 100%)';
-const GOLD = '#D8B75A';
+/* /Work — a lit archive rather than a file listing (redesign 2026-09-08,
+   direction in docs/design-direction.md, components in
+   docs/component-sources.md).
 
-const fade = (d = 0) => ({
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-60px' },
-  transition: { duration: 0.8, delay: d, ease: [0.22, 1, 0.36, 1] },
-});
-
-/* One gallery, one filter system. The page used to stack a curated feed (nine
-   pills, ~30 cards, its own modal) on top of the full archive (its own chips,
-   1,021 tiles, its own lightbox) - two sections doing the same job (owner
-   report 2026-09-02). The archive absorbed the feed: it holds every piece the
-   feed showed, and the case-study door the feed's brand cards provided now
-   lives in the archive lightbox, which links straight to /BrandDetail. */
+   The page moves through light instead of holding one temperature: a bronze
+   hero, the featured spotlight, the full archive, an ivory daylight strip for
+   proof, then a warm close. That rhythm is what separates "curated" from
+   "listed" — the content was never the problem, the presentation was. */
 
 export default function Work() {
   const navigate = useNavigate();
+  const archiveRef = useRef(null);
 
   useEffect(() => {
     document.title = 'Selected Work | AYESMAJ Studios';
     window.scrollTo(0, 0);
-    // Legacy curated-feed deep link; the equivalent archive links (?a=) are
-    // handled inside WorkArchive, including the old ?f= names.
+    // Legacy curated-feed deep link; the ?a= / ?f= category links are handled
+    // inside WorkArchive.
     if (new URLSearchParams(window.location.search).get('f') === 'Branding & Identity') {
       navigate('/Branding', { replace: true });
     }
   }, [navigate]);
 
-  const section = { maxWidth: 1380, margin: '0 auto', padding: '0 clamp(24px,5vw,80px)' };
+  const scrollToArchive = useCallback(() => {
+    archiveRef.current?.scrollIntoView({ block: 'start' });
+  }, []);
 
   return (
     <div className="work-page" style={{ minHeight: '100vh', overflowX: 'clip', position: 'relative', color: '#F6F3ED' }}>
       <Seo
         title="Selected Work | AYESMAJ Studios"
-        description="The complete AYESMAJ Studios archive — brand identities, cinematic websites, AI campaigns, interiors, characters and 3D worlds, from concept to launch."
+        description="The complete AYESMAJ Studios archive — brand identities, cinematic film, AI campaigns, interiors, characters and 3D worlds, from concept to launch."
         path="/Work"
       />
 
-      {/* Film grain over the whole page. 1.8% - enough to stop the large dark
+      {/* Film grain over the whole page. 1.8% — enough to stop the large dark
           gradients banding on wide displays, not enough to notice. */}
       <div aria-hidden className="work-grain" />
 
@@ -58,40 +53,36 @@ export default function Work() {
         <AyesmajNav />
 
         <main>
-          {/* HERO */}
-          <section style={{ ...section, paddingTop: 'clamp(140px,16vw,200px)', paddingBottom: 'clamp(40px,5vw,64px)' }}>
-            <SectionHeader
-              as="h1"
-              align="left"
-              max={980}
-              eyebrow="SELECTED WORK"
-              title={<>DIGITAL WORLDS BUILT TO BE{' '}<span style={{ backgroundImage: GRADIENT, WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>REMEMBERED</span></>}
-              subtitle={`${WORK_ARCHIVE.length.toLocaleString()} pieces — brand systems, interiors, characters, films, logos, AI campaigns. The complete archive, unfiltered.`}
-              accent={GOLD}
-            />
-          </section>
+          <WorkHero onExplore={scrollToArchive} />
 
-          {/* THE ARCHIVE — the one gallery. No .idv2-bgc wrapper: that class
-              forces background-color #08080A !important under a heavily darkened
-              photo, which is what made the page read as flat black. The ground
-              is now the page's own layered field plus each group's own wash. */}
-          <section style={{ ...section, paddingBottom: 'clamp(64px,8vw,120px)' }}>
-            <WorkArchive />
-          </section>
+          <FeaturedWork />
 
-          {/* CTA */}
-          <div className="work-cta">
-            <section style={{ ...section, paddingBottom: 'clamp(80px,10vw,140px)', textAlign: 'center' }}>
-              <motion.div {...fade(0.1)}>
-                <h2 style={{ fontFamily: FONTS.display, fontSize: 'clamp(30px,4.6vw,64px)', fontWeight: 800, textTransform: 'uppercase', lineHeight: 0.98, color: '#F6F3ED', margin: '0 0 28px' }}>
-                  Your Brand Could Be Next
+          {/* THE ARCHIVE — all 828, grouped, films autoplaying from their
+              preview loops. */}
+          <section
+            ref={archiveRef}
+            id="archive"
+            className="wk-archive-band"
+            style={{ scrollMarginTop: 88 }}
+            aria-labelledby="wk-archive-title"
+          >
+            <div className="wk-archive-inner">
+              <header className="wk-archive-head">
+                <p className="wk-eyebrow">The Complete Archive</p>
+                <h2 className="wk-archive-title" id="wk-archive-title">
+                  Everything, unfiltered.
                 </h2>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <CinematicButton label="Start a Project" accent={GOLD} size="lg" onClick={() => navigate('/Contact')} />
-                </div>
-              </motion.div>
-            </section>
-          </div>
+                <p className="wk-archive-lede">
+                  Jump to a discipline, or scroll the whole body of work.
+                </p>
+              </header>
+              <WorkArchive />
+            </div>
+          </section>
+
+          <WorkScale />
+
+          <WorkDisciplines />
         </main>
 
         <AyesmajFooter />
